@@ -1,0 +1,32 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_domain"
+        },
+        {
+            "kind": "method",
+            "name": "get_protocol"
+        },
+        {
+            "kind": "method",
+            "name": "get_scheme"
+        },
+        {
+            "kind": "method",
+            "name": "get_service"
+        },
+        {
+            "kind": "method",
+            "name": "set_scheme"
+        }
+    ],
+    "name": "NetworkService"
+}

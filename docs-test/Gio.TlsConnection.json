@@ -1,0 +1,79 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "emit_accept_certificate"
+        },
+        {
+            "kind": "method",
+            "name": "get_certificate"
+        },
+        {
+            "kind": "method",
+            "name": "get_database"
+        },
+        {
+            "kind": "method",
+            "name": "get_interaction"
+        },
+        {
+            "kind": "method",
+            "name": "get_peer_certificate"
+        },
+        {
+            "kind": "method",
+            "name": "get_peer_certificate_errors"
+        },
+        {
+            "kind": "method",
+            "name": "get_rehandshake_mode"
+        },
+        {
+            "kind": "method",
+            "name": "get_require_close_notify"
+        },
+        {
+            "kind": "method",
+            "name": "get_use_system_certdb"
+        },
+        {
+            "kind": "method",
+            "name": "handshake"
+        },
+        {
+            "kind": "method",
+            "name": "handshake_async"
+        },
+        {
+            "kind": "method",
+            "name": "handshake_finish"
+        },
+        {
+            "kind": "method",
+            "name": "set_certificate"
+        },
+        {
+            "kind": "method",
+            "name": "set_database"
+        },
+        {
+            "kind": "method",
+            "name": "set_interaction"
+        },
+        {
+            "kind": "method",
+            "name": "set_rehandshake_mode"
+        },
+        {
+            "kind": "method",
+            "name": "set_require_close_notify"
+        },
+        {
+            "kind": "method",
+            "name": "set_use_system_certdb"
+        }
+    ],
+    "name": "TlsConnection"
+}

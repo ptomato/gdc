@@ -1,0 +1,260 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "clear_status"
+        },
+        {
+            "kind": "method",
+            "name": "copy_into"
+        },
+        {
+            "kind": "method",
+            "name": "dup"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_as_string"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_boolean"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_byte_string"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_data"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_int32"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_int64"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_object"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_status"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_string"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_stringv"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_type"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_uint32"
+        },
+        {
+            "kind": "method",
+            "name": "get_attribute_uint64"
+        },
+        {
+            "kind": "method",
+            "name": "get_content_type"
+        },
+        {
+            "kind": "method",
+            "name": "get_deletion_date"
+        },
+        {
+            "kind": "method",
+            "name": "get_display_name"
+        },
+        {
+            "kind": "method",
+            "name": "get_edit_name"
+        },
+        {
+            "kind": "method",
+            "name": "get_etag"
+        },
+        {
+            "kind": "method",
+            "name": "get_file_type"
+        },
+        {
+            "kind": "method",
+            "name": "get_icon"
+        },
+        {
+            "kind": "method",
+            "name": "get_is_backup"
+        },
+        {
+            "kind": "method",
+            "name": "get_is_hidden"
+        },
+        {
+            "kind": "method",
+            "name": "get_is_symlink"
+        },
+        {
+            "kind": "method",
+            "name": "get_modification_time"
+        },
+        {
+            "kind": "method",
+            "name": "get_name"
+        },
+        {
+            "kind": "method",
+            "name": "get_size"
+        },
+        {
+            "kind": "method",
+            "name": "get_sort_order"
+        },
+        {
+            "kind": "method",
+            "name": "get_symbolic_icon"
+        },
+        {
+            "kind": "method",
+            "name": "get_symlink_target"
+        },
+        {
+            "kind": "method",
+            "name": "has_attribute"
+        },
+        {
+            "kind": "method",
+            "name": "has_namespace"
+        },
+        {
+            "kind": "method",
+            "name": "list_attributes"
+        },
+        {
+            "kind": "method",
+            "name": "remove_attribute"
+        },
+        {
+            "kind": "method",
+            "name": "set_attribute"
+        },
+        {
+            "kind": "method",
+            "name": "set_attribute_boolean"
+        },
+        {
+            "kind": "method",
+            "name": "set_attribute_byte_string"
+        },
+        {
+            "kind": "method",
+            "name": "set_attribute_int32"
+        },
+        {
+            "kind": "method",
+            "name": "set_attribute_int64"
+        },
+        {
+            "kind": "method",
+            "name": "set_attribute_mask"
+        },
+        {
+            "kind": "method",
+            "name": "set_attribute_object"
+        },
+        {
+            "kind": "method",
+            "name": "set_attribute_status"
+        },
+        {
+            "kind": "method",
+            "name": "set_attribute_string"
+        },
+        {
+            "kind": "method",
+            "name": "set_attribute_stringv"
+        },
+        {
+            "kind": "method",
+            "name": "set_attribute_uint32"
+        },
+        {
+            "kind": "method",
+            "name": "set_attribute_uint64"
+        },
+        {
+            "kind": "method",
+            "name": "set_content_type"
+        },
+        {
+            "kind": "method",
+            "name": "set_display_name"
+        },
+        {
+            "kind": "method",
+            "name": "set_edit_name"
+        },
+        {
+            "kind": "method",
+            "name": "set_file_type"
+        },
+        {
+            "kind": "method",
+            "name": "set_icon"
+        },
+        {
+            "kind": "method",
+            "name": "set_is_hidden"
+        },
+        {
+            "kind": "method",
+            "name": "set_is_symlink"
+        },
+        {
+            "kind": "method",
+            "name": "set_modification_time"
+        },
+        {
+            "kind": "method",
+            "name": "set_name"
+        },
+        {
+            "kind": "method",
+            "name": "set_size"
+        },
+        {
+            "kind": "method",
+            "name": "set_sort_order"
+        },
+        {
+            "kind": "method",
+            "name": "set_symbolic_icon"
+        },
+        {
+            "kind": "method",
+            "name": "set_symlink_target"
+        },
+        {
+            "kind": "method",
+            "name": "unset_attribute_mask"
+        }
+    ],
+    "name": "FileInfo"
+}

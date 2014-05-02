@@ -1,0 +1,39 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "receive_credentials"
+        },
+        {
+            "kind": "method",
+            "name": "receive_credentials_async"
+        },
+        {
+            "kind": "method",
+            "name": "receive_credentials_finish"
+        },
+        {
+            "kind": "method",
+            "name": "receive_fd"
+        },
+        {
+            "kind": "method",
+            "name": "send_credentials"
+        },
+        {
+            "kind": "method",
+            "name": "send_credentials_async"
+        },
+        {
+            "kind": "method",
+            "name": "send_credentials_finish"
+        },
+        {
+            "kind": "method",
+            "name": "send_fd"
+        }
+    ],
+    "name": "UnixConnection"
+}

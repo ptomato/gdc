@@ -1,0 +1,23 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "cancel"
+        },
+        {
+            "kind": "method",
+            "name": "emit_event"
+        },
+        {
+            "kind": "method",
+            "name": "is_cancelled"
+        },
+        {
+            "kind": "method",
+            "name": "set_rate_limit"
+        }
+    ],
+    "name": "FileMonitor"
+}

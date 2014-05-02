@@ -1,0 +1,40 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_destination_hostname"
+        },
+        {
+            "kind": "method",
+            "name": "get_destination_port"
+        },
+        {
+            "kind": "method",
+            "name": "get_destination_protocol"
+        },
+        {
+            "kind": "method",
+            "name": "get_password"
+        },
+        {
+            "kind": "method",
+            "name": "get_protocol"
+        },
+        {
+            "kind": "method",
+            "name": "get_uri"
+        },
+        {
+            "kind": "method",
+            "name": "get_username"
+        }
+    ],
+    "name": "ProxyAddress"
+}

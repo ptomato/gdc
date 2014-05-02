@@ -1,0 +1,100 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_byte_order"
+        },
+        {
+            "kind": "method",
+            "name": "get_newline_type"
+        },
+        {
+            "kind": "method",
+            "name": "read_byte"
+        },
+        {
+            "kind": "method",
+            "name": "read_int16"
+        },
+        {
+            "kind": "method",
+            "name": "read_int32"
+        },
+        {
+            "kind": "method",
+            "name": "read_int64"
+        },
+        {
+            "kind": "method",
+            "name": "read_line"
+        },
+        {
+            "kind": "method",
+            "name": "read_line_async"
+        },
+        {
+            "kind": "method",
+            "name": "read_line_finish"
+        },
+        {
+            "kind": "method",
+            "name": "read_line_finish_utf8"
+        },
+        {
+            "kind": "method",
+            "name": "read_line_utf8"
+        },
+        {
+            "kind": "method",
+            "name": "read_uint16"
+        },
+        {
+            "kind": "method",
+            "name": "read_uint32"
+        },
+        {
+            "kind": "method",
+            "name": "read_uint64"
+        },
+        {
+            "kind": "method",
+            "name": "read_until"
+        },
+        {
+            "kind": "method",
+            "name": "read_until_async"
+        },
+        {
+            "kind": "method",
+            "name": "read_until_finish"
+        },
+        {
+            "kind": "method",
+            "name": "read_upto"
+        },
+        {
+            "kind": "method",
+            "name": "read_upto_async"
+        },
+        {
+            "kind": "method",
+            "name": "read_upto_finish"
+        },
+        {
+            "kind": "method",
+            "name": "set_byte_order"
+        },
+        {
+            "kind": "method",
+            "name": "set_newline_type"
+        }
+    ],
+    "name": "DataInputStream"
+}

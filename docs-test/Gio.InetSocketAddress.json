@@ -1,0 +1,32 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_from_string"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_address"
+        },
+        {
+            "kind": "method",
+            "name": "get_flowinfo"
+        },
+        {
+            "kind": "method",
+            "name": "get_port"
+        },
+        {
+            "kind": "method",
+            "name": "get_scope_id"
+        }
+    ],
+    "name": "InetSocketAddress"
+}

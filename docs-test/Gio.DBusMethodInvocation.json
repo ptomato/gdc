@@ -1,0 +1,79 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_connection"
+        },
+        {
+            "kind": "method",
+            "name": "get_interface_name"
+        },
+        {
+            "kind": "method",
+            "name": "get_message"
+        },
+        {
+            "kind": "method",
+            "name": "get_method_info"
+        },
+        {
+            "kind": "method",
+            "name": "get_method_name"
+        },
+        {
+            "kind": "method",
+            "name": "get_object_path"
+        },
+        {
+            "kind": "method",
+            "name": "get_parameters"
+        },
+        {
+            "kind": "method",
+            "name": "get_property_info"
+        },
+        {
+            "kind": "method",
+            "name": "get_sender"
+        },
+        {
+            "kind": "method",
+            "name": "get_user_data"
+        },
+        {
+            "kind": "method",
+            "name": "return_dbus_error"
+        },
+        {
+            "kind": "method",
+            "name": "return_error"
+        },
+        {
+            "kind": "method",
+            "name": "return_error_literal"
+        },
+        {
+            "kind": "method",
+            "name": "return_error_valist"
+        },
+        {
+            "kind": "method",
+            "name": "return_gerror"
+        },
+        {
+            "kind": "method",
+            "name": "return_value"
+        },
+        {
+            "kind": "method",
+            "name": "return_value_with_unix_fd_list"
+        },
+        {
+            "kind": "method",
+            "name": "take_error"
+        }
+    ],
+    "name": "DBusMethodInvocation"
+}

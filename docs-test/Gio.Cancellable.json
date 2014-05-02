@@ -1,0 +1,60 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "cancel"
+        },
+        {
+            "kind": "method",
+            "name": "connect"
+        },
+        {
+            "kind": "method",
+            "name": "disconnect"
+        },
+        {
+            "kind": "method",
+            "name": "get_fd"
+        },
+        {
+            "kind": "method",
+            "name": "is_cancelled"
+        },
+        {
+            "kind": "method",
+            "name": "make_pollfd"
+        },
+        {
+            "kind": "method",
+            "name": "pop_current"
+        },
+        {
+            "kind": "method",
+            "name": "push_current"
+        },
+        {
+            "kind": "method",
+            "name": "release_fd"
+        },
+        {
+            "kind": "method",
+            "name": "reset"
+        },
+        {
+            "kind": "method",
+            "name": "set_error_if_cancelled"
+        },
+        {
+            "kind": "method",
+            "name": "source_new"
+        }
+    ],
+    "name": "Cancellable"
+}

@@ -1,0 +1,23 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_level"
+        },
+        {
+            "kind": "method",
+            "name": "get_msg_type"
+        },
+        {
+            "kind": "method",
+            "name": "get_size"
+        },
+        {
+            "kind": "method",
+            "name": "serialize"
+        }
+    ],
+    "name": "SocketControlMessage"
+}

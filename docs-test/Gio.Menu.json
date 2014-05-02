@@ -1,0 +1,72 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "append"
+        },
+        {
+            "kind": "method",
+            "name": "append_item"
+        },
+        {
+            "kind": "method",
+            "name": "append_section"
+        },
+        {
+            "kind": "method",
+            "name": "append_submenu"
+        },
+        {
+            "kind": "method",
+            "name": "freeze"
+        },
+        {
+            "kind": "method",
+            "name": "insert"
+        },
+        {
+            "kind": "method",
+            "name": "insert_item"
+        },
+        {
+            "kind": "method",
+            "name": "insert_section"
+        },
+        {
+            "kind": "method",
+            "name": "insert_submenu"
+        },
+        {
+            "kind": "method",
+            "name": "prepend"
+        },
+        {
+            "kind": "method",
+            "name": "prepend_item"
+        },
+        {
+            "kind": "method",
+            "name": "prepend_section"
+        },
+        {
+            "kind": "method",
+            "name": "prepend_submenu"
+        },
+        {
+            "kind": "method",
+            "name": "remove"
+        },
+        {
+            "kind": "method",
+            "name": "remove_all"
+        }
+    ],
+    "name": "Menu"
+}

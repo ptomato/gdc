@@ -1,0 +1,51 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "close"
+        },
+        {
+            "kind": "method",
+            "name": "close_async"
+        },
+        {
+            "kind": "method",
+            "name": "close_finish"
+        },
+        {
+            "kind": "method",
+            "name": "get_child"
+        },
+        {
+            "kind": "method",
+            "name": "get_container"
+        },
+        {
+            "kind": "method",
+            "name": "has_pending"
+        },
+        {
+            "kind": "method",
+            "name": "is_closed"
+        },
+        {
+            "kind": "method",
+            "name": "next_file"
+        },
+        {
+            "kind": "method",
+            "name": "next_files_async"
+        },
+        {
+            "kind": "method",
+            "name": "next_files_finish"
+        },
+        {
+            "kind": "method",
+            "name": "set_pending"
+        }
+    ],
+    "name": "FileEnumerator"
+}

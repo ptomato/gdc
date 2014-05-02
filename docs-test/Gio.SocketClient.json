@@ -1,0 +1,136 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "add_application_proxy"
+        },
+        {
+            "kind": "method",
+            "name": "connect"
+        },
+        {
+            "kind": "method",
+            "name": "connect_async"
+        },
+        {
+            "kind": "method",
+            "name": "connect_finish"
+        },
+        {
+            "kind": "method",
+            "name": "connect_to_host"
+        },
+        {
+            "kind": "method",
+            "name": "connect_to_host_async"
+        },
+        {
+            "kind": "method",
+            "name": "connect_to_host_finish"
+        },
+        {
+            "kind": "method",
+            "name": "connect_to_service"
+        },
+        {
+            "kind": "method",
+            "name": "connect_to_service_async"
+        },
+        {
+            "kind": "method",
+            "name": "connect_to_service_finish"
+        },
+        {
+            "kind": "method",
+            "name": "connect_to_uri"
+        },
+        {
+            "kind": "method",
+            "name": "connect_to_uri_async"
+        },
+        {
+            "kind": "method",
+            "name": "connect_to_uri_finish"
+        },
+        {
+            "kind": "method",
+            "name": "get_enable_proxy"
+        },
+        {
+            "kind": "method",
+            "name": "get_family"
+        },
+        {
+            "kind": "method",
+            "name": "get_local_address"
+        },
+        {
+            "kind": "method",
+            "name": "get_protocol"
+        },
+        {
+            "kind": "method",
+            "name": "get_proxy_resolver"
+        },
+        {
+            "kind": "method",
+            "name": "get_socket_type"
+        },
+        {
+            "kind": "method",
+            "name": "get_timeout"
+        },
+        {
+            "kind": "method",
+            "name": "get_tls"
+        },
+        {
+            "kind": "method",
+            "name": "get_tls_validation_flags"
+        },
+        {
+            "kind": "method",
+            "name": "set_enable_proxy"
+        },
+        {
+            "kind": "method",
+            "name": "set_family"
+        },
+        {
+            "kind": "method",
+            "name": "set_local_address"
+        },
+        {
+            "kind": "method",
+            "name": "set_protocol"
+        },
+        {
+            "kind": "method",
+            "name": "set_proxy_resolver"
+        },
+        {
+            "kind": "method",
+            "name": "set_socket_type"
+        },
+        {
+            "kind": "method",
+            "name": "set_timeout"
+        },
+        {
+            "kind": "method",
+            "name": "set_tls"
+        },
+        {
+            "kind": "method",
+            "name": "set_tls_validation_flags"
+        }
+    ],
+    "name": "SocketClient"
+}

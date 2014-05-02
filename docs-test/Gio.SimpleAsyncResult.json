@@ -1,0 +1,92 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_error"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_from_error"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_take_error"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "complete"
+        },
+        {
+            "kind": "method",
+            "name": "complete_in_idle"
+        },
+        {
+            "kind": "method",
+            "name": "get_op_res_gboolean"
+        },
+        {
+            "kind": "method",
+            "name": "get_op_res_gpointer"
+        },
+        {
+            "kind": "method",
+            "name": "get_op_res_gssize"
+        },
+        {
+            "kind": "method",
+            "name": "get_source_tag"
+        },
+        {
+            "kind": "method",
+            "name": "propagate_error"
+        },
+        {
+            "kind": "method",
+            "name": "run_in_thread"
+        },
+        {
+            "kind": "method",
+            "name": "set_check_cancellable"
+        },
+        {
+            "kind": "method",
+            "name": "set_error"
+        },
+        {
+            "kind": "method",
+            "name": "set_error_va"
+        },
+        {
+            "kind": "method",
+            "name": "set_from_error"
+        },
+        {
+            "kind": "method",
+            "name": "set_handle_cancellation"
+        },
+        {
+            "kind": "method",
+            "name": "set_op_res_gboolean"
+        },
+        {
+            "kind": "method",
+            "name": "set_op_res_gpointer"
+        },
+        {
+            "kind": "method",
+            "name": "set_op_res_gssize"
+        },
+        {
+            "kind": "method",
+            "name": "take_error"
+        }
+    ],
+    "name": "SimpleAsyncResult"
+}

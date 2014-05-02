@@ -1,0 +1,28 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_from_bytes"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_from_data"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "add_bytes"
+        },
+        {
+            "kind": "method",
+            "name": "add_data"
+        }
+    ],
+    "name": "MemoryInputStream"
+}

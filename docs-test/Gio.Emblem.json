@@ -1,0 +1,24 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_with_origin"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_icon"
+        },
+        {
+            "kind": "method",
+            "name": "get_origin"
+        }
+    ],
+    "name": "Emblem"
+}

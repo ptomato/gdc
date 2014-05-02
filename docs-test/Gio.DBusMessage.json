@@ -1,0 +1,200 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_from_blob"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_method_call"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_signal"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "copy"
+        },
+        {
+            "kind": "method",
+            "name": "get_arg0"
+        },
+        {
+            "kind": "method",
+            "name": "get_body"
+        },
+        {
+            "kind": "method",
+            "name": "get_byte_order"
+        },
+        {
+            "kind": "method",
+            "name": "get_destination"
+        },
+        {
+            "kind": "method",
+            "name": "get_error_name"
+        },
+        {
+            "kind": "method",
+            "name": "get_flags"
+        },
+        {
+            "kind": "method",
+            "name": "get_header"
+        },
+        {
+            "kind": "method",
+            "name": "get_header_fields"
+        },
+        {
+            "kind": "method",
+            "name": "get_interface"
+        },
+        {
+            "kind": "method",
+            "name": "get_locked"
+        },
+        {
+            "kind": "method",
+            "name": "get_member"
+        },
+        {
+            "kind": "method",
+            "name": "get_message_type"
+        },
+        {
+            "kind": "method",
+            "name": "get_num_unix_fds"
+        },
+        {
+            "kind": "method",
+            "name": "get_path"
+        },
+        {
+            "kind": "method",
+            "name": "get_reply_serial"
+        },
+        {
+            "kind": "method",
+            "name": "get_sender"
+        },
+        {
+            "kind": "method",
+            "name": "get_serial"
+        },
+        {
+            "kind": "method",
+            "name": "get_signature"
+        },
+        {
+            "kind": "method",
+            "name": "get_unix_fd_list"
+        },
+        {
+            "kind": "method",
+            "name": "lock"
+        },
+        {
+            "kind": "method",
+            "name": "new_method_error"
+        },
+        {
+            "kind": "method",
+            "name": "new_method_error_literal"
+        },
+        {
+            "kind": "method",
+            "name": "new_method_error_valist"
+        },
+        {
+            "kind": "method",
+            "name": "new_method_reply"
+        },
+        {
+            "kind": "method",
+            "name": "print"
+        },
+        {
+            "kind": "method",
+            "name": "set_body"
+        },
+        {
+            "kind": "method",
+            "name": "set_byte_order"
+        },
+        {
+            "kind": "method",
+            "name": "set_destination"
+        },
+        {
+            "kind": "method",
+            "name": "set_error_name"
+        },
+        {
+            "kind": "method",
+            "name": "set_flags"
+        },
+        {
+            "kind": "method",
+            "name": "set_header"
+        },
+        {
+            "kind": "method",
+            "name": "set_interface"
+        },
+        {
+            "kind": "method",
+            "name": "set_member"
+        },
+        {
+            "kind": "method",
+            "name": "set_message_type"
+        },
+        {
+            "kind": "method",
+            "name": "set_num_unix_fds"
+        },
+        {
+            "kind": "method",
+            "name": "set_path"
+        },
+        {
+            "kind": "method",
+            "name": "set_reply_serial"
+        },
+        {
+            "kind": "method",
+            "name": "set_sender"
+        },
+        {
+            "kind": "method",
+            "name": "set_serial"
+        },
+        {
+            "kind": "method",
+            "name": "set_signature"
+        },
+        {
+            "kind": "method",
+            "name": "set_unix_fd_list"
+        },
+        {
+            "kind": "method",
+            "name": "to_blob"
+        },
+        {
+            "kind": "method",
+            "name": "to_gerror"
+        }
+    ],
+    "name": "DBusMessage"
+}

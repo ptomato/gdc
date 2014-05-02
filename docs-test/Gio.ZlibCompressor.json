@@ -1,0 +1,20 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_file_info"
+        },
+        {
+            "kind": "method",
+            "name": "set_file_info"
+        }
+    ],
+    "name": "ZlibCompressor"
+}

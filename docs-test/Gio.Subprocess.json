@@ -1,0 +1,112 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        },
+        {
+            "kind": "constructor",
+            "name": "newv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "communicate"
+        },
+        {
+            "kind": "method",
+            "name": "communicate_async"
+        },
+        {
+            "kind": "method",
+            "name": "communicate_finish"
+        },
+        {
+            "kind": "method",
+            "name": "communicate_utf8"
+        },
+        {
+            "kind": "method",
+            "name": "communicate_utf8_async"
+        },
+        {
+            "kind": "method",
+            "name": "communicate_utf8_finish"
+        },
+        {
+            "kind": "method",
+            "name": "force_exit"
+        },
+        {
+            "kind": "method",
+            "name": "get_exit_status"
+        },
+        {
+            "kind": "method",
+            "name": "get_identifier"
+        },
+        {
+            "kind": "method",
+            "name": "get_if_exited"
+        },
+        {
+            "kind": "method",
+            "name": "get_if_signaled"
+        },
+        {
+            "kind": "method",
+            "name": "get_status"
+        },
+        {
+            "kind": "method",
+            "name": "get_stderr_pipe"
+        },
+        {
+            "kind": "method",
+            "name": "get_stdin_pipe"
+        },
+        {
+            "kind": "method",
+            "name": "get_stdout_pipe"
+        },
+        {
+            "kind": "method",
+            "name": "get_successful"
+        },
+        {
+            "kind": "method",
+            "name": "get_term_sig"
+        },
+        {
+            "kind": "method",
+            "name": "send_signal"
+        },
+        {
+            "kind": "method",
+            "name": "wait"
+        },
+        {
+            "kind": "method",
+            "name": "wait_async"
+        },
+        {
+            "kind": "method",
+            "name": "wait_check"
+        },
+        {
+            "kind": "method",
+            "name": "wait_check_async"
+        },
+        {
+            "kind": "method",
+            "name": "wait_check_finish"
+        },
+        {
+            "kind": "method",
+            "name": "wait_finish"
+        }
+    ],
+    "name": "Subprocess"
+}

@@ -1,0 +1,36 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_resizable"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_data"
+        },
+        {
+            "kind": "method",
+            "name": "get_data_size"
+        },
+        {
+            "kind": "method",
+            "name": "get_size"
+        },
+        {
+            "kind": "method",
+            "name": "steal_as_bytes"
+        },
+        {
+            "kind": "method",
+            "name": "steal_data"
+        }
+    ],
+    "name": "MemoryOutputStream"
+}

@@ -1,0 +1,116 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "attach_source"
+        },
+        {
+            "kind": "method",
+            "name": "get_cancellable"
+        },
+        {
+            "kind": "method",
+            "name": "get_check_cancellable"
+        },
+        {
+            "kind": "method",
+            "name": "get_context"
+        },
+        {
+            "kind": "method",
+            "name": "get_priority"
+        },
+        {
+            "kind": "method",
+            "name": "get_return_on_cancel"
+        },
+        {
+            "kind": "method",
+            "name": "get_source_object"
+        },
+        {
+            "kind": "method",
+            "name": "get_source_tag"
+        },
+        {
+            "kind": "method",
+            "name": "get_task_data"
+        },
+        {
+            "kind": "method",
+            "name": "had_error"
+        },
+        {
+            "kind": "method",
+            "name": "propagate_boolean"
+        },
+        {
+            "kind": "method",
+            "name": "propagate_int"
+        },
+        {
+            "kind": "method",
+            "name": "propagate_pointer"
+        },
+        {
+            "kind": "method",
+            "name": "return_boolean"
+        },
+        {
+            "kind": "method",
+            "name": "return_error"
+        },
+        {
+            "kind": "method",
+            "name": "return_error_if_cancelled"
+        },
+        {
+            "kind": "method",
+            "name": "return_int"
+        },
+        {
+            "kind": "method",
+            "name": "return_new_error"
+        },
+        {
+            "kind": "method",
+            "name": "return_pointer"
+        },
+        {
+            "kind": "method",
+            "name": "run_in_thread"
+        },
+        {
+            "kind": "method",
+            "name": "run_in_thread_sync"
+        },
+        {
+            "kind": "method",
+            "name": "set_check_cancellable"
+        },
+        {
+            "kind": "method",
+            "name": "set_priority"
+        },
+        {
+            "kind": "method",
+            "name": "set_return_on_cancel"
+        },
+        {
+            "kind": "method",
+            "name": "set_source_tag"
+        },
+        {
+            "kind": "method",
+            "name": "set_task_data"
+        }
+    ],
+    "name": "Task"
+}

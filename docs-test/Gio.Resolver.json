@@ -1,0 +1,59 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "lookup_by_address"
+        },
+        {
+            "kind": "method",
+            "name": "lookup_by_address_async"
+        },
+        {
+            "kind": "method",
+            "name": "lookup_by_address_finish"
+        },
+        {
+            "kind": "method",
+            "name": "lookup_by_name"
+        },
+        {
+            "kind": "method",
+            "name": "lookup_by_name_async"
+        },
+        {
+            "kind": "method",
+            "name": "lookup_by_name_finish"
+        },
+        {
+            "kind": "method",
+            "name": "lookup_records"
+        },
+        {
+            "kind": "method",
+            "name": "lookup_records_async"
+        },
+        {
+            "kind": "method",
+            "name": "lookup_records_finish"
+        },
+        {
+            "kind": "method",
+            "name": "lookup_service"
+        },
+        {
+            "kind": "method",
+            "name": "lookup_service_async"
+        },
+        {
+            "kind": "method",
+            "name": "lookup_service_finish"
+        },
+        {
+            "kind": "method",
+            "name": "set_default"
+        }
+    ],
+    "name": "Resolver"
+}

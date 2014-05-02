@@ -1,0 +1,15 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_graceful_disconnect"
+        },
+        {
+            "kind": "method",
+            "name": "set_graceful_disconnect"
+        }
+    ],
+    "name": "TcpConnection"
+}

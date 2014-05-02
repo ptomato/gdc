@@ -1,0 +1,35 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "connect"
+        },
+        {
+            "kind": "method",
+            "name": "connect_async"
+        },
+        {
+            "kind": "method",
+            "name": "connect_finish"
+        },
+        {
+            "kind": "method",
+            "name": "get_local_address"
+        },
+        {
+            "kind": "method",
+            "name": "get_remote_address"
+        },
+        {
+            "kind": "method",
+            "name": "get_socket"
+        },
+        {
+            "kind": "method",
+            "name": "is_connected"
+        }
+    ],
+    "name": "SocketConnection"
+}

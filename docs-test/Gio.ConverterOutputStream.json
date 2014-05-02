@@ -1,0 +1,16 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_converter"
+        }
+    ],
+    "name": "ConverterOutputStream"
+}

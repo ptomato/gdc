@@ -1,0 +1,20 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "load"
+        },
+        {
+            "kind": "method",
+            "name": "unload"
+        }
+    ],
+    "name": "IOModule"
+}

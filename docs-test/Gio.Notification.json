@@ -1,0 +1,52 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "add_button"
+        },
+        {
+            "kind": "method",
+            "name": "add_button_with_target"
+        },
+        {
+            "kind": "method",
+            "name": "add_button_with_target_value"
+        },
+        {
+            "kind": "method",
+            "name": "set_body"
+        },
+        {
+            "kind": "method",
+            "name": "set_default_action"
+        },
+        {
+            "kind": "method",
+            "name": "set_default_action_and_target"
+        },
+        {
+            "kind": "method",
+            "name": "set_default_action_and_target_value"
+        },
+        {
+            "kind": "method",
+            "name": "set_icon"
+        },
+        {
+            "kind": "method",
+            "name": "set_title"
+        },
+        {
+            "kind": "method",
+            "name": "set_urgent"
+        }
+    ],
+    "name": "Notification"
+}

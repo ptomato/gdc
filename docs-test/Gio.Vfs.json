@@ -1,0 +1,27 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_file_for_path"
+        },
+        {
+            "kind": "method",
+            "name": "get_file_for_uri"
+        },
+        {
+            "kind": "method",
+            "name": "get_supported_uri_schemes"
+        },
+        {
+            "kind": "method",
+            "name": "is_active"
+        },
+        {
+            "kind": "method",
+            "name": "parse_name"
+        }
+    ],
+    "name": "Vfs"
+}

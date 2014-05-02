@@ -1,0 +1,99 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "clear_pending"
+        },
+        {
+            "kind": "method",
+            "name": "close"
+        },
+        {
+            "kind": "method",
+            "name": "close_async"
+        },
+        {
+            "kind": "method",
+            "name": "close_finish"
+        },
+        {
+            "kind": "method",
+            "name": "flush"
+        },
+        {
+            "kind": "method",
+            "name": "flush_async"
+        },
+        {
+            "kind": "method",
+            "name": "flush_finish"
+        },
+        {
+            "kind": "method",
+            "name": "has_pending"
+        },
+        {
+            "kind": "method",
+            "name": "is_closed"
+        },
+        {
+            "kind": "method",
+            "name": "is_closing"
+        },
+        {
+            "kind": "method",
+            "name": "printf"
+        },
+        {
+            "kind": "method",
+            "name": "set_pending"
+        },
+        {
+            "kind": "method",
+            "name": "splice"
+        },
+        {
+            "kind": "method",
+            "name": "splice_async"
+        },
+        {
+            "kind": "method",
+            "name": "splice_finish"
+        },
+        {
+            "kind": "method",
+            "name": "vprintf"
+        },
+        {
+            "kind": "method",
+            "name": "write"
+        },
+        {
+            "kind": "method",
+            "name": "write_all"
+        },
+        {
+            "kind": "method",
+            "name": "write_async"
+        },
+        {
+            "kind": "method",
+            "name": "write_bytes"
+        },
+        {
+            "kind": "method",
+            "name": "write_bytes_async"
+        },
+        {
+            "kind": "method",
+            "name": "write_bytes_finish"
+        },
+        {
+            "kind": "method",
+            "name": "write_finish"
+        }
+    ],
+    "name": "OutputStream"
+}

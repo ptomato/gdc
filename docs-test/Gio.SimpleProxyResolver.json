@@ -1,0 +1,19 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "set_default_proxy"
+        },
+        {
+            "kind": "method",
+            "name": "set_ignore_hosts"
+        },
+        {
+            "kind": "method",
+            "name": "set_uri_proxy"
+        }
+    ],
+    "name": "SimpleProxyResolver"
+}

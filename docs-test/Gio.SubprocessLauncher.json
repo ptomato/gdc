@@ -1,0 +1,76 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "getenv"
+        },
+        {
+            "kind": "method",
+            "name": "set_child_setup"
+        },
+        {
+            "kind": "method",
+            "name": "set_cwd"
+        },
+        {
+            "kind": "method",
+            "name": "set_environ"
+        },
+        {
+            "kind": "method",
+            "name": "set_flags"
+        },
+        {
+            "kind": "method",
+            "name": "set_stderr_file_path"
+        },
+        {
+            "kind": "method",
+            "name": "set_stdin_file_path"
+        },
+        {
+            "kind": "method",
+            "name": "set_stdout_file_path"
+        },
+        {
+            "kind": "method",
+            "name": "setenv"
+        },
+        {
+            "kind": "method",
+            "name": "spawn"
+        },
+        {
+            "kind": "method",
+            "name": "spawnv"
+        },
+        {
+            "kind": "method",
+            "name": "take_fd"
+        },
+        {
+            "kind": "method",
+            "name": "take_stderr_fd"
+        },
+        {
+            "kind": "method",
+            "name": "take_stdin_fd"
+        },
+        {
+            "kind": "method",
+            "name": "take_stdout_fd"
+        },
+        {
+            "kind": "method",
+            "name": "unsetenv"
+        }
+    ],
+    "name": "SubprocessLauncher"
+}

@@ -1,0 +1,24 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new_from_native"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_family"
+        },
+        {
+            "kind": "method",
+            "name": "get_native_size"
+        },
+        {
+            "kind": "method",
+            "name": "to_native"
+        }
+    ],
+    "name": "SocketAddress"
+}

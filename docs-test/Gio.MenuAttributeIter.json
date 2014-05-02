@@ -1,0 +1,23 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_name"
+        },
+        {
+            "kind": "method",
+            "name": "get_next"
+        },
+        {
+            "kind": "method",
+            "name": "get_value"
+        },
+        {
+            "kind": "method",
+            "name": "next"
+        }
+    ],
+    "name": "MenuAttributeIter"
+}

@@ -1,0 +1,220 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_from_fd"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "accept"
+        },
+        {
+            "kind": "method",
+            "name": "bind"
+        },
+        {
+            "kind": "method",
+            "name": "check_connect_result"
+        },
+        {
+            "kind": "method",
+            "name": "close"
+        },
+        {
+            "kind": "method",
+            "name": "condition_check"
+        },
+        {
+            "kind": "method",
+            "name": "condition_timed_wait"
+        },
+        {
+            "kind": "method",
+            "name": "condition_wait"
+        },
+        {
+            "kind": "method",
+            "name": "connect"
+        },
+        {
+            "kind": "method",
+            "name": "connection_factory_create_connection"
+        },
+        {
+            "kind": "method",
+            "name": "create_source"
+        },
+        {
+            "kind": "method",
+            "name": "get_available_bytes"
+        },
+        {
+            "kind": "method",
+            "name": "get_blocking"
+        },
+        {
+            "kind": "method",
+            "name": "get_broadcast"
+        },
+        {
+            "kind": "method",
+            "name": "get_credentials"
+        },
+        {
+            "kind": "method",
+            "name": "get_family"
+        },
+        {
+            "kind": "method",
+            "name": "get_fd"
+        },
+        {
+            "kind": "method",
+            "name": "get_keepalive"
+        },
+        {
+            "kind": "method",
+            "name": "get_listen_backlog"
+        },
+        {
+            "kind": "method",
+            "name": "get_local_address"
+        },
+        {
+            "kind": "method",
+            "name": "get_multicast_loopback"
+        },
+        {
+            "kind": "method",
+            "name": "get_multicast_ttl"
+        },
+        {
+            "kind": "method",
+            "name": "get_option"
+        },
+        {
+            "kind": "method",
+            "name": "get_protocol"
+        },
+        {
+            "kind": "method",
+            "name": "get_remote_address"
+        },
+        {
+            "kind": "method",
+            "name": "get_socket_type"
+        },
+        {
+            "kind": "method",
+            "name": "get_timeout"
+        },
+        {
+            "kind": "method",
+            "name": "get_ttl"
+        },
+        {
+            "kind": "method",
+            "name": "is_closed"
+        },
+        {
+            "kind": "method",
+            "name": "is_connected"
+        },
+        {
+            "kind": "method",
+            "name": "join_multicast_group"
+        },
+        {
+            "kind": "method",
+            "name": "leave_multicast_group"
+        },
+        {
+            "kind": "method",
+            "name": "listen"
+        },
+        {
+            "kind": "method",
+            "name": "receive"
+        },
+        {
+            "kind": "method",
+            "name": "receive_from"
+        },
+        {
+            "kind": "method",
+            "name": "receive_message"
+        },
+        {
+            "kind": "method",
+            "name": "receive_with_blocking"
+        },
+        {
+            "kind": "method",
+            "name": "send"
+        },
+        {
+            "kind": "method",
+            "name": "send_message"
+        },
+        {
+            "kind": "method",
+            "name": "send_to"
+        },
+        {
+            "kind": "method",
+            "name": "send_with_blocking"
+        },
+        {
+            "kind": "method",
+            "name": "set_blocking"
+        },
+        {
+            "kind": "method",
+            "name": "set_broadcast"
+        },
+        {
+            "kind": "method",
+            "name": "set_keepalive"
+        },
+        {
+            "kind": "method",
+            "name": "set_listen_backlog"
+        },
+        {
+            "kind": "method",
+            "name": "set_multicast_loopback"
+        },
+        {
+            "kind": "method",
+            "name": "set_multicast_ttl"
+        },
+        {
+            "kind": "method",
+            "name": "set_option"
+        },
+        {
+            "kind": "method",
+            "name": "set_timeout"
+        },
+        {
+            "kind": "method",
+            "name": "set_ttl"
+        },
+        {
+            "kind": "method",
+            "name": "shutdown"
+        },
+        {
+            "kind": "method",
+            "name": "speaks_ipv4"
+        }
+    ],
+    "name": "Socket"
+}

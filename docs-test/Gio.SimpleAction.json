@@ -1,0 +1,24 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        },
+        {
+            "kind": "constructor",
+            "name": "new_stateful"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "set_enabled"
+        },
+        {
+            "kind": "method",
+            "name": "set_state"
+        }
+    ],
+    "name": "SimpleAction"
+}

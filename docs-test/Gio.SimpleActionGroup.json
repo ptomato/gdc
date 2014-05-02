@@ -1,0 +1,28 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "add_entries"
+        },
+        {
+            "kind": "method",
+            "name": "insert"
+        },
+        {
+            "kind": "method",
+            "name": "lookup"
+        },
+        {
+            "kind": "method",
+            "name": "remove"
+        }
+    ],
+    "name": "SimpleActionGroup"
+}

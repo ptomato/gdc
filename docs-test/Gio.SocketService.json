@@ -1,0 +1,24 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "is_active"
+        },
+        {
+            "kind": "method",
+            "name": "start"
+        },
+        {
+            "kind": "method",
+            "name": "stop"
+        }
+    ],
+    "name": "SocketService"
+}

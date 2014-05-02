@@ -1,0 +1,75 @@
+{
+    "constructors": [],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "clear_pending"
+        },
+        {
+            "kind": "method",
+            "name": "close"
+        },
+        {
+            "kind": "method",
+            "name": "close_async"
+        },
+        {
+            "kind": "method",
+            "name": "close_finish"
+        },
+        {
+            "kind": "method",
+            "name": "has_pending"
+        },
+        {
+            "kind": "method",
+            "name": "is_closed"
+        },
+        {
+            "kind": "method",
+            "name": "read"
+        },
+        {
+            "kind": "method",
+            "name": "read_all"
+        },
+        {
+            "kind": "method",
+            "name": "read_async"
+        },
+        {
+            "kind": "method",
+            "name": "read_bytes"
+        },
+        {
+            "kind": "method",
+            "name": "read_bytes_async"
+        },
+        {
+            "kind": "method",
+            "name": "read_bytes_finish"
+        },
+        {
+            "kind": "method",
+            "name": "read_finish"
+        },
+        {
+            "kind": "method",
+            "name": "set_pending"
+        },
+        {
+            "kind": "method",
+            "name": "skip"
+        },
+        {
+            "kind": "method",
+            "name": "skip_async"
+        },
+        {
+            "kind": "method",
+            "name": "skip_finish"
+        }
+    ],
+    "name": "InputStream"
+}

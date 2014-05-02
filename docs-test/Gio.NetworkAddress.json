@@ -1,0 +1,24 @@
+{
+    "constructors": [
+        {
+            "kind": "constructor",
+            "name": "new"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "kind": "method",
+            "name": "get_hostname"
+        },
+        {
+            "kind": "method",
+            "name": "get_port"
+        },
+        {
+            "kind": "method",
+            "name": "get_scheme"
+        }
+    ],
+    "name": "NetworkAddress"
+}
