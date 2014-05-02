@@ -1,0 +1,170 @@
+{
+    "constructors": [],
+    "doc": "<p>Deprecated</p>",
+    "fields": [
+        {
+            "doc": "<p>quark-ified type identifier</p>",
+            "kind": "field",
+            "name": "type_name"
+        },
+        {
+            "doc": "<p>quark-ified property identifier like\n  \u201cGtkScrollbar::spacing\u201d</p>",
+            "kind": "field",
+            "name": "property_name"
+        },
+        {
+            "doc": "<p>field similar to one found in <span data-xref=\"Gtk.SettingsValue\"/></p>",
+            "kind": "field",
+            "name": "origin"
+        },
+        {
+            "doc": "<p>field similar to one found in <span data-xref=\"Gtk.SettingsValue\"/></p>",
+            "kind": "field",
+            "name": "value"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>A <span data-xref=\"Gtk.RcPropertyParser\"/> for use with <span data-xref=\"Gtk.Settings.install_property_parser\"/>\nor <span data-xref=\"Gtk.WidgetClass.install_style_property_parser\"/> which parses\nborders in the form\n<code>\"{ left, right, top, bottom }\"</code> for integers\nleft, right, top and bottom.</p>",
+            "kind": "function",
+            "name": "parse_border",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gstring",
+                    "direction": "in",
+                    "type": "GLib.String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_value",
+                    "direction": "in",
+                    "type": "Any"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>A <span data-xref=\"Gtk.RcPropertyParser\"/> for use with <span data-xref=\"Gtk.Settings.install_property_parser\"/>\nor <span data-xref=\"Gtk.WidgetClass.install_style_property_parser\"/> which parses a\ncolor given either by its name or in the form\n<code>{ red, green, blue }</code> where red, green and\nblue are integers between 0 and 65535 or floating-point numbers\nbetween 0 and 1.</p>",
+            "kind": "function",
+            "name": "parse_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gstring",
+                    "direction": "in",
+                    "type": "GLib.String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_value",
+                    "direction": "in",
+                    "type": "Any"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>A <span data-xref=\"Gtk.RcPropertyParser\"/> for use with <span data-xref=\"Gtk.Settings.install_property_parser\"/>\nor <span data-xref=\"Gtk.WidgetClass.install_style_property_parser\"/> which parses a single\nenumeration value.</p><p>The enumeration value can be specified by its name, its nickname or\nits numeric value. For consistency with flags parsing, the value\nmay be surrounded by parentheses.</p>",
+            "kind": "function",
+            "name": "parse_enum",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gstring",
+                    "direction": "in",
+                    "type": "GLib.String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_value",
+                    "direction": "in",
+                    "type": "Any"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>A <span data-xref=\"Gtk.RcPropertyParser\"/> for use with <span data-xref=\"Gtk.Settings.install_property_parser\"/>\nor <span data-xref=\"Gtk.WidgetClass.install_style_property_parser\"/> which parses flags.</p><p>Flags can be specified by their name, their nickname or\nnumerically. Multiple flags can be specified in the form\n<code>\"( flag1 | flag2 | ... )\"</code>.</p>",
+            "kind": "function",
+            "name": "parse_flags",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gstring",
+                    "direction": "in",
+                    "type": "GLib.String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_value",
+                    "direction": "in",
+                    "type": "Any"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>A <span data-xref=\"Gtk.RcPropertyParser\"/> for use with <span data-xref=\"Gtk.Settings.install_property_parser\"/>\nor <span data-xref=\"Gtk.WidgetClass.install_style_property_parser\"/> which parses a\nrequisition in the form\n<code>\"{ width, height }\"</code> for integers %width and %height.</p>",
+            "kind": "function",
+            "name": "parse_requisition",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gstring",
+                    "direction": "in",
+                    "type": "GLib.String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_value",
+                    "direction": "in",
+                    "type": "Any"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ],
+    "name": "RcProperty"
+}

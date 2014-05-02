@@ -1,30 +1,17 @@
 {
     "constructors": [],
     "doc": "<p>The <span data-xref=\"Gtk.Bin\"/> widget is a container with just one child.\nIt is not very useful itself, but it is useful for deriving subclasses,\nsince it provides common code needed for handling a single child widget.</p><p>Many GTK+ widgets are subclasses of <span data-xref=\"Gtk.Bin\"/>, including <span data-xref=\"Gtk.Window\"/>,\n<span data-xref=\"Gtk.Button\"/>, <span data-xref=\"Gtk.Frame\"/>, <span data-xref=\"Gtk.HandleBox\"/> or <span data-xref=\"Gtk.ScrolledWindow\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "container"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Gets the child of the <span data-xref=\"Gtk.Bin\"/>, or <code>null</code> if the bin contains\nno child widget. The returned widget does not have a reference\nadded, so you do not need to unref it.</p>",
+            "doc": "<p>Gets the child of the <span data-xref=\"Gtk.Bin\"/>, or <pre>null</pre> if the bin contains\nno child widget. The returned widget does not have a reference\nadded, so you do not need to unref it.</p>",
             "kind": "method",
             "name": "get_child",
             "parameters": [],
             "retval": {
                 "type": "Gtk.Widget"
             }
-        },
-        []
+        }
     ],
     "name": "Bin",
     "properties": [],

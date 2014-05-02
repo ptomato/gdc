@@ -11,17 +11,8 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.VolumeButton\"/> is a subclass of <span data-xref=\"Gtk.ScaleButton\"/> that has\nbeen tailored for use as a volume control widget with suitable\nicons, tooltips and accessible labels.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "VolumeButton",
     "properties": [
         {

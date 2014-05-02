@@ -1,0 +1,32 @@
+{
+    "doc": "<p>The type of message being displayed in the dialog.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Informational message</p>",
+            "kind": "default",
+            "name": "info"
+        },
+        {
+            "doc": "<p>Non-fatal warning message</p>",
+            "kind": "default",
+            "name": "warning"
+        },
+        {
+            "doc": "<p>Question requiring a choice</p>",
+            "kind": "default",
+            "name": "question"
+        },
+        {
+            "doc": "<p>Fatal error message</p>",
+            "kind": "default",
+            "name": "error"
+        },
+        {
+            "doc": "<p>None of the above, doesn\u2019t get an icon</p>",
+            "kind": "default",
+            "name": "other"
+        }
+    ],
+    "name": "MessageType"
+}

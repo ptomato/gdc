@@ -10,23 +10,11 @@
             }
         }
     ],
-    "doc": "<p>Browse the available stock icons using\nthe \u201cgtk3-demo\u201d application.</p><p>An icon factory manages a collection of <span data-xref=\"Gtk.IconSet\"/>; a <span data-xref=\"Gtk.IconSet\"/> manages a\nset of variants of a particular icon (i.e. a <span data-xref=\"Gtk.IconSet\"/> contains variants for\ndifferent sizes and widget states). Icons in an icon factory are named by a\nstock ID, which is a simple string identifying the icon. Each <span data-xref=\"Gtk.Style\"/> has a\nlist of <span data-xref=\"Gtk.IconFactory\"/> derived from the current theme; those icon factories\nare consulted first when searching for an icon. If the theme doesn\u2019t set a\nparticular icon, GTK+ looks for the icon in a list of default icon factories,\nmaintained by <span data-xref=\"Gtk.IconFactory.add_default\"/> and\n<span data-xref=\"Gtk.IconFactory.remove_default\"/>. Applications with icons should add a default\nicon factory with their icons, which will allow themes to override the icons\nfor the application.</p><p>To display an icon, always use <span data-xref=\"Gtk.Style.lookup_icon_set\"/> on the widget that\nwill display the icon, or the convenience function\n<span data-xref=\"Gtk.Widget.render_icon\"/>. These functions take the theme into account when\nlooking up the icon to use for a given stock ID.</p><h1>GtkIconFactory as GtkBuildable # {<span data-xref=\"Gtk.IconFactory\"/>-BUILDER-UI}</h1><p>GtkIconFactory supports a custom &lt;sources&gt; element, which can contain\nmultiple &lt;source&gt; elements. The following attributes are allowed:</p><ul>\n<li>stock-id</li>\n</ul><pre><code>The stock id of the source, a string. This attribute is\nmandatory\n</code></pre><ul>\n<li>filename</li>\n</ul><pre><code>The filename of the source, a string.  This attribute is\noptional\n</code></pre><ul>\n<li>icon-name</li>\n</ul><pre><code>The icon name for the source, a string.  This attribute is\noptional.\n</code></pre><ul>\n<li>size</li>\n</ul><pre><code>Size of the icon, a &lt;span data-xref=\"Gtk.IconSize\"/&gt; enum value.  This attribute is\noptional.\n</code></pre><ul>\n<li>direction</li>\n</ul><pre><code>Direction of the source, a &lt;span data-xref=\"Gtk.TextDirection\"/&gt; enum value.  This\nattribute is optional.\n</code></pre><ul>\n<li>state</li>\n</ul><pre><code>State of the source, a &lt;span data-xref=\"Gtk.StateType\"/&gt; enum value.  This\nattribute is optional.\n</code></pre><h2>A <span data-xref=\"Gtk.IconFactory\"/> UI definition fragment.</h2><p>|[\n&lt;object class=\"GtkIconFactory\" id=\"iconfactory1\"&gt;\n  &lt;sources&gt;\n    &lt;source stock-id=\"apple-red\" filename=\"apple-red.png\"/&gt;\n  &lt;/sources&gt;\n&lt;/object&gt;\n&lt;object class=\"GtkWindow\" id=\"window1\"&gt;\n  &lt;child&gt;\n    &lt;object class=\"GtkButton\" id=\"apple_button\"&gt;\n      &lt;property name=\"label\"&gt;apple-red&lt;/property&gt;\n      &lt;property name=\"use-stock\"&gt;True&lt;/property&gt;\n    &lt;/object&gt;\n  &lt;/child&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>Browse the available stock icons using\nthe \u201cgtk3-demo\u201d application.</p><p>An icon factory manages a collection of <span data-xref=\"Gtk.IconSet\"/>; a <span data-xref=\"Gtk.IconSet\"/> manages a\nset of variants of a particular icon (i.e. a <span data-xref=\"Gtk.IconSet\"/> contains variants for\ndifferent sizes and widget states). Icons in an icon factory are named by a\nstock ID, which is a simple string identifying the icon. Each <span data-xref=\"Gtk.Style\"/> has a\nlist of <span data-xref=\"Gtk.IconFactory\"/> derived from the current theme; those icon factories\nare consulted first when searching for an icon. If the theme doesn\u2019t set a\nparticular icon, GTK+ looks for the icon in a list of default icon factories,\nmaintained by <span data-xref=\"Gtk.IconFactory.add_default\"/> and\n<span data-xref=\"Gtk.IconFactory.remove_default\"/>. Applications with icons should add a default\nicon factory with their icons, which will allow themes to override the icons\nfor the application.</p><p>To display an icon, always use <span data-xref=\"Gtk.Style.lookup_icon_set\"/> on the widget that\nwill display the icon, or the convenience function\n<span data-xref=\"Gtk.Widget.render_icon\"/>. These functions take the theme into account when\nlooking up the icon to use for a given stock ID.</p><h1>GtkIconFactory as GtkBuildable # {<span data-xref=\"Gtk.IconFactory\"/>-BUILDER-UI}</h1><p>GtkIconFactory supports a custom <sources> element, which can contain\nmultiple <source> elements. The following attributes are allowed:</p><ul>\n<li>stock-id</li>\n</ul><pre><code>The stock id of the source, a string. This attribute is\nmandatory\n</code></pre><ul>\n<li>filename</li>\n</ul><pre><code>The filename of the source, a string.  This attribute is\noptional\n</code></pre><ul>\n<li>icon-name</li>\n</ul><pre><code>The icon name for the source, a string.  This attribute is\noptional.\n</code></pre><ul>\n<li>size</li>\n</ul><pre><code>Size of the icon, a &lt;span data-xref=\"Gtk.IconSize\"/&gt; enum value.  This attribute is\noptional.\n</code></pre><ul>\n<li>direction</li>\n</ul><pre><code>Direction of the source, a &lt;span data-xref=\"Gtk.TextDirection\"/&gt; enum value.  This\nattribute is optional.\n</code></pre><ul>\n<li>state</li>\n</ul><pre><code>State of the source, a &lt;span data-xref=\"Gtk.StateType\"/&gt; enum value.  This\nattribute is optional.\n</code></pre><h2>A <span data-xref=\"Gtk.IconFactory\"/> UI definition fragment.</h2><p>|[\n<object class=\"GtkIconFactory\" id=\"iconfactory1\">\n  <sources>\n    <source stock-id=\"apple-red\" filename=\"apple-red.png\"/>\n  </sources>\n</object>\n<object class=\"GtkWindow\" id=\"window1\">\n  <child>\n    <object class=\"GtkButton\" id=\"apple_button\">\n      <property name=\"label\">apple-red</property>\n      <property name=\"use-stock\">True</property>\n    </object>\n  </child>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Adds the given <code>icon_set</code> to the icon factory, under the name\n<code>stock_id</code>.  <code>stock_id</code> should be namespaced for your application,\ne.g. \u201cmyapp-whatever-icon\u201d.  Normally applications create a\n<span data-xref=\"Gtk.IconFactory\"/>, then add it to the list of default factories with\n<span data-xref=\"Gtk.IconFactory.add_default\"/>. Then they pass the <code>stock_id</code> to\nwidgets such as <span data-xref=\"Gtk.Image\"/> to display the icon. Themes can provide\nan icon with the same name (such as \"myapp-whatever-icon\") to\noverride your application\u2019s default icons. If an icon already\nexisted in <code>factory</code> for <code>stock_id</code>, it is unreferenced and replaced\nwith the new <code>icon_set</code>.</p>",
+            "doc": "<p>Adds the given <pre>icon_set</pre> to the icon factory, under the name\n<pre>stock_id</pre>.  <pre>stock_id</pre> should be namespaced for your application,\ne.g. \u201cmyapp-whatever-icon\u201d.  Normally applications create a\n<span data-xref=\"Gtk.IconFactory\"/>, then add it to the list of default factories with\n<span data-xref=\"Gtk.IconFactory.add_default\"/>. Then they pass the <pre>stock_id</pre> to\nwidgets such as <span data-xref=\"Gtk.Image\"/> to display the icon. Themes can provide\nan icon with the same name (such as \"myapp-whatever-icon\") to\noverride your application\u2019s default icons. If an icon already\nexisted in <pre>factory</pre> for <pre>stock_id</pre>, it is unreferenced and replaced\nwith the new <pre>icon_set</pre>.</p>",
             "kind": "method",
             "name": "add",
             "parameters": [
@@ -48,7 +36,7 @@
             }
         },
         {
-            "doc": "<p>Adds an icon factory to the list of icon factories searched by\n<span data-xref=\"Gtk.Style.lookup_icon_set\"/>. This means that, for example,\n<span data-xref=\"Gtk.Image.new_from_stock\"/> will be able to find icons in <code>factory</code>.\nThere will normally be an icon factory added for each library or\napplication that comes with icons. The default icon factories\ncan be overridden by themes.</p>",
+            "doc": "<p>Adds an icon factory to the list of icon factories searched by\n<span data-xref=\"Gtk.Style.lookup_icon_set\"/>. This means that, for example,\n<span data-xref=\"Gtk.Image.new_from_stock\"/> will be able to find icons in <pre>factory</pre>.\nThere will normally be an icon factory added for each library or\napplication that comes with icons. The default icon factories\ncan be overridden by themes.</p>",
             "kind": "method",
             "name": "add_default",
             "parameters": [],
@@ -57,7 +45,7 @@
             }
         },
         {
-            "doc": "<p>Looks up <code>stock_id</code> in the icon factory, returning an icon set\nif found, otherwise <code>null</code>. For display to the user, you should\nuse <span data-xref=\"Gtk.Style.lookup_icon_set\"/> on the <span data-xref=\"Gtk.Style\"/> for the\nwidget that will display the icon, instead of using this\nfunction directly, so that themes are taken into account.</p>",
+            "doc": "<p>Looks up <pre>stock_id</pre> in the icon factory, returning an icon set\nif found, otherwise <pre>null</pre>. For display to the user, you should\nuse <span data-xref=\"Gtk.Style.lookup_icon_set\"/> on the <span data-xref=\"Gtk.Style\"/> for the\nwidget that will display the icon, instead of using this\nfunction directly, so that themes are taken into account.</p>",
             "kind": "method",
             "name": "lookup",
             "parameters": [
@@ -81,24 +69,22 @@
                 "type": "void"
             }
         },
-        [
-            {
-                "doc": "<p>Looks for an icon in the list of default icon factories.  For\ndisplay to the user, you should use <span data-xref=\"Gtk.Style.lookup_icon_set\"/> on\nthe <span data-xref=\"Gtk.Style\"/> for the widget that will display the icon, instead of\nusing this function directly, so that themes are taken into\naccount.</p>",
-                "kind": "function",
-                "name": "lookup_default",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "stock_id",
-                        "direction": "in",
-                        "type": "String"
-                    }
-                ],
-                "retval": {
-                    "type": "Gtk.IconSet"
+        {
+            "doc": "<p>Looks for an icon in the list of default icon factories.  For\ndisplay to the user, you should use <span data-xref=\"Gtk.Style.lookup_icon_set\"/> on\nthe <span data-xref=\"Gtk.Style\"/> for the widget that will display the icon, instead of\nusing this function directly, so that themes are taken into\naccount.</p>",
+            "kind": "function",
+            "name": "lookup_default",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "stock_id",
+                    "direction": "in",
+                    "type": "String"
                 }
+            ],
+            "retval": {
+                "type": "Gtk.IconSet"
             }
-        ]
+        }
     ],
     "name": "IconFactory",
     "properties": [],

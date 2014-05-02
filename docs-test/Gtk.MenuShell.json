@@ -1,18 +1,6 @@
 {
     "constructors": [],
     "doc": "<p>A <span data-xref=\"Gtk.MenuShell\"/> is the abstract base class used to derive the\n<span data-xref=\"Gtk.Menu\"/> and <span data-xref=\"Gtk.MenuBar\"/> subclasses.</p><p>A <span data-xref=\"Gtk.MenuShell\"/> is a container of <span data-xref=\"Gtk.MenuItem\"/> objects arranged\nin a list which can be navigated, selected, and activated by the\nuser to perform application functions. A <span data-xref=\"Gtk.MenuItem\"/> can have a\nsubmenu associated with it, allowing for nested hierarchical menus.</p><h1>Terminology</h1><p>A menu item can be \u201cselected\u201d, this means that it is displayed\nin the prelight state, and if it has a submenu, that submenu\nwill be popped up.</p><p>A menu is \u201cactive\u201d when it is visible onscreen and the user\nis selecting from it. A menubar is not active until the user\nclicks on one of its menuitems. When a menu is active,\npassing the mouse over a submenu will pop it up.</p><p>There is also is a concept of the current menu and a current\nmenu item. The current menu item is the selected menu item\nthat is furthest down in the hierarchy. (Every active menu shell\ndoes not necessarily contain a selected menu item, but if\nit does, then the parent menu shell must also contain\na selected menu item.) The current menu is the menu that\ncontains the current menu item. It will always have a GTK\ngrab and receive all key presses.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "container"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -54,7 +42,7 @@
             }
         },
         {
-            "doc": "<p>Establishes a binding between a <span data-xref=\"Gtk.MenuShell\"/> and a <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span>.</p><p>The contents of @shell are removed and then refilled with menu items\naccording to <code>model</code>.  When <code>model</code> changes, @shell is updated.\nCalling this function twice on @shell with different <code>model</code> will\ncause the first binding to be replaced with a binding to the new\nmodel. If <code>model</code> is <code>null</code> then any previous binding is undone and\nall children are removed.</p><p><code>with_separators</code> determines if toplevel items (eg: sections) have\nseparators inserted between them.  This is typically desired for\nmenus but doesn\u2019t make sense for menubars.</p><p>If <code>action_namespace</code> is non-<code>null</code> then the effect is as if all\nactions mentioned in the <code>model</code> have their names prefixed with the\nnamespace, plus a dot.  For example, if the action \u201cquit\u201d is\nmentioned and <code>action_namespace</code> is \u201capp\u201d then the effective action\nname is \u201capp.quit\u201d.</p><p>This function uses <span data-xref=\"Gtk.Actionable\"/> to define the action name and\ntarget values on the created menu items.  If you want to use an\naction group other than \u201capp\u201d and \u201cwin\u201d, or if you want to use a\n<span data-xref=\"Gtk.MenuShell\"/> outside of a <span data-xref=\"Gtk.ApplicationWindow\"/>, then you will need\nto attach your own action group to the widget hierarchy using\n<span data-xref=\"Gtk.Widget.insert_action_group\"/>.  As an example, if you created a\ngroup with a \u201cquit\u201d action and inserted it with the name \u201cmygroup\u201d\nthen you would use the action name \u201cmygroup.quit\u201d in your\n<span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span>.</p><p>For most cases you are probably better off using\n<span data-xref=\"Gtk.Menu.new_from_model\"/> or <span data-xref=\"Gtk.MenuBar.new_from_model\"/> or just\ndirectly passing the <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span> to <span data-xref=\"Gtk.Application.set_app_menu\"/> or\n<span data-xref=\"Gtk.Application.set_menubar\"/>.</p>",
+            "doc": "<p>Establishes a binding between a <span data-xref=\"Gtk.MenuShell\"/> and a <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span>.</p><p>The contents of @shell are removed and then refilled with menu items\naccording to <pre>model</pre>.  When <pre>model</pre> changes, @shell is updated.\nCalling this function twice on @shell with different <pre>model</pre> will\ncause the first binding to be replaced with a binding to the new\nmodel. If <pre>model</pre> is <pre>null</pre> then any previous binding is undone and\nall children are removed.</p><pre>with_separators</pre>\n\n<p>determines if toplevel items (eg: sections) have\nseparators inserted between them.  This is typically desired for\nmenus but doesn\u2019t make sense for menubars.</p><p>If <pre>action_namespace</pre> is non-<pre>null</pre> then the effect is as if all\nactions mentioned in the <pre>model</pre> have their names prefixed with the\nnamespace, plus a dot.  For example, if the action \u201cquit\u201d is\nmentioned and <pre>action_namespace</pre> is \u201capp\u201d then the effective action\nname is \u201capp.quit\u201d.</p><p>This function uses <span data-xref=\"Gtk.Actionable\"/> to define the action name and\ntarget values on the created menu items.  If you want to use an\naction group other than \u201capp\u201d and \u201cwin\u201d, or if you want to use a\n<span data-xref=\"Gtk.MenuShell\"/> outside of a <span data-xref=\"Gtk.ApplicationWindow\"/>, then you will need\nto attach your own action group to the widget hierarchy using\n<span data-xref=\"Gtk.Widget.insert_action_group\"/>.  As an example, if you created a\ngroup with a \u201cquit\u201d action and inserted it with the name \u201cmygroup\u201d\nthen you would use the action name \u201cmygroup.quit\u201d in your\n<span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span>.</p><p>For most cases you are probably better off using\n<span data-xref=\"Gtk.Menu.new_from_model\"/> or <span data-xref=\"Gtk.MenuBar.new_from_model\"/> or just\ndirectly passing the <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span> to <span data-xref=\"Gtk.Application.set_app_menu\"/> or\n<span data-xref=\"Gtk.Application.set_menubar\"/>.</p>",
             "kind": "method",
             "name": "bind_model",
             "parameters": [
@@ -127,7 +115,7 @@
             }
         },
         {
-            "doc": "<p>Returns <code>true</code> if the menu shell will take the keyboard focus on popup.</p>",
+            "doc": "<p>Returns <pre>true</pre> if the menu shell will take the keyboard focus on popup.</p>",
             "kind": "method",
             "name": "get_take_focus",
             "parameters": [],
@@ -136,7 +124,7 @@
             }
         },
         {
-            "doc": "<p>Adds a new <span data-xref=\"Gtk.MenuItem\"/> to the menu shell\u2019s item list\nat the position indicated by <code>position</code>.</p>",
+            "doc": "<p>Adds a new <span data-xref=\"Gtk.MenuItem\"/> to the menu shell\u2019s item list\nat the position indicated by <pre>position</pre>.</p>",
             "kind": "method",
             "name": "insert",
             "parameters": [
@@ -206,7 +194,7 @@
             }
         },
         {
-            "doc": "<p>If <code>take_focus</code> is <code>true</code> (the default) the menu shell will take\nthe keyboard focus so that it will receive all keyboard events\nwhich is needed to enable keyboard navigation in menus.</p><p>Setting <code>take_focus</code> to <code>false</code> is useful only for special applications\nlike virtual keyboard implementations which should not take keyboard\nfocus.</p><p>The <code>take_focus</code> state of a menu or menu bar is automatically\npropagated to submenus whenever a submenu is popped up, so you\ndon\u2019t have to worry about recursively setting it for your entire\nmenu hierarchy. Only when programmatically picking a submenu and\npopping it up manually, the <code>take_focus</code> property of the submenu\nneeds to be set explicitly.</p><p>Note that setting it to <code>false</code> has side-effects:</p><p>If the focus is in some other app, it keeps the focus and keynav in\nthe menu doesn\u2019t work. Consequently, keynav on the menu will only\nwork if the focus is on some toplevel owned by the onscreen keyboard.</p><p>To avoid confusing the user, menus with <code>take_focus</code> set to <code>false</code>\nshould not display mnemonics or accelerators, since it cannot be\nguaranteed that they will work.</p><p>See also <span data-xref=\"Gdk.keyboard_grab\">Gdk.keyboard_grab</span></p>",
+            "doc": "<p>If <pre>take_focus</pre> is <pre>true</pre> (the default) the menu shell will take\nthe keyboard focus so that it will receive all keyboard events\nwhich is needed to enable keyboard navigation in menus.</p><p>Setting <pre>take_focus</pre> to <pre>false</pre> is useful only for special applications\nlike virtual keyboard implementations which should not take keyboard\nfocus.</p><p>The <pre>take_focus</pre> state of a menu or menu bar is automatically\npropagated to submenus whenever a submenu is popped up, so you\ndon\u2019t have to worry about recursively setting it for your entire\nmenu hierarchy. Only when programmatically picking a submenu and\npopping it up manually, the <pre>take_focus</pre> property of the submenu\nneeds to be set explicitly.</p><p>Note that setting it to <pre>false</pre> has side-effects:</p><p>If the focus is in some other app, it keeps the focus and keynav in\nthe menu doesn\u2019t work. Consequently, keynav on the menu will only\nwork if the focus is on some toplevel owned by the onscreen keyboard.</p><p>To avoid confusing the user, menus with <pre>take_focus</pre> set to <pre>false</pre>\nshould not display mnemonics or accelerators, since it cannot be\nguaranteed that they will work.</p><p>See also <span data-xref=\"Gdk.keyboard_grab\">Gdk.keyboard_grab</span></p>",
             "kind": "method",
             "name": "set_take_focus",
             "parameters": [
@@ -220,8 +208,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "MenuShell",
     "properties": [
@@ -259,7 +246,7 @@
             }
         },
         {
-            "doc": "<p>A keybinding signal which moves the focus in the\ngiven <code>direction</code>.</p>",
+            "doc": "<p>A keybinding signal which moves the focus in the\ngiven <pre>direction</pre>.</p>",
             "kind": "signal",
             "name": "cycle-focus",
             "parameters": [
@@ -306,7 +293,7 @@
             }
         },
         {
-            "doc": "<p>An keybinding signal which moves the current menu item\nin the direction specified by <code>direction</code>.</p>",
+            "doc": "<p>An keybinding signal which moves the current menu item\nin the direction specified by <pre>direction</pre>.</p>",
             "kind": "signal",
             "name": "move-current",
             "parameters": [
@@ -392,7 +379,7 @@
             }
         },
         {
-            "doc": "<p>Adds a new <span data-xref=\"Gtk.MenuItem\"/> to the menu shell\u2019s item list\nat the position indicated by <code>position</code>.</p>",
+            "doc": "<p>Adds a new <span data-xref=\"Gtk.MenuItem\"/> to the menu shell\u2019s item list\nat the position indicated by <pre>position</pre>.</p>",
             "kind": "vfunc",
             "name": "insert",
             "parameters": [

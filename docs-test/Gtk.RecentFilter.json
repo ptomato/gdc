@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.RecentFilter\"/> with no rules added to it.\nSuch filter does not accept any recently used resources, so is not\nparticularly useful until you add rules with\n<span data-xref=\"Gtk.RecentFilter.add_pattern\"/>, <span data-xref=\"Gtk.RecentFilter.add_mime_type\"/>,\n<span data-xref=\"Gtk.RecentFilter.add_application\"/>, <span data-xref=\"Gtk.RecentFilter.add_age\"/>.\nTo create a filter that accepts any recently used resource, use:\n|[&lt;!-- language=\"C\" --&gt;\nGtkRecentFilter <em>filter = gtk_recent_filter_new ();\ngtk_recent_filter_add_pattern (filter, \"</em>\");\n]|</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RecentFilter\"/> with no rules added to it.\nSuch filter does not accept any recently used resources, so is not\nparticularly useful until you add rules with\n<span data-xref=\"Gtk.RecentFilter.add_pattern\"/>, <span data-xref=\"Gtk.RecentFilter.add_mime_type\"/>,\n<span data-xref=\"Gtk.RecentFilter.add_application\"/>, <span data-xref=\"Gtk.RecentFilter.add_age\"/>.\nTo create a filter that accepts any recently used resource, use:\n|[<!-- language=\"C\" -->\nGtkRecentFilter <em>filter = gtk_recent_filter_new ();\ngtk_recent_filter_add_pattern (filter, \"</em>\");\n]|</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [],
@@ -10,8 +10,7 @@
             }
         }
     ],
-    "doc": "<p>A <span data-xref=\"Gtk.RecentFilter\"/> can be used to restrict the files being shown\nin a <span data-xref=\"Gtk.RecentChooser\"/>.  Files can be filtered based on their name\n(with <span data-xref=\"Gtk.RecentFilter.add_pattern\"/>), on their mime type (with\n<span data-xref=\"Gtk.FileFilter.add_mime_type\"/>), on the application that has\nregistered them (with <span data-xref=\"Gtk.RecentFilter.add_application\"/>), or by\na custom filter function (with <span data-xref=\"Gtk.RecentFilter.add_custom\"/>).</p><p>Filtering by mime type handles aliasing and subclassing of mime\ntypes; e.g. a filter for text/plain also matches a file with mime\ntype application/rtf, since application/rtf is a subclass of text/plain.\nNote that <span data-xref=\"Gtk.RecentFilter\"/> allows wildcards for the subtype of a\nmime type, so you can e.g. filter for image/*.</p><p>Normally, filters are used by adding them to a <span data-xref=\"Gtk.RecentChooser\"/>,\nsee <span data-xref=\"Gtk.RecentChooser.add_filter\"/>, but it is also possible to\nmanually use a filter on a file with <span data-xref=\"Gtk.RecentFilter.filter\"/>.</p><p>Recently used files are supported since GTK+ 2.10.</p><h2>GtkRecentFilter as GtkBuildable</h2><p>The GtkRecentFilter implementation of the GtkBuildable interface\nsupports adding rules using the &lt;mime-types&gt;, &lt;patterns&gt; and\n&lt;applications&gt; elements and listing the rules within. Specifying\na &lt;mime-type&gt;, &lt;pattern&gt; or &lt;application&gt; has the same effect as\ncalling <span data-xref=\"Gtk.RecentFilter.add_mime_type\"/>,\n<span data-xref=\"Gtk.RecentFilter.add_pattern\"/> or <span data-xref=\"Gtk.RecentFilter.add_application\"/>.</p><p>An example of a UI definition fragment specifying GtkRecentFilter rules:\n|[\n&lt;object class=\"GtkRecentFilter\"&gt;\n  &lt;mime-types&gt;\n    &lt;mime-type&gt;text/plain&lt;/mime-type&gt;\n    &lt;mime-type&gt;image/png&lt;/mime-type&gt;\n  &lt;/mime-types&gt;\n  &lt;patterns&gt;\n    &lt;pattern&gt;<em>.txt&lt;/pattern&gt;\n    &lt;pattern&gt;</em>.png&lt;/pattern&gt;\n  &lt;/patterns&gt;\n  &lt;applications&gt;\n    &lt;application&gt;gimp&lt;/application&gt;\n    &lt;application&gt;gedit&lt;/application&gt;\n    &lt;application&gt;glade&lt;/application&gt;\n  &lt;/applications&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [],
+    "doc": "<p>A <span data-xref=\"Gtk.RecentFilter\"/> can be used to restrict the files being shown\nin a <span data-xref=\"Gtk.RecentChooser\"/>.  Files can be filtered based on their name\n(with <span data-xref=\"Gtk.RecentFilter.add_pattern\"/>), on their mime type (with\n<span data-xref=\"Gtk.FileFilter.add_mime_type\"/>), on the application that has\nregistered them (with <span data-xref=\"Gtk.RecentFilter.add_application\"/>), or by\na custom filter function (with <span data-xref=\"Gtk.RecentFilter.add_custom\"/>).</p><p>Filtering by mime type handles aliasing and subclassing of mime\ntypes; e.g. a filter for text/plain also matches a file with mime\ntype application/rtf, since application/rtf is a subclass of text/plain.\nNote that <span data-xref=\"Gtk.RecentFilter\"/> allows wildcards for the subtype of a\nmime type, so you can e.g. filter for image/*.</p><p>Normally, filters are used by adding them to a <span data-xref=\"Gtk.RecentChooser\"/>,\nsee <span data-xref=\"Gtk.RecentChooser.add_filter\"/>, but it is also possible to\nmanually use a filter on a file with <span data-xref=\"Gtk.RecentFilter.filter\"/>.</p><p>Recently used files are supported since GTK+ 2.10.</p><h2>GtkRecentFilter as GtkBuildable</h2><p>The GtkRecentFilter implementation of the GtkBuildable interface\nsupports adding rules using the <mime-types>, <patterns> and\n<applications> elements and listing the rules within. Specifying\na <mime-type>, <pattern> or <application> has the same effect as\ncalling <span data-xref=\"Gtk.RecentFilter.add_mime_type\"/>,\n<span data-xref=\"Gtk.RecentFilter.add_pattern\"/> or <span data-xref=\"Gtk.RecentFilter.add_application\"/>.</p><p>An example of a UI definition fragment specifying GtkRecentFilter rules:\n|[\n<object class=\"GtkRecentFilter\">\n  <mime-types>\n    <mime-type>text/plain</mime-type>\n    <mime-type>image/png</mime-type>\n  </mime-types>\n  <patterns>\n    <pattern><em>.txt</pattern>\n    <pattern></em>.png</pattern>\n  </patterns>\n  <applications>\n    <application>gimp</application>\n    <application>gedit</application>\n    <application>glade</application>\n  </applications>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
@@ -47,7 +46,7 @@
             }
         },
         {
-            "doc": "<p>Adds a rule to a filter that allows resources based on a custom callback\nfunction. The bitfield <code>needed</code> which is passed in provides information\nabout what sorts of information that the filter function needs;\nthis allows GTK+ to avoid retrieving expensive information when\nit isn\u2019t needed by the filter.</p>",
+            "doc": "<p>Adds a rule to a filter that allows resources based on a custom callback\nfunction. The bitfield <pre>needed</pre> which is passed in provides information\nabout what sorts of information that the filter function needs;\nthis allows GTK+ to avoid retrieving expensive information when\nit isn\u2019t needed by the filter.</p>",
             "kind": "method",
             "name": "add_custom",
             "parameters": [
@@ -138,7 +137,7 @@
             }
         },
         {
-            "doc": "<p>Tests whether a file should be displayed according to <code>filter</code>.\nThe <span data-xref=\"Gtk.RecentFilterInfo\"/> <code>filter_info</code> should include\nthe fields returned from <span data-xref=\"Gtk.RecentFilter.get_needed\"/>, and\nmust set the <span data-xref=\"Gtk.RecentFilterInfo\"/>.contains field of <code>filter_info</code>\nto indicate which fields have been set.</p><p>This function will not typically be used by applications; it\nis intended principally for use in the implementation of\n<span data-xref=\"Gtk.RecentChooser\"/>.</p>",
+            "doc": "<p>Tests whether a file should be displayed according to <pre>filter</pre>.\nThe <span data-xref=\"Gtk.RecentFilterInfo\"/> <pre>filter_info</pre> should include\nthe fields returned from <span data-xref=\"Gtk.RecentFilter.get_needed\"/>, and\nmust set the <span data-xref=\"Gtk.RecentFilterInfo\"/>.contains field of <pre>filter_info</pre>\nto indicate which fields have been set.</p><p>This function will not typically be used by applications; it\nis intended principally for use in the implementation of\n<span data-xref=\"Gtk.RecentChooser\"/>.</p>",
             "kind": "method",
             "name": "filter",
             "parameters": [
@@ -186,8 +185,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "RecentFilter",
     "properties": [],

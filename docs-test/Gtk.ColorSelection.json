@@ -11,18 +11,6 @@
         }
     ],
     "doc": "",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "private_data"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -35,7 +23,7 @@
             }
         },
         {
-            "doc": "<p>Sets <code>color</code> to be the current color in the GtkColorSelection widget.</p>",
+            "doc": "<p>Sets <pre>color</pre> to be the current color in the GtkColorSelection widget.</p>",
             "kind": "method",
             "name": "get_current_color",
             "parameters": [
@@ -51,7 +39,7 @@
             }
         },
         {
-            "doc": "<p>Sets <code>rgba</code> to be the current color in the GtkColorSelection widget.</p>",
+            "doc": "<p>Sets <pre>rgba</pre> to be the current color in the GtkColorSelection widget.</p>",
             "kind": "method",
             "name": "get_current_rgba",
             "parameters": [
@@ -94,7 +82,7 @@
             }
         },
         {
-            "doc": "<p>Fills <code>color</code> in with the original color value.</p>",
+            "doc": "<p>Fills <pre>color</pre> in with the original color value.</p>",
             "kind": "method",
             "name": "get_previous_color",
             "parameters": [
@@ -110,7 +98,7 @@
             }
         },
         {
-            "doc": "<p>Fills <code>rgba</code> in with the original color value.</p>",
+            "doc": "<p>Fills <pre>rgba</pre> in with the original color value.</p>",
             "kind": "method",
             "name": "get_previous_rgba",
             "parameters": [
@@ -126,7 +114,7 @@
             }
         },
         {
-            "doc": "<p>Gets the current state of the <code>colorsel</code>.</p>",
+            "doc": "<p>Gets the current state of the <pre>colorsel</pre>.</p>",
             "kind": "method",
             "name": "is_adjusting",
             "parameters": [],
@@ -135,7 +123,7 @@
             }
         },
         {
-            "doc": "<p>Sets the current opacity to be <code>alpha</code>.</p><p>The first time this is called, it will also set\nthe original opacity to be <code>alpha</code> too.</p>",
+            "doc": "<p>Sets the current opacity to be <pre>alpha</pre>.</p><p>The first time this is called, it will also set\nthe original opacity to be <pre>alpha</pre> too.</p>",
             "kind": "method",
             "name": "set_current_alpha",
             "parameters": [
@@ -151,7 +139,7 @@
             }
         },
         {
-            "doc": "<p>Sets the current color to be <code>color</code>.</p><p>The first time this is called, it will also set\nthe original color to be <code>color</code> too.</p>",
+            "doc": "<p>Sets the current color to be <pre>color</pre>.</p><p>The first time this is called, it will also set\nthe original color to be <pre>color</pre> too.</p>",
             "kind": "method",
             "name": "set_current_color",
             "parameters": [
@@ -167,7 +155,7 @@
             }
         },
         {
-            "doc": "<p>Sets the current color to be <code>rgba</code>.</p><p>The first time this is called, it will also set\nthe original color to be <code>rgba</code> too.</p>",
+            "doc": "<p>Sets the current color to be <pre>rgba</pre>.</p><p>The first time this is called, it will also set\nthe original color to be <pre>rgba</pre> too.</p>",
             "kind": "method",
             "name": "set_current_rgba",
             "parameters": [
@@ -183,7 +171,7 @@
             }
         },
         {
-            "doc": "<p>Sets the <code>colorsel</code> to use or not use opacity.</p>",
+            "doc": "<p>Sets the <pre>colorsel</pre> to use or not use opacity.</p>",
             "kind": "method",
             "name": "set_has_opacity_control",
             "parameters": [
@@ -199,7 +187,7 @@
             }
         },
         {
-            "doc": "<p>Shows and hides the palette based upon the value of <code>has_palette</code>.</p>",
+            "doc": "<p>Shows and hides the palette based upon the value of <pre>has_palette</pre>.</p>",
             "kind": "method",
             "name": "set_has_palette",
             "parameters": [
@@ -215,7 +203,7 @@
             }
         },
         {
-            "doc": "<p>Sets the \u201cprevious\u201d alpha to be <code>alpha</code>.</p><p>This function should be called with some hesitations,\nas it might seem confusing to have that alpha change.</p>",
+            "doc": "<p>Sets the \u201cprevious\u201d alpha to be <pre>alpha</pre>.</p><p>This function should be called with some hesitations,\nas it might seem confusing to have that alpha change.</p>",
             "kind": "method",
             "name": "set_previous_alpha",
             "parameters": [
@@ -231,7 +219,7 @@
             }
         },
         {
-            "doc": "<p>Sets the \u201cprevious\u201d color to be <code>color</code>.</p><p>This function should be called with some hesitations,\nas it might seem confusing to have that color change.\nCalling <span data-xref=\"Gtk.ColorSelection.set_current_color\"/> will also\nset this color the first time it is called.</p>",
+            "doc": "<p>Sets the \u201cprevious\u201d color to be <pre>color</pre>.</p><p>This function should be called with some hesitations,\nas it might seem confusing to have that color change.\nCalling <span data-xref=\"Gtk.ColorSelection.set_current_color\"/> will also\nset this color the first time it is called.</p>",
             "kind": "method",
             "name": "set_previous_color",
             "parameters": [
@@ -247,7 +235,7 @@
             }
         },
         {
-            "doc": "<p>Sets the \u201cprevious\u201d color to be <code>rgba</code>.</p><p>This function should be called with some hesitations,\nas it might seem confusing to have that color change.\nCalling <span data-xref=\"Gtk.ColorSelection.set_current_rgba\"/> will also\nset this color the first time it is called.</p>",
+            "doc": "<p>Sets the \u201cprevious\u201d color to be <pre>rgba</pre>.</p><p>This function should be called with some hesitations,\nas it might seem confusing to have that color change.\nCalling <span data-xref=\"Gtk.ColorSelection.set_current_rgba\"/> will also\nset this color the first time it is called.</p>",
             "kind": "method",
             "name": "set_previous_rgba",
             "parameters": [
@@ -262,74 +250,72 @@
                 "type": "void"
             }
         },
-        [
-            {
-                "doc": "<p>Parses a color palette string; the string is a colon-separated\nlist of color names readable by <span data-xref=\"Gdk.color_parse\">Gdk.color_parse</span>.</p>",
-                "kind": "function",
-                "name": "palette_from_string",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "str",
-                        "direction": "in",
-                        "type": "String"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "colors",
-                        "direction": "out",
-                        "type": "Array(Gdk.Color)"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "n_colors",
-                        "direction": "out",
-                        "type": "Number(gint)"
-                    }
-                ],
-                "retval": {
-                    "type": "Boolean"
-                }
-            },
-            {
-                "doc": "<p>Encodes a palette as a string, useful for persistent storage.</p>",
-                "kind": "function",
-                "name": "palette_to_string",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "colors",
-                        "direction": "in",
-                        "type": "Array(Gdk.Color)"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "n_colors",
-                        "direction": "in",
-                        "type": "Number(gint)"
-                    }
-                ],
-                "retval": {
+        {
+            "doc": "<p>Parses a color palette string; the string is a colon-separated\nlist of color names readable by <span data-xref=\"Gdk.color_parse\">Gdk.color_parse</span>.</p>",
+            "kind": "function",
+            "name": "palette_from_string",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "str",
+                    "direction": "in",
                     "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "colors",
+                    "direction": "out",
+                    "type": "Array(Gdk.Color)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_colors",
+                    "direction": "out",
+                    "type": "Number(gint)"
                 }
-            },
-            {
-                "doc": "<p>Installs a global function to be called whenever the user\ntries to modify the palette in a color selection.</p><p>This function should save the new palette contents, and update\nthe <span data-xref=\"Gtk.Settings-gtk-color-palette\"/> GtkSettings property so all\nGtkColorSelection widgets will be modified.</p>",
-                "kind": "function",
-                "name": "set_change_palette_with_screen_hook",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "func",
-                        "direction": "in",
-                        "type": "Gtk.ColorSelectionChangePaletteWithScreenFunc"
-                    }
-                ],
-                "retval": {
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Encodes a palette as a string, useful for persistent storage.</p>",
+            "kind": "function",
+            "name": "palette_to_string",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "colors",
+                    "direction": "in",
+                    "type": "Array(Gdk.Color)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_colors",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Installs a global function to be called whenever the user\ntries to modify the palette in a color selection.</p><p>This function should save the new palette contents, and update\nthe <span data-xref=\"Gtk.Settings-gtk-color-palette\"/> GtkSettings property so all\nGtkColorSelection widgets will be modified.</p>",
+            "kind": "function",
+            "name": "set_change_palette_with_screen_hook",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "func",
+                    "direction": "in",
                     "type": "Gtk.ColorSelectionChangePaletteWithScreenFunc"
                 }
+            ],
+            "retval": {
+                "type": "Gtk.ColorSelectionChangePaletteWithScreenFunc"
             }
-        ]
+        }
     ],
     "name": "ColorSelection",
     "properties": [

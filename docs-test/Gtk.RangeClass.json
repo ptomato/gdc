@@ -1,0 +1,69 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "slider_detail"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "stepper_detail"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "value_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "adjust_bounds"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "move_slider"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_range_border"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "change_value"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "RangeClass"
+}

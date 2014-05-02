@@ -1,0 +1,168 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a <span data-xref=\"Gtk.TextAttributes\"/>, which describes\na set of properties on some text.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TextAttributes"
+            }
+        }
+    ],
+    "doc": "<p>Using <span data-xref=\"Gtk.TextAttributes\"/> directly should rarely be necessary.\nIt\u2019s primarily useful with <span data-xref=\"Gtk.TextIter.get_attributes\"/>.\nAs with most GTK+ structs, the fields in this struct should only\nbe read, never modified directly.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "refcount"
+        },
+        {
+            "doc": "<p><span data-xref=\"Gtk.TextAppearance\"/> for text.</p>",
+            "kind": "field",
+            "name": "appearance"
+        },
+        {
+            "doc": "<p><span data-xref=\"Gtk.Justification\"/> for text.</p>",
+            "kind": "field",
+            "name": "justification"
+        },
+        {
+            "doc": "<p><span data-xref=\"Gtk.TextDirection\"/> for text.</p>",
+            "kind": "field",
+            "name": "direction"
+        },
+        {
+            "doc": "<p><span data-xref=\"Pango.FontDescription\">Pango.FontDescription</span> for text.</p>",
+            "kind": "field",
+            "name": "font"
+        },
+        {
+            "doc": "<p>Font scale factor.</p>",
+            "kind": "field",
+            "name": "font_scale"
+        },
+        {
+            "doc": "<p>Width of the left margin in pixels.</p>",
+            "kind": "field",
+            "name": "left_margin"
+        },
+        {
+            "doc": "<p>Width of the right margin in pixels.</p>",
+            "kind": "field",
+            "name": "right_margin"
+        },
+        {
+            "doc": "<p>Amount to indent the paragraph, in pixels.</p>",
+            "kind": "field",
+            "name": "indent"
+        },
+        {
+            "doc": "<p>Pixels of blank space above paragraphs.</p>",
+            "kind": "field",
+            "name": "pixels_above_lines"
+        },
+        {
+            "doc": "<p>Pixels of blank space below paragraphs.</p>",
+            "kind": "field",
+            "name": "pixels_below_lines"
+        },
+        {
+            "doc": "<p>Pixels of blank space between wrapped lines in\n  a paragraph.</p>",
+            "kind": "field",
+            "name": "pixels_inside_wrap"
+        },
+        {
+            "doc": "<p>Custom <span data-xref=\"Pango.TabArray\">Pango.TabArray</span> for this text.</p>",
+            "kind": "field",
+            "name": "tabs"
+        },
+        {
+            "doc": "<p><span data-xref=\"Gtk.WrapMode\"/> for text.</p>",
+            "kind": "field",
+            "name": "wrap_mode"
+        },
+        {
+            "doc": "<p><span data-xref=\"Pango.Language\">Pango.Language</span> for text.</p>",
+            "kind": "field",
+            "name": "language"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "pg_bg_color"
+        },
+        {
+            "doc": "<p>Hide the text.</p>",
+            "kind": "field",
+            "name": "invisible"
+        },
+        {
+            "doc": "<p>Background is fit to full line height rather than\n   baseline +/- ascent/descent (font height).</p>",
+            "kind": "field",
+            "name": "bg_full_height"
+        },
+        {
+            "doc": "<p>Can edit this text.</p>",
+            "kind": "field",
+            "name": "editable"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "pg_bg_rgba"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "padding"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Copies <pre>src</pre> and returns a new <span data-xref=\"Gtk.TextAttributes\"/>.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TextAttributes"
+            }
+        },
+        {
+            "doc": "<p>Copies the values from <pre>src</pre> to <pre>dest</pre> so that <pre>dest</pre> has\nthe same values as <pre>src</pre>. Frees existing values in <pre>dest</pre>.</p>",
+            "kind": "method",
+            "name": "copy_values",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "dest",
+                    "direction": "in",
+                    "type": "Gtk.TextAttributes"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Increments the reference count on <pre>values</pre>.</p>",
+            "kind": "method",
+            "name": "ref",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TextAttributes"
+            }
+        },
+        {
+            "doc": "<p>Decrements the reference count on <pre>values</pre>, freeing the structure\nif the reference count reaches 0.</p>",
+            "kind": "method",
+            "name": "unref",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "TextAttributes"
+}

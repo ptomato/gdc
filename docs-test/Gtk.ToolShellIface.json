@@ -1,0 +1,59 @@
+{
+    "constructors": [],
+    "doc": "<p>Virtual function table for the <span data-xref=\"Gtk.ToolShell\"/> interface.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "g_iface"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_icon_size"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_orientation"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_style"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_relief_style"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "rebuild_menu"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_text_orientation"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_text_alignment"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_ellipsize_mode"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_text_size_group"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "ToolShellIface"
+}

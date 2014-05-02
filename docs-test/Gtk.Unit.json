@@ -1,0 +1,27 @@
+{
+    "doc": "<p>See also <span data-xref=\"Gtk.PrintSettings.set_paper_width\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>No units.</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>Dimensions in points.</p>",
+            "kind": "default",
+            "name": "points"
+        },
+        {
+            "doc": "<p>Dimensions in inches.</p>",
+            "kind": "default",
+            "name": "inch"
+        },
+        {
+            "doc": "<p>Dimensions in millimeters</p>",
+            "kind": "default",
+            "name": "mm"
+        }
+    ],
+    "name": "Unit"
+}

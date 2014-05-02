@@ -1,0 +1,34 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "gtk_recent1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "gtk_recent2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "gtk_recent3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "gtk_recent4"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "RecentChooserMenuClass"
+}

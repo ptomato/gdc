@@ -11,17 +11,8 @@
         }
     ],
     "doc": "",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "button_box"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "HButtonBox",
     "properties": [],
     "signals": [],

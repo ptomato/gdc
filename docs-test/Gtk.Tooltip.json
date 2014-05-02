@@ -1,11 +1,10 @@
 {
     "constructors": [],
-    "doc": "<p>Basic tooltips can be realized simply by using <span data-xref=\"Gtk.Widget.set_tooltip_text\"/>\nor <span data-xref=\"Gtk.Widget.set_tooltip_markup\"/> without any explicit tooltip object.</p><p>When you need a tooltip with a little more fancy contents, like adding an\nimage, or you want the tooltip to have different contents per <span data-xref=\"Gtk.TreeView\"/>\nrow or cell, you will have to do a little more work:</p><ul>\n<li>Set the <span data-xref=\"Gtk.Widget-has-tooltip\"/> property to <code>true</code>, this will make GTK+\n  monitor the widget for motion and related events which are needed to\n  determine when and where to show a tooltip.</li>\n</ul><ul>\n<li>Connect to the <span data-xref=\"Gtk.Widget-query-tooltip\"/> signal.  This signal will be\n  emitted when a tooltip is supposed to be shown. One of the arguments passed\n  to the signal handler is a GtkTooltip object. This is the object that we\n  are about to display as a tooltip, and can be manipulated in your callback\n  using functions like <span data-xref=\"Gtk.Tooltip.set_icon\"/>. There are functions for setting\n  the tooltip\u2019s markup, setting an image from a named icon, or even putting in\n  a custom widget.</li>\n</ul><p>Return <code>true</code> from your query-tooltip handler. This causes the tooltip to be\n  show. If you return <code>false</code>, it will not be shown.</p><p>In the probably rare case where you want to have even more control over the\ntooltip that is about to be shown, you can set your own <span data-xref=\"Gtk.Window\"/> which\nwill be used as tooltip window.  This works as follows:</p><ul>\n<li>Set <span data-xref=\"Gtk.Widget-has-tooltip\"/> and connect to <span data-xref=\"Gtk.Widget-query-tooltip\"/> as before.\n  Use <span data-xref=\"Gtk.Widget.set_tooltip_window\"/> to set a <span data-xref=\"Gtk.Window\"/> created by you as\n  tooltip window.</li>\n</ul><ul>\n<li>In the <span data-xref=\"Gtk.Widget-query-tooltip\"/> callback you can access your window using\n  <span data-xref=\"Gtk.Widget.get_tooltip_window\"/> and manipulate as you wish. The semantics of\n  the return value are exactly as before, return <code>true</code> to show the window,\n  <code>false</code> to not show it.</li>\n</ul>",
-    "fields": [],
+    "doc": "<p>Basic tooltips can be realized simply by using <span data-xref=\"Gtk.Widget.set_tooltip_text\"/>\nor <span data-xref=\"Gtk.Widget.set_tooltip_markup\"/> without any explicit tooltip object.</p><p>When you need a tooltip with a little more fancy contents, like adding an\nimage, or you want the tooltip to have different contents per <span data-xref=\"Gtk.TreeView\"/>\nrow or cell, you will have to do a little more work:</p><ul>\n<li>Set the <span data-xref=\"Gtk.Widget-has-tooltip\"/> property to <pre>true</pre>, this will make GTK+\n  monitor the widget for motion and related events which are needed to\n  determine when and where to show a tooltip.</li>\n</ul><ul>\n<li>Connect to the <span data-xref=\"Gtk.Widget-query-tooltip\"/> signal.  This signal will be\n  emitted when a tooltip is supposed to be shown. One of the arguments passed\n  to the signal handler is a GtkTooltip object. This is the object that we\n  are about to display as a tooltip, and can be manipulated in your callback\n  using functions like <span data-xref=\"Gtk.Tooltip.set_icon\"/>. There are functions for setting\n  the tooltip\u2019s markup, setting an image from a named icon, or even putting in\n  a custom widget.</li>\n</ul><p>Return <pre>true</pre> from your query-tooltip handler. This causes the tooltip to be\n  show. If you return <pre>false</pre>, it will not be shown.</p><p>In the probably rare case where you want to have even more control over the\ntooltip that is about to be shown, you can set your own <span data-xref=\"Gtk.Window\"/> which\nwill be used as tooltip window.  This works as follows:</p><ul>\n<li>Set <span data-xref=\"Gtk.Widget-has-tooltip\"/> and connect to <span data-xref=\"Gtk.Widget-query-tooltip\"/> as before.\n  Use <span data-xref=\"Gtk.Widget.set_tooltip_window\"/> to set a <span data-xref=\"Gtk.Window\"/> created by you as\n  tooltip window.</li>\n</ul><ul>\n<li>In the <span data-xref=\"Gtk.Widget-query-tooltip\"/> callback you can access your window using\n  <span data-xref=\"Gtk.Widget.get_tooltip_window\"/> and manipulate as you wish. The semantics of\n  the return value are exactly as before, return <pre>true</pre> to show the window,\n  <pre>false</pre> to not show it.</li>\n</ul>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Replaces the widget packed into the tooltip with\n<code>custom_widget</code>. <code>custom_widget</code> does not get destroyed when the tooltip goes\naway.\nBy default a box with a <span data-xref=\"Gtk.Image\"/> and <span data-xref=\"Gtk.Label\"/> is embedded in\nthe tooltip, which can be configured using <span data-xref=\"Gtk.Tooltip.set_markup\"/>\nand <span data-xref=\"Gtk.Tooltip.set_icon\"/>.</p>",
+            "doc": "<p>Replaces the widget packed into the tooltip with\n<pre>custom_widget</pre>. <pre>custom_widget</pre> does not get destroyed when the tooltip goes\naway.\nBy default a box with a <span data-xref=\"Gtk.Image\"/> and <span data-xref=\"Gtk.Label\"/> is embedded in\nthe tooltip, which can be configured using <span data-xref=\"Gtk.Tooltip.set_markup\"/>\nand <span data-xref=\"Gtk.Tooltip.set_icon\"/>.</p>",
             "kind": "method",
             "name": "set_custom",
             "parameters": [
@@ -21,7 +20,7 @@
             }
         },
         {
-            "doc": "<p>Sets the icon of the tooltip (which is in front of the text) to be\n<code>pixbuf</code>.  If <code>pixbuf</code> is <code>null</code>, the image will be hidden.</p>",
+            "doc": "<p>Sets the icon of the tooltip (which is in front of the text) to be\n<pre>pixbuf</pre>.  If <pre>pixbuf</pre> is <pre>null</pre>, the image will be hidden.</p>",
             "kind": "method",
             "name": "set_icon",
             "parameters": [
@@ -37,7 +36,7 @@
             }
         },
         {
-            "doc": "<p>Sets the icon of the tooltip (which is in front of the text)\nto be the icon indicated by <code>gicon</code> with the size indicated\nby <code>size</code>. If <code>gicon</code> is <code>null</code>, the image will be hidden.</p>",
+            "doc": "<p>Sets the icon of the tooltip (which is in front of the text)\nto be the icon indicated by <pre>gicon</pre> with the size indicated\nby <pre>size</pre>. If <pre>gicon</pre> is <pre>null</pre>, the image will be hidden.</p>",
             "kind": "method",
             "name": "set_icon_from_gicon",
             "parameters": [
@@ -59,7 +58,7 @@
             }
         },
         {
-            "doc": "<p>Sets the icon of the tooltip (which is in front of the text) to be\nthe icon indicated by <code>icon_name</code> with the size indicated\nby <code>size</code>.  If <code>icon_name</code> is <code>null</code>, the image will be hidden.</p>",
+            "doc": "<p>Sets the icon of the tooltip (which is in front of the text) to be\nthe icon indicated by <pre>icon_name</pre> with the size indicated\nby <pre>size</pre>.  If <pre>icon_name</pre> is <pre>null</pre>, the image will be hidden.</p>",
             "kind": "method",
             "name": "set_icon_from_icon_name",
             "parameters": [
@@ -81,7 +80,7 @@
             }
         },
         {
-            "doc": "<p>Sets the icon of the tooltip (which is in front of the text) to be\nthe stock item indicated by <code>stock_id</code> with the size indicated\nby <code>size</code>.  If <code>stock_id</code> is <code>null</code>, the image will be hidden.</p>",
+            "doc": "<p>Sets the icon of the tooltip (which is in front of the text) to be\nthe stock item indicated by <pre>stock_id</pre> with the size indicated\nby <pre>size</pre>.  If <pre>stock_id</pre> is <pre>null</pre>, the image will be hidden.</p>",
             "kind": "method",
             "name": "set_icon_from_stock",
             "parameters": [
@@ -103,7 +102,7 @@
             }
         },
         {
-            "doc": "<p>Sets the text of the tooltip to be <code>markup</code>, which is marked up\nwith the [Pango text markup language][PangoMarkupFormat].\nIf <code>markup</code> is <code>null</code>, the label will be hidden.</p>",
+            "doc": "<p>Sets the text of the tooltip to be <pre>markup</pre>, which is marked up\nwith the [Pango text markup language][PangoMarkupFormat].\nIf <pre>markup</pre> is <pre>null</pre>, the label will be hidden.</p>",
             "kind": "method",
             "name": "set_markup",
             "parameters": [
@@ -119,7 +118,7 @@
             }
         },
         {
-            "doc": "<p>Sets the text of the tooltip to be <code>text</code>. If <code>text</code> is <code>null</code>, the label\nwill be hidden. See also <span data-xref=\"Gtk.Tooltip.set_markup\"/>.</p>",
+            "doc": "<p>Sets the text of the tooltip to be <pre>text</pre>. If <pre>text</pre> is <pre>null</pre>, the label\nwill be hidden. See also <span data-xref=\"Gtk.Tooltip.set_markup\"/>.</p>",
             "kind": "method",
             "name": "set_text",
             "parameters": [
@@ -135,7 +134,7 @@
             }
         },
         {
-            "doc": "<p>Sets the area of the widget, where the contents of this tooltip apply,\nto be <code>rect</code> (in widget coordinates).  This is especially useful for\nproperly setting tooltips on <span data-xref=\"Gtk.TreeView\"/> rows and cells, #GtkIconViews,\netc.</p><p>For setting tooltips on <span data-xref=\"Gtk.TreeView\"/>, please refer to the convenience\nfunctions for this: <span data-xref=\"Gtk.TreeView.set_tooltip_row\"/> and\n<span data-xref=\"Gtk.TreeView.set_tooltip_cell\"/>.</p>",
+            "doc": "<p>Sets the area of the widget, where the contents of this tooltip apply,\nto be <pre>rect</pre> (in widget coordinates).  This is especially useful for\nproperly setting tooltips on <span data-xref=\"Gtk.TreeView\"/> rows and cells, #GtkIconViews,\netc.</p><p>For setting tooltips on <span data-xref=\"Gtk.TreeView\"/>, please refer to the convenience\nfunctions for this: <span data-xref=\"Gtk.TreeView.set_tooltip_row\"/> and\n<span data-xref=\"Gtk.TreeView.set_tooltip_cell\"/>.</p>",
             "kind": "method",
             "name": "set_tip_area",
             "parameters": [
@@ -150,24 +149,22 @@
                 "type": "void"
             }
         },
-        [
-            {
-                "doc": "<p>Triggers a new tooltip query on <code>display</code>, in order to update the current\nvisible tooltip, or to show/hide the current tooltip.  This function is\nuseful to call when, for example, the state of the widget changed by a\nkey press.</p>",
-                "kind": "function",
-                "name": "trigger_tooltip_query",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "display",
-                        "direction": "in",
-                        "type": "Gdk.Display"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
+        {
+            "doc": "<p>Triggers a new tooltip query on <pre>display</pre>, in order to update the current\nvisible tooltip, or to show/hide the current tooltip.  This function is\nuseful to call when, for example, the state of the widget changed by a\nkey press.</p>",
+            "kind": "function",
+            "name": "trigger_tooltip_query",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "display",
+                    "direction": "in",
+                    "type": "Gdk.Display"
                 }
+            ],
+            "retval": {
+                "type": "void"
             }
-        ]
+        }
     ],
     "name": "Tooltip",
     "properties": [],

@@ -27,22 +27,8 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.RecentChooserWidget\"/> is a widget suitable for selecting recently used\nfiles.  It is the main building block of a <span data-xref=\"Gtk.RecentChooserDialog\"/>.  Most\napplications will only need to use the latter; you can use\n<span data-xref=\"Gtk.RecentChooserWidget\"/> as part of a larger window if you have special needs.</p><p>Note that <span data-xref=\"Gtk.RecentChooserWidget\"/> does not have any methods of its own.\nInstead, you should use the functions that work on a <span data-xref=\"Gtk.RecentChooser\"/>.</p><p>Recently used files are supported since GTK+ 2.10.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "RecentChooserWidget",
     "properties": [],
     "signals": [],

@@ -11,17 +11,10 @@
         }
     ],
     "doc": "<p>The GtkStack widget is a container which only shows\none of its children at a time. In contrast to GtkNotebook,\nGtkStack does not provide a means for users to change the\nvisible child. Instead, the <span data-xref=\"Gtk.StackSwitcher\"/> widget can be\nused with GtkStack to provide this functionality.</p><p>Transitions between pages can be animated as slides or\nfades. This can be controlled with <span data-xref=\"Gtk.Stack.set_transition_type\"/>.\nThese animations respect the <span data-xref=\"Gtk.Settings-gtk-enable-animations\"/>\nsetting.</p><p>The GtkStack widget was added in GTK+ 3.10.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Adds a child to <code>stack</code>.\nThe child is identified by the <code>name</code>.</p>",
+            "doc": "<p>Adds a child to <pre>stack</pre>.\nThe child is identified by the <pre>name</pre>.</p>",
             "kind": "method",
             "name": "add_named",
             "parameters": [
@@ -43,7 +36,7 @@
             }
         },
         {
-            "doc": "<p>Adds a child to <code>stack</code>.\nThe child is identified by the <code>name</code>. The <code>title</code>\nwill be used by <span data-xref=\"Gtk.StackSwitcher\"/> to represent\n<code>child</code> in a tab bar, so it should be short.</p>",
+            "doc": "<p>Adds a child to <pre>stack</pre>.\nThe child is identified by the <pre>name</pre>. The <pre>title</pre>\nwill be used by <span data-xref=\"Gtk.StackSwitcher\"/> to represent\n<pre>child</pre> in a tab bar, so it should be short.</p>",
             "kind": "method",
             "name": "add_titled",
             "parameters": [
@@ -71,7 +64,7 @@
             }
         },
         {
-            "doc": "<p>Finds the child of the <span data-xref=\"Gtk.Stack\"/> with the name given as\nthe argument. Returns <code>null</code> if there is no child with this\nname.</p>",
+            "doc": "<p>Finds the child of the <span data-xref=\"Gtk.Stack\"/> with the name given as\nthe argument. Returns <pre>null</pre> if there is no child with this\nname.</p>",
             "kind": "method",
             "name": "get_child_by_name",
             "parameters": [
@@ -87,7 +80,7 @@
             }
         },
         {
-            "doc": "<p>Gets whether <code>stack</code> is homogeneous.\nSee <span data-xref=\"Gtk.Stack.set_homogeneous\"/>.</p>",
+            "doc": "<p>Gets whether <pre>stack</pre> is homogeneous.\nSee <span data-xref=\"Gtk.Stack.set_homogeneous\"/>.</p>",
             "kind": "method",
             "name": "get_homogeneous",
             "parameters": [],
@@ -96,7 +89,7 @@
             }
         },
         {
-            "doc": "<p>Returns the amount of time (in milliseconds) that\ntransitions between pages in <code>stack</code> will take.</p>",
+            "doc": "<p>Returns the amount of time (in milliseconds) that\ntransitions between pages in <pre>stack</pre> will take.</p>",
             "kind": "method",
             "name": "get_transition_duration",
             "parameters": [],
@@ -105,7 +98,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether the <code>stack</code> is currently in a transition from one page to\nanother.</p>",
+            "doc": "<p>Returns whether the <pre>stack</pre> is currently in a transition from one page to\nanother.</p>",
             "kind": "method",
             "name": "get_transition_running",
             "parameters": [],
@@ -114,7 +107,7 @@
             }
         },
         {
-            "doc": "<p>Gets the type of animation that will be used\nfor transitions between pages in <code>stack</code>.</p>",
+            "doc": "<p>Gets the type of animation that will be used\nfor transitions between pages in <pre>stack</pre>.</p>",
             "kind": "method",
             "name": "get_transition_type",
             "parameters": [],
@@ -123,7 +116,7 @@
             }
         },
         {
-            "doc": "<p>Gets the currently visible child of <code>stack</code>, or <code>null</code> if\nthere are no visible children.</p>",
+            "doc": "<p>Gets the currently visible child of <pre>stack</pre>, or <pre>null</pre> if\nthere are no visible children.</p>",
             "kind": "method",
             "name": "get_visible_child",
             "parameters": [],
@@ -132,7 +125,7 @@
             }
         },
         {
-            "doc": "<p>Returns the name of the currently visible child of <code>stack</code>, or\n<code>null</code> if there is no visible child.</p>",
+            "doc": "<p>Returns the name of the currently visible child of <pre>stack</pre>, or\n<pre>null</pre> if there is no visible child.</p>",
             "kind": "method",
             "name": "get_visible_child_name",
             "parameters": [],
@@ -157,7 +150,7 @@
             }
         },
         {
-            "doc": "<p>Sets the duration that transitions between pages in <code>stack</code>\nwill take.</p>",
+            "doc": "<p>Sets the duration that transitions between pages in <pre>stack</pre>\nwill take.</p>",
             "kind": "method",
             "name": "set_transition_duration",
             "parameters": [
@@ -173,7 +166,7 @@
             }
         },
         {
-            "doc": "<p>Sets the type of animation that will be used for\ntransitions between pages in <code>stack</code>. Available\ntypes include various kinds of fades and slides.</p><p>The transition type can be changed without problems\nat runtime, so it is possible to change the animation\nbased on the page that is about to become current.</p>",
+            "doc": "<p>Sets the type of animation that will be used for\ntransitions between pages in <pre>stack</pre>. Available\ntypes include various kinds of fades and slides.</p><p>The transition type can be changed without problems\nat runtime, so it is possible to change the animation\nbased on the page that is about to become current.</p>",
             "kind": "method",
             "name": "set_transition_type",
             "parameters": [
@@ -189,7 +182,7 @@
             }
         },
         {
-            "doc": "<p>Makes <code>child</code> the visible child of <code>stack</code>.</p><p>If <code>child</code> is different from the currently\nvisible child, the transition between the\ntwo will be animated with the current\ntransition type of <code>stack</code>.</p><p>Note that the <code>child</code> widget has to be visible itself\n(see <span data-xref=\"Gtk.Widget.show\"/>) in order to become the visible\nchild of <code>stack</code>.</p>",
+            "doc": "<p>Makes <pre>child</pre> the visible child of <pre>stack</pre>.</p><p>If <pre>child</pre> is different from the currently\nvisible child, the transition between the\ntwo will be animated with the current\ntransition type of <pre>stack</pre>.</p><p>Note that the <pre>child</pre> widget has to be visible itself\n(see <span data-xref=\"Gtk.Widget.show\"/>) in order to become the visible\nchild of <pre>stack</pre>.</p>",
             "kind": "method",
             "name": "set_visible_child",
             "parameters": [
@@ -205,7 +198,7 @@
             }
         },
         {
-            "doc": "<p>Makes the child with the given name visible.</p><p>Note that the child widget has to be visible itself\n(see <span data-xref=\"Gtk.Widget.show\"/>) in order to become the visible\nchild of <code>stack</code>.</p>",
+            "doc": "<p>Makes the child with the given name visible.</p><p>Note that the child widget has to be visible itself\n(see <span data-xref=\"Gtk.Widget.show\"/>) in order to become the visible\nchild of <pre>stack</pre>.</p>",
             "kind": "method",
             "name": "set_visible_child_full",
             "parameters": [
@@ -227,7 +220,7 @@
             }
         },
         {
-            "doc": "<p>Makes the child with the given name visible.</p><p>If @child is different from the currently\nvisible child, the transition between the\ntwo will be animated with the current\ntransition type of <code>stack</code>.</p><p>Note that the child widget has to be visible itself\n(see <span data-xref=\"Gtk.Widget.show\"/>) in order to become the visible\nchild of <code>stack</code>.</p>",
+            "doc": "<p>Makes the child with the given name visible.</p><p>If @child is different from the currently\nvisible child, the transition between the\ntwo will be animated with the current\ntransition type of <pre>stack</pre>.</p><p>Note that the child widget has to be visible itself\n(see <span data-xref=\"Gtk.Widget.show\"/>) in order to become the visible\nchild of <pre>stack</pre>.</p>",
             "kind": "method",
             "name": "set_visible_child_name",
             "parameters": [
@@ -241,8 +234,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Stack",
     "properties": [

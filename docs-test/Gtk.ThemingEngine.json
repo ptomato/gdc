@@ -1,18 +1,6 @@
 {
     "constructors": [],
     "doc": "<p><span data-xref=\"Gtk.ThemingEngine\"/> is the object used for rendering themed content\nin GTK+ widgets. Even though GTK+ has a default implementation,\nit can be overridden in CSS files by enforcing a <span data-xref=\"Gtk.ThemingEngine\"/>\nobject to be loaded as a module.</p><p>In order to implement a theming engine, a <span data-xref=\"Gtk.ThemingEngine\"/> subclass\nmust be created, alongside the CSS file that will reference it, the\ntheming engine would be created as an .so library, and installed in\n$(gtk-modules-dir)/theming-engines/.</p><h1>GtkThemingEngines have limited access to the object they are</h1>\n<p>rendering, the <span data-xref=\"Gtk.ThemingEngine\"/> API has read-only accessors to the\nstyle information contained in the rendered object\u2019s <span data-xref=\"Gtk.StyleContext\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_object"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -241,7 +229,7 @@
             }
         },
         {
-            "doc": "<p>Returns the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> to which <code>engine</code> currently rendering to.</p>",
+            "doc": "<p>Returns the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> to which <pre>engine</pre> currently rendering to.</p>",
             "kind": "method",
             "name": "get_screen",
             "parameters": [],
@@ -259,7 +247,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves several widget style properties from <code>engine</code> according\nto the currently rendered content\u2019s style.</p>",
+            "doc": "<p>Retrieves several widget style properties from <pre>engine</pre> according\nto the currently rendered content\u2019s style.</p>",
             "kind": "method",
             "name": "get_style",
             "parameters": [
@@ -297,7 +285,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves several widget style properties from <code>engine</code> according to the\ncurrently rendered content\u2019s style.</p>",
+            "doc": "<p>Retrieves several widget style properties from <pre>engine</pre> according to the\ncurrently rendered content\u2019s style.</p>",
             "kind": "method",
             "name": "get_style_valist",
             "parameters": [
@@ -335,7 +323,7 @@
             }
         },
         {
-            "doc": "<p>Returns <code>true</code> if the currently rendered contents have\ndefined the given class name.</p>",
+            "doc": "<p>Returns <pre>true</pre> if the currently rendered contents have\ndefined the given class name.</p>",
             "kind": "method",
             "name": "has_class",
             "parameters": [
@@ -351,7 +339,7 @@
             }
         },
         {
-            "doc": "<p>Returns <code>true</code> if the currently rendered contents have the\nregion defined. If @flags_return is not <code>null</code>, it is set\nto the flags affecting the region.</p>",
+            "doc": "<p>Returns <pre>true</pre> if the currently rendered contents have the\nregion defined. If @flags_return is not <pre>null</pre>, it is set\nto the flags affecting the region.</p>",
             "kind": "method",
             "name": "has_region",
             "parameters": [
@@ -395,7 +383,7 @@
             }
         },
         {
-            "doc": "<p>Returns <code>true</code> if there is a transition animation running for the\ncurrent region (see <span data-xref=\"Gtk.StyleContext.push_animatable_region\"/>).</p><p>If <code>progress</code> is not <code>null</code>, the animation progress will be returned\nthere, 0.0 means the state is closest to being <code>false</code>, while 1.0 means\nit\u2019s closest to being <code>true</code>. This means transition animations will\nrun from 0 to 1 when <code>state</code> is being set to <code>true</code> and from 1 to 0 when\nit\u2019s being set to <code>false</code>.</p>",
+            "doc": "<p>Returns <pre>true</pre> if there is a transition animation running for the\ncurrent region (see <span data-xref=\"Gtk.StyleContext.push_animatable_region\"/>).</p><p>If <pre>progress</pre> is not <pre>null</pre>, the animation progress will be returned\nthere, 0.0 means the state is closest to being <pre>false</pre>, while 1.0 means\nit\u2019s closest to being <pre>true</pre>. This means transition animations will\nrun from 0 to 1 when <pre>state</pre> is being set to <pre>true</pre> and from 1 to 0 when\nit\u2019s being set to <pre>false</pre>.</p>",
             "kind": "method",
             "name": "state_is_running",
             "parameters": [
@@ -416,52 +404,50 @@
                 "type": "Boolean"
             }
         },
-        [
-            {
-                "doc": "<p>Loads and initializes a theming engine module from the\nstandard directories.</p>",
-                "kind": "function",
-                "name": "load",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "name",
-                        "direction": "in",
-                        "type": "String"
-                    }
-                ],
-                "retval": {
-                    "type": "Gtk.ThemingEngine"
+        {
+            "doc": "<p>Loads and initializes a theming engine module from the\nstandard directories.</p>",
+            "kind": "function",
+            "name": "load",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
                 }
-            },
-            {
-                "doc": "<p>Registers a property so it can be used in the CSS file format,\non the CSS file the property will look like\n\"-${<code>name_space</code>}-${property_name}\". being\n${property_name} the given to <code>pspec</code>. <code>name_space</code> will usually\nbe the theme engine name.</p><p>For any type a <code>parse_func</code> may be provided, being this function\nused for turning any property value (between \u201c:\u201d and \u201c;\u201d) in\nCSS to the <span data-xref=\"GObject.Value\">GObject.Value</span> needed. For basic types there is already\nbuiltin parsing support, so <code>null</code> may be provided for these\ncases.</p><p>Engines must ensure property registration happens exactly once,\nusually GTK+ deals with theming engines as singletons, so this\nshould be guaranteed to happen once, but bear this in mind\nwhen creating #GtkThemeEngines yourself.</p><p>In order to make use of the custom registered properties in\nthe CSS file, make sure the engine is loaded first by specifying\nthe engine property, either in a previous rule or within the same\none.\n|[\n* {\n    engine: someengine;\n    -SomeEngine-custom-property: 2;\n}\n]|</p>",
-                "kind": "function",
-                "name": "register_property",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "name_space",
-                        "direction": "in",
-                        "type": "String"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "parse_func",
-                        "direction": "in",
-                        "type": "Gtk.StylePropertyParser"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "pspec",
-                        "direction": "in",
-                        "type": "GObject.ParamSpec"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
+            ],
+            "retval": {
+                "type": "Gtk.ThemingEngine"
             }
-        ]
+        },
+        {
+            "doc": "<p>Registers a property so it can be used in the CSS file format,\non the CSS file the property will look like\n\"-${<pre>name_space</pre>}-${property_name}\". being\n${property_name} the given to <pre>pspec</pre>. <pre>name_space</pre> will usually\nbe the theme engine name.</p><p>For any type a <pre>parse_func</pre> may be provided, being this function\nused for turning any property value (between \u201c:\u201d and \u201c;\u201d) in\nCSS to the <span data-xref=\"GObject.Value\">GObject.Value</span> needed. For basic types there is already\nbuiltin parsing support, so <pre>null</pre> may be provided for these\ncases.</p><p>Engines must ensure property registration happens exactly once,\nusually GTK+ deals with theming engines as singletons, so this\nshould be guaranteed to happen once, but bear this in mind\nwhen creating #GtkThemeEngines yourself.</p><p>In order to make use of the custom registered properties in\nthe CSS file, make sure the engine is loaded first by specifying\nthe engine property, either in a previous rule or within the same\none.\n|[\n* {\n    engine: someengine;\n    -SomeEngine-custom-property: 2;\n}\n]|</p>",
+            "kind": "function",
+            "name": "register_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name_space",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "parse_func",
+                    "direction": "in",
+                    "type": "Gtk.StylePropertyParser"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
     ],
     "name": "ThemingEngine",
     "properties": [

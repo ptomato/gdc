@@ -17,18 +17,9 @@
             }
         }
     ],
-    "doc": "<p>The <span data-xref=\"Gtk.HScrollbar\"/> widget is a widget arranged horizontally creating a\nscrollbar. See <span data-xref=\"Gtk.Scrollbar\"/> for details on\nscrollbars. <span data-xref=\"Gtk.Adjustment\"/> pointers may be added to handle the\nadjustment of the scrollbar or it may be left <code>null</code> in which case one\nwill be created for you. See <span data-xref=\"Gtk.Scrollbar\"/> for a description of what the\nfields in an adjustment represent for a scrollbar.</p><p>GtkHScrollbar has been deprecated, use <span data-xref=\"Gtk.Scrollbar\"/> instead.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "scrollbar"
-        }
-    ],
+    "doc": "<p>The <span data-xref=\"Gtk.HScrollbar\"/> widget is a widget arranged horizontally creating a\nscrollbar. See <span data-xref=\"Gtk.Scrollbar\"/> for details on\nscrollbars. <span data-xref=\"Gtk.Adjustment\"/> pointers may be added to handle the\nadjustment of the scrollbar or it may be left <pre>null</pre> in which case one\nwill be created for you. See <span data-xref=\"Gtk.Scrollbar\"/> for a description of what the\nfields in an adjustment represent for a scrollbar.</p><p>GtkHScrollbar has been deprecated, use <span data-xref=\"Gtk.Scrollbar\"/> instead.</p>",
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "HScrollbar",
     "properties": [],
     "signals": [],

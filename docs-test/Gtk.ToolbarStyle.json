@@ -1,0 +1,27 @@
+{
+    "doc": "<p>Used to customize the appearance of a <span data-xref=\"Gtk.Toolbar\"/>. Note that\nsetting the toolbar style overrides the user\u2019s preferences\nfor the default toolbar style.  Note that if the button has only\na label set and GTK_TOOLBAR_ICONS is used, the label will be\nvisible, and vice versa.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Buttons display only icons in the toolbar.</p>",
+            "kind": "default",
+            "name": "icons"
+        },
+        {
+            "doc": "<p>Buttons display only text labels in the toolbar.</p>",
+            "kind": "default",
+            "name": "text"
+        },
+        {
+            "doc": "<p>Buttons display text and icons in the toolbar.</p>",
+            "kind": "default",
+            "name": "both"
+        },
+        {
+            "doc": "<p>Buttons display icons and text alongside each\n other, rather than vertically stacked</p>",
+            "kind": "default",
+            "name": "both_horiz"
+        }
+    ],
+    "name": "ToolbarStyle"
+}

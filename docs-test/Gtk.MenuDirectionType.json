@@ -1,0 +1,27 @@
+{
+    "doc": "<p>An enumeration representing directional movements within a menu.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>To the parent menu shell</p>",
+            "kind": "default",
+            "name": "parent"
+        },
+        {
+            "doc": "<p>To the submenu, if any, associated with the item</p>",
+            "kind": "default",
+            "name": "child"
+        },
+        {
+            "doc": "<p>To the next menu item</p>",
+            "kind": "default",
+            "name": "next"
+        },
+        {
+            "doc": "<p>To the previous menu item</p>",
+            "kind": "default",
+            "name": "prev"
+        }
+    ],
+    "name": "MenuDirectionType"
+}

@@ -1,0 +1,24 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "key"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "closure"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "accel_path_quark"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "AccelGroupEntry"
+}

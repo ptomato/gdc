@@ -18,18 +18,6 @@
         }
     ],
     "doc": "",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "box"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -49,7 +37,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether <code>child</code> should appear in a secondary group of children.</p>",
+            "doc": "<p>Returns whether <pre>child</pre> should appear in a secondary group of children.</p>",
             "kind": "method",
             "name": "get_child_secondary",
             "parameters": [
@@ -96,7 +84,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>child</code> should appear in a secondary group of children.\nA typical use of a secondary child is the help button in a dialog.</p><p>This group appears after the other children if the style\nis <span data-xref=\"Gtk.ButtonBoxStyle\"/>.start, <span data-xref=\"Gtk.ButtonBoxStyle\"/>.spread or\n<span data-xref=\"Gtk.ButtonBoxStyle\"/>.edge, and before the other children if the style\nis <span data-xref=\"Gtk.ButtonBoxStyle\"/>.end. For horizontal button boxes, the definition\nof before/after depends on direction of the widget (see\n<span data-xref=\"Gtk.Widget.set_direction\"/>). If the style is <span data-xref=\"Gtk.ButtonBoxStyle\"/>.start\nor <span data-xref=\"Gtk.ButtonBoxStyle\"/>.end, then the secondary children are aligned at\nthe other end of the button box from the main children. For the\nother styles, they appear immediately next to the main children.</p>",
+            "doc": "<p>Sets whether <pre>child</pre> should appear in a secondary group of children.\nA typical use of a secondary child is the help button in a dialog.</p><p>This group appears after the other children if the style\nis <span data-xref=\"Gtk.ButtonBoxStyle\"/>.start, <span data-xref=\"Gtk.ButtonBoxStyle\"/>.spread or\n<span data-xref=\"Gtk.ButtonBoxStyle\"/>.edge, and before the other children if the style\nis <span data-xref=\"Gtk.ButtonBoxStyle\"/>.end. For horizontal button boxes, the definition\nof before/after depends on direction of the widget (see\n<span data-xref=\"Gtk.Widget.set_direction\"/>). If the style is <span data-xref=\"Gtk.ButtonBoxStyle\"/>.start\nor <span data-xref=\"Gtk.ButtonBoxStyle\"/>.end, then the secondary children are aligned at\nthe other end of the button box from the main children. For the\nother styles, they appear immediately next to the main children.</p>",
             "kind": "method",
             "name": "set_child_secondary",
             "parameters": [
@@ -132,8 +120,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ButtonBox",
     "properties": [

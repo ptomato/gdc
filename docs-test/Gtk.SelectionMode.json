@@ -1,0 +1,27 @@
+{
+    "doc": "<p>Used to control what selections users are allowed to make.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>No selection is possible.</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>Zero or one element may be selected.</p>",
+            "kind": "default",
+            "name": "single"
+        },
+        {
+            "doc": "<p>Exactly one element is selected.\n    In some circumstances, such as initially or during a search\n    operation, it\u2019s possible for no element to be selected with\n    <span data-xref=\"Gtk.SelectionMode\"/>.browse. What is really enforced is that the user\n    can\u2019t deselect a currently selected element except by selecting\n    another element.</p>",
+            "kind": "default",
+            "name": "browse"
+        },
+        {
+            "doc": "<p>Any number of elements may be selected.\n     The Ctrl key may be used to enlarge the selection, and Shift\n     key to select between the focus and the child pointed to.\n     Some widgets may also allow Click-drag to select a range of elements.</p>",
+            "kind": "default",
+            "name": "multiple"
+        }
+    ],
+    "name": "SelectionMode"
+}

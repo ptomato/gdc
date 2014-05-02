@@ -1,0 +1,27 @@
+{
+    "doc": "<p>Describes which edge of a widget a certain feature is positioned at, e.g. the\ntabs of a <span data-xref=\"Gtk.Notebook\"/>, the handle of a <span data-xref=\"Gtk.HandleBox\"/> or the label of a\n<span data-xref=\"Gtk.Scale\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The feature is at the left edge.</p>",
+            "kind": "default",
+            "name": "left"
+        },
+        {
+            "doc": "<p>The feature is at the right edge.</p>",
+            "kind": "default",
+            "name": "right"
+        },
+        {
+            "doc": "<p>The feature is at the top edge.</p>",
+            "kind": "default",
+            "name": "top"
+        },
+        {
+            "doc": "<p>The feature is at the bottom edge.</p>",
+            "kind": "default",
+            "name": "bottom"
+        }
+    ],
+    "name": "PositionType"
+}

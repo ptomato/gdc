@@ -1,0 +1,48 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Allocates a new <span data-xref=\"Gtk.Requisition\"/>-struct and initializes its elements to zero.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Requisition"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.Requisition\"/>-struct represents the desired size of a widget. See\n[GtkWidget\u2019s geometry management section][geometry-management] for\nmore information.</p>",
+    "fields": [
+        {
+            "doc": "<p>the widget\u2019s desired width</p>",
+            "kind": "field",
+            "name": "width"
+        },
+        {
+            "doc": "<p>the widget\u2019s desired height</p>",
+            "kind": "field",
+            "name": "height"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Copies a <span data-xref=\"Gtk.Requisition\"/>.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Requisition"
+            }
+        },
+        {
+            "doc": "<p>Frees a <span data-xref=\"Gtk.Requisition\"/>.</p>",
+            "kind": "method",
+            "name": "free",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "Requisition"
+}

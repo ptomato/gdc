@@ -1,0 +1,17 @@
+{
+    "doc": "<p>Represents the orientation of widgets which can be switched between horizontal\nand vertical orientation on the fly, like <span data-xref=\"Gtk.Toolbar\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The widget is in horizontal orientation.</p>",
+            "kind": "default",
+            "name": "horizontal"
+        },
+        {
+            "doc": "<p>The widget is in vertical orientation.</p>",
+            "kind": "default",
+            "name": "vertical"
+        }
+    ],
+    "name": "Orientation"
+}

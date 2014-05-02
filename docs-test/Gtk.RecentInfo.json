@@ -1,0 +1,308 @@
+{
+    "constructors": [],
+    "doc": "<p><span data-xref=\"Gtk.RecentInfo\"/>-struct contains private data only, and should\nbe accessed using the provided API.</p><p><span data-xref=\"Gtk.RecentInfo\"/> constains all the meta-data\nassociated with an entry in the recently used files list.</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Creates a <span data-xref=\"Gio.AppInfo\">Gio.AppInfo</span> for the specified <span data-xref=\"Gtk.RecentInfo\"/></p>",
+            "kind": "method",
+            "name": "create_app_info",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "app_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gio.AppInfo"
+            }
+        },
+        {
+            "doc": "<p>Checks whether the resource pointed by <pre>info</pre> still exists.  At\nthe moment this check is done only on resources pointing to local files.</p>",
+            "kind": "method",
+            "name": "exists",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the timestamp (seconds from system\u2019s Epoch) when the resource\nwas added to the recently used resources list.</p>",
+            "kind": "method",
+            "name": "get_added",
+            "parameters": [],
+            "retval": {
+                "type": "Number(glong)"
+            }
+        },
+        {
+            "doc": "<p>Gets the number of days elapsed since the last update of the resource\npointed by <pre>info</pre>.</p>",
+            "kind": "method",
+            "name": "get_age",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the data regarding the application that has registered the resource\npointed by <pre>info</pre>.</p><p>If the command line contains any escape characters defined inside the\nstorage specification, they will be expanded.</p>",
+            "kind": "method",
+            "name": "get_application_info",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "app_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "app_exec",
+                    "direction": "out",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "time_",
+                    "direction": "out",
+                    "type": "Number(glong)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the list of applications that have registered this resource.</p>",
+            "kind": "method",
+            "name": "get_applications",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "length",
+                    "direction": "out",
+                    "type": "Number(gsize)"
+                }
+            ],
+            "retval": {
+                "type": "Array(String)"
+            }
+        },
+        {
+            "doc": "<p>Gets the (short) description of the resource.</p>",
+            "kind": "method",
+            "name": "get_description",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the name of the resource.  If none has been defined, the basename\nof the resource is obtained.</p>",
+            "kind": "method",
+            "name": "get_display_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the icon associated to the resource MIME type.</p>",
+            "kind": "method",
+            "name": "get_gicon",
+            "parameters": [],
+            "retval": {
+                "type": "Gio.Icon"
+            }
+        },
+        {
+            "doc": "<p>Returns all groups registered for the recently used item <pre>info</pre>.  The\narray of returned group names will be <pre>null</pre> terminated, so length might\noptionally be <pre>null</pre>.</p>",
+            "kind": "method",
+            "name": "get_groups",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "length",
+                    "direction": "out",
+                    "type": "Number(gsize)"
+                }
+            ],
+            "retval": {
+                "type": "Array(String)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the icon of size <pre>size</pre> associated to the resource MIME type.</p>",
+            "kind": "method",
+            "name": "get_icon",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Gets the MIME type of the resource.</p>",
+            "kind": "method",
+            "name": "get_mime_type",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the timestamp (seconds from system\u2019s Epoch) when the meta-data\nfor the resource was last modified.</p>",
+            "kind": "method",
+            "name": "get_modified",
+            "parameters": [],
+            "retval": {
+                "type": "Number(glong)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of the \u201cprivate\u201d flag.  Resources in the recently used\nlist that have this flag set to <pre>true</pre> should only be displayed by the\napplications that have registered them.</p>",
+            "kind": "method",
+            "name": "get_private_hint",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Computes a valid UTF-8 string that can be used as the name of the item in a\nmenu or list.  For example, calling this function on an item that refers to\n\u201cfile:///foo/bar.txt\u201d will yield \u201cbar.txt\u201d.</p>",
+            "kind": "method",
+            "name": "get_short_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the URI of the resource.</p>",
+            "kind": "method",
+            "name": "get_uri",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets a displayable version of the resource\u2019s URI.  If the resource\nis local, it returns a local path; if the resource is not local,\nit returns the UTF-8 encoded content of <span data-xref=\"Gtk.RecentInfo.get_uri\"/>.</p>",
+            "kind": "method",
+            "name": "get_uri_display",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the timestamp (seconds from system\u2019s Epoch) when the meta-data\nfor the resource was last visited.</p>",
+            "kind": "method",
+            "name": "get_visited",
+            "parameters": [],
+            "retval": {
+                "type": "Number(glong)"
+            }
+        },
+        {
+            "doc": "<p>Checks whether an application registered this resource using <pre>app_name</pre>.</p>",
+            "kind": "method",
+            "name": "has_application",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "app_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Checks whether <pre>group_name</pre> appears inside the groups registered for the\nrecently used item <pre>info</pre>.</p>",
+            "kind": "method",
+            "name": "has_group",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "group_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Checks whether the resource is local or not by looking at the\nscheme of its URI.</p>",
+            "kind": "method",
+            "name": "is_local",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the name of the last application that have registered the\nrecently used resource represented by <pre>info</pre>.</p>",
+            "kind": "method",
+            "name": "last_application",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Checks whether two <span data-xref=\"Gtk.RecentInfo\"/>-struct point to the same\nresource.</p>",
+            "kind": "method",
+            "name": "match",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "info_b",
+                    "direction": "in",
+                    "type": "Gtk.RecentInfo"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Increases the reference count of @recent_info by one.</p>",
+            "kind": "method",
+            "name": "ref",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.RecentInfo"
+            }
+        },
+        {
+            "doc": "<p>Decreases the reference count of <pre>info</pre> by one.  If the reference\ncount reaches zero, <pre>info</pre> is deallocated, and the memory freed.</p>",
+            "kind": "method",
+            "name": "unref",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "RecentInfo"
+}

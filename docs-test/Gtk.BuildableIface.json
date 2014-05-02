@@ -1,0 +1,64 @@
+{
+    "constructors": [],
+    "doc": "<p>The <span data-xref=\"Gtk.BuildableIface\"/> interface contains method that are\nnecessary to allow <span data-xref=\"Gtk.Builder\"/> to construct an object from\na <span data-xref=\"Gtk.Builder\"/> UI definition.</p>",
+    "fields": [
+        {
+            "doc": "<p>the parent class</p>",
+            "kind": "field",
+            "name": "g_iface"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_name"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_name"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "add_child"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_buildable_property"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "construct_child"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "custom_tag_start"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "custom_tag_end"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "custom_finished"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parser_finished"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_internal_child"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "BuildableIface"
+}

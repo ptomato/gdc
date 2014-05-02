@@ -1,0 +1,22 @@
+{
+    "doc": "<p>Specifies a preference for height-for-width or\nwidth-for-height geometry management.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Prefer height-for-width geometry management</p>",
+            "kind": "default",
+            "name": "height_for_width"
+        },
+        {
+            "doc": "<p>Prefer width-for-height geometry management</p>",
+            "kind": "default",
+            "name": "width_for_height"
+        },
+        {
+            "doc": "<p>Don\u2019t trade height-for-width or width-for-height</p>",
+            "kind": "default",
+            "name": "constant_size"
+        }
+    ],
+    "name": "SizeRequestMode"
+}

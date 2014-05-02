@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Used to create a new table widget. An initial size must be given by\nspecifying how many rows and columns the table should have, although\nthis can be changed later with <span data-xref=\"Gtk.Table.resize\"/>.  <code>rows</code> and <code>columns</code>\nmust both be in the range 1 .. 65535. For historical reasons, 0 is accepted\nas well and is silently interpreted as 1.</p>",
+            "doc": "<p>Used to create a new table widget. An initial size must be given by\nspecifying how many rows and columns the table should have, although\nthis can be changed later with <span data-xref=\"Gtk.Table.resize\"/>.  <pre>rows</pre> and <pre>columns</pre>\nmust both be in the range 1 .. 65535. For historical reasons, 0 is accepted\nas well and is silently interpreted as 1.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -29,23 +29,11 @@
             }
         }
     ],
-    "doc": "<p>The <span data-xref=\"Gtk.Table\"/> functions allow the programmer to arrange widgets in rows and\ncolumns, making it easy to align many widgets next to each other,\nhorizontally and vertically.</p><p>Tables are created with a call to <span data-xref=\"Gtk.Table.new\"/>, the size of which can\nlater be changed with <span data-xref=\"Gtk.Table.resize\"/>.</p><p>Widgets can be added to a table using <span data-xref=\"Gtk.Table.attach\"/> or the more\nconvenient (but slightly less flexible) <span data-xref=\"Gtk.Table.attach_defaults\"/>.</p><p>To alter the space next to a specific row, use <span data-xref=\"Gtk.Table.set_row_spacing\"/>,\nand for a column, <span data-xref=\"Gtk.Table.set_col_spacing\"/>.\nThe gaps between all rows or columns can be changed by\ncalling <span data-xref=\"Gtk.Table.set_row_spacings\"/> or <span data-xref=\"Gtk.Table.set_col_spacings\"/>\nrespectively. Note that spacing is added between the\nchildren, while padding added by <span data-xref=\"Gtk.Table.attach\"/> is added on\neither side of the widget it belongs to.</p><p><span data-xref=\"Gtk.Table.set_homogeneous\"/>, can be used to set whether all cells in the\ntable will resize themselves to the size of the largest widget in the table.</p><p>&gt; <span data-xref=\"Gtk.Table\"/> has been deprecated. Use <span data-xref=\"Gtk.Grid\"/> instead. It provides the same\n&gt; capabilities as GtkTable for arranging widgets in a rectangular grid, but\n&gt; does support height-for-width geometry management.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "container"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>The <span data-xref=\"Gtk.Table\"/> functions allow the programmer to arrange widgets in rows and\ncolumns, making it easy to align many widgets next to each other,\nhorizontally and vertically.</p><p>Tables are created with a call to <span data-xref=\"Gtk.Table.new\"/>, the size of which can\nlater be changed with <span data-xref=\"Gtk.Table.resize\"/>.</p><p>Widgets can be added to a table using <span data-xref=\"Gtk.Table.attach\"/> or the more\nconvenient (but slightly less flexible) <span data-xref=\"Gtk.Table.attach_defaults\"/>.</p><p>To alter the space next to a specific row, use <span data-xref=\"Gtk.Table.set_row_spacing\"/>,\nand for a column, <span data-xref=\"Gtk.Table.set_col_spacing\"/>.\nThe gaps between all rows or columns can be changed by\ncalling <span data-xref=\"Gtk.Table.set_row_spacings\"/> or <span data-xref=\"Gtk.Table.set_col_spacings\"/>\nrespectively. Note that spacing is added between the\nchildren, while padding added by <span data-xref=\"Gtk.Table.attach\"/> is added on\neither side of the widget it belongs to.</p><p><span data-xref=\"Gtk.Table.set_homogeneous\"/>, can be used to set whether all cells in the\ntable will resize themselves to the size of the largest widget in the table.</p><blockquote>\n<p><span data-xref=\"Gtk.Table\"/> has been deprecated. Use <span data-xref=\"Gtk.Grid\"/> instead. It provides the same\ncapabilities as GtkTable for arranging widgets in a rectangular grid, but\ndoes support height-for-width geometry management.</p>\n</blockquote>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Adds a widget to a table. The number of \u201ccells\u201d that a widget will occupy is\nspecified by <code>left_attach</code>, <code>right_attach</code>, <code>top_attach</code> and <code>bottom_attach</code>.\nThese each represent the leftmost, rightmost, uppermost and lowest column\nand row numbers of the table. (Columns and rows are indexed from zero).</p><p>To make a button occupy the lower right cell of a 2x2 table, use\n|[\ngtk_table_attach (table, button,\n                  1, 2, // left, right attach\n                  1, 2, // top, bottom attach\n                  xoptions, yoptions,\n                  xpadding, ypadding);\n]|\nIf you want to make the button span the entire bottom row, use <code>left_attach</code> == 0 and <code>right_attach</code> = 2 instead.</p>",
+            "doc": "<p>Adds a widget to a table. The number of \u201ccells\u201d that a widget will occupy is\nspecified by <pre>left_attach</pre>, <pre>right_attach</pre>, <pre>top_attach</pre> and <pre>bottom_attach</pre>.\nThese each represent the leftmost, rightmost, uppermost and lowest column\nand row numbers of the table. (Columns and rows are indexed from zero).</p><p>To make a button occupy the lower right cell of a 2x2 table, use\n|[\ngtk_table_attach (table, button,\n                  1, 2, // left, right attach\n                  1, 2, // top, bottom attach\n                  xoptions, yoptions,\n                  xpadding, ypadding);\n]|\nIf you want to make the button span the entire bottom row, use <pre>left_attach</pre> == 0 and <pre>right_attach</pre> = 2 instead.</p>",
             "kind": "method",
             "name": "attach",
             "parameters": [
@@ -192,7 +180,7 @@
             }
         },
         {
-            "doc": "<p>Gets the amount of space between row <code>row</code>, and\nrow <code>row</code> + 1. See <span data-xref=\"Gtk.Table.set_row_spacing\"/>.</p>",
+            "doc": "<p>Gets the amount of space between row <pre>row</pre>, and\nrow <pre>row</pre> + 1. See <span data-xref=\"Gtk.Table.set_row_spacing\"/>.</p>",
             "kind": "method",
             "name": "get_row_spacing",
             "parameters": [
@@ -274,7 +262,7 @@
             }
         },
         {
-            "doc": "<p>Sets the space between every column in <code>table</code> equal to <code>spacing</code>.</p>",
+            "doc": "<p>Sets the space between every column in <pre>table</pre> equal to <pre>spacing</pre>.</p>",
             "kind": "method",
             "name": "set_col_spacings",
             "parameters": [
@@ -328,7 +316,7 @@
             }
         },
         {
-            "doc": "<p>Sets the space between every row in <code>table</code> equal to <code>spacing</code>.</p>",
+            "doc": "<p>Sets the space between every row in <pre>table</pre> equal to <pre>spacing</pre>.</p>",
             "kind": "method",
             "name": "set_row_spacings",
             "parameters": [
@@ -342,8 +330,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Table",
     "properties": [

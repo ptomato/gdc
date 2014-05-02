@@ -1,0 +1,27 @@
+{
+    "doc": "<p>An enum for determining where a dropped row goes.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>dropped row is inserted before</p>",
+            "kind": "default",
+            "name": "before"
+        },
+        {
+            "doc": "<p>dropped row is inserted after</p>",
+            "kind": "default",
+            "name": "after"
+        },
+        {
+            "doc": "<p>dropped row becomes a child or is inserted before</p>",
+            "kind": "default",
+            "name": "into_or_before"
+        },
+        {
+            "doc": "<p>dropped row becomes a child or is inserted after</p>",
+            "kind": "default",
+            "name": "into_or_after"
+        }
+    ],
+    "name": "TreeViewDropPosition"
+}

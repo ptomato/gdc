@@ -1,0 +1,37 @@
+{
+    "doc": "<p>Priorities for path lookups.\nSee also <span data-xref=\"Gtk.BindingSet.add_path\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "lowest"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "gtk"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "application"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "theme"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "rc"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "highest"
+        }
+    ],
+    "name": "PathPriorityType"
+}

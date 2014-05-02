@@ -10,19 +10,7 @@
             }
         }
     ],
-    "doc": "<p>GtkPrintOperation is the high-level, portable printing API.\nIt looks a bit different than other GTK+ dialogs such as the\n<span data-xref=\"Gtk.FileChooser\"/>, since some platforms don\u2019t expose enough\ninfrastructure to implement a good print dialog. On such\nplatforms, GtkPrintOperation uses the native print dialog.\nOn platforms which do not provide a native print dialog, GTK+\nuses its own, see #GtkPrintUnixDialog.</p><p>The typical way to use the high-level printing API is to create\na GtkPrintOperation object with <span data-xref=\"Gtk.PrintOperation.new\"/> when\nthe user selects to print. Then you set some properties on it,\ne.g. the page size, any <span data-xref=\"Gtk.PrintSettings\"/> from previous print\noperations, the number of pages, the current page, etc.</p><p>Then you start the print operation by calling <span data-xref=\"Gtk.PrintOperation.run\"/>.\nIt will then show a dialog, let the user select a printer and\noptions. When the user finished the dialog various signals will\nbe emitted on the <span data-xref=\"Gtk.PrintOperation\"/>, the main one being\n<span data-xref=\"Gtk.PrintOperation-draw-page\"/>, which you are supposed to catch\nand render the page on the provided <span data-xref=\"Gtk.PrintContext\"/> using Cairo.</p><h1>The high-level printing API</h1><p>|[&lt;!-- language=\"C\" --&gt;\nstatic GtkPrintSettings *settings = NULL;</p><p>static void\ndo_print (void)\n{\n  GtkPrintOperation *print;\n  GtkPrintOperationResult res;</p><p>print = gtk_print_operation_new ();</p><p>if (settings != NULL)\n    gtk_print_operation_set_print_settings (print, settings);</p><p>g_signal_connect (print, \"begin_print\", G_CALLBACK (begin_print), NULL);\n  g_signal_connect (print, \"draw_page\", G_CALLBACK (draw_page), NULL);</p><p>res = gtk_print_operation_run (print, GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG,\n                                 GTK_WINDOW (main_window), NULL);</p><p>if (res == GTK_PRINT_OPERATION_RESULT_APPLY)\n    {\n      if (settings != NULL)\n        g_object_unref (settings);\n      settings = g_object_ref (gtk_print_operation_get_print_settings (print));\n    }</p><p>g_object_unref (print);\n}\n]|</p><p>By default GtkPrintOperation uses an external application to do\nprint preview. To implement a custom print preview, an application\nmust connect to the preview signal. The functions\n<span data-xref=\"Gtk.PrintOperationPreview.render_page\"/>,\n<span data-xref=\"Gtk.PrintOperationPreview.end_preview\"/> and\n<span data-xref=\"Gtk.PrintOperationPreview.is_selected\"/>\nare useful when implementing a print preview.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>GtkPrintOperation is the high-level, portable printing API.\nIt looks a bit different than other GTK+ dialogs such as the\n<span data-xref=\"Gtk.FileChooser\"/>, since some platforms don\u2019t expose enough\ninfrastructure to implement a good print dialog. On such\nplatforms, GtkPrintOperation uses the native print dialog.\nOn platforms which do not provide a native print dialog, GTK+\nuses its own, see #GtkPrintUnixDialog.</p><p>The typical way to use the high-level printing API is to create\na GtkPrintOperation object with <span data-xref=\"Gtk.PrintOperation.new\"/> when\nthe user selects to print. Then you set some properties on it,\ne.g. the page size, any <span data-xref=\"Gtk.PrintSettings\"/> from previous print\noperations, the number of pages, the current page, etc.</p><p>Then you start the print operation by calling <span data-xref=\"Gtk.PrintOperation.run\"/>.\nIt will then show a dialog, let the user select a printer and\noptions. When the user finished the dialog various signals will\nbe emitted on the <span data-xref=\"Gtk.PrintOperation\"/>, the main one being\n<span data-xref=\"Gtk.PrintOperation-draw-page\"/>, which you are supposed to catch\nand render the page on the provided <span data-xref=\"Gtk.PrintContext\"/> using Cairo.</p><h1>The high-level printing API</h1><p>|[<!-- language=\"C\" -->\nstatic GtkPrintSettings *settings = NULL;</p><p>static void\ndo_print (void)\n{\n  GtkPrintOperation *print;\n  GtkPrintOperationResult res;</p><p>print = gtk_print_operation_new ();</p><p>if (settings != NULL)\n    gtk_print_operation_set_print_settings (print, settings);</p><p>g_signal_connect (print, \"begin_print\", G_CALLBACK (begin_print), NULL);\n  g_signal_connect (print, \"draw_page\", G_CALLBACK (draw_page), NULL);</p><p>res = gtk_print_operation_run (print, GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG,\n                                 GTK_WINDOW (main_window), NULL);</p><p>if (res == GTK_PRINT_OPERATION_RESULT_APPLY)\n    {\n      if (settings != NULL)\n        g_object_unref (settings);\n      settings = g_object_ref (gtk_print_operation_get_print_settings (print));\n    }</p><p>g_object_unref (print);\n}\n]|</p><p>By default GtkPrintOperation uses an external application to do\nprint preview. To implement a custom print preview, an application\nmust connect to the preview signal. The functions\n<span data-xref=\"Gtk.PrintOperationPreview.render_page\"/>,\n<span data-xref=\"Gtk.PrintOperationPreview.end_preview\"/> and\n<span data-xref=\"Gtk.PrintOperationPreview.is_selected\"/>\nare useful when implementing a print preview.</p>",
     "kind": "class",
     "methods": [
         {
@@ -89,7 +77,7 @@
             }
         },
         {
-            "doc": "<p>Returns the current print settings.</p><p>Note that the return value is <code>null</code> until either\n<span data-xref=\"Gtk.PrintOperation.set_print_settings\"/> or\n<span data-xref=\"Gtk.PrintOperation.run\"/> have been called.</p>",
+            "doc": "<p>Returns the current print settings.</p><p>Note that the return value is <pre>null</pre> until either\n<span data-xref=\"Gtk.PrintOperation.set_print_settings\"/> or\n<span data-xref=\"Gtk.PrintOperation.run\"/> have been called.</p>",
             "kind": "method",
             "name": "get_print_settings",
             "parameters": [],
@@ -134,7 +122,7 @@
             }
         },
         {
-            "doc": "<p>Runs the print operation, by first letting the user modify\nprint settings in the print dialog, and then print the document.</p><p>Normally that this function does not return until the rendering of all\npages is complete. You can connect to the\n<span data-xref=\"Gtk.PrintOperation-status-changed\"/> signal on <code>op</code> to obtain some\ninformation about the progress of the print operation.\nFurthermore, it may use a recursive mainloop to show the print dialog.</p><p>If you call <span data-xref=\"Gtk.PrintOperation.set_allow_async\"/> or set the\n<span data-xref=\"Gtk.PrintOperation-allow-async\"/> property the operation will run\nasynchronously if this is supported on the platform. The\n<span data-xref=\"Gtk.PrintOperation-done\"/> signal will be emitted with the result of the\noperation when the it is done (i.e. when the dialog is canceled, or when\nthe print succeeds or fails).\n|[&lt;!-- language=\"C\" --&gt;\nif (settings != NULL)\n  gtk_print_operation_set_print_settings (print, settings);</p>\n<p>if (page_setup != NULL)\n  gtk_print_operation_set_default_page_setup (print, page_setup);</p>\n<p>g_signal_connect (print, \"begin-print\",\n                  G_CALLBACK (begin_print), &amp;data);\ng_signal_connect (print, \"draw-page\",\n                  G_CALLBACK (draw_page), &amp;data);</p>\n<p>res = gtk_print_operation_run (print,\n                               GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG,\n                               parent,\n                               &amp;error);</p>\n<p>if (res == GTK_PRINT_OPERATION_RESULT_ERROR)\n {\n   error_dialog = gtk_message_dialog_new (GTK_WINDOW (parent),\n                                 GTK_DIALOG_DESTROY_WITH_PARENT,\n                         GTK_MESSAGE_ERROR,\n                         GTK_BUTTONS_CLOSE,\n                         \"Error printing file:\\n%s\",\n                         error-&gt;message);\n   g_signal_connect (error_dialog, \"response\",\n                     G_CALLBACK (gtk_widget_destroy), NULL);\n   gtk_widget_show (error_dialog);\n   g_error_free (error);\n }\nelse if (res == GTK_PRINT_OPERATION_RESULT_APPLY)\n {\n   if (settings != NULL)\ng_object_unref (settings);\n   settings = g_object_ref (gtk_print_operation_get_print_settings (print));\n }\n]|</p><p>Note that <span data-xref=\"Gtk.PrintOperation.run\"/> can only be called once on a\ngiven <span data-xref=\"Gtk.PrintOperation\"/>.</p>",
+            "doc": "<p>Runs the print operation, by first letting the user modify\nprint settings in the print dialog, and then print the document.</p><p>Normally that this function does not return until the rendering of all\npages is complete. You can connect to the\n<span data-xref=\"Gtk.PrintOperation-status-changed\"/> signal on <pre>op</pre> to obtain some\ninformation about the progress of the print operation.\nFurthermore, it may use a recursive mainloop to show the print dialog.</p><p>If you call <span data-xref=\"Gtk.PrintOperation.set_allow_async\"/> or set the\n<span data-xref=\"Gtk.PrintOperation-allow-async\"/> property the operation will run\nasynchronously if this is supported on the platform. The\n<span data-xref=\"Gtk.PrintOperation-done\"/> signal will be emitted with the result of the\noperation when the it is done (i.e. when the dialog is canceled, or when\nthe print succeeds or fails).\n|[<!-- language=\"C\" -->\nif (settings != NULL)\n  gtk_print_operation_set_print_settings (print, settings);</p>\n<p>if (page_setup != NULL)\n  gtk_print_operation_set_default_page_setup (print, page_setup);</p>\n<p>g_signal_connect (print, \"begin-print\",\n                  G_CALLBACK (begin_print), &amp;data);\ng_signal_connect (print, \"draw-page\",\n                  G_CALLBACK (draw_page), &amp;data);</p>\n<p>res = gtk_print_operation_run (print,\n                               GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG,\n                               parent,\n                               &amp;error);</p>\n<p>if (res == GTK_PRINT_OPERATION_RESULT_ERROR)\n {\n   error_dialog = gtk_message_dialog_new (GTK_WINDOW (parent),\n                                 GTK_DIALOG_DESTROY_WITH_PARENT,\n                         GTK_MESSAGE_ERROR,\n                         GTK_BUTTONS_CLOSE,\n                         \"Error printing file:\\n%s\",\n                         error-&gt;message);\n   g_signal_connect (error_dialog, \"response\",\n                     G_CALLBACK (gtk_widget_destroy), NULL);\n   gtk_widget_show (error_dialog);\n   g_error_free (error);\n }\nelse if (res == GTK_PRINT_OPERATION_RESULT_APPLY)\n {\n   if (settings != NULL)\ng_object_unref (settings);\n   settings = g_object_ref (gtk_print_operation_get_print_settings (print));\n }\n]|</p><p>Note that <span data-xref=\"Gtk.PrintOperation.run\"/> can only be called once on a\ngiven <span data-xref=\"Gtk.PrintOperation\"/>.</p>",
             "kind": "method",
             "name": "run",
             "parameters": [
@@ -204,7 +192,7 @@
             }
         },
         {
-            "doc": "<p>Makes <code>default_page_setup</code> the default page setup for <code>op</code>.</p><p>This page setup will be used by <span data-xref=\"Gtk.PrintOperation.run\"/>,\nbut it can be overridden on a per-page basis by connecting\nto the <span data-xref=\"Gtk.PrintOperation-request-page-setup\"/> signal.</p>",
+            "doc": "<p>Makes <pre>default_page_setup</pre> the default page setup for <pre>op</pre>.</p><p>This page setup will be used by <span data-xref=\"Gtk.PrintOperation.run\"/>,\nbut it can be overridden on a per-page basis by connecting\nto the <span data-xref=\"Gtk.PrintOperation-request-page-setup\"/> signal.</p>",
             "kind": "method",
             "name": "set_default_page_setup",
             "parameters": [
@@ -293,7 +281,7 @@
             }
         },
         {
-            "doc": "<p>Sets the number of pages in the document.</p><p>This must be set to a positive number\nbefore the rendering starts. It may be set in a\n<span data-xref=\"Gtk.PrintOperation-begin-print\"/> signal hander.</p><p>Note that the page numbers passed to the\n<span data-xref=\"Gtk.PrintOperation-request-page-setup\"/>\nand <span data-xref=\"Gtk.PrintOperation-draw-page\"/> signals are 0-based, i.e. if\nthe user chooses to print all pages, the last ::draw-page signal\nwill be for page <code>n_pages</code> - 1.</p>",
+            "doc": "<p>Sets the number of pages in the document.</p><p>This must be set to a positive number\nbefore the rendering starts. It may be set in a\n<span data-xref=\"Gtk.PrintOperation-begin-print\"/> signal hander.</p><p>Note that the page numbers passed to the\n<span data-xref=\"Gtk.PrintOperation-request-page-setup\"/>\nand <span data-xref=\"Gtk.PrintOperation-draw-page\"/> signals are 0-based, i.e. if\nthe user chooses to print all pages, the last ::draw-page signal\nwill be for page <pre>n_pages</pre> - 1.</p>",
             "kind": "method",
             "name": "set_n_pages",
             "parameters": [
@@ -309,7 +297,7 @@
             }
         },
         {
-            "doc": "<p>Sets the print settings for <code>op</code>. This is typically used to\nre-establish print settings from a previous print operation,\nsee <span data-xref=\"Gtk.PrintOperation.run\"/>.</p>",
+            "doc": "<p>Sets the print settings for <pre>op</pre>. This is typically used to\nre-establish print settings from a previous print operation,\nsee <span data-xref=\"Gtk.PrintOperation.run\"/>.</p>",
             "kind": "method",
             "name": "set_print_settings",
             "parameters": [
@@ -325,7 +313,7 @@
             }
         },
         {
-            "doc": "<p>If <code>show_progress</code> is <code>true</code>, the print operation will show a\nprogress dialog during the print operation.</p>",
+            "doc": "<p>If <pre>show_progress</pre> is <pre>true</pre>, the print operation will show a\nprogress dialog during the print operation.</p>",
             "kind": "method",
             "name": "set_show_progress",
             "parameters": [
@@ -357,7 +345,7 @@
             }
         },
         {
-            "doc": "<p>If track_status is <code>true</code>, the print operation will try to continue report\non the status of the print job in the printer queues and printer. This\ncan allow your application to show things like \u201cout of paper\u201d issues,\nand when the print job actually reaches the printer.</p><p>This function is often implemented using some form of polling, so it should\nnot be enabled unless needed.</p>",
+            "doc": "<p>If track_status is <pre>true</pre>, the print operation will try to continue report\non the status of the print job in the printer queues and printer. This\ncan allow your application to show things like \u201cout of paper\u201d issues,\nand when the print job actually reaches the printer.</p><p>This function is often implemented using some form of polling, so it should\nnot be enabled unless needed.</p>",
             "kind": "method",
             "name": "set_track_print_status",
             "parameters": [
@@ -373,7 +361,7 @@
             }
         },
         {
-            "doc": "<p>Sets up the transformation for the cairo context obtained from\n<span data-xref=\"Gtk.PrintContext\"/> in such a way that distances are measured in\nunits of <code>unit</code>.</p>",
+            "doc": "<p>Sets up the transformation for the cairo context obtained from\n<span data-xref=\"Gtk.PrintContext\"/> in such a way that distances are measured in\nunits of <pre>unit</pre>.</p>",
             "kind": "method",
             "name": "set_unit",
             "parameters": [
@@ -389,7 +377,7 @@
             }
         },
         {
-            "doc": "<p>If <code>full_page</code> is <code>true</code>, the transformation for the cairo context\nobtained from <span data-xref=\"Gtk.PrintContext\"/> puts the origin at the top left\ncorner of the page (which may not be the top left corner of the\nsheet, depending on page orientation and the number of pages per\nsheet). Otherwise, the origin is at the top left corner of the\nimageable area (i.e. inside the margins).</p>",
+            "doc": "<p>If <pre>full_page</pre> is <pre>true</pre>, the transformation for the cairo context\nobtained from <span data-xref=\"Gtk.PrintContext\"/> puts the origin at the top left\ncorner of the page (which may not be the top left corner of the\nsheet, depending on page orientation and the number of pages per\nsheet). Otherwise, the origin is at the top left corner of the\nimageable area (i.e. inside the margins).</p>",
             "kind": "method",
             "name": "set_use_full_page",
             "parameters": [
@@ -403,8 +391,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "PrintOperation",
     "properties": [
@@ -421,7 +408,7 @@
             "type": "Number(gint)"
         },
         {
-            "doc": "<p>Used as the label of the tab containing custom widgets.\nNote that this property may be ignored on some platforms.</p><p>If this is <code>null</code>, GTK+ uses a default label.</p>",
+            "doc": "<p>Used as the label of the tab containing custom widgets.\nNote that this property may be ignored on some platforms.</p><p>If this is <pre>null</pre>, GTK+ uses a default label.</p>",
             "kind": "property",
             "name": "custom-tab-label",
             "type": "String"
@@ -433,7 +420,7 @@
             "type": "Gtk.PageSetup"
         },
         {
-            "doc": "<p>If <code>true</code>, page size combo box and orientation combo box are embedded into page setup page.</p>",
+            "doc": "<p>If <pre>true</pre>, page size combo box and orientation combo box are embedded into page setup page.</p>",
             "kind": "property",
             "name": "embed-page-setup",
             "type": "Boolean"
@@ -493,13 +480,13 @@
             "type": "String"
         },
         {
-            "doc": "<p>If <code>true</code>, the print operation will support print of selection.\nThis allows the print dialog to show a \"Selection\" button.</p>",
+            "doc": "<p>If <pre>true</pre>, the print operation will support print of selection.\nThis allows the print dialog to show a \"Selection\" button.</p>",
             "kind": "property",
             "name": "support-selection",
             "type": "Boolean"
         },
         {
-            "doc": "<p>If <code>true</code>, the print operation will try to continue report on\nthe status of the print job in the printer queues and printer.\nThis can allow your application to show things like \u201cout of paper\u201d\nissues, and when the print job actually reaches the printer.\nHowever, this is often implemented using polling, and should\nnot be enabled unless needed.</p>",
+            "doc": "<p>If <pre>true</pre>, the print operation will try to continue report on\nthe status of the print job in the printer queues and printer.\nThis can allow your application to show things like \u201cout of paper\u201d\nissues, and when the print job actually reaches the printer.\nHowever, this is often implemented using polling, and should\nnot be enabled unless needed.</p>",
             "kind": "property",
             "name": "track-print-status",
             "type": "Boolean"
@@ -511,7 +498,7 @@
             "type": "Gtk.Unit"
         },
         {
-            "doc": "<p>If <code>true</code>, the transformation for the cairo context obtained\nfrom <span data-xref=\"Gtk.PrintContext\"/> puts the origin at the top left corner\nof the page (which may not be the top left corner of the sheet,\ndepending on page orientation and the number of pages per sheet).\nOtherwise, the origin is at the top left corner of the imageable\narea (i.e. inside the margins).</p>",
+            "doc": "<p>If <pre>true</pre>, the transformation for the cairo context obtained\nfrom <span data-xref=\"Gtk.PrintContext\"/> puts the origin at the top left corner\nof the page (which may not be the top left corner of the sheet,\ndepending on page orientation and the number of pages per sheet).\nOtherwise, the origin is at the top left corner of the imageable\narea (i.e. inside the margins).</p>",
             "kind": "property",
             "name": "use-full-page",
             "type": "Boolean"
@@ -560,7 +547,7 @@
             }
         },
         {
-            "doc": "<p>Emitted when the print operation run has finished doing\neverything required for printing.</p><p><code>result</code> gives you information about what happened during the run.\nIf <code>result</code> is <span data-xref=\"Gtk.PrintOperationResult\"/>.error then you can call\n<span data-xref=\"Gtk.PrintOperation.get_error\"/> for more information.</p><p>If you enabled print status tracking then\n<span data-xref=\"Gtk.PrintOperation.is_finished\"/> may still return <code>false</code>\nafter <span data-xref=\"Gtk.PrintOperation-done\"/> was emitted.</p>",
+            "doc": "<p>Emitted when the print operation run has finished doing\neverything required for printing.</p><pre>result</pre>\n\n<p>gives you information about what happened during the run.\nIf <pre>result</pre> is <span data-xref=\"Gtk.PrintOperationResult\"/>.error then you can call\n<span data-xref=\"Gtk.PrintOperation.get_error\"/> for more information.</p><p>If you enabled print status tracking then\n<span data-xref=\"Gtk.PrintOperation.is_finished\"/> may still return <pre>false</pre>\nafter <span data-xref=\"Gtk.PrintOperation-done\"/> was emitted.</p>",
             "kind": "signal",
             "name": "done",
             "parameters": [
@@ -576,7 +563,7 @@
             }
         },
         {
-            "doc": "<p>Emitted for every page that is printed. The signal handler\nmust render the <code>page_nr</code>'s page onto the cairo context obtained\nfrom <code>context</code> using <span data-xref=\"Gtk.PrintContext.get_cairo_context\"/>.\n|[&lt;!-- language=\"C\" --&gt;\nstatic void\ndraw_page (GtkPrintOperation <em>operation,\n           GtkPrintContext   </em>context,\n           gint               page_nr,\n           gpointer           user_data)\n{\n  cairo_t <em>cr;\n  PangoLayout </em>layout;\n  gdouble width, text_height;\n  gint layout_height;\n  PangoFontDescription *desc;</p>\n<p>cr = gtk_print_context_get_cairo_context (context);\n  width = gtk_print_context_get_width (context);</p>\n<p>cairo_rectangle (cr, 0, 0, width, HEADER_HEIGHT);</p>\n<p>cairo_set_source_rgb (cr, 0.8, 0.8, 0.8);\n  cairo_fill (cr);</p>\n<p>layout = gtk_print_context_create_pango_layout (context);</p>\n<p>desc = pango_font_description_from_string (\"sans 14\");\n  pango_layout_set_font_description (layout, desc);\n  pango_font_description_free (desc);</p>\n<p>pango_layout_set_text (layout, \"some text\", -1);\n  pango_layout_set_width (layout, width * PANGO_SCALE);\n  pango_layout_set_alignment (layout, PANGO_ALIGN_CENTER);</p>\n<p>pango_layout_get_size (layout, NULL, &amp;layout_height);\n  text_height = (gdouble)layout_height / PANGO_SCALE;</p>\n<p>cairo_move_to (cr, width / 2,  (HEADER_HEIGHT - text_height) / 2);\n  pango_cairo_show_layout (cr, layout);</p>\n<p>g_object_unref (layout);\n}\n]|</p><p>Use <span data-xref=\"Gtk.PrintOperation.set_use_full_page\"/> and\n<span data-xref=\"Gtk.PrintOperation.set_unit\"/> before starting the print operation\nto set up the transformation of the cairo context according to your\nneeds.</p>",
+            "doc": "<p>Emitted for every page that is printed. The signal handler\nmust render the <pre>page_nr</pre>'s page onto the cairo context obtained\nfrom <pre>context</pre> using <span data-xref=\"Gtk.PrintContext.get_cairo_context\"/>.\n|[<!-- language=\"C\" -->\nstatic void\ndraw_page (GtkPrintOperation <em>operation,\n           GtkPrintContext   </em>context,\n           gint               page_nr,\n           gpointer           user_data)\n{\n  cairo_t <em>cr;\n  PangoLayout </em>layout;\n  gdouble width, text_height;\n  gint layout_height;\n  PangoFontDescription *desc;</p>\n<p>cr = gtk_print_context_get_cairo_context (context);\n  width = gtk_print_context_get_width (context);</p>\n<p>cairo_rectangle (cr, 0, 0, width, HEADER_HEIGHT);</p>\n<p>cairo_set_source_rgb (cr, 0.8, 0.8, 0.8);\n  cairo_fill (cr);</p>\n<p>layout = gtk_print_context_create_pango_layout (context);</p>\n<p>desc = pango_font_description_from_string (\"sans 14\");\n  pango_layout_set_font_description (layout, desc);\n  pango_font_description_free (desc);</p>\n<p>pango_layout_set_text (layout, \"some text\", -1);\n  pango_layout_set_width (layout, width * PANGO_SCALE);\n  pango_layout_set_alignment (layout, PANGO_ALIGN_CENTER);</p>\n<p>pango_layout_get_size (layout, NULL, &amp;layout_height);\n  text_height = (gdouble)layout_height / PANGO_SCALE;</p>\n<p>cairo_move_to (cr, width / 2,  (HEADER_HEIGHT - text_height) / 2);\n  pango_cairo_show_layout (cr, layout);</p>\n<p>g_object_unref (layout);\n}\n]|</p><p>Use <span data-xref=\"Gtk.PrintOperation.set_use_full_page\"/> and\n<span data-xref=\"Gtk.PrintOperation.set_unit\"/> before starting the print operation\nto set up the transformation of the cairo context according to your\nneeds.</p>",
             "kind": "signal",
             "name": "draw-page",
             "parameters": [
@@ -614,7 +601,7 @@
             }
         },
         {
-            "doc": "<p>Emitted after the <span data-xref=\"Gtk.PrintOperation-begin-print\"/> signal, but before\nthe actual rendering starts. It keeps getting emitted until a connected\nsignal handler returns <code>true</code>.</p><p>The ::paginate signal is intended to be used for paginating a document\nin small chunks, to avoid blocking the user interface for a long\ntime. The signal handler should update the number of pages using\n<span data-xref=\"Gtk.PrintOperation.set_n_pages\"/>, and return <code>true</code> if the document\nhas been completely paginated.</p><p>If you don't need to do pagination in chunks, you can simply do\nit all in the ::begin-print handler, and set the number of pages\nfrom there.</p>",
+            "doc": "<p>Emitted after the <span data-xref=\"Gtk.PrintOperation-begin-print\"/> signal, but before\nthe actual rendering starts. It keeps getting emitted until a connected\nsignal handler returns <pre>true</pre>.</p><p>The ::paginate signal is intended to be used for paginating a document\nin small chunks, to avoid blocking the user interface for a long\ntime. The signal handler should update the number of pages using\n<span data-xref=\"Gtk.PrintOperation.set_n_pages\"/>, and return <pre>true</pre> if the document\nhas been completely paginated.</p><p>If you don't need to do pagination in chunks, you can simply do\nit all in the ::begin-print handler, and set the number of pages\nfrom there.</p>",
             "kind": "signal",
             "name": "paginate",
             "parameters": [
@@ -630,7 +617,7 @@
             }
         },
         {
-            "doc": "<p>Gets emitted when a preview is requested from the native dialog.</p><p>The default handler for this signal uses an external viewer\napplication to preview.</p><p>To implement a custom print preview, an application must return\n<code>true</code> from its handler for this signal. In order to use the\nprovided <code>context</code> for the preview implementation, it must be\ngiven a suitable cairo context with <span data-xref=\"Gtk.PrintContext.set_cairo_context\"/>.</p><p>The custom preview implementation can use\n<span data-xref=\"Gtk.PrintOperationPreview.is_selected\"/> and\n<span data-xref=\"Gtk.PrintOperationPreview.render_page\"/> to find pages which\nare selected for print and render them. The preview must be\nfinished by calling <span data-xref=\"Gtk.PrintOperationPreview.end_preview\"/>\n(typically in response to the user clicking a close button).</p>",
+            "doc": "<p>Gets emitted when a preview is requested from the native dialog.</p><p>The default handler for this signal uses an external viewer\napplication to preview.</p><p>To implement a custom print preview, an application must return\n<pre>true</pre> from its handler for this signal. In order to use the\nprovided <pre>context</pre> for the preview implementation, it must be\ngiven a suitable cairo context with <span data-xref=\"Gtk.PrintContext.set_cairo_context\"/>.</p><p>The custom preview implementation can use\n<span data-xref=\"Gtk.PrintOperationPreview.is_selected\"/> and\n<span data-xref=\"Gtk.PrintOperationPreview.render_page\"/> to find pages which\nare selected for print and render them. The preview must be\nfinished by calling <span data-xref=\"Gtk.PrintOperationPreview.end_preview\"/>\n(typically in response to the user clicking a close button).</p>",
             "kind": "signal",
             "name": "preview",
             "parameters": [
@@ -658,7 +645,7 @@
             }
         },
         {
-            "doc": "<p>Emitted once for every page that is printed, to give\nthe application a chance to modify the page setup. Any changes\ndone to <code>setup</code> will be in force only for printing this page.</p>",
+            "doc": "<p>Emitted once for every page that is printed, to give\nthe application a chance to modify the page setup. Any changes\ndone to <pre>setup</pre> will be in force only for printing this page.</p>",
             "kind": "signal",
             "name": "request-page-setup",
             "parameters": [

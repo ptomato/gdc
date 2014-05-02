@@ -1,0 +1,92 @@
+{
+    "doc": "<p>These enumeration values describe the possible transitions\nbetween pages in a <span data-xref=\"Gtk.Stack\"/> widget.</p><p>New values may be added to this enumeration over time.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>No transition</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>A cross-fade</p>",
+            "kind": "default",
+            "name": "crossfade"
+        },
+        {
+            "doc": "<p>Slide from left to right</p>",
+            "kind": "default",
+            "name": "slide_right"
+        },
+        {
+            "doc": "<p>Slide from right to left</p>",
+            "kind": "default",
+            "name": "slide_left"
+        },
+        {
+            "doc": "<p>Slide from bottom up</p>",
+            "kind": "default",
+            "name": "slide_up"
+        },
+        {
+            "doc": "<p>Slide from top down</p>",
+            "kind": "default",
+            "name": "slide_down"
+        },
+        {
+            "doc": "<p>Slide from left or right according to the children order</p>",
+            "kind": "default",
+            "name": "slide_left_right"
+        },
+        {
+            "doc": "<p>Slide from top down or bottom up according to the order</p>",
+            "kind": "default",
+            "name": "slide_up_down"
+        },
+        {
+            "doc": "<p>Cover the old page by sliding up. Since 3.12</p>",
+            "kind": "default",
+            "name": "over_up"
+        },
+        {
+            "doc": "<p>Cover the old page by sliding down. Since: 3.12</p>",
+            "kind": "default",
+            "name": "over_down"
+        },
+        {
+            "doc": "<p>Cover the old page by sliding to the left. Since: 3.12</p>",
+            "kind": "default",
+            "name": "over_left"
+        },
+        {
+            "doc": "<p>Cover the old page by sliding to the right. Since: 3.12</p>",
+            "kind": "default",
+            "name": "over_right"
+        },
+        {
+            "doc": "<p>Uncover the new page by sliding up. Since 3.12</p>",
+            "kind": "default",
+            "name": "under_up"
+        },
+        {
+            "doc": "<p>Uncover the new page by sliding down. Since: 3.12</p>",
+            "kind": "default",
+            "name": "under_down"
+        },
+        {
+            "doc": "<p>Uncover the new page by sliding to the left. Since: 3.12</p>",
+            "kind": "default",
+            "name": "under_left"
+        },
+        {
+            "doc": "<p>Uncover the new page by sliding to the right. Since: 3.12</p>",
+            "kind": "default",
+            "name": "under_right"
+        },
+        {
+            "doc": "<p>Cover the old page or uncover the new page, according to order. Since: 3.12</p>",
+            "kind": "default",
+            "name": "over_up_down"
+        }
+    ],
+    "name": "StackTransitionType"
+}

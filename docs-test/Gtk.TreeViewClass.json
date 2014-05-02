@@ -1,0 +1,129 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "row_activated"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "test_expand_row"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "test_collapse_row"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "row_expanded"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "row_collapsed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "columns_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "cursor_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "move_cursor"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "select_all"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "unselect_all"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "select_cursor_row"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "toggle_cursor_row"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "expand_collapse_cursor_row"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "select_cursor_parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "start_interactive_search"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved6"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved7"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved8"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "TreeViewClass"
+}

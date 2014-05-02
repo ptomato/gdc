@@ -1,0 +1,29 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "g_iface"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_style"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_style_property"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_icon_factory"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "StyleProviderIface"
+}

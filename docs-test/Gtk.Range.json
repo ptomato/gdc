@@ -1,18 +1,6 @@
 {
     "constructors": [],
     "doc": "<p><span data-xref=\"Gtk.Range\"/> is the common base class for widgets which visualize an\nadjustment, e.g <span data-xref=\"Gtk.Scale\"/> or <span data-xref=\"Gtk.Scrollbar\"/>.</p><p>Apart from signals for monitoring the parameters of the adjustment,\n<span data-xref=\"Gtk.Range\"/> provides properties and methods for influencing the sensitivity\nof the \u201csteppers\u201d. It also provides properties and methods for setting a\n\u201cfill level\u201d on range widgets. See <span data-xref=\"Gtk.Range.set_fill_level\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "widget"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -280,7 +268,7 @@
             }
         },
         {
-            "doc": "<p>Sets the allowable values in the <span data-xref=\"Gtk.Range\"/>, and clamps the range\nvalue to be between <code>min</code> and <code>max</code>. (If the range has a non-zero\npage size, it is clamped between <code>min</code> and <code>max</code> - page-size.)</p>",
+            "doc": "<p>Sets the allowable values in the <span data-xref=\"Gtk.Range\"/>, and clamps the range\nvalue to be between <pre>min</pre> and <pre>max</pre>. (If the range has a non-zero\npage size, it is clamped between <pre>min</pre> and <pre>max</pre> - page-size.)</p>",
             "kind": "method",
             "name": "set_range",
             "parameters": [
@@ -396,8 +384,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Range",
     "properties": [
@@ -468,7 +455,7 @@
             }
         },
         {
-            "doc": "<p>The <span data-xref=\"Gtk.Range-change-value\"/> signal is emitted when a scroll action is\nperformed on a range.  It allows an application to determine the\ntype of scroll event that occurred and the resultant new value.\nThe application can handle the event itself and return <code>true</code> to\nprevent further processing.  Or, by returning <code>false</code>, it can pass\nthe event to other handlers until the default GTK+ handler is\nreached.</p><p>The value parameter is unrounded.  An application that overrides\nthe GtkRange::change-value signal is responsible for clamping the\nvalue to the desired number of decimal digits; the default GTK+\nhandler clamps the value based on <span data-xref=\"Gtk.Range-round-digits\"/>.</p><p>It is not possible to use delayed update policies in an overridden\n<span data-xref=\"Gtk.Range-change-value\"/> handler.</p>",
+            "doc": "<p>The <span data-xref=\"Gtk.Range-change-value\"/> signal is emitted when a scroll action is\nperformed on a range.  It allows an application to determine the\ntype of scroll event that occurred and the resultant new value.\nThe application can handle the event itself and return <pre>true</pre> to\nprevent further processing.  Or, by returning <pre>false</pre>, it can pass\nthe event to other handlers until the default GTK+ handler is\nreached.</p><p>The value parameter is unrounded.  An application that overrides\nthe GtkRange::change-value signal is responsible for clamping the\nvalue to the desired number of decimal digits; the default GTK+\nhandler clamps the value based on <span data-xref=\"Gtk.Range-round-digits\"/>.</p><p>It is not possible to use delayed update policies in an overridden\n<span data-xref=\"Gtk.Range-change-value\"/> handler.</p>",
             "kind": "signal",
             "name": "change-value",
             "parameters": [

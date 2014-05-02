@@ -1,0 +1,37 @@
+{
+    "doc": "<p>Focus movement types.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Move forward.</p>",
+            "kind": "default",
+            "name": "tab_forward"
+        },
+        {
+            "doc": "<p>Move backward.</p>",
+            "kind": "default",
+            "name": "tab_backward"
+        },
+        {
+            "doc": "<p>Move up.</p>",
+            "kind": "default",
+            "name": "up"
+        },
+        {
+            "doc": "<p>Move down.</p>",
+            "kind": "default",
+            "name": "down"
+        },
+        {
+            "doc": "<p>Move left.</p>",
+            "kind": "default",
+            "name": "left"
+        },
+        {
+            "doc": "<p>Move right.</p>",
+            "kind": "default",
+            "name": "right"
+        }
+    ],
+    "name": "DirectionType"
+}

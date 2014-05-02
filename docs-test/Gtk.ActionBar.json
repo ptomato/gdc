@@ -11,13 +11,6 @@
         }
     ],
     "doc": "<p>GtkActionBar is designed to present contextual actions. It is\nexpected to be displayed below the content and expand horizontally\nto fill the area.</p><p>It allows placing children at the start or the end. In addition, it\ncontains an internal centered box which is centered with respect to\nthe full width of the box, even if the children at either side take\nup different amounts of space.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "bin"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -30,7 +23,7 @@
             }
         },
         {
-            "doc": "<p>Adds <code>child</code> to <code>action_bar</code>, packed with reference to the\nend of the <code>action_bar</code>.</p>",
+            "doc": "<p>Adds <pre>child</pre> to <pre>action_bar</pre>, packed with reference to the\nend of the <pre>action_bar</pre>.</p>",
             "kind": "method",
             "name": "pack_end",
             "parameters": [
@@ -46,7 +39,7 @@
             }
         },
         {
-            "doc": "<p>Adds <code>child</code> to <code>action_bar</code>, packed with reference to the\nstart of the <code>action_bar</code>.</p>",
+            "doc": "<p>Adds <pre>child</pre> to <pre>action_bar</pre>, packed with reference to the\nstart of the <pre>action_bar</pre>.</p>",
             "kind": "method",
             "name": "pack_start",
             "parameters": [
@@ -76,8 +69,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ActionBar",
     "properties": [],

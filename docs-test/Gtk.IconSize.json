@@ -1,0 +1,42 @@
+{
+    "doc": "<p>Built-in stock icon sizes.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Invalid size.</p>",
+            "kind": "default",
+            "name": "invalid"
+        },
+        {
+            "doc": "<p>Size appropriate for menus (16px).</p>",
+            "kind": "default",
+            "name": "menu"
+        },
+        {
+            "doc": "<p>Size appropriate for small toolbars (16px).</p>",
+            "kind": "default",
+            "name": "small_toolbar"
+        },
+        {
+            "doc": "<p>Size appropriate for large toolbars (24px)</p>",
+            "kind": "default",
+            "name": "large_toolbar"
+        },
+        {
+            "doc": "<p>Size appropriate for buttons (16px)</p>",
+            "kind": "default",
+            "name": "button"
+        },
+        {
+            "doc": "<p>Size appropriate for drag and drop (32px)</p>",
+            "kind": "default",
+            "name": "dnd"
+        },
+        {
+            "doc": "<p>Size appropriate for dialogs (48px)</p>",
+            "kind": "default",
+            "name": "dialog"
+        }
+    ],
+    "name": "IconSize"
+}

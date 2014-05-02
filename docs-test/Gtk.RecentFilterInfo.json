@@ -1,0 +1,44 @@
+{
+    "constructors": [],
+    "doc": "<p>A GtkRecentFilterInfo struct is used\nto pass information about the tested file to <span data-xref=\"Gtk.RecentFilter.filter\"/>.</p>",
+    "fields": [
+        {
+            "doc": "<p><span data-xref=\"Gtk.RecentFilterFlags\"/> to indicate which fields are set.</p>",
+            "kind": "field",
+            "name": "contains"
+        },
+        {
+            "doc": "<p>The URI of the file being tested.</p>",
+            "kind": "field",
+            "name": "uri"
+        },
+        {
+            "doc": "<p>The string that will be used to display the file in\n   the recent chooser.</p>",
+            "kind": "field",
+            "name": "display_name"
+        },
+        {
+            "doc": "<p>MIME type of the file.</p>",
+            "kind": "field",
+            "name": "mime_type"
+        },
+        {
+            "doc": "<p>The list of applications that have registered the\n   file.</p>",
+            "kind": "field",
+            "name": "applications"
+        },
+        {
+            "doc": "<p>The groups to which the file belongs to.</p>",
+            "kind": "field",
+            "name": "groups"
+        },
+        {
+            "doc": "<p>The number of days elapsed since the file has been\n   registered.</p>",
+            "kind": "field",
+            "name": "age"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "RecentFilterInfo"
+}

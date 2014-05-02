@@ -1,0 +1,27 @@
+{
+    "doc": "<p>Used to indicate which grid lines to draw in a tree view.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>No grid lines.</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>Horizontal grid lines.</p>",
+            "kind": "default",
+            "name": "horizontal"
+        },
+        {
+            "doc": "<p>Vertical grid lines.</p>",
+            "kind": "default",
+            "name": "vertical"
+        },
+        {
+            "doc": "<p>Horizontal and vertical grid lines.</p>",
+            "kind": "default",
+            "name": "both"
+        }
+    ],
+    "name": "TreeViewGridLines"
+}

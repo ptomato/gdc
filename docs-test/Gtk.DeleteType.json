@@ -1,0 +1,47 @@
+{
+    "doc": "<p>See also: <span data-xref=\"Gtk.Entry-delete-from-cursor\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Delete characters.</p>",
+            "kind": "default",
+            "name": "chars"
+        },
+        {
+            "doc": "<p>Delete only the portion of the word to the\n  left/right of cursor if we\u2019re in the middle of a word.</p>",
+            "kind": "default",
+            "name": "word_ends"
+        },
+        {
+            "doc": "<p>Delete words.</p>",
+            "kind": "default",
+            "name": "words"
+        },
+        {
+            "doc": "<p>Delete display-lines. Display-lines\n  refers to the visible lines, with respect to to the current line\n  breaks. As opposed to paragraphs, which are defined by line\n  breaks in the input.</p>",
+            "kind": "default",
+            "name": "display_lines"
+        },
+        {
+            "doc": "<p>Delete only the portion of the\n  display-line to the left/right of cursor.</p>",
+            "kind": "default",
+            "name": "display_line_ends"
+        },
+        {
+            "doc": "<p>Delete to the end of the\n  paragraph. Like C-k in Emacs (or its reverse).</p>",
+            "kind": "default",
+            "name": "paragraph_ends"
+        },
+        {
+            "doc": "<p>Delete entire line. Like C-k in pico.</p>",
+            "kind": "default",
+            "name": "paragraphs"
+        },
+        {
+            "doc": "<p>Delete only whitespace. Like M-\\ in Emacs.</p>",
+            "kind": "default",
+            "name": "whitespace"
+        }
+    ],
+    "name": "DeleteType"
+}

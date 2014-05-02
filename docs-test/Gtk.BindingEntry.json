@@ -1,0 +1,219 @@
+{
+    "constructors": [],
+    "doc": "<p>Each key binding element of a binding sets binding list is\nrepresented by a GtkBindingEntry.</p>",
+    "fields": [
+        {
+            "doc": "<p>key value to match</p>",
+            "kind": "field",
+            "name": "keyval"
+        },
+        {
+            "doc": "<p>key modifiers to match</p>",
+            "kind": "field",
+            "name": "modifiers"
+        },
+        {
+            "doc": "<p>binding set this entry belongs to</p>",
+            "kind": "field",
+            "name": "binding_set"
+        },
+        {
+            "doc": "<p>implementation detail</p>",
+            "kind": "field",
+            "name": "destroyed"
+        },
+        {
+            "doc": "<p>implementation detail</p>",
+            "kind": "field",
+            "name": "in_emission"
+        },
+        {
+            "doc": "<p>implementation detail</p>",
+            "kind": "field",
+            "name": "marks_unbound"
+        },
+        {
+            "doc": "<p>linked list of entries maintained by binding set</p>",
+            "kind": "field",
+            "name": "set_next"
+        },
+        {
+            "doc": "<p>implementation detail</p>",
+            "kind": "field",
+            "name": "hash_next"
+        },
+        {
+            "doc": "<p>action signals of this entry</p>",
+            "kind": "field",
+            "name": "signals"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Override or install a new key binding for <pre>keyval</pre> with <pre>modifiers</pre> on\n<pre>binding_set</pre>. When the binding is activated, <pre>signal_name</pre> will be\nemitted on the target widget, with <pre>n_args</pre> @Varargs used as\narguments.</p>",
+            "kind": "function",
+            "name": "add_signal",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "binding_set",
+                    "direction": "in",
+                    "type": "Gtk.BindingSet"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "keyval",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "modifiers",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "signal_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_args",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Parses a signal description from <pre>signal_desc</pre> and incorporates\nit into <pre>binding_set</pre>.</p><p>Signal descriptions may either bind a key combination to\none or more signals:\n|[\n  bind \"key\" {\n    \"signalname\" (param, ...)\n    ...\n  }\n]|</p><p>Or they may also unbind a key combination:\n|[\n  unbind \"key\"\n]|</p><p>Key combinations must be in a format that can be parsed by\n<span data-xref=\"Gtk.accelerator_parse\"/>.</p>",
+            "kind": "function",
+            "name": "add_signal_from_string",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "binding_set",
+                    "direction": "in",
+                    "type": "Gtk.BindingSet"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "signal_desc",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "GLib.TokenType"
+            }
+        },
+        {
+            "doc": "<p>Override or install a new key binding for <pre>keyval</pre> with <pre>modifiers</pre> on\n<pre>binding_set</pre>.</p>",
+            "kind": "function",
+            "name": "add_signall",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "binding_set",
+                    "direction": "in",
+                    "type": "Gtk.BindingSet"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "keyval",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "modifiers",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "signal_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "binding_args",
+                    "direction": "in",
+                    "type": "Array(Gtk.BindingArg)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Remove a binding previously installed via\n<span data-xref=\"Gtk.BindingEntry.add_signal\"/> on <pre>binding_set</pre>.</p>",
+            "kind": "function",
+            "name": "remove",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "binding_set",
+                    "direction": "in",
+                    "type": "Gtk.BindingSet"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "keyval",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "modifiers",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Install a binding on <pre>binding_set</pre> which causes key lookups\nto be aborted, to prevent bindings from lower priority sets\nto be activated.</p>",
+            "kind": "function",
+            "name": "skip",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "binding_set",
+                    "direction": "in",
+                    "type": "Gtk.BindingSet"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "keyval",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "modifiers",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "BindingEntry"
+}

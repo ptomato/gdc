@@ -1,0 +1,39 @@
+{
+    "constructors": [],
+    "doc": "<p><span data-xref=\"Gtk.ActionEntry\"/> structs are used with <span data-xref=\"Gtk.ActionGroup.add_actions\"/> to\nconstruct actions.</p>",
+    "fields": [
+        {
+            "doc": "<p>The name of the action.</p>",
+            "kind": "field",
+            "name": "name"
+        },
+        {
+            "doc": "<p>The stock id for the action, or the name of an icon from the\n icon theme.</p>",
+            "kind": "field",
+            "name": "stock_id"
+        },
+        {
+            "doc": "<p>The label for the action. This field should typically be marked\n for translation, see <span data-xref=\"Gtk.ActionGroup.set_translation_domain\"/>. If\n @label is <pre>null</pre>, the label of the stock item with id @stock_id is used.</p>",
+            "kind": "field",
+            "name": "label"
+        },
+        {
+            "doc": "<p>The accelerator for the action, in the format understood by\n <span data-xref=\"Gtk.accelerator_parse\"/>.</p>",
+            "kind": "field",
+            "name": "accelerator"
+        },
+        {
+            "doc": "<p>The tooltip for the action. This field should typically be\n marked for translation, see <span data-xref=\"Gtk.ActionGroup.set_translation_domain\"/>.</p>",
+            "kind": "field",
+            "name": "tooltip"
+        },
+        {
+            "doc": "<p>The function to call when the action is activated.</p>",
+            "kind": "field",
+            "name": "callback"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "ActionEntry"
+}

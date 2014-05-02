@@ -1,0 +1,24 @@
+{
+    "constructors": [],
+    "doc": "<p>A <span data-xref=\"Gtk.TargetPair\"/> is used to represent the same\ninformation as a table of <span data-xref=\"Gtk.TargetEntry\"/>, but in\nan efficient form.</p>",
+    "fields": [
+        {
+            "doc": "<p><span data-xref=\"Gdk.Atom\">Gdk.Atom</span> representation of the target type</p>",
+            "kind": "field",
+            "name": "target"
+        },
+        {
+            "doc": "<p><span data-xref=\"Gtk.TargetFlags\"/> for DND</p>",
+            "kind": "field",
+            "name": "flags"
+        },
+        {
+            "doc": "<p>an application-assigned integer ID which will\n    get passed as a parameter to e.g the <span data-xref=\"Gtk.Widget-selection-get\"/>\n    signal. It allows the application to identify the target\n    type without extensive string compares.</p>",
+            "kind": "field",
+            "name": "info"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "TargetPair"
+}

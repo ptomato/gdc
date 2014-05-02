@@ -10,7 +10,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.TextView\"/> widget displaying the buffer\n<code>buffer</code>. One buffer can be shared among many widgets.\n<code>buffer</code> may be <code>null</code> to create a default buffer, in which case\nthis function is equivalent to <span data-xref=\"Gtk.TextView.new\"/>. The\ntext view adds its own reference count to the buffer; it does not\ntake over an existing reference.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.TextView\"/> widget displaying the buffer\n<pre>buffer</pre>. One buffer can be shared among many widgets.\n<pre>buffer</pre> may be <pre>null</pre> to create a default buffer, in which case\nthis function is equivalent to <span data-xref=\"Gtk.TextView.new\"/>. The\ntext view adds its own reference count to the buffer; it does not\ntake over an existing reference.</p>",
             "kind": "constructor",
             "name": "new_with_buffer",
             "parameters": [
@@ -27,22 +27,10 @@
         }
     ],
     "doc": "<p>You may wish to begin by reading the\n[text widget conceptual overview][TextWidget]\nwhich gives an overview of all the objects and data\ntypes related to the text widget and how they work together.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Adds a child widget in the text buffer, at the given <code>anchor</code>.</p>",
+            "doc": "<p>Adds a child widget in the text buffer, at the given <pre>anchor</pre>.</p>",
             "kind": "method",
             "name": "add_child_at_anchor",
             "parameters": [
@@ -98,7 +86,7 @@
             }
         },
         {
-            "doc": "<p>Moves the given <code>iter</code> backward by one display (wrapped) line.\nA display line is different from a paragraph. Paragraphs are\nseparated by newlines or other paragraph separator characters.\nDisplay lines are created by line-wrapping a paragraph. If\nwrapping is turned off, display lines and paragraphs will be the\nsame. Display lines are divided differently for each view, since\nthey depend on the view\u2019s width; paragraphs are the same in all\nviews, since they depend on the contents of the <span data-xref=\"Gtk.TextBuffer\"/>.</p>",
+            "doc": "<p>Moves the given <pre>iter</pre> backward by one display (wrapped) line.\nA display line is different from a paragraph. Paragraphs are\nseparated by newlines or other paragraph separator characters.\nDisplay lines are created by line-wrapping a paragraph. If\nwrapping is turned off, display lines and paragraphs will be the\nsame. Display lines are divided differently for each view, since\nthey depend on the view\u2019s width; paragraphs are the same in all\nviews, since they depend on the contents of the <span data-xref=\"Gtk.TextBuffer\"/>.</p>",
             "kind": "method",
             "name": "backward_display_line",
             "parameters": [
@@ -114,7 +102,7 @@
             }
         },
         {
-            "doc": "<p>Moves the given <code>iter</code> backward to the next display line start.\nA display line is different from a paragraph. Paragraphs are\nseparated by newlines or other paragraph separator characters.\nDisplay lines are created by line-wrapping a paragraph. If\nwrapping is turned off, display lines and paragraphs will be the\nsame. Display lines are divided differently for each view, since\nthey depend on the view\u2019s width; paragraphs are the same in all\nviews, since they depend on the contents of the <span data-xref=\"Gtk.TextBuffer\"/>.</p>",
+            "doc": "<p>Moves the given <pre>iter</pre> backward to the next display line start.\nA display line is different from a paragraph. Paragraphs are\nseparated by newlines or other paragraph separator characters.\nDisplay lines are created by line-wrapping a paragraph. If\nwrapping is turned off, display lines and paragraphs will be the\nsame. Display lines are divided differently for each view, since\nthey depend on the view\u2019s width; paragraphs are the same in all\nviews, since they depend on the contents of the <span data-xref=\"Gtk.TextBuffer\"/>.</p>",
             "kind": "method",
             "name": "backward_display_line_start",
             "parameters": [
@@ -130,7 +118,7 @@
             }
         },
         {
-            "doc": "<p>Converts coordinate (<code>buffer_x</code>, <code>buffer_y</code>) to coordinates for the window\n<code>win</code>, and stores the result in (<code>window_x</code>, <code>window_y</code>).</p><p>Note that you can\u2019t convert coordinates for a nonexisting window (see\n<span data-xref=\"Gtk.TextView.set_border_window_size\"/>).</p>",
+            "doc": "<p>Converts coordinate (<pre>buffer_x</pre>, <pre>buffer_y</pre>) to coordinates for the window\n<pre>win</pre>, and stores the result in (<pre>window_x</pre>, <pre>window_y</pre>).</p><p>Note that you can\u2019t convert coordinates for a nonexisting window (see\n<span data-xref=\"Gtk.TextView.set_border_window_size\"/>).</p>",
             "kind": "method",
             "name": "buffer_to_window_coords",
             "parameters": [
@@ -170,7 +158,7 @@
             }
         },
         {
-            "doc": "<p>Moves the given <code>iter</code> forward by one display (wrapped) line.\nA display line is different from a paragraph. Paragraphs are\nseparated by newlines or other paragraph separator characters.\nDisplay lines are created by line-wrapping a paragraph. If\nwrapping is turned off, display lines and paragraphs will be the\nsame. Display lines are divided differently for each view, since\nthey depend on the view\u2019s width; paragraphs are the same in all\nviews, since they depend on the contents of the <span data-xref=\"Gtk.TextBuffer\"/>.</p>",
+            "doc": "<p>Moves the given <pre>iter</pre> forward by one display (wrapped) line.\nA display line is different from a paragraph. Paragraphs are\nseparated by newlines or other paragraph separator characters.\nDisplay lines are created by line-wrapping a paragraph. If\nwrapping is turned off, display lines and paragraphs will be the\nsame. Display lines are divided differently for each view, since\nthey depend on the view\u2019s width; paragraphs are the same in all\nviews, since they depend on the contents of the <span data-xref=\"Gtk.TextBuffer\"/>.</p>",
             "kind": "method",
             "name": "forward_display_line",
             "parameters": [
@@ -186,7 +174,7 @@
             }
         },
         {
-            "doc": "<p>Moves the given <code>iter</code> forward to the next display line end.\nA display line is different from a paragraph. Paragraphs are\nseparated by newlines or other paragraph separator characters.\nDisplay lines are created by line-wrapping a paragraph. If\nwrapping is turned off, display lines and paragraphs will be the\nsame. Display lines are divided differently for each view, since\nthey depend on the view\u2019s width; paragraphs are the same in all\nviews, since they depend on the contents of the <span data-xref=\"Gtk.TextBuffer\"/>.</p>",
+            "doc": "<p>Moves the given <pre>iter</pre> forward to the next display line end.\nA display line is different from a paragraph. Paragraphs are\nseparated by newlines or other paragraph separator characters.\nDisplay lines are created by line-wrapping a paragraph. If\nwrapping is turned off, display lines and paragraphs will be the\nsame. Display lines are divided differently for each view, since\nthey depend on the view\u2019s width; paragraphs are the same in all\nviews, since they depend on the contents of the <span data-xref=\"Gtk.TextBuffer\"/>.</p>",
             "kind": "method",
             "name": "forward_display_line_end",
             "parameters": [
@@ -236,7 +224,7 @@
             }
         },
         {
-            "doc": "<p>Given an <code>iter</code> within a text layout, determine the positions of the\nstrong and weak cursors if the insertion point is at that\niterator. The position of each cursor is stored as a zero-width\nrectangle. The strong cursor location is the location where\ncharacters of the directionality equal to the base direction of the\nparagraph are inserted.  The weak cursor location is the location\nwhere characters of the directionality opposite to the base\ndirection of the paragraph are inserted.</p><p>If <code>iter</code> is <code>null</code>, the actual cursor position is used.</p><p>Note that if <code>iter</code> happens to be the actual cursor position, and\nthere is currently an IM preedit sequence being entered, the\nreturned locations will be adjusted to account for the preedit\ncursor\u2019s offset within the preedit sequence.</p><p>The rectangle position is in buffer coordinates; use\n<span data-xref=\"Gtk.TextView.buffer_to_window_coords\"/> to convert these\ncoordinates to coordinates for one of the windows in the text view.</p>",
+            "doc": "<p>Given an <pre>iter</pre> within a text layout, determine the positions of the\nstrong and weak cursors if the insertion point is at that\niterator. The position of each cursor is stored as a zero-width\nrectangle. The strong cursor location is the location where\ncharacters of the directionality equal to the base direction of the\nparagraph are inserted.  The weak cursor location is the location\nwhere characters of the directionality opposite to the base\ndirection of the paragraph are inserted.</p><p>If <pre>iter</pre> is <pre>null</pre>, the actual cursor position is used.</p><p>Note that if <pre>iter</pre> happens to be the actual cursor position, and\nthere is currently an IM preedit sequence being entered, the\nreturned locations will be adjusted to account for the preedit\ncursor\u2019s offset within the preedit sequence.</p><p>The rectangle position is in buffer coordinates; use\n<span data-xref=\"Gtk.TextView.buffer_to_window_coords\"/> to convert these\ncoordinates to coordinates for one of the windows in the text view.</p>",
             "kind": "method",
             "name": "get_cursor_locations",
             "parameters": [
@@ -300,7 +288,7 @@
             }
         },
         {
-            "doc": "<p>Gets the default indentation of paragraphs in <code>text_view</code>.\nTags in the view\u2019s buffer may override the default.\nThe indentation may be negative.</p>",
+            "doc": "<p>Gets the default indentation of paragraphs in <pre>text_view</pre>.\nTags in the view\u2019s buffer may override the default.\nThe indentation may be negative.</p>",
             "kind": "method",
             "name": "get_indent",
             "parameters": [],
@@ -327,7 +315,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves the iterator at buffer coordinates <code>x</code> and <code>y</code>. Buffer\ncoordinates are coordinates for the entire buffer, not just the\ncurrently-displayed portion.  If you have coordinates from an\nevent, you have to convert those to buffer coordinates with\n<span data-xref=\"Gtk.TextView.window_to_buffer_coords\"/>.</p>",
+            "doc": "<p>Retrieves the iterator at buffer coordinates <pre>x</pre> and <pre>y</pre>. Buffer\ncoordinates are coordinates for the entire buffer, not just the\ncurrently-displayed portion.  If you have coordinates from an\nevent, you have to convert those to buffer coordinates with\n<span data-xref=\"Gtk.TextView.window_to_buffer_coords\"/>.</p>",
             "kind": "method",
             "name": "get_iter_at_location",
             "parameters": [
@@ -355,7 +343,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves the iterator pointing to the character at buffer\ncoordinates <code>x</code> and <code>y</code>. Buffer coordinates are coordinates for\nthe entire buffer, not just the currently-displayed portion.\nIf you have coordinates from an event, you have to convert\nthose to buffer coordinates with\n<span data-xref=\"Gtk.TextView.window_to_buffer_coords\"/>.</p><p>Note that this is different from <span data-xref=\"Gtk.TextView.get_iter_at_location\"/>,\nwhich returns cursor locations, i.e. positions between\ncharacters.</p>",
+            "doc": "<p>Retrieves the iterator pointing to the character at buffer\ncoordinates <pre>x</pre> and <pre>y</pre>. Buffer coordinates are coordinates for\nthe entire buffer, not just the currently-displayed portion.\nIf you have coordinates from an event, you have to convert\nthose to buffer coordinates with\n<span data-xref=\"Gtk.TextView.window_to_buffer_coords\"/>.</p><p>Note that this is different from <span data-xref=\"Gtk.TextView.get_iter_at_location\"/>,\nwhich returns cursor locations, i.e. positions between\ncharacters.</p>",
             "kind": "method",
             "name": "get_iter_at_position",
             "parameters": [
@@ -389,7 +377,7 @@
             }
         },
         {
-            "doc": "<p>Gets a rectangle which roughly contains the character at <code>iter</code>.\nThe rectangle position is in buffer coordinates; use\n<span data-xref=\"Gtk.TextView.buffer_to_window_coords\"/> to convert these\ncoordinates to coordinates for one of the windows in the text view.</p>",
+            "doc": "<p>Gets a rectangle which roughly contains the character at <pre>iter</pre>.\nThe rectangle position is in buffer coordinates; use\n<span data-xref=\"Gtk.TextView.buffer_to_window_coords\"/> to convert these\ncoordinates to coordinates for one of the windows in the text view.</p>",
             "kind": "method",
             "name": "get_iter_location",
             "parameters": [
@@ -411,7 +399,7 @@
             }
         },
         {
-            "doc": "<p>Gets the default justification of paragraphs in <code>text_view</code>.\nTags in the buffer may override the default.</p>",
+            "doc": "<p>Gets the default justification of paragraphs in <pre>text_view</pre>.\nTags in the buffer may override the default.</p>",
             "kind": "method",
             "name": "get_justification",
             "parameters": [],
@@ -420,7 +408,7 @@
             }
         },
         {
-            "doc": "<p>Gets the default left margin size of paragraphs in the <code>text_view</code>.\nTags in the buffer may override the default.</p>",
+            "doc": "<p>Gets the default left margin size of paragraphs in the <pre>text_view</pre>.\nTags in the buffer may override the default.</p>",
             "kind": "method",
             "name": "get_left_margin",
             "parameters": [],
@@ -429,7 +417,7 @@
             }
         },
         {
-            "doc": "<p>Gets the <span data-xref=\"Gtk.TextIter\"/> at the start of the line containing\nthe coordinate <code>y</code>. <code>y</code> is in buffer coordinates, convert from\nwindow coordinates with <span data-xref=\"Gtk.TextView.window_to_buffer_coords\"/>.\nIf non-<code>null</code>, <code>line_top</code> will be filled with the coordinate of the top\nedge of the line.</p>",
+            "doc": "<p>Gets the <span data-xref=\"Gtk.TextIter\"/> at the start of the line containing\nthe coordinate <pre>y</pre>. <pre>y</pre> is in buffer coordinates, convert from\nwindow coordinates with <span data-xref=\"Gtk.TextView.window_to_buffer_coords\"/>.\nIf non-<pre>null</pre>, <pre>line_top</pre> will be filled with the coordinate of the top\nedge of the line.</p>",
             "kind": "method",
             "name": "get_line_at_y",
             "parameters": [
@@ -457,7 +445,7 @@
             }
         },
         {
-            "doc": "<p>Gets the y coordinate of the top of the line containing <code>iter</code>,\nand the height of the line. The coordinate is a buffer coordinate;\nconvert to window coordinates with <span data-xref=\"Gtk.TextView.buffer_to_window_coords\"/>.</p>",
+            "doc": "<p>Gets the y coordinate of the top of the line containing <pre>iter</pre>,\nand the height of the line. The coordinate is a buffer coordinate;\nconvert to window coordinates with <span data-xref=\"Gtk.TextView.buffer_to_window_coords\"/>.</p>",
             "kind": "method",
             "name": "get_line_yrange",
             "parameters": [
@@ -521,7 +509,7 @@
             }
         },
         {
-            "doc": "<p>Gets the default right margin for text in <code>text_view</code>. Tags\nin the buffer may override the default.</p>",
+            "doc": "<p>Gets the default right margin for text in <pre>text_view</pre>. Tags\nin the buffer may override the default.</p>",
             "kind": "method",
             "name": "get_right_margin",
             "parameters": [],
@@ -530,7 +518,7 @@
             }
         },
         {
-            "doc": "<p>Gets the default tabs for <code>text_view</code>. Tags in the buffer may\noverride the defaults. The returned array will be <code>null</code> if\n\u201cstandard\u201d (8-space) tabs are used. Free the return value\nwith <span data-xref=\"Pango.TabArray.free\">Pango.TabArray.prototype.free</span>.</p>",
+            "doc": "<p>Gets the default tabs for <pre>text_view</pre>. Tags in the buffer may\noverride the defaults. The returned array will be <pre>null</pre> if\n\u201cstandard\u201d (8-space) tabs are used. Free the return value\nwith <span data-xref=\"Pango.TabArray.free\">Pango.TabArray.prototype.free</span>.</p>",
             "kind": "method",
             "name": "get_tabs",
             "parameters": [],
@@ -548,7 +536,7 @@
             }
         },
         {
-            "doc": "<p>Fills <code>visible_rect</code> with the currently-visible\nregion of the buffer, in buffer coordinates. Convert to window coordinates\nwith <span data-xref=\"Gtk.TextView.buffer_to_window_coords\"/>.</p>",
+            "doc": "<p>Fills <pre>visible_rect</pre> with the currently-visible\nregion of the buffer, in buffer coordinates. Convert to window coordinates\nwith <span data-xref=\"Gtk.TextView.buffer_to_window_coords\"/>.</p>",
             "kind": "method",
             "name": "get_visible_rect",
             "parameters": [
@@ -564,7 +552,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves the <span data-xref=\"Gdk.Window\">Gdk.Window</span> corresponding to an area of the text view;\npossible windows include the overall widget window, child windows\non the left, right, top, bottom, and the window that displays the\ntext buffer. Windows are <code>null</code> and nonexistent if their width or\nheight is 0, and are nonexistent before the widget has been\nrealized.</p>",
+            "doc": "<p>Retrieves the <span data-xref=\"Gdk.Window\">Gdk.Window</span> corresponding to an area of the text view;\npossible windows include the overall widget window, child windows\non the left, right, top, bottom, and the window that displays the\ntext buffer. Windows are <pre>null</pre> and nonexistent if their width or\nheight is 0, and are nonexistent before the widget has been\nrealized.</p>",
             "kind": "method",
             "name": "get_window",
             "parameters": [
@@ -580,7 +568,7 @@
             }
         },
         {
-            "doc": "<p>Usually used to find out which window an event corresponds to.\nIf you connect to an event signal on <code>text_view</code>, this function\nshould be called on <code>event-&amp;amp;gt;window</code> to\nsee which window it was.</p>",
+            "doc": "<p>Usually used to find out which window an event corresponds to.\nIf you connect to an event signal on <pre>text_view</pre>, this function\nshould be called on <code>event-&amp;gt;window</code> to\nsee which window it was.</p>",
             "kind": "method",
             "name": "get_window_type",
             "parameters": [
@@ -605,7 +593,7 @@
             }
         },
         {
-            "doc": "<p>Allow the <span data-xref=\"Gtk.TextView\"/> input method to internally handle key press\nand release events. If this function returns <code>true</code>, then no further\nprocessing should be done for this key event. See\n<span data-xref=\"Gtk.IMContext.filter_keypress\"/>.</p><p>Note that you are expected to call this function from your handler\nwhen overriding key event handling. This is needed in the case when\nyou need to insert your own key handling between the input method\nand the default key event handling of the <span data-xref=\"Gtk.TextView\"/>.</p><p>|[&lt;!-- language=\"C\" --&gt;\nstatic gboolean\ngtk_foo_bar_key_press_event (GtkWidget   <em>widget,\n                             GdkEventKey </em>event)\n{\n  if ((key-&gt;keyval == GDK_KEY_Return || key-&gt;keyval == GDK_KEY_KP_Enter))\n    {\n      if (gtk_text_view_im_context_filter_keypress (GTK_TEXT_VIEW (view), event))\n        return TRUE;\n    }</p><pre><code>// Do some stuff\n</code></pre><p>return GTK_WIDGET_CLASS (gtk_foo_bar_parent_class)-&gt;key_press_event (widget, event);\n}\n]|</p>",
+            "doc": "<p>Allow the <span data-xref=\"Gtk.TextView\"/> input method to internally handle key press\nand release events. If this function returns <pre>true</pre>, then no further\nprocessing should be done for this key event. See\n<span data-xref=\"Gtk.IMContext.filter_keypress\"/>.</p><p>Note that you are expected to call this function from your handler\nwhen overriding key event handling. This is needed in the case when\nyou need to insert your own key handling between the input method\nand the default key event handling of the <span data-xref=\"Gtk.TextView\"/>.</p><p>|[<!-- language=\"C\" -->\nstatic gboolean\ngtk_foo_bar_key_press_event (GtkWidget   <em>widget,\n                             GdkEventKey </em>event)\n{\n  if ((key-&gt;keyval == GDK_KEY_Return || key-&gt;keyval == GDK_KEY_KP_Enter))\n    {\n      if (gtk_text_view_im_context_filter_keypress (GTK_TEXT_VIEW (view), event))\n        return TRUE;\n    }</p><pre><code>// Do some stuff\n</code></pre><p>return GTK_WIDGET_CLASS (gtk_foo_bar_parent_class)-&gt;key_press_event (widget, event);\n}\n]|</p>",
             "kind": "method",
             "name": "im_context_filter_keypress",
             "parameters": [
@@ -665,7 +653,7 @@
             }
         },
         {
-            "doc": "<p>Move the iterator a given number of characters visually, treating\nit as the strong cursor position. If <code>count</code> is positive, then the\nnew strong cursor position will be <code>count</code> positions to the right of\nthe old cursor position. If <code>count</code> is negative then the new strong\ncursor position will be <code>count</code> positions to the left of the old\ncursor position.</p><p>In the presence of bi-directional text, the correspondence\nbetween logical and visual order will depend on the direction\nof the current run, and there may be jumps when the cursor\nis moved off of the end of a run.</p>",
+            "doc": "<p>Move the iterator a given number of characters visually, treating\nit as the strong cursor position. If <pre>count</pre> is positive, then the\nnew strong cursor position will be <pre>count</pre> positions to the right of\nthe old cursor position. If <pre>count</pre> is negative then the new strong\ncursor position will be <pre>count</pre> positions to the left of the old\ncursor position.</p><p>In the presence of bi-directional text, the correspondence\nbetween logical and visual order will depend on the direction\nof the current run, and there may be jumps when the cursor\nis moved off of the end of a run.</p>",
             "kind": "method",
             "name": "move_visually",
             "parameters": [
@@ -705,7 +693,7 @@
             }
         },
         {
-            "doc": "<p>Scrolls <code>text_view</code> the minimum distance such that <code>mark</code> is contained\nwithin the visible area of the widget.</p>",
+            "doc": "<p>Scrolls <pre>text_view</pre> the minimum distance such that <pre>mark</pre> is contained\nwithin the visible area of the widget.</p>",
             "kind": "method",
             "name": "scroll_mark_onscreen",
             "parameters": [
@@ -721,7 +709,7 @@
             }
         },
         {
-            "doc": "<p>Scrolls <code>text_view</code> so that <code>iter</code> is on the screen in the position\nindicated by <code>xalign</code> and <code>yalign</code>. An alignment of 0.0 indicates\nleft or top, 1.0 indicates right or bottom, 0.5 means center.\nIf <code>use_align</code> is <code>false</code>, the text scrolls the minimal distance to\nget the mark onscreen, possibly not scrolling at all. The effective\nscreen for purposes of this function is reduced by a margin of size\n<code>within_margin</code>.</p><p>Note that this function uses the currently-computed height of the\nlines in the text buffer. Line heights are computed in an idle\nhandler; so this function may not have the desired effect if it\u2019s\ncalled before the height computations. To avoid oddness, consider\nusing <span data-xref=\"Gtk.TextView.scroll_to_mark\"/> which saves a point to be\nscrolled to after line validation.</p>",
+            "doc": "<p>Scrolls <pre>text_view</pre> so that <pre>iter</pre> is on the screen in the position\nindicated by <pre>xalign</pre> and <pre>yalign</pre>. An alignment of 0.0 indicates\nleft or top, 1.0 indicates right or bottom, 0.5 means center.\nIf <pre>use_align</pre> is <pre>false</pre>, the text scrolls the minimal distance to\nget the mark onscreen, possibly not scrolling at all. The effective\nscreen for purposes of this function is reduced by a margin of size\n<pre>within_margin</pre>.</p><p>Note that this function uses the currently-computed height of the\nlines in the text buffer. Line heights are computed in an idle\nhandler; so this function may not have the desired effect if it\u2019s\ncalled before the height computations. To avoid oddness, consider\nusing <span data-xref=\"Gtk.TextView.scroll_to_mark\"/> which saves a point to be\nscrolled to after line validation.</p>",
             "kind": "method",
             "name": "scroll_to_iter",
             "parameters": [
@@ -761,7 +749,7 @@
             }
         },
         {
-            "doc": "<p>Scrolls <code>text_view</code> so that <code>mark</code> is on the screen in the position\nindicated by <code>xalign</code> and <code>yalign</code>. An alignment of 0.0 indicates\nleft or top, 1.0 indicates right or bottom, 0.5 means center.\nIf <code>use_align</code> is <code>false</code>, the text scrolls the minimal distance to\nget the mark onscreen, possibly not scrolling at all. The effective\nscreen for purposes of this function is reduced by a margin of size\n<code>within_margin</code>.</p>",
+            "doc": "<p>Scrolls <pre>text_view</pre> so that <pre>mark</pre> is on the screen in the position\nindicated by <pre>xalign</pre> and <pre>yalign</pre>. An alignment of 0.0 indicates\nleft or top, 1.0 indicates right or bottom, 0.5 means center.\nIf <pre>use_align</pre> is <pre>false</pre>, the text scrolls the minimal distance to\nget the mark onscreen, possibly not scrolling at all. The effective\nscreen for purposes of this function is reduced by a margin of size\n<pre>within_margin</pre>.</p>",
             "kind": "method",
             "name": "scroll_to_mark",
             "parameters": [
@@ -801,7 +789,7 @@
             }
         },
         {
-            "doc": "<p>Sets the behavior of the text widget when the Tab key is pressed.\nIf <code>accepts_tab</code> is <code>true</code>, a tab character is inserted. If <code>accepts_tab</code>\nis <code>false</code> the keyboard focus is moved to the next widget in the focus\nchain.</p>",
+            "doc": "<p>Sets the behavior of the text widget when the Tab key is pressed.\nIf <pre>accepts_tab</pre> is <pre>true</pre>, a tab character is inserted. If <pre>accepts_tab</pre>\nis <pre>false</pre> the keyboard focus is moved to the next widget in the focus\nchain.</p>",
             "kind": "method",
             "name": "set_accepts_tab",
             "parameters": [
@@ -839,7 +827,7 @@
             }
         },
         {
-            "doc": "<p>Sets <code>buffer</code> as the buffer being displayed by <code>text_view</code>. The previous\nbuffer displayed by the text view is unreferenced, and a reference is\nadded to <code>buffer</code>. If you owned a reference to <code>buffer</code> before passing it\nto this function, you must remove that reference yourself; <span data-xref=\"Gtk.TextView\"/>\nwill not \u201cadopt\u201d it.</p>",
+            "doc": "<p>Sets <pre>buffer</pre> as the buffer being displayed by <pre>text_view</pre>. The previous\nbuffer displayed by the text view is unreferenced, and a reference is\nadded to <pre>buffer</pre>. If you owned a reference to <pre>buffer</pre> before passing it\nto this function, you must remove that reference yourself; <span data-xref=\"Gtk.TextView\"/>\nwill not \u201cadopt\u201d it.</p>",
             "kind": "method",
             "name": "set_buffer",
             "parameters": [
@@ -887,7 +875,7 @@
             }
         },
         {
-            "doc": "<p>Sets the default indentation for paragraphs in <code>text_view</code>.\nTags in the buffer may override the default.</p>",
+            "doc": "<p>Sets the default indentation for paragraphs in <pre>text_view</pre>.\nTags in the buffer may override the default.</p>",
             "kind": "method",
             "name": "set_indent",
             "parameters": [
@@ -935,7 +923,7 @@
             }
         },
         {
-            "doc": "<p>Sets the default justification of text in <code>text_view</code>.\nTags in the view\u2019s buffer may override the default.</p>",
+            "doc": "<p>Sets the default justification of text in <pre>text_view</pre>.\nTags in the view\u2019s buffer may override the default.</p>",
             "kind": "method",
             "name": "set_justification",
             "parameters": [
@@ -951,7 +939,7 @@
             }
         },
         {
-            "doc": "<p>Sets the default left margin for text in <code>text_view</code>.\nTags in the buffer may override the default.</p>",
+            "doc": "<p>Sets the default left margin for text in <pre>text_view</pre>.\nTags in the buffer may override the default.</p>",
             "kind": "method",
             "name": "set_left_margin",
             "parameters": [
@@ -983,7 +971,7 @@
             }
         },
         {
-            "doc": "<p>Sets the default number of blank pixels above paragraphs in <code>text_view</code>.\nTags in the buffer for <code>text_view</code> may override the defaults.</p>",
+            "doc": "<p>Sets the default number of blank pixels above paragraphs in <pre>text_view</pre>.\nTags in the buffer for <pre>text_view</pre> may override the defaults.</p>",
             "kind": "method",
             "name": "set_pixels_above_lines",
             "parameters": [
@@ -999,7 +987,7 @@
             }
         },
         {
-            "doc": "<p>Sets the default number of pixels of blank space\nto put below paragraphs in <code>text_view</code>. May be overridden\nby tags applied to <code>text_view</code>\u2019s buffer.</p>",
+            "doc": "<p>Sets the default number of pixels of blank space\nto put below paragraphs in <pre>text_view</pre>. May be overridden\nby tags applied to <pre>text_view</pre>\u2019s buffer.</p>",
             "kind": "method",
             "name": "set_pixels_below_lines",
             "parameters": [
@@ -1015,7 +1003,7 @@
             }
         },
         {
-            "doc": "<p>Sets the default number of pixels of blank space to leave between\ndisplay/wrapped lines within a paragraph. May be overridden by\ntags in <code>text_view</code>\u2019s buffer.</p>",
+            "doc": "<p>Sets the default number of pixels of blank space to leave between\ndisplay/wrapped lines within a paragraph. May be overridden by\ntags in <pre>text_view</pre>\u2019s buffer.</p>",
             "kind": "method",
             "name": "set_pixels_inside_wrap",
             "parameters": [
@@ -1047,7 +1035,7 @@
             }
         },
         {
-            "doc": "<p>Sets the default tab stops for paragraphs in <code>text_view</code>.\nTags in the buffer may override the default.</p>",
+            "doc": "<p>Sets the default tab stops for paragraphs in <pre>text_view</pre>.\nTags in the buffer may override the default.</p>",
             "kind": "method",
             "name": "set_tabs",
             "parameters": [
@@ -1079,7 +1067,7 @@
             }
         },
         {
-            "doc": "<p>Determines whether <code>iter</code> is at the start of a display line.\nSee <span data-xref=\"Gtk.TextView.forward_display_line\"/> for an explanation of\ndisplay lines vs. paragraphs.</p>",
+            "doc": "<p>Determines whether <pre>iter</pre> is at the start of a display line.\nSee <span data-xref=\"Gtk.TextView.forward_display_line\"/> for an explanation of\ndisplay lines vs. paragraphs.</p>",
             "kind": "method",
             "name": "starts_display_line",
             "parameters": [
@@ -1095,7 +1083,7 @@
             }
         },
         {
-            "doc": "<p>Converts coordinates on the window identified by <code>win</code> to buffer\ncoordinates, storing the result in (<code>buffer_x</code>,<code>buffer_y</code>).</p><p>Note that you can\u2019t convert coordinates for a nonexisting window (see\n<span data-xref=\"Gtk.TextView.set_border_window_size\"/>).</p>",
+            "doc": "<p>Converts coordinates on the window identified by <pre>win</pre> to buffer\ncoordinates, storing the result in (<pre>buffer_x</pre>,<pre>buffer_y</pre>).</p><p>Note that you can\u2019t convert coordinates for a nonexisting window (see\n<span data-xref=\"Gtk.TextView.set_border_window_size\"/>).</p>",
             "kind": "method",
             "name": "window_to_buffer_coords",
             "parameters": [
@@ -1133,8 +1121,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "TextView",
     "properties": [
@@ -1163,7 +1150,7 @@
             "type": "Boolean"
         },
         {
-            "doc": "<p>Which IM (input method) module should be used for this text_view.\nSee <span data-xref=\"Gtk.IMContext\"/>.</p><p>Setting this to a non-<code>null</code> value overrides the\nsystem-wide IM module setting. See the GtkSettings\n<span data-xref=\"Gtk.Settings-gtk-im-module\"/> property.</p>",
+            "doc": "<p>Which IM (input method) module should be used for this text_view.\nSee <span data-xref=\"Gtk.IMContext\"/>.</p><p>Setting this to a non-<pre>null</pre> value overrides the\nsystem-wide IM module setting. See the GtkSettings\n<span data-xref=\"Gtk.Settings-gtk-im-module\"/> property.</p>",
             "kind": "property",
             "name": "im-module",
             "type": "String"
@@ -1223,7 +1210,7 @@
             "type": "Number(gint)"
         },
         {
-            "doc": "<p>If :populate-all is <code>true</code>, the <span data-xref=\"Gtk.TextView-populate-popup\"/>\nsignal is also emitted for touch popups.</p>",
+            "doc": "<p>If :populate-all is <pre>true</pre>, the <span data-xref=\"Gtk.TextView-populate-popup\"/>\nsignal is also emitted for touch popups.</p>",
             "kind": "property",
             "name": "populate-all",
             "type": "Boolean"
@@ -1276,7 +1263,7 @@
             }
         },
         {
-            "doc": "<p>The ::delete-from-cursor signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user initiates a text deletion.</p><p>If the <code>type</code> is <span data-xref=\"Gtk.DeleteType\"/>.chars, GTK+ deletes the selection\nif there is one, otherwise it deletes the requested number\nof characters.</p><p>The default bindings for this signal are\nDelete for deleting a character, Ctrl-Delete for\ndeleting a word and Ctrl-Backspace for deleting a word\nbackwords.</p>",
+            "doc": "<p>The ::delete-from-cursor signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user initiates a text deletion.</p><p>If the <pre>type</pre> is <span data-xref=\"Gtk.DeleteType\"/>.chars, GTK+ deletes the selection\nif there is one, otherwise it deletes the requested number\nof characters.</p><p>The default bindings for this signal are\nDelete for deleting a character, Ctrl-Delete for\ndeleting a word and Ctrl-Backspace for deleting a word\nbackwords.</p>",
             "kind": "signal",
             "name": "delete-from-cursor",
             "parameters": [
@@ -1373,7 +1360,7 @@
             }
         },
         {
-            "doc": "<p>The ::populate-popup signal gets emitted before showing the\ncontext menu of the text view.</p><p>If you need to add items to the context menu, connect\nto this signal and append your items to the <code>popup</code>, which\nwill be a <span data-xref=\"Gtk.Menu\"/> in this case.</p><p>If <span data-xref=\"Gtk.TextView-populate-all\"/> is <code>true</code>, this signal will\nalso be emitted to populate touch popups. In this case,\n<code>popup</code> will be a different container, e.g. a <span data-xref=\"Gtk.Toolbar\"/>.</p><p>The signal handler should not make assumptions about the\ntype of @widget, but check whether <code>popup</code> is a <span data-xref=\"Gtk.Menu\"/>\nor <span data-xref=\"Gtk.Toolbar\"/> or another kind of container.</p>",
+            "doc": "<p>The ::populate-popup signal gets emitted before showing the\ncontext menu of the text view.</p><p>If you need to add items to the context menu, connect\nto this signal and append your items to the <pre>popup</pre>, which\nwill be a <span data-xref=\"Gtk.Menu\"/> in this case.</p><p>If <span data-xref=\"Gtk.TextView-populate-all\"/> is <pre>true</pre>, this signal will\nalso be emitted to populate touch popups. In this case,\n<pre>popup</pre> will be a different container, e.g. a <span data-xref=\"Gtk.Toolbar\"/>.</p><p>The signal handler should not make assumptions about the\ntype of @widget, but check whether <pre>popup</pre> is a <span data-xref=\"Gtk.Menu\"/>\nor <span data-xref=\"Gtk.Toolbar\"/> or another kind of container.</p>",
             "kind": "signal",
             "name": "populate-popup",
             "parameters": [

@@ -1,0 +1,22 @@
+{
+    "doc": "<p>Style for input method preedit. See also\n<span data-xref=\"Gtk.Settings-gtk-im-preedit-style\"/></p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "nothing"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "callback"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "none"
+        }
+    ],
+    "name": "IMPreeditStyle"
+}

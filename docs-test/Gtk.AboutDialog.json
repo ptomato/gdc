@@ -10,19 +10,7 @@
             }
         }
     ],
-    "doc": "<p>The GtkAboutDialog offers a simple way to display information about\na program like its logo, name, copyright, website and license. It is\nalso possible to give credits to the authors, documenters, translators\nand artists who have worked on the program. An about dialog is typicallyx\nopened when the user selects the <code>About</code> option from\nthe <code>Help</code> menu. All parts of the dialog are optional.</p><p>About dialogs often contain links and email addresses. GtkAboutDialog\ndisplays these as clickable links. By default, it calls <span data-xref=\"Gtk.show_uri\"/>\nwhen a user clicks one. The behaviour can be overridden with the\n<span data-xref=\"Gtk.AboutDialog-activate-link\"/> signal.</p><p>To make constructing a GtkAboutDialog as convenient as possible, you can\nuse the function <span data-xref=\"Gtk.show_about_dialog\"/> which constructs and shows a dialog\nand keeps it around so that it can be shown again.</p><p>Note that GTK+ sets a default title of <code>_(\"About %s\")</code> on the dialog\nwindow (where \\%s is replaced by the name of the application, but in\norder to ensure proper translation of the title, applications should\nset the title property explicitly when constructing a GtkAboutDialog,\nas shown in the following example:\n|[&lt;!-- language=\"C\" --&gt;\ngtk_show_about_dialog (NULL,\n                       \"program-name\", \"ExampleCode\",\n                       \"logo\", example_logo,\n                       \"title\" _(\"About ExampleCode\"),\n                       NULL);\n]|</p><p>It is also possible to show a <span data-xref=\"Gtk.AboutDialog\"/> like any other <span data-xref=\"Gtk.Dialog\"/>,\ne.g. using <span data-xref=\"Gtk.Dialog.run\"/>. In this case, you might need to know that\nthe \u201cClose\u201d button returns the #GTK_RESPONSE_CANCEL response id.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>The GtkAboutDialog offers a simple way to display information about\na program like its logo, name, copyright, website and license. It is\nalso possible to give credits to the authors, documenters, translators\nand artists who have worked on the program. An about dialog is typicallyx\nopened when the user selects the <code>About</code> option from\nthe <code>Help</code> menu. All parts of the dialog are optional.</p><p>About dialogs often contain links and email addresses. GtkAboutDialog\ndisplays these as clickable links. By default, it calls <span data-xref=\"Gtk.show_uri\"/>\nwhen a user clicks one. The behaviour can be overridden with the\n<span data-xref=\"Gtk.AboutDialog-activate-link\"/> signal.</p><p>To make constructing a GtkAboutDialog as convenient as possible, you can\nuse the function <span data-xref=\"Gtk.show_about_dialog\"/> which constructs and shows a dialog\nand keeps it around so that it can be shown again.</p><p>Note that GTK+ sets a default title of <code>_(\"About %s\")</code> on the dialog\nwindow (where \\%s is replaced by the name of the application, but in\norder to ensure proper translation of the title, applications should\nset the title property explicitly when constructing a GtkAboutDialog,\nas shown in the following example:\n|[<!-- language=\"C\" -->\ngtk_show_about_dialog (NULL,\n                       \"program-name\", \"ExampleCode\",\n                       \"logo\", example_logo,\n                       \"title\" _(\"About ExampleCode\"),\n                       NULL);\n]|</p><p>It is also possible to show a <span data-xref=\"Gtk.AboutDialog\"/> like any other <span data-xref=\"Gtk.Dialog\"/>,\ne.g. using <span data-xref=\"Gtk.Dialog.run\"/>. In this case, you might need to know that\nthe \u201cClose\u201d button returns the #GTK_RESPONSE_CANCEL response id.</p>",
     "kind": "class",
     "methods": [
         {
@@ -174,7 +162,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether the license text in <code>about</code> is\nautomatically wrapped.</p>",
+            "doc": "<p>Returns whether the license text in <pre>about</pre> is\nautomatically wrapped.</p>",
             "kind": "method",
             "name": "get_wrap_license",
             "parameters": [],
@@ -263,7 +251,7 @@
             }
         },
         {
-            "doc": "<p>Sets the license information to be displayed in the secondary\nlicense dialog. If <code>license</code> is <code>null</code>, the license button is\nhidden.</p>",
+            "doc": "<p>Sets the license information to be displayed in the secondary\nlicense dialog. If <pre>license</pre> is <pre>null</pre>, the license button is\nhidden.</p>",
             "kind": "method",
             "name": "set_license",
             "parameters": [
@@ -279,7 +267,7 @@
             }
         },
         {
-            "doc": "<p>Sets the license of the application showing the <code>about</code> dialog from a\nlist of known licenses.</p><p>This function overrides the license set using\n<span data-xref=\"Gtk.AboutDialog.set_license\"/>.</p>",
+            "doc": "<p>Sets the license of the application showing the <pre>about</pre> dialog from a\nlist of known licenses.</p><p>This function overrides the license set using\n<span data-xref=\"Gtk.AboutDialog.set_license\"/>.</p>",
             "kind": "method",
             "name": "set_license_type",
             "parameters": [
@@ -295,7 +283,7 @@
             }
         },
         {
-            "doc": "<p>Sets the pixbuf to be displayed as logo in the about dialog.\nIf it is <code>null</code>, the default window icon set with\n<span data-xref=\"Gtk.Window.set_default_icon\"/> will be used.</p>",
+            "doc": "<p>Sets the pixbuf to be displayed as logo in the about dialog.\nIf it is <pre>null</pre>, the default window icon set with\n<span data-xref=\"Gtk.Window.set_default_icon\"/> will be used.</p>",
             "kind": "method",
             "name": "set_logo",
             "parameters": [
@@ -311,7 +299,7 @@
             }
         },
         {
-            "doc": "<p>Sets the pixbuf to be displayed as logo in the about dialog.\nIf it is <code>null</code>, the default window icon set with\n<span data-xref=\"Gtk.Window.set_default_icon\"/> will be used.</p>",
+            "doc": "<p>Sets the pixbuf to be displayed as logo in the about dialog.\nIf it is <pre>null</pre>, the default window icon set with\n<span data-xref=\"Gtk.Window.set_default_icon\"/> will be used.</p>",
             "kind": "method",
             "name": "set_logo_icon_name",
             "parameters": [
@@ -343,7 +331,7 @@
             }
         },
         {
-            "doc": "<p>Sets the translator credits string which is displayed in\nthe translators tab of the secondary credits dialog.</p><p>The intended use for this string is to display the translator\nof the language which is currently used in the user interface.\nUsing gettext(), a simple way to achieve that is to mark the\nstring for translation:\n|[&lt;!-- language=\"C\" --&gt;\n gtk_about_dialog_set_translator_credits (about,\n                                          _(\"translator-credits\"));\n]|\nIt is a good idea to use the customary msgid \u201ctranslator-credits\u201d for this\npurpose, since translators will already know the purpose of that msgid, and\nsince <span data-xref=\"Gtk.AboutDialog\"/> will detect if \u201ctranslator-credits\u201d is untranslated\nand hide the tab.</p>",
+            "doc": "<p>Sets the translator credits string which is displayed in\nthe translators tab of the secondary credits dialog.</p><p>The intended use for this string is to display the translator\nof the language which is currently used in the user interface.\nUsing gettext(), a simple way to achieve that is to mark the\nstring for translation:\n|[<!-- language=\"C\" -->\n gtk_about_dialog_set_translator_credits (about,\n                                          _(\"translator-credits\"));\n]|\nIt is a good idea to use the customary msgid \u201ctranslator-credits\u201d for this\npurpose, since translators will already know the purpose of that msgid, and\nsince <span data-xref=\"Gtk.AboutDialog\"/> will detect if \u201ctranslator-credits\u201d is untranslated\nand hide the tab.</p>",
             "kind": "method",
             "name": "set_translator_credits",
             "parameters": [
@@ -407,7 +395,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether the license text in <code>about</code> is\nautomatically wrapped.</p>",
+            "doc": "<p>Sets whether the license text in <pre>about</pre> is\nautomatically wrapped.</p>",
             "kind": "method",
             "name": "set_wrap_license",
             "parameters": [
@@ -421,19 +409,18 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "AboutDialog",
     "properties": [
         {
-            "doc": "<p>The people who contributed artwork to the program, as a <code>null</code>-terminated\narray of strings. Each string may contain email addresses and URLs, which\nwill be displayed as links, see the introduction for more details.</p>",
+            "doc": "<p>The people who contributed artwork to the program, as a <pre>null</pre>-terminated\narray of strings. Each string may contain email addresses and URLs, which\nwill be displayed as links, see the introduction for more details.</p>",
             "kind": "property",
             "name": "artists",
             "type": "Array(String)"
         },
         {
-            "doc": "<p>The authors of the program, as a <code>null</code>-terminated array of strings.\nEach string may contain email addresses and URLs, which will be displayed\nas links, see the introduction for more details.</p>",
+            "doc": "<p>The authors of the program, as a <pre>null</pre>-terminated array of strings.\nEach string may contain email addresses and URLs, which will be displayed\nas links, see the introduction for more details.</p>",
             "kind": "property",
             "name": "authors",
             "type": "Array(String)"
@@ -451,13 +438,13 @@
             "type": "String"
         },
         {
-            "doc": "<p>The people documenting the program, as a <code>null</code>-terminated array of strings.\nEach string may contain email addresses and URLs, which will be displayed\nas links, see the introduction for more details.</p>",
+            "doc": "<p>The people documenting the program, as a <pre>null</pre>-terminated array of strings.\nEach string may contain email addresses and URLs, which will be displayed\nas links, see the introduction for more details.</p>",
             "kind": "property",
             "name": "documenters",
             "type": "Array(String)"
         },
         {
-            "doc": "<p>The license of the program. This string is displayed in a\ntext view in a secondary dialog, therefore it is fine to use\na long multi-paragraph text. Note that the text is only wrapped\nin the text view if the \"wrap-license\" property is set to <code>true</code>;\notherwise the text itself must contain the intended linebreaks.\nWhen setting this property to a non-<code>null</code> value, the\n<span data-xref=\"Gtk.AboutDialog-license-type\"/> property is set to <span data-xref=\"Gtk.License\"/>.custom\nas a side effect.</p>",
+            "doc": "<p>The license of the program. This string is displayed in a\ntext view in a secondary dialog, therefore it is fine to use\na long multi-paragraph text. Note that the text is only wrapped\nin the text view if the \"wrap-license\" property is set to <pre>true</pre>;\notherwise the text itself must contain the intended linebreaks.\nWhen setting this property to a non-<pre>null</pre> value, the\n<span data-xref=\"Gtk.AboutDialog-license-type\"/> property is set to <span data-xref=\"Gtk.License\"/>.custom\nas a side effect.</p>",
             "kind": "property",
             "name": "license",
             "type": "String"
@@ -469,7 +456,7 @@
             "type": "Gtk.License"
         },
         {
-            "doc": "<p>A logo for the about box. If it is <code>null</code>, the default window icon\nset with <span data-xref=\"Gtk.Window.set_default_icon\"/> will be used.</p>",
+            "doc": "<p>A logo for the about box. If it is <pre>null</pre>, the default window icon\nset with <span data-xref=\"Gtk.Window.set_default_icon\"/> will be used.</p>",
             "kind": "property",
             "name": "logo",
             "type": "GdkPixbuf.Pixbuf"

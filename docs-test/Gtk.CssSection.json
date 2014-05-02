@@ -1,0 +1,90 @@
+{
+    "constructors": [],
+    "doc": "<p>Defines a part of a CSS document. Because sections are nested into\none another, you can use <span data-xref=\"Gtk.CssSection.get_parent\"/> to get the\ncontaining region.</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the line in the CSS document where this section end.\nThe line number is 0-indexed, so the first line of the document\nwill return 0.\nThis value may change in future invocations of this function if\n<pre>section</pre> is not yet parsed completely. This will for example\nhappen in the GtkCssProvider::parsing-error signal.\nThe end position and line may be identical to the start\nposition and line for sections which failed to parse anything\nsuccessfully.</p>",
+            "kind": "method",
+            "name": "get_end_line",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the offset in bytes from the start of the current line\nreturned via <span data-xref=\"Gtk.CssSection.get_end_line\"/>.\nThis value may change in future invocations of this function if\n<pre>section</pre> is not yet parsed completely. This will for example\nhappen in the GtkCssProvider::parsing-error signal.\nThe end position and line may be identical to the start\nposition and line for sections which failed to parse anything\nsuccessfully.</p>",
+            "kind": "method",
+            "name": "get_end_position",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the file that <pre>section</pre> was parsed from. If no such file exists,\nfor example because the CSS was loaded via\n@gtk_css_provider_load_from_data(), then <pre>null</pre> is returned.</p>",
+            "kind": "method",
+            "name": "get_file",
+            "parameters": [],
+            "retval": {
+                "type": "Gio.File"
+            }
+        },
+        {
+            "doc": "<p>Gets the parent section for the given <pre>section</pre>. The parent section is\nthe section that contains this <pre>section</pre>. A special case are sections of\ntype #GTK_CSS_SECTION_DOCUMENT. Their parent will either be <pre>null</pre>\nif they are the original CSS document that was loaded by\n<span data-xref=\"Gtk.CssProvider.load_from_file\"/> or a section of type</p>\n<h1>GTK_CSS_SECTION_IMPORT if it was loaded with an import rule from</h1>\n<p>a different file.</p>",
+            "kind": "method",
+            "name": "get_parent",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CssSection"
+            }
+        },
+        {
+            "doc": "<p>Gets the type of information that <pre>section</pre> describes.</p>",
+            "kind": "method",
+            "name": "get_section_type",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CssSectionType"
+            }
+        },
+        {
+            "doc": "<p>Returns the line in the CSS document where this section starts.\nThe line number is 0-indexed, so the first line of the document\nwill return 0.</p>",
+            "kind": "method",
+            "name": "get_start_line",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the offset in bytes from the start of the current line\nreturned via <span data-xref=\"Gtk.CssSection.get_start_line\"/>.</p>",
+            "kind": "method",
+            "name": "get_start_position",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Increments the reference count on <pre>section</pre>.</p>",
+            "kind": "method",
+            "name": "ref",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CssSection"
+            }
+        },
+        {
+            "doc": "<p>Decrements the reference count on <pre>section</pre>, freeing the\nstructure if the reference count reaches 0.</p>",
+            "kind": "method",
+            "name": "unref",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "CssSection"
+}

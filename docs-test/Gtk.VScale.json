@@ -17,7 +17,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new vertical scale widget that lets the user input a\nnumber between <code>min</code> and <code>max</code> (including <code>min</code> and <code>max</code>) with the\nincrement <code>step</code>.  <code>step</code> must be nonzero; it\u2019s the distance the\nslider moves when using the arrow keys to adjust the scale value.</p><p>Note that the way in which the precision is derived works best if <code>step</code>\nis a power of ten. If the resulting precision is not suitable for your\nneeds, use <span data-xref=\"Gtk.Scale.set_digits\"/> to correct it.</p>",
+            "doc": "<p>Creates a new vertical scale widget that lets the user input a\nnumber between <pre>min</pre> and <pre>max</pre> (including <pre>min</pre> and <pre>max</pre>) with the\nincrement <pre>step</pre>.  <pre>step</pre> must be nonzero; it\u2019s the distance the\nslider moves when using the arrow keys to adjust the scale value.</p><p>Note that the way in which the precision is derived works best if <pre>step</pre>\nis a power of ten. If the resulting precision is not suitable for your\nneeds, use <span data-xref=\"Gtk.Scale.set_digits\"/> to correct it.</p>",
             "kind": "constructor",
             "name": "new_with_range",
             "parameters": [
@@ -46,17 +46,8 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.VScale\"/> widget is used to allow the user to select a value using\na vertical slider. To create one, use <span data-xref=\"Gtk.HScale.new_with_range\"/>.</p><p>The position to show the current value, and the number of decimal places\nshown can be set using the parent <span data-xref=\"Gtk.Scale\"/> class\u2019s functions.</p><p>GtkVScale has been deprecated, use <span data-xref=\"Gtk.Scale\"/> instead.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "scale"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "VScale",
     "properties": [],
     "signals": [],

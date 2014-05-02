@@ -1,0 +1,37 @@
+{
+    "doc": "<p>Used to dictate the style that a <span data-xref=\"Gtk.ButtonBox\"/> uses to layout the buttons it\ncontains. (See also: <span data-xref=\"Gtk.VButtonBox\"/> and <span data-xref=\"Gtk.HButtonBox\"/>).</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Buttons are evenly spread across the box.</p>",
+            "kind": "default",
+            "name": "spread"
+        },
+        {
+            "doc": "<p>Buttons are placed at the edges of the box.</p>",
+            "kind": "default",
+            "name": "edge"
+        },
+        {
+            "doc": "<p>Buttons are grouped towards the start of the box,\n  (on the left for a HBox, or the top for a VBox).</p>",
+            "kind": "default",
+            "name": "start"
+        },
+        {
+            "doc": "<p>Buttons are grouped towards the end of the box,\n  (on the right for a HBox, or the bottom for a VBox).</p>",
+            "kind": "default",
+            "name": "end"
+        },
+        {
+            "doc": "<p>Buttons are centered in the box. Since 2.12.</p>",
+            "kind": "default",
+            "name": "center"
+        },
+        {
+            "doc": "<p>Buttons expand to fill the box. Since 3.12.</p>",
+            "kind": "default",
+            "name": "expand"
+        }
+    ],
+    "name": "ButtonBoxStyle"
+}

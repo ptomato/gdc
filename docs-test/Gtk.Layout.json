@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.Layout\"/>. Unless you have a specific adjustment\nyou\u2019d like the layout to use for scrolling, pass <code>null</code> for\n<code>hadjustment</code> and <code>vadjustment</code>.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Layout\"/>. Unless you have a specific adjustment\nyou\u2019d like the layout to use for scrolling, pass <pre>null</pre> for\n<pre>hadjustment</pre> and <pre>vadjustment</pre>.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -24,18 +24,6 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.Layout\"/> is similar to <span data-xref=\"Gtk.DrawingArea\"/> in that it\u2019s a \u201cblank slate\u201d\nand doesn\u2019t do anything but paint a blank background by default. It's\ndifferent in that it supports scrolling natively (you can add it to a\n<span data-xref=\"Gtk.ScrolledWindow\"/>), and it can contain child widgets, since it\u2019s a\n<span data-xref=\"Gtk.Container\"/>. However if you\u2019re just going to draw, a <span data-xref=\"Gtk.DrawingArea\"/>\nis a better choice since it has lower overhead.</p><p>When handling expose events on a <span data-xref=\"Gtk.Layout\"/>, you must draw to\nGTK_LAYOUT (layout)-&gt;bin_window, rather than to\nGTK_WIDGET (layout)-&gt;window, as you would for a drawing\narea.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "container"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -48,7 +36,7 @@
             }
         },
         {
-            "doc": "<p>This function should only be called after the layout has been\nplaced in a <span data-xref=\"Gtk.ScrolledWindow\"/> or otherwise configured for\nscrolling. It returns the <span data-xref=\"Gtk.Adjustment\"/> used for communication\nbetween the horizontal scrollbar and <code>layout</code>.</p><p>See <span data-xref=\"Gtk.ScrolledWindow\"/>, <span data-xref=\"Gtk.Scrollbar\"/>, <span data-xref=\"Gtk.Adjustment\"/> for details.</p>",
+            "doc": "<p>This function should only be called after the layout has been\nplaced in a <span data-xref=\"Gtk.ScrolledWindow\"/> or otherwise configured for\nscrolling. It returns the <span data-xref=\"Gtk.Adjustment\"/> used for communication\nbetween the horizontal scrollbar and <pre>layout</pre>.</p><p>See <span data-xref=\"Gtk.ScrolledWindow\"/>, <span data-xref=\"Gtk.Scrollbar\"/>, <span data-xref=\"Gtk.Adjustment\"/> for details.</p>",
             "kind": "method",
             "name": "get_hadjustment",
             "parameters": [],
@@ -79,7 +67,7 @@
             }
         },
         {
-            "doc": "<p>This function should only be called after the layout has been\nplaced in a <span data-xref=\"Gtk.ScrolledWindow\"/> or otherwise configured for\nscrolling. It returns the <span data-xref=\"Gtk.Adjustment\"/> used for communication\nbetween the vertical scrollbar and <code>layout</code>.</p><p>See <span data-xref=\"Gtk.ScrolledWindow\"/>, <span data-xref=\"Gtk.Scrollbar\"/>, <span data-xref=\"Gtk.Adjustment\"/> for details.</p>",
+            "doc": "<p>This function should only be called after the layout has been\nplaced in a <span data-xref=\"Gtk.ScrolledWindow\"/> or otherwise configured for\nscrolling. It returns the <span data-xref=\"Gtk.Adjustment\"/> used for communication\nbetween the vertical scrollbar and <pre>layout</pre>.</p><p>See <span data-xref=\"Gtk.ScrolledWindow\"/>, <span data-xref=\"Gtk.Scrollbar\"/>, <span data-xref=\"Gtk.Adjustment\"/> for details.</p>",
             "kind": "method",
             "name": "get_vadjustment",
             "parameters": [],
@@ -88,7 +76,7 @@
             }
         },
         {
-            "doc": "<p>Moves a current child of <code>layout</code> to a new position.</p>",
+            "doc": "<p>Moves a current child of <pre>layout</pre> to a new position.</p>",
             "kind": "method",
             "name": "move",
             "parameters": [
@@ -116,7 +104,7 @@
             }
         },
         {
-            "doc": "<p>Adds <code>child_widget</code> to <code>layout</code>, at position (<code>x</code>,<code>y</code>).\n<code>layout</code> becomes the new parent container of <code>child_widget</code>.</p>",
+            "doc": "<p>Adds <pre>child_widget</pre> to <pre>layout</pre>, at position (<pre>x</pre>,<pre>y</pre>).\n<pre>layout</pre> becomes the new parent container of <pre>child_widget</pre>.</p>",
             "kind": "method",
             "name": "put",
             "parameters": [
@@ -196,8 +184,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Layout",
     "properties": [

@@ -1,0 +1,17 @@
+{
+    "doc": "<p>Whether spacers are vertical lines or just blank.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Use blank spacers.</p>",
+            "kind": "default",
+            "name": "empty"
+        },
+        {
+            "doc": "<p>Use vertical lines for spacers.</p>",
+            "kind": "default",
+            "name": "line"
+        }
+    ],
+    "name": "ToolbarSpaceStyle"
+}

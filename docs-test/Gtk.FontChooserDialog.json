@@ -24,22 +24,8 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.FontChooserDialog\"/> widget is a dialog for selecting a font.\nIt implements the <span data-xref=\"Gtk.FontChooser\"/> interface.</p><h1>GtkFontChooserDialog as GtkBuildable</h1><p>The GtkFontChooserDialog implementation of the <span data-xref=\"Gtk.Buildable\"/>\ninterface exposes the buttons with the names \u201cselect_button\u201d\nand \u201ccancel_button\u201d.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "FontChooserDialog",
     "properties": [],
     "signals": [],

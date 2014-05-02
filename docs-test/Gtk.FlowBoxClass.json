@@ -1,0 +1,79 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "child_activated"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "selected_children_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "activate_cursor_child"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "toggle_cursor_child"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "move_cursor"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "select_all"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "unselect_all"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved6"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "FlowBoxClass"
+}

@@ -1,0 +1,42 @@
+{
+    "doc": "<p>The values of the GtkSpinType enumeration are used to specify the\nchange to make in <span data-xref=\"Gtk.SpinButton.spin\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Increment by the adjustments step increment.</p>",
+            "kind": "default",
+            "name": "step_forward"
+        },
+        {
+            "doc": "<p>Decrement by the adjustments step increment.</p>",
+            "kind": "default",
+            "name": "step_backward"
+        },
+        {
+            "doc": "<p>Increment by the adjustments page increment.</p>",
+            "kind": "default",
+            "name": "page_forward"
+        },
+        {
+            "doc": "<p>Decrement by the adjustments page increment.</p>",
+            "kind": "default",
+            "name": "page_backward"
+        },
+        {
+            "doc": "<p>Go to the adjustments lower bound.</p>",
+            "kind": "default",
+            "name": "home"
+        },
+        {
+            "doc": "<p>Go to the adjustments upper bound.</p>",
+            "kind": "default",
+            "name": "end"
+        },
+        {
+            "doc": "<p>Change by a specified amount.</p>",
+            "kind": "default",
+            "name": "user_defined"
+        }
+    ],
+    "name": "SpinType"
+}

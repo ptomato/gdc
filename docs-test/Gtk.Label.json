@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new label with the given text inside it. You can\npass <code>null</code> to get an empty label widget.</p>",
+            "doc": "<p>Creates a new label with the given text inside it. You can\npass <pre>null</pre> to get an empty label widget.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -17,7 +17,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.Label\"/>, containing the text in <code>str</code>.</p><p>If characters in <code>str</code> are preceded by an underscore, they are\nunderlined. If you need a literal underscore character in a label, use\n'__' (two underscores). The first underlined character represents a\nkeyboard accelerator called a mnemonic. The mnemonic key can be used\nto activate another widget, chosen automatically, or explicitly using\n<span data-xref=\"Gtk.Label.set_mnemonic_widget\"/>.</p><p>If <span data-xref=\"Gtk.Label.set_mnemonic_widget\"/> is not called, then the first\nactivatable ancestor of the <span data-xref=\"Gtk.Label\"/> will be chosen as the mnemonic\nwidget. For instance, if the label is inside a button or menu item,\nthe button or menu item will automatically become the mnemonic widget\nand be activated by the mnemonic.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Label\"/>, containing the text in <pre>str</pre>.</p><p>If characters in <pre>str</pre> are preceded by an underscore, they are\nunderlined. If you need a literal underscore character in a label, use\n'__' (two underscores). The first underlined character represents a\nkeyboard accelerator called a mnemonic. The mnemonic key can be used\nto activate another widget, chosen automatically, or explicitly using\n<span data-xref=\"Gtk.Label.set_mnemonic_widget\"/>.</p><p>If <span data-xref=\"Gtk.Label.set_mnemonic_widget\"/> is not called, then the first\nactivatable ancestor of the <span data-xref=\"Gtk.Label\"/> will be chosen as the mnemonic\nwidget. For instance, if the label is inside a button or menu item,\nthe button or menu item will automatically become the mnemonic widget\nand be activated by the mnemonic.</p>",
             "kind": "constructor",
             "name": "new_with_mnemonic",
             "parameters": [
@@ -33,19 +33,7 @@
             }
         }
     ],
-    "doc": "<p>The <span data-xref=\"Gtk.Label\"/> widget displays a small amount of text. As the name\nimplies, most labels are used to label another widget such as a\n<span data-xref=\"Gtk.Button\"/>, a <span data-xref=\"Gtk.MenuItem\"/>, or a <span data-xref=\"Gtk.ComboBox\"/>.</p><h1>GtkLabel as GtkBuildable</h1><p>The GtkLabel implementation of the GtkBuildable interface supports a\ncustom &lt;attributes&gt; element, which supports any number of &lt;attribute&gt;\nelements. The &lt;attribute&gt; element has attributes named \u201cname\u201c, \u201cvalue\u201c,\n\u201cstart\u201c and \u201cend\u201c and allows you to specify <span data-xref=\"Pango.Attribute\">Pango.Attribute</span> values for\nthis label.</p><p>An example of a UI definition fragment specifying Pango attributes:\n|[\n&lt;object class=\"GtkLabel\"&gt;\n  &lt;attributes&gt;\n    &lt;attribute name=\"weight\" value=\"PANGO_WEIGHT_BOLD\"/&gt;\n    &lt;attribute name=\"background\" value=\"red\" start=\"5\" end=\"10\"/&gt;\"\n  &lt;/attributes&gt;\n&lt;/object&gt;\n]|</p><p>The start and end attributes specify the range of characters to which the\nPango attribute applies. If start and end are not specified, the attribute is\napplied to the whole text. Note that specifying ranges does not make much\nsense with translatable attributes. Use markup embedded in the translatable\ncontent instead.</p><h1>Mnemonics</h1><p>Labels may contain \u201cmnemonics\u201d. Mnemonics are\nunderlined characters in the label, used for keyboard navigation.\nMnemonics are created by providing a string with an underscore before\nthe mnemonic character, such as <code>\"_File\"</code>, to the\nfunctions <span data-xref=\"Gtk.Label.new_with_mnemonic\"/> or\n<span data-xref=\"Gtk.Label.set_text_with_mnemonic\"/>.</p><p>Mnemonics automatically activate any activatable widget the label is\ninside, such as a <span data-xref=\"Gtk.Button\"/>; if the label is not inside the\nmnemonic\u2019s target widget, you have to tell the label about the target\nusing <span data-xref=\"Gtk.Label.set_mnemonic_widget\"/>. Here\u2019s a simple example where\nthe label is inside a button:</p><p>|[&lt;!-- language=\"C\" --&gt;\n  // Pressing Alt+H will activate this button\n  button = gtk_button_new ();\n  label = gtk_label_new_with_mnemonic (\"_Hello\");\n  gtk_container_add (GTK_CONTAINER (button), label);\n]|</p><p>There\u2019s a convenience function to create buttons with a mnemonic label\nalready inside:</p><p>|[&lt;!-- language=\"C\" --&gt;\n  // Pressing Alt+H will activate this button\n  button = gtk_button_new_with_mnemonic (\"_Hello\");\n]|</p><p>To create a mnemonic for a widget alongside the label, such as a\n<span data-xref=\"Gtk.Entry\"/>, you have to point the label at the entry with\n<span data-xref=\"Gtk.Label.set_mnemonic_widget\"/>:</p><p>|[&lt;!-- language=\"C\" --&gt;\n  // Pressing Alt+H will focus the entry\n  entry = gtk_entry_new ();\n  label = gtk_label_new_with_mnemonic (\"_Hello\");\n  gtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);\n]|</p><h1>Markup (styled text)</h1><p>To make it easy to format text in a label (changing colors,\nfonts, etc.), label text can be provided in a simple\n[markup format][PangoMarkupFormat].</p><p>Here\u2019s how to create a label with a small font:\n|[&lt;!-- language=\"C\" --&gt;\n  label = gtk_label_new (NULL);\n  gtk_label_set_markup (GTK_LABEL (label), \"&lt;small&gt;Small text&lt;/small&gt;\");\n]|</p><p>(See [complete documentation][PangoMarkupFormat] of available\ntags in the Pango manual.)</p><p>The markup passed to <span data-xref=\"Gtk.Label.set_markup\"/> must be valid; for example,\nliteral &lt;, &gt; and &amp; characters must be escaped as &amp;lt;, &amp;gt;, and &amp;amp;.\nIf you pass text obtained from the user, file, or a network to\n<span data-xref=\"Gtk.Label.set_markup\"/>, you\u2019ll want to escape it with\n<span data-xref=\"GLib.markup_escape_text\">GLib.markup_escape_text</span> or <span data-xref=\"GLib.markup_printf_escaped\">GLib.markup_printf_escaped</span>.</p><p>Markup strings are just a convenient way to set the <span data-xref=\"Pango.AttrList\">Pango.AttrList</span> on\na label; <span data-xref=\"Gtk.Label.set_attributes\"/> may be a simpler way to set\nattributes in some cases. Be careful though; <span data-xref=\"Pango.AttrList\">Pango.AttrList</span> tends to\ncause internationalization problems, unless you\u2019re applying attributes\nto the entire string (i.e. unless you set the range of each attribute\nto [0, %G_MAXINT)). The reason is that specifying the start_index and\nend_index for a <span data-xref=\"Pango.Attribute\">Pango.Attribute</span> requires knowledge of the exact string\nbeing displayed, so translations will cause problems.</p><h1>Selectable labels</h1><p>Labels can be made selectable with <span data-xref=\"Gtk.Label.set_selectable\"/>.\nSelectable labels allow the user to copy the label contents to\nthe clipboard. Only labels that contain useful-to-copy information\n&amp;mdash; such as error messages &amp;mdash; should be made selectable.</p><h1>Text layout</h1><p>A label can contain any number of paragraphs, but will have\nperformance problems if it contains more than a small number.\nParagraphs are separated by newlines or other paragraph separators\nunderstood by Pango.</p><p>Labels can automatically wrap text if you call\n<span data-xref=\"Gtk.Label.set_line_wrap\"/>.</p><p><span data-xref=\"Gtk.Label.set_justify\"/> sets how the lines in a label align\nwith one another. If you want to set how the label as a whole\naligns in its available space, see <span data-xref=\"Gtk.Misc.set_alignment\"/>.</p><p>The <span data-xref=\"Gtk.Label-width-chars\"/> and <span data-xref=\"Gtk.Label-max-width-chars\"/> properties\ncan be used to control the size allocation of ellipsized or wrapped\nlabels. For ellipsizing labels, if either is specified (and less\nthan the actual text size), it is used as the minimum width, and the actual\ntext size is used as the natural width of the label. For wrapping labels,\nwidth-chars is used as the minimum width, if specified, and max-width-chars\nis used as the natural width. Even if max-width-chars specified, wrapping\nlabels will be rewrapped to use all of the available width.</p><p>Note that the interpretation of <span data-xref=\"Gtk.Label-width-chars\"/> and\n<span data-xref=\"Gtk.Label-max-width-chars\"/> has changed a bit with the introduction of\n[width-for-height geometry management.][geometry-management]</p><h1>Links</h1><p>Since 2.18, GTK+ supports markup for clickable hyperlinks in addition\nto regular Pango markup. The markup for links is borrowed from HTML,\nusing the <code>&amp;lt;a&amp;gt;</code> with \u201chref\u201c and \u201ctitle\u201c attributes. GTK+ renders links\nsimilar to the way they appear in web browsers, with colored, underlined\ntext. The \u201ctitle\u201c attribute is displayed as a tooltip on the link.</p><p>An example looks like this:</p><p>|[&lt;!-- language=\"C\" --&gt;\nconst gchar *text =\n\"Go to the\"\n\"&lt;a href=\\\"http://www.gtk.org title=\"&amp;lt;i&amp;gt;Our&amp;lt;/i&amp;gt; website\\\"&gt;\"\n\"GTK+ website&lt;/a&gt; for more...\";\ngtk_label_set_markup (label, text);\n]|</p><p>It is possible to implement custom handling for links and their tooltips with\nthe <span data-xref=\"Gtk.Label-activate-link\"/> signal and the <span data-xref=\"Gtk.Label.get_current_uri\"/> function.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "misc"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>The <span data-xref=\"Gtk.Label\"/> widget displays a small amount of text. As the name\nimplies, most labels are used to label another widget such as a\n<span data-xref=\"Gtk.Button\"/>, a <span data-xref=\"Gtk.MenuItem\"/>, or a <span data-xref=\"Gtk.ComboBox\"/>.</p><h1>GtkLabel as GtkBuildable</h1><p>The GtkLabel implementation of the GtkBuildable interface supports a\ncustom <attributes> element, which supports any number of <attribute>\nelements. The <attribute> element has attributes named \u201cname\u201c, \u201cvalue\u201c,\n\u201cstart\u201c and \u201cend\u201c and allows you to specify <span data-xref=\"Pango.Attribute\">Pango.Attribute</span> values for\nthis label.</p><p>An example of a UI definition fragment specifying Pango attributes:\n|[\n<object class=\"GtkLabel\">\n  <attributes>\n    <attribute name=\"weight\" value=\"PANGO_WEIGHT_BOLD\"/>\n    <attribute name=\"background\" value=\"red\" start=\"5\" end=\"10\"/>\"\n  </attributes>\n</object>\n]|</p><p>The start and end attributes specify the range of characters to which the\nPango attribute applies. If start and end are not specified, the attribute is\napplied to the whole text. Note that specifying ranges does not make much\nsense with translatable attributes. Use markup embedded in the translatable\ncontent instead.</p><h1>Mnemonics</h1><p>Labels may contain \u201cmnemonics\u201d. Mnemonics are\nunderlined characters in the label, used for keyboard navigation.\nMnemonics are created by providing a string with an underscore before\nthe mnemonic character, such as <code>\"_File\"</code>, to the\nfunctions <span data-xref=\"Gtk.Label.new_with_mnemonic\"/> or\n<span data-xref=\"Gtk.Label.set_text_with_mnemonic\"/>.</p><p>Mnemonics automatically activate any activatable widget the label is\ninside, such as a <span data-xref=\"Gtk.Button\"/>; if the label is not inside the\nmnemonic\u2019s target widget, you have to tell the label about the target\nusing <span data-xref=\"Gtk.Label.set_mnemonic_widget\"/>. Here\u2019s a simple example where\nthe label is inside a button:</p><p>|[<!-- language=\"C\" -->\n  // Pressing Alt+H will activate this button\n  button = gtk_button_new ();\n  label = gtk_label_new_with_mnemonic (\"_Hello\");\n  gtk_container_add (GTK_CONTAINER (button), label);\n]|</p><p>There\u2019s a convenience function to create buttons with a mnemonic label\nalready inside:</p><p>|[<!-- language=\"C\" -->\n  // Pressing Alt+H will activate this button\n  button = gtk_button_new_with_mnemonic (\"_Hello\");\n]|</p><p>To create a mnemonic for a widget alongside the label, such as a\n<span data-xref=\"Gtk.Entry\"/>, you have to point the label at the entry with\n<span data-xref=\"Gtk.Label.set_mnemonic_widget\"/>:</p><p>|[<!-- language=\"C\" -->\n  // Pressing Alt+H will focus the entry\n  entry = gtk_entry_new ();\n  label = gtk_label_new_with_mnemonic (\"_Hello\");\n  gtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);\n]|</p><h1>Markup (styled text)</h1><p>To make it easy to format text in a label (changing colors,\nfonts, etc.), label text can be provided in a simple\n[markup format][PangoMarkupFormat].</p><p>Here\u2019s how to create a label with a small font:\n|[<!-- language=\"C\" -->\n  label = gtk_label_new (NULL);\n  gtk_label_set_markup (GTK_LABEL (label), \"<small>Small text</small>\");\n]|</p><p>(See [complete documentation][PangoMarkupFormat] of available\ntags in the Pango manual.)</p><p>The markup passed to <span data-xref=\"Gtk.Label.set_markup\"/> must be valid; for example,\nliteral &lt;, &gt; and &amp; characters must be escaped as &lt;, &gt;, and &amp;.\nIf you pass text obtained from the user, file, or a network to\n<span data-xref=\"Gtk.Label.set_markup\"/>, you\u2019ll want to escape it with\n<span data-xref=\"GLib.markup_escape_text\">GLib.markup_escape_text</span> or <span data-xref=\"GLib.markup_printf_escaped\">GLib.markup_printf_escaped</span>.</p><p>Markup strings are just a convenient way to set the <span data-xref=\"Pango.AttrList\">Pango.AttrList</span> on\na label; <span data-xref=\"Gtk.Label.set_attributes\"/> may be a simpler way to set\nattributes in some cases. Be careful though; <span data-xref=\"Pango.AttrList\">Pango.AttrList</span> tends to\ncause internationalization problems, unless you\u2019re applying attributes\nto the entire string (i.e. unless you set the range of each attribute\nto [0, %G_MAXINT)). The reason is that specifying the start_index and\nend_index for a <span data-xref=\"Pango.Attribute\">Pango.Attribute</span> requires knowledge of the exact string\nbeing displayed, so translations will cause problems.</p><h1>Selectable labels</h1><p>Labels can be made selectable with <span data-xref=\"Gtk.Label.set_selectable\"/>.\nSelectable labels allow the user to copy the label contents to\nthe clipboard. Only labels that contain useful-to-copy information\n&mdash; such as error messages &mdash; should be made selectable.</p><h1>Text layout</h1><p>A label can contain any number of paragraphs, but will have\nperformance problems if it contains more than a small number.\nParagraphs are separated by newlines or other paragraph separators\nunderstood by Pango.</p><p>Labels can automatically wrap text if you call\n<span data-xref=\"Gtk.Label.set_line_wrap\"/>.</p><p><span data-xref=\"Gtk.Label.set_justify\"/> sets how the lines in a label align\nwith one another. If you want to set how the label as a whole\naligns in its available space, see <span data-xref=\"Gtk.Misc.set_alignment\"/>.</p><p>The <span data-xref=\"Gtk.Label-width-chars\"/> and <span data-xref=\"Gtk.Label-max-width-chars\"/> properties\ncan be used to control the size allocation of ellipsized or wrapped\nlabels. For ellipsizing labels, if either is specified (and less\nthan the actual text size), it is used as the minimum width, and the actual\ntext size is used as the natural width of the label. For wrapping labels,\nwidth-chars is used as the minimum width, if specified, and max-width-chars\nis used as the natural width. Even if max-width-chars specified, wrapping\nlabels will be rewrapped to use all of the available width.</p><p>Note that the interpretation of <span data-xref=\"Gtk.Label-width-chars\"/> and\n<span data-xref=\"Gtk.Label-max-width-chars\"/> has changed a bit with the introduction of\n[width-for-height geometry management.][geometry-management]</p><h1>Links</h1><p>Since 2.18, GTK+ supports markup for clickable hyperlinks in addition\nto regular Pango markup. The markup for links is borrowed from HTML,\nusing the <code>&lt;a&gt;</code> with \u201chref\u201c and \u201ctitle\u201c attributes. GTK+ renders links\nsimilar to the way they appear in web browsers, with colored, underlined\ntext. The \u201ctitle\u201c attribute is displayed as a tooltip on the link.</p><p>An example looks like this:</p><p>|[<!-- language=\"C\" -->\nconst gchar *text =\n\"Go to the\"\n\"<a href=\\\\\"http://www.gtk.org title=\"&lt;i&gt;Our&lt;/i&gt; website\\\\\">\"\n\"GTK+ website</a> for more...\";\ngtk_label_set_markup (label, text);\n]|</p><p>It is possible to implement custom handling for links and their tooltips with\nthe <span data-xref=\"Gtk.Label-activate-link\"/> signal and the <span data-xref=\"Gtk.Label.get_current_uri\"/> function.</p>",
     "kind": "class",
     "methods": [
         {
@@ -103,7 +91,7 @@
             }
         },
         {
-            "doc": "<p>Gets the <span data-xref=\"Pango.Layout\">Pango.Layout</span> used to display the label.\nThe layout is useful to e.g. convert text positions to\npixel positions, in combination with <span data-xref=\"Gtk.Label.get_layout_offsets\"/>.\nThe returned layout is owned by the <code>label</code> so need not be\nfreed by the caller. The <code>label</code> is free to recreate its layout at\nany time, so it should be considered read-only.</p>",
+            "doc": "<p>Gets the <span data-xref=\"Pango.Layout\">Pango.Layout</span> used to display the label.\nThe layout is useful to e.g. convert text positions to\npixel positions, in combination with <span data-xref=\"Gtk.Label.get_layout_offsets\"/>.\nThe returned layout is owned by the <pre>label</pre> so need not be\nfreed by the caller. The <pre>label</pre> is free to recreate its layout at\nany time, so it should be considered read-only.</p>",
             "kind": "method",
             "name": "get_layout",
             "parameters": [],
@@ -161,7 +149,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves the desired maximum width of <code>label</code>, in characters. See\n<span data-xref=\"Gtk.Label.set_width_chars\"/>.</p>",
+            "doc": "<p>Retrieves the desired maximum width of <pre>label</pre>, in characters. See\n<span data-xref=\"Gtk.Label.set_width_chars\"/>.</p>",
             "kind": "method",
             "name": "get_max_width_chars",
             "parameters": [],
@@ -197,7 +185,7 @@
             }
         },
         {
-            "doc": "<p>Gets the selected range of characters in the label, returning <code>true</code>\nif there\u2019s a selection.</p>",
+            "doc": "<p>Gets the selected range of characters in the label, returning <pre>true</pre>\nif there\u2019s a selection.</p>",
             "kind": "method",
             "name": "get_selection_bounds",
             "parameters": [
@@ -264,7 +252,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves the desired width of <code>label</code>, in characters. See\n<span data-xref=\"Gtk.Label.set_width_chars\"/>.</p>",
+            "doc": "<p>Retrieves the desired width of <pre>label</pre>, in characters. See\n<span data-xref=\"Gtk.Label.set_width_chars\"/>.</p>",
             "kind": "method",
             "name": "get_width_chars",
             "parameters": [],
@@ -273,7 +261,7 @@
             }
         },
         {
-            "doc": "<p>Selects a range of characters in the label, if the label is selectable.\nSee <span data-xref=\"Gtk.Label.set_selectable\"/>. If the label is not selectable,\nthis function has no effect. If <code>start_offset</code> or\n<code>end_offset</code> are -1, then the end of the label will be substituted.</p>",
+            "doc": "<p>Selects a range of characters in the label, if the label is selectable.\nSee <span data-xref=\"Gtk.Label.set_selectable\"/>. If the label is not selectable,\nthis function has no effect. If <pre>start_offset</pre> or\n<pre>end_offset</pre> are -1, then the end of the label will be substituted.</p>",
             "kind": "method",
             "name": "select_region",
             "parameters": [
@@ -375,7 +363,7 @@
             }
         },
         {
-            "doc": "<p>Toggles line wrapping within the <span data-xref=\"Gtk.Label\"/> widget. <code>true</code> makes it break\nlines if text exceeds the widget\u2019s size. <code>false</code> lets the text get cut off\nby the edge of the widget if it exceeds the widget size.</p><p>Note that setting line wrapping to <code>true</code> does not make the label\nwrap at its parent container\u2019s width, because GTK+ widgets\nconceptually can\u2019t make their requisition depend on the parent\ncontainer\u2019s size. For a label that wraps at a specific position,\nset the label\u2019s width using <span data-xref=\"Gtk.Widget.set_size_request\"/>.</p>",
+            "doc": "<p>Toggles line wrapping within the <span data-xref=\"Gtk.Label\"/> widget. <pre>true</pre> makes it break\nlines if text exceeds the widget\u2019s size. <pre>false</pre> lets the text get cut off\nby the edge of the widget if it exceeds the widget size.</p><p>Note that setting line wrapping to <pre>true</pre> does not make the label\nwrap at its parent container\u2019s width, because GTK+ widgets\nconceptually can\u2019t make their requisition depend on the parent\ncontainer\u2019s size. For a label that wraps at a specific position,\nset the label\u2019s width using <span data-xref=\"Gtk.Widget.set_size_request\"/>.</p>",
             "kind": "method",
             "name": "set_line_wrap",
             "parameters": [
@@ -423,7 +411,7 @@
             }
         },
         {
-            "doc": "<p>Parses <code>str</code> which is marked up with the\n[Pango text markup language][PangoMarkupFormat], setting the\nlabel\u2019s text and attribute list based on the parse results. If the <code>str</code> is\nexternal data, you may need to escape it with <span data-xref=\"GLib.markup_escape_text\">GLib.markup_escape_text</span> or\n<span data-xref=\"GLib.markup_printf_escaped\">GLib.markup_printf_escaped</span>:\n|[&lt;!-- language=\"C\" --&gt;\nconst char <em>format = \"&lt;span style=\\\"italic\\\"&gt;\\%s&lt;/span&gt;\";\nchar </em>markup;</p><p>markup = g_markup_printf_escaped (format, str);\ngtk_label_set_markup (GTK_LABEL (label), markup);\ng_free (markup);\n]|</p>",
+            "doc": "<p>Parses <pre>str</pre> which is marked up with the\n[Pango text markup language][PangoMarkupFormat], setting the\nlabel\u2019s text and attribute list based on the parse results. If the <pre>str</pre> is\nexternal data, you may need to escape it with <span data-xref=\"GLib.markup_escape_text\">GLib.markup_escape_text</span> or\n<span data-xref=\"GLib.markup_printf_escaped\">GLib.markup_printf_escaped</span>:\n|[<!-- language=\"C\" -->\nconst char <em>format = \"<span style=\\\\\"italic\\\\\">\\%s</span>\";\nchar </em>markup;</p><p>markup = g_markup_printf_escaped (format, str);\ngtk_label_set_markup (GTK_LABEL (label), markup);\ng_free (markup);\n]|</p>",
             "kind": "method",
             "name": "set_markup",
             "parameters": [
@@ -439,7 +427,7 @@
             }
         },
         {
-            "doc": "<p>Parses <code>str</code> which is marked up with the\n[Pango text markup language][PangoMarkupFormat],\nsetting the label\u2019s text and attribute list based on the parse results.\nIf characters in <code>str</code> are preceded by an underscore, they are underlined\nindicating that they represent a keyboard accelerator called a mnemonic.</p><p>The mnemonic key can be used to activate another widget, chosen\nautomatically, or explicitly using <span data-xref=\"Gtk.Label.set_mnemonic_widget\"/>.</p>",
+            "doc": "<p>Parses <pre>str</pre> which is marked up with the\n[Pango text markup language][PangoMarkupFormat],\nsetting the label\u2019s text and attribute list based on the parse results.\nIf characters in <pre>str</pre> are preceded by an underscore, they are underlined\nindicating that they represent a keyboard accelerator called a mnemonic.</p><p>The mnemonic key can be used to activate another widget, chosen\nautomatically, or explicitly using <span data-xref=\"Gtk.Label.set_mnemonic_widget\"/>.</p>",
             "kind": "method",
             "name": "set_markup_with_mnemonic",
             "parameters": [
@@ -455,7 +443,7 @@
             }
         },
         {
-            "doc": "<p>Sets the desired maximum width in characters of <code>label</code> to <code>n_chars</code>.</p>",
+            "doc": "<p>Sets the desired maximum width in characters of <pre>label</pre> to <pre>n_chars</pre>.</p>",
             "kind": "method",
             "name": "set_max_width_chars",
             "parameters": [
@@ -551,7 +539,7 @@
             }
         },
         {
-            "doc": "<p>Sets the label\u2019s text from the string <code>str</code>.\nIf characters in <code>str</code> are preceded by an underscore, they are underlined\nindicating that they represent a keyboard accelerator called a mnemonic.\nThe mnemonic key can be used to activate another widget, chosen\nautomatically, or explicitly using <span data-xref=\"Gtk.Label.set_mnemonic_widget\"/>.</p>",
+            "doc": "<p>Sets the label\u2019s text from the string <pre>str</pre>.\nIf characters in <pre>str</pre> are preceded by an underscore, they are underlined\nindicating that they represent a keyboard accelerator called a mnemonic.\nThe mnemonic key can be used to activate another widget, chosen\nautomatically, or explicitly using <span data-xref=\"Gtk.Label.set_mnemonic_widget\"/>.</p>",
             "kind": "method",
             "name": "set_text_with_mnemonic",
             "parameters": [
@@ -615,7 +603,7 @@
             }
         },
         {
-            "doc": "<p>Sets the desired width in characters of <code>label</code> to <code>n_chars</code>.</p>",
+            "doc": "<p>Sets the desired width in characters of <pre>label</pre> to <pre>n_chars</pre>.</p>",
             "kind": "method",
             "name": "set_width_chars",
             "parameters": [
@@ -629,8 +617,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Label",
     "properties": [
@@ -653,7 +640,7 @@
             "type": "Number(gint)"
         },
         {
-            "doc": "<p>The preferred place to ellipsize the string, if the label does\nnot have enough room to display the entire string, specified as a\n<span data-xref=\"Pango.EllipsizeMode\">Pango.EllipsizeMode</span>.</p><p>Note that setting this property to a value other than\n<span data-xref=\"Pango.EllipsizeMode\">Pango.EllipsizeMode</span>.none has the side-effect that the label requests\nonly enough space to display the ellipsis \"...\". In particular, this\nmeans that ellipsizing labels do not work well in notebook tabs, unless\nthe <span data-xref=\"Gtk.Notebook\"/> tab-expand child property is set to <code>true</code>. Other ways\nto set a label's width are <span data-xref=\"Gtk.Widget.set_size_request\"/> and\n<span data-xref=\"Gtk.Label.set_width_chars\"/>.</p>",
+            "doc": "<p>The preferred place to ellipsize the string, if the label does\nnot have enough room to display the entire string, specified as a\n<span data-xref=\"Pango.EllipsizeMode\">Pango.EllipsizeMode</span>.</p><p>Note that setting this property to a value other than\n<span data-xref=\"Pango.EllipsizeMode\">Pango.EllipsizeMode</span>.none has the side-effect that the label requests\nonly enough space to display the ellipsis \"...\". In particular, this\nmeans that ellipsizing labels do not work well in notebook tabs, unless\nthe <span data-xref=\"Gtk.Notebook\"/> tab-expand child property is set to <pre>true</pre>. Other ways\nto set a label's width are <span data-xref=\"Gtk.Widget.set_size_request\"/> and\n<span data-xref=\"Gtk.Label.set_width_chars\"/>.</p>",
             "kind": "property",
             "name": "ellipsize",
             "type": "Pango.EllipsizeMode"
@@ -719,7 +706,7 @@
             "type": "Boolean"
         },
         {
-            "doc": "<p>Set this property to <code>true</code> to make the label track which links\nhave been visited. It will then apply the #GTK_STATE_FLAG_VISITED\nwhen rendering this link, in addition to #GTK_STATE_FLAG_LINK.</p>",
+            "doc": "<p>Set this property to <pre>true</pre> to make the label track which links\nhave been visited. It will then apply the #GTK_STATE_FLAG_VISITED\nwhen rendering this link, in addition to #GTK_STATE_FLAG_LINK.</p>",
             "kind": "property",
             "name": "track-visited-links",
             "type": "Boolean"
@@ -819,7 +806,7 @@
             }
         },
         {
-            "doc": "<p>The ::populate-popup signal gets emitted before showing the\ncontext menu of the label. Note that only selectable labels\nhave context menus.</p><p>If you need to add items to the context menu, connect\nto this signal and append your menuitems to the <code>menu</code>.</p>",
+            "doc": "<p>The ::populate-popup signal gets emitted before showing the\ncontext menu of the label. Note that only selectable labels\nhave context menus.</p><p>If you need to add items to the context menu, connect\nto this signal and append your menuitems to the <pre>menu</pre>.</p>",
             "kind": "signal",
             "name": "populate-popup",
             "parameters": [

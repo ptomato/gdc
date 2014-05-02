@@ -11,22 +11,10 @@
         }
     ],
     "doc": "<p>A <span data-xref=\"Gtk.AccelGroup\"/> represents a group of keyboard accelerators,\ntypically attached to a toplevel <span data-xref=\"Gtk.Window\"/> (with\n<span data-xref=\"Gtk.Window.add_accel_group\"/>). Usually you won\u2019t need to create a\n<span data-xref=\"Gtk.AccelGroup\"/> directly; instead, when using <span data-xref=\"Gtk.UIManager\"/>, GTK+\nautomatically sets up the accelerators for your menus in the ui\nmanager\u2019s <span data-xref=\"Gtk.AccelGroup\"/>.</p><p>Note that \u201caccelerators\u201d are different from\n\u201cmnemonics\u201d. Accelerators are shortcuts for\nactivating a menu item; they appear alongside the menu item they\u2019re a\nshortcut for. For example \u201cCtrl+Q\u201d might appear alongside the \u201cQuit\u201d\nmenu item. Mnemonics are shortcuts for GUI elements such as text\nentries or buttons; they appear as underlined characters. See\n<span data-xref=\"Gtk.Label.new_with_mnemonic\"/>. Menu items can have both accelerators\nand mnemonics, of course.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Finds the first accelerator in <code>accel_group</code> that matches\n<code>accel_key</code> and <code>accel_mods</code>, and activates it.</p>",
+            "doc": "<p>Finds the first accelerator in <pre>accel_group</pre> that matches\n<pre>accel_key</pre> and <pre>accel_mods</pre>, and activates it.</p>",
             "kind": "method",
             "name": "activate",
             "parameters": [
@@ -60,7 +48,7 @@
             }
         },
         {
-            "doc": "<p>Installs an accelerator in this group. When <code>accel_group</code> is being\nactivated in response to a call to <span data-xref=\"Gtk.accel_groups_activate\"/>,\n<code>closure</code> will be invoked if the <code>accel_key</code> and <code>accel_mods</code> from\n<span data-xref=\"Gtk.accel_groups_activate\"/> match those of this connection.</p><p>The signature used for the <code>closure</code> is that of <span data-xref=\"Gtk.AccelGroupActivate\"/>.</p><p>Note that, due to implementation details, a single closure can\nonly be connected to one accelerator group.</p>",
+            "doc": "<p>Installs an accelerator in this group. When <pre>accel_group</pre> is being\nactivated in response to a call to <span data-xref=\"Gtk.accel_groups_activate\"/>,\n<pre>closure</pre> will be invoked if the <pre>accel_key</pre> and <pre>accel_mods</pre> from\n<span data-xref=\"Gtk.accel_groups_activate\"/> match those of this connection.</p><p>The signature used for the <pre>closure</pre> is that of <span data-xref=\"Gtk.AccelGroupActivate\"/>.</p><p>Note that, due to implementation details, a single closure can\nonly be connected to one accelerator group.</p>",
             "kind": "method",
             "name": "connect",
             "parameters": [
@@ -94,7 +82,7 @@
             }
         },
         {
-            "doc": "<p>Installs an accelerator in this group, using an accelerator path\nto look up the appropriate key and modifiers (see\n<span data-xref=\"Gtk.AccelMap.add_entry\"/>). When <code>accel_group</code> is being activated\nin response to a call to <span data-xref=\"Gtk.accel_groups_activate\"/>, <code>closure</code> will\nbe invoked if the @accel_key and @accel_mods from\n<span data-xref=\"Gtk.accel_groups_activate\"/> match the key and modifiers for the path.</p><p>The signature used for the <code>closure</code> is that of <span data-xref=\"Gtk.AccelGroupActivate\"/>.</p><p>Note that <code>accel_path</code> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>. Therefore,\nif you pass a static string, you can save some memory by interning it\nfirst with <span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
+            "doc": "<p>Installs an accelerator in this group, using an accelerator path\nto look up the appropriate key and modifiers (see\n<span data-xref=\"Gtk.AccelMap.add_entry\"/>). When <pre>accel_group</pre> is being activated\nin response to a call to <span data-xref=\"Gtk.accel_groups_activate\"/>, <pre>closure</pre> will\nbe invoked if the @accel_key and @accel_mods from\n<span data-xref=\"Gtk.accel_groups_activate\"/> match the key and modifiers for the path.</p><p>The signature used for the <pre>closure</pre> is that of <span data-xref=\"Gtk.AccelGroupActivate\"/>.</p><p>Note that <pre>accel_path</pre> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>. Therefore,\nif you pass a static string, you can save some memory by interning it\nfirst with <span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
             "kind": "method",
             "name": "connect_by_path",
             "parameters": [
@@ -116,7 +104,7 @@
             }
         },
         {
-            "doc": "<p>Removes an accelerator previously installed through\n<span data-xref=\"Gtk.AccelGroup.connect\"/>.</p><p>Since 2.20 <code>closure</code> can be <code>null</code>.</p>",
+            "doc": "<p>Removes an accelerator previously installed through\n<span data-xref=\"Gtk.AccelGroup.connect\"/>.</p><p>Since 2.20 <pre>closure</pre> can be <pre>null</pre>.</p>",
             "kind": "method",
             "name": "disconnect",
             "parameters": [
@@ -154,7 +142,7 @@
             }
         },
         {
-            "doc": "<p>Finds the first entry in an accelerator group for which\n<code>find_func</code> returns <code>true</code> and returns its <span data-xref=\"Gtk.AccelKey\"/>.</p>",
+            "doc": "<p>Finds the first entry in an accelerator group for which\n<pre>find_func</pre> returns <pre>true</pre> and returns its <span data-xref=\"Gtk.AccelKey\"/>.</p>",
             "kind": "method",
             "name": "find",
             "parameters": [
@@ -185,7 +173,7 @@
             }
         },
         {
-            "doc": "<p>Gets a <span data-xref=\"Gdk.ModifierType\">Gdk.ModifierType</span> representing the mask for this\n<code>accel_group</code>. For example, #GDK_CONTROL_MASK, #GDK_SHIFT_MASK, etc.</p>",
+            "doc": "<p>Gets a <span data-xref=\"Gdk.ModifierType\">Gdk.ModifierType</span> representing the mask for this\n<pre>accel_group</pre>. For example, #GDK_CONTROL_MASK, #GDK_SHIFT_MASK, etc.</p>",
             "kind": "method",
             "name": "get_modifier_mask",
             "parameters": [],
@@ -194,7 +182,7 @@
             }
         },
         {
-            "doc": "<p>Locks the given accelerator group.</p><p>Locking an acelerator group prevents the accelerators contained\nwithin it to be changed during runtime. Refer to\n<span data-xref=\"Gtk.AccelMap.change_entry\"/> about runtime accelerator changes.</p><p>If called more than once, <code>accel_group</code> remains locked until\n<span data-xref=\"Gtk.AccelGroup.unlock\"/> has been called an equivalent number\nof times.</p>",
+            "doc": "<p>Locks the given accelerator group.</p><p>Locking an acelerator group prevents the accelerators contained\nwithin it to be changed during runtime. Refer to\n<span data-xref=\"Gtk.AccelMap.change_entry\"/> about runtime accelerator changes.</p><p>If called more than once, <pre>accel_group</pre> remains locked until\n<span data-xref=\"Gtk.AccelGroup.unlock\"/> has been called an equivalent number\nof times.</p>",
             "kind": "method",
             "name": "lock",
             "parameters": [],
@@ -203,7 +191,7 @@
             }
         },
         {
-            "doc": "<p>Queries an accelerator group for all entries matching <code>accel_key</code>\nand <code>accel_mods</code>.</p>",
+            "doc": "<p>Queries an accelerator group for all entries matching <pre>accel_key</pre>\nand <pre>accel_mods</pre>.</p>",
             "kind": "method",
             "name": "query",
             "parameters": [
@@ -231,7 +219,7 @@
             }
         },
         {
-            "doc": "<p>Undoes the last call to <span data-xref=\"Gtk.AccelGroup.lock\"/> on this <code>accel_group</code>.</p>",
+            "doc": "<p>Undoes the last call to <span data-xref=\"Gtk.AccelGroup.lock\"/> on this <pre>accel_group</pre>.</p>",
             "kind": "method",
             "name": "unlock",
             "parameters": [],
@@ -239,24 +227,22 @@
                 "type": "void"
             }
         },
-        [
-            {
-                "doc": "<p>Finds the <span data-xref=\"Gtk.AccelGroup\"/> to which <code>closure</code> is connected;\nsee <span data-xref=\"Gtk.AccelGroup.connect\"/>.</p>",
-                "kind": "function",
-                "name": "from_accel_closure",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "closure",
-                        "direction": "in",
-                        "type": "Function"
-                    }
-                ],
-                "retval": {
-                    "type": "Gtk.AccelGroup"
+        {
+            "doc": "<p>Finds the <span data-xref=\"Gtk.AccelGroup\"/> to which <pre>closure</pre> is connected;\nsee <span data-xref=\"Gtk.AccelGroup.connect\"/>.</p>",
+            "kind": "function",
+            "name": "from_accel_closure",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "closure",
+                    "direction": "in",
+                    "type": "Function"
                 }
+            ],
+            "retval": {
+                "type": "Gtk.AccelGroup"
             }
-        ]
+        }
     ],
     "name": "AccelGroup",
     "properties": [
@@ -303,7 +289,7 @@
             }
         },
         {
-            "doc": "<p>The accel-changed signal is emitted when an entry\nis added to or removed from the accel group.</p><p>Widgets like <span data-xref=\"Gtk.AccelLabel\"/> which display an associated\naccelerator should connect to this signal, and rebuild\ntheir visual representation if the <code>accel_closure</code> is theirs.</p>",
+            "doc": "<p>The accel-changed signal is emitted when an entry\nis added to or removed from the accel group.</p><p>Widgets like <span data-xref=\"Gtk.AccelLabel\"/> which display an associated\naccelerator should connect to this signal, and rebuild\ntheir visual representation if the <pre>accel_closure</pre> is theirs.</p>",
             "kind": "signal",
             "name": "accel-changed",
             "parameters": [

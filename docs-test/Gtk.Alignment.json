@@ -36,18 +36,6 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.Alignment\"/> widget controls the alignment and size of its child widget.\nIt has four settings: xscale, yscale, xalign, and yalign.</p><p>The scale settings are used to specify how much the child widget should\nexpand to fill the space allocated to the <span data-xref=\"Gtk.Alignment\"/>.\nThe values can range from 0 (meaning the child doesn\u2019t expand at all) to\n1 (meaning the child expands to fill all of the available space).</p><p>The align settings are used to place the child widget within the available\narea. The values range from 0 (top or left) to 1 (bottom or right).\nOf course, if the scale settings are both set to 1, the alignment settings\nhave no effect.</p><p>Note that the desired effect can in most cases be achieved by using the\n<span data-xref=\"Gtk.Widget-halign\"/>, <span data-xref=\"Gtk.Widget-valign\"/> and <span data-xref=\"Gtk.Widget-margin\"/> properties\non the child widget, so <span data-xref=\"Gtk.Alignment\"/> should not be used in new code.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "bin"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -151,8 +139,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Alignment",
     "properties": [

@@ -1,0 +1,22 @@
+{
+    "doc": "",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Pass resize request to the parent</p>",
+            "kind": "default",
+            "name": "parent"
+        },
+        {
+            "doc": "<p>Queue resizes on this widget</p>",
+            "kind": "default",
+            "name": "queue"
+        },
+        {
+            "doc": "<p>Resize immediately. Deprecated.</p>",
+            "kind": "default",
+            "name": "immediate"
+        }
+    ],
+    "name": "ResizeMode"
+}

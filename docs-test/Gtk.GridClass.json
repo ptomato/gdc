@@ -1,0 +1,54 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved6"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved7"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved8"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "GridClass"
+}

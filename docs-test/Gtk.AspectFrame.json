@@ -42,18 +42,6 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.AspectFrame\"/> is useful when you want\npack a widget so that it can resize but always retains\nthe same aspect ratio. For instance, one might be\ndrawing a small preview of a larger image. <span data-xref=\"Gtk.AspectFrame\"/>\nderives from <span data-xref=\"Gtk.Frame\"/>, so it can draw a label and\na frame around the child. The frame will be\n\u201cshrink-wrapped\u201d to the size of the child.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "frame"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -89,8 +77,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "AspectFrame",
     "properties": [

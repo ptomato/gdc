@@ -1,0 +1,37 @@
+{
+    "doc": "<p>Gives an indication why a drag operation failed.\nThe value can by obtained by connecting to the\n<span data-xref=\"Gtk.Widget-drag-failed\"/> signal.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The drag operation was successful.</p>",
+            "kind": "default",
+            "name": "success"
+        },
+        {
+            "doc": "<p>No suitable drag target.</p>",
+            "kind": "default",
+            "name": "no_target"
+        },
+        {
+            "doc": "<p>The user cancelled the drag operation.</p>",
+            "kind": "default",
+            "name": "user_cancelled"
+        },
+        {
+            "doc": "<p>The drag operation timed out.</p>",
+            "kind": "default",
+            "name": "timeout_expired"
+        },
+        {
+            "doc": "<p>The pointer or keyboard grab used\n for the drag operation was broken.</p>",
+            "kind": "default",
+            "name": "grab_broken"
+        },
+        {
+            "doc": "<p>The drag operation failed due to some\n unspecified error.</p>",
+            "kind": "default",
+            "name": "error"
+        }
+    ],
+    "name": "DragResult"
+}

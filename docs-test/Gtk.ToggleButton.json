@@ -26,7 +26,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.ToggleButton\"/> containing a label. The label\nwill be created using <span data-xref=\"Gtk.Label.new_with_mnemonic\"/>, so underscores\nin <code>label</code> indicate the mnemonic for the button.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ToggleButton\"/> containing a label. The label\nwill be created using <span data-xref=\"Gtk.Label.new_with_mnemonic\"/>, so underscores\nin <pre>label</pre> indicate the mnemonic for the button.</p>",
             "kind": "constructor",
             "name": "new_with_mnemonic",
             "parameters": [
@@ -42,23 +42,11 @@
             }
         }
     ],
-    "doc": "<p>A <span data-xref=\"Gtk.ToggleButton\"/> is a <span data-xref=\"Gtk.Button\"/> which will remain \u201cpressed-in\u201d when\nclicked. Clicking again will cause the toggle button to return to its\nnormal state.</p><p>A toggle button is created by calling either <span data-xref=\"Gtk.ToggleButton.new\"/> or\n<span data-xref=\"Gtk.ToggleButton.new_with_label\"/>. If using the former, it is advisable to\npack a widget, (such as a <span data-xref=\"Gtk.Label\"/> and/or a <span data-xref=\"Gtk.Image\"/>), into the toggle\nbutton\u2019s container. (See <span data-xref=\"Gtk.Button\"/> for more information).</p><p>The state of a <span data-xref=\"Gtk.ToggleButton\"/> can be set specifically using\n<span data-xref=\"Gtk.ToggleButton.set_active\"/>, and retrieved using\n<span data-xref=\"Gtk.ToggleButton.get_active\"/>.</p><p>To simply switch the state of a toggle button, use <span data-xref=\"Gtk.ToggleButton.toggled\"/>.</p><h2>Creating two <span data-xref=\"Gtk.ToggleButton\"/> widgets.</h2><p>|[&lt;!-- language=\"C\" --&gt;\nvoid make_toggles (void) {\n   GtkWidget <em>dialog, </em>toggle1, <em>toggle2;\n   GtkWidget </em>content_area;\n   const char *text;</p><p>dialog = gtk_dialog_new (text);\n   content_area = gtk_dialog_get_content_area ();</p><p>text = \"Hi, i\u2019m a toggle button.\";\n   toggle1 = gtk_toggle_button_new_with_label (text);</p><p>// Makes this toggle button invisible\n   gtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (toggle1),\n                               TRUE);</p><p>g_signal_connect (toggle1, \"toggled\",\n                     G_CALLBACK (output_state),\n                     NULL);\n   gtk_box_pack_start (GTK_BOX (content_area),\n                       toggle1, FALSE, FALSE, 2);</p><p>text = \"Hi, i\u2019m a toggle button.\";\n   toggle2 = gtk_toggle_button_new_with_label (text);\n   gtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (toggle2),\n                               FALSE);\n   g_signal_connect (toggle2, \"toggled\",\n                     G_CALLBACK (output_state),\n                     NULL);\n   gtk_box_pack_start (GTK_BOX (content_area),\n                       toggle2, FALSE, FALSE, 2);</p><p>gtk_widget_show_all (dialog);\n}\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "button"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>A <span data-xref=\"Gtk.ToggleButton\"/> is a <span data-xref=\"Gtk.Button\"/> which will remain \u201cpressed-in\u201d when\nclicked. Clicking again will cause the toggle button to return to its\nnormal state.</p><p>A toggle button is created by calling either <span data-xref=\"Gtk.ToggleButton.new\"/> or\n<span data-xref=\"Gtk.ToggleButton.new_with_label\"/>. If using the former, it is advisable to\npack a widget, (such as a <span data-xref=\"Gtk.Label\"/> and/or a <span data-xref=\"Gtk.Image\"/>), into the toggle\nbutton\u2019s container. (See <span data-xref=\"Gtk.Button\"/> for more information).</p><p>The state of a <span data-xref=\"Gtk.ToggleButton\"/> can be set specifically using\n<span data-xref=\"Gtk.ToggleButton.set_active\"/>, and retrieved using\n<span data-xref=\"Gtk.ToggleButton.get_active\"/>.</p><p>To simply switch the state of a toggle button, use <span data-xref=\"Gtk.ToggleButton.toggled\"/>.</p><h2>Creating two <span data-xref=\"Gtk.ToggleButton\"/> widgets.</h2><p>|[<!-- language=\"C\" -->\nvoid make_toggles (void) {\n   GtkWidget <em>dialog, </em>toggle1, <em>toggle2;\n   GtkWidget </em>content_area;\n   const char *text;</p><p>dialog = gtk_dialog_new (text);\n   content_area = gtk_dialog_get_content_area ();</p><p>text = \"Hi, i\u2019m a toggle button.\";\n   toggle1 = gtk_toggle_button_new_with_label (text);</p><p>// Makes this toggle button invisible\n   gtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (toggle1),\n                               TRUE);</p><p>g_signal_connect (toggle1, \"toggled\",\n                     G_CALLBACK (output_state),\n                     NULL);\n   gtk_box_pack_start (GTK_BOX (content_area),\n                       toggle1, FALSE, FALSE, 2);</p><p>text = \"Hi, i\u2019m a toggle button.\";\n   toggle2 = gtk_toggle_button_new_with_label (text);\n   gtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (toggle2),\n                               FALSE);\n   g_signal_connect (toggle2, \"toggled\",\n                     G_CALLBACK (output_state),\n                     NULL);\n   gtk_box_pack_start (GTK_BOX (content_area),\n                       toggle2, FALSE, FALSE, 2);</p><p>gtk_widget_show_all (dialog);\n}\n]|</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Queries a <span data-xref=\"Gtk.ToggleButton\"/> and returns its current state. Returns <code>true</code> if\nthe toggle button is pressed in and <code>false</code> if it is raised.</p>",
+            "doc": "<p>Queries a <span data-xref=\"Gtk.ToggleButton\"/> and returns its current state. Returns <pre>true</pre> if\nthe toggle button is pressed in and <pre>false</pre> if it is raised.</p>",
             "kind": "method",
             "name": "get_active",
             "parameters": [],
@@ -85,7 +73,7 @@
             }
         },
         {
-            "doc": "<p>Sets the status of the toggle button. Set to <code>true</code> if you want the\nGtkToggleButton to be \u201cpressed in\u201d, and <code>false</code> to raise it.\nThis action causes the <span data-xref=\"Gtk.ToggleButton-toggled\"/> signal and the\n<span data-xref=\"Gtk.Button-clicked\"/> signal to be emitted.</p>",
+            "doc": "<p>Sets the status of the toggle button. Set to <pre>true</pre> if you want the\nGtkToggleButton to be \u201cpressed in\u201d, and <pre>false</pre> to raise it.\nThis action causes the <span data-xref=\"Gtk.ToggleButton-toggled\"/> signal and the\n<span data-xref=\"Gtk.Button-clicked\"/> signal to be emitted.</p>",
             "kind": "method",
             "name": "set_active",
             "parameters": [
@@ -117,7 +105,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether the button is displayed as a separate indicator and label.\nYou can call this function on a checkbutton or a radiobutton with\n<code>draw_indicator</code> = <code>false</code> to make the button look like a normal button</p><p>This function only affects instances of classes like <span data-xref=\"Gtk.CheckButton\"/>\nand <span data-xref=\"Gtk.RadioButton\"/> that derive from <span data-xref=\"Gtk.ToggleButton\"/>,\nnot instances of <span data-xref=\"Gtk.ToggleButton\"/> itself.</p>",
+            "doc": "<p>Sets whether the button is displayed as a separate indicator and label.\nYou can call this function on a checkbutton or a radiobutton with\n<pre>draw_indicator</pre> = <pre>false</pre> to make the button look like a normal button</p><p>This function only affects instances of classes like <span data-xref=\"Gtk.CheckButton\"/>\nand <span data-xref=\"Gtk.RadioButton\"/> that derive from <span data-xref=\"Gtk.ToggleButton\"/>,\nnot instances of <span data-xref=\"Gtk.ToggleButton\"/> itself.</p>",
             "kind": "method",
             "name": "set_mode",
             "parameters": [
@@ -140,8 +128,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ToggleButton",
     "properties": [

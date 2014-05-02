@@ -1,0 +1,53 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>Identifier.</p>",
+            "kind": "field",
+            "name": "stock_id"
+        },
+        {
+            "doc": "<p>User visible label.</p>",
+            "kind": "field",
+            "name": "label"
+        },
+        {
+            "doc": "<p>Modifier type for keyboard accelerator</p>",
+            "kind": "field",
+            "name": "modifier"
+        },
+        {
+            "doc": "<p>Keyboard accelerator</p>",
+            "kind": "field",
+            "name": "keyval"
+        },
+        {
+            "doc": "<p>Translation domain of the menu or toolbar item</p>",
+            "kind": "field",
+            "name": "translation_domain"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Copies a stock item, mostly useful for language bindings and not in applications.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.StockItem"
+            }
+        },
+        {
+            "doc": "<p>Frees a stock item allocated on the heap, such as one returned by\n<span data-xref=\"Gtk.StockItem.copy\"/>. Also frees the fields inside the stock item,\nif they are not <pre>null</pre>.</p>",
+            "kind": "method",
+            "name": "free",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "StockItem"
+}

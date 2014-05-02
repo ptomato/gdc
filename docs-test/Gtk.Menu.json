@@ -10,7 +10,7 @@
             }
         },
         {
-            "doc": "<p>Creates a <span data-xref=\"Gtk.Menu\"/> and populates it with menu items and\nsubmenus according to <code>model</code>.</p><p>The created menu items are connected to actions found in the\n<span data-xref=\"Gtk.ApplicationWindow\"/> to which the menu belongs - typically\nby means of being attached to a widget (see <span data-xref=\"Gtk.Menu.attach_to_widget\"/>)\nthat is contained within the #GtkApplicationWindows widget hierarchy.</p><p>Actions can also be added using <span data-xref=\"Gtk.Widget.insert_action_group\"/> on the menu's\nattach widget or on any of its parent widgets.</p>",
+            "doc": "<p>Creates a <span data-xref=\"Gtk.Menu\"/> and populates it with menu items and\nsubmenus according to <pre>model</pre>.</p><p>The created menu items are connected to actions found in the\n<span data-xref=\"Gtk.ApplicationWindow\"/> to which the menu belongs - typically\nby means of being attached to a widget (see <span data-xref=\"Gtk.Menu.attach_to_widget\"/>)\nthat is contained within the #GtkApplicationWindows widget hierarchy.</p><p>Actions can also be added using <span data-xref=\"Gtk.Widget.insert_action_group\"/> on the menu's\nattach widget or on any of its parent widgets.</p>",
             "kind": "constructor",
             "name": "new_from_model",
             "parameters": [
@@ -26,23 +26,11 @@
             }
         }
     ],
-    "doc": "<p>A <span data-xref=\"Gtk.Menu\"/> is a <span data-xref=\"Gtk.MenuShell\"/> that implements a drop down menu\nconsisting of a list of <span data-xref=\"Gtk.MenuItem\"/> objects which can be navigated\nand activated by the user to perform application functions.</p><p>A <span data-xref=\"Gtk.Menu\"/> is most commonly dropped down by activating a\n<span data-xref=\"Gtk.MenuItem\"/> in a <span data-xref=\"Gtk.MenuBar\"/> or popped up by activating a\n<span data-xref=\"Gtk.MenuItem\"/> in another <span data-xref=\"Gtk.Menu\"/>.</p><p>A <span data-xref=\"Gtk.Menu\"/> can also be popped up by activating a <span data-xref=\"Gtk.ComboBox\"/>.\nOther composite widgets such as the <span data-xref=\"Gtk.Notebook\"/> can pop up a\n<span data-xref=\"Gtk.Menu\"/> as well.</p><p>Applications can display a <span data-xref=\"Gtk.Menu\"/> as a popup menu by calling the\n<span data-xref=\"Gtk.Menu.popup\"/> function.  The example below shows how an application\ncan pop up a menu when the 3rd mouse button is pressed.</p><h2>Connecting the popup signal handler.</h2><p>|[&lt;!-- language=\"C\" --&gt;\n  // connect our handler which will popup the menu\n  g_signal_connect_swapped (window, \"button_press_event\",\nG_CALLBACK (my_popup_handler), menu);\n]|</p><h2>Signal handler which displays a popup menu.</h2><p>|[&lt;!-- language=\"C\" --&gt;\nstatic gint\nmy_popup_handler (GtkWidget <em>widget, GdkEvent </em>event)\n{\n  GtkMenu <em>menu;\n  GdkEventButton </em>event_button;</p><p>g_return_val_if_fail (widget != NULL, FALSE);\n  g_return_val_if_fail (GTK_IS_MENU (widget), FALSE);\n  g_return_val_if_fail (event != NULL, FALSE);</p><p>// The \"widget\" is the menu that was supplied when\n  // g_signal_connect_swapped() was called.\n  menu = GTK_MENU (widget);</p><p>if (event-&gt;type == GDK_BUTTON_PRESS)\n    {\n      event_button = (GdkEventButton *) event;\n      if (event_button-&gt;button == GDK_BUTTON_SECONDARY)\n        {\n          gtk_menu_popup (menu, NULL, NULL, NULL, NULL,\n                          event_button-&gt;button, event_button-&gt;time);\n          return TRUE;\n        }\n    }</p><p>return FALSE;\n}\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "menu_shell"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>A <span data-xref=\"Gtk.Menu\"/> is a <span data-xref=\"Gtk.MenuShell\"/> that implements a drop down menu\nconsisting of a list of <span data-xref=\"Gtk.MenuItem\"/> objects which can be navigated\nand activated by the user to perform application functions.</p><p>A <span data-xref=\"Gtk.Menu\"/> is most commonly dropped down by activating a\n<span data-xref=\"Gtk.MenuItem\"/> in a <span data-xref=\"Gtk.MenuBar\"/> or popped up by activating a\n<span data-xref=\"Gtk.MenuItem\"/> in another <span data-xref=\"Gtk.Menu\"/>.</p><p>A <span data-xref=\"Gtk.Menu\"/> can also be popped up by activating a <span data-xref=\"Gtk.ComboBox\"/>.\nOther composite widgets such as the <span data-xref=\"Gtk.Notebook\"/> can pop up a\n<span data-xref=\"Gtk.Menu\"/> as well.</p><p>Applications can display a <span data-xref=\"Gtk.Menu\"/> as a popup menu by calling the\n<span data-xref=\"Gtk.Menu.popup\"/> function.  The example below shows how an application\ncan pop up a menu when the 3rd mouse button is pressed.</p><h2>Connecting the popup signal handler.</h2><p>|[<!-- language=\"C\" -->\n  // connect our handler which will popup the menu\n  g_signal_connect_swapped (window, \"button_press_event\",\nG_CALLBACK (my_popup_handler), menu);\n]|</p><h2>Signal handler which displays a popup menu.</h2><p>|[<!-- language=\"C\" -->\nstatic gint\nmy_popup_handler (GtkWidget <em>widget, GdkEvent </em>event)\n{\n  GtkMenu <em>menu;\n  GdkEventButton </em>event_button;</p><p>g_return_val_if_fail (widget != NULL, FALSE);\n  g_return_val_if_fail (GTK_IS_MENU (widget), FALSE);\n  g_return_val_if_fail (event != NULL, FALSE);</p><p>// The \"widget\" is the menu that was supplied when\n  // g_signal_connect_swapped() was called.\n  menu = GTK_MENU (widget);</p><p>if (event-&gt;type == GDK_BUTTON_PRESS)\n    {\n      event_button = (GdkEventButton *) event;\n      if (event_button-&gt;button == GDK_BUTTON_SECONDARY)\n        {\n          gtk_menu_popup (menu, NULL, NULL, NULL, NULL,\n                          event_button-&gt;button, event_button-&gt;time);\n          return TRUE;\n        }\n    }</p><p>return FALSE;\n}\n]|</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Adds a new <span data-xref=\"Gtk.MenuItem\"/> to a (table) menu. The number of \u201ccells\u201d that\nan item will occupy is specified by <code>left_attach</code>, <code>right_attach</code>,\n<code>top_attach</code> and <code>bottom_attach</code>. These each represent the leftmost,\nrightmost, uppermost and lower column and row numbers of the table.\n(Columns and rows are indexed from zero).</p><p>Note that this function is not related to <span data-xref=\"Gtk.Menu.detach\"/>.</p>",
+            "doc": "<p>Adds a new <span data-xref=\"Gtk.MenuItem\"/> to a (table) menu. The number of \u201ccells\u201d that\nan item will occupy is specified by <pre>left_attach</pre>, <pre>right_attach</pre>,\n<pre>top_attach</pre> and <pre>bottom_attach</pre>. These each represent the leftmost,\nrightmost, uppermost and lower column and row numbers of the table.\n(Columns and rows are indexed from zero).</p><p>Note that this function is not related to <span data-xref=\"Gtk.Menu.detach\"/>.</p>",
             "kind": "method",
             "name": "attach",
             "parameters": [
@@ -194,7 +182,7 @@
             }
         },
         {
-            "doc": "<p>Displays a menu and makes it available for selection.</p><p>Applications can use this function to display context-sensitive\nmenus, and will typically supply <code>null</code> for the <code>parent_menu_shell</code>,\n<code>parent_menu_item</code>, <code>func</code> and <code>data</code> parameters. The default menu\npositioning function will position the menu at the current mouse\ncursor position.</p><p>The <code>button</code> parameter should be the mouse button pressed to initiate\nthe menu popup. If the menu popup was initiated by something other\nthan a mouse button press, such as a mouse button release or a keypress,\n<code>button</code> should be 0.</p><p>The <code>activate_time</code> parameter is used to conflict-resolve initiation\nof concurrent requests for mouse/keyboard grab requests. To function\nproperly, this needs to be the timestamp of the user event (such as\na mouse click or key press) that caused the initiation of the popup.\nOnly if no such event is available, <span data-xref=\"Gtk.get_current_event_time\"/> can\nbe used instead.</p>",
+            "doc": "<p>Displays a menu and makes it available for selection.</p><p>Applications can use this function to display context-sensitive\nmenus, and will typically supply <pre>null</pre> for the <pre>parent_menu_shell</pre>,\n<pre>parent_menu_item</pre>, <pre>func</pre> and <pre>data</pre> parameters. The default menu\npositioning function will position the menu at the current mouse\ncursor position.</p><p>The <pre>button</pre> parameter should be the mouse button pressed to initiate\nthe menu popup. If the menu popup was initiated by something other\nthan a mouse button press, such as a mouse button release or a keypress,\n<pre>button</pre> should be 0.</p><p>The <pre>activate_time</pre> parameter is used to conflict-resolve initiation\nof concurrent requests for mouse/keyboard grab requests. To function\nproperly, this needs to be the timestamp of the user event (such as\na mouse click or key press) that caused the initiation of the popup.\nOnly if no such event is available, <span data-xref=\"Gtk.get_current_event_time\"/> can\nbe used instead.</p>",
             "kind": "method",
             "name": "popup",
             "parameters": [
@@ -240,7 +228,7 @@
             }
         },
         {
-            "doc": "<p>Displays a menu and makes it available for selection.</p><p>Applications can use this function to display context-sensitive menus,\nand will typically supply <code>null</code> for the <code>parent_menu_shell</code>,\n<code>parent_menu_item</code>, <code>func</code>, <code>data</code> and <code>destroy</code> parameters. The default\nmenu positioning function will position the menu at the current position\nof <code>device</code> (or its corresponding pointer).</p><p>The <code>button</code> parameter should be the mouse button pressed to initiate\nthe menu popup. If the menu popup was initiated by something other than\na mouse button press, such as a mouse button release or a keypress,\n<code>button</code> should be 0.</p><p>The <code>activate_time</code> parameter is used to conflict-resolve initiation of\nconcurrent requests for mouse/keyboard grab requests. To function\nproperly, this needs to be the time stamp of the user event (such as\na mouse click or key press) that caused the initiation of the popup.\nOnly if no such event is available, <span data-xref=\"Gtk.get_current_event_time\"/> can\nbe used instead.</p>",
+            "doc": "<p>Displays a menu and makes it available for selection.</p><p>Applications can use this function to display context-sensitive menus,\nand will typically supply <pre>null</pre> for the <pre>parent_menu_shell</pre>,\n<pre>parent_menu_item</pre>, <pre>func</pre>, <pre>data</pre> and <pre>destroy</pre> parameters. The default\nmenu positioning function will position the menu at the current position\nof <pre>device</pre> (or its corresponding pointer).</p><p>The <pre>button</pre> parameter should be the mouse button pressed to initiate\nthe menu popup. If the menu popup was initiated by something other than\na mouse button press, such as a mouse button release or a keypress,\n<pre>button</pre> should be 0.</p><p>The <pre>activate_time</pre> parameter is used to conflict-resolve initiation of\nconcurrent requests for mouse/keyboard grab requests. To function\nproperly, this needs to be the time stamp of the user event (such as\na mouse click or key press) that caused the initiation of the popup.\nOnly if no such event is available, <span data-xref=\"Gtk.get_current_event_time\"/> can\nbe used instead.</p>",
             "kind": "method",
             "name": "popup_for_device",
             "parameters": [
@@ -298,7 +286,7 @@
             }
         },
         {
-            "doc": "<p>Moves <code>child</code> to a new <code>position</code> in the list of <code>menu</code>\nchildren.</p>",
+            "doc": "<p>Moves <pre>child</pre> to a new <pre>position</pre> in the list of <pre>menu</pre>\nchildren.</p>",
             "kind": "method",
             "name": "reorder_child",
             "parameters": [
@@ -345,7 +333,7 @@
             }
         },
         {
-            "doc": "<p>Sets an accelerator path for this menu from which accelerator paths\nfor its immediate children, its menu items, can be constructed.\nThe main purpose of this function is to spare the programmer the\ninconvenience of having to call <span data-xref=\"Gtk.MenuItem.set_accel_path\"/> on\neach menu item that should support runtime user changable accelerators.\nInstead, by just calling <span data-xref=\"Gtk.Menu.set_accel_path\"/> on their parent,\neach menu item of this menu, that contains a label describing its\npurpose, automatically gets an accel path assigned.</p><p>For example, a menu containing menu items \u201cNew\u201d and \u201cExit\u201d, will, after\n<code>gtk_menu_set_accel_path (menu, \"&amp;lt;Gnumeric-Sheet&amp;gt;/File\");</code> has been\ncalled, assign its items the accel paths: <code>\"&amp;lt;Gnumeric-Sheet&amp;gt;/File/New\"</code>\nand <code>\"&amp;lt;Gnumeric-Sheet&amp;gt;/File/Exit\"</code>.</p><p>Assigning accel paths to menu items then enables the user to change\ntheir accelerators at runtime. More details about accelerator paths\nand their default setups can be found at <span data-xref=\"Gtk.AccelMap.add_entry\"/>.</p><p>Note that <code>accel_path</code> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>. Therefore,\nif you pass a static string, you can save some memory by interning\nit first with <span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
+            "doc": "<p>Sets an accelerator path for this menu from which accelerator paths\nfor its immediate children, its menu items, can be constructed.\nThe main purpose of this function is to spare the programmer the\ninconvenience of having to call <span data-xref=\"Gtk.MenuItem.set_accel_path\"/> on\neach menu item that should support runtime user changable accelerators.\nInstead, by just calling <span data-xref=\"Gtk.Menu.set_accel_path\"/> on their parent,\neach menu item of this menu, that contains a label describing its\npurpose, automatically gets an accel path assigned.</p><p>For example, a menu containing menu items \u201cNew\u201d and \u201cExit\u201d, will, after\n<code>gtk_menu_set_accel_path (menu, \"&lt;Gnumeric-Sheet&gt;/File\");</code> has been\ncalled, assign its items the accel paths: <code>\"&lt;Gnumeric-Sheet&gt;/File/New\"</code>\nand <code>\"&lt;Gnumeric-Sheet&gt;/File/Exit\"</code>.</p><p>Assigning accel paths to menu items then enables the user to change\ntheir accelerators at runtime. More details about accelerator paths\nand their default setups can be found at <span data-xref=\"Gtk.AccelMap.add_entry\"/>.</p><p>Note that <pre>accel_path</pre> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>. Therefore,\nif you pass a static string, you can save some memory by interning\nit first with <span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
             "kind": "method",
             "name": "set_accel_path",
             "parameters": [
@@ -441,7 +429,7 @@
             }
         },
         {
-            "doc": "<p>Sets the title string for the menu.</p><p>The title is displayed when the menu is shown as a tearoff\nmenu. If <code>title</code> is <code>null</code>, the menu will see if it is attached\nto a parent menu item, and if so it will try to use the same\ntext as that menu item\u2019s label.</p>",
+            "doc": "<p>Sets the title string for the menu.</p><p>The title is displayed when the menu is shown as a tearoff\nmenu. If <pre>title</pre> is <pre>null</pre>, the menu will see if it is attached\nto a parent menu item, and if so it will try to use the same\ntext as that menu item\u2019s label.</p>",
             "kind": "method",
             "name": "set_title",
             "parameters": [
@@ -456,24 +444,22 @@
                 "type": "void"
             }
         },
-        [
-            {
-                "doc": "<p>Returns a list of the menus which are attached to this widget.\nThis list is owned by GTK+ and must not be modified.</p>",
-                "kind": "function",
-                "name": "get_for_attach_widget",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "widget",
-                        "direction": "in",
-                        "type": "Gtk.Widget"
-                    }
-                ],
-                "retval": {
-                    "type": "Array(Gtk.Widget)"
+        {
+            "doc": "<p>Returns a list of the menus which are attached to this widget.\nThis list is owned by GTK+ and must not be modified.</p>",
+            "kind": "function",
+            "name": "get_for_attach_widget",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
                 }
+            ],
+            "retval": {
+                "type": "Array(Gtk.Widget)"
             }
-        ]
+        }
     ],
     "name": "Menu",
     "properties": [

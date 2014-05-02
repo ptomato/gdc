@@ -1,18 +1,6 @@
 {
     "constructors": [],
     "doc": "<p>The <span data-xref=\"Gtk.TreeSelection\"/> object is a helper object to manage the selection\nfor a <span data-xref=\"Gtk.TreeView\"/> widget.  The <span data-xref=\"Gtk.TreeSelection\"/> object is\nautomatically created when a new <span data-xref=\"Gtk.TreeView\"/> widget is created, and\ncannot exist independently of this widget.  The primary reason the\n<span data-xref=\"Gtk.TreeSelection\"/> objects exists is for cleanliness of code and API.\nThat is, there is no conceptual reason all these functions could not be\nmethods on the <span data-xref=\"Gtk.TreeView\"/> widget instead of a separate function.</p><p>The <span data-xref=\"Gtk.TreeSelection\"/> object is gotten from a <span data-xref=\"Gtk.TreeView\"/> by calling\n<span data-xref=\"Gtk.TreeView.get_selection\"/>.  It can be manipulated to check the\nselection status of the tree, as well as select and deselect individual\nrows.  Selection is done completely view side.  As a result, multiple\nviews of the same model can have completely different selections.\nAdditionally, you cannot change the selection of a row on the model that\nis not currently displayed by the view without expanding its parents\nfirst.</p><p>One of the important things to remember when monitoring the selection of\na view is that the <span data-xref=\"Gtk.TreeSelection-changed\"/> signal is mostly a hint.\nThat is, it may only emit one signal when a range of rows is selected.\nAdditionally, it may on occasion emit a <span data-xref=\"Gtk.TreeSelection-changed\"/> signal\nwhen nothing has happened (mostly as a result of programmers calling\nselect_row on an already selected row).</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -25,7 +13,7 @@
             }
         },
         {
-            "doc": "<p>Gets the selection mode for <code>selection</code>. See\n<span data-xref=\"Gtk.TreeSelection.set_mode\"/>.</p>",
+            "doc": "<p>Gets the selection mode for <pre>selection</pre>. See\n<span data-xref=\"Gtk.TreeSelection.set_mode\"/>.</p>",
             "kind": "method",
             "name": "get_mode",
             "parameters": [],
@@ -43,7 +31,7 @@
             }
         },
         {
-            "doc": "<p>Sets <code>iter</code> to the currently selected node if <code>selection</code> is set to</p>\n<h1>GTK_SELECTION_SINGLE or #GTK_SELECTION_BROWSE.  <code>iter</code> may be NULL if you</h1>\n<p>just want to test if <code>selection</code> has any selected nodes.  <code>model</code> is filled\nwith the current model as a convenience.  This function will not work if you\nuse <code>selection</code> is #GTK_SELECTION_MULTIPLE.</p>",
+            "doc": "<p>Sets <pre>iter</pre> to the currently selected node if <pre>selection</pre> is set to</p>\n<h1>GTK_SELECTION_SINGLE or #GTK_SELECTION_BROWSE.  <pre>iter</pre> may be NULL if you</h1>\n<p>just want to test if <pre>selection</pre> has any selected nodes.  <pre>model</pre> is filled\nwith the current model as a convenience.  This function will not work if you\nuse <pre>selection</pre> is #GTK_SELECTION_MULTIPLE.</p>",
             "kind": "method",
             "name": "get_selected",
             "parameters": [
@@ -65,7 +53,7 @@
             }
         },
         {
-            "doc": "<p>Creates a list of path of all selected rows. Additionally, if you are\nplanning on modifying the model after calling this function, you may\nwant to convert the returned list into a list of #GtkTreeRowReferences.\nTo do this, you can use <span data-xref=\"Gtk.TreeRowReference.new\"/>.</p><p>To free the return value, use:\n|[&lt;!-- language=\"C\" --&gt;\ng_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);\n]|</p>",
+            "doc": "<p>Creates a list of path of all selected rows. Additionally, if you are\nplanning on modifying the model after calling this function, you may\nwant to convert the returned list into a list of #GtkTreeRowReferences.\nTo do this, you can use <span data-xref=\"Gtk.TreeRowReference.new\"/>.</p><p>To free the return value, use:\n|[<!-- language=\"C\" -->\ng_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);\n]|</p>",
             "kind": "method",
             "name": "get_selected_rows",
             "parameters": [
@@ -81,7 +69,7 @@
             }
         },
         {
-            "doc": "<p>Returns the tree view associated with <code>selection</code>.</p>",
+            "doc": "<p>Returns the tree view associated with <pre>selection</pre>.</p>",
             "kind": "method",
             "name": "get_tree_view",
             "parameters": [],
@@ -99,7 +87,7 @@
             }
         },
         {
-            "doc": "<p>Returns <code>true</code> if the row at <code>iter</code> is currently selected.</p>",
+            "doc": "<p>Returns <pre>true</pre> if the row at <pre>iter</pre> is currently selected.</p>",
             "kind": "method",
             "name": "iter_is_selected",
             "parameters": [
@@ -115,7 +103,7 @@
             }
         },
         {
-            "doc": "<p>Returns <code>true</code> if the row pointed to by <code>path</code> is currently selected.  If <code>path</code>\ndoes not point to a valid location, <code>false</code> is returned</p>",
+            "doc": "<p>Returns <pre>true</pre> if the row pointed to by <pre>path</pre> is currently selected.  If <pre>path</pre>\ndoes not point to a valid location, <pre>false</pre> is returned</p>",
             "kind": "method",
             "name": "path_is_selected",
             "parameters": [
@@ -131,7 +119,7 @@
             }
         },
         {
-            "doc": "<p>Selects all the nodes. <code>selection</code> must be set to #GTK_SELECTION_MULTIPLE\nmode.</p>",
+            "doc": "<p>Selects all the nodes. <pre>selection</pre> must be set to #GTK_SELECTION_MULTIPLE\nmode.</p>",
             "kind": "method",
             "name": "select_all",
             "parameters": [],
@@ -156,7 +144,7 @@
             }
         },
         {
-            "doc": "<p>Select the row at <code>path</code>.</p>",
+            "doc": "<p>Select the row at <pre>path</pre>.</p>",
             "kind": "method",
             "name": "select_path",
             "parameters": [
@@ -172,7 +160,7 @@
             }
         },
         {
-            "doc": "<p>Selects a range of nodes, determined by <code>start_path</code> and <code>end_path</code> inclusive.\n<code>selection</code> must be set to #GTK_SELECTION_MULTIPLE mode.</p>",
+            "doc": "<p>Selects a range of nodes, determined by <pre>start_path</pre> and <pre>end_path</pre> inclusive.\n<pre>selection</pre> must be set to #GTK_SELECTION_MULTIPLE mode.</p>",
             "kind": "method",
             "name": "select_range",
             "parameters": [
@@ -216,7 +204,7 @@
             }
         },
         {
-            "doc": "<p>Sets the selection mode of the <code>selection</code>.  If the previous type was</p>\n<h1>GTK_SELECTION_MULTIPLE, then the anchor is kept selected, if it was</h1>\n<p>previously selected.</p>",
+            "doc": "<p>Sets the selection mode of the <pre>selection</pre>.  If the previous type was</p>\n<h1>GTK_SELECTION_MULTIPLE, then the anchor is kept selected, if it was</h1>\n<p>previously selected.</p>",
             "kind": "method",
             "name": "set_mode",
             "parameters": [
@@ -232,7 +220,7 @@
             }
         },
         {
-            "doc": "<p>Sets the selection function.</p><p>If set, this function is called before any node is selected or unselected,\ngiving some control over which nodes are selected. The select function\nshould return <code>true</code> if the state of the node may be toggled, and <code>false</code>\nif the state of the node should be left unchanged.</p>",
+            "doc": "<p>Sets the selection function.</p><p>If set, this function is called before any node is selected or unselected,\ngiving some control over which nodes are selected. The select function\nshould return <pre>true</pre> if the state of the node may be toggled, and <pre>false</pre>\nif the state of the node should be left unchanged.</p>",
             "kind": "method",
             "name": "set_select_function",
             "parameters": [
@@ -285,7 +273,7 @@
             }
         },
         {
-            "doc": "<p>Unselects the row at <code>path</code>.</p>",
+            "doc": "<p>Unselects the row at <pre>path</pre>.</p>",
             "kind": "method",
             "name": "unselect_path",
             "parameters": [
@@ -301,7 +289,7 @@
             }
         },
         {
-            "doc": "<p>Unselects a range of nodes, determined by <code>start_path</code> and <code>end_path</code>\ninclusive.</p>",
+            "doc": "<p>Unselects a range of nodes, determined by <pre>start_path</pre> and <pre>end_path</pre>\ninclusive.</p>",
             "kind": "method",
             "name": "unselect_range",
             "parameters": [
@@ -321,8 +309,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "TreeSelection",
     "properties": [

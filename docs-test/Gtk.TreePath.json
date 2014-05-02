@@ -1,0 +1,265 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.TreePath\"/>-struct.\nThis refers to a row.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TreePath"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.TreePath\"/>-struct.</p><p>The string representation of this path is \u201c0\u201d.</p>",
+            "kind": "constructor",
+            "name": "new_first",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TreePath"
+            }
+        },
+        {
+            "doc": "<p>Creates a new path with <pre>first_index</pre> and @varargs as indices.</p>",
+            "kind": "constructor",
+            "name": "new_from_indices",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "first_index",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.TreePath"
+            }
+        },
+        {
+            "doc": "<p>Creates a new path with the given <pre>indices</pre> array of <pre>length</pre>.</p>",
+            "kind": "constructor",
+            "name": "new_from_indicesv",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "indices",
+                    "direction": "in",
+                    "type": "Array(Number(gint))"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "length",
+                    "direction": "in",
+                    "type": "Number(gsize)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.TreePath"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.TreePath\"/>-struct initialized to <pre>path</pre>.</p><pre>path</pre>\n\n<p>is expected to be a colon separated list of numbers.\nFor example, the string \u201c10:4:0\u201d would create a path of depth\n3 pointing to the 11th child of the root node, the 5th\nchild of that 11th child, and the 1st child of that 5th child.\nIf an invalid path string is passed in, <pre>null</pre> is returned.</p>",
+            "kind": "constructor",
+            "name": "new_from_string",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.TreePath"
+            }
+        }
+    ],
+    "doc": "",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Appends a new index to a path.</p><p>As a result, the depth of the path is increased.</p>",
+            "kind": "method",
+            "name": "append_index",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "index_",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Compares two paths.</p><p>If <pre>a</pre> appears before <pre>b</pre> in a tree, then -1 is returned.\nIf <pre>b</pre> appears before <pre>a</pre>, then 1 is returned.\nIf the two nodes are equal, then 0 is returned.</p>",
+            "kind": "method",
+            "name": "compare",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "b",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.TreePath\"/>-struct as a copy of <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TreePath"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>path</pre> to point to the first child of the current path.</p>",
+            "kind": "method",
+            "name": "down",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Frees <pre>path</pre>. If <pre>path</pre> is <pre>null</pre>, it simply returns.</p>",
+            "kind": "method",
+            "name": "free",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the current depth of <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "get_depth",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the current indices of <pre>path</pre>.</p><p>This is an array of integers, each representing a node in a tree.\nThis value should not be freed.</p><p>The length of the array can be obtained with <span data-xref=\"Gtk.TreePath.get_depth\"/>.</p>",
+            "kind": "method",
+            "name": "get_indices",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the current indices of <pre>path</pre>.</p><p>This is an array of integers, each representing a node in a tree.\nIt also returns the number of elements in the array.\nThe array should not be freed.</p>",
+            "kind": "method",
+            "name": "get_indices_with_depth",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "depth",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Array(Number(gint))"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if <pre>descendant</pre> is a descendant of <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "is_ancestor",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "descendant",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if <pre>path</pre> is a descendant of <pre>ancestor</pre>.</p>",
+            "kind": "method",
+            "name": "is_descendant",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "ancestor",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves the <pre>path</pre> to point to the next node at the current depth.</p>",
+            "kind": "method",
+            "name": "next",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Prepends a new index to a path.</p><p>As a result, the depth of the path is increased.</p>",
+            "kind": "method",
+            "name": "prepend_index",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "index_",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Moves the <pre>path</pre> to point to the previous node at the\ncurrent depth, if it exists.</p>",
+            "kind": "method",
+            "name": "prev",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Generates a string representation of the path.</p><p>This string is a \u201c:\u201d separated list of numbers.\nFor example, \u201c4:10:0:3\u201d would be an acceptable\nreturn value for this string.</p>",
+            "kind": "method",
+            "name": "to_string",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Moves the <pre>path</pre> to point to its parent node, if it has a parent.</p>",
+            "kind": "method",
+            "name": "up",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ],
+    "name": "TreePath"
+}

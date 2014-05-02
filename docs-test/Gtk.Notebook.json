@@ -10,23 +10,11 @@
             }
         }
     ],
-    "doc": "<p>The <span data-xref=\"Gtk.Notebook\"/> widget is a <span data-xref=\"Gtk.Container\"/> whose children are pages that\ncan be switched between using tab labels along one edge.</p><p>There are many configuration options for GtkNotebook. Among other\nthings, you can choose on which edge the tabs appear\n(see <span data-xref=\"Gtk.Notebook.set_tab_pos\"/>), whether, if there are too many\ntabs to fit the notebook should be made bigger or scrolling\narrows added (see <span data-xref=\"Gtk.Notebook.set_scrollable\"/>), and whether there\nwill be a popup menu allowing the users to switch pages.\n(see <span data-xref=\"Gtk.Notebook.popup_enable\"/>, <span data-xref=\"Gtk.Notebook.popup_disable\"/>)</p><h1>GtkNotebook as GtkBuildable</h1><p>The GtkNotebook implementation of the <span data-xref=\"Gtk.Buildable\"/> interface\nsupports placing children into tabs by specifying \u201ctab\u201d as the\n\u201ctype\u201d attribute of a &lt;child&gt; element. Note that the content\nof the tab must be created before the tab can be filled.\nA tab child can be specified without specifying a &lt;child&gt;\ntype attribute.</p><p>To add a child widget in the notebooks action area, specify\n\"action-start\" or \u201caction-end\u201d as the \u201ctype\u201d attribute of the\n&lt;child&gt; element.</p><p>An example of a UI definition fragment with GtkNotebook:\n|[\n&lt;object class=\"GtkNotebook\"&gt;\n  &lt;child&gt;\n    &lt;object class=\"GtkLabel\" id=\"notebook-content\"&gt;\n      &lt;property name=\"label\"&gt;Content&lt;/property&gt;\n    &lt;/object&gt;\n  &lt;/child&gt;\n  &lt;child type=\"tab\"&gt;\n    &lt;object class=\"GtkLabel\" id=\"notebook-tab\"&gt;\n      &lt;property name=\"label\"&gt;Tab&lt;/property&gt;\n    &lt;/object&gt;\n  &lt;/child&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "container"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>The <span data-xref=\"Gtk.Notebook\"/> widget is a <span data-xref=\"Gtk.Container\"/> whose children are pages that\ncan be switched between using tab labels along one edge.</p><p>There are many configuration options for GtkNotebook. Among other\nthings, you can choose on which edge the tabs appear\n(see <span data-xref=\"Gtk.Notebook.set_tab_pos\"/>), whether, if there are too many\ntabs to fit the notebook should be made bigger or scrolling\narrows added (see <span data-xref=\"Gtk.Notebook.set_scrollable\"/>), and whether there\nwill be a popup menu allowing the users to switch pages.\n(see <span data-xref=\"Gtk.Notebook.popup_enable\"/>, <span data-xref=\"Gtk.Notebook.popup_disable\"/>)</p><h1>GtkNotebook as GtkBuildable</h1><p>The GtkNotebook implementation of the <span data-xref=\"Gtk.Buildable\"/> interface\nsupports placing children into tabs by specifying \u201ctab\u201d as the\n\u201ctype\u201d attribute of a <child> element. Note that the content\nof the tab must be created before the tab can be filled.\nA tab child can be specified without specifying a <child>\ntype attribute.</p><p>To add a child widget in the notebooks action area, specify\n\"action-start\" or \u201caction-end\u201d as the \u201ctype\u201d attribute of the\n<child> element.</p><p>An example of a UI definition fragment with GtkNotebook:\n|[\n<object class=\"GtkNotebook\">\n  <child>\n    <object class=\"GtkLabel\" id=\"notebook-content\">\n      <property name=\"label\">Content</property>\n    </object>\n  </child>\n  <child type=\"tab\">\n    <object class=\"GtkLabel\" id=\"notebook-tab\">\n      <property name=\"label\">Tab</property>\n    </object>\n  </child>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Appends a page to <code>notebook</code>.</p>",
+            "doc": "<p>Appends a page to <pre>notebook</pre>.</p>",
             "kind": "method",
             "name": "append_page",
             "parameters": [
@@ -48,7 +36,7 @@
             }
         },
         {
-            "doc": "<p>Appends a page to <code>notebook</code>, specifying the widget to use as the\nlabel in the popup menu.</p>",
+            "doc": "<p>Appends a page to <pre>notebook</pre>, specifying the widget to use as the\nlabel in the popup menu.</p>",
             "kind": "method",
             "name": "append_page_menu",
             "parameters": [
@@ -101,7 +89,7 @@
             }
         },
         {
-            "doc": "<p>Gets the current group name for <code>notebook</code>.</p>",
+            "doc": "<p>Gets the current group name for <pre>notebook</pre>.</p>",
             "kind": "method",
             "name": "get_group_name",
             "parameters": [],
@@ -110,7 +98,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves the menu label widget of the page containing <code>child</code>.</p>",
+            "doc": "<p>Retrieves the menu label widget of the page containing <pre>child</pre>.</p>",
             "kind": "method",
             "name": "get_menu_label",
             "parameters": [
@@ -126,7 +114,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves the text of the menu label for the page containing\n<code>child</code>.</p>",
+            "doc": "<p>Retrieves the text of the menu label for the page containing\n<pre>child</pre>.</p>",
             "kind": "method",
             "name": "get_menu_label_text",
             "parameters": [
@@ -151,7 +139,7 @@
             }
         },
         {
-            "doc": "<p>Returns the child widget contained in page number <code>page_num</code>.</p>",
+            "doc": "<p>Returns the child widget contained in page number <pre>page_num</pre>.</p>",
             "kind": "method",
             "name": "get_nth_page",
             "parameters": [
@@ -194,7 +182,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether the tab contents can be detached from <code>notebook</code>.</p>",
+            "doc": "<p>Returns whether the tab contents can be detached from <pre>notebook</pre>.</p>",
             "kind": "method",
             "name": "get_tab_detachable",
             "parameters": [
@@ -219,7 +207,7 @@
             }
         },
         {
-            "doc": "<p>Returns the tab label widget for the page <code>child</code>.\n<code>null</code> is returned if <code>child</code> is not in <code>notebook</code> or\nif no tab label has specifically been set for <code>child</code>.</p>",
+            "doc": "<p>Returns the tab label widget for the page <pre>child</pre>.\n<pre>null</pre> is returned if <pre>child</pre> is not in <pre>notebook</pre> or\nif no tab label has specifically been set for <pre>child</pre>.</p>",
             "kind": "method",
             "name": "get_tab_label",
             "parameters": [
@@ -235,7 +223,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves the text of the tab label for the page containing\n<code>child</code>.</p>",
+            "doc": "<p>Retrieves the text of the tab label for the page containing\n<pre>child</pre>.</p>",
             "kind": "method",
             "name": "get_tab_label_text",
             "parameters": [
@@ -285,7 +273,7 @@
             }
         },
         {
-            "doc": "<p>Insert a page into <code>notebook</code> at the given position.</p>",
+            "doc": "<p>Insert a page into <pre>notebook</pre> at the given position.</p>",
             "kind": "method",
             "name": "insert_page",
             "parameters": [
@@ -313,7 +301,7 @@
             }
         },
         {
-            "doc": "<p>Insert a page into <code>notebook</code> at the given position, specifying\nthe widget to use as the label in the popup menu.</p>",
+            "doc": "<p>Insert a page into <pre>notebook</pre> at the given position, specifying\nthe widget to use as the label in the popup menu.</p>",
             "kind": "method",
             "name": "insert_page_menu",
             "parameters": [
@@ -390,7 +378,7 @@
             }
         },
         {
-            "doc": "<p>Prepends a page to <code>notebook</code>.</p>",
+            "doc": "<p>Prepends a page to <pre>notebook</pre>.</p>",
             "kind": "method",
             "name": "prepend_page",
             "parameters": [
@@ -412,7 +400,7 @@
             }
         },
         {
-            "doc": "<p>Prepends a page to <code>notebook</code>, specifying the widget to use as the\nlabel in the popup menu.</p>",
+            "doc": "<p>Prepends a page to <pre>notebook</pre>, specifying the widget to use as the\nlabel in the popup menu.</p>",
             "kind": "method",
             "name": "prepend_page_menu",
             "parameters": [
@@ -465,7 +453,7 @@
             }
         },
         {
-            "doc": "<p>Reorders the page containing <code>child</code>, so that it appears in position\n<code>position</code>. If <code>position</code> is greater than or equal to the number of\nchildren in the list or negative, <code>child</code> will be moved to the end\nof the list.</p>",
+            "doc": "<p>Reorders the page containing <pre>child</pre>, so that it appears in position\n<pre>position</pre>. If <pre>position</pre> is greater than or equal to the number of\nchildren in the list or negative, <pre>child</pre> will be moved to the end\nof the list.</p>",
             "kind": "method",
             "name": "reorder_child",
             "parameters": [
@@ -487,7 +475,7 @@
             }
         },
         {
-            "doc": "<p>Sets <code>widget</code> as one of the action widgets. Depending on the pack type\nthe widget will be placed before or after the tabs. You can use\na <span data-xref=\"Gtk.Box\"/> if you need to pack more than one widget on the same side.</p><p>Note that action widgets are \u201cinternal\u201d children of the notebook and thus\nnot included in the list returned from <span data-xref=\"Gtk.Container.foreach\"/>.</p>",
+            "doc": "<p>Sets <pre>widget</pre> as one of the action widgets. Depending on the pack type\nthe widget will be placed before or after the tabs. You can use\na <span data-xref=\"Gtk.Box\"/> if you need to pack more than one widget on the same side.</p><p>Note that action widgets are \u201cinternal\u201d children of the notebook and thus\nnot included in the list returned from <span data-xref=\"Gtk.Container.foreach\"/>.</p>",
             "kind": "method",
             "name": "set_action_widget",
             "parameters": [
@@ -509,7 +497,7 @@
             }
         },
         {
-            "doc": "<p>Switches to the page number <code>page_num</code>.</p><p>Note that due to historical reasons, GtkNotebook refuses\nto switch to a page unless the child widget is visible.\nTherefore, it is recommended to show child widgets before\nadding them to a notebook.</p>",
+            "doc": "<p>Switches to the page number <pre>page_num</pre>.</p><p>Note that due to historical reasons, GtkNotebook refuses\nto switch to a page unless the child widget is visible.\nTherefore, it is recommended to show child widgets before\nadding them to a notebook.</p>",
             "kind": "method",
             "name": "set_current_page",
             "parameters": [
@@ -525,7 +513,7 @@
             }
         },
         {
-            "doc": "<p>Sets a group name for <code>notebook</code>.</p><p>Notebooks with the same name will be able to exchange tabs\nvia drag and drop. A notebook with a <code>null</code> group name will\nnot be able to exchange tabs with any other notebook.</p>",
+            "doc": "<p>Sets a group name for <pre>notebook</pre>.</p><p>Notebooks with the same name will be able to exchange tabs\nvia drag and drop. A notebook with a <pre>null</pre> group name will\nnot be able to exchange tabs with any other notebook.</p>",
             "kind": "method",
             "name": "set_group_name",
             "parameters": [
@@ -541,7 +529,7 @@
             }
         },
         {
-            "doc": "<p>Changes the menu label for the page containing <code>child</code>.</p>",
+            "doc": "<p>Changes the menu label for the page containing <pre>child</pre>.</p>",
             "kind": "method",
             "name": "set_menu_label",
             "parameters": [
@@ -563,7 +551,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new label and sets it as the menu label of <code>child</code>.</p>",
+            "doc": "<p>Creates a new label and sets it as the menu label of <pre>child</pre>.</p>",
             "kind": "method",
             "name": "set_menu_label_text",
             "parameters": [
@@ -633,7 +621,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether the tab can be detached from <code>notebook</code> to another\nnotebook or widget.</p><p>Note that 2 notebooks must share a common group identificator\n(see <span data-xref=\"Gtk.Notebook.set_group_name\"/>) to allow automatic tabs\ninterchange between them.</p><p>If you want a widget to interact with a notebook through DnD\n(i.e.: accept dragged tabs from it) it must be set as a drop\ndestination and accept the target \u201cGTK_NOTEBOOK_TAB\u201d. The notebook\nwill fill the selection with a GtkWidget<strong> pointing to the child\nwidget that corresponds to the dropped tab.\n|[&lt;!-- language=\"C\" --&gt;\n static void\n on_drag_data_received (GtkWidget        <em>widget,\n                        GdkDragContext   </em>context,\n                        gint              x,\n                        gint              y,\n                        GtkSelectionData <em>data,\n                        guint             info,\n                        guint             time,\n                        gpointer          user_data)\n {\n   GtkWidget </em>notebook;\n   GtkWidget </strong>child;\n   GtkContainer *container;</p><p>notebook = gtk_drag_get_source_widget (context);\n   child = (void*) gtk_selection_data_get_data (data);</p><p>process_widget (<em>child);\n   container = GTK_CONTAINER (notebook);\n   gtk_container_remove (container, </em>child);\n }\n]|</p><p>If you want a notebook to accept drags from other widgets,\nyou will have to set your own DnD code to do it.</p>",
+            "doc": "<p>Sets whether the tab can be detached from <pre>notebook</pre> to another\nnotebook or widget.</p><p>Note that 2 notebooks must share a common group identificator\n(see <span data-xref=\"Gtk.Notebook.set_group_name\"/>) to allow automatic tabs\ninterchange between them.</p><p>If you want a widget to interact with a notebook through DnD\n(i.e.: accept dragged tabs from it) it must be set as a drop\ndestination and accept the target \u201cGTK_NOTEBOOK_TAB\u201d. The notebook\nwill fill the selection with a GtkWidget<strong> pointing to the child\nwidget that corresponds to the dropped tab.\n|[<!-- language=\"C\" -->\n static void\n on_drag_data_received (GtkWidget        <em>widget,\n                        GdkDragContext   </em>context,\n                        gint              x,\n                        gint              y,\n                        GtkSelectionData <em>data,\n                        guint             info,\n                        guint             time,\n                        gpointer          user_data)\n {\n   GtkWidget </em>notebook;\n   GtkWidget </strong>child;\n   GtkContainer *container;</p><p>notebook = gtk_drag_get_source_widget (context);\n   child = (void*) gtk_selection_data_get_data (data);</p><p>process_widget (<em>child);\n   container = GTK_CONTAINER (notebook);\n   gtk_container_remove (container, </em>child);\n }\n]|</p><p>If you want a notebook to accept drags from other widgets,\nyou will have to set your own DnD code to do it.</p>",
             "kind": "method",
             "name": "set_tab_detachable",
             "parameters": [
@@ -655,7 +643,7 @@
             }
         },
         {
-            "doc": "<p>Changes the tab label for <code>child</code>.\nIf <code>null</code> is specified for <code>tab_label</code>, then the page will\nhave the label \u201cpage N\u201d.</p>",
+            "doc": "<p>Changes the tab label for <pre>child</pre>.\nIf <pre>null</pre> is specified for <pre>tab_label</pre>, then the page will\nhave the label \u201cpage N\u201d.</p>",
             "kind": "method",
             "name": "set_tab_label",
             "parameters": [
@@ -677,7 +665,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new label and sets it as the tab label for the page\ncontaining <code>child</code>.</p>",
+            "doc": "<p>Creates a new label and sets it as the tab label for the page\ncontaining <pre>child</pre>.</p>",
             "kind": "method",
             "name": "set_tab_label_text",
             "parameters": [
@@ -735,8 +723,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Notebook",
     "properties": [

@@ -1,0 +1,22 @@
+{
+    "doc": "<p>These values are used as \u201cinfo\u201d for the targets contained in the\nlists returned by <span data-xref=\"Gtk.TextBuffer.get_copy_target_list\"/> and\n<span data-xref=\"Gtk.TextBuffer.get_paste_target_list\"/>.</p><p>The values counts down from <code>-1</code> to avoid clashes\nwith application added drag destinations which usually start at 0.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Buffer contents</p>",
+            "kind": "default",
+            "name": "buffer_contents"
+        },
+        {
+            "doc": "<p>Rich text</p>",
+            "kind": "default",
+            "name": "rich_text"
+        },
+        {
+            "doc": "<p>Text</p>",
+            "kind": "default",
+            "name": "text"
+        }
+    ],
+    "name": "TextBufferTargetInfo"
+}

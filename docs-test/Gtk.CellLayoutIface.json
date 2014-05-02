@@ -1,0 +1,59 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "g_iface"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "pack_start"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "pack_end"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "clear"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "add_attribute"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_cell_data_func"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "clear_attributes"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "reorder"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_cells"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_area"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "CellLayoutIface"
+}

@@ -17,19 +17,7 @@
             }
         }
     ],
-    "doc": "<p>Actions are organised into groups. An action group is essentially a\nmap from names to <span data-xref=\"Gtk.Action\"/> objects.</p><p>All actions that would make sense to use in a particular context\nshould be in a single group. Multiple action groups may be used for a\nparticular user interface. In fact, it is expected that most nontrivial\napplications will make use of multiple groups. For example, in an\napplication that can edit multiple documents, one group holding global\nactions (e.g. quit, about, new), and one group per document holding\nactions that act on that document (eg. save, cut/copy/paste, etc). Each\nwindow\u2019s menus would be constructed from a combination of two action\ngroups.</p><h2>Accelerators ## {#Action-Accel}</h2><p>Accelerators are handled by the GTK+ accelerator map. All actions are\nassigned an accelerator path (which normally has the form\n<code>&amp;lt;Actions&amp;gt;/group-name/action-name</code>) and a shortcut is associated with\nthis accelerator path. All menuitems and toolitems take on this accelerator\npath. The GTK+ accelerator map code makes sure that the correct shortcut\nis displayed next to the menu item.</p><h1>GtkActionGroup as GtkBuildable # {<span data-xref=\"Gtk.ActionGroup\"/>-BUILDER-UI}</h1><p>The <span data-xref=\"Gtk.ActionGroup\"/> implementation of the <span data-xref=\"Gtk.Buildable\"/> interface accepts\n<span data-xref=\"Gtk.Action\"/> objects as &lt;child&gt; elements in UI definitions.</p><p>Note that it is probably more common to define actions and action groups\nin the code, since they are directly related to what the code can do.</p><p>The GtkActionGroup implementation of the GtkBuildable interface supports\na custom &lt;accelerator&gt; element, which has attributes named \u201ckey\u201c and\n\u201cmodifiers\u201c and allows to specify accelerators. This is similar to the\n&lt;accelerator&gt; element of <span data-xref=\"Gtk.Widget\"/>, the main difference is that\nit doesn\u2019t allow you to specify a signal.</p><h2>A <span data-xref=\"Gtk.Dialog\"/> UI definition fragment.</h2>\n<p>|[\n&lt;object class=\"GtkActionGroup\" id=\"actiongroup\"&gt;\n  &lt;child&gt;\n      &lt;object class=\"GtkAction\" id=\"About\"&gt;\n          &lt;property name=\"name\"&gt;About&lt;/property&gt;\n          &lt;property name=\"stock_id\"&gt;gtk-about&lt;/property&gt;\n          &lt;signal handler=\"about_activate\" name=\"activate\"/&gt;\n      &lt;/object&gt;\n      &lt;accelerator key=\"F1\" modifiers=\"GDK_CONTROL_MASK | GDK_SHIFT_MASK\"/&gt;\n  &lt;/child&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>Actions are organised into groups. An action group is essentially a\nmap from names to <span data-xref=\"Gtk.Action\"/> objects.</p><p>All actions that would make sense to use in a particular context\nshould be in a single group. Multiple action groups may be used for a\nparticular user interface. In fact, it is expected that most nontrivial\napplications will make use of multiple groups. For example, in an\napplication that can edit multiple documents, one group holding global\nactions (e.g. quit, about, new), and one group per document holding\nactions that act on that document (eg. save, cut/copy/paste, etc). Each\nwindow\u2019s menus would be constructed from a combination of two action\ngroups.</p><h2>Accelerators ## {#Action-Accel}</h2><p>Accelerators are handled by the GTK+ accelerator map. All actions are\nassigned an accelerator path (which normally has the form\n<code>&lt;Actions&gt;/group-name/action-name</code>) and a shortcut is associated with\nthis accelerator path. All menuitems and toolitems take on this accelerator\npath. The GTK+ accelerator map code makes sure that the correct shortcut\nis displayed next to the menu item.</p><h1>GtkActionGroup as GtkBuildable # {<span data-xref=\"Gtk.ActionGroup\"/>-BUILDER-UI}</h1><p>The <span data-xref=\"Gtk.ActionGroup\"/> implementation of the <span data-xref=\"Gtk.Buildable\"/> interface accepts\n<span data-xref=\"Gtk.Action\"/> objects as <child> elements in UI definitions.</p><p>Note that it is probably more common to define actions and action groups\nin the code, since they are directly related to what the code can do.</p><p>The GtkActionGroup implementation of the GtkBuildable interface supports\na custom <accelerator> element, which has attributes named \u201ckey\u201c and\n\u201cmodifiers\u201c and allows to specify accelerators. This is similar to the\n<accelerator> element of <span data-xref=\"Gtk.Widget\"/>, the main difference is that\nit doesn\u2019t allow you to specify a signal.</p><h2>A <span data-xref=\"Gtk.Dialog\"/> UI definition fragment.</h2>\n<p>|[\n<object class=\"GtkActionGroup\" id=\"actiongroup\">\n  <child>\n      <object class=\"GtkAction\" id=\"About\">\n          <property name=\"name\">About</property>\n          <property name=\"stock_id\">gtk-about</property>\n          <signal handler=\"about_activate\" name=\"activate\"/>\n      </object>\n      <accelerator key=\"F1\" modifiers=\"GDK_CONTROL_MASK | GDK_SHIFT_MASK\"/>\n  </child>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
@@ -49,7 +37,7 @@
             }
         },
         {
-            "doc": "<p>Adds an action object to the action group and sets up the accelerator.</p><p>If <code>accelerator</code> is <code>null</code>, attempts to use the accelerator associated\nwith the stock_id of the action.</p><p>Accel paths are set to <code>&amp;lt;Actions&amp;gt;/group-name/action-name</code>.</p>",
+            "doc": "<p>Adds an action object to the action group and sets up the accelerator.</p><p>If <pre>accelerator</pre> is <pre>null</pre>, attempts to use the accelerator associated\nwith the stock_id of the action.</p><p>Accel paths are set to <code>&lt;Actions&gt;/group-name/action-name</code>.</p>",
             "kind": "method",
             "name": "add_action_with_accel",
             "parameters": [
@@ -71,7 +59,7 @@
             }
         },
         {
-            "doc": "<p>This is a convenience function to create a number of actions and add them\nto the action group.</p><p>The \u201cactivate\u201d signals of the actions are connected to the callbacks\nand their accel paths are set to <code>&amp;lt;Actions&amp;gt;/group-name/action-name</code>.</p>",
+            "doc": "<p>This is a convenience function to create a number of actions and add them\nto the action group.</p><p>The \u201cactivate\u201d signals of the actions are connected to the callbacks\nand their accel paths are set to <code>&lt;Actions&gt;/group-name/action-name</code>.</p>",
             "kind": "method",
             "name": "add_actions",
             "parameters": [
@@ -99,7 +87,7 @@
             }
         },
         {
-            "doc": "<p>This variant of <span data-xref=\"Gtk.ActionGroup.add_actions\"/> adds a <span data-xref=\"GLib.DestroyNotify\">GLib.DestroyNotify</span>\ncallback for <code>user_data</code>.</p>",
+            "doc": "<p>This variant of <span data-xref=\"Gtk.ActionGroup.add_actions\"/> adds a <span data-xref=\"GLib.DestroyNotify\">GLib.DestroyNotify</span>\ncallback for <pre>user_data</pre>.</p>",
             "kind": "method",
             "name": "add_actions_full",
             "parameters": [
@@ -133,7 +121,7 @@
             }
         },
         {
-            "doc": "<p>This is a convenience routine to create a group of radio actions and\nadd them to the action group.</p><p>The \u201cchanged\u201d signal of the first radio action is connected to the\n<code>on_change</code> callback and the accel paths of the actions are set to\n<code>&amp;lt;Actions&amp;gt;/group-name/action-name</code>.</p>",
+            "doc": "<p>This is a convenience routine to create a group of radio actions and\nadd them to the action group.</p><p>The \u201cchanged\u201d signal of the first radio action is connected to the\n<pre>on_change</pre> callback and the accel paths of the actions are set to\n<code>&lt;Actions&gt;/group-name/action-name</code>.</p>",
             "kind": "method",
             "name": "add_radio_actions",
             "parameters": [
@@ -173,7 +161,7 @@
             }
         },
         {
-            "doc": "<p>This variant of <span data-xref=\"Gtk.ActionGroup.add_radio_actions\"/> adds a\n<span data-xref=\"GLib.DestroyNotify\">GLib.DestroyNotify</span> callback for <code>user_data</code>.</p>",
+            "doc": "<p>This variant of <span data-xref=\"Gtk.ActionGroup.add_radio_actions\"/> adds a\n<span data-xref=\"GLib.DestroyNotify\">GLib.DestroyNotify</span> callback for <pre>user_data</pre>.</p>",
             "kind": "method",
             "name": "add_radio_actions_full",
             "parameters": [
@@ -219,7 +207,7 @@
             }
         },
         {
-            "doc": "<p>This is a convenience function to create a number of toggle actions and add them\nto the action group.</p><p>The \u201cactivate\u201d signals of the actions are connected to the callbacks\nand their accel paths are set to <code>&amp;lt;Actions&amp;gt;/group-name/action-name</code>.</p>",
+            "doc": "<p>This is a convenience function to create a number of toggle actions and add them\nto the action group.</p><p>The \u201cactivate\u201d signals of the actions are connected to the callbacks\nand their accel paths are set to <code>&lt;Actions&gt;/group-name/action-name</code>.</p>",
             "kind": "method",
             "name": "add_toggle_actions",
             "parameters": [
@@ -247,7 +235,7 @@
             }
         },
         {
-            "doc": "<p>This variant of <span data-xref=\"Gtk.ActionGroup.add_toggle_actions\"/> adds a\n<span data-xref=\"GLib.DestroyNotify\">GLib.DestroyNotify</span> callback for <code>user_data</code>.</p>",
+            "doc": "<p>This variant of <span data-xref=\"Gtk.ActionGroup.add_toggle_actions\"/> adds a\n<span data-xref=\"GLib.DestroyNotify\">GLib.DestroyNotify</span> callback for <pre>user_data</pre>.</p>",
             "kind": "method",
             "name": "add_toggle_actions_full",
             "parameters": [
@@ -315,7 +303,7 @@
             }
         },
         {
-            "doc": "<p>Returns <code>true</code> if the group is sensitive.  The constituent actions\ncan only be logically sensitive (see <span data-xref=\"Gtk.Action.is_sensitive\"/>) if\nthey are sensitive (see <span data-xref=\"Gtk.Action.get_sensitive\"/>) and their group\nis sensitive.</p>",
+            "doc": "<p>Returns <pre>true</pre> if the group is sensitive.  The constituent actions\ncan only be logically sensitive (see <span data-xref=\"Gtk.Action.is_sensitive\"/>) if\nthey are sensitive (see <span data-xref=\"Gtk.Action.get_sensitive\"/>) and their group\nis sensitive.</p>",
             "kind": "method",
             "name": "get_sensitive",
             "parameters": [],
@@ -324,7 +312,7 @@
             }
         },
         {
-            "doc": "<p>Returns <code>true</code> if the group is visible.  The constituent actions\ncan only be logically visible (see <span data-xref=\"Gtk.Action.is_visible\"/>) if\nthey are visible (see <span data-xref=\"Gtk.Action.get_visible\"/>) and their group\nis visible.</p>",
+            "doc": "<p>Returns <pre>true</pre> if the group is visible.  The constituent actions\ncan only be logically visible (see <span data-xref=\"Gtk.Action.is_visible\"/>) if\nthey are visible (see <span data-xref=\"Gtk.Action.get_visible\"/>) and their group\nis visible.</p>",
             "kind": "method",
             "name": "get_visible",
             "parameters": [],
@@ -374,7 +362,7 @@
             }
         },
         {
-            "doc": "<p>Changes the sensitivity of <code>action_group</code></p>",
+            "doc": "<p>Changes the sensitivity of <pre>action_group</pre></p>",
             "kind": "method",
             "name": "set_sensitive",
             "parameters": [
@@ -434,7 +422,7 @@
             }
         },
         {
-            "doc": "<p>Changes the visible of <code>action_group</code>.</p>",
+            "doc": "<p>Changes the visible of <pre>action_group</pre>.</p>",
             "kind": "method",
             "name": "set_visible",
             "parameters": [
@@ -464,8 +452,7 @@
             "retval": {
                 "type": "String"
             }
-        },
-        []
+        }
     ],
     "name": "ActionGroup",
     "properties": [
@@ -540,7 +527,7 @@
             }
         },
         {
-            "doc": "<p>The ::post-activate signal is emitted just after the <code>action</code> in the\n@action_group is activated</p><p>This is intended for <span data-xref=\"Gtk.UIManager\"/> to proxy the signal and provide global\nnotification just after any action is activated.</p>",
+            "doc": "<p>The ::post-activate signal is emitted just after the <pre>action</pre> in the\n@action_group is activated</p><p>This is intended for <span data-xref=\"Gtk.UIManager\"/> to proxy the signal and provide global\nnotification just after any action is activated.</p>",
             "kind": "signal",
             "name": "post-activate",
             "parameters": [
@@ -556,7 +543,7 @@
             }
         },
         {
-            "doc": "<p>The ::pre-activate signal is emitted just before the <code>action</code> in the\n@action_group is activated</p><p>This is intended for <span data-xref=\"Gtk.UIManager\"/> to proxy the signal and provide global\nnotification just before any action is activated.</p>",
+            "doc": "<p>The ::pre-activate signal is emitted just before the <pre>action</pre> in the\n@action_group is activated</p><p>This is intended for <span data-xref=\"Gtk.UIManager\"/> to proxy the signal and provide global\nnotification just before any action is activated.</p>",
             "kind": "signal",
             "name": "pre-activate",
             "parameters": [

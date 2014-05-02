@@ -1,0 +1,17 @@
+{
+    "doc": "<p>Kinds of widget-specific help. Used by the ::show-help signal.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Tooltip.</p>",
+            "kind": "default",
+            "name": "tooltip"
+        },
+        {
+            "doc": "<p>What\u2019s this.</p>",
+            "kind": "default",
+            "name": "whats_this"
+        }
+    ],
+    "name": "WidgetHelpType"
+}

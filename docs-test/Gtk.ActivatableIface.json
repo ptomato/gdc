@@ -1,0 +1,24 @@
+{
+    "constructors": [],
+    "doc": "<blockquote>\n<p>This method can be called with a <pre>null</pre> action at times.</p>\n</blockquote>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "g_iface"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "update"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "sync_action_properties"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "ActivatableIface"
+}

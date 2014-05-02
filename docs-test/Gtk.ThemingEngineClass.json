@@ -1,0 +1,104 @@
+{
+    "constructors": [],
+    "doc": "<p>Base class for theming engines.</p>",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_line"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_background"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_frame"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_frame_gap"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_extension"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_check"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_option"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_arrow"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_expander"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_focus"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_layout"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_slider"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_handle"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_activity"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_icon_pixbuf"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_icon"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_icon_surface"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "padding"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "ThemingEngineClass"
+}

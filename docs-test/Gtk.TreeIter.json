@@ -1,0 +1,48 @@
+{
+    "constructors": [],
+    "doc": "<p>The <span data-xref=\"Gtk.TreeIter\"/> is the primary structure\nfor accessing a <span data-xref=\"Gtk.TreeModel\"/>. Models are expected to put a unique\ninteger in the @stamp member, and put\nmodel-specific data in the three @user_data\nmembers.</p>",
+    "fields": [
+        {
+            "doc": "<p>a unique stamp to catch invalid iterators</p>",
+            "kind": "field",
+            "name": "stamp"
+        },
+        {
+            "doc": "<p>model-specific data</p>",
+            "kind": "field",
+            "name": "user_data"
+        },
+        {
+            "doc": "<p>model-specific data</p>",
+            "kind": "field",
+            "name": "user_data2"
+        },
+        {
+            "doc": "<p>model-specific data</p>",
+            "kind": "field",
+            "name": "user_data3"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Creates a dynamically allocated tree iterator as a copy of <pre>iter</pre>.</p><p>This function is not intended for use in applications,\nbecause you can just copy the structs by value\n(<code>GtkTreeIter new_iter = iter;</code>).\nYou must free this iter with <span data-xref=\"Gtk.TreeIter.free\"/>.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TreeIter"
+            }
+        },
+        {
+            "doc": "<p>Frees an iterator that has been allocated by <span data-xref=\"Gtk.TreeIter.copy\"/>.</p><p>This function is mainly used for language bindings.</p>",
+            "kind": "method",
+            "name": "free",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "TreeIter"
+}

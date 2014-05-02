@@ -1,0 +1,64 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "allocate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "reset"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_height_for_width"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_width_for_height"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved6"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "CellAreaContextClass"
+}

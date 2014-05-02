@@ -1,0 +1,109 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "populate_popup"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "activate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "move_cursor"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "insert_at_cursor"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "delete_from_cursor"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "backspace"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "cut_clipboard"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "copy_clipboard"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "paste_clipboard"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "toggle_overwrite"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_text_area_size"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_frame_size"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved6"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved7"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "EntryClass"
+}

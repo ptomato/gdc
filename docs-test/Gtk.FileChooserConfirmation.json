@@ -1,0 +1,22 @@
+{
+    "doc": "<p>Used as a return value of handlers for the\n<span data-xref=\"Gtk.FileChooser-confirm-overwrite\"/> signal of a <span data-xref=\"Gtk.FileChooser\"/>. This\nvalue determines whether the file chooser will present the stock\nconfirmation dialog, accept the user\u2019s choice of a filename, or\nlet the user choose another filename.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The file chooser will present\n its stock dialog to confirm about overwriting an existing file.</p>",
+            "kind": "default",
+            "name": "confirm"
+        },
+        {
+            "doc": "<p>The file chooser will\n terminate and accept the user\u2019s choice of a file name.</p>",
+            "kind": "default",
+            "name": "accept_filename"
+        },
+        {
+            "doc": "<p>The file chooser will\n continue running, so as to let the user select another file name.</p>",
+            "kind": "default",
+            "name": "select_again"
+        }
+    ],
+    "name": "FileChooserConfirmation"
+}

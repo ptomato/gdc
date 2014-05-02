@@ -1,7 +1,6 @@
 {
     "constructors": [],
     "doc": "<p>The <span data-xref=\"Gtk.Clipboard\"/> object represents a clipboard of data shared\nbetween different processes or between different widgets in\nthe same process. Each clipboard is identified by a name encoded as a\n<span data-xref=\"Gdk.Atom\">Gdk.Atom</span>. (Conversion to and from strings can be done with\n<span data-xref=\"Gdk.atom_intern\">Gdk.atom_intern</span> and <span data-xref=\"Gdk.Atom.name\">Gdk.Atom.prototype.name</span>.) The default clipboard\ncorresponds to the \u201cCLIPBOARD\u201d atom; another commonly used clipboard\nis the \u201cPRIMARY\u201d clipboard, which, in X, traditionally contains\nthe currently selected text.</p><p>To support having a number of different formats on the clipboard\nat the same time, the clipboard mechanism allows providing\ncallbacks instead of the actual data.  When you set the contents\nof the clipboard, you can either supply the data directly (via\nfunctions like <span data-xref=\"Gtk.Clipboard.set_text\"/>), or you can supply a\ncallback to be called at a later time when the data is needed (via\n<span data-xref=\"Gtk.Clipboard.set_with_data\"/> or <span data-xref=\"Gtk.Clipboard.set_with_owner\"/>.)\nProviding a callback also avoids having to make copies of the data\nwhen it is not needed.</p><p><span data-xref=\"Gtk.Clipboard.set_with_data\"/> and <span data-xref=\"Gtk.Clipboard.set_with_owner\"/>\nare quite similar; the choice between the two depends mostly on\nwhich is more convenient in a particular situation.\nThe former is most useful when you want to have a blob of data\nwith callbacks to convert it into the various data types that you\nadvertise. When the @clear_func you provided is called, you\nsimply free the data blob. The latter is more useful when the\ncontents of clipboard reflect the internal state of a <span data-xref=\"GObject.Object\">GObject.Object</span>\n(As an example, for the PRIMARY clipboard, when an entry widget\nprovides the clipboard\u2019s contents the contents are simply the\ntext within the selected region.) If the contents change, the\nentry widget can call <span data-xref=\"Gtk.Clipboard.set_with_owner\"/> to update\nthe timestamp for clipboard ownership, without having to worry\nabout @clear_func being called.</p><p>Requesting the data from the clipboard is essentially\nasynchronous. If the contents of the clipboard are provided within\nthe same process, then a direct function call will be made to\nretrieve the data, but if they are provided by another process,\nthen the data needs to be retrieved from the other process, which\nmay take some time. To avoid blocking the user interface, the call\nto request the selection, <span data-xref=\"Gtk.Clipboard.request_contents\"/> takes a\ncallback that will be called when the contents are received (or\nwhen the request fails.) If you don\u2019t want to deal with providing\na separate callback, you can also use <span data-xref=\"Gtk.Clipboard.wait_for_contents\"/>.\nWhat this does is run the GLib main loop recursively waiting for\nthe contents. This can simplify the code flow, but you still have\nto be aware that other callbacks in your program can be called\nwhile this recursive mainloop is running.</p><p>Along with the functions to get the clipboard contents as an\narbitrary data chunk, there are also functions to retrieve\nit as text, <span data-xref=\"Gtk.Clipboard.request_text\"/> and\n<span data-xref=\"Gtk.Clipboard.wait_for_text\"/>. These functions take care of\ndetermining which formats are advertised by the clipboard\nprovider, asking for the clipboard in the best available format\nand converting the results into the UTF-8 encoding. (The standard\nform for representing strings in GTK+.)</p>",
-    "fields": [],
     "kind": "class",
     "methods": [
         {
@@ -14,7 +13,7 @@
             }
         },
         {
-            "doc": "<p>Gets the <span data-xref=\"Gdk.Display\">Gdk.Display</span> associated with <code>clipboard</code></p>",
+            "doc": "<p>Gets the <span data-xref=\"Gdk.Display\">Gdk.Display</span> associated with <pre>clipboard</pre></p>",
             "kind": "method",
             "name": "get_display",
             "parameters": [],
@@ -60,7 +59,7 @@
             }
         },
         {
-            "doc": "<p>Requests the contents of the clipboard as image. When the image is\nlater received, it will be converted to a <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>, and\n<code>callback</code> will be called.</p><p>The @pixbuf parameter to <code>callback</code> will contain the resulting\n<span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span> if the request succeeded, or <code>null</code> if it failed. This\ncould happen for various reasons, in particular if the clipboard\nwas empty or if the contents of the clipboard could not be\nconverted into an image.</p>",
+            "doc": "<p>Requests the contents of the clipboard as image. When the image is\nlater received, it will be converted to a <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>, and\n<pre>callback</pre> will be called.</p><p>The @pixbuf parameter to <pre>callback</pre> will contain the resulting\n<span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span> if the request succeeded, or <pre>null</pre> if it failed. This\ncould happen for various reasons, in particular if the clipboard\nwas empty or if the contents of the clipboard could not be\nconverted into an image.</p>",
             "kind": "method",
             "name": "request_image",
             "parameters": [
@@ -82,7 +81,7 @@
             }
         },
         {
-            "doc": "<p>Requests the contents of the clipboard as rich text. When the rich\ntext is later received, <code>callback</code> will be called.</p><p>The @text parameter to <code>callback</code> will contain the resulting rich\ntext if the request succeeded, or <code>null</code> if it failed. The @length\nparameter will contain @text\u2019s length. This function can fail for\nvarious reasons, in particular if the clipboard was empty or if the\ncontents of the clipboard could not be converted into rich text form.</p>",
+            "doc": "<p>Requests the contents of the clipboard as rich text. When the rich\ntext is later received, <pre>callback</pre> will be called.</p><p>The @text parameter to <pre>callback</pre> will contain the resulting rich\ntext if the request succeeded, or <pre>null</pre> if it failed. The @length\nparameter will contain @text\u2019s length. This function can fail for\nvarious reasons, in particular if the clipboard was empty or if the\ncontents of the clipboard could not be converted into rich text form.</p>",
             "kind": "method",
             "name": "request_rich_text",
             "parameters": [
@@ -110,7 +109,7 @@
             }
         },
         {
-            "doc": "<p>Requests the contents of the clipboard as list of supported targets.\nWhen the list is later received, <code>callback</code> will be called.</p><p>The @targets parameter to <code>callback</code> will contain the resulting targets if\nthe request succeeded, or <code>null</code> if it failed.</p>",
+            "doc": "<p>Requests the contents of the clipboard as list of supported targets.\nWhen the list is later received, <pre>callback</pre> will be called.</p><p>The @targets parameter to <pre>callback</pre> will contain the resulting targets if\nthe request succeeded, or <pre>null</pre> if it failed.</p>",
             "kind": "method",
             "name": "request_targets",
             "parameters": [
@@ -132,7 +131,7 @@
             }
         },
         {
-            "doc": "<p>Requests the contents of the clipboard as text. When the text is\nlater received, it will be converted to UTF-8 if necessary, and\n<code>callback</code> will be called.</p><p>The @text parameter to <code>callback</code> will contain the resulting text if\nthe request succeeded, or <code>null</code> if it failed. This could happen for\nvarious reasons, in particular if the clipboard was empty or if the\ncontents of the clipboard could not be converted into text form.</p>",
+            "doc": "<p>Requests the contents of the clipboard as text. When the text is\nlater received, it will be converted to UTF-8 if necessary, and\n<pre>callback</pre> will be called.</p><p>The @text parameter to <pre>callback</pre> will contain the resulting text if\nthe request succeeded, or <pre>null</pre> if it failed. This could happen for\nvarious reasons, in particular if the clipboard was empty or if the\ncontents of the clipboard could not be converted into text form.</p>",
             "kind": "method",
             "name": "request_text",
             "parameters": [
@@ -154,7 +153,7 @@
             }
         },
         {
-            "doc": "<p>Requests the contents of the clipboard as URIs. When the URIs are\nlater received <code>callback</code> will be called.</p><p>The @uris parameter to <code>callback</code> will contain the resulting array of\nURIs if the request succeeded, or <code>null</code> if it failed. This could happen\nfor various reasons, in particular if the clipboard was empty or if the\ncontents of the clipboard could not be converted into URI form.</p>",
+            "doc": "<p>Requests the contents of the clipboard as URIs. When the URIs are\nlater received <pre>callback</pre> will be called.</p><p>The @uris parameter to <pre>callback</pre> will contain the resulting array of\nURIs if the request succeeded, or <pre>null</pre> if it failed. This could happen\nfor various reasons, in particular if the clipboard was empty or if the\ncontents of the clipboard could not be converted into URI form.</p>",
             "kind": "method",
             "name": "request_uris",
             "parameters": [
@@ -378,7 +377,7 @@
             }
         },
         {
-            "doc": "<p>Returns a list of targets that are present on the clipboard, or <code>null</code>\nif there aren\u2019t any targets available. The returned list must be\nfreed with <span data-xref=\"GLib.free\">GLib.free</span>.\nThis function waits for the data to be received using the main\nloop, so events, timeouts, etc, may be dispatched during the wait.</p>",
+            "doc": "<p>Returns a list of targets that are present on the clipboard, or <pre>null</pre>\nif there aren\u2019t any targets available. The returned list must be\nfreed with <span data-xref=\"GLib.free\">GLib.free</span>.\nThis function waits for the data to be received using the main\nloop, so events, timeouts, etc, may be dispatched during the wait.</p>",
             "kind": "method",
             "name": "wait_for_targets",
             "parameters": [
@@ -476,46 +475,44 @@
                 "type": "Boolean"
             }
         },
-        [
-            {
-                "doc": "<p>Returns the clipboard object for the given selection.\nSee <span data-xref=\"Gtk.Clipboard.get_for_display\"/> for complete details.</p>",
-                "kind": "function",
-                "name": "get",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "selection",
-                        "direction": "in",
-                        "type": "Gdk.Atom"
-                    }
-                ],
-                "retval": {
-                    "type": "Gtk.Clipboard"
+        {
+            "doc": "<p>Returns the clipboard object for the given selection.\nSee <span data-xref=\"Gtk.Clipboard.get_for_display\"/> for complete details.</p>",
+            "kind": "function",
+            "name": "get",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "selection",
+                    "direction": "in",
+                    "type": "Gdk.Atom"
                 }
-            },
-            {
-                "doc": "<p>Returns the clipboard object for the given selection.\nCut/copy/paste menu items and keyboard shortcuts should use\nthe default clipboard, returned by passing %GDK_SELECTION_CLIPBOARD for <code>selection</code>.\n(%GDK_NONE is supported as a synonym for GDK_SELECTION_CLIPBOARD\nfor backwards compatibility reasons.)\nThe currently-selected object or text should be provided on the clipboard\nidentified by #GDK_SELECTION_PRIMARY. Cut/copy/paste menu items\nconceptually copy the contents of the #GDK_SELECTION_PRIMARY clipboard\nto the default clipboard, i.e. they copy the selection to what the\nuser sees as the clipboard.</p><p>(Passing #GDK_NONE is the same as using <code>gdk_atom_intern\n(\"CLIPBOARD\", FALSE)</code>.</p><p>See the\n<a href=\"http://www.freedesktop.org/Standards/clipboards-spec\">FreeDesktop Clipboard Specification</a>\nfor a detailed discussion of the \u201cCLIPBOARD\u201d vs. \u201cPRIMARY\u201d\nselections under the X window system. On Win32 the</p>\n<h1>GDK_SELECTION_PRIMARY clipboard is essentially ignored.)</h1><p>It\u2019s possible to have arbitrary named clipboards; if you do invent\nnew clipboards, you should prefix the selection name with an\nunderscore (because the ICCCM requires that nonstandard atoms are\nunderscore-prefixed), and namespace it as well. For example,\nif your application called \u201cFoo\u201d has a special-purpose\nclipboard, you might call it \u201c_FOO_SPECIAL_CLIPBOARD\u201d.</p>",
-                "kind": "function",
-                "name": "get_for_display",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "display",
-                        "direction": "in",
-                        "type": "Gdk.Display"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "selection",
-                        "direction": "in",
-                        "type": "Gdk.Atom"
-                    }
-                ],
-                "retval": {
-                    "type": "Gtk.Clipboard"
-                }
+            ],
+            "retval": {
+                "type": "Gtk.Clipboard"
             }
-        ]
+        },
+        {
+            "doc": "<p>Returns the clipboard object for the given selection.\nCut/copy/paste menu items and keyboard shortcuts should use\nthe default clipboard, returned by passing %GDK_SELECTION_CLIPBOARD for <pre>selection</pre>.\n(%GDK_NONE is supported as a synonym for GDK_SELECTION_CLIPBOARD\nfor backwards compatibility reasons.)\nThe currently-selected object or text should be provided on the clipboard\nidentified by #GDK_SELECTION_PRIMARY. Cut/copy/paste menu items\nconceptually copy the contents of the #GDK_SELECTION_PRIMARY clipboard\nto the default clipboard, i.e. they copy the selection to what the\nuser sees as the clipboard.</p><p>(Passing #GDK_NONE is the same as using <code>gdk_atom_intern\n(\"CLIPBOARD\", FALSE)</code>.</p><p>See the\n<a href=\"http://www.freedesktop.org/Standards/clipboards-spec\">FreeDesktop Clipboard Specification</a>\nfor a detailed discussion of the \u201cCLIPBOARD\u201d vs. \u201cPRIMARY\u201d\nselections under the X window system. On Win32 the</p>\n<h1>GDK_SELECTION_PRIMARY clipboard is essentially ignored.)</h1><p>It\u2019s possible to have arbitrary named clipboards; if you do invent\nnew clipboards, you should prefix the selection name with an\nunderscore (because the ICCCM requires that nonstandard atoms are\nunderscore-prefixed), and namespace it as well. For example,\nif your application called \u201cFoo\u201d has a special-purpose\nclipboard, you might call it \u201c_FOO_SPECIAL_CLIPBOARD\u201d.</p>",
+            "kind": "function",
+            "name": "get_for_display",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "display",
+                    "direction": "in",
+                    "type": "Gdk.Display"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "selection",
+                    "direction": "in",
+                    "type": "Gdk.Atom"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Clipboard"
+            }
+        }
     ],
     "name": "Clipboard",
     "properties": [],

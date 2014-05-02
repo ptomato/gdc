@@ -11,22 +11,8 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.CellRendererProgress\"/> renders a numeric value as a progress par in a cell.\nAdditionally, it can display a text on top of the progress bar.</p><p>The <span data-xref=\"Gtk.CellRendererProgress\"/> cell renderer was added in GTK+ 2.6.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "CellRendererProgress",
     "properties": [
         {
@@ -42,7 +28,7 @@
             "type": "Number(gint)"
         },
         {
-            "doc": "<p>The \"text\" property determines the label which will be drawn\nover the progress bar. Setting this property to <code>null</code> causes the default\nlabel to be displayed. Setting this property to an empty string causes\nno label to be displayed.</p>",
+            "doc": "<p>The \"text\" property determines the label which will be drawn\nover the progress bar. Setting this property to <pre>null</pre> causes the default\nlabel to be displayed. Setting this property to an empty string causes\nno label to be displayed.</p>",
             "kind": "property",
             "name": "text",
             "type": "String"

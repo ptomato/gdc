@@ -1,0 +1,204 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "realize"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "unrealize"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "copy"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "clone"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "init_from_rc"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_background"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_icon"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_hline"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_vline"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_shadow"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_arrow"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_diamond"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_box"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_flat_box"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_check"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_option"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_tab"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_shadow_gap"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_box_gap"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_extension"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_focus"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_slider"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_handle"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_expander"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_layout"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_resize_grip"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_spinner"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved6"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved7"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved8"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved9"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved10"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved11"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "StyleClass"
+}

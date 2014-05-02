@@ -11,17 +11,10 @@
         }
     ],
     "doc": "<p>A GtkListBox is a vertical container that contains GtkListBoxRow\nchildren. These rows can by dynamically sorted and filtered, and\nheaders can be added dynamically depending on the row content.\nIt also allows keyboard and mouse navigation and selection like\na typical list.</p><p>Using GtkListBox is often an alternative to <span data-xref=\"Gtk.TreeView\"/>, especially\nwhen the list contents has a more complicated layout than what is allowed\nby a <span data-xref=\"Gtk.CellRenderer\"/>, or when the contents is interactive (i.e. has a\nbutton in it).</p><p>Although a <span data-xref=\"Gtk.ListBox\"/> must have only <span data-xref=\"Gtk.ListBoxRow\"/> children you can\nadd any kind of widget to it via <span data-xref=\"Gtk.Container.add\"/>, and a <span data-xref=\"Gtk.ListBoxRow\"/>\nwidget will automatically be inserted between the list and the widget.</p><p>The GtkListBox widget was added in GTK+ 3.10.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>This is a helper function for implementing DnD onto a <span data-xref=\"Gtk.ListBox\"/>.\nThe passed in <code>row</code> will be highlighted via <span data-xref=\"Gtk.Widget.drag_highlight\"/>,\nand any previously highlighted row will be unhighlighted.</p><p>The row will also be unhighlighted when the widget gets\na drag leave event.</p>",
+            "doc": "<p>This is a helper function for implementing DnD onto a <span data-xref=\"Gtk.ListBox\"/>.\nThe passed in <pre>row</pre> will be highlighted via <span data-xref=\"Gtk.Widget.drag_highlight\"/>,\nand any previously highlighted row will be unhighlighted.</p><p>The row will also be unhighlighted when the widget gets\na drag leave event.</p>",
             "kind": "method",
             "name": "drag_highlight_row",
             "parameters": [
@@ -80,7 +73,7 @@
             }
         },
         {
-            "doc": "<p>Gets the row at the <code>y</code> position.</p>",
+            "doc": "<p>Gets the row at the <pre>y</pre> position.</p>",
             "kind": "method",
             "name": "get_row_at_y",
             "parameters": [
@@ -123,7 +116,7 @@
             }
         },
         {
-            "doc": "<p>Insert the <code>child</code> into the <code>box</code> at <code>position</code>. If a sort function is\nset, the widget will actually be inserted at the calculated position and\nthis function has the same effect of <span data-xref=\"Gtk.Container.add\"/>.</p><p>If <code>position</code> is -1, or larger than the total number of items in the\n<code>box</code>, then the <code>child</code> will be appended to the end.</p>",
+            "doc": "<p>Insert the <pre>child</pre> into the <pre>box</pre> at <pre>position</pre>. If a sort function is\nset, the widget will actually be inserted at the calculated position and\nthis function has the same effect of <span data-xref=\"Gtk.Container.add\"/>.</p><p>If <pre>position</pre> is -1, or larger than the total number of items in the\n<pre>box</pre>, then the <pre>child</pre> will be appended to the end.</p>",
             "kind": "method",
             "name": "insert",
             "parameters": [
@@ -145,7 +138,7 @@
             }
         },
         {
-            "doc": "<p>Update the filtering for all rows. Call this when result\nof the filter function on the <code>box</code> is changed due\nto an external factor. For instance, this would be used\nif the filter function just looked for a specific search\nstring and the entry with the search string has changed.</p>",
+            "doc": "<p>Update the filtering for all rows. Call this when result\nof the filter function on the <pre>box</pre> is changed due\nto an external factor. For instance, this would be used\nif the filter function just looked for a specific search\nstring and the entry with the search string has changed.</p>",
             "kind": "method",
             "name": "invalidate_filter",
             "parameters": [],
@@ -154,7 +147,7 @@
             }
         },
         {
-            "doc": "<p>Update the separators for all rows. Call this when result\nof the header function on the <code>box</code> is changed due\nto an external factor.</p>",
+            "doc": "<p>Update the separators for all rows. Call this when result\nof the header function on the <pre>box</pre> is changed due\nto an external factor.</p>",
             "kind": "method",
             "name": "invalidate_headers",
             "parameters": [],
@@ -163,7 +156,7 @@
             }
         },
         {
-            "doc": "<p>Update the sorting for all rows. Call this when result\nof the sort function on the <code>box</code> is changed due\nto an external factor.</p>",
+            "doc": "<p>Update the sorting for all rows. Call this when result\nof the sort function on the <pre>box</pre> is changed due\nto an external factor.</p>",
             "kind": "method",
             "name": "invalidate_sort",
             "parameters": [],
@@ -188,7 +181,7 @@
             }
         },
         {
-            "doc": "<p>Select all children of <code>box</code>, if the selection mode allows it.</p>",
+            "doc": "<p>Select all children of <pre>box</pre>, if the selection mode allows it.</p>",
             "kind": "method",
             "name": "select_all",
             "parameters": [],
@@ -197,7 +190,7 @@
             }
         },
         {
-            "doc": "<p>Make <code>row</code> the currently selected row.</p>",
+            "doc": "<p>Make <pre>row</pre> the currently selected row.</p>",
             "kind": "method",
             "name": "select_row",
             "parameters": [
@@ -235,7 +228,7 @@
             }
         },
         {
-            "doc": "<p>If <code>single</code> is <code>true</code>, rows will be activated when you click on them,\notherwise you need to double-click.</p>",
+            "doc": "<p>If <pre>single</pre> is <pre>true</pre>, rows will be activated when you click on them,\notherwise you need to double-click.</p>",
             "kind": "method",
             "name": "set_activate_on_single_click",
             "parameters": [
@@ -251,7 +244,7 @@
             }
         },
         {
-            "doc": "<p>Sets the adjustment (if any) that the widget uses to\nfor vertical scrolling. For instance, this is used\nto get the page size for PageUp/Down key handling.</p><p>In the normal case when the <code>box</code> is packed inside\na <span data-xref=\"Gtk.ScrolledWindow\"/> the adjustment from that will\nbe picked up automatically, so there is no need\nto manually do that.</p>",
+            "doc": "<p>Sets the adjustment (if any) that the widget uses to\nfor vertical scrolling. For instance, this is used\nto get the page size for PageUp/Down key handling.</p><p>In the normal case when the <pre>box</pre> is packed inside\na <span data-xref=\"Gtk.ScrolledWindow\"/> the adjustment from that will\nbe picked up automatically, so there is no need\nto manually do that.</p>",
             "kind": "method",
             "name": "set_adjustment",
             "parameters": [
@@ -267,7 +260,7 @@
             }
         },
         {
-            "doc": "<p>By setting a filter function on the <code>box</code> one can decide dynamically which\nof the rows to show. For instance, to implement a search function on a list that\nfilters the original list to only show the matching rows.</p><p>The <code>filter_func</code> will be called for each row after the call, and it will\ncontinue to be called each time a row changes (via <span data-xref=\"Gtk.ListBoxRow.changed\"/>) or\nwhen <span data-xref=\"Gtk.ListBox.invalidate_filter\"/> is called.</p>",
+            "doc": "<p>By setting a filter function on the <pre>box</pre> one can decide dynamically which\nof the rows to show. For instance, to implement a search function on a list that\nfilters the original list to only show the matching rows.</p><p>The <pre>filter_func</pre> will be called for each row after the call, and it will\ncontinue to be called each time a row changes (via <span data-xref=\"Gtk.ListBoxRow.changed\"/>) or\nwhen <span data-xref=\"Gtk.ListBox.invalidate_filter\"/> is called.</p>",
             "kind": "method",
             "name": "set_filter_func",
             "parameters": [
@@ -295,7 +288,7 @@
             }
         },
         {
-            "doc": "<p>By setting a header function on the <code>box</code> one can dynamically add headers\nin front of rows, depending on the contents of the row and its position in the list.\nFor instance, one could use it to add headers in front of the first item of a\nnew kind, in a list sorted by the kind.</p><p>The <code>update_header</code> can look at the current header widget using <span data-xref=\"Gtk.ListBoxRow.get_header\"/>\nand either update the state of the widget as needed, or set a new one using\n<span data-xref=\"Gtk.ListBoxRow.set_header\"/>. If no header is needed, set the header to <code>null</code>.</p><p>Note that you may get many calls <code>update_header</code> to this for a particular row when e.g.\nchanging things that don\u2019t affect the header. In this case it is important for performance\nto not blindly replace an exisiting header widh an identical one.</p><p>The <code>update_header</code> function will be called for each row after the call, and it will\ncontinue to be called each time a row changes (via <span data-xref=\"Gtk.ListBoxRow.changed\"/>) and when\nthe row before changes (either by <span data-xref=\"Gtk.ListBoxRow.changed\"/> on the previous row, or when\nthe previous row becomes a different row). It is also called for all rows when\n<span data-xref=\"Gtk.ListBox.invalidate_headers\"/> is called.</p>",
+            "doc": "<p>By setting a header function on the <pre>box</pre> one can dynamically add headers\nin front of rows, depending on the contents of the row and its position in the list.\nFor instance, one could use it to add headers in front of the first item of a\nnew kind, in a list sorted by the kind.</p><p>The <pre>update_header</pre> can look at the current header widget using <span data-xref=\"Gtk.ListBoxRow.get_header\"/>\nand either update the state of the widget as needed, or set a new one using\n<span data-xref=\"Gtk.ListBoxRow.set_header\"/>. If no header is needed, set the header to <pre>null</pre>.</p><p>Note that you may get many calls <pre>update_header</pre> to this for a particular row when e.g.\nchanging things that don\u2019t affect the header. In this case it is important for performance\nto not blindly replace an exisiting header widh an identical one.</p><p>The <pre>update_header</pre> function will be called for each row after the call, and it will\ncontinue to be called each time a row changes (via <span data-xref=\"Gtk.ListBoxRow.changed\"/>) and when\nthe row before changes (either by <span data-xref=\"Gtk.ListBoxRow.changed\"/> on the previous row, or when\nthe previous row becomes a different row). It is also called for all rows when\n<span data-xref=\"Gtk.ListBox.invalidate_headers\"/> is called.</p>",
             "kind": "method",
             "name": "set_header_func",
             "parameters": [
@@ -355,7 +348,7 @@
             }
         },
         {
-            "doc": "<p>By setting a sort function on the <code>box</code> one can dynamically reorder the rows\nof the list, based on the contents of the rows.</p><p>The <code>sort_func</code> will be called for each row after the call, and will continue to\nbe called each time a row changes (via <span data-xref=\"Gtk.ListBoxRow.changed\"/>) and when\n<span data-xref=\"Gtk.ListBox.invalidate_sort\"/> is called.</p>",
+            "doc": "<p>By setting a sort function on the <pre>box</pre> one can dynamically reorder the rows\nof the list, based on the contents of the rows.</p><p>The <pre>sort_func</pre> will be called for each row after the call, and will continue to\nbe called each time a row changes (via <span data-xref=\"Gtk.ListBoxRow.changed\"/>) and when\n<span data-xref=\"Gtk.ListBox.invalidate_sort\"/> is called.</p>",
             "kind": "method",
             "name": "set_sort_func",
             "parameters": [
@@ -383,7 +376,7 @@
             }
         },
         {
-            "doc": "<p>Unselect all children of <code>box</code>, if the selection mode allows it.</p>",
+            "doc": "<p>Unselect all children of <pre>box</pre>, if the selection mode allows it.</p>",
             "kind": "method",
             "name": "unselect_all",
             "parameters": [],
@@ -392,7 +385,7 @@
             }
         },
         {
-            "doc": "<p>Unselects a single row of <code>box</code>, if the selection mode allows it.</p>",
+            "doc": "<p>Unselects a single row of <pre>box</pre>, if the selection mode allows it.</p>",
             "kind": "method",
             "name": "unselect_row",
             "parameters": [
@@ -406,8 +399,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ListBox",
     "properties": [
@@ -473,7 +465,7 @@
             }
         },
         {
-            "doc": "<p>The ::row-selected signal is emitted when a new row is selected, or\n(with a <code>null</code> <code>row</code>) when the selection is cleared.</p><p>Also see <span data-xref=\"Gtk.ListBox-selected-rows-changed\"/>.</p>",
+            "doc": "<p>The ::row-selected signal is emitted when a new row is selected, or\n(with a <pre>null</pre> <pre>row</pre>) when the selection is cleared.</p><p>Also see <span data-xref=\"Gtk.ListBox-selected-rows-changed\"/>.</p>",
             "kind": "signal",
             "name": "row-selected",
             "parameters": [
@@ -590,7 +582,7 @@
             }
         },
         {
-            "doc": "<p>Select all children of <code>box</code>, if the selection mode allows it.</p>",
+            "doc": "<p>Select all children of <pre>box</pre>, if the selection mode allows it.</p>",
             "kind": "vfunc",
             "name": "select_all",
             "parameters": [],
@@ -617,7 +609,7 @@
             }
         },
         {
-            "doc": "<p>Unselect all children of <code>box</code>, if the selection mode allows it.</p>",
+            "doc": "<p>Unselect all children of <pre>box</pre>, if the selection mode allows it.</p>",
             "kind": "vfunc",
             "name": "unselect_all",
             "parameters": [],

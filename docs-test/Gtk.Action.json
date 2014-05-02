@@ -35,19 +35,7 @@
             }
         }
     ],
-    "doc": "<p>&gt; In GTK+ 3.10, GtkAction has been deprecated. Use <span data-xref=\"Gio.Action\">Gio.Action</span>\n&gt; instead, and associate actions with <span data-xref=\"Gtk.Actionable\"/> widgets. Use\n&gt; <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span> for creating menus with <span data-xref=\"Gtk.Menu.new_from_model\"/>.</p><p>Actions represent operations that the user can be perform, along with\nsome information how it should be presented in the interface. Each action\nprovides methods to create icons, menu items and toolbar items\nrepresenting itself.</p><p>As well as the callback that is called when the action gets activated,\nthe following also gets associated with the action:</p><ul>\n<li>a name (not translated, for path lookup)</li>\n</ul><ul>\n<li>a label (translated, for display)</li>\n</ul><ul>\n<li>an accelerator</li>\n</ul><ul>\n<li>whether label indicates a stock id</li>\n</ul><ul>\n<li>a tooltip (optional, translated)</li>\n</ul><ul>\n<li>a toolbar label (optional, shorter than label)</li>\n</ul><p>The action will also have some state information:</p><ul>\n<li>visible (shown/hidden)</li>\n</ul><ul>\n<li>sensitive (enabled/disabled)</li>\n</ul><p>Apart from regular actions, there are [toggle actions][GtkToggleAction],\nwhich can be toggled between two states and\n[radio actions][GtkRadioAction], of which only one in a group\ncan be in the \u201cactive\u201d state. Other actions can be implemented as <span data-xref=\"Gtk.Action\"/>\nsubclasses.</p><p>Each action can have one or more proxy widgets. To act as an action proxy,\nwidget needs to implement <span data-xref=\"Gtk.Activatable\"/> interface. Proxies mirror the state\nof the action and should change when the action\u2019s state changes. Properties\nthat are always mirrored by proxies are <span data-xref=\"Gtk.Action-sensitive\"/> and\n<span data-xref=\"Gtk.Action-visible\"/>. <span data-xref=\"Gtk.Action-gicon\"/>, <span data-xref=\"Gtk.Action-icon-name\"/>, <span data-xref=\"Gtk.Action-label\"/>,\n<span data-xref=\"Gtk.Action-short-label\"/> and <span data-xref=\"Gtk.Action-stock-id\"/> properties are only mirorred\nif proxy widget has <span data-xref=\"Gtk.Activatable-use-action-appearance\"/> property set to\n<code>true</code>.</p><p>When the proxy is activated, it should activate its action.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "object"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "private_data"
-        }
-    ],
+    "doc": "<blockquote>\n<p>In GTK+ 3.10, GtkAction has been deprecated. Use <span data-xref=\"Gio.Action\">Gio.Action</span>\ninstead, and associate actions with <span data-xref=\"Gtk.Actionable\"/> widgets. Use\n<span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span> for creating menus with <span data-xref=\"Gtk.Menu.new_from_model\"/>.</p>\n</blockquote><p>Actions represent operations that the user can be perform, along with\nsome information how it should be presented in the interface. Each action\nprovides methods to create icons, menu items and toolbar items\nrepresenting itself.</p><p>As well as the callback that is called when the action gets activated,\nthe following also gets associated with the action:</p><ul>\n<li>a name (not translated, for path lookup)</li>\n</ul><ul>\n<li>a label (translated, for display)</li>\n</ul><ul>\n<li>an accelerator</li>\n</ul><ul>\n<li>whether label indicates a stock id</li>\n</ul><ul>\n<li>a tooltip (optional, translated)</li>\n</ul><ul>\n<li>a toolbar label (optional, shorter than label)</li>\n</ul><p>The action will also have some state information:</p><ul>\n<li>visible (shown/hidden)</li>\n</ul><ul>\n<li>sensitive (enabled/disabled)</li>\n</ul><p>Apart from regular actions, there are [toggle actions][GtkToggleAction],\nwhich can be toggled between two states and\n[radio actions][GtkRadioAction], of which only one in a group\ncan be in the \u201cactive\u201d state. Other actions can be implemented as <span data-xref=\"Gtk.Action\"/>\nsubclasses.</p><p>Each action can have one or more proxy widgets. To act as an action proxy,\nwidget needs to implement <span data-xref=\"Gtk.Activatable\"/> interface. Proxies mirror the state\nof the action and should change when the action\u2019s state changes. Properties\nthat are always mirrored by proxies are <span data-xref=\"Gtk.Action-sensitive\"/> and\n<span data-xref=\"Gtk.Action-visible\"/>. <span data-xref=\"Gtk.Action-gicon\"/>, <span data-xref=\"Gtk.Action-icon-name\"/>, <span data-xref=\"Gtk.Action-label\"/>,\n<span data-xref=\"Gtk.Action-short-label\"/> and <span data-xref=\"Gtk.Action-stock-id\"/> properties are only mirorred\nif proxy widget has <span data-xref=\"Gtk.Activatable-use-action-appearance\"/> property set to\n<pre>true</pre>.</p><p>When the proxy is activated, it should activate its action.</p>",
     "kind": "class",
     "methods": [
         {
@@ -69,7 +57,7 @@
             }
         },
         {
-            "doc": "<p>Installs the accelerator for <code>action</code> if <code>action</code> has an\naccel path and group. See <span data-xref=\"Gtk.Action.set_accel_path\"/> and\n<span data-xref=\"Gtk.Action.set_accel_group\"/></p><p>Since multiple proxies may independently trigger the installation\nof the accelerator, the <code>action</code> counts the number of times this\nfunction has been called and doesn\u2019t remove the accelerator until\n<span data-xref=\"Gtk.Action.disconnect_accelerator\"/> has been called as many times.</p>",
+            "doc": "<p>Installs the accelerator for <pre>action</pre> if <pre>action</pre> has an\naccel path and group. See <span data-xref=\"Gtk.Action.set_accel_path\"/> and\n<span data-xref=\"Gtk.Action.set_accel_group\"/></p><p>Since multiple proxies may independently trigger the installation\nof the accelerator, the <pre>action</pre> counts the number of times this\nfunction has been called and doesn\u2019t remove the accelerator until\n<span data-xref=\"Gtk.Action.disconnect_accelerator\"/> has been called as many times.</p>",
             "kind": "method",
             "name": "connect_accelerator",
             "parameters": [],
@@ -94,7 +82,7 @@
             }
         },
         {
-            "doc": "<p>If <code>action</code> provides a <span data-xref=\"Gtk.Menu\"/> widget as a submenu for the menu\nitem or the toolbar item it creates, this function returns an\ninstance of that menu.</p>",
+            "doc": "<p>If <pre>action</pre> provides a <span data-xref=\"Gtk.Menu\"/> widget as a submenu for the menu\nitem or the toolbar item it creates, this function returns an\ninstance of that menu.</p>",
             "kind": "method",
             "name": "create_menu",
             "parameters": [],
@@ -148,7 +136,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether <code>action</code>'s menu item proxies will always\nshow their image, if available.</p>",
+            "doc": "<p>Returns whether <pre>action</pre>'s menu item proxies will always\nshow their image, if available.</p>",
             "kind": "method",
             "name": "get_always_show_image",
             "parameters": [],
@@ -157,7 +145,7 @@
             }
         },
         {
-            "doc": "<p>Gets the gicon of <code>action</code>.</p>",
+            "doc": "<p>Gets the gicon of <pre>action</pre>.</p>",
             "kind": "method",
             "name": "get_gicon",
             "parameters": [],
@@ -166,7 +154,7 @@
             }
         },
         {
-            "doc": "<p>Gets the icon name of <code>action</code>.</p>",
+            "doc": "<p>Gets the icon name of <pre>action</pre>.</p>",
             "kind": "method",
             "name": "get_icon_name",
             "parameters": [],
@@ -175,7 +163,7 @@
             }
         },
         {
-            "doc": "<p>Checks whether <code>action</code> is important or not</p>",
+            "doc": "<p>Checks whether <pre>action</pre> is important or not</p>",
             "kind": "method",
             "name": "get_is_important",
             "parameters": [],
@@ -184,7 +172,7 @@
             }
         },
         {
-            "doc": "<p>Gets the label text of <code>action</code>.</p>",
+            "doc": "<p>Gets the label text of <pre>action</pre>.</p>",
             "kind": "method",
             "name": "get_label",
             "parameters": [],
@@ -220,7 +208,7 @@
             }
         },
         {
-            "doc": "<p>Gets the short label text of <code>action</code>.</p>",
+            "doc": "<p>Gets the short label text of <pre>action</pre>.</p>",
             "kind": "method",
             "name": "get_short_label",
             "parameters": [],
@@ -229,7 +217,7 @@
             }
         },
         {
-            "doc": "<p>Gets the stock id of <code>action</code>.</p>",
+            "doc": "<p>Gets the stock id of <pre>action</pre>.</p>",
             "kind": "method",
             "name": "get_stock_id",
             "parameters": [],
@@ -238,7 +226,7 @@
             }
         },
         {
-            "doc": "<p>Gets the tooltip text of <code>action</code>.</p>",
+            "doc": "<p>Gets the tooltip text of <pre>action</pre>.</p>",
             "kind": "method",
             "name": "get_tooltip",
             "parameters": [],
@@ -256,7 +244,7 @@
             }
         },
         {
-            "doc": "<p>Checks whether <code>action</code> is visible when horizontal</p>",
+            "doc": "<p>Checks whether <pre>action</pre> is visible when horizontal</p>",
             "kind": "method",
             "name": "get_visible_horizontal",
             "parameters": [],
@@ -265,7 +253,7 @@
             }
         },
         {
-            "doc": "<p>Checks whether <code>action</code> is visible when horizontal</p>",
+            "doc": "<p>Checks whether <pre>action</pre> is visible when horizontal</p>",
             "kind": "method",
             "name": "get_visible_vertical",
             "parameters": [],
@@ -308,7 +296,7 @@
             }
         },
         {
-            "doc": "<p>Sets the accel path for this action.  All proxy widgets associated\nwith the action will have this accel path, so that their\naccelerators are consistent.</p><p>Note that <code>accel_path</code> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>. Therefore, if you\npass a static string, you can save some memory by interning it first with\n<span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
+            "doc": "<p>Sets the accel path for this action.  All proxy widgets associated\nwith the action will have this accel path, so that their\naccelerators are consistent.</p><p>Note that <pre>accel_path</pre> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>. Therefore, if you\npass a static string, you can save some memory by interning it first with\n<span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
             "kind": "method",
             "name": "set_accel_path",
             "parameters": [
@@ -324,7 +312,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>action</code>'s menu item proxies will ignore the\n<span data-xref=\"Gtk.Settings-gtk-menu-images\"/> setting and always show their image, if available.</p><p>Use this if the menu item would be useless or hard to use\nwithout their image.</p>",
+            "doc": "<p>Sets whether <pre>action</pre>'s menu item proxies will ignore the\n<span data-xref=\"Gtk.Settings-gtk-menu-images\"/> setting and always show their image, if available.</p><p>Use this if the menu item would be useless or hard to use\nwithout their image.</p>",
             "kind": "method",
             "name": "set_always_show_image",
             "parameters": [
@@ -340,7 +328,7 @@
             }
         },
         {
-            "doc": "<p>Sets the icon of <code>action</code>.</p>",
+            "doc": "<p>Sets the icon of <pre>action</pre>.</p>",
             "kind": "method",
             "name": "set_gicon",
             "parameters": [
@@ -356,7 +344,7 @@
             }
         },
         {
-            "doc": "<p>Sets the icon name on <code>action</code></p>",
+            "doc": "<p>Sets the icon name on <pre>action</pre></p>",
             "kind": "method",
             "name": "set_icon_name",
             "parameters": [
@@ -388,7 +376,7 @@
             }
         },
         {
-            "doc": "<p>Sets the label of <code>action</code>.</p>",
+            "doc": "<p>Sets the label of <pre>action</pre>.</p>",
             "kind": "method",
             "name": "set_label",
             "parameters": [
@@ -404,7 +392,7 @@
             }
         },
         {
-            "doc": "<p>Sets the :sensitive property of the action to <code>sensitive</code>. Note that\nthis doesn\u2019t necessarily mean effective sensitivity. See\n<span data-xref=\"Gtk.Action.is_sensitive\"/>\nfor that.</p>",
+            "doc": "<p>Sets the :sensitive property of the action to <pre>sensitive</pre>. Note that\nthis doesn\u2019t necessarily mean effective sensitivity. See\n<span data-xref=\"Gtk.Action.is_sensitive\"/>\nfor that.</p>",
             "kind": "method",
             "name": "set_sensitive",
             "parameters": [
@@ -420,7 +408,7 @@
             }
         },
         {
-            "doc": "<p>Sets a shorter label text on <code>action</code>.</p>",
+            "doc": "<p>Sets a shorter label text on <pre>action</pre>.</p>",
             "kind": "method",
             "name": "set_short_label",
             "parameters": [
@@ -436,7 +424,7 @@
             }
         },
         {
-            "doc": "<p>Sets the stock id on <code>action</code></p>",
+            "doc": "<p>Sets the stock id on <pre>action</pre></p>",
             "kind": "method",
             "name": "set_stock_id",
             "parameters": [
@@ -452,7 +440,7 @@
             }
         },
         {
-            "doc": "<p>Sets the tooltip text on <code>action</code></p>",
+            "doc": "<p>Sets the tooltip text on <pre>action</pre></p>",
             "kind": "method",
             "name": "set_tooltip",
             "parameters": [
@@ -468,7 +456,7 @@
             }
         },
         {
-            "doc": "<p>Sets the :visible property of the action to <code>visible</code>. Note that\nthis doesn\u2019t necessarily mean effective visibility. See\n<span data-xref=\"Gtk.Action.is_visible\"/>\nfor that.</p>",
+            "doc": "<p>Sets the :visible property of the action to <pre>visible</pre>. Note that\nthis doesn\u2019t necessarily mean effective visibility. See\n<span data-xref=\"Gtk.Action.is_visible\"/>\nfor that.</p>",
             "kind": "method",
             "name": "set_visible",
             "parameters": [
@@ -484,7 +472,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>action</code> is visible when horizontal</p>",
+            "doc": "<p>Sets whether <pre>action</pre> is visible when horizontal</p>",
             "kind": "method",
             "name": "set_visible_horizontal",
             "parameters": [
@@ -500,7 +488,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>action</code> is visible when vertical</p>",
+            "doc": "<p>Sets whether <pre>action</pre> is visible when vertical</p>",
             "kind": "method",
             "name": "set_visible_vertical",
             "parameters": [
@@ -523,8 +511,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Action",
     "properties": [
@@ -535,13 +522,13 @@
             "type": "Gtk.ActionGroup"
         },
         {
-            "doc": "<p>If <code>true</code>, the action's menu item proxies will ignore the <span data-xref=\"Gtk.Settings-gtk-menu-images\"/>\nsetting and always show their image, if available.</p><p>Use this property if the menu item would be useless or hard to use\nwithout their image.</p>",
+            "doc": "<p>If <pre>true</pre>, the action's menu item proxies will ignore the <span data-xref=\"Gtk.Settings-gtk-menu-images\"/>\nsetting and always show their image, if available.</p><p>Use this property if the menu item would be useless or hard to use\nwithout their image.</p>",
             "kind": "property",
             "name": "always-show-image",
             "type": "Boolean"
         },
         {
-            "doc": "<p>The <span data-xref=\"Gio.Icon\">Gio.Icon</span> displayed in the <span data-xref=\"Gtk.Action\"/>.</p><p>Note that the stock icon is preferred, if the <span data-xref=\"Gtk.Action-stock-id\"/>\nproperty holds the id of an existing stock icon.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <code>true</code>.</p>",
+            "doc": "<p>The <span data-xref=\"Gio.Icon\">Gio.Icon</span> displayed in the <span data-xref=\"Gtk.Action\"/>.</p><p>Note that the stock icon is preferred, if the <span data-xref=\"Gtk.Action-stock-id\"/>\nproperty holds the id of an existing stock icon.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <pre>true</pre>.</p>",
             "kind": "property",
             "name": "gicon",
             "type": "Gio.Icon"
@@ -553,7 +540,7 @@
             "type": "Boolean"
         },
         {
-            "doc": "<p>The name of the icon from the icon theme.</p><p>Note that the stock icon is preferred, if the <span data-xref=\"Gtk.Action-stock-id\"/>\nproperty holds the id of an existing stock icon, and the <span data-xref=\"Gio.Icon\">Gio.Icon</span> is\npreferred if the <span data-xref=\"Gtk.Action-gicon\"/> property is set.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <code>true</code>.</p>",
+            "doc": "<p>The name of the icon from the icon theme.</p><p>Note that the stock icon is preferred, if the <span data-xref=\"Gtk.Action-stock-id\"/>\nproperty holds the id of an existing stock icon, and the <span data-xref=\"Gio.Icon\">Gio.Icon</span> is\npreferred if the <span data-xref=\"Gtk.Action-gicon\"/> property is set.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <pre>true</pre>.</p>",
             "kind": "property",
             "name": "icon-name",
             "type": "String"
@@ -565,7 +552,7 @@
             "type": "Boolean"
         },
         {
-            "doc": "<p>The label used for menu items and buttons that activate\nthis action. If the label is <code>null</code>, GTK+ uses the stock\nlabel specified via the stock-id property.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <code>true</code>.</p>",
+            "doc": "<p>The label used for menu items and buttons that activate\nthis action. If the label is <pre>null</pre>, GTK+ uses the stock\nlabel specified via the stock-id property.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <pre>true</pre>.</p>",
             "kind": "property",
             "name": "label",
             "type": "String"
@@ -583,13 +570,13 @@
             "type": "Boolean"
         },
         {
-            "doc": "<p>A shorter label that may be used on toolbar buttons.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <code>true</code>.</p>",
+            "doc": "<p>A shorter label that may be used on toolbar buttons.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <pre>true</pre>.</p>",
             "kind": "property",
             "name": "short-label",
             "type": "String"
         },
         {
-            "doc": "<p>The stock icon displayed in widgets representing this action.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <code>true</code>.</p>",
+            "doc": "<p>The stock icon displayed in widgets representing this action.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <pre>true</pre>.</p>",
             "kind": "property",
             "name": "stock-id",
             "type": "String"
@@ -613,7 +600,7 @@
             "type": "Boolean"
         },
         {
-            "doc": "<p>When <code>true</code>, toolitem proxies for this action are represented in the\ntoolbar overflow menu.</p>",
+            "doc": "<p>When <pre>true</pre>, toolitem proxies for this action are represented in the\ntoolbar overflow menu.</p>",
             "kind": "property",
             "name": "visible-overflown",
             "type": "Boolean"
@@ -663,7 +650,7 @@
             }
         },
         {
-            "doc": "<p>If <code>action</code> provides a <span data-xref=\"Gtk.Menu\"/> widget as a submenu for the menu\nitem or the toolbar item it creates, this function returns an\ninstance of that menu.</p>",
+            "doc": "<p>If <pre>action</pre> provides a <span data-xref=\"Gtk.Menu\"/> widget as a submenu for the menu\nitem or the toolbar item it creates, this function returns an\ninstance of that menu.</p>",
             "kind": "vfunc",
             "name": "create_menu",
             "parameters": [],

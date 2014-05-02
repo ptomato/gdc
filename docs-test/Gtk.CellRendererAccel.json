@@ -11,22 +11,8 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.CellRendererAccel\"/> displays a keyboard accelerator (i.e. a\nkey combination like <code>Control + a</code>.\nIf the cell renderer is editable, the accelerator can be changed by\nsimply typing the new combination.</p><p>The <span data-xref=\"Gtk.CellRendererAccel\"/> cell renderer was added in GTK+ 2.10.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "CellRendererAccel",
     "properties": [
         {

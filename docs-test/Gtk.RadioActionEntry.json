@@ -1,0 +1,39 @@
+{
+    "constructors": [],
+    "doc": "<p><span data-xref=\"Gtk.RadioActionEntry\"/> structs are used with\n<span data-xref=\"Gtk.ActionGroup.add_radio_actions\"/> to construct groups of radio actions.</p>",
+    "fields": [
+        {
+            "doc": "<p>The name of the action.</p>",
+            "kind": "field",
+            "name": "name"
+        },
+        {
+            "doc": "<p>The stock id for the action, or the name of an icon from the\n icon theme.</p>",
+            "kind": "field",
+            "name": "stock_id"
+        },
+        {
+            "doc": "<p>The label for the action. This field should typically be marked\n for translation, see <span data-xref=\"Gtk.ActionGroup.set_translation_domain\"/>.</p>",
+            "kind": "field",
+            "name": "label"
+        },
+        {
+            "doc": "<p>The accelerator for the action, in the format understood by\n <span data-xref=\"Gtk.accelerator_parse\"/>.</p>",
+            "kind": "field",
+            "name": "accelerator"
+        },
+        {
+            "doc": "<p>The tooltip for the action. This field should typically be\n marked for translation, see <span data-xref=\"Gtk.ActionGroup.set_translation_domain\"/>.</p>",
+            "kind": "field",
+            "name": "tooltip"
+        },
+        {
+            "doc": "<p>The value to set on the radio action. See\n <span data-xref=\"Gtk.RadioAction.get_current_value\"/>.</p>",
+            "kind": "field",
+            "name": "value"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "RadioActionEntry"
+}

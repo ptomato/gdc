@@ -1,0 +1,22 @@
+{
+    "doc": "<p>See also <span data-xref=\"Gtk.PrintSettings.set_duplex\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>No duplex.</p>",
+            "kind": "default",
+            "name": "simplex"
+        },
+        {
+            "doc": "<p>Horizontal duplex.</p>",
+            "kind": "default",
+            "name": "horizontal"
+        },
+        {
+            "doc": "<p>Vertical duplex.</p>",
+            "kind": "default",
+            "name": "vertical"
+        }
+    ],
+    "name": "PrintDuplex"
+}

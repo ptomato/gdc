@@ -1,0 +1,27 @@
+{
+    "doc": "<p>The mode of the size group determines the directions in which the size\ngroup affects the requested sizes of its component widgets.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>group has no effect</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>group affects horizontal requisition</p>",
+            "kind": "default",
+            "name": "horizontal"
+        },
+        {
+            "doc": "<p>group affects vertical requisition</p>",
+            "kind": "default",
+            "name": "vertical"
+        },
+        {
+            "doc": "<p>group affects both horizontal and vertical requisition</p>",
+            "kind": "default",
+            "name": "both"
+        }
+    ],
+    "name": "SizeGroupMode"
+}

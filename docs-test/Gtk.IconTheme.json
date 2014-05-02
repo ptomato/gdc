@@ -10,19 +10,7 @@
             }
         }
     ],
-    "doc": "<p><span data-xref=\"Gtk.IconTheme\"/> provides a facility for looking up icons by name\nand size. The main reason for using a name rather than simply\nproviding a filename is to allow different icons to be used\ndepending on what \u201cicon theme\u201d is selected\nby the user. The operation of icon themes on Linux and Unix\nfollows the <a href=\"http://www.freedesktop.org/Standards/icon-theme-spec\">Icon Theme Specification</a>\nThere is a default icon theme,\nnamed <code>hicolor</code> where applications should install\ntheir icons, but more additional application themes can be\ninstalled as operating system vendors and users choose.</p><p>Named icons are similar to the deprecated [Stock Items][gtkstock],\nand the distinction between the two may be a bit confusing.\nA few things to keep in mind:</p><ul>\n<li>Stock images usually are used in conjunction with\n  [Stock Items][gtkstock], such as %GTK_STOCK_OK or\n  %GTK_STOCK_OPEN. Named icons are easier to set up and therefore\n  are more useful for new icons that an application wants to\n  add, such as application icons or window icons.</li>\n</ul><ul>\n<li>Stock images can only be loaded at the symbolic sizes defined\n  by the <span data-xref=\"Gtk.IconSize\"/> enumeration, or by custom sizes defined\n  by <span data-xref=\"Gtk.icon_size_register\"/>, while named icons are more flexible\n  and any pixel size can be specified.</li>\n</ul><ul>\n<li>Because stock images are closely tied to stock items, and thus\n  to actions in the user interface, stock images may come in\n  multiple variants for different widget states or writing\n  directions.</li>\n</ul><p>A good rule of thumb is that if there is a stock image for what\nyou want to use, use it, otherwise use a named icon. It turns\nout that internally stock images are generally defined in\nterms of one or more named icons. (An example of the\nmore than one case is icons that depend on writing direction;\n%GTK_STOCK_GO_FORWARD uses the two themed icons\n\u201cgtk-stock-go-forward-ltr\u201d and \u201cgtk-stock-go-forward-rtl\u201d.)</p><p>In many cases, named themes are used indirectly, via <span data-xref=\"Gtk.Image\"/>\nor stock items, rather than directly, but looking up icons\ndirectly is also simple. The <span data-xref=\"Gtk.IconTheme\"/> object acts\nas a database of all the icons in the current theme. You\ncan create new <span data-xref=\"Gtk.IconTheme\"/> objects, but it\u2019s much more\nefficient to use the standard icon theme for the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span>\nso that the icon information is shared with other people\nlooking up icons. In the case where the default screen is\nbeing used, looking up an icon can be as simple as:\n|[&lt;!-- language=\"C\" --&gt;\nGError <em>error = NULL;\nGtkIconTheme </em>icon_theme;\nGdkPixbuf *pixbuf;</p><p>icon_theme = gtk_icon_theme_get_default ();\npixbuf = gtk_icon_theme_load_icon (icon_theme,\n                                   \"my-icon-name\", // icon name\n                                   48, // icon size\n                                   0,  // flags\n                                   &amp;error);\nif (!pixbuf)\n  {\n    g_warning (\"Couldn\u2019t load icon: %s\", error-&gt;message);\n    g_error_free (error);\n  }\nelse\n  {\n    // Use the pixbuf\n    g_object_unref (pixbuf);\n  }\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p><span data-xref=\"Gtk.IconTheme\"/> provides a facility for looking up icons by name\nand size. The main reason for using a name rather than simply\nproviding a filename is to allow different icons to be used\ndepending on what \u201cicon theme\u201d is selected\nby the user. The operation of icon themes on Linux and Unix\nfollows the <a href=\"http://www.freedesktop.org/Standards/icon-theme-spec\">Icon Theme Specification</a>\nThere is a default icon theme,\nnamed <code>hicolor</code> where applications should install\ntheir icons, but more additional application themes can be\ninstalled as operating system vendors and users choose.</p><p>Named icons are similar to the deprecated [Stock Items][gtkstock],\nand the distinction between the two may be a bit confusing.\nA few things to keep in mind:</p><ul>\n<li>Stock images usually are used in conjunction with\n  [Stock Items][gtkstock], such as %GTK_STOCK_OK or\n  %GTK_STOCK_OPEN. Named icons are easier to set up and therefore\n  are more useful for new icons that an application wants to\n  add, such as application icons or window icons.</li>\n</ul><ul>\n<li>Stock images can only be loaded at the symbolic sizes defined\n  by the <span data-xref=\"Gtk.IconSize\"/> enumeration, or by custom sizes defined\n  by <span data-xref=\"Gtk.icon_size_register\"/>, while named icons are more flexible\n  and any pixel size can be specified.</li>\n</ul><ul>\n<li>Because stock images are closely tied to stock items, and thus\n  to actions in the user interface, stock images may come in\n  multiple variants for different widget states or writing\n  directions.</li>\n</ul><p>A good rule of thumb is that if there is a stock image for what\nyou want to use, use it, otherwise use a named icon. It turns\nout that internally stock images are generally defined in\nterms of one or more named icons. (An example of the\nmore than one case is icons that depend on writing direction;\n%GTK_STOCK_GO_FORWARD uses the two themed icons\n\u201cgtk-stock-go-forward-ltr\u201d and \u201cgtk-stock-go-forward-rtl\u201d.)</p><p>In many cases, named themes are used indirectly, via <span data-xref=\"Gtk.Image\"/>\nor stock items, rather than directly, but looking up icons\ndirectly is also simple. The <span data-xref=\"Gtk.IconTheme\"/> object acts\nas a database of all the icons in the current theme. You\ncan create new <span data-xref=\"Gtk.IconTheme\"/> objects, but it\u2019s much more\nefficient to use the standard icon theme for the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span>\nso that the icon information is shared with other people\nlooking up icons. In the case where the default screen is\nbeing used, looking up an icon can be as simple as:\n|[<!-- language=\"C\" -->\nGError <em>error = NULL;\nGtkIconTheme </em>icon_theme;\nGdkPixbuf *pixbuf;</p><p>icon_theme = gtk_icon_theme_get_default ();\npixbuf = gtk_icon_theme_load_icon (icon_theme,\n                                   \"my-icon-name\", // icon name\n                                   48, // icon size\n                                   0,  // flags\n                                   &amp;error);\nif (!pixbuf)\n  {\n    g_warning (\"Couldn\u2019t load icon: %s\", error-&gt;message);\n    g_error_free (error);\n  }\nelse\n  {\n    // Use the pixbuf\n    g_object_unref (pixbuf);\n  }\n]|</p>",
     "kind": "class",
     "methods": [
         {
@@ -42,7 +30,7 @@
             }
         },
         {
-            "doc": "<p>Looks up a named icon and returns a <span data-xref=\"Gtk.IconInfo\"/> containing\ninformation such as the filename of the icon. The icon\ncan then be rendered into a pixbuf using\n<span data-xref=\"Gtk.IconInfo.load_icon\"/>. (<span data-xref=\"Gtk.IconTheme.load_icon\"/>\ncombines these two steps if all you need is the pixbuf.)</p><p>If <code>icon_names</code> contains more than one name, this function\ntries them all in the given order before falling back to\ninherited icon themes.</p>",
+            "doc": "<p>Looks up a named icon and returns a <span data-xref=\"Gtk.IconInfo\"/> containing\ninformation such as the filename of the icon. The icon\ncan then be rendered into a pixbuf using\n<span data-xref=\"Gtk.IconInfo.load_icon\"/>. (<span data-xref=\"Gtk.IconTheme.load_icon\"/>\ncombines these two steps if all you need is the pixbuf.)</p><p>If <pre>icon_names</pre> contains more than one name, this function\ntries them all in the given order before falling back to\ninherited icon themes.</p>",
             "kind": "method",
             "name": "choose_icon",
             "parameters": [
@@ -70,7 +58,7 @@
             }
         },
         {
-            "doc": "<p>Looks up a named icon for a particular window scale and returns a\n<span data-xref=\"Gtk.IconInfo\"/> containing information such as the filename of the\nicon. The icon can then be rendered into a pixbuf using\n<span data-xref=\"Gtk.IconInfo.load_icon\"/>. (<span data-xref=\"Gtk.IconTheme.load_icon\"/> combines\nthese two steps if all you need is the pixbuf.)</p><p>If <code>icon_names</code> contains more than one name, this function\ntries them all in the given order before falling back to\ninherited icon themes.</p>",
+            "doc": "<p>Looks up a named icon for a particular window scale and returns a\n<span data-xref=\"Gtk.IconInfo\"/> containing information such as the filename of the\nicon. The icon can then be rendered into a pixbuf using\n<span data-xref=\"Gtk.IconInfo.load_icon\"/>. (<span data-xref=\"Gtk.IconTheme.load_icon\"/> combines\nthese two steps if all you need is the pixbuf.)</p><p>If <pre>icon_names</pre> contains more than one name, this function\ntries them all in the given order before falling back to\ninherited icon themes.</p>",
             "kind": "method",
             "name": "choose_icon_for_scale",
             "parameters": [
@@ -434,7 +422,7 @@
             }
         },
         {
-            "doc": "<p>Checks to see if the icon theme has changed; if it has, any\ncurrently cached information is discarded and will be reloaded\nnext time <code>icon_theme</code> is accessed.</p>",
+            "doc": "<p>Checks to see if the icon theme has changed; if it has, any\ncurrently cached information is discarded and will be reloaded\nnext time <pre>icon_theme</pre> is accessed.</p>",
             "kind": "method",
             "name": "rescan_if_needed",
             "parameters": [],
@@ -475,7 +463,7 @@
             }
         },
         {
-            "doc": "<p>Sets the search path for the icon theme object. When looking\nfor an icon theme, GTK+ will search for a subdirectory of\none or more of the directories in <code>path</code> with the same name\nas the icon theme. (Themes from multiple of the path elements\nare combined to allow themes to be extended by adding icons\nin the user\u2019s home directory.)</p><p>In addition if an icon found isn\u2019t found either in the current\nicon theme or the default icon theme, and an image file with\nthe right name is found directly in one of the elements of\n<code>path</code>, then that image will be used for the icon name.\n(This is legacy feature, and new icons should be put\ninto the default icon theme, which is called hicolor,\nrather than directly on the icon path.)</p>",
+            "doc": "<p>Sets the search path for the icon theme object. When looking\nfor an icon theme, GTK+ will search for a subdirectory of\none or more of the directories in <pre>path</pre> with the same name\nas the icon theme. (Themes from multiple of the path elements\nare combined to allow themes to be extended by adding icons\nin the user\u2019s home directory.)</p><p>In addition if an icon found isn\u2019t found either in the current\nicon theme or the default icon theme, and an image file with\nthe right name is found directly in one of the elements of\n<pre>path</pre>, then that image will be used for the icon name.\n(This is legacy feature, and new icons should be put\ninto the default icon theme, which is called hicolor,\nrather than directly on the icon path.)</p>",
             "kind": "method",
             "name": "set_search_path",
             "parameters": [
@@ -496,61 +484,59 @@
                 "type": "void"
             }
         },
-        [
-            {
-                "doc": "<p>Registers a built-in icon for icon theme lookups. The idea\nof built-in icons is to allow an application or library\nthat uses themed icons to function requiring files to\nbe present in the file system. For instance, the default\nimages for all of GTK+\u2019s stock icons are registered\nas built-icons.</p><p>In general, if you use <span data-xref=\"Gtk.IconTheme.add_builtin_icon\"/>\nyou should also install the icon in the icon theme, so\nthat the icon is generally available.</p><p>This function will generally be used with pixbufs loaded\nvia <span data-xref=\"GdkPixbuf.Pixbuf.new_from_inline\">GdkPixbuf.Pixbuf.new_from_inline</span>.</p>",
-                "kind": "function",
-                "name": "add_builtin_icon",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "icon_name",
-                        "direction": "in",
-                        "type": "String"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "size",
-                        "direction": "in",
-                        "type": "Number(gint)"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "pixbuf",
-                        "direction": "in",
-                        "type": "GdkPixbuf.Pixbuf"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
+        {
+            "doc": "<p>Registers a built-in icon for icon theme lookups. The idea\nof built-in icons is to allow an application or library\nthat uses themed icons to function requiring files to\nbe present in the file system. For instance, the default\nimages for all of GTK+\u2019s stock icons are registered\nas built-icons.</p><p>In general, if you use <span data-xref=\"Gtk.IconTheme.add_builtin_icon\"/>\nyou should also install the icon in the icon theme, so\nthat the icon is generally available.</p><p>This function will generally be used with pixbufs loaded\nvia <span data-xref=\"GdkPixbuf.Pixbuf.new_from_inline\">GdkPixbuf.Pixbuf.new_from_inline</span>.</p>",
+            "kind": "function",
+            "name": "add_builtin_icon",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pixbuf",
+                    "direction": "in",
+                    "type": "GdkPixbuf.Pixbuf"
                 }
-            },
-            {
-                "doc": "<p>Gets the icon theme for the default screen. See\n<span data-xref=\"Gtk.IconTheme.get_for_screen\"/>.</p>",
-                "kind": "function",
-                "name": "get_default",
-                "parameters": [],
-                "retval": {
-                    "type": "Gtk.IconTheme"
-                }
-            },
-            {
-                "doc": "<p>Gets the icon theme object associated with <code>screen</code>; if this\nfunction has not previously been called for the given\nscreen, a new icon theme object will be created and\nassociated with the screen. Icon theme objects are\nfairly expensive to create, so using this function\nis usually a better choice than calling than <span data-xref=\"Gtk.IconTheme.new\"/>\nand setting the screen yourself; by using this function\na single icon theme object will be shared between users.</p>",
-                "kind": "function",
-                "name": "get_for_screen",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "screen",
-                        "direction": "in",
-                        "type": "Gdk.Screen"
-                    }
-                ],
-                "retval": {
-                    "type": "Gtk.IconTheme"
-                }
+            ],
+            "retval": {
+                "type": "void"
             }
-        ]
+        },
+        {
+            "doc": "<p>Gets the icon theme for the default screen. See\n<span data-xref=\"Gtk.IconTheme.get_for_screen\"/>.</p>",
+            "kind": "function",
+            "name": "get_default",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.IconTheme"
+            }
+        },
+        {
+            "doc": "<p>Gets the icon theme object associated with <pre>screen</pre>; if this\nfunction has not previously been called for the given\nscreen, a new icon theme object will be created and\nassociated with the screen. Icon theme objects are\nfairly expensive to create, so using this function\nis usually a better choice than calling than <span data-xref=\"Gtk.IconTheme.new\"/>\nand setting the screen yourself; by using this function\na single icon theme object will be shared between users.</p>",
+            "kind": "function",
+            "name": "get_for_screen",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "screen",
+                    "direction": "in",
+                    "type": "Gdk.Screen"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.IconTheme"
+            }
+        }
     ],
     "name": "IconTheme",
     "properties": [],

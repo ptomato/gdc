@@ -1,0 +1,79 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "g_iface"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "ready"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "got_page_size"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render_page"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "is_selected"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "end_preview"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved6"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved7"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved8"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "PrintOperationPreviewIface"
+}

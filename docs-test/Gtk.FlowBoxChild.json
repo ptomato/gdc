@@ -11,17 +11,10 @@
         }
     ],
     "doc": "",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Marks <code>child</code> as changed, causing any state that depends on this\nto be updated. This affects sorting and filtering.</p><p>Note that calls to this method must be in sync with the data\nused for the sorting and filtering functions. For instance, if\nthe list is mirroring some external data set, and <em>two</em> children\nchanged in the external data set when you call\n<span data-xref=\"Gtk.FlowBoxChild.changed\"/> on the first child, the sort function\nmust only read the new data for the first of the two changed\nchildren, otherwise the resorting of the children will be wrong.</p><p>This generally means that if you don\u2019t fully control the data\nmodel, you have to duplicate the data that affects the sorting\nand filtering functions into the widgets themselves. Another\nalternative is to call <span data-xref=\"Gtk.FlowBox.invalidate_sort\"/> on any\nmodel change, but that is more expensive.</p>",
+            "doc": "<p>Marks <pre>child</pre> as changed, causing any state that depends on this\nto be updated. This affects sorting and filtering.</p><p>Note that calls to this method must be in sync with the data\nused for the sorting and filtering functions. For instance, if\nthe list is mirroring some external data set, and <em>two</em> children\nchanged in the external data set when you call\n<span data-xref=\"Gtk.FlowBoxChild.changed\"/> on the first child, the sort function\nmust only read the new data for the first of the two changed\nchildren, otherwise the resorting of the children will be wrong.</p><p>This generally means that if you don\u2019t fully control the data\nmodel, you have to duplicate the data that affects the sorting\nand filtering functions into the widgets themselves. Another\nalternative is to call <span data-xref=\"Gtk.FlowBox.invalidate_sort\"/> on any\nmodel change, but that is more expensive.</p>",
             "kind": "method",
             "name": "changed",
             "parameters": [],
@@ -30,7 +23,7 @@
             }
         },
         {
-            "doc": "<p>Gets the current index of the <code>child</code> in its <span data-xref=\"Gtk.FlowBox\"/> container.</p>",
+            "doc": "<p>Gets the current index of the <pre>child</pre> in its <span data-xref=\"Gtk.FlowBox\"/> container.</p>",
             "kind": "method",
             "name": "get_index",
             "parameters": [],
@@ -39,15 +32,14 @@
             }
         },
         {
-            "doc": "<p>Returns whether the <code>child</code> is currently selected in its\n<span data-xref=\"Gtk.FlowBox\"/> container.</p>",
+            "doc": "<p>Returns whether the <pre>child</pre> is currently selected in its\n<span data-xref=\"Gtk.FlowBox\"/> container.</p>",
             "kind": "method",
             "name": "is_selected",
             "parameters": [],
             "retval": {
                 "type": "Boolean"
             }
-        },
-        []
+        }
     ],
     "name": "FlowBoxChild",
     "properties": [],

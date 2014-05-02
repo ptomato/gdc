@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new scrolled window.</p><p>The two arguments are the scrolled window\u2019s adjustments; these will be\nshared with the scrollbars and the child widget to keep the bars in sync\nwith the child. Usually you want to pass <code>null</code> for the adjustments, which\nwill cause the scrolled window to create them for you.</p>",
+            "doc": "<p>Creates a new scrolled window.</p><p>The two arguments are the scrolled window\u2019s adjustments; these will be\nshared with the scrollbars and the child widget to keep the bars in sync\nwith the child. Usually you want to pass <pre>null</pre> for the adjustments, which\nwill cause the scrolled window to create them for you.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -24,18 +24,6 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.ScrolledWindow\"/> is a <span data-xref=\"Gtk.Bin\"/> subclass: it\u2019s a container\nthe accepts a single child widget. <span data-xref=\"Gtk.ScrolledWindow\"/> adds scrollbars\nto the child widget and optionally draws a beveled frame around the\nchild widget.</p><p>The scrolled window can work in two ways. Some widgets have native\nscrolling support; these widgets implement the <span data-xref=\"Gtk.Scrollable\"/> interface.\nWidgets with native scroll support include <span data-xref=\"Gtk.TreeView\"/>, <span data-xref=\"Gtk.TextView\"/>,\nand <span data-xref=\"Gtk.Layout\"/>.</p><p>For widgets that lack native scrolling support, the <span data-xref=\"Gtk.Viewport\"/>\nwidget acts as an adaptor class, implementing scrollability for child\nwidgets that lack their own scrolling capabilities. Use <span data-xref=\"Gtk.Viewport\"/>\nto scroll child widgets such as <span data-xref=\"Gtk.Grid\"/>, <span data-xref=\"Gtk.Box\"/>, and so on.</p><p>If a widget has native scrolling abilities, it can be added to the\n<span data-xref=\"Gtk.ScrolledWindow\"/> with <span data-xref=\"Gtk.Container.add\"/>. If a widget does not, you\nmust first add the widget to a <span data-xref=\"Gtk.Viewport\"/>, then add the <span data-xref=\"Gtk.Viewport\"/>\nto the scrolled window. <span data-xref=\"Gtk.Container.add\"/> will do this for you for\nwidgets that don\u2019t implement <span data-xref=\"Gtk.Scrollable\"/> natively, so you can\nignore the presence of the viewport.</p><p>The position of the scrollbars is controlled by the scroll\nadjustments. See <span data-xref=\"Gtk.Adjustment\"/> for the fields in an adjustment - for\n<span data-xref=\"Gtk.Scrollbar\"/>, used by <span data-xref=\"Gtk.ScrolledWindow\"/>, the \u201cvalue\u201d field\nrepresents the position of the scrollbar, which must be between the\n\u201clower\u201d field and \u201cupper - page_size.\u201d The \u201cpage_size\u201d field\nrepresents the size of the visible scrollable area. The\n\u201cstep_increment\u201d and \u201cpage_increment\u201d fields are used when the user\nasks to step down (using the small stepper arrows) or page down (using\nfor example the PageDown key).</p><p>If a <span data-xref=\"Gtk.ScrolledWindow\"/> doesn\u2019t behave quite as you would like, or\ndoesn\u2019t have exactly the right layout, it\u2019s very possible to set up\nyour own scrolling with <span data-xref=\"Gtk.Scrollbar\"/> and for example a <span data-xref=\"Gtk.Grid\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "container"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -73,7 +61,7 @@
             }
         },
         {
-            "doc": "<p>Returns the horizontal scrollbar of <code>scrolled_window</code>.</p>",
+            "doc": "<p>Returns the horizontal scrollbar of <pre>scrolled_window</pre>.</p>",
             "kind": "method",
             "name": "get_hscrollbar",
             "parameters": [],
@@ -91,7 +79,7 @@
             }
         },
         {
-            "doc": "<p>Gets the minimal content height of <code>scrolled_window</code>, or -1 if not set.</p>",
+            "doc": "<p>Gets the minimal content height of <pre>scrolled_window</pre>, or -1 if not set.</p>",
             "kind": "method",
             "name": "get_min_content_height",
             "parameters": [],
@@ -100,7 +88,7 @@
             }
         },
         {
-            "doc": "<p>Gets the minimum content width of <code>scrolled_window</code>, or -1 if not set.</p>",
+            "doc": "<p>Gets the minimum content width of <pre>scrolled_window</pre>, or -1 if not set.</p>",
             "kind": "method",
             "name": "get_min_content_width",
             "parameters": [],
@@ -158,7 +146,7 @@
             }
         },
         {
-            "doc": "<p>Returns the vertical scrollbar of <code>scrolled_window</code>.</p>",
+            "doc": "<p>Returns the vertical scrollbar of <pre>scrolled_window</pre>.</p>",
             "kind": "method",
             "name": "get_vscrollbar",
             "parameters": [],
@@ -167,7 +155,7 @@
             }
         },
         {
-            "doc": "<p>Changes the behaviour of <code>scrolled_window</code> wrt. to the initial\nevent that possibly starts kinetic scrolling. When <code>capture_button_press</code>\nis set to <code>true</code>, the event is captured by the scrolled window, and\nthen later replayed if it is meant to go to the child widget.</p><p>This should be enabled if any child widgets perform non-reversible\nactions on <span data-xref=\"Gtk.Widget-button-press-event\"/>. If they don't, and handle\nadditionally handle <span data-xref=\"Gtk.Widget-grab-broken-event\"/>, it might be better\nto set <code>capture_button_press</code> to <code>false</code>.</p><p>This setting only has an effect if kinetic scrolling is enabled.</p>",
+            "doc": "<p>Changes the behaviour of <pre>scrolled_window</pre> wrt. to the initial\nevent that possibly starts kinetic scrolling. When <pre>capture_button_press</pre>\nis set to <pre>true</pre>, the event is captured by the scrolled window, and\nthen later replayed if it is meant to go to the child widget.</p><p>This should be enabled if any child widgets perform non-reversible\nactions on <span data-xref=\"Gtk.Widget-button-press-event\"/>. If they don't, and handle\nadditionally handle <span data-xref=\"Gtk.Widget-grab-broken-event\"/>, it might be better\nto set <pre>capture_button_press</pre> to <pre>false</pre>.</p><p>This setting only has an effect if kinetic scrolling is enabled.</p>",
             "kind": "method",
             "name": "set_capture_button_press",
             "parameters": [
@@ -215,7 +203,7 @@
             }
         },
         {
-            "doc": "<p>Sets the minimum height that <code>scrolled_window</code> should keep visible.\nNote that this can and (usually will) be smaller than the minimum\nsize of the content.</p>",
+            "doc": "<p>Sets the minimum height that <pre>scrolled_window</pre> should keep visible.\nNote that this can and (usually will) be smaller than the minimum\nsize of the content.</p>",
             "kind": "method",
             "name": "set_min_content_height",
             "parameters": [
@@ -231,7 +219,7 @@
             }
         },
         {
-            "doc": "<p>Sets the minimum width that <code>scrolled_window</code> should keep visible.\nNote that this can and (usually will) be smaller than the minimum\nsize of the content.</p>",
+            "doc": "<p>Sets the minimum width that <pre>scrolled_window</pre> should keep visible.\nNote that this can and (usually will) be smaller than the minimum\nsize of the content.</p>",
             "kind": "method",
             "name": "set_min_content_width",
             "parameters": [
@@ -285,7 +273,7 @@
             }
         },
         {
-            "doc": "<p>Changes the type of shadow drawn around the contents of\n<code>scrolled_window</code>.</p>",
+            "doc": "<p>Changes the type of shadow drawn around the contents of\n<pre>scrolled_window</pre>.</p>",
             "kind": "method",
             "name": "set_shadow_type",
             "parameters": [
@@ -324,8 +312,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ScrolledWindow",
     "properties": [
@@ -392,7 +379,7 @@
     ],
     "signals": [
         {
-            "doc": "<p>The ::move-focus-out signal is a\n[keybinding signal][GtkBindingSignal] which gets\nemitted when focus is moved away from the scrolled window by a\nkeybinding.  The <span data-xref=\"Gtk.Widget-move-focus\"/> signal is emitted with\n<code>direction_type</code> on this scrolled windows toplevel parent in the\ncontainer hierarchy.  The default bindings for this signal are\n<code>Tab + Ctrl</code> and <code>Tab + Ctrl + Shift</code>.</p>",
+            "doc": "<p>The ::move-focus-out signal is a\n[keybinding signal][GtkBindingSignal] which gets\nemitted when focus is moved away from the scrolled window by a\nkeybinding.  The <span data-xref=\"Gtk.Widget-move-focus\"/> signal is emitted with\n<pre>direction_type</pre> on this scrolled windows toplevel parent in the\ncontainer hierarchy.  The default bindings for this signal are\n<code>Tab + Ctrl</code> and <code>Tab + Ctrl + Shift</code>.</p>",
             "kind": "signal",
             "name": "move-focus-out",
             "parameters": [

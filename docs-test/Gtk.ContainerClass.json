@@ -1,0 +1,173 @@
+{
+    "constructors": [],
+    "doc": "<p>Base class for containers.</p>",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "add"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "remove"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "check_resize"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "forall"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_focus_child"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "child_type"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "composite_name"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_child_property"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_child_property"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_path_for_child"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_handle_border_width"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved6"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved7"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved8"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Finds a child property of a container class by name.</p>",
+            "kind": "method",
+            "name": "find_child_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "property_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "GObject.ParamSpec"
+            }
+        },
+        {
+            "doc": "<p>Modifies a subclass of <span data-xref=\"Gtk.ContainerClass\"/> to automatically add and\nremove the border-width setting on GtkContainer.  This allows the\nsubclass to ignore the border width in its size request and\nallocate methods. The intent is for a subclass to invoke this\nin its class_init function.</p><p><span data-xref=\"Gtk.ContainerClass.handle_border_width\"/> is necessary because it\nwould break API too badly to make this behavior the default. So\nsubclasses must \u201copt in\u201d to the parent class handling border_width\nfor them.</p>",
+            "kind": "method",
+            "name": "handle_border_width",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Installs a child property on a container class.</p>",
+            "kind": "method",
+            "name": "install_child_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "property_id",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns all child properties of a container class.</p>",
+            "kind": "method",
+            "name": "list_child_properties",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "n_properties",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Array(GObject.ParamSpec)"
+            }
+        }
+    ],
+    "name": "ContainerClass"
+}

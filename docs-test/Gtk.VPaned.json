@@ -11,17 +11,8 @@
         }
     ],
     "doc": "<p>The VPaned widget is a container widget with two\nchildren arranged vertically. The division between\nthe two panes is adjustable by the user by dragging\na handle. See <span data-xref=\"Gtk.Paned\"/> for details.</p><p>GtkVPaned has been deprecated, use <span data-xref=\"Gtk.Paned\"/> instead.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "paned"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "VPaned",
     "properties": [],
     "signals": [],

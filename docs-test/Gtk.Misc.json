@@ -1,18 +1,6 @@
 {
     "constructors": [],
     "doc": "<p>The <span data-xref=\"Gtk.Misc\"/> widget is an abstract widget which is not useful itself, but\nis used to derive subclasses which have alignment and padding attributes.</p><p>The horizontal and vertical padding attributes allows extra space to be\nadded around the widget.</p><p>The horizontal and vertical alignment attributes enable the widget to be\npositioned within its allocated area. Note that if the widget is added to\na container in such a way that it expands automatically to fill its\nallocated area, the alignment settings will not alter the widgets position.</p><p>Note that the desired effect can in most cases be achieved by using the\n<span data-xref=\"Gtk.Widget-halign\"/>, <span data-xref=\"Gtk.Widget-valign\"/> and <span data-xref=\"Gtk.Widget-margin\"/> properties\non the child widget, so GtkMisc should not be used in new code.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "widget"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -102,8 +90,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Misc",
     "properties": [

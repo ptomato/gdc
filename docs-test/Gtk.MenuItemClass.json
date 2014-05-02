@@ -1,0 +1,79 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "<p>If <pre>true</pre>, then we should always\n   hide the menu when the %GtkMenuItem is activated. Otherwise,\n   it is up to the caller.</p>",
+            "kind": "field",
+            "name": "hide_on_activate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "activate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "activate_item"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "toggle_size_request"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "toggle_size_allocate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_label"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_label"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "select"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "deselect"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "MenuItemClass"
+}

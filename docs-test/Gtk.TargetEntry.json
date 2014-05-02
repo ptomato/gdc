@@ -1,0 +1,72 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Makes a new <span data-xref=\"Gtk.TargetEntry\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "target",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "info",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.TargetEntry"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.TargetEntry\"/> represents a single type of\ndata than can be supplied for by a widget for a selection\nor for supplied or received during drag-and-drop.</p>",
+    "fields": [
+        {
+            "doc": "<p>a string representation of the target type</p>",
+            "kind": "field",
+            "name": "target"
+        },
+        {
+            "doc": "<p><span data-xref=\"Gtk.TargetFlags\"/> for DND</p>",
+            "kind": "field",
+            "name": "flags"
+        },
+        {
+            "doc": "<p>an application-assigned integer ID which will\n    get passed as a parameter to e.g the <span data-xref=\"Gtk.Widget-selection-get\"/>\n    signal. It allows the application to identify the target\n    type without extensive string compares.</p>",
+            "kind": "field",
+            "name": "info"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Makes a copy of a <span data-xref=\"Gtk.TargetEntry\"/> and its data.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TargetEntry"
+            }
+        },
+        {
+            "doc": "<p>Frees a <span data-xref=\"Gtk.TargetEntry\"/> returned from\n<span data-xref=\"Gtk.TargetEntry.new\"/> or <span data-xref=\"Gtk.TargetEntry.copy\"/>.</p>",
+            "kind": "method",
+            "name": "free",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "TargetEntry"
+}

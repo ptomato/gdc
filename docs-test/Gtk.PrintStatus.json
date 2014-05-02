@@ -1,0 +1,52 @@
+{
+    "doc": "<p>The status gives a rough indication of the completion of a running\nprint operation.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The printing has not started yet; this\n    status is set initially, and while the print dialog is shown.</p>",
+            "kind": "default",
+            "name": "initial"
+        },
+        {
+            "doc": "<p>This status is set while the begin-print\n    signal is emitted and during pagination.</p>",
+            "kind": "default",
+            "name": "preparing"
+        },
+        {
+            "doc": "<p>This status is set while the\n    pages are being rendered.</p>",
+            "kind": "default",
+            "name": "generating_data"
+        },
+        {
+            "doc": "<p>The print job is being sent off to the\n    printer.</p>",
+            "kind": "default",
+            "name": "sending_data"
+        },
+        {
+            "doc": "<p>The print job has been sent to the printer,\n    but is not printed for some reason, e.g. the printer may be stopped.</p>",
+            "kind": "default",
+            "name": "pending"
+        },
+        {
+            "doc": "<p>Some problem has occurred during\n    printing, e.g. a paper jam.</p>",
+            "kind": "default",
+            "name": "pending_issue"
+        },
+        {
+            "doc": "<p>The printer is processing the print job.</p>",
+            "kind": "default",
+            "name": "printing"
+        },
+        {
+            "doc": "<p>The printing has been completed successfully.</p>",
+            "kind": "default",
+            "name": "finished"
+        },
+        {
+            "doc": "<p>The printing has been aborted.</p>",
+            "kind": "default",
+            "name": "finished_aborted"
+        }
+    ],
+    "name": "PrintStatus"
+}

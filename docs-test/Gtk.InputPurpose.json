@@ -1,0 +1,57 @@
+{
+    "doc": "<p>Describes primary purpose of the input widget. This information is\nuseful for on-screen keyboards and similar input methods to decide\nwhich keys should be presented to the user.</p><p>Note that the purpose is not meant to impose a totally strict rule\nabout allowed characters, and does not replace input validation.\nIt is fine for an on-screen keyboard to let the user override the\ncharacter set restriction that is expressed by the purpose. The\napplication is expected to validate the entry contents, even if\nit specified a purpose.</p><p>The difference between @GTK_INPUT_PURPOSE_DIGITS and\n@GTK_INPUT_PURPOSE_NUMBER is that the former accepts only digits\nwhile the latter also some punctuation (like commas or points, plus,\nminus) and \u201ce\u201d or \u201cE\u201d as in 3.14E+000.</p><p>This enumeration may be extended in the future; input methods should\ninterpret unknown values as \u201cfree form\u201d.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Allow any character</p>",
+            "kind": "default",
+            "name": "free_form"
+        },
+        {
+            "doc": "<p>Allow only alphabetic characters</p>",
+            "kind": "default",
+            "name": "alpha"
+        },
+        {
+            "doc": "<p>Allow only digits</p>",
+            "kind": "default",
+            "name": "digits"
+        },
+        {
+            "doc": "<p>Edited field expects numbers</p>",
+            "kind": "default",
+            "name": "number"
+        },
+        {
+            "doc": "<p>Edited field expects phone number</p>",
+            "kind": "default",
+            "name": "phone"
+        },
+        {
+            "doc": "<p>Edited field expects URL</p>",
+            "kind": "default",
+            "name": "url"
+        },
+        {
+            "doc": "<p>Edited field expects email address</p>",
+            "kind": "default",
+            "name": "email"
+        },
+        {
+            "doc": "<p>Edited field expects the name of a person</p>",
+            "kind": "default",
+            "name": "name"
+        },
+        {
+            "doc": "<p>Like @GTK_INPUT_PURPOSE_FREE_FORM, but characters are hidden</p>",
+            "kind": "default",
+            "name": "password"
+        },
+        {
+            "doc": "<p>Like @GTK_INPUT_PURPOSE_DIGITS, but characters are hidden</p>",
+            "kind": "default",
+            "name": "pin"
+        }
+    ],
+    "name": "InputPurpose"
+}

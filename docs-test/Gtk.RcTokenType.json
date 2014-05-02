@@ -1,0 +1,207 @@
+{
+    "doc": "<p>The <span data-xref=\"Gtk.RcTokenType\"/> enumeration represents the tokens\nin the RC file. It is exposed so that theme engines\ncan reuse these tokens when parsing the theme-engine\nspecific portions of a RC file.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "invalid"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "include"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "normal"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "active"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "prelight"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "selected"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "insensitive"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "fg"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "bg"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "text"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "base"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "xthickness"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "ythickness"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "font"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "fontset"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "font_name"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "bg_pixmap"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "pixmap_path"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "style"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "binding"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "bind"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "widget"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "widget_class"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "class"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "lowest"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "gtk"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "application"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "theme"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "rc"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "highest"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "engine"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "module_path"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "im_module_path"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "im_module_file"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "stock"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "ltr"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "rtl"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "color"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "unbind"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "last"
+        }
+    ],
+    "name": "RcTokenType"
+}

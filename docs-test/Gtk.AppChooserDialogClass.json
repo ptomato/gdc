@@ -1,0 +1,19 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "padding"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "AppChooserDialogClass"
+}

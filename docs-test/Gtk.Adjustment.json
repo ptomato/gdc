@@ -48,18 +48,6 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.Adjustment\"/> object represents a value which has an associated lower\nand upper bound, together with step and page increments, and a page size.\nIt is used within several GTK+ widgets, including\n<span data-xref=\"Gtk.SpinButton\"/>, <span data-xref=\"Gtk.Viewport\"/>, and <span data-xref=\"Gtk.Range\"/> (which is a base class for\n<span data-xref=\"Gtk.HScrollbar\"/>, <span data-xref=\"Gtk.VScrollbar\"/>, <span data-xref=\"Gtk.HScale\"/>, and <span data-xref=\"Gtk.VScale\"/>).</p><p>The <span data-xref=\"Gtk.Adjustment\"/> object does not update the value itself. Instead\nit is left up to the owner of the <span data-xref=\"Gtk.Adjustment\"/> to control the value.</p><p>The owner of the <span data-xref=\"Gtk.Adjustment\"/> typically calls the\n<span data-xref=\"Gtk.Adjustment.value_changed\"/> and <span data-xref=\"Gtk.Adjustment.changed\"/> functions\nafter changing the value and its bounds. This results in the emission of the</p>\n<h1>GtkAdjustment::value_changed or <span data-xref=\"Gtk.Adjustment-changed\"/> signal respectively.</h1>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -72,7 +60,7 @@
             }
         },
         {
-            "doc": "<p>Updates the <span data-xref=\"Gtk.Adjustment-value\"/> property to ensure that the range\nbetween <code>lower</code> and <code>upper</code> is in the current page (i.e. between\n<span data-xref=\"Gtk.Adjustment-value\"/> and <span data-xref=\"Gtk.Adjustment-value\"/> + #GtkAdjustment:page_size).\nIf the range is larger than the page size, then only the start of it will\nbe in the current page.\nA <span data-xref=\"Gtk.Adjustment-changed\"/> signal will be emitted if the value is changed.</p>",
+            "doc": "<p>Updates the <span data-xref=\"Gtk.Adjustment-value\"/> property to ensure that the range\nbetween <pre>lower</pre> and <pre>upper</pre> is in the current page (i.e. between\n<span data-xref=\"Gtk.Adjustment-value\"/> and <span data-xref=\"Gtk.Adjustment-value\"/> + #GtkAdjustment:page_size).\nIf the range is larger than the page size, then only the start of it will\nbe in the current page.\nA <span data-xref=\"Gtk.Adjustment-changed\"/> signal will be emitted if the value is changed.</p>",
             "kind": "method",
             "name": "clamp_page",
             "parameters": [
@@ -306,8 +294,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Adjustment",
     "properties": [

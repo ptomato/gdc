@@ -1,0 +1,27 @@
+{
+    "doc": "<p>Specifies which corner a child widget should be placed in when packed into\na <span data-xref=\"Gtk.ScrolledWindow\"/>. This is effectively the opposite of where the scroll\nbars are placed.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Place the scrollbars on the right and bottom of the\n widget (default behaviour).</p>",
+            "kind": "default",
+            "name": "top_left"
+        },
+        {
+            "doc": "<p>Place the scrollbars on the top and right of the\n widget.</p>",
+            "kind": "default",
+            "name": "bottom_left"
+        },
+        {
+            "doc": "<p>Place the scrollbars on the left and bottom of the\n widget.</p>",
+            "kind": "default",
+            "name": "top_right"
+        },
+        {
+            "doc": "<p>Place the scrollbars on the top and left of the\n widget.</p>",
+            "kind": "default",
+            "name": "bottom_right"
+        }
+    ],
+    "name": "CornerType"
+}

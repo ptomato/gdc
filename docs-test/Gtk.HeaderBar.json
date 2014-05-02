@@ -11,13 +11,6 @@
         }
     ],
     "doc": "<p>GtkHeaderBar is similar to a horizontal <span data-xref=\"Gtk.Box\"/>. It allows children to\nbe placed at the start or the end. In addition, it allows a title and\nsubtitle to be displayed. The title will be centered with respect to\nthe width of the box, even if the children at either side take up\ndifferent amounts of space. The height of the titlebar will be\nset to provide sufficient space for the subtitle, even if none is\ncurrently set. If a subtitle is not needed, the space reservation\ncan be turned off with <span data-xref=\"Gtk.HeaderBar.set_has_subtitle\"/>.</p><p>GtkHeaderBar can add typical window frame controls, such as minimize,\nmaximize and close buttons, or the window icon.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "container"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -75,7 +68,7 @@
             }
         },
         {
-            "doc": "<p>Adds <code>child</code> to <code>bar</code>, packed with reference to the\nend of the <code>bar</code>.</p>",
+            "doc": "<p>Adds <pre>child</pre> to <pre>bar</pre>, packed with reference to the\nend of the <pre>bar</pre>.</p>",
             "kind": "method",
             "name": "pack_end",
             "parameters": [
@@ -91,7 +84,7 @@
             }
         },
         {
-            "doc": "<p>Adds <code>child</code> to <code>bar</code>, packed with reference to the\nstart of the <code>bar</code>.</p>",
+            "doc": "<p>Adds <pre>child</pre> to <pre>bar</pre>, packed with reference to the\nstart of the <pre>bar</pre>.</p>",
             "kind": "method",
             "name": "pack_start",
             "parameters": [
@@ -107,7 +100,7 @@
             }
         },
         {
-            "doc": "<p>Sets a custom title for the <span data-xref=\"Gtk.HeaderBar\"/>.</p><p>The title should help a user identify the current view. This\nsupersedes any title set by <span data-xref=\"Gtk.HeaderBar.set_title\"/> or\n<span data-xref=\"Gtk.HeaderBar.set_subtitle\"/>. To achieve the same style as\nthe builtin title and subtitle, use the \u201ctitle\u201d and \u201csubtitle\u201d\nstyle classes.</p><p>You should set the custom title to <code>null</code>, for the header title\nlabel to be visible again.</p>",
+            "doc": "<p>Sets a custom title for the <span data-xref=\"Gtk.HeaderBar\"/>.</p><p>The title should help a user identify the current view. This\nsupersedes any title set by <span data-xref=\"Gtk.HeaderBar.set_title\"/> or\n<span data-xref=\"Gtk.HeaderBar.set_subtitle\"/>. To achieve the same style as\nthe builtin title and subtitle, use the \u201ctitle\u201d and \u201csubtitle\u201d\nstyle classes.</p><p>You should set the custom title to <pre>null</pre>, for the header title\nlabel to be visible again.</p>",
             "kind": "method",
             "name": "set_custom_title",
             "parameters": [
@@ -171,7 +164,7 @@
             }
         },
         {
-            "doc": "<p>Sets the subtitle of the <span data-xref=\"Gtk.HeaderBar\"/>. The title should give a user\nan additional detail to help him identify the current view.</p><p>Note that GtkHeaderBar by default reserves room for the subtitle,\neven if none is currently set. If this is not desired, set the\n<span data-xref=\"Gtk.HeaderBar-has-subtitle\"/> property to <code>false</code>.</p>",
+            "doc": "<p>Sets the subtitle of the <span data-xref=\"Gtk.HeaderBar\"/>. The title should give a user\nan additional detail to help him identify the current view.</p><p>Note that GtkHeaderBar by default reserves room for the subtitle,\neven if none is currently set. If this is not desired, set the\n<span data-xref=\"Gtk.HeaderBar-has-subtitle\"/> property to <pre>false</pre>.</p>",
             "kind": "method",
             "name": "set_subtitle",
             "parameters": [
@@ -201,8 +194,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "HeaderBar",
     "properties": [
@@ -219,13 +211,13 @@
             "type": "String"
         },
         {
-            "doc": "<p>Set to <code>true</code> if <span data-xref=\"Gtk.HeaderBar-decoration-layout\"/> is set.</p>",
+            "doc": "<p>Set to <pre>true</pre> if <span data-xref=\"Gtk.HeaderBar-decoration-layout\"/> is set.</p>",
             "kind": "property",
             "name": "decoration-layout-set",
             "type": "Boolean"
         },
         {
-            "doc": "<p>If <code>true</code>, reserve space for a subtitle, even if none\nis currently set.</p>",
+            "doc": "<p>If <pre>true</pre>, reserve space for a subtitle, even if none\nis currently set.</p>",
             "kind": "property",
             "name": "has-subtitle",
             "type": "Boolean"

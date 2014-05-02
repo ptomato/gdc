@@ -1,0 +1,47 @@
+{
+    "doc": "<p>Used to determine the layout of pages on a sheet when printing\nmultiple pages per sheet.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p><img alt=\"\" src=\"layout-lrtb.png\" /></p>",
+            "kind": "default",
+            "name": "lrtb"
+        },
+        {
+            "doc": "<p><img alt=\"\" src=\"layout-lrbt.png\" /></p>",
+            "kind": "default",
+            "name": "lrbt"
+        },
+        {
+            "doc": "<p><img alt=\"\" src=\"layout-rltb.png\" /></p>",
+            "kind": "default",
+            "name": "rltb"
+        },
+        {
+            "doc": "<p><img alt=\"\" src=\"layout-rlbt.png\" /></p>",
+            "kind": "default",
+            "name": "rlbt"
+        },
+        {
+            "doc": "<p><img alt=\"\" src=\"layout-tblr.png\" /></p>",
+            "kind": "default",
+            "name": "tblr"
+        },
+        {
+            "doc": "<p><img alt=\"\" src=\"layout-tbrl.png\" /></p>",
+            "kind": "default",
+            "name": "tbrl"
+        },
+        {
+            "doc": "<p><img alt=\"\" src=\"layout-btlr.png\" /></p>",
+            "kind": "default",
+            "name": "btlr"
+        },
+        {
+            "doc": "<p><img alt=\"\" src=\"layout-btrl.png\" /></p>",
+            "kind": "default",
+            "name": "btrl"
+        }
+    ],
+    "name": "NumberUpLayout"
+}

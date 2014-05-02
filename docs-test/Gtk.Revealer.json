@@ -11,13 +11,6 @@
         }
     ],
     "doc": "<p>The GtkRevealer widget is a container which animates\nthe transition of its child from invisible to visible.</p><p>The style of transition can be controlled with\n<span data-xref=\"Gtk.Revealer.set_transition_type\"/>.</p><p>These animations respect the <span data-xref=\"Gtk.Settings-gtk-enable-animations\"/>\nsetting.</p><p>The GtkRevealer widget was added in GTK+ 3.10.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -30,7 +23,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether the child is currently\nrevealed. See <span data-xref=\"Gtk.Revealer.set_reveal_child\"/>.</p><p>This function returns <code>true</code> as soon as the transition\nis to the revealed state is started. To learn whether\nthe child is fully revealed (ie the transition is completed),\nuse <span data-xref=\"Gtk.Revealer.get_child_revealed\"/>.</p>",
+            "doc": "<p>Returns whether the child is currently\nrevealed. See <span data-xref=\"Gtk.Revealer.set_reveal_child\"/>.</p><p>This function returns <pre>true</pre> as soon as the transition\nis to the revealed state is started. To learn whether\nthe child is fully revealed (ie the transition is completed),\nuse <span data-xref=\"Gtk.Revealer.get_child_revealed\"/>.</p>",
             "kind": "method",
             "name": "get_reveal_child",
             "parameters": [],
@@ -48,7 +41,7 @@
             }
         },
         {
-            "doc": "<p>Gets the type of animation that will be used\nfor transitions in <code>revealer</code>.</p>",
+            "doc": "<p>Gets the type of animation that will be used\nfor transitions in <pre>revealer</pre>.</p>",
             "kind": "method",
             "name": "get_transition_type",
             "parameters": [],
@@ -57,7 +50,7 @@
             }
         },
         {
-            "doc": "<p>Tells the <span data-xref=\"Gtk.Revealer\"/> to reveal or conceal its child.</p><p>The transition will be animated with the current\ntransition type of <code>revealer</code>.</p>",
+            "doc": "<p>Tells the <span data-xref=\"Gtk.Revealer\"/> to reveal or conceal its child.</p><p>The transition will be animated with the current\ntransition type of <pre>revealer</pre>.</p>",
             "kind": "method",
             "name": "set_reveal_child",
             "parameters": [
@@ -89,7 +82,7 @@
             }
         },
         {
-            "doc": "<p>Sets the type of animation that will be used for\ntransitions in <code>revealer</code>. Available types include\nvarious kinds of fades and slides.</p>",
+            "doc": "<p>Sets the type of animation that will be used for\ntransitions in <pre>revealer</pre>. Available types include\nvarious kinds of fades and slides.</p>",
             "kind": "method",
             "name": "set_transition_type",
             "parameters": [
@@ -103,8 +96,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Revealer",
     "properties": [

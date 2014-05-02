@@ -58,18 +58,6 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.AppChooserDialog\"/> shows a <span data-xref=\"Gtk.AppChooserWidget\"/> inside a <span data-xref=\"Gtk.Dialog\"/>.</p><p>Note that <span data-xref=\"Gtk.AppChooserDialog\"/> does not have any interesting methods\nof its own. Instead, you should get the embedded <span data-xref=\"Gtk.AppChooserWidget\"/>\nusing <span data-xref=\"Gtk.AppChooserDialog.get_widget\"/> and call its methods if\nthe generic <span data-xref=\"Gtk.AppChooser\"/> interface is not sufficient for your needs.</p><p>To set the heading that is shown above the <span data-xref=\"Gtk.AppChooserWidget\"/>,\nuse <span data-xref=\"Gtk.AppChooserDialog.set_heading\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -105,8 +93,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "AppChooserDialog",
     "properties": [

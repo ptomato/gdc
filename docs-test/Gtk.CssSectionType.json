@@ -1,0 +1,52 @@
+{
+    "doc": "<p>The different types of sections indicate parts of a CSS document as\nparsed by GTK\u2019s CSS parser. They are oriented towards the\n<a href=\"http://www.w3.org/TR/CSS21/grammar.html\">CSS Grammar</a>,\nbut may contain extensions.</p><p>More types might be added in the future as the parser incorporates\nmore features.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The section describes a complete document.\n  This section time is the only one where <span data-xref=\"Gtk.CssSection.get_parent\"/>\n  might return <pre>null</pre>.</p>",
+            "kind": "default",
+            "name": "document"
+        },
+        {
+            "doc": "<p>The section defines an import rule.</p>",
+            "kind": "default",
+            "name": "import"
+        },
+        {
+            "doc": "<p>The section defines a color. This\n  is a GTK extension to CSS.</p>",
+            "kind": "default",
+            "name": "color_definition"
+        },
+        {
+            "doc": "<p>The section defines a binding set. This\n  is a GTK extension to CSS.</p>",
+            "kind": "default",
+            "name": "binding_set"
+        },
+        {
+            "doc": "<p>The section defines a CSS ruleset.</p>",
+            "kind": "default",
+            "name": "ruleset"
+        },
+        {
+            "doc": "<p>The section defines a CSS selector.</p>",
+            "kind": "default",
+            "name": "selector"
+        },
+        {
+            "doc": "<p>The section defines the declaration of\n  a CSS variable.</p>",
+            "kind": "default",
+            "name": "declaration"
+        },
+        {
+            "doc": "<p>The section defines the value of a CSS declaration.</p>",
+            "kind": "default",
+            "name": "value"
+        },
+        {
+            "doc": "<p>The section defines keyframes. See <a href=\"http://dev.w3.org/csswg/css3-animations/#keyframes\">CSS\n  Animations</a> for details. Since 3.6</p>",
+            "kind": "default",
+            "name": "keyframes"
+        }
+    ],
+    "name": "CssSectionType"
+}

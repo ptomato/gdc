@@ -1,0 +1,594 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Returns an empty widget path.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.WidgetPath"
+            }
+        }
+    ],
+    "doc": "<p>GtkWidgetPath is a boxed type that represents a widget hierarchy from\nthe topmost widget, typically a toplevel, to any child. This widget\npath abstraction is used in <span data-xref=\"Gtk.StyleContext\"/> on behalf of the real\nwidget in order to query style information.</p><p>If you are using GTK+ widgets, you probably will not need to use\nthis API directly, as there is <span data-xref=\"Gtk.Widget.get_path\"/>, and the style\ncontext returned by <span data-xref=\"Gtk.Widget.get_style_context\"/> will be automatically\nupdated on widget hierarchy changes.</p><p>The widget path generation is generally simple:</p><h2>Defining a button within a window</h2><p>|[<!-- language=\"C\" -->\n{\n  GtkWidgetPath *path;</p><p>path = gtk_widget_path_new ();\n  gtk_widget_path_append_type (path, GTK_TYPE_WINDOW);\n  gtk_widget_path_append_type (path, GTK_TYPE_BUTTON);\n}\n]|</p><p>Although more complex information, such as widget names, or\ndifferent classes (property that may be used by other widget\ntypes) and intermediate regions may be included:</p><h2>Defining the first tab widget in a notebook</h2><p>|[<!-- language=\"C\" -->\n{\n  GtkWidgetPath *path;\n  guint pos;</p><p>path = gtk_widget_path_new ();</p><p>pos = gtk_widget_path_append_type (path, GTK_TYPE_NOTEBOOK);\n  gtk_widget_path_iter_add_region (path, pos, \"tab\", GTK_REGION_EVEN | GTK_REGION_FIRST);</p><p>pos = gtk_widget_path_append_type (path, GTK_TYPE_LABEL);\n  gtk_widget_path_iter_set_name (path, pos, \"first tab label\");\n}\n]|</p><p>All this information will be used to match the style information\nthat applies to the described widget.</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Appends the data from <pre>widget</pre> to the widget hierarchy represented\nby <pre>path</pre>. This function is a shortcut for adding information from\n<pre>widget</pre> to the given <pre>path</pre>. This includes setting the name or\nadding the style classes from <pre>widget</pre>.</p>",
+            "kind": "method",
+            "name": "append_for_widget",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Appends a widget type to the widget hierarchy represented by <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "append_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "GObject.Type"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Appends a widget type with all its siblings to the widget hierarchy\nrepresented by <pre>path</pre>. Using this function instead of\n<span data-xref=\"Gtk.WidgetPath.append_type\"/> will allow the CSS theming to use\nsibling matches in selectors and apply :nth-child() pseudo classes.\nIn turn, it requires a lot more care in widget implementations as\nwidgets need to make sure to call <span data-xref=\"Gtk.Widget.reset_style\"/> on all\ninvolved widgets when the <pre>siblings</pre> path changes.</p>",
+            "kind": "method",
+            "name": "append_with_siblings",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "siblings",
+                    "direction": "in",
+                    "type": "Gtk.WidgetPath"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "sibling_index",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns a copy of <pre>path</pre></p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.WidgetPath"
+            }
+        },
+        {
+            "doc": "<p>Decrements the reference count on <pre>path</pre>, freeing the structure\nif the reference count reaches 0.</p>",
+            "kind": "method",
+            "name": "free",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the topmost object type, that is, the object type this path\nis representing.</p>",
+            "kind": "method",
+            "name": "get_object_type",
+            "parameters": [],
+            "retval": {
+                "type": "GObject.Type"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if any of the parents of the widget represented\nin <pre>path</pre> is of type <pre>type</pre>, or any subtype of it.</p>",
+            "kind": "method",
+            "name": "has_parent",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "GObject.Type"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if the widget type represented by this path\nis <pre>type</pre>, or a subtype of it.</p>",
+            "kind": "method",
+            "name": "is_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "GObject.Type"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Adds the class <pre>name</pre> to the widget at position <pre>pos</pre> in\nthe hierarchy defined in <pre>path</pre>. See\n<span data-xref=\"Gtk.StyleContext.add_class\"/>.</p>",
+            "kind": "method",
+            "name": "iter_add_class",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds the region <pre>name</pre> to the widget at position <pre>pos</pre> in\nthe hierarchy defined in <pre>path</pre>. See\n<span data-xref=\"Gtk.StyleContext.add_region\"/>.</p><p>Region names must only contain lowercase letters\nand \u201c-\u201d, starting always with a lowercase letter.</p>",
+            "kind": "method",
+            "name": "iter_add_region",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.RegionFlags"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes all classes from the widget at position <pre>pos</pre> in the\nhierarchy defined in <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "iter_clear_classes",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes all regions from the widget at position <pre>pos</pre> in the\nhierarchy defined in <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "iter_clear_regions",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the name corresponding to the widget found at\nthe position <pre>pos</pre> in the widget hierarchy defined by\n<pre>path</pre></p>",
+            "kind": "method",
+            "name": "iter_get_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the object <span data-xref=\"GLib.Type\">GLib.Type</span> that is at position <pre>pos</pre> in the widget\nhierarchy defined in <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "iter_get_object_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "GObject.Type"
+            }
+        },
+        {
+            "doc": "<p>Returns the index into the list of siblings for the element at <pre>pos</pre> as\nreturned by <span data-xref=\"Gtk.WidgetPath.iter_get_siblings\"/>. If that function would\nreturn <pre>null</pre> because the element at <pre>pos</pre> has no siblings, this function\nwill return 0.</p>",
+            "kind": "method",
+            "name": "iter_get_sibling_index",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the list of siblings for the element at <pre>pos</pre>. If the element\nwas not added with siblings, <pre>null</pre> is returned.</p>",
+            "kind": "method",
+            "name": "iter_get_siblings",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.WidgetPath"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if the widget at position <pre>pos</pre> has the class <pre>name</pre>\ndefined, <pre>false</pre> otherwise.</p>",
+            "kind": "method",
+            "name": "iter_has_class",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if the widget at position <pre>pos</pre> has the name <pre>name</pre>,\n<pre>false</pre> otherwise.</p>",
+            "kind": "method",
+            "name": "iter_has_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>See <span data-xref=\"Gtk.WidgetPath.iter_has_class\"/>. This is a version that operates\nwith GQuarks.</p>",
+            "kind": "method",
+            "name": "iter_has_qclass",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "qname",
+                    "direction": "in",
+                    "type": "GLib.Quark"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>See <span data-xref=\"Gtk.WidgetPath.iter_has_name\"/>. This is a version\nthat operates on #GQuarks.</p>",
+            "kind": "method",
+            "name": "iter_has_qname",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "qname",
+                    "direction": "in",
+                    "type": "GLib.Quark"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>See <span data-xref=\"Gtk.WidgetPath.iter_has_region\"/>. This is a version that operates\nwith GQuarks.</p>",
+            "kind": "method",
+            "name": "iter_has_qregion",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "qname",
+                    "direction": "in",
+                    "type": "GLib.Quark"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "out",
+                    "type": "Gtk.RegionFlags"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if the widget at position <pre>pos</pre> has the class <pre>name</pre>\ndefined, <pre>false</pre> otherwise.</p>",
+            "kind": "method",
+            "name": "iter_has_region",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "out",
+                    "type": "Gtk.RegionFlags"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns a list with all the class names defined for the widget\nat position <pre>pos</pre> in the hierarchy defined in <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "iter_list_classes",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Array(String)"
+            }
+        },
+        {
+            "doc": "<p>Returns a list with all the region names defined for the widget\nat position <pre>pos</pre> in the hierarchy defined in <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "iter_list_regions",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Array(String)"
+            }
+        },
+        {
+            "doc": "<p>Removes the class <pre>name</pre> from the widget at position <pre>pos</pre> in\nthe hierarchy defined in <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "iter_remove_class",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes the region <pre>name</pre> from the widget at position <pre>pos</pre> in\nthe hierarchy defined in <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "iter_remove_region",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the widget name for the widget found at position <pre>pos</pre>\nin the widget hierarchy defined by <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "iter_set_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the object type for a given position in the widget hierarchy\ndefined by <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "iter_set_object_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "GObject.Type"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the number of <span data-xref=\"Gtk.Widget\"/> #GTypes between the represented\nwidget and its topmost container.</p>",
+            "kind": "method",
+            "name": "length",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Prepends a widget type to the widget hierachy represented by <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "prepend_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "GObject.Type"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Increments the reference count on <pre>path</pre>.</p>",
+            "kind": "method",
+            "name": "ref",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.WidgetPath"
+            }
+        },
+        {
+            "doc": "<p>Dumps the widget path into a string representation. It tries to match\nthe CSS style as closely as possible (Note that there might be paths\nthat cannot be represented in CSS).</p><p>The main use of this code is for debugging purposes, so that you can\n<span data-xref=\"GLib.print\">GLib.print</span> the path or dump it in a gdb session.</p>",
+            "kind": "method",
+            "name": "to_string",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Decrements the reference count on <pre>path</pre>, freeing the structure\nif the reference count reaches 0.</p>",
+            "kind": "method",
+            "name": "unref",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "WidgetPath"
+}

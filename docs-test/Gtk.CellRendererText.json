@@ -11,22 +11,10 @@
         }
     ],
     "doc": "<p>A <span data-xref=\"Gtk.CellRendererText\"/> renders a given text in its cell, using the font, color and\nstyle information provided by its properties. The text will be ellipsized if it is\ntoo long and the <span data-xref=\"Gtk.CellRendererText-ellipsize\"/> property allows it.</p><p>If the <span data-xref=\"Gtk.CellRenderer-mode\"/> is <span data-xref=\"Gtk.CellRendererMode\"/>.editable,\nthe <span data-xref=\"Gtk.CellRendererText\"/> allows to edit its text using an entry.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Sets the height of a renderer to explicitly be determined by the \u201cfont\u201d and\n\u201cy_pad\u201d property set on it.  Further changes in these properties do not\naffect the height, so they must be accompanied by a subsequent call to this\nfunction.  Using this function is unflexible, and should really only be used\nif calculating the size of a cell is too slow (ie, a massive number of cells\ndisplayed).  If <code>number_of_rows</code> is -1, then the fixed height is unset, and\nthe height is determined by the properties again.</p>",
+            "doc": "<p>Sets the height of a renderer to explicitly be determined by the \u201cfont\u201d and\n\u201cy_pad\u201d property set on it.  Further changes in these properties do not\naffect the height, so they must be accompanied by a subsequent call to this\nfunction.  Using this function is unflexible, and should really only be used\nif calculating the size of a cell is too slow (ie, a massive number of cells\ndisplayed).  If <pre>number_of_rows</pre> is -1, then the fixed height is unset, and\nthe height is determined by the properties again.</p>",
             "kind": "method",
             "name": "set_fixed_height_from_font",
             "parameters": [
@@ -40,8 +28,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "CellRendererText",
     "properties": [
@@ -184,7 +171,7 @@
             "type": "Number(gint)"
         },
         {
-            "doc": "<p>The text that will be displayed in the <span data-xref=\"Gtk.CellRenderer\"/> if\n<span data-xref=\"Gtk.CellRendererText-editable\"/> is <code>true</code> and the cell is empty.</p><p>Since 3.6</p>",
+            "doc": "<p>The text that will be displayed in the <span data-xref=\"Gtk.CellRenderer\"/> if\n<span data-xref=\"Gtk.CellRendererText-editable\"/> is <pre>true</pre> and the cell is empty.</p><p>Since 3.6</p>",
             "kind": "property",
             "name": "placeholder-text",
             "type": "String"
@@ -336,7 +323,7 @@
     ],
     "signals": [
         {
-            "doc": "<p>This signal is emitted after @renderer has been edited.</p><p>It is the responsibility of the application to update the model\nand store <code>new_text</code> at the position indicated by <code>path</code>.</p>",
+            "doc": "<p>This signal is emitted after @renderer has been edited.</p><p>It is the responsibility of the application to update the model\nand store <pre>new_text</pre> at the position indicated by <pre>path</pre>.</p>",
             "kind": "signal",
             "name": "edited",
             "parameters": [

@@ -10,23 +10,9 @@
             }
         }
     ],
-    "doc": "<p>GtkCellRendererSpinner renders a spinning animation in a cell, very\nsimilar to <span data-xref=\"Gtk.Spinner\"/>. It can often be used as an alternative\nto a <span data-xref=\"Gtk.CellRendererProgress\"/> for displaying indefinite activity,\ninstead of actual progress.</p><p>To start the animation in a cell, set the <span data-xref=\"Gtk.CellRendererSpinner-active\"/>\nproperty to <code>true</code> and increment the <span data-xref=\"Gtk.CellRendererSpinner-pulse\"/> property\nat regular intervals. The usual way to set the cell renderer properties\nfor each cell is to bind them to columns in your tree model using e.g.\n<span data-xref=\"Gtk.TreeViewColumn.add_attribute\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>GtkCellRendererSpinner renders a spinning animation in a cell, very\nsimilar to <span data-xref=\"Gtk.Spinner\"/>. It can often be used as an alternative\nto a <span data-xref=\"Gtk.CellRendererProgress\"/> for displaying indefinite activity,\ninstead of actual progress.</p><p>To start the animation in a cell, set the <span data-xref=\"Gtk.CellRendererSpinner-active\"/>\nproperty to <pre>true</pre> and increment the <span data-xref=\"Gtk.CellRendererSpinner-pulse\"/> property\nat regular intervals. The usual way to set the cell renderer properties\nfor each cell is to bind them to columns in your tree model using e.g.\n<span data-xref=\"Gtk.TreeViewColumn.add_attribute\"/>.</p>",
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "CellRendererSpinner",
     "properties": [
         {

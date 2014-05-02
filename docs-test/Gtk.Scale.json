@@ -23,7 +23,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new scale widget with the given orientation that lets the\nuser input a number between <code>min</code> and <code>max</code> (including <code>min</code> and <code>max</code>)\nwith the increment <code>step</code>.  <code>step</code> must be nonzero; it\u2019s the distance\nthe slider moves when using the arrow keys to adjust the scale\nvalue.</p><p>Note that the way in which the precision is derived works best if <code>step</code>\nis a power of ten. If the resulting precision is not suitable for your\nneeds, use <span data-xref=\"Gtk.Scale.set_digits\"/> to correct it.</p>",
+            "doc": "<p>Creates a new scale widget with the given orientation that lets the\nuser input a number between <pre>min</pre> and <pre>max</pre> (including <pre>min</pre> and <pre>max</pre>)\nwith the increment <pre>step</pre>.  <pre>step</pre> must be nonzero; it\u2019s the distance\nthe slider moves when using the arrow keys to adjust the scale\nvalue.</p><p>Note that the way in which the precision is derived works best if <pre>step</pre>\nis a power of ten. If the resulting precision is not suitable for your\nneeds, use <span data-xref=\"Gtk.Scale.set_digits\"/> to correct it.</p>",
             "kind": "constructor",
             "name": "new_with_range",
             "parameters": [
@@ -57,23 +57,11 @@
             }
         }
     ],
-    "doc": "<p>A GtkScale is a slider control used to select a numeric value.\nTo use it, you\u2019ll probably want to investigate the methods on\nits base class, <span data-xref=\"Gtk.Range\"/>, in addition to the methods for GtkScale itself.\nTo set the value of a scale, you would normally use <span data-xref=\"Gtk.Range.set_value\"/>.\nTo detect changes to the value, you would normally use the\n<span data-xref=\"Gtk.Range-value-changed\"/> signal.</p><p>Note that using the same upper and lower bounds for the <span data-xref=\"Gtk.Scale\"/> (through\nthe <span data-xref=\"Gtk.Range\"/> methods) will hide the slider itself. This is useful for\napplications that want to show an undeterminate value on the scale, without\nchanging the layout of the application (such as movie or music players).</p><h1>GtkScale as GtkBuildable</h1><p>GtkScale supports a custom &lt;marks&gt; element, which can contain multiple\n&lt;mark&gt; elements. The \u201cvalue\u201d and \u201cposition\u201d attributes have the same\nmeaning as <span data-xref=\"Gtk.Scale.add_mark\"/> parameters of the same name. If the\nelement is not empty, its content is taken as the markup to show at\nthe mark. It can be translated with the usual \u201dtranslatable\u201d and\n\u201ccontext\u201d attributes.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "range"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>A GtkScale is a slider control used to select a numeric value.\nTo use it, you\u2019ll probably want to investigate the methods on\nits base class, <span data-xref=\"Gtk.Range\"/>, in addition to the methods for GtkScale itself.\nTo set the value of a scale, you would normally use <span data-xref=\"Gtk.Range.set_value\"/>.\nTo detect changes to the value, you would normally use the\n<span data-xref=\"Gtk.Range-value-changed\"/> signal.</p><p>Note that using the same upper and lower bounds for the <span data-xref=\"Gtk.Scale\"/> (through\nthe <span data-xref=\"Gtk.Range\"/> methods) will hide the slider itself. This is useful for\napplications that want to show an undeterminate value on the scale, without\nchanging the layout of the application (such as movie or music players).</p><h1>GtkScale as GtkBuildable</h1><p>GtkScale supports a custom <marks> element, which can contain multiple\n<mark> elements. The \u201cvalue\u201d and \u201cposition\u201d attributes have the same\nmeaning as <span data-xref=\"Gtk.Scale.add_mark\"/> parameters of the same name. If the\nelement is not empty, its content is taken as the markup to show at\nthe mark. It can be translated with the usual \u201dtranslatable\u201d and\n\u201ccontext\u201d attributes.</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Adds a mark at <code>value</code>.</p><p>A mark is indicated visually by drawing a tick mark next to the scale,\nand GTK+ makes it easy for the user to position the scale exactly at the\nmarks value.</p><p>If <code>markup</code> is not <code>null</code>, text is shown next to the tick mark.</p><p>To remove marks from a scale, use <span data-xref=\"Gtk.Scale.clear_marks\"/>.</p>",
+            "doc": "<p>Adds a mark at <pre>value</pre>.</p><p>A mark is indicated visually by drawing a tick mark next to the scale,\nand GTK+ makes it easy for the user to position the scale exactly at the\nmarks value.</p><p>If <pre>markup</pre> is not <pre>null</pre>, text is shown next to the tick mark.</p><p>To remove marks from a scale, use <span data-xref=\"Gtk.Scale.clear_marks\"/>.</p>",
             "kind": "method",
             "name": "add_mark",
             "parameters": [
@@ -146,7 +134,7 @@
             }
         },
         {
-            "doc": "<p>Obtains the coordinates where the scale will draw the\n<span data-xref=\"Pango.Layout\">Pango.Layout</span> representing the text in the scale. Remember\nwhen using the <span data-xref=\"Pango.Layout\">Pango.Layout</span> function you need to convert to\nand from pixels using PANGO_PIXELS() or #PANGO_SCALE.</p><p>If the <span data-xref=\"Gtk.Scale-draw-value\"/> property is <code>false</code>, the return\nvalues are undefined.</p>",
+            "doc": "<p>Obtains the coordinates where the scale will draw the\n<span data-xref=\"Pango.Layout\">Pango.Layout</span> representing the text in the scale. Remember\nwhen using the <span data-xref=\"Pango.Layout\">Pango.Layout</span> function you need to convert to\nand from pixels using PANGO_PIXELS() or #PANGO_SCALE.</p><p>If the <span data-xref=\"Gtk.Scale-draw-value\"/> property is <pre>false</pre>, the return\nvalues are undefined.</p>",
             "kind": "method",
             "name": "get_layout_offsets",
             "parameters": [
@@ -209,7 +197,7 @@
             }
         },
         {
-            "doc": "<p>If <code>has_origin</code> is set to <code>true</code> (the default),\nthe scale will highlight the part of the scale\nbetween the origin (bottom or left side) of the scale\nand the current value.</p>",
+            "doc": "<p>If <pre>has_origin</pre> is set to <pre>true</pre> (the default),\nthe scale will highlight the part of the scale\nbetween the origin (bottom or left side) of the scale\nand the current value.</p>",
             "kind": "method",
             "name": "set_has_origin",
             "parameters": [
@@ -239,8 +227,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Scale",
     "properties": [
@@ -271,7 +258,7 @@
     ],
     "signals": [
         {
-            "doc": "<p>Signal which allows you to change how the scale value is displayed.\nConnect a signal handler which returns an allocated string representing\n<code>value</code>. That string will then be used to display the scale's value.</p><p>Here's an example signal handler which displays a value 1.0 as\nwith \"--&gt;1.0&lt;--\".\n|[&lt;!-- language=\"C\" --&gt;\nstatic gchar<em>\nformat_value_callback (GtkScale </em>scale,\n                       gdouble   value)\n{\n  return g_strdup_printf (\"--&gt;\\%0.*g&lt;--\",\n                          gtk_scale_get_digits (scale), value);\n }\n]|</p>",
+            "doc": "<p>Signal which allows you to change how the scale value is displayed.\nConnect a signal handler which returns an allocated string representing\n<pre>value</pre>. That string will then be used to display the scale's value.</p><p>Here's an example signal handler which displays a value 1.0 as\nwith \"--&gt;1.0&lt;--\".\n|[<!-- language=\"C\" -->\nstatic gchar<em>\nformat_value_callback (GtkScale </em>scale,\n                       gdouble   value)\n{\n  return g_strdup_printf (\"--&gt;\\%0.*g&lt;--\",\n                          gtk_scale_get_digits (scale), value);\n }\n]|</p>",
             "kind": "signal",
             "name": "format-value",
             "parameters": [
@@ -314,7 +301,7 @@
             }
         },
         {
-            "doc": "<p>Obtains the coordinates where the scale will draw the\n<span data-xref=\"Pango.Layout\">Pango.Layout</span> representing the text in the scale. Remember\nwhen using the <span data-xref=\"Pango.Layout\">Pango.Layout</span> function you need to convert to\nand from pixels using PANGO_PIXELS() or #PANGO_SCALE.</p><p>If the <span data-xref=\"Gtk.Scale-draw-value\"/> property is <code>false</code>, the return\nvalues are undefined.</p>",
+            "doc": "<p>Obtains the coordinates where the scale will draw the\n<span data-xref=\"Pango.Layout\">Pango.Layout</span> representing the text in the scale. Remember\nwhen using the <span data-xref=\"Pango.Layout\">Pango.Layout</span> function you need to convert to\nand from pixels using PANGO_PIXELS() or #PANGO_SCALE.</p><p>If the <span data-xref=\"Gtk.Scale-draw-value\"/> property is <pre>false</pre>, the return\nvalues are undefined.</p>",
             "kind": "vfunc",
             "name": "get_layout_offsets",
             "parameters": [

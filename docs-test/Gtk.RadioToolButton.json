@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioToolButton\"/>, adding it to <code>group</code>.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioToolButton\"/>, adding it to <pre>group</pre>.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -17,7 +17,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioToolButton\"/>, adding it to <code>group</code>.\nThe new <span data-xref=\"Gtk.RadioToolButton\"/> will contain an icon and label from the\nstock item indicated by <code>stock_id</code>.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioToolButton\"/>, adding it to <pre>group</pre>.\nThe new <span data-xref=\"Gtk.RadioToolButton\"/> will contain an icon and label from the\nstock item indicated by <pre>stock_id</pre>.</p>",
             "kind": "constructor",
             "name": "new_from_stock",
             "parameters": [
@@ -55,7 +55,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioToolButton\"/> adding it to the same group as <code>group</code>.\nThe new <span data-xref=\"Gtk.RadioToolButton\"/> will contain an icon and label from the\nstock item indicated by <code>stock_id</code>.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioToolButton\"/> adding it to the same group as <pre>group</pre>.\nThe new <span data-xref=\"Gtk.RadioToolButton\"/> will contain an icon and label from the\nstock item indicated by <pre>stock_id</pre>.</p>",
             "kind": "constructor",
             "name": "new_with_stock_from_widget",
             "parameters": [
@@ -78,17 +78,10 @@
         }
     ],
     "doc": "<p>A <span data-xref=\"Gtk.RadioToolButton\"/> is a <span data-xref=\"Gtk.ToolItem\"/> that contains a radio button,\nthat is, a button that is part of a group of toggle buttons where only\none button can be active at a time.</p><p>Use <span data-xref=\"Gtk.RadioToolButton.new\"/> to create a new\n<span data-xref=\"Gtk.RadioToolButton\"/>. Use <span data-xref=\"Gtk.RadioToolButton.new_from_widget\"/> to\ncreate a new <span data-xref=\"Gtk.RadioToolButton\"/> that is part of the same group as an\nexisting <span data-xref=\"Gtk.RadioToolButton\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Returns the radio button group <code>button</code> belongs to.</p>",
+            "doc": "<p>Returns the radio button group <pre>button</pre> belongs to.</p>",
             "kind": "method",
             "name": "get_group",
             "parameters": [],
@@ -97,7 +90,7 @@
             }
         },
         {
-            "doc": "<p>Adds <code>button</code> to <code>group</code>, removing it from the group it belonged to before.</p>",
+            "doc": "<p>Adds <pre>button</pre> to <pre>group</pre>, removing it from the group it belonged to before.</p>",
             "kind": "method",
             "name": "set_group",
             "parameters": [
@@ -111,8 +104,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "RadioToolButton",
     "properties": [

@@ -1,0 +1,69 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "row_selected"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "row_activated"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "activate_cursor_row"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "toggle_cursor_row"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "move_cursor"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "selected_rows_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "select_all"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "unselect_all"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "ListBoxClass"
+}

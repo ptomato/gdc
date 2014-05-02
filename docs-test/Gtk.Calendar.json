@@ -11,18 +11,6 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.Calendar\"/> is a widget that displays a Gregorian calendar, one month\nat a time. It can be created with <span data-xref=\"Gtk.Calendar.new\"/>.</p><p>The month and year currently displayed can be altered with\n<span data-xref=\"Gtk.Calendar.select_month\"/>. The exact day can be selected from the\ndisplayed month using <span data-xref=\"Gtk.Calendar.select_day\"/>.</p><p>To place a visual marker on a particular day, use <span data-xref=\"Gtk.Calendar.mark_day\"/>\nand to remove the marker, <span data-xref=\"Gtk.Calendar.unmark_day\"/>. Alternative, all\nmarks can be cleared with <span data-xref=\"Gtk.Calendar.clear_marks\"/>.</p><p>The way in which the calendar itself is displayed can be altered using\n<span data-xref=\"Gtk.Calendar.set_display_options\"/>.</p><p>The selected date can be retrieved from a <span data-xref=\"Gtk.Calendar\"/> using\n<span data-xref=\"Gtk.Calendar.get_date\"/>.</p><p>Users should be aware that, although the Gregorian calendar is the\nlegal calendar in most countries, it was adopted progressively\nbetween 1582 and 1929. Display before these dates is likely to be\nhistorically incorrect.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "widget"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -63,7 +51,7 @@
             }
         },
         {
-            "doc": "<p>Returns if the <code>day</code> of the <code>calendar</code> is already marked.</p>",
+            "doc": "<p>Returns if the <pre>day</pre> of the <pre>calendar</pre> is already marked.</p>",
             "kind": "method",
             "name": "get_day_is_marked",
             "parameters": [
@@ -97,7 +85,7 @@
             }
         },
         {
-            "doc": "<p>Returns the current display options of <code>calendar</code>.</p>",
+            "doc": "<p>Returns the current display options of <pre>calendar</pre>.</p>",
             "kind": "method",
             "name": "get_display_options",
             "parameters": [],
@@ -250,8 +238,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Calendar",
     "properties": [

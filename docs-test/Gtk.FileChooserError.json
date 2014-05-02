@@ -1,0 +1,27 @@
+{
+    "doc": "<p>These identify the various errors that can occur while calling\n<span data-xref=\"Gtk.FileChooser\"/> functions.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Indicates that a file does not exist.</p>",
+            "kind": "default",
+            "name": "nonexistent"
+        },
+        {
+            "doc": "<p>Indicates a malformed filename.</p>",
+            "kind": "default",
+            "name": "bad_filename"
+        },
+        {
+            "doc": "<p>Indicates a duplicate path (e.g. when\n adding a bookmark).</p>",
+            "kind": "default",
+            "name": "already_exists"
+        },
+        {
+            "doc": "<p>Indicates an incomplete hostname (e.g. \"http://foo\" without a slash after that).</p>",
+            "kind": "default",
+            "name": "incomplete_hostname"
+        }
+    ],
+    "name": "FileChooserError"
+}

@@ -1,0 +1,22 @@
+{
+    "doc": "<p>See also gtk_print_job_set_page_set().</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>All pages.</p>",
+            "kind": "default",
+            "name": "all"
+        },
+        {
+            "doc": "<p>Even pages.</p>",
+            "kind": "default",
+            "name": "even"
+        },
+        {
+            "doc": "<p>Odd pages.</p>",
+            "kind": "default",
+            "name": "odd"
+        }
+    ],
+    "name": "PageSet"
+}

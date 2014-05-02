@@ -32,7 +32,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.CellView\"/> widget, adds a <span data-xref=\"Gtk.CellRendererText\"/>\nto it, and makes it show <code>markup</code>. The text can be\nmarked up with the [Pango text markup language][PangoMarkupFormat].</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CellView\"/> widget, adds a <span data-xref=\"Gtk.CellRendererText\"/>\nto it, and makes it show <pre>markup</pre>. The text can be\nmarked up with the [Pango text markup language][PangoMarkupFormat].</p>",
             "kind": "constructor",
             "name": "new_with_markup",
             "parameters": [
@@ -48,7 +48,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.CellView\"/> widget, adds a <span data-xref=\"Gtk.CellRendererPixbuf\"/>\nto it, and makes it show <code>pixbuf</code>.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CellView\"/> widget, adds a <span data-xref=\"Gtk.CellRendererPixbuf\"/>\nto it, and makes it show <pre>pixbuf</pre>.</p>",
             "kind": "constructor",
             "name": "new_with_pixbuf",
             "parameters": [
@@ -64,7 +64,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.CellView\"/> widget, adds a <span data-xref=\"Gtk.CellRendererText\"/>\nto it, and makes it show <code>text</code>.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CellView\"/> widget, adds a <span data-xref=\"Gtk.CellRendererText\"/>\nto it, and makes it show <pre>text</pre>.</p>",
             "kind": "constructor",
             "name": "new_with_text",
             "parameters": [
@@ -81,22 +81,10 @@
         }
     ],
     "doc": "<p>A <span data-xref=\"Gtk.CellView\"/> displays a single row of a <span data-xref=\"Gtk.TreeModel\"/> using a <span data-xref=\"Gtk.CellArea\"/>\nand <span data-xref=\"Gtk.CellAreaContext\"/>. A <span data-xref=\"Gtk.CellAreaContext\"/> can be provided to the\n<span data-xref=\"Gtk.CellView\"/> at construction time in order to keep the cellview in context\nof a group of cell views, this ensures that the renderers displayed will\nbe properly aligned with eachother (like the aligned cells in the menus\nof <span data-xref=\"Gtk.ComboBox\"/>).</p><p><span data-xref=\"Gtk.CellView\"/> is <span data-xref=\"Gtk.Orientable\"/> in order to decide in which orientation\nthe underlying <span data-xref=\"Gtk.CellAreaContext\"/> should be allocated. Taking the <span data-xref=\"Gtk.ComboBox\"/>\nmenu as an example, cellviews should be oriented horizontally if the menus are\nlisted top-to-bottom and thus all share the same width but may have separate\nindividual heights (left-to-right menus should be allocated vertically since\nthey all share the same height but may have variable widths).</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Returns a <span data-xref=\"Gtk.TreePath\"/> referring to the currently\ndisplayed row. If no row is currently displayed,\n<code>null</code> is returned.</p>",
+            "doc": "<p>Returns a <span data-xref=\"Gtk.TreePath\"/> referring to the currently\ndisplayed row. If no row is currently displayed,\n<pre>null</pre> is returned.</p>",
             "kind": "method",
             "name": "get_displayed_row",
             "parameters": [],
@@ -105,7 +93,7 @@
             }
         },
         {
-            "doc": "<p>Gets whether <code>cell_view</code> is configured to draw all of its\ncells in a sensitive state.</p>",
+            "doc": "<p>Gets whether <pre>cell_view</pre> is configured to draw all of its\ncells in a sensitive state.</p>",
             "kind": "method",
             "name": "get_draw_sensitive",
             "parameters": [],
@@ -114,7 +102,7 @@
             }
         },
         {
-            "doc": "<p>Gets whether <code>cell_view</code> is configured to request space\nto fit the entire <span data-xref=\"Gtk.TreeModel\"/>.</p>",
+            "doc": "<p>Gets whether <pre>cell_view</pre> is configured to request space\nto fit the entire <span data-xref=\"Gtk.TreeModel\"/>.</p>",
             "kind": "method",
             "name": "get_fit_model",
             "parameters": [],
@@ -123,7 +111,7 @@
             }
         },
         {
-            "doc": "<p>Returns the model for <code>cell_view</code>. If no model is used <code>null</code> is\nreturned.</p>",
+            "doc": "<p>Returns the model for <pre>cell_view</pre>. If no model is used <pre>null</pre> is\nreturned.</p>",
             "kind": "method",
             "name": "get_model",
             "parameters": [],
@@ -132,7 +120,7 @@
             }
         },
         {
-            "doc": "<p>Sets <code>requisition</code> to the size needed by <code>cell_view</code> to display\nthe model row pointed to by <code>path</code>.</p>",
+            "doc": "<p>Sets <pre>requisition</pre> to the size needed by <pre>cell_view</pre> to display\nthe model row pointed to by <pre>path</pre>.</p>",
             "kind": "method",
             "name": "get_size_of_row",
             "parameters": [
@@ -170,7 +158,7 @@
             }
         },
         {
-            "doc": "<p>Sets the background color of <code>cell_view</code>.</p>",
+            "doc": "<p>Sets the background color of <pre>cell_view</pre>.</p>",
             "kind": "method",
             "name": "set_background_rgba",
             "parameters": [
@@ -202,7 +190,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>cell_view</code> should draw all of its\ncells in a sensitive state, this is used by <span data-xref=\"Gtk.ComboBox\"/> menus\nto ensure that rows with insensitive cells that contain\nchildren appear sensitive in the parent menu item.</p>",
+            "doc": "<p>Sets whether <pre>cell_view</pre> should draw all of its\ncells in a sensitive state, this is used by <span data-xref=\"Gtk.ComboBox\"/> menus\nto ensure that rows with insensitive cells that contain\nchildren appear sensitive in the parent menu item.</p>",
             "kind": "method",
             "name": "set_draw_sensitive",
             "parameters": [
@@ -218,7 +206,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>cell_view</code> should request space to fit the entire <span data-xref=\"Gtk.TreeModel\"/>.</p><p>This is used by <span data-xref=\"Gtk.ComboBox\"/> to ensure that the cell view displayed on\nthe combo box\u2019s button always gets enough space and does not resize\nwhen selection changes.</p>",
+            "doc": "<p>Sets whether <pre>cell_view</pre> should request space to fit the entire <span data-xref=\"Gtk.TreeModel\"/>.</p><p>This is used by <span data-xref=\"Gtk.ComboBox\"/> to ensure that the cell view displayed on\nthe combo box\u2019s button always gets enough space and does not resize\nwhen selection changes.</p>",
             "kind": "method",
             "name": "set_fit_model",
             "parameters": [
@@ -234,7 +222,7 @@
             }
         },
         {
-            "doc": "<p>Sets the model for <code>cell_view</code>.  If <code>cell_view</code> already has a model\nset, it will remove it before setting the new model.  If <code>model</code> is\n<code>null</code>, then it will unset the old model.</p>",
+            "doc": "<p>Sets the model for <pre>cell_view</pre>.  If <pre>cell_view</pre> already has a model\nset, it will remove it before setting the new model.  If <pre>model</pre> is\n<pre>null</pre>, then it will unset the old model.</p>",
             "kind": "method",
             "name": "set_model",
             "parameters": [
@@ -248,8 +236,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "CellView",
     "properties": [

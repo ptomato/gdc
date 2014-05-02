@@ -36,18 +36,6 @@
         }
     ],
     "doc": "<p>A <span data-xref=\"Gtk.ToggleAction\"/> corresponds roughly to a <span data-xref=\"Gtk.CheckMenuItem\"/>. It has an\n\u201cactive\u201d state specifying whether the action has been checked or not.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "private_data"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -108,8 +96,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ToggleAction",
     "properties": [
@@ -120,7 +107,7 @@
             "type": "Boolean"
         },
         {
-            "doc": "<p>Whether the proxies for this action look like radio action proxies.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <code>true</code>.</p>",
+            "doc": "<p>Whether the proxies for this action look like radio action proxies.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <pre>true</pre>.</p>",
             "kind": "property",
             "name": "draw-as-radio",
             "type": "Boolean"

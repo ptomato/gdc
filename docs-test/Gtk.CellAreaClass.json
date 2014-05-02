@@ -1,0 +1,204 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "add"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "remove"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "foreach"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "foreach_alloc"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "apply_attributes"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "create_context"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "copy_context"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_request_mode"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_width"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_height_for_width"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_height"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_width_for_height"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_cell_property"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_cell_property"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "focus"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "is_activatable"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "activate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved6"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved7"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved8"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Finds a cell property of a cell area class by name.</p>",
+            "kind": "method",
+            "name": "find_cell_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "property_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "GObject.ParamSpec"
+            }
+        },
+        {
+            "doc": "<p>Installs a cell property on a cell area class.</p>",
+            "kind": "method",
+            "name": "install_cell_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "property_id",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns all cell properties of a cell area class.</p>",
+            "kind": "method",
+            "name": "list_cell_properties",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "n_properties",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Array(GObject.ParamSpec)"
+            }
+        }
+    ],
+    "name": "CellAreaClass"
+}

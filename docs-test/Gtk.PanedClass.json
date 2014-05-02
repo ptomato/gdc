@@ -1,0 +1,64 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "cycle_child_focus"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "toggle_handle_focus"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "move_handle"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "cycle_handle_focus"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "accept_position"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "cancel_position"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "PanedClass"
+}

@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new list store as with <code>n_columns</code> columns each of the types passed\nin.  Note that only types derived from standard GObject fundamental types\nare supported.</p><p>As an example, <code>gtk_list_store_new (3, G_TYPE_INT, G_TYPE_STRING,\nGDK_TYPE_PIXBUF);</code> will create a new <span data-xref=\"Gtk.ListStore\"/> with three columns, of type\nint, string and <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span> respectively.</p>",
+            "doc": "<p>Creates a new list store as with <pre>n_columns</pre> columns each of the types passed\nin.  Note that only types derived from standard GObject fundamental types\nare supported.</p><p>As an example, <code>gtk_list_store_new (3, G_TYPE_INT, G_TYPE_STRING,\nGDK_TYPE_PIXBUF);</code> will create a new <span data-xref=\"Gtk.ListStore\"/> with three columns, of type\nint, string and <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span> respectively.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -45,23 +45,11 @@
             }
         }
     ],
-    "doc": "<p>The <span data-xref=\"Gtk.ListStore\"/> object is a list model for use with a <span data-xref=\"Gtk.TreeView\"/>\nwidget.  It implements the <span data-xref=\"Gtk.TreeModel\"/> interface, and consequentialy,\ncan use all of the methods available there.  It also implements the\n<span data-xref=\"Gtk.TreeSortable\"/> interface so it can be sorted by the view.\nFinally, it also implements the tree\n[drag and drop][gtk3-GtkTreeView-drag-and-drop]\ninterfaces.</p><p>The <span data-xref=\"Gtk.ListStore\"/> can accept most GObject types as a column type, though\nit can\u2019t accept all custom types.  Internally, it will keep a copy of\ndata passed in (such as a string or a boxed pointer).  Columns that\naccept #GObjects are handled a little differently.  The\n<span data-xref=\"Gtk.ListStore\"/> will keep a reference to the object instead of copying the\nvalue.  As a result, if the object is modified, it is up to the\napplication writer to call <span data-xref=\"Gtk.TreeModel.row_changed\"/> to emit the</p>\n<h1>GtkTreeModel::row_changed signal.  This most commonly affects lists with</h1>\n<h1>GdkPixbufs stored.</h1><p>An example for creating a simple list store:\n|[&lt;!-- language=\"C\" --&gt;\nenum {\n  COLUMN_STRING,\n  COLUMN_INT,\n  COLUMN_BOOLEAN,\n  N_COLUMNS\n};</p><p>{\n  GtkListStore <em>list_store;\n  GtkTreePath </em>path;\n  GtkTreeIter iter;\n  gint i;</p><p>list_store = gtk_list_store_new (N_COLUMNS,\n                                   G_TYPE_STRING,\n                                   G_TYPE_INT,\n                                   G_TYPE_BOOLEAN);</p><p>for (i = 0; i &lt; 10; i++)\n    {\n      gchar *some_data;</p><pre><code>  some_data = get_some_data (i);\n</code></pre><pre><code>  // Add a new row to the model\n  gtk_list_store_append (list_store, &amp;amp;iter);\n  gtk_list_store_set (list_store, &amp;amp;iter,\n                      COLUMN_STRING, some_data,\n                      COLUMN_INT, i,\n                      COLUMN_BOOLEAN,  FALSE,\n                      -1);\n</code></pre><pre><code>  // As the store will keep a copy of the string internally,\n  // we free some_data.\n  g_free (some_data);\n}\n</code></pre><p>// Modify a particular row\n  path = gtk_tree_path_new_from_string (\"4\");\n  gtk_tree_model_get_iter (GTK_TREE_MODEL (list_store),\n                           &amp;iter,\n                           path);\n  gtk_tree_path_free (path);\n  gtk_list_store_set (list_store, &amp;iter,\n                      COLUMN_BOOLEAN, TRUE,\n                      -1);\n}\n]|</p><h1>Performance Considerations</h1><p>Internally, the <span data-xref=\"Gtk.ListStore\"/> was implemented with a linked list with\na tail pointer prior to GTK+ 2.6.  As a result, it was fast at data\ninsertion and deletion, and not fast at random data access.  The\n<span data-xref=\"Gtk.ListStore\"/> sets the #GTK_TREE_MODEL_ITERS_PERSIST flag, which means\nthat #GtkTreeIters can be cached while the row exists.  Thus, if\naccess to a particular row is needed often and your code is expected to\nrun on older versions of GTK+, it is worth keeping the iter around.</p><h1>Atomic Operations</h1><p>It is important to note that only the methods\n<span data-xref=\"Gtk.ListStore.insert_with_values\"/> and <span data-xref=\"Gtk.ListStore.insert_with_valuesv\"/>\nare atomic, in the sense that the row is being appended to the store and the\nvalues filled in in a single operation with regard to <span data-xref=\"Gtk.TreeModel\"/> signaling.\nIn contrast, using e.g. <span data-xref=\"Gtk.ListStore.append\"/> and then <span data-xref=\"Gtk.ListStore.set\"/>\nwill first create a row, which triggers the <span data-xref=\"Gtk.TreeModel-row-inserted\"/> signal\non <span data-xref=\"Gtk.ListStore\"/>. The row, however, is still empty, and any signal handler\nconnecting to <span data-xref=\"Gtk.TreeModel-row-inserted\"/> on this particular store should be prepared\nfor the situation that the row might be empty. This is especially important\nif you are wrapping the <span data-xref=\"Gtk.ListStore\"/> inside a <span data-xref=\"Gtk.TreeModelFilter\"/> and are\nusing a <span data-xref=\"Gtk.TreeModelFilterVisibleFunc\"/>. Using any of the non-atomic operations\nto append rows to the <span data-xref=\"Gtk.ListStore\"/> will cause the\n<span data-xref=\"Gtk.TreeModelFilterVisibleFunc\"/> to be visited with an empty row first; the\nfunction must be prepared for that.</p><h1>GtkListStore as GtkBuildable</h1><p>The GtkListStore implementation of the GtkBuildable interface allows\nto specify the model columns with a &lt;columns&gt; element that may contain\nmultiple &lt;column&gt; elements, each specifying one model column. The \u201ctype\u201d\nattribute specifies the data type for the column.</p><p>Additionally, it is possible to specify content for the list store\nin the UI definition, with the &lt;data&gt; element. It can contain multiple\n&lt;row&gt; elements, each specifying to content for one row of the list model.\nInside a &lt;row&gt;, the &lt;col&gt; elements specify the content for individual cells.</p><p>Note that it is probably more common to define your models in the code,\nand one might consider it a layering violation to specify the content of\na list store in a UI definition, data, not presentation, and common wisdom\nis to separate the two, as far as possible.</p><p>An example of a UI Definition fragment for a list store:\n|[&lt;!-- language=\"C\" --&gt;\n&lt;object class=\"GtkListStore\"&gt;\n  &lt;columns&gt;\n    &lt;column type=\"gchararray\"/&gt;\n    &lt;column type=\"gchararray\"/&gt;\n    &lt;column type=\"gint\"/&gt;\n  &lt;/columns&gt;\n  &lt;data&gt;\n    &lt;row&gt;\n      &lt;col id=\"0\"&gt;John&lt;/col&gt;\n      &lt;col id=\"1\"&gt;Doe&lt;/col&gt;\n      &lt;col id=\"2\"&gt;25&lt;/col&gt;\n    &lt;/row&gt;\n    &lt;row&gt;\n      &lt;col id=\"0\"&gt;Johan&lt;/col&gt;\n      &lt;col id=\"1\"&gt;Dahlin&lt;/col&gt;\n      &lt;col id=\"2\"&gt;50&lt;/col&gt;\n    &lt;/row&gt;\n  &lt;/data&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>The <span data-xref=\"Gtk.ListStore\"/> object is a list model for use with a <span data-xref=\"Gtk.TreeView\"/>\nwidget.  It implements the <span data-xref=\"Gtk.TreeModel\"/> interface, and consequentialy,\ncan use all of the methods available there.  It also implements the\n<span data-xref=\"Gtk.TreeSortable\"/> interface so it can be sorted by the view.\nFinally, it also implements the tree\n[drag and drop][gtk3-GtkTreeView-drag-and-drop]\ninterfaces.</p><p>The <span data-xref=\"Gtk.ListStore\"/> can accept most GObject types as a column type, though\nit can\u2019t accept all custom types.  Internally, it will keep a copy of\ndata passed in (such as a string or a boxed pointer).  Columns that\naccept #GObjects are handled a little differently.  The\n<span data-xref=\"Gtk.ListStore\"/> will keep a reference to the object instead of copying the\nvalue.  As a result, if the object is modified, it is up to the\napplication writer to call <span data-xref=\"Gtk.TreeModel.row_changed\"/> to emit the</p>\n<h1>GtkTreeModel::row_changed signal.  This most commonly affects lists with</h1>\n<h1>GdkPixbufs stored.</h1><p>An example for creating a simple list store:\n|[<!-- language=\"C\" -->\nenum {\n  COLUMN_STRING,\n  COLUMN_INT,\n  COLUMN_BOOLEAN,\n  N_COLUMNS\n};</p><p>{\n  GtkListStore <em>list_store;\n  GtkTreePath </em>path;\n  GtkTreeIter iter;\n  gint i;</p><p>list_store = gtk_list_store_new (N_COLUMNS,\n                                   G_TYPE_STRING,\n                                   G_TYPE_INT,\n                                   G_TYPE_BOOLEAN);</p><p>for (i = 0; i &lt; 10; i++)\n    {\n      gchar *some_data;</p><pre><code>  some_data = get_some_data (i);\n</code></pre><pre><code>  // Add a new row to the model\n  gtk_list_store_append (list_store, &amp;iter);\n  gtk_list_store_set (list_store, &amp;iter,\n                      COLUMN_STRING, some_data,\n                      COLUMN_INT, i,\n                      COLUMN_BOOLEAN,  FALSE,\n                      -1);\n</code></pre><pre><code>  // As the store will keep a copy of the string internally,\n  // we free some_data.\n  g_free (some_data);\n}\n</code></pre><p>// Modify a particular row\n  path = gtk_tree_path_new_from_string (\"4\");\n  gtk_tree_model_get_iter (GTK_TREE_MODEL (list_store),\n                           &amp;iter,\n                           path);\n  gtk_tree_path_free (path);\n  gtk_list_store_set (list_store, &amp;iter,\n                      COLUMN_BOOLEAN, TRUE,\n                      -1);\n}\n]|</p><h1>Performance Considerations</h1><p>Internally, the <span data-xref=\"Gtk.ListStore\"/> was implemented with a linked list with\na tail pointer prior to GTK+ 2.6.  As a result, it was fast at data\ninsertion and deletion, and not fast at random data access.  The\n<span data-xref=\"Gtk.ListStore\"/> sets the #GTK_TREE_MODEL_ITERS_PERSIST flag, which means\nthat #GtkTreeIters can be cached while the row exists.  Thus, if\naccess to a particular row is needed often and your code is expected to\nrun on older versions of GTK+, it is worth keeping the iter around.</p><h1>Atomic Operations</h1><p>It is important to note that only the methods\n<span data-xref=\"Gtk.ListStore.insert_with_values\"/> and <span data-xref=\"Gtk.ListStore.insert_with_valuesv\"/>\nare atomic, in the sense that the row is being appended to the store and the\nvalues filled in in a single operation with regard to <span data-xref=\"Gtk.TreeModel\"/> signaling.\nIn contrast, using e.g. <span data-xref=\"Gtk.ListStore.append\"/> and then <span data-xref=\"Gtk.ListStore.set\"/>\nwill first create a row, which triggers the <span data-xref=\"Gtk.TreeModel-row-inserted\"/> signal\non <span data-xref=\"Gtk.ListStore\"/>. The row, however, is still empty, and any signal handler\nconnecting to <span data-xref=\"Gtk.TreeModel-row-inserted\"/> on this particular store should be prepared\nfor the situation that the row might be empty. This is especially important\nif you are wrapping the <span data-xref=\"Gtk.ListStore\"/> inside a <span data-xref=\"Gtk.TreeModelFilter\"/> and are\nusing a <span data-xref=\"Gtk.TreeModelFilterVisibleFunc\"/>. Using any of the non-atomic operations\nto append rows to the <span data-xref=\"Gtk.ListStore\"/> will cause the\n<span data-xref=\"Gtk.TreeModelFilterVisibleFunc\"/> to be visited with an empty row first; the\nfunction must be prepared for that.</p><h1>GtkListStore as GtkBuildable</h1><p>The GtkListStore implementation of the GtkBuildable interface allows\nto specify the model columns with a <columns> element that may contain\nmultiple <column> elements, each specifying one model column. The \u201ctype\u201d\nattribute specifies the data type for the column.</p><p>Additionally, it is possible to specify content for the list store\nin the UI definition, with the <data> element. It can contain multiple\n<row> elements, each specifying to content for one row of the list model.\nInside a <row>, the <col> elements specify the content for individual cells.</p><p>Note that it is probably more common to define your models in the code,\nand one might consider it a layering violation to specify the content of\na list store in a UI definition, data, not presentation, and common wisdom\nis to separate the two, as far as possible.</p><p>An example of a UI Definition fragment for a list store:\n|[<!-- language=\"C\" -->\n<object class=\"GtkListStore\">\n  <columns>\n    <column type=\"gchararray\"/>\n    <column type=\"gchararray\"/>\n    <column type=\"gint\"/>\n  </columns>\n  <data>\n    <row>\n      <col id=\"0\">John</col>\n      <col id=\"1\">Doe</col>\n      <col id=\"2\">25</col>\n    </row>\n    <row>\n      <col id=\"0\">Johan</col>\n      <col id=\"1\">Dahlin</col>\n      <col id=\"2\">50</col>\n    </row>\n  </data>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Appends a new row to <code>list_store</code>.  <code>iter</code> will be changed to point to this new\nrow.  The row will be empty after this function is called.  To fill in\nvalues, you need to call <span data-xref=\"Gtk.ListStore.set\"/> or <span data-xref=\"Gtk.ListStore.set_value\"/>.</p>",
+            "doc": "<p>Appends a new row to <pre>list_store</pre>.  <pre>iter</pre> will be changed to point to this new\nrow.  The row will be empty after this function is called.  To fill in\nvalues, you need to call <span data-xref=\"Gtk.ListStore.set\"/> or <span data-xref=\"Gtk.ListStore.set_value\"/>.</p>",
             "kind": "method",
             "name": "append",
             "parameters": [
@@ -86,7 +74,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new row at <code>position</code>.  <code>iter</code> will be changed to point to this new\nrow.  If <code>position</code> is -1 or is larger than the number of rows on the list,\nthen the new row will be appended to the list. The row will be empty after\nthis function is called.  To fill in values, you need to call\n<span data-xref=\"Gtk.ListStore.set\"/> or <span data-xref=\"Gtk.ListStore.set_value\"/>.</p>",
+            "doc": "<p>Creates a new row at <pre>position</pre>.  <pre>iter</pre> will be changed to point to this new\nrow.  If <pre>position</pre> is -1 or is larger than the number of rows on the list,\nthen the new row will be appended to the list. The row will be empty after\nthis function is called.  To fill in values, you need to call\n<span data-xref=\"Gtk.ListStore.set\"/> or <span data-xref=\"Gtk.ListStore.set_value\"/>.</p>",
             "kind": "method",
             "name": "insert",
             "parameters": [
@@ -108,7 +96,7 @@
             }
         },
         {
-            "doc": "<p>Inserts a new row after <code>sibling</code>. If <code>sibling</code> is <code>null</code>, then the row will be\nprepended to the beginning of the list. <code>iter</code> will be changed to point to\nthis new row. The row will be empty after this function is called. To fill\nin values, you need to call <span data-xref=\"Gtk.ListStore.set\"/> or <span data-xref=\"Gtk.ListStore.set_value\"/>.</p>",
+            "doc": "<p>Inserts a new row after <pre>sibling</pre>. If <pre>sibling</pre> is <pre>null</pre>, then the row will be\nprepended to the beginning of the list. <pre>iter</pre> will be changed to point to\nthis new row. The row will be empty after this function is called. To fill\nin values, you need to call <span data-xref=\"Gtk.ListStore.set\"/> or <span data-xref=\"Gtk.ListStore.set_value\"/>.</p>",
             "kind": "method",
             "name": "insert_after",
             "parameters": [
@@ -130,7 +118,7 @@
             }
         },
         {
-            "doc": "<p>Inserts a new row before <code>sibling</code>. If <code>sibling</code> is <code>null</code>, then the row will\nbe appended to the end of the list. <code>iter</code> will be changed to point to this\nnew row. The row will be empty after this function is called. To fill in\nvalues, you need to call <span data-xref=\"Gtk.ListStore.set\"/> or <span data-xref=\"Gtk.ListStore.set_value\"/>.</p>",
+            "doc": "<p>Inserts a new row before <pre>sibling</pre>. If <pre>sibling</pre> is <pre>null</pre>, then the row will\nbe appended to the end of the list. <pre>iter</pre> will be changed to point to this\nnew row. The row will be empty after this function is called. To fill in\nvalues, you need to call <span data-xref=\"Gtk.ListStore.set\"/> or <span data-xref=\"Gtk.ListStore.set_value\"/>.</p>",
             "kind": "method",
             "name": "insert_before",
             "parameters": [
@@ -152,7 +140,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new row at <code>position</code>. <code>iter</code> will be changed to point to this new\nrow. If <code>position</code> is -1, or larger than the number of rows in the list, then\nthe new row will be appended to the list. The row will be filled with the\nvalues given to this function.</p><p>Calling\n<code>gtk_list_store_insert_with_values (list_store, iter, position...)</code>\nhas the same effect as calling\n|[&lt;!-- language=\"C\" --&gt;\ngtk_list_store_insert (list_store, iter, position);\ngtk_list_store_set (list_store, iter, ...);\n]|\nwith the difference that the former will only emit a row_inserted signal,\nwhile the latter will emit row_inserted, row_changed and, if the list store\nis sorted, rows_reordered. Since emitting the rows_reordered signal\nrepeatedly can affect the performance of the program,\n<span data-xref=\"Gtk.ListStore.insert_with_values\"/> should generally be preferred when\ninserting rows in a sorted list store.</p>",
+            "doc": "<p>Creates a new row at <pre>position</pre>. <pre>iter</pre> will be changed to point to this new\nrow. If <pre>position</pre> is -1, or larger than the number of rows in the list, then\nthe new row will be appended to the list. The row will be filled with the\nvalues given to this function.</p><p>Calling\n<code>gtk_list_store_insert_with_values (list_store, iter, position...)</code>\nhas the same effect as calling\n|[<!-- language=\"C\" -->\ngtk_list_store_insert (list_store, iter, position);\ngtk_list_store_set (list_store, iter, ...);\n]|\nwith the difference that the former will only emit a row_inserted signal,\nwhile the latter will emit row_inserted, row_changed and, if the list store\nis sorted, rows_reordered. Since emitting the rows_reordered signal\nrepeatedly can affect the performance of the program,\n<span data-xref=\"Gtk.ListStore.insert_with_values\"/> should generally be preferred when\ninserting rows in a sorted list store.</p>",
             "kind": "method",
             "name": "insert_with_values",
             "parameters": [
@@ -220,7 +208,7 @@
             }
         },
         {
-            "doc": "<p>&gt; This function is slow. Only use it for debugging and/or testing\n&gt; purposes.</p><p>Checks if the given iter is a valid iter for this <span data-xref=\"Gtk.ListStore\"/>.</p>",
+            "doc": "<blockquote>\n<p>This function is slow. Only use it for debugging and/or testing\npurposes.</p>\n</blockquote><p>Checks if the given iter is a valid iter for this <span data-xref=\"Gtk.ListStore\"/>.</p>",
             "kind": "method",
             "name": "iter_is_valid",
             "parameters": [
@@ -236,7 +224,7 @@
             }
         },
         {
-            "doc": "<p>Moves <code>iter</code> in <code>store</code> to the position after <code>position</code>. Note that this\nfunction only works with unsorted stores. If <code>position</code> is <code>null</code>, <code>iter</code>\nwill be moved to the start of the list.</p>",
+            "doc": "<p>Moves <pre>iter</pre> in <pre>store</pre> to the position after <pre>position</pre>. Note that this\nfunction only works with unsorted stores. If <pre>position</pre> is <pre>null</pre>, <pre>iter</pre>\nwill be moved to the start of the list.</p>",
             "kind": "method",
             "name": "move_after",
             "parameters": [
@@ -258,7 +246,7 @@
             }
         },
         {
-            "doc": "<p>Moves <code>iter</code> in <code>store</code> to the position before <code>position</code>. Note that this\nfunction only works with unsorted stores. If <code>position</code> is <code>null</code>, <code>iter</code>\nwill be moved to the end of the list.</p>",
+            "doc": "<p>Moves <pre>iter</pre> in <pre>store</pre> to the position before <pre>position</pre>. Note that this\nfunction only works with unsorted stores. If <pre>position</pre> is <pre>null</pre>, <pre>iter</pre>\nwill be moved to the end of the list.</p>",
             "kind": "method",
             "name": "move_before",
             "parameters": [
@@ -280,7 +268,7 @@
             }
         },
         {
-            "doc": "<p>Prepends a new row to <code>list_store</code>. <code>iter</code> will be changed to point to this new\nrow. The row will be empty after this function is called. To fill in\nvalues, you need to call <span data-xref=\"Gtk.ListStore.set\"/> or <span data-xref=\"Gtk.ListStore.set_value\"/>.</p>",
+            "doc": "<p>Prepends a new row to <pre>list_store</pre>. <pre>iter</pre> will be changed to point to this new\nrow. The row will be empty after this function is called. To fill in\nvalues, you need to call <span data-xref=\"Gtk.ListStore.set\"/> or <span data-xref=\"Gtk.ListStore.set_value\"/>.</p>",
             "kind": "method",
             "name": "prepend",
             "parameters": [
@@ -296,7 +284,7 @@
             }
         },
         {
-            "doc": "<p>Removes the given row from the list store.  After being removed,\n<code>iter</code> is set to be the next valid row, or invalidated if it pointed\nto the last row in <code>list_store</code>.</p>",
+            "doc": "<p>Removes the given row from the list store.  After being removed,\n<pre>iter</pre> is set to be the next valid row, or invalidated if it pointed\nto the last row in <pre>list_store</pre>.</p>",
             "kind": "method",
             "name": "remove",
             "parameters": [
@@ -312,7 +300,7 @@
             }
         },
         {
-            "doc": "<p>Reorders <code>store</code> to follow the order indicated by <code>new_order</code>. Note that\nthis function only works with unsorted stores.</p>",
+            "doc": "<p>Reorders <pre>store</pre> to follow the order indicated by <pre>new_order</pre>. Note that\nthis function only works with unsorted stores.</p>",
             "kind": "method",
             "name": "reorder",
             "parameters": [
@@ -328,7 +316,7 @@
             }
         },
         {
-            "doc": "<p>Sets the value of one or more cells in the row referenced by <code>iter</code>.\nThe variable argument list should contain integer column numbers,\neach column number followed by the value to be set.\nThe list is terminated by a -1. For example, to set column 0 with type\n%G_TYPE_STRING to \u201cFoo\u201d, you would write <code>gtk_list_store_set (store, iter,\n0, \"Foo\", -1)</code>.</p><p>The value will be referenced by the store if it is a %G_TYPE_OBJECT, and it\nwill be copied if it is a %G_TYPE_STRING or %G_TYPE_BOXED.</p>",
+            "doc": "<p>Sets the value of one or more cells in the row referenced by <pre>iter</pre>.\nThe variable argument list should contain integer column numbers,\neach column number followed by the value to be set.\nThe list is terminated by a -1. For example, to set column 0 with type\n%G_TYPE_STRING to \u201cFoo\u201d, you would write <code>gtk_list_store_set (store, iter,\n0, \"Foo\", -1)</code>.</p><p>The value will be referenced by the store if it is a %G_TYPE_OBJECT, and it\nwill be copied if it is a %G_TYPE_STRING or %G_TYPE_BOXED.</p>",
             "kind": "method",
             "name": "set",
             "parameters": [
@@ -394,7 +382,7 @@
             }
         },
         {
-            "doc": "<p>Sets the data in the cell specified by <code>iter</code> and <code>column</code>.\nThe type of <code>value</code> must be convertible to the type of the\ncolumn.</p>",
+            "doc": "<p>Sets the data in the cell specified by <pre>iter</pre> and <pre>column</pre>.\nThe type of <pre>value</pre> must be convertible to the type of the\ncolumn.</p>",
             "kind": "method",
             "name": "set_value",
             "parameters": [
@@ -456,7 +444,7 @@
             }
         },
         {
-            "doc": "<p>Swaps <code>a</code> and <code>b</code> in <code>store</code>. Note that this function only works with\nunsorted stores.</p>",
+            "doc": "<p>Swaps <pre>a</pre> and <pre>b</pre> in <pre>store</pre>. Note that this function only works with\nunsorted stores.</p>",
             "kind": "method",
             "name": "swap",
             "parameters": [
@@ -476,8 +464,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ListStore",
     "properties": [],

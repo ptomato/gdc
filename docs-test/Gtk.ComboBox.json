@@ -10,7 +10,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new empty <span data-xref=\"Gtk.ComboBox\"/> using <code>area</code> to layout cells.</p>",
+            "doc": "<p>Creates a new empty <span data-xref=\"Gtk.ComboBox\"/> using <pre>area</pre> to layout cells.</p>",
             "kind": "constructor",
             "name": "new_with_area",
             "parameters": [
@@ -26,7 +26,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new empty <span data-xref=\"Gtk.ComboBox\"/> with an entry.</p><p>The new combo box will use <code>area</code> to layout cells.</p>",
+            "doc": "<p>Creates a new empty <span data-xref=\"Gtk.ComboBox\"/> with an entry.</p><p>The new combo box will use <pre>area</pre> to layout cells.</p>",
             "kind": "constructor",
             "name": "new_with_area_and_entry",
             "parameters": [
@@ -51,7 +51,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.ComboBox\"/> with the model initialized to <code>model</code>.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ComboBox\"/> with the model initialized to <pre>model</pre>.</p>",
             "kind": "constructor",
             "name": "new_with_model",
             "parameters": [
@@ -67,7 +67,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new empty <span data-xref=\"Gtk.ComboBox\"/> with an entry\nand with the model initialized to <code>model</code>.</p>",
+            "doc": "<p>Creates a new empty <span data-xref=\"Gtk.ComboBox\"/> with an entry\nand with the model initialized to <pre>model</pre>.</p>",
             "kind": "constructor",
             "name": "new_with_model_and_entry",
             "parameters": [
@@ -84,18 +84,6 @@
         }
     ],
     "doc": "<p>A GtkComboBox is a widget that allows the user to choose from a list of\nvalid choices. The GtkComboBox displays the selected choice. When\nactivated, the GtkComboBox displays a popup which allows the user to\nmake a new choice. The style in which the selected value is displayed,\nand the style of the popup is determined by the current theme. It may\nbe similar to a Windows-style combo box.</p><p>The GtkComboBox uses the model-view pattern; the list of valid choices\nis specified in the form of a tree model, and the display of the choices\ncan be adapted to the data in the model by using cell renderers, as you\nwould in a tree view. This is possible since GtkComboBox implements the\n<span data-xref=\"Gtk.CellLayout\"/> interface. The tree model holding the valid choices is\nnot restricted to a flat list, it can be a real tree, and the popup will\nreflect the tree structure.</p><p>To allow the user to enter values not in the model, the \u201chas-entry\u201d\nproperty allows the GtkComboBox to contain a <span data-xref=\"Gtk.Entry\"/>. This entry\ncan be accessed by calling <span data-xref=\"Gtk.Bin.get_child\"/> on the combo box.</p><p>For a simple list of textual choices, the model-view API of GtkComboBox\ncan be a bit overwhelming. In this case, <span data-xref=\"Gtk.ComboBoxText\"/> offers a\nsimple alternative. Both GtkComboBox and <span data-xref=\"Gtk.ComboBoxText\"/> can contain\nan entry.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -108,7 +96,7 @@
             }
         },
         {
-            "doc": "<p>Returns the ID of the active row of <code>combo_box</code>.  This value is taken\nfrom the active row and the column specified by the <span data-xref=\"Gtk.ComboBox-id-column\"/>\nproperty of <code>combo_box</code> (see <span data-xref=\"Gtk.ComboBox.set_id_column\"/>).</p><p>The returned value is an interned string which means that you can\ncompare the pointer by value to other interned strings and that you\nmust not free it.</p><p>If the <span data-xref=\"Gtk.ComboBox-id-column\"/> property of <code>combo_box</code> is not set, or if\nno row is active, or if the active row has a <code>null</code> ID value, then <code>null</code>\nis returned.</p>",
+            "doc": "<p>Returns the ID of the active row of <pre>combo_box</pre>.  This value is taken\nfrom the active row and the column specified by the <span data-xref=\"Gtk.ComboBox-id-column\"/>\nproperty of <pre>combo_box</pre> (see <span data-xref=\"Gtk.ComboBox.set_id_column\"/>).</p><p>The returned value is an interned string which means that you can\ncompare the pointer by value to other interned strings and that you\nmust not free it.</p><p>If the <span data-xref=\"Gtk.ComboBox-id-column\"/> property of <pre>combo_box</pre> is not set, or if\nno row is active, or if the active row has a <pre>null</pre> ID value, then <pre>null</pre>\nis returned.</p>",
             "kind": "method",
             "name": "get_active_id",
             "parameters": [],
@@ -117,7 +105,7 @@
             }
         },
         {
-            "doc": "<p>Sets <code>iter</code> to point to the current active item, if it exists.</p>",
+            "doc": "<p>Sets <pre>iter</pre> to point to the current active item, if it exists.</p>",
             "kind": "method",
             "name": "get_active_iter",
             "parameters": [
@@ -151,7 +139,7 @@
             }
         },
         {
-            "doc": "<p>Returns the column with column span information for <code>combo_box</code>.</p>",
+            "doc": "<p>Returns the column with column span information for <pre>combo_box</pre>.</p>",
             "kind": "method",
             "name": "get_column_span_column",
             "parameters": [],
@@ -160,7 +148,7 @@
             }
         },
         {
-            "doc": "<p>Returns the column which <code>combo_box</code> is using to get the strings\nfrom to display in the internal entry.</p>",
+            "doc": "<p>Returns the column which <pre>combo_box</pre> is using to get the strings\nfrom to display in the internal entry.</p>",
             "kind": "method",
             "name": "get_entry_text_column",
             "parameters": [],
@@ -187,7 +175,7 @@
             }
         },
         {
-            "doc": "<p>Returns the column which <code>combo_box</code> is using to get string IDs\nfor values from.</p>",
+            "doc": "<p>Returns the column which <pre>combo_box</pre> is using to get string IDs\nfor values from.</p>",
             "kind": "method",
             "name": "get_id_column",
             "parameters": [],
@@ -196,7 +184,7 @@
             }
         },
         {
-            "doc": "<p>Returns the <span data-xref=\"Gtk.TreeModel\"/> which is acting as data source for <code>combo_box</code>.</p>",
+            "doc": "<p>Returns the <span data-xref=\"Gtk.TreeModel\"/> which is acting as data source for <pre>combo_box</pre>.</p>",
             "kind": "method",
             "name": "get_model",
             "parameters": [],
@@ -232,7 +220,7 @@
             }
         },
         {
-            "doc": "<p>Returns the column with row span information for <code>combo_box</code>.</p>",
+            "doc": "<p>Returns the column with row span information for <pre>combo_box</pre>.</p>",
             "kind": "method",
             "name": "get_row_span_column",
             "parameters": [],
@@ -259,7 +247,7 @@
             }
         },
         {
-            "doc": "<p>Hides the menu or dropdown list of <code>combo_box</code>.</p><p>This function is mostly intended for use by accessibility technologies;\napplications should have little use for it.</p>",
+            "doc": "<p>Hides the menu or dropdown list of <pre>combo_box</pre>.</p><p>This function is mostly intended for use by accessibility technologies;\napplications should have little use for it.</p>",
             "kind": "method",
             "name": "popdown",
             "parameters": [],
@@ -268,7 +256,7 @@
             }
         },
         {
-            "doc": "<p>Pops up the menu or dropdown list of <code>combo_box</code>.</p><p>This function is mostly intended for use by accessibility technologies;\napplications should have little use for it.</p>",
+            "doc": "<p>Pops up the menu or dropdown list of <pre>combo_box</pre>.</p><p>This function is mostly intended for use by accessibility technologies;\napplications should have little use for it.</p>",
             "kind": "method",
             "name": "popup",
             "parameters": [],
@@ -277,7 +265,7 @@
             }
         },
         {
-            "doc": "<p>Pops up the menu or dropdown list of <code>combo_box</code>, the popup window\nwill be grabbed so only <code>device</code> and its associated pointer/keyboard\nare the only #GdkDevices able to send events to it.</p>",
+            "doc": "<p>Pops up the menu or dropdown list of <pre>combo_box</pre>, the popup window\nwill be grabbed so only <pre>device</pre> and its associated pointer/keyboard\nare the only #GdkDevices able to send events to it.</p>",
             "kind": "method",
             "name": "popup_for_device",
             "parameters": [
@@ -293,7 +281,7 @@
             }
         },
         {
-            "doc": "<p>Sets the active item of <code>combo_box</code> to be the item at @index.</p>",
+            "doc": "<p>Sets the active item of <pre>combo_box</pre> to be the item at @index.</p>",
             "kind": "method",
             "name": "set_active",
             "parameters": [
@@ -309,7 +297,7 @@
             }
         },
         {
-            "doc": "<p>Changes the active row of <code>combo_box</code> to the one that has an ID equal to\n<code>active_id</code>, or unsets the active row if <code>active_id</code> is <code>null</code>.  Rows having\na <code>null</code> ID string cannot be made active by this function.</p><p>If the <span data-xref=\"Gtk.ComboBox-id-column\"/> property of <code>combo_box</code> is unset or if no\nrow has the given ID then the function does nothing and returns <code>false</code>.</p>",
+            "doc": "<p>Changes the active row of <pre>combo_box</pre> to the one that has an ID equal to\n<pre>active_id</pre>, or unsets the active row if <pre>active_id</pre> is <pre>null</pre>.  Rows having\na <pre>null</pre> ID string cannot be made active by this function.</p><p>If the <span data-xref=\"Gtk.ComboBox-id-column\"/> property of <pre>combo_box</pre> is unset or if no\nrow has the given ID then the function does nothing and returns <pre>false</pre>.</p>",
             "kind": "method",
             "name": "set_active_id",
             "parameters": [
@@ -325,7 +313,7 @@
             }
         },
         {
-            "doc": "<p>Sets the current active item to be the one referenced by <code>iter</code>, or\nunsets the active item if <code>iter</code> is <code>null</code>.</p>",
+            "doc": "<p>Sets the current active item to be the one referenced by <pre>iter</pre>, or\nunsets the active item if <pre>iter</pre> is <pre>null</pre>.</p>",
             "kind": "method",
             "name": "set_active_iter",
             "parameters": [
@@ -373,7 +361,7 @@
             }
         },
         {
-            "doc": "<p>Sets the column with column span information for <code>combo_box</code> to be\n<code>column_span</code>. The column span column contains integers which indicate\nhow many columns an item should span.</p>",
+            "doc": "<p>Sets the column with column span information for <pre>combo_box</pre> to be\n<pre>column_span</pre>. The column span column contains integers which indicate\nhow many columns an item should span.</p>",
             "kind": "method",
             "name": "set_column_span_column",
             "parameters": [
@@ -389,7 +377,7 @@
             }
         },
         {
-            "doc": "<p>Sets the model column which <code>combo_box</code> should use to get strings from\nto be <code>text_column</code>. The column <code>text_column</code> in the model of <code>combo_box</code>\nmust be of type %G_TYPE_STRING.</p><p>This is only relevant if <code>combo_box</code> has been created with\n<span data-xref=\"Gtk.ComboBox-has-entry\"/> as <code>true</code>.</p>",
+            "doc": "<p>Sets the model column which <pre>combo_box</pre> should use to get strings from\nto be <pre>text_column</pre>. The column <pre>text_column</pre> in the model of <pre>combo_box</pre>\nmust be of type %G_TYPE_STRING.</p><p>This is only relevant if <pre>combo_box</pre> has been created with\n<span data-xref=\"Gtk.ComboBox-has-entry\"/> as <pre>true</pre>.</p>",
             "kind": "method",
             "name": "set_entry_text_column",
             "parameters": [
@@ -421,7 +409,7 @@
             }
         },
         {
-            "doc": "<p>Sets the model column which <code>combo_box</code> should use to get string IDs\nfor values from. The column <code>id_column</code> in the model of <code>combo_box</code>\nmust be of type %G_TYPE_STRING.</p>",
+            "doc": "<p>Sets the model column which <pre>combo_box</pre> should use to get string IDs\nfor values from. The column <pre>id_column</pre> in the model of <pre>combo_box</pre>\nmust be of type %G_TYPE_STRING.</p>",
             "kind": "method",
             "name": "set_id_column",
             "parameters": [
@@ -437,7 +425,7 @@
             }
         },
         {
-            "doc": "<p>Sets the model used by <code>combo_box</code> to be <code>model</code>. Will unset a previously set\nmodel (if applicable). If model is <code>null</code>, then it will unset the model.</p><p>Note that this function does not clear the cell renderers, you have to\ncall <span data-xref=\"Gtk.CellLayout.clear\"/> yourself if you need to set up different\ncell renderers for the new model.</p>",
+            "doc": "<p>Sets the model used by <pre>combo_box</pre> to be <pre>model</pre>. Will unset a previously set\nmodel (if applicable). If model is <pre>null</pre>, then it will unset the model.</p><p>Note that this function does not clear the cell renderers, you have to\ncall <span data-xref=\"Gtk.CellLayout.clear\"/> yourself if you need to set up different\ncell renderers for the new model.</p>",
             "kind": "method",
             "name": "set_model",
             "parameters": [
@@ -469,7 +457,7 @@
             }
         },
         {
-            "doc": "<p>Sets the row separator function, which is used to determine\nwhether a row should be drawn as a separator. If the row separator\nfunction is <code>null</code>, no separators are drawn. This is the default value.</p>",
+            "doc": "<p>Sets the row separator function, which is used to determine\nwhether a row should be drawn as a separator. If the row separator\nfunction is <pre>null</pre>, no separators are drawn. This is the default value.</p>",
             "kind": "method",
             "name": "set_row_separator_func",
             "parameters": [
@@ -497,7 +485,7 @@
             }
         },
         {
-            "doc": "<p>Sets the column with row span information for <code>combo_box</code> to be <code>row_span</code>.\nThe row span column contains integers which indicate how many rows\nan item should span.</p>",
+            "doc": "<p>Sets the column with row span information for <pre>combo_box</pre> to be <pre>row_span</pre>.\nThe row span column contains integers which indicate how many rows\nan item should span.</p>",
             "kind": "method",
             "name": "set_row_span_column",
             "parameters": [
@@ -529,7 +517,7 @@
             }
         },
         {
-            "doc": "<p>Sets the wrap width of <code>combo_box</code> to be <code>width</code>. The wrap width is basically\nthe preferred number of columns when you want the popup to be layed out\nin a table.</p>",
+            "doc": "<p>Sets the wrap width of <pre>combo_box</pre> to be <pre>width</pre>. The wrap width is basically\nthe preferred number of columns when you want the popup to be layed out\nin a table.</p>",
             "kind": "method",
             "name": "set_wrap_width",
             "parameters": [
@@ -543,8 +531,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ComboBox",
     "properties": [
@@ -585,7 +572,7 @@
             "type": "Number(gint)"
         },
         {
-            "doc": "<p>The column in the combo box's model to associate with strings from the entry\nif the combo was created with <span data-xref=\"Gtk.ComboBox-has-entry\"/> = <code>true</code>.</p>",
+            "doc": "<p>The column in the combo box's model to associate with strings from the entry\nif the combo was created with <span data-xref=\"Gtk.ComboBox-has-entry\"/> = <pre>true</pre>.</p>",
             "kind": "property",
             "name": "entry-text-column",
             "type": "Number(gint)"
@@ -662,7 +649,7 @@
             }
         },
         {
-            "doc": "<p>For combo boxes that are created with an entry (See GtkComboBox:has-entry).</p><p>A signal which allows you to change how the text displayed in a combo box's\nentry is displayed.</p><p>Connect a signal handler which returns an allocated string representing\n<code>path</code>. That string will then be used to set the text in the combo box's entry.\nThe default signal handler uses the text from the GtkComboBox::entry-text-column\nmodel column.</p><p>Here's an example signal handler which fetches data from the model and\ndisplays it in the entry.\n|[&lt;!-- language=\"C\" --&gt;\nstatic gchar<em>\nformat_entry_text_callback (GtkComboBox </em>combo,\n                            const gchar *path,\n                            gpointer     user_data)\n{\n  GtkTreeIter iter;\n  GtkTreeModel model;\n  gdouble      value;</p>\n<p>model = gtk_combo_box_get_model (combo);</p><p>gtk_tree_model_get_iter_from_string (model, &amp;iter, path);\n  gtk_tree_model_get (model, &amp;iter,\n                      THE_DOUBLE_VALUE_COLUMN, &amp;value,\n                      -1);</p><p>return g_strdup_printf (\"%g\", value);\n}\n]|</p>",
+            "doc": "<p>For combo boxes that are created with an entry (See GtkComboBox:has-entry).</p><p>A signal which allows you to change how the text displayed in a combo box's\nentry is displayed.</p><p>Connect a signal handler which returns an allocated string representing\n<pre>path</pre>. That string will then be used to set the text in the combo box's entry.\nThe default signal handler uses the text from the GtkComboBox::entry-text-column\nmodel column.</p><p>Here's an example signal handler which fetches data from the model and\ndisplays it in the entry.\n|[<!-- language=\"C\" -->\nstatic gchar<em>\nformat_entry_text_callback (GtkComboBox </em>combo,\n                            const gchar *path,\n                            gpointer     user_data)\n{\n  GtkTreeIter iter;\n  GtkTreeModel model;\n  gdouble      value;</p>\n<p>model = gtk_combo_box_get_model (combo);</p><p>gtk_tree_model_get_iter_from_string (model, &amp;iter, path);\n  gtk_tree_model_get (model, &amp;iter,\n                      THE_DOUBLE_VALUE_COLUMN, &amp;value,\n                      -1);</p><p>return g_strdup_printf (\"%g\", value);\n}\n]|</p>",
             "kind": "signal",
             "name": "format-entry-text",
             "parameters": [

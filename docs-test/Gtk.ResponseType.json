@@ -1,0 +1,62 @@
+{
+    "doc": "<p>Predefined values for use as response ids in <span data-xref=\"Gtk.Dialog.add_button\"/>.\nAll predefined values are negative, GTK+ leaves positive values for\napplication-defined response ids.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Returned if an action widget has no response id,\n    or if the dialog gets programmatically hidden or destroyed</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>Generic response id, not used by GTK+ dialogs</p>",
+            "kind": "default",
+            "name": "reject"
+        },
+        {
+            "doc": "<p>Generic response id, not used by GTK+ dialogs</p>",
+            "kind": "default",
+            "name": "accept"
+        },
+        {
+            "doc": "<p>Returned if the dialog is deleted</p>",
+            "kind": "default",
+            "name": "delete_event"
+        },
+        {
+            "doc": "<p>Returned by OK buttons in GTK+ dialogs</p>",
+            "kind": "default",
+            "name": "ok"
+        },
+        {
+            "doc": "<p>Returned by Cancel buttons in GTK+ dialogs</p>",
+            "kind": "default",
+            "name": "cancel"
+        },
+        {
+            "doc": "<p>Returned by Close buttons in GTK+ dialogs</p>",
+            "kind": "default",
+            "name": "close"
+        },
+        {
+            "doc": "<p>Returned by Yes buttons in GTK+ dialogs</p>",
+            "kind": "default",
+            "name": "yes"
+        },
+        {
+            "doc": "<p>Returned by No buttons in GTK+ dialogs</p>",
+            "kind": "default",
+            "name": "no"
+        },
+        {
+            "doc": "<p>Returned by Apply buttons in GTK+ dialogs</p>",
+            "kind": "default",
+            "name": "apply"
+        },
+        {
+            "doc": "<p>Returned by Help buttons in GTK+ dialogs</p>",
+            "kind": "default",
+            "name": "help"
+        }
+    ],
+    "name": "ResponseType"
+}

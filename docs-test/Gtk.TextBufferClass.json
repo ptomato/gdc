@@ -1,0 +1,99 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "insert_text"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "insert_pixbuf"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "insert_child_anchor"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "delete_range"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "modified_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "mark_set"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "mark_deleted"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "apply_tag"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "remove_tag"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "begin_user_action"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "end_user_action"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "paste_done"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "TextBufferClass"
+}

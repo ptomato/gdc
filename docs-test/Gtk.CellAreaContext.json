@@ -1,22 +1,10 @@
 {
     "constructors": [],
     "doc": "<p>The <span data-xref=\"Gtk.CellAreaContext\"/> object is created by a given <span data-xref=\"Gtk.CellArea\"/>\nimplementation via its <span data-xref=\"Gtk.CellAreaClass\"/>.create_context() virtual\nmethod and is used to store cell sizes and alignments for a series of\n<span data-xref=\"Gtk.TreeModel\"/> rows that are requested and rendered in the same context.</p><p><span data-xref=\"Gtk.CellLayout\"/> widgets can create any number of contexts in which to\nrequest and render groups of data rows. However, it\u2019s important that the\nsame context which was used to request sizes for a given <span data-xref=\"Gtk.TreeModel\"/>\nrow also be used for the same row when calling other <span data-xref=\"Gtk.CellArea\"/> APIs\nsuch as <span data-xref=\"Gtk.CellArea.render\"/> and <span data-xref=\"Gtk.CellArea.event\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Allocates a width and/or a height for all rows which are to be\nrendered with <code>context</code>.</p><p>Usually allocation is performed only horizontally or sometimes\nvertically since a group of rows are usually rendered side by\nside vertically or horizontally and share either the same width\nor the same height. Sometimes they are allocated in both horizontal\nand vertical orientations producing a homogeneous effect of the\nrows. This is generally the case for <span data-xref=\"Gtk.TreeView\"/> when\n<span data-xref=\"Gtk.TreeView-fixed-height-mode\"/> is enabled.</p><p>Since 3.0</p>",
+            "doc": "<p>Allocates a width and/or a height for all rows which are to be\nrendered with <pre>context</pre>.</p><p>Usually allocation is performed only horizontally or sometimes\nvertically since a group of rows are usually rendered side by\nside vertically or horizontally and share either the same width\nor the same height. Sometimes they are allocated in both horizontal\nand vertical orientations producing a homogeneous effect of the\nrows. This is generally the case for <span data-xref=\"Gtk.TreeView\"/> when\n<span data-xref=\"Gtk.TreeView-fixed-height-mode\"/> is enabled.</p><p>Since 3.0</p>",
             "kind": "method",
             "name": "allocate",
             "parameters": [
@@ -38,7 +26,7 @@
             }
         },
         {
-            "doc": "<p>Fetches the current allocation size for <code>context</code>.</p><p>If the context was not allocated in width or height, or if the\ncontext was recently reset with <span data-xref=\"Gtk.CellAreaContext.reset\"/>,\nthe returned value will be -1.</p>",
+            "doc": "<p>Fetches the current allocation size for <pre>context</pre>.</p><p>If the context was not allocated in width or height, or if the\ncontext was recently reset with <span data-xref=\"Gtk.CellAreaContext.reset\"/>,\nthe returned value will be -1.</p>",
             "kind": "method",
             "name": "get_allocation",
             "parameters": [
@@ -60,7 +48,7 @@
             }
         },
         {
-            "doc": "<p>Fetches the <span data-xref=\"Gtk.CellArea\"/> this <code>context</code> was created by.</p><p>This is generally unneeded by layouting widgets; however,\nit is important for the context implementation itself to\nfetch information about the area it is being used for.</p><p>For instance at <span data-xref=\"Gtk.CellAreaContextClass\"/>.allocate() time\nit\u2019s important to know details about any cell spacing\nthat the <span data-xref=\"Gtk.CellArea\"/> is configured with in order to\ncompute a proper allocation.</p>",
+            "doc": "<p>Fetches the <span data-xref=\"Gtk.CellArea\"/> this <pre>context</pre> was created by.</p><p>This is generally unneeded by layouting widgets; however,\nit is important for the context implementation itself to\nfetch information about the area it is being used for.</p><p>For instance at <span data-xref=\"Gtk.CellAreaContextClass\"/>.allocate() time\nit\u2019s important to know details about any cell spacing\nthat the <span data-xref=\"Gtk.CellArea\"/> is configured with in order to\ncompute a proper allocation.</p>",
             "kind": "method",
             "name": "get_area",
             "parameters": [],
@@ -91,7 +79,7 @@
             }
         },
         {
-            "doc": "<p>Gets the accumulative preferred height for <code>width</code> for all rows\nwhich have been requested for the same said <code>width</code> with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are -1.</p>",
+            "doc": "<p>Gets the accumulative preferred height for <pre>width</pre> for all rows\nwhich have been requested for the same said <pre>width</pre> with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are -1.</p>",
             "kind": "method",
             "name": "get_preferred_height_for_width",
             "parameters": [
@@ -141,7 +129,7 @@
             }
         },
         {
-            "doc": "<p>Gets the accumulative preferred width for <code>height</code> for all rows which\nhave been requested for the same said <code>height</code> with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are -1.</p>",
+            "doc": "<p>Gets the accumulative preferred width for <pre>height</pre> for all rows which\nhave been requested for the same said <pre>height</pre> with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are -1.</p>",
             "kind": "method",
             "name": "get_preferred_width_for_height",
             "parameters": [
@@ -220,8 +208,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "CellAreaContext",
     "properties": [
@@ -259,7 +246,7 @@
     "signals": [],
     "vfuncs": [
         {
-            "doc": "<p>Allocates a width and/or a height for all rows which are to be\nrendered with <code>context</code>.</p><p>Usually allocation is performed only horizontally or sometimes\nvertically since a group of rows are usually rendered side by\nside vertically or horizontally and share either the same width\nor the same height. Sometimes they are allocated in both horizontal\nand vertical orientations producing a homogeneous effect of the\nrows. This is generally the case for <span data-xref=\"Gtk.TreeView\"/> when\n<span data-xref=\"Gtk.TreeView-fixed-height-mode\"/> is enabled.</p><p>Since 3.0</p>",
+            "doc": "<p>Allocates a width and/or a height for all rows which are to be\nrendered with <pre>context</pre>.</p><p>Usually allocation is performed only horizontally or sometimes\nvertically since a group of rows are usually rendered side by\nside vertically or horizontally and share either the same width\nor the same height. Sometimes they are allocated in both horizontal\nand vertical orientations producing a homogeneous effect of the\nrows. This is generally the case for <span data-xref=\"Gtk.TreeView\"/> when\n<span data-xref=\"Gtk.TreeView-fixed-height-mode\"/> is enabled.</p><p>Since 3.0</p>",
             "kind": "vfunc",
             "name": "allocate",
             "parameters": [
@@ -281,7 +268,7 @@
             }
         },
         {
-            "doc": "<p>Gets the accumulative preferred height for <code>width</code> for all rows\nwhich have been requested for the same said <code>width</code> with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are -1.</p>",
+            "doc": "<p>Gets the accumulative preferred height for <pre>width</pre> for all rows\nwhich have been requested for the same said <pre>width</pre> with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are -1.</p>",
             "kind": "vfunc",
             "name": "get_preferred_height_for_width",
             "parameters": [
@@ -309,7 +296,7 @@
             }
         },
         {
-            "doc": "<p>Gets the accumulative preferred width for <code>height</code> for all rows which\nhave been requested for the same said <code>height</code> with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are -1.</p>",
+            "doc": "<p>Gets the accumulative preferred width for <pre>height</pre> for all rows which\nhave been requested for the same said <pre>height</pre> with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are -1.</p>",
             "kind": "vfunc",
             "name": "get_preferred_width_for_height",
             "parameters": [

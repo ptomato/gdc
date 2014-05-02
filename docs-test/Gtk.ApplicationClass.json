@@ -1,0 +1,29 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "window_added"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "window_removed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "padding"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "ApplicationClass"
+}

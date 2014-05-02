@@ -1,0 +1,32 @@
+{
+    "doc": "<p>Used to indicate the direction in which a <span data-xref=\"Gtk.Arrow\"/> should point.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Represents an upward pointing arrow.</p>",
+            "kind": "default",
+            "name": "up"
+        },
+        {
+            "doc": "<p>Represents a downward pointing arrow.</p>",
+            "kind": "default",
+            "name": "down"
+        },
+        {
+            "doc": "<p>Represents a left pointing arrow.</p>",
+            "kind": "default",
+            "name": "left"
+        },
+        {
+            "doc": "<p>Represents a right pointing arrow.</p>",
+            "kind": "default",
+            "name": "right"
+        },
+        {
+            "doc": "<p>No arrow. Since 2.10.</p>",
+            "kind": "default",
+            "name": "none"
+        }
+    ],
+    "name": "ArrowType"
+}

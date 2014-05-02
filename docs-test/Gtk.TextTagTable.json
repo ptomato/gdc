@@ -10,23 +10,11 @@
             }
         }
     ],
-    "doc": "<p>You may wish to begin by reading the\n[text widget conceptual overview][TextWidget]\nwhich gives an overview of all the objects and\ndata types related to the text widget and how they work together.</p><h1>GtkTextTagTables as GtkBuildable</h1><p>The GtkTextTagTable implementation of the GtkBuildable interface\nsupports adding tags by specifying \u201ctag\u201d as the \u201ctype\u201d attribute\nof a &lt;child&gt; element.</p><p>An example of a UI definition fragment specifying tags:\n|[\n&lt;object class=\"GtkTextTagTable\"&gt;\n &lt;child type=\"tag\"&gt;\n   &lt;object class=\"GtkTextTag\"/&gt;\n &lt;/child&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>You may wish to begin by reading the\n[text widget conceptual overview][TextWidget]\nwhich gives an overview of all the objects and\ndata types related to the text widget and how they work together.</p><h1>GtkTextTagTables as GtkBuildable</h1><p>The GtkTextTagTable implementation of the GtkBuildable interface\nsupports adding tags by specifying \u201ctag\u201d as the \u201ctype\u201d attribute\nof a <child> element.</p><p>An example of a UI definition fragment specifying tags:\n|[\n<object class=\"GtkTextTagTable\">\n <child type=\"tag\">\n   <object class=\"GtkTextTag\"/>\n </child>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Add a tag to the table. The tag is assigned the highest priority\nin the table.</p><p><code>tag</code> must not be in a tag table already, and may not have\nthe same name as an already-added tag.</p>",
+            "doc": "<p>Add a tag to the table. The tag is assigned the highest priority\nin the table.</p><pre>tag</pre>\n\n<p>must not be in a tag table already, and may not have\nthe same name as an already-added tag.</p>",
             "kind": "method",
             "name": "add",
             "parameters": [
@@ -42,7 +30,7 @@
             }
         },
         {
-            "doc": "<p>Calls <code>func</code> on each tag in <code>table</code>, with user data <code>data</code>.\nNote that the table may not be modified while iterating\nover it (you can\u2019t add/remove tags).</p>",
+            "doc": "<p>Calls <pre>func</pre> on each tag in <pre>table</pre>, with user data <pre>data</pre>.\nNote that the table may not be modified while iterating\nover it (you can\u2019t add/remove tags).</p>",
             "kind": "method",
             "name": "foreach",
             "parameters": [
@@ -89,7 +77,7 @@
             }
         },
         {
-            "doc": "<p>Remove a tag from the table. If a <span data-xref=\"Gtk.TextBuffer\"/> has <code>table</code> as its tag table,\nthe tag is removed from the buffer. The table\u2019s reference to the tag is\nremoved, so the tag will end up destroyed if you don\u2019t have a reference to\nit.</p>",
+            "doc": "<p>Remove a tag from the table. If a <span data-xref=\"Gtk.TextBuffer\"/> has <pre>table</pre> as its tag table,\nthe tag is removed from the buffer. The table\u2019s reference to the tag is\nremoved, so the tag will end up destroyed if you don\u2019t have a reference to\nit.</p>",
             "kind": "method",
             "name": "remove",
             "parameters": [
@@ -103,8 +91,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "TextTagTable",
     "properties": [],

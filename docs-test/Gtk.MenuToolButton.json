@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuToolButton\"/> using <code>icon_widget</code> as icon and\n<code>label</code> as label.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuToolButton\"/> using <pre>icon_widget</pre> as icon and\n<pre>label</pre> as label.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -23,7 +23,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuToolButton\"/>.\nThe new <span data-xref=\"Gtk.MenuToolButton\"/> will contain an icon and label from\nthe stock item indicated by <code>stock_id</code>.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuToolButton\"/>.\nThe new <span data-xref=\"Gtk.MenuToolButton\"/> will contain an icon and label from\nthe stock item indicated by <pre>stock_id</pre>.</p>",
             "kind": "constructor",
             "name": "new_from_stock",
             "parameters": [
@@ -39,19 +39,7 @@
             }
         }
     ],
-    "doc": "<p>A <span data-xref=\"Gtk.MenuToolButton\"/> is a <span data-xref=\"Gtk.ToolItem\"/> that contains a button and\na small additional button with an arrow. When clicked, the arrow\nbutton pops up a dropdown menu.</p><p>Use <span data-xref=\"Gtk.MenuToolButton.new\"/> to create a new\n<span data-xref=\"Gtk.MenuToolButton\"/>.</p><h1>GtkMenuToolButton as GtkBuildable</h1><p>The GtkMenuToolButton implementation of the GtkBuildable interface\nsupports adding a menu by specifying \u201cmenu\u201d as the \u201ctype\u201d attribute\nof a &lt;child&gt; element.</p><p>An example for a UI definition fragment with menus:\n|[\n&lt;object class=\"GtkMenuToolButton\"&gt;\n  &lt;child type=\"menu\"&gt;\n    &lt;object class=\"GtkMenu\"/&gt;\n  &lt;/child&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>A <span data-xref=\"Gtk.MenuToolButton\"/> is a <span data-xref=\"Gtk.ToolItem\"/> that contains a button and\na small additional button with an arrow. When clicked, the arrow\nbutton pops up a dropdown menu.</p><p>Use <span data-xref=\"Gtk.MenuToolButton.new\"/> to create a new\n<span data-xref=\"Gtk.MenuToolButton\"/>.</p><h1>GtkMenuToolButton as GtkBuildable</h1><p>The GtkMenuToolButton implementation of the GtkBuildable interface\nsupports adding a menu by specifying \u201cmenu\u201d as the \u201ctype\u201d attribute\nof a <child> element.</p><p>An example for a UI definition fragment with menus:\n|[\n<object class=\"GtkMenuToolButton\">\n  <child type=\"menu\">\n    <object class=\"GtkMenu\"/>\n  </child>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
@@ -96,7 +84,7 @@
             }
         },
         {
-            "doc": "<p>Sets the <span data-xref=\"Gtk.Menu\"/> that is popped up when the user clicks on the arrow.\nIf <code>menu</code> is NULL, the arrow button becomes insensitive.</p>",
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Menu\"/> that is popped up when the user clicks on the arrow.\nIf <pre>menu</pre> is NULL, the arrow button becomes insensitive.</p>",
             "kind": "method",
             "name": "set_menu",
             "parameters": [
@@ -110,8 +98,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "MenuToolButton",
     "properties": [

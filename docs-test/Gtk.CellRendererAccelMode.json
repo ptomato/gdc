@@ -1,0 +1,17 @@
+{
+    "doc": "<p>Determines if the edited accelerators are GTK+ accelerators. If\nthey are, consumed modifiers are suppressed, only accelerators\naccepted by GTK+ are allowed, and the accelerators are rendered\nin the same way as they are in menus.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>GTK+ accelerators mode</p>",
+            "kind": "default",
+            "name": "gtk"
+        },
+        {
+            "doc": "<p>Other accelerator mode</p>",
+            "kind": "default",
+            "name": "other"
+        }
+    ],
+    "name": "CellRendererAccelMode"
+}

@@ -27,18 +27,6 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.FontButton\"/> is a button which displays the currently selected\nfont an allows to open a font chooser dialog to change the font.\nIt is suitable widget for selecting a font in a preference dialog.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "button"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -112,7 +100,7 @@
             }
         },
         {
-            "doc": "<p>If <code>show_size</code> is <code>true</code>, the font size will be displayed along with the name of the selected font.</p>",
+            "doc": "<p>If <pre>show_size</pre> is <pre>true</pre>, the font size will be displayed along with the name of the selected font.</p>",
             "kind": "method",
             "name": "set_show_size",
             "parameters": [
@@ -128,7 +116,7 @@
             }
         },
         {
-            "doc": "<p>If <code>show_style</code> is <code>true</code>, the font style will be displayed along with name of the selected font.</p>",
+            "doc": "<p>If <pre>show_style</pre> is <pre>true</pre>, the font style will be displayed along with name of the selected font.</p>",
             "kind": "method",
             "name": "set_show_style",
             "parameters": [
@@ -160,7 +148,7 @@
             }
         },
         {
-            "doc": "<p>If <code>use_font</code> is <code>true</code>, the font name will be written using the selected font.</p>",
+            "doc": "<p>If <pre>use_font</pre> is <pre>true</pre>, the font name will be written using the selected font.</p>",
             "kind": "method",
             "name": "set_use_font",
             "parameters": [
@@ -176,7 +164,7 @@
             }
         },
         {
-            "doc": "<p>If <code>use_size</code> is <code>true</code>, the font name will be written using the selected size.</p>",
+            "doc": "<p>If <pre>use_size</pre> is <pre>true</pre>, the font name will be written using the selected size.</p>",
             "kind": "method",
             "name": "set_use_size",
             "parameters": [
@@ -190,8 +178,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "FontButton",
     "properties": [
@@ -202,13 +189,13 @@
             "type": "String"
         },
         {
-            "doc": "<p>If this property is set to <code>true</code>, the selected font size will be shown\nin the label. For a more WYSIWYG way to show the selected size, see the\n::use-size property.</p>",
+            "doc": "<p>If this property is set to <pre>true</pre>, the selected font size will be shown\nin the label. For a more WYSIWYG way to show the selected size, see the\n::use-size property.</p>",
             "kind": "property",
             "name": "show-size",
             "type": "Boolean"
         },
         {
-            "doc": "<p>If this property is set to <code>true</code>, the name of the selected font style\nwill be shown in the label. For a more WYSIWYG way to show the selected\nstyle, see the ::use-font property.</p>",
+            "doc": "<p>If this property is set to <pre>true</pre>, the name of the selected font style\nwill be shown in the label. For a more WYSIWYG way to show the selected\nstyle, see the ::use-font property.</p>",
             "kind": "property",
             "name": "show-style",
             "type": "Boolean"
@@ -220,13 +207,13 @@
             "type": "String"
         },
         {
-            "doc": "<p>If this property is set to <code>true</code>, the label will be drawn\nin the selected font.</p>",
+            "doc": "<p>If this property is set to <pre>true</pre>, the label will be drawn\nin the selected font.</p>",
             "kind": "property",
             "name": "use-font",
             "type": "Boolean"
         },
         {
-            "doc": "<p>If this property is set to <code>true</code>, the label will be drawn\nwith the selected font size.</p>",
+            "doc": "<p>If this property is set to <pre>true</pre>, the label will be drawn\nwith the selected font size.</p>",
             "kind": "property",
             "name": "use-size",
             "type": "Boolean"

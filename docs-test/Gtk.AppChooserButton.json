@@ -17,19 +17,7 @@
             }
         }
     ],
-    "doc": "<p>The <span data-xref=\"Gtk.AppChooserButton\"/> is a widget that lets the user select\nan application. It implements the <span data-xref=\"Gtk.AppChooser\"/> interface.</p><p>Initially, a <span data-xref=\"Gtk.AppChooserButton\"/> selects the first application\nin its list, which will either be the most-recently used application\nor, if <span data-xref=\"Gtk.AppChooserButton-show-default-item\"/> is <code>true</code>, the\ndefault application.</p><p>The list of applications shown in a <span data-xref=\"Gtk.AppChooserButton\"/> includes\nthe recommended applications for the given content type. When\n<span data-xref=\"Gtk.AppChooserButton-show-default-item\"/> is set, the default application\nis also included. To let the user chooser other applications,\nyou can set the <span data-xref=\"Gtk.AppChooserButton-show-dialog-item\"/> property,\nwhich allows to open a full <span data-xref=\"Gtk.AppChooserDialog\"/>.</p><p>It is possible to add custom items to the list, using\n<span data-xref=\"Gtk.AppChooserButton.append_custom_item\"/>. These items cause\nthe <span data-xref=\"Gtk.AppChooserButton-custom-item-activated\"/> signal to be\nemitted when they are selected.</p><p>To track changes in the selected application, use the\n<span data-xref=\"Gtk.ComboBox-changed\"/> signal.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>The <span data-xref=\"Gtk.AppChooserButton\"/> is a widget that lets the user select\nan application. It implements the <span data-xref=\"Gtk.AppChooser\"/> interface.</p><p>Initially, a <span data-xref=\"Gtk.AppChooserButton\"/> selects the first application\nin its list, which will either be the most-recently used application\nor, if <span data-xref=\"Gtk.AppChooserButton-show-default-item\"/> is <pre>true</pre>, the\ndefault application.</p><p>The list of applications shown in a <span data-xref=\"Gtk.AppChooserButton\"/> includes\nthe recommended applications for the given content type. When\n<span data-xref=\"Gtk.AppChooserButton-show-default-item\"/> is set, the default application\nis also included. To let the user chooser other applications,\nyou can set the <span data-xref=\"Gtk.AppChooserButton-show-dialog-item\"/> property,\nwhich allows to open a full <span data-xref=\"Gtk.AppChooserDialog\"/>.</p><p>It is possible to add custom items to the list, using\n<span data-xref=\"Gtk.AppChooserButton.append_custom_item\"/>. These items cause\nthe <span data-xref=\"Gtk.AppChooserButton-custom-item-activated\"/> signal to be\nemitted when they are selected.</p><p>To track changes in the selected application, use the\n<span data-xref=\"Gtk.ComboBox-changed\"/> signal.</p>",
     "kind": "class",
     "methods": [
         {
@@ -159,8 +147,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "AppChooserButton",
     "properties": [

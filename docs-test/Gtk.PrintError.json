@@ -1,0 +1,27 @@
+{
+    "doc": "<p>Error codes that identify various errors that can occur while\nusing the GTK+ printing support.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>An unspecified error occurred.</p>",
+            "kind": "default",
+            "name": "general"
+        },
+        {
+            "doc": "<p>An internal error occurred.</p>",
+            "kind": "default",
+            "name": "internal_error"
+        },
+        {
+            "doc": "<p>A memory allocation failed.</p>",
+            "kind": "default",
+            "name": "nomem"
+        },
+        {
+            "doc": "<p>An error occurred while loading a page setup\n    or paper size from a key file.</p>",
+            "kind": "default",
+            "name": "invalid_file"
+        }
+    ],
+    "name": "PrintError"
+}

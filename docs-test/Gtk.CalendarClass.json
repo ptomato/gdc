@@ -1,0 +1,69 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "month_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "day_selected"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "day_selected_double_click"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "prev_month"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "next_month"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "prev_year"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "next_year"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "CalendarClass"
+}

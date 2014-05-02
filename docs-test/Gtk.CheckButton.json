@@ -26,7 +26,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.CheckButton\"/> containing a label. The label\nwill be created using <span data-xref=\"Gtk.Label.new_with_mnemonic\"/>, so underscores\nin <code>label</code> indicate the mnemonic for the check button.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CheckButton\"/> containing a label. The label\nwill be created using <span data-xref=\"Gtk.Label.new_with_mnemonic\"/>, so underscores\nin <pre>label</pre> indicate the mnemonic for the check button.</p>",
             "kind": "constructor",
             "name": "new_with_mnemonic",
             "parameters": [
@@ -43,17 +43,8 @@
         }
     ],
     "doc": "<p>A <span data-xref=\"Gtk.CheckButton\"/> places a discrete <span data-xref=\"Gtk.ToggleButton\"/> next to a widget,\n(usually a <span data-xref=\"Gtk.Label\"/>). See the section on <span data-xref=\"Gtk.ToggleButton\"/> widgets for\nmore information about toggle/check buttons.</p><p>The important signal ( <span data-xref=\"Gtk.ToggleButton-toggled\"/> ) is also inherited from\n<span data-xref=\"Gtk.ToggleButton\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "toggle_button"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "CheckButton",
     "properties": [],
     "signals": [],

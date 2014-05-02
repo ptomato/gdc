@@ -1,0 +1,154 @@
+{
+    "constructors": [],
+    "doc": "<p>A binding set maintains a list of activatable key bindings.\nA single binding set can match multiple types of widgets.\nSimilar to style contexts, can be matched by any information contained\nin a widgets <span data-xref=\"Gtk.WidgetPath\"/>. When a binding within a set is matched upon\nactivation, an action signal is emitted on the target widget to carry out\nthe actual activation.</p>",
+    "fields": [
+        {
+            "doc": "<p>unique name of this binding set</p>",
+            "kind": "field",
+            "name": "set_name"
+        },
+        {
+            "doc": "<p>unused</p>",
+            "kind": "field",
+            "name": "priority"
+        },
+        {
+            "doc": "<p>unused</p>",
+            "kind": "field",
+            "name": "widget_path_pspecs"
+        },
+        {
+            "doc": "<p>unused</p>",
+            "kind": "field",
+            "name": "widget_class_pspecs"
+        },
+        {
+            "doc": "<p>unused</p>",
+            "kind": "field",
+            "name": "class_branch_pspecs"
+        },
+        {
+            "doc": "<p>the key binding entries in this binding set</p>",
+            "kind": "field",
+            "name": "entries"
+        },
+        {
+            "doc": "<p>implementation detail</p>",
+            "kind": "field",
+            "name": "current"
+        },
+        {
+            "doc": "<p>whether this binding set stems from a CSS file and is reset upon theme changes</p>",
+            "kind": "field",
+            "name": "parsed"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Find a key binding matching <pre>keyval</pre> and <pre>modifiers</pre> within\n<pre>binding_set</pre> and activate the binding on <pre>object</pre>.</p>",
+            "kind": "method",
+            "name": "activate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "keyval",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "modifiers",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>This function was used internally by the GtkRC parsing mechanism\nto assign match patterns to <span data-xref=\"Gtk.BindingSet\"/> structures.</p><p>In GTK+ 3, these match patterns are unused.</p>",
+            "kind": "method",
+            "name": "add_path",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path_type",
+                    "direction": "in",
+                    "type": "Gtk.PathType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path_pattern",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "priority",
+                    "direction": "in",
+                    "type": "Gtk.PathPriorityType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This function returns the binding set named after the type name of\nthe passed in class structure. New binding sets are created on\ndemand by this function.</p>",
+            "kind": "function",
+            "name": "by_class",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object_class",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.BindingSet"
+            }
+        },
+        {
+            "doc": "<p>Find a binding set by its globally unique name.</p><p>The <pre>set_name</pre> can either be a name used for <span data-xref=\"Gtk.binding_set_new\"/>\nor the type name of a class used in <span data-xref=\"Gtk.binding_set_by_class\"/>.</p>",
+            "kind": "function",
+            "name": "find",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "set_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.BindingSet"
+            }
+        },
+        {
+            "doc": "<p>GTK+ maintains a global list of binding sets. Each binding set has\na unique name which needs to be specified upon creation.</p>",
+            "kind": "function",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "set_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.BindingSet"
+            }
+        }
+    ],
+    "name": "BindingSet"
+}

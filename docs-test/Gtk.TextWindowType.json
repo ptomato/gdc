@@ -1,0 +1,42 @@
+{
+    "doc": "<p>Used to reference the parts of <span data-xref=\"Gtk.TextView\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "",
+            "kind": "default",
+            "name": "private"
+        },
+        {
+            "doc": "<p>Window that floats over scrolling areas.</p>",
+            "kind": "default",
+            "name": "widget"
+        },
+        {
+            "doc": "<p>Scrollable text window.</p>",
+            "kind": "default",
+            "name": "text"
+        },
+        {
+            "doc": "<p>Left side border window.</p>",
+            "kind": "default",
+            "name": "left"
+        },
+        {
+            "doc": "<p>Right side border window.</p>",
+            "kind": "default",
+            "name": "right"
+        },
+        {
+            "doc": "<p>Top border window.</p>",
+            "kind": "default",
+            "name": "top"
+        },
+        {
+            "doc": "<p>Bottom border window.</p>",
+            "kind": "default",
+            "name": "bottom"
+        }
+    ],
+    "name": "TextWindowType"
+}

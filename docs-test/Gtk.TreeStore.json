@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new tree store as with <code>n_columns</code> columns each of the types passed\nin.  Note that only types derived from standard GObject fundamental types\nare supported.</p><p>As an example, <code>gtk_tree_store_new (3, G_TYPE_INT, G_TYPE_STRING,\nGDK_TYPE_PIXBUF);</code> will create a new <span data-xref=\"Gtk.TreeStore\"/> with three columns, of type</p>\n<h1>gint, #gchararray, and <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span> respectively.</h1>",
+            "doc": "<p>Creates a new tree store as with <pre>n_columns</pre> columns each of the types passed\nin.  Note that only types derived from standard GObject fundamental types\nare supported.</p><p>As an example, <code>gtk_tree_store_new (3, G_TYPE_INT, G_TYPE_STRING,\nGDK_TYPE_PIXBUF);</code> will create a new <span data-xref=\"Gtk.TreeStore\"/> with three columns, of type</p>\n<h1>gint, #gchararray, and <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span> respectively.</h1>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -45,23 +45,11 @@
             }
         }
     ],
-    "doc": "<p>The <span data-xref=\"Gtk.TreeStore\"/> object is a list model for use with a <span data-xref=\"Gtk.TreeView\"/>\nwidget.  It implements the <span data-xref=\"Gtk.TreeModel\"/> interface, and consequentialy,\ncan use all of the methods available there.  It also implements the\n<span data-xref=\"Gtk.TreeSortable\"/> interface so it can be sorted by the view.  Finally,\nit also implements the tree\n[drag and drop][gtk3-GtkTreeView-drag-and-drop]\ninterfaces.</p><h1>GtkTreeStore as GtkBuildable</h1><p>The GtkTreeStore implementation of the <span data-xref=\"Gtk.Buildable\"/> interface allows\nto specify the model columns with a &lt;columns&gt; element that may contain\nmultiple &lt;column&gt; elements, each specifying one model column. The \u201ctype\u201d\nattribute specifies the data type for the column.</p><p>An example of a UI Definition fragment for a tree store:\n|[\n&lt;object class=\"GtkTreeStore\"&gt;\n  &lt;columns&gt;\n    &lt;column type=\"gchararray\"/&gt;\n    &lt;column type=\"gchararray\"/&gt;\n    &lt;column type=\"gint\"/&gt;\n  &lt;/columns&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>The <span data-xref=\"Gtk.TreeStore\"/> object is a list model for use with a <span data-xref=\"Gtk.TreeView\"/>\nwidget.  It implements the <span data-xref=\"Gtk.TreeModel\"/> interface, and consequentialy,\ncan use all of the methods available there.  It also implements the\n<span data-xref=\"Gtk.TreeSortable\"/> interface so it can be sorted by the view.  Finally,\nit also implements the tree\n[drag and drop][gtk3-GtkTreeView-drag-and-drop]\ninterfaces.</p><h1>GtkTreeStore as GtkBuildable</h1><p>The GtkTreeStore implementation of the <span data-xref=\"Gtk.Buildable\"/> interface allows\nto specify the model columns with a <columns> element that may contain\nmultiple <column> elements, each specifying one model column. The \u201ctype\u201d\nattribute specifies the data type for the column.</p><p>An example of a UI Definition fragment for a tree store:\n|[\n<object class=\"GtkTreeStore\">\n  <columns>\n    <column type=\"gchararray\"/>\n    <column type=\"gchararray\"/>\n    <column type=\"gint\"/>\n  </columns>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Appends a new row to <code>tree_store</code>.  If <code>parent</code> is non-<code>null</code>, then it will append the\nnew row after the last child of <code>parent</code>, otherwise it will append a row to\nthe top level.  <code>iter</code> will be changed to point to this new row.  The row will\nbe empty after this function is called.  To fill in values, you need to call\n<span data-xref=\"Gtk.TreeStore.set\"/> or <span data-xref=\"Gtk.TreeStore.set_value\"/>.</p>",
+            "doc": "<p>Appends a new row to <pre>tree_store</pre>.  If <pre>parent</pre> is non-<pre>null</pre>, then it will append the\nnew row after the last child of <pre>parent</pre>, otherwise it will append a row to\nthe top level.  <pre>iter</pre> will be changed to point to this new row.  The row will\nbe empty after this function is called.  To fill in values, you need to call\n<span data-xref=\"Gtk.TreeStore.set\"/> or <span data-xref=\"Gtk.TreeStore.set_value\"/>.</p>",
             "kind": "method",
             "name": "append",
             "parameters": [
@@ -83,7 +71,7 @@
             }
         },
         {
-            "doc": "<p>Removes all rows from <code>tree_store</code></p>",
+            "doc": "<p>Removes all rows from <pre>tree_store</pre></p>",
             "kind": "method",
             "name": "clear",
             "parameters": [],
@@ -92,7 +80,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new row at <code>position</code>.  If parent is non-<code>null</code>, then the row will be\nmade a child of <code>parent</code>.  Otherwise, the row will be created at the toplevel.\nIf <code>position</code> is -1 or is larger than the number of rows at that level, then\nthe new row will be inserted to the end of the list.  <code>iter</code> will be changed\nto point to this new row.  The row will be empty after this function is\ncalled.  To fill in values, you need to call <span data-xref=\"Gtk.TreeStore.set\"/> or\n<span data-xref=\"Gtk.TreeStore.set_value\"/>.</p>",
+            "doc": "<p>Creates a new row at <pre>position</pre>.  If parent is non-<pre>null</pre>, then the row will be\nmade a child of <pre>parent</pre>.  Otherwise, the row will be created at the toplevel.\nIf <pre>position</pre> is -1 or is larger than the number of rows at that level, then\nthe new row will be inserted to the end of the list.  <pre>iter</pre> will be changed\nto point to this new row.  The row will be empty after this function is\ncalled.  To fill in values, you need to call <span data-xref=\"Gtk.TreeStore.set\"/> or\n<span data-xref=\"Gtk.TreeStore.set_value\"/>.</p>",
             "kind": "method",
             "name": "insert",
             "parameters": [
@@ -120,7 +108,7 @@
             }
         },
         {
-            "doc": "<p>Inserts a new row after <code>sibling</code>.  If <code>sibling</code> is <code>null</code>, then the row will be\nprepended to <code>parent</code> \u2019s children.  If <code>parent</code> and <code>sibling</code> are <code>null</code>, then\nthe row will be prepended to the toplevel.  If both <code>sibling</code> and <code>parent</code> are\nset, then <code>parent</code> must be the parent of <code>sibling</code>.  When <code>sibling</code> is set,\n<code>parent</code> is optional.</p><p><code>iter</code> will be changed to point to this new row.  The row will be empty after\nthis function is called.  To fill in values, you need to call\n<span data-xref=\"Gtk.TreeStore.set\"/> or <span data-xref=\"Gtk.TreeStore.set_value\"/>.</p>",
+            "doc": "<p>Inserts a new row after <pre>sibling</pre>.  If <pre>sibling</pre> is <pre>null</pre>, then the row will be\nprepended to <pre>parent</pre> \u2019s children.  If <pre>parent</pre> and <pre>sibling</pre> are <pre>null</pre>, then\nthe row will be prepended to the toplevel.  If both <pre>sibling</pre> and <pre>parent</pre> are\nset, then <pre>parent</pre> must be the parent of <pre>sibling</pre>.  When <pre>sibling</pre> is set,\n<pre>parent</pre> is optional.</p><pre>iter</pre>\n\n<p>will be changed to point to this new row.  The row will be empty after\nthis function is called.  To fill in values, you need to call\n<span data-xref=\"Gtk.TreeStore.set\"/> or <span data-xref=\"Gtk.TreeStore.set_value\"/>.</p>",
             "kind": "method",
             "name": "insert_after",
             "parameters": [
@@ -148,7 +136,7 @@
             }
         },
         {
-            "doc": "<p>Inserts a new row before <code>sibling</code>.  If <code>sibling</code> is <code>null</code>, then the row will\nbe appended to <code>parent</code> \u2019s children.  If <code>parent</code> and <code>sibling</code> are <code>null</code>, then\nthe row will be appended to the toplevel.  If both <code>sibling</code> and <code>parent</code> are\nset, then <code>parent</code> must be the parent of <code>sibling</code>.  When <code>sibling</code> is set,\n<code>parent</code> is optional.</p><p><code>iter</code> will be changed to point to this new row.  The row will be empty after\nthis function is called.  To fill in values, you need to call\n<span data-xref=\"Gtk.TreeStore.set\"/> or <span data-xref=\"Gtk.TreeStore.set_value\"/>.</p>",
+            "doc": "<p>Inserts a new row before <pre>sibling</pre>.  If <pre>sibling</pre> is <pre>null</pre>, then the row will\nbe appended to <pre>parent</pre> \u2019s children.  If <pre>parent</pre> and <pre>sibling</pre> are <pre>null</pre>, then\nthe row will be appended to the toplevel.  If both <pre>sibling</pre> and <pre>parent</pre> are\nset, then <pre>parent</pre> must be the parent of <pre>sibling</pre>.  When <pre>sibling</pre> is set,\n<pre>parent</pre> is optional.</p><pre>iter</pre>\n\n<p>will be changed to point to this new row.  The row will be empty after\nthis function is called.  To fill in values, you need to call\n<span data-xref=\"Gtk.TreeStore.set\"/> or <span data-xref=\"Gtk.TreeStore.set_value\"/>.</p>",
             "kind": "method",
             "name": "insert_before",
             "parameters": [
@@ -176,7 +164,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new row at <code>position</code>. <code>iter</code> will be changed to point to this\nnew row. If <code>position</code> is -1, or larger than the number of rows on the list, then\nthe new row will be appended to the list. The row will be filled with\nthe values given to this function.</p><p>Calling\n<code>gtk_tree_store_insert_with_values (tree_store, iter, position, ...)</code>\nhas the same effect as calling\n|[&lt;!-- language=\"C\" --&gt;\ngtk_tree_store_insert (tree_store, iter, position);\ngtk_tree_store_set (tree_store, iter, ...);\n]|\nwith the different that the former will only emit a row_inserted signal,\nwhile the latter will emit row_inserted, row_changed and if the tree store\nis sorted, rows_reordered.  Since emitting the rows_reordered signal\nrepeatedly can affect the performance of the program,\n<span data-xref=\"Gtk.TreeStore.insert_with_values\"/> should generally be preferred when\ninserting rows in a sorted tree store.</p>",
+            "doc": "<p>Creates a new row at <pre>position</pre>. <pre>iter</pre> will be changed to point to this\nnew row. If <pre>position</pre> is -1, or larger than the number of rows on the list, then\nthe new row will be appended to the list. The row will be filled with\nthe values given to this function.</p><p>Calling\n<code>gtk_tree_store_insert_with_values (tree_store, iter, position, ...)</code>\nhas the same effect as calling\n|[<!-- language=\"C\" -->\ngtk_tree_store_insert (tree_store, iter, position);\ngtk_tree_store_set (tree_store, iter, ...);\n]|\nwith the different that the former will only emit a row_inserted signal,\nwhile the latter will emit row_inserted, row_changed and if the tree store\nis sorted, rows_reordered.  Since emitting the rows_reordered signal\nrepeatedly can affect the performance of the program,\n<span data-xref=\"Gtk.TreeStore.insert_with_values\"/> should generally be preferred when\ninserting rows in a sorted tree store.</p>",
             "kind": "method",
             "name": "insert_with_values",
             "parameters": [
@@ -256,7 +244,7 @@
             }
         },
         {
-            "doc": "<p>Returns <code>true</code> if <code>iter</code> is an ancestor of <code>descendant</code>.  That is, <code>iter</code> is the\nparent (or grandparent or great-grandparent) of <code>descendant</code>.</p>",
+            "doc": "<p>Returns <pre>true</pre> if <pre>iter</pre> is an ancestor of <pre>descendant</pre>.  That is, <pre>iter</pre> is the\nparent (or grandparent or great-grandparent) of <pre>descendant</pre>.</p>",
             "kind": "method",
             "name": "is_ancestor",
             "parameters": [
@@ -278,7 +266,7 @@
             }
         },
         {
-            "doc": "<p>Returns the depth of <code>iter</code>.  This will be 0 for anything on the root level, 1\nfor anything down a level, etc.</p>",
+            "doc": "<p>Returns the depth of <pre>iter</pre>.  This will be 0 for anything on the root level, 1\nfor anything down a level, etc.</p>",
             "kind": "method",
             "name": "iter_depth",
             "parameters": [
@@ -310,7 +298,7 @@
             }
         },
         {
-            "doc": "<p>Moves <code>iter</code> in <code>tree_store</code> to the position after <code>position</code>. <code>iter</code> and\n<code>position</code> should be in the same level. Note that this function only\nworks with unsorted stores. If <code>position</code> is <code>null</code>, <code>iter</code> will be moved\nto the start of the level.</p>",
+            "doc": "<p>Moves <pre>iter</pre> in <pre>tree_store</pre> to the position after <pre>position</pre>. <pre>iter</pre> and\n<pre>position</pre> should be in the same level. Note that this function only\nworks with unsorted stores. If <pre>position</pre> is <pre>null</pre>, <pre>iter</pre> will be moved\nto the start of the level.</p>",
             "kind": "method",
             "name": "move_after",
             "parameters": [
@@ -332,7 +320,7 @@
             }
         },
         {
-            "doc": "<p>Moves <code>iter</code> in <code>tree_store</code> to the position before <code>position</code>. <code>iter</code> and\n<code>position</code> should be in the same level. Note that this function only\nworks with unsorted stores. If <code>position</code> is <code>null</code>, <code>iter</code> will be\nmoved to the end of the level.</p>",
+            "doc": "<p>Moves <pre>iter</pre> in <pre>tree_store</pre> to the position before <pre>position</pre>. <pre>iter</pre> and\n<pre>position</pre> should be in the same level. Note that this function only\nworks with unsorted stores. If <pre>position</pre> is <pre>null</pre>, <pre>iter</pre> will be\nmoved to the end of the level.</p>",
             "kind": "method",
             "name": "move_before",
             "parameters": [
@@ -354,7 +342,7 @@
             }
         },
         {
-            "doc": "<p>Prepends a new row to <code>tree_store</code>.  If <code>parent</code> is non-<code>null</code>, then it will prepend\nthe new row before the first child of <code>parent</code>, otherwise it will prepend a row\nto the top level.  <code>iter</code> will be changed to point to this new row.  The row\nwill be empty after this function is called.  To fill in values, you need to\ncall <span data-xref=\"Gtk.TreeStore.set\"/> or <span data-xref=\"Gtk.TreeStore.set_value\"/>.</p>",
+            "doc": "<p>Prepends a new row to <pre>tree_store</pre>.  If <pre>parent</pre> is non-<pre>null</pre>, then it will prepend\nthe new row before the first child of <pre>parent</pre>, otherwise it will prepend a row\nto the top level.  <pre>iter</pre> will be changed to point to this new row.  The row\nwill be empty after this function is called.  To fill in values, you need to\ncall <span data-xref=\"Gtk.TreeStore.set\"/> or <span data-xref=\"Gtk.TreeStore.set_value\"/>.</p>",
             "kind": "method",
             "name": "prepend",
             "parameters": [
@@ -376,7 +364,7 @@
             }
         },
         {
-            "doc": "<p>Removes <code>iter</code> from <code>tree_store</code>.  After being removed, <code>iter</code> is set to the\nnext valid row at that level, or invalidated if it previously pointed to the\nlast one.</p>",
+            "doc": "<p>Removes <pre>iter</pre> from <pre>tree_store</pre>.  After being removed, <pre>iter</pre> is set to the\nnext valid row at that level, or invalidated if it previously pointed to the\nlast one.</p>",
             "kind": "method",
             "name": "remove",
             "parameters": [
@@ -392,7 +380,7 @@
             }
         },
         {
-            "doc": "<p>Reorders the children of <code>parent</code> in <code>tree_store</code> to follow the order\nindicated by <code>new_order</code>. Note that this function only works with\nunsorted stores.</p>",
+            "doc": "<p>Reorders the children of <pre>parent</pre> in <pre>tree_store</pre> to follow the order\nindicated by <pre>new_order</pre>. Note that this function only works with\nunsorted stores.</p>",
             "kind": "method",
             "name": "reorder",
             "parameters": [
@@ -414,7 +402,7 @@
             }
         },
         {
-            "doc": "<p>Sets the value of one or more cells in the row referenced by <code>iter</code>.\nThe variable argument list should contain integer column numbers,\neach column number followed by the value to be set.\nThe list is terminated by a -1. For example, to set column 0 with type\n%G_TYPE_STRING to \u201cFoo\u201d, you would write\n<code>gtk_tree_store_set (store, iter, 0, \"Foo\", -1)</code>.</p><p>The value will be referenced by the store if it is a %G_TYPE_OBJECT, and it\nwill be copied if it is a %G_TYPE_STRING or %G_TYPE_BOXED.</p>",
+            "doc": "<p>Sets the value of one or more cells in the row referenced by <pre>iter</pre>.\nThe variable argument list should contain integer column numbers,\neach column number followed by the value to be set.\nThe list is terminated by a -1. For example, to set column 0 with type\n%G_TYPE_STRING to \u201cFoo\u201d, you would write\n<code>gtk_tree_store_set (store, iter, 0, \"Foo\", -1)</code>.</p><p>The value will be referenced by the store if it is a %G_TYPE_OBJECT, and it\nwill be copied if it is a %G_TYPE_STRING or %G_TYPE_BOXED.</p>",
             "kind": "method",
             "name": "set",
             "parameters": [
@@ -480,7 +468,7 @@
             }
         },
         {
-            "doc": "<p>Sets the data in the cell specified by <code>iter</code> and <code>column</code>.\nThe type of <code>value</code> must be convertible to the type of the\ncolumn.</p>",
+            "doc": "<p>Sets the data in the cell specified by <pre>iter</pre> and <pre>column</pre>.\nThe type of <pre>value</pre> must be convertible to the type of the\ncolumn.</p>",
             "kind": "method",
             "name": "set_value",
             "parameters": [
@@ -542,7 +530,7 @@
             }
         },
         {
-            "doc": "<p>Swaps <code>a</code> and <code>b</code> in the same level of <code>tree_store</code>. Note that this function\nonly works with unsorted stores.</p>",
+            "doc": "<p>Swaps <pre>a</pre> and <pre>b</pre> in the same level of <pre>tree_store</pre>. Note that this function\nonly works with unsorted stores.</p>",
             "kind": "method",
             "name": "swap",
             "parameters": [
@@ -562,8 +550,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "TreeStore",
     "properties": [],

@@ -75,19 +75,7 @@
             }
         }
     ],
-    "doc": "<p>A <span data-xref=\"Gtk.RecentAction\"/> represents a list of recently used files, which\ncan be shown by widgets such as <span data-xref=\"Gtk.RecentChooserDialog\"/> or\n<span data-xref=\"Gtk.RecentChooserMenu\"/>.</p><p>To construct a submenu showing recently used files, use a <span data-xref=\"Gtk.RecentAction\"/>\nas the action for a &lt;menuitem&gt;. To construct a menu toolbutton showing\nthe recently used files in the popup menu, use a <span data-xref=\"Gtk.RecentAction\"/> as the\naction for a &lt;toolitem&gt; element.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>A <span data-xref=\"Gtk.RecentAction\"/> represents a list of recently used files, which\ncan be shown by widgets such as <span data-xref=\"Gtk.RecentChooserDialog\"/> or\n<span data-xref=\"Gtk.RecentChooserMenu\"/>.</p><p>To construct a submenu showing recently used files, use a <span data-xref=\"Gtk.RecentAction\"/>\nas the action for a <menuitem>. To construct a menu toolbutton showing\nthe recently used files in the popup menu, use a <span data-xref=\"Gtk.RecentAction\"/> as the\naction for a <toolitem> element.</p>",
     "kind": "class",
     "methods": [
         {
@@ -100,7 +88,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether a number should be added to the items shown by the\nwidgets representing <code>action</code>. The numbers are shown to provide\na unique character for a mnemonic to be used inside the menu item's\nlabel. Only the first ten items get a number to avoid clashes.</p>",
+            "doc": "<p>Sets whether a number should be added to the items shown by the\nwidgets representing <pre>action</pre>. The numbers are shown to provide\na unique character for a mnemonic to be used inside the menu item's\nlabel. Only the first ten items get a number to avoid clashes.</p>",
             "kind": "method",
             "name": "set_show_numbers",
             "parameters": [
@@ -114,8 +102,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "RecentAction",
     "properties": [

@@ -1,0 +1,19 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>Origin should be something like \u201cfilename:linenumber\u201d for\n   rc files, or e.g. \u201cXProperty\u201d for other sources.</p>",
+            "kind": "field",
+            "name": "origin"
+        },
+        {
+            "doc": "<p>Valid types are LONG, DOUBLE and STRING corresponding to\n   the token parsed, or a GSTRING holding an unparsed statement</p>",
+            "kind": "field",
+            "name": "value"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "SettingsValue"
+}

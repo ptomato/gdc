@@ -1,0 +1,22 @@
+{
+    "doc": "<p>Indicated the relief to be drawn around a <span data-xref=\"Gtk.Button\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Draw a normal relief.</p>",
+            "kind": "default",
+            "name": "normal"
+        },
+        {
+            "doc": "<p>A half relief.</p>",
+            "kind": "default",
+            "name": "half"
+        },
+        {
+            "doc": "<p>No relief.</p>",
+            "kind": "default",
+            "name": "none"
+        }
+    ],
+    "name": "ReliefStyle"
+}

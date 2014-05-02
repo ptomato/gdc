@@ -1,0 +1,220 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.TargetList\"/> from an array of <span data-xref=\"Gtk.TargetEntry\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "targets",
+                    "direction": "in",
+                    "type": "Array(Gtk.TargetEntry)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "ntargets",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.TargetList"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.TargetList\"/>-struct is a reference counted list\nof <span data-xref=\"Gtk.TargetPair\"/> and should be treated as\nopaque.</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Appends another target to a <span data-xref=\"Gtk.TargetList\"/>.</p>",
+            "kind": "method",
+            "name": "add",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "target",
+                    "direction": "in",
+                    "type": "Gdk.Atom"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "info",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Appends the image targets supported by <span data-xref=\"Gtk.SelectionData\"/> to\nthe target list. All targets are added with the same <pre>info</pre>.</p>",
+            "kind": "method",
+            "name": "add_image_targets",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "info",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "writable",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Appends the rich text targets registered with\n<span data-xref=\"Gtk.TextBuffer.register_serialize_format\"/> or\n<span data-xref=\"Gtk.TextBuffer.register_deserialize_format\"/> to the target list. All\ntargets are added with the same <pre>info</pre>.</p>",
+            "kind": "method",
+            "name": "add_rich_text_targets",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "info",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "deserializable",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "buffer",
+                    "direction": "in",
+                    "type": "Gtk.TextBuffer"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Prepends a table of <span data-xref=\"Gtk.TargetEntry\"/> to a target list.</p>",
+            "kind": "method",
+            "name": "add_table",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "targets",
+                    "direction": "in",
+                    "type": "Array(Gtk.TargetEntry)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "ntargets",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Appends the text targets supported by <span data-xref=\"Gtk.SelectionData\"/> to\nthe target list. All targets are added with the same <pre>info</pre>.</p>",
+            "kind": "method",
+            "name": "add_text_targets",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "info",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Appends the URI targets supported by <span data-xref=\"Gtk.SelectionData\"/> to\nthe target list. All targets are added with the same <pre>info</pre>.</p>",
+            "kind": "method",
+            "name": "add_uri_targets",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "info",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Looks up a given target in a <span data-xref=\"Gtk.TargetList\"/>.</p>",
+            "kind": "method",
+            "name": "find",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "target",
+                    "direction": "in",
+                    "type": "Gdk.Atom"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "info",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Increases the reference count of a <span data-xref=\"Gtk.TargetList\"/> by one.</p>",
+            "kind": "method",
+            "name": "ref",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TargetList"
+            }
+        },
+        {
+            "doc": "<p>Removes a target from a target list.</p>",
+            "kind": "method",
+            "name": "remove",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "target",
+                    "direction": "in",
+                    "type": "Gdk.Atom"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Decreases the reference count of a <span data-xref=\"Gtk.TargetList\"/> by one.\nIf the resulting reference count is zero, frees the list.</p>",
+            "kind": "method",
+            "name": "unref",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "TargetList"
+}

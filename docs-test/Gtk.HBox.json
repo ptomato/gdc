@@ -24,17 +24,8 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.HBox\"/> is a container that organizes child widgets into a single row.</p><p>Use the <span data-xref=\"Gtk.Box\"/> packing interface to determine the arrangement,\nspacing, width, and alignment of <span data-xref=\"Gtk.HBox\"/> children.</p><p>All children are allocated the same height.</p><p>GtkHBox has been deprecated. You can use <span data-xref=\"Gtk.Box\"/> instead, which is a\nvery quick and easy\u00a0change. If you have derived your own classes from\nGtkHBox, you can simply change the inheritance to derive directly\nfrom <span data-xref=\"Gtk.Box\"/>. No further changes are needed, since the default\nvalue of the <span data-xref=\"Gtk.Orientable-orientation\"/> property is\n<span data-xref=\"Gtk.Orientation\"/>.horizontal.\nIf you don\u2019t need first-child or last-child styling, and want your code\nto be future-proof, the recommendation is to switch to <span data-xref=\"Gtk.Grid\"/> instead\nof nested boxes. For more information about migrating to <span data-xref=\"Gtk.Grid\"/>,\nsee [Migrating from other containers to GtkGrid][gtk-migrating-GtkGrid].</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "box"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "HBox",
     "properties": [],
     "signals": [],

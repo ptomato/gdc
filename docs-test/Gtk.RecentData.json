@@ -1,0 +1,44 @@
+{
+    "constructors": [],
+    "doc": "<p>Meta-data to be passed to <span data-xref=\"Gtk.RecentManager.add_full\"/> when\nregistering a recently used resource.</p>",
+    "fields": [
+        {
+            "doc": "<p>a UTF-8 encoded string, containing the name of the recently\n  used resource to be displayed, or <pre>null</pre>;</p>",
+            "kind": "field",
+            "name": "display_name"
+        },
+        {
+            "doc": "<p>a UTF-8 encoded string, containing a short description of\n  the resource, or <pre>null</pre>;</p>",
+            "kind": "field",
+            "name": "description"
+        },
+        {
+            "doc": "<p>the MIME type of the resource;</p>",
+            "kind": "field",
+            "name": "mime_type"
+        },
+        {
+            "doc": "<p>the name of the application that is registering this recently\n  used resource;</p>",
+            "kind": "field",
+            "name": "app_name"
+        },
+        {
+            "doc": "<p>command line used to launch this resource; may contain the\n  \u201c&percnt;f\u201d and \u201c&percnt;u\u201d escape characters which will be expanded\n  to the resource file path and URI respectively when the command line\n  is retrieved;</p>",
+            "kind": "field",
+            "name": "app_exec"
+        },
+        {
+            "doc": "<p>a vector of strings containing groups names;</p>",
+            "kind": "field",
+            "name": "groups"
+        },
+        {
+            "doc": "<p>whether this resource should be displayed only by the\n  applications that have registered it or not.</p>",
+            "kind": "field",
+            "name": "is_private"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "RecentData"
+}

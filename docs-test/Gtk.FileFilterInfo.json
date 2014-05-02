@@ -1,0 +1,34 @@
+{
+    "constructors": [],
+    "doc": "<p>A <span data-xref=\"Gtk.FileFilterInfo\"/>-struct is used to pass information about the\ntested file to <span data-xref=\"Gtk.FileFilter.filter\"/>.</p>",
+    "fields": [
+        {
+            "doc": "<p>Flags indicating which of the following fields need\n  are filled</p>",
+            "kind": "field",
+            "name": "contains"
+        },
+        {
+            "doc": "<p>the filename of the file being tested</p>",
+            "kind": "field",
+            "name": "filename"
+        },
+        {
+            "doc": "<p>the URI for the file being tested</p>",
+            "kind": "field",
+            "name": "uri"
+        },
+        {
+            "doc": "<p>the string that will be used to display the file\n  in the file chooser</p>",
+            "kind": "field",
+            "name": "display_name"
+        },
+        {
+            "doc": "<p>the mime type of the file</p>",
+            "kind": "field",
+            "name": "mime_type"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "FileFilterInfo"
+}

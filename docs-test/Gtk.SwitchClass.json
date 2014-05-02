@@ -1,0 +1,49 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "activate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "state_set"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_switch_padding_1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_switch_padding_2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_switch_padding_3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_switch_padding_4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_switch_padding_5"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "SwitchClass"
+}

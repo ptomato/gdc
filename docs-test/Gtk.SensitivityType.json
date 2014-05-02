@@ -1,0 +1,22 @@
+{
+    "doc": "<p>Determines how GTK+ handles the sensitivity of stepper arrows\nat the end of range widgets.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The arrow is made insensitive if the\n  thumb is at the end</p>",
+            "kind": "default",
+            "name": "auto"
+        },
+        {
+            "doc": "<p>The arrow is always sensitive</p>",
+            "kind": "default",
+            "name": "on"
+        },
+        {
+            "doc": "<p>The arrow is always insensitive</p>",
+            "kind": "default",
+            "name": "off"
+        }
+    ],
+    "name": "SensitivityType"
+}

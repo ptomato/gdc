@@ -11,18 +11,6 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.WindowGroup\"/> objects are referenced by each window in the group,\nso once you have added all windows to a <span data-xref=\"Gtk.WindowGroup\"/>, you can drop\nthe initial reference to the window group with <span data-xref=\"GObject.Object.unref\">GObject.Object.prototype.unref</span>. If the\nwindows in the window group are subsequently destroyed, then they will\nbe removed from the window group and drop their references on the window\ngroup; when all window have been removed, the window group will be\nfreed.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -42,7 +30,7 @@
             }
         },
         {
-            "doc": "<p>Returns the current grab widget for <code>device</code>, or <code>null</code> if none.</p>",
+            "doc": "<p>Returns the current grab widget for <pre>device</pre>, or <pre>null</pre> if none.</p>",
             "kind": "method",
             "name": "get_current_device_grab",
             "parameters": [
@@ -67,7 +55,7 @@
             }
         },
         {
-            "doc": "<p>Returns a list of the #GtkWindows that belong to <code>window_group</code>.</p>",
+            "doc": "<p>Returns a list of the #GtkWindows that belong to <pre>window_group</pre>.</p>",
             "kind": "method",
             "name": "list_windows",
             "parameters": [],
@@ -90,8 +78,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "WindowGroup",
     "properties": [],

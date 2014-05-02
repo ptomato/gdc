@@ -42,22 +42,10 @@
         }
     ],
     "doc": "<p>A <span data-xref=\"Gtk.RadioAction\"/> is similar to <span data-xref=\"Gtk.RadioMenuItem\"/>. A number of radio\nactions can be linked together so that only one may be active at any\none time.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "private_data"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Obtains the value property of the currently active member of\nthe group to which <code>action</code> belongs.</p>",
+            "doc": "<p>Obtains the value property of the currently active member of\nthe group to which <pre>action</pre> belongs.</p>",
             "kind": "method",
             "name": "get_current_value",
             "parameters": [],
@@ -66,7 +54,7 @@
             }
         },
         {
-            "doc": "<p>Returns the list representing the radio group for this object.\nNote that the returned list is only valid until the next change\nto the group.</p><p>A common way to set up a group of radio group is the following:\n|[&lt;!-- language=\"C\" --&gt;\n  GSList <em>group = NULL;\n  GtkRadioAction </em>action;</p>\n<p>while ( ...more actions to add... /)\n    {\n       action = gtk_radio_action_new (...);</p>\n<pre><code>   gtk_radio_action_set_group (action, group);\n   group = gtk_radio_action_get_group (action);\n}\n</code></pre>\n<p>]|</p>",
+            "doc": "<p>Returns the list representing the radio group for this object.\nNote that the returned list is only valid until the next change\nto the group.</p><p>A common way to set up a group of radio group is the following:\n|[<!-- language=\"C\" -->\n  GSList <em>group = NULL;\n  GtkRadioAction </em>action;</p>\n<p>while ( ...more actions to add... /)\n    {\n       action = gtk_radio_action_new (...);</p>\n<pre><code>   gtk_radio_action_set_group (action, group);\n   group = gtk_radio_action_get_group (action);\n}\n</code></pre>\n<p>]|</p>",
             "kind": "method",
             "name": "get_group",
             "parameters": [],
@@ -75,7 +63,7 @@
             }
         },
         {
-            "doc": "<p>Joins a radio action object to the group of another radio action object.</p><p>Use this in language bindings instead of the <span data-xref=\"Gtk.RadioAction.get_group\"/>\nand <span data-xref=\"Gtk.RadioAction.set_group\"/> methods</p><p>A common way to set up a group of radio actions is the following:\n|[&lt;!-- language=\"C\" --&gt;\n  GtkRadioAction <em>action;\n  GtkRadioAction </em>last_action;</p>\n<p>while ( ...more actions to add... /)\n    {\n       action = gtk_radio_action_new (...);</p>\n<pre><code>   gtk_radio_action_join_group (action, last_action);\n   last_action = action;\n}\n</code></pre>\n<p>]|</p>",
+            "doc": "<p>Joins a radio action object to the group of another radio action object.</p><p>Use this in language bindings instead of the <span data-xref=\"Gtk.RadioAction.get_group\"/>\nand <span data-xref=\"Gtk.RadioAction.set_group\"/> methods</p><p>A common way to set up a group of radio actions is the following:\n|[<!-- language=\"C\" -->\n  GtkRadioAction <em>action;\n  GtkRadioAction </em>last_action;</p>\n<p>while ( ...more actions to add... /)\n    {\n       action = gtk_radio_action_new (...);</p>\n<pre><code>   gtk_radio_action_join_group (action, last_action);\n   last_action = action;\n}\n</code></pre>\n<p>]|</p>",
             "kind": "method",
             "name": "join_group",
             "parameters": [
@@ -91,7 +79,7 @@
             }
         },
         {
-            "doc": "<p>Sets the currently active group member to the member with value\nproperty <code>current_value</code>.</p>",
+            "doc": "<p>Sets the currently active group member to the member with value\nproperty <pre>current_value</pre>.</p>",
             "kind": "method",
             "name": "set_current_value",
             "parameters": [
@@ -121,8 +109,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "RadioAction",
     "properties": [

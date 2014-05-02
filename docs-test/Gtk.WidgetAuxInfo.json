@@ -1,0 +1,34 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>the widget\u2019s width</p>",
+            "kind": "field",
+            "name": "width"
+        },
+        {
+            "doc": "<p>the widget\u2019s height</p>",
+            "kind": "field",
+            "name": "height"
+        },
+        {
+            "doc": "<p>the widget\u2019s horizontal alignment</p>",
+            "kind": "field",
+            "name": "halign"
+        },
+        {
+            "doc": "<p>the widget\u2019s horizontal alignment</p>",
+            "kind": "field",
+            "name": "valign"
+        },
+        {
+            "doc": "<p>the widget\u2019s <span data-xref=\"Gtk.Border\"/> margins</p>",
+            "kind": "field",
+            "name": "margin"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "WidgetAuxInfo"
+}

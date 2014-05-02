@@ -27,22 +27,10 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.Invisible\"/> widget is used internally in GTK+, and is probably not\nvery useful for application developers.</p><p>It is used for reliable pointer grabs and selection handling in the code\nfor drag-and-drop.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "widget"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Returns the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> object associated with <code>invisible</code></p>",
+            "doc": "<p>Returns the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> object associated with <pre>invisible</pre></p>",
             "kind": "method",
             "name": "get_screen",
             "parameters": [],
@@ -65,8 +53,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Invisible",
     "properties": [

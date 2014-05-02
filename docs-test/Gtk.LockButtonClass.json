@@ -1,0 +1,54 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "reserved0"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "reserved4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "reserved5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "reserved6"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "reserved7"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "LockButtonClass"
+}

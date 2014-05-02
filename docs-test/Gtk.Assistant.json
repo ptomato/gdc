@@ -11,18 +11,6 @@
         }
     ],
     "doc": "<p>A <span data-xref=\"Gtk.Assistant\"/> is a widget used to represent a generally complex\noperation splitted in several steps, guiding the user through its\npages and controlling the page flow to collect the necessary data.</p><p>The design of GtkAssistant is that it controls what buttons to show\nand to make sensitive, based on what it knows about the page sequence\nand the [type][GtkAssistantPageType] of each page,\nin addition to state information like the page\n[completion][gtk-assistant-set-page-complete]\nand [committed][gtk-assistant-commit] status.</p><p>If you have a case that doesn\u2019t quite fit in #GtkAssistants way of\nhandling buttons, you can use the #GTK_ASSISTANT_PAGE_CUSTOM page\ntype and handle buttons yourself.</p><h1>GtkAssistant as GtkBuildable</h1><p>The GtkAssistant implementation of the <span data-xref=\"Gtk.Buildable\"/> interface\nexposes the @action_area as internal children with the name\n\u201caction_area\u201d.</p><p>To add pages to an assistant in <span data-xref=\"Gtk.Builder\"/>, simply add it as a\nchild to the GtkAssistant object, and set its child properties\nas necessary.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -42,7 +30,7 @@
             }
         },
         {
-            "doc": "<p>Appends a page to the <code>assistant</code>.</p>",
+            "doc": "<p>Appends a page to the <pre>assistant</pre>.</p>",
             "kind": "method",
             "name": "append_page",
             "parameters": [
@@ -76,7 +64,7 @@
             }
         },
         {
-            "doc": "<p>Returns the number of pages in the <code>assistant</code></p>",
+            "doc": "<p>Returns the number of pages in the <pre>assistant</pre></p>",
             "kind": "method",
             "name": "get_n_pages",
             "parameters": [],
@@ -85,7 +73,7 @@
             }
         },
         {
-            "doc": "<p>Returns the child widget contained in page number <code>page_num</code>.</p>",
+            "doc": "<p>Returns the child widget contained in page number <pre>page_num</pre>.</p>",
             "kind": "method",
             "name": "get_nth_page",
             "parameters": [
@@ -101,7 +89,7 @@
             }
         },
         {
-            "doc": "<p>Gets whether <code>page</code> is complete.</p>",
+            "doc": "<p>Gets whether <pre>page</pre> is complete.</p>",
             "kind": "method",
             "name": "get_page_complete",
             "parameters": [
@@ -117,7 +105,7 @@
             }
         },
         {
-            "doc": "<p>Gets the header image for <code>page</code>.</p>",
+            "doc": "<p>Gets the header image for <pre>page</pre>.</p>",
             "kind": "method",
             "name": "get_page_header_image",
             "parameters": [
@@ -133,7 +121,7 @@
             }
         },
         {
-            "doc": "<p>Gets the side image for <code>page</code>.</p>",
+            "doc": "<p>Gets the side image for <pre>page</pre>.</p>",
             "kind": "method",
             "name": "get_page_side_image",
             "parameters": [
@@ -149,7 +137,7 @@
             }
         },
         {
-            "doc": "<p>Gets the title for <code>page</code>.</p>",
+            "doc": "<p>Gets the title for <pre>page</pre>.</p>",
             "kind": "method",
             "name": "get_page_title",
             "parameters": [
@@ -165,7 +153,7 @@
             }
         },
         {
-            "doc": "<p>Gets the page type of <code>page</code>.</p>",
+            "doc": "<p>Gets the page type of <pre>page</pre>.</p>",
             "kind": "method",
             "name": "get_page_type",
             "parameters": [
@@ -181,7 +169,7 @@
             }
         },
         {
-            "doc": "<p>Inserts a page in the <code>assistant</code> at a given position.</p>",
+            "doc": "<p>Inserts a page in the <pre>assistant</pre> at a given position.</p>",
             "kind": "method",
             "name": "insert_page",
             "parameters": [
@@ -212,7 +200,7 @@
             }
         },
         {
-            "doc": "<p>Prepends a page to the <code>assistant</code>.</p>",
+            "doc": "<p>Prepends a page to the <pre>assistant</pre>.</p>",
             "kind": "method",
             "name": "prepend_page",
             "parameters": [
@@ -253,7 +241,7 @@
             }
         },
         {
-            "doc": "<p>Removes the <code>page_num</code>\u2019s page from <code>assistant</code>.</p>",
+            "doc": "<p>Removes the <pre>page_num</pre>\u2019s page from <pre>assistant</pre>.</p>",
             "kind": "method",
             "name": "remove_page",
             "parameters": [
@@ -269,7 +257,7 @@
             }
         },
         {
-            "doc": "<p>Switches the page to <code>page_num</code>.</p><p>Note that this will only be necessary in custom buttons,\nas the <code>assistant</code> flow can be set with\n<span data-xref=\"Gtk.Assistant.set_forward_page_func\"/>.</p>",
+            "doc": "<p>Switches the page to <pre>page_num</pre>.</p><p>Note that this will only be necessary in custom buttons,\nas the <pre>assistant</pre> flow can be set with\n<span data-xref=\"Gtk.Assistant.set_forward_page_func\"/>.</p>",
             "kind": "method",
             "name": "set_current_page",
             "parameters": [
@@ -285,7 +273,7 @@
             }
         },
         {
-            "doc": "<p>Sets the page forwarding function to be <code>page_func</code>.</p><p>This function will be used to determine what will be\nthe next page when the user presses the forward button.\nSetting <code>page_func</code> to <code>null</code> will make the assistant to\nuse the default forward function, which just goes to the\nnext visible page.</p>",
+            "doc": "<p>Sets the page forwarding function to be <pre>page_func</pre>.</p><p>This function will be used to determine what will be\nthe next page when the user presses the forward button.\nSetting <pre>page_func</pre> to <pre>null</pre> will make the assistant to\nuse the default forward function, which just goes to the\nnext visible page.</p>",
             "kind": "method",
             "name": "set_forward_page_func",
             "parameters": [
@@ -313,7 +301,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>page</code> contents are complete.</p><p>This will make <code>assistant</code> update the buttons state\nto be able to continue the task.</p>",
+            "doc": "<p>Sets whether <pre>page</pre> contents are complete.</p><p>This will make <pre>assistant</pre> update the buttons state\nto be able to continue the task.</p>",
             "kind": "method",
             "name": "set_page_complete",
             "parameters": [
@@ -335,7 +323,7 @@
             }
         },
         {
-            "doc": "<p>Sets a header image for <code>page</code>.</p>",
+            "doc": "<p>Sets a header image for <pre>page</pre>.</p>",
             "kind": "method",
             "name": "set_page_header_image",
             "parameters": [
@@ -357,7 +345,7 @@
             }
         },
         {
-            "doc": "<p>Sets a side image for <code>page</code>.</p><p>This image used to be displayed in the side area of the assistant\nwhen <code>page</code> is the current page.</p>",
+            "doc": "<p>Sets a side image for <pre>page</pre>.</p><p>This image used to be displayed in the side area of the assistant\nwhen <pre>page</pre> is the current page.</p>",
             "kind": "method",
             "name": "set_page_side_image",
             "parameters": [
@@ -379,7 +367,7 @@
             }
         },
         {
-            "doc": "<p>Sets a title for <code>page</code>.</p><p>The title is displayed in the header area of the assistant\nwhen <code>page</code> is the current page.</p>",
+            "doc": "<p>Sets a title for <pre>page</pre>.</p><p>The title is displayed in the header area of the assistant\nwhen <pre>page</pre> is the current page.</p>",
             "kind": "method",
             "name": "set_page_title",
             "parameters": [
@@ -401,7 +389,7 @@
             }
         },
         {
-            "doc": "<p>Sets the page type for <code>page</code>.</p><p>The page type determines the page behavior in the <code>assistant</code>.</p>",
+            "doc": "<p>Sets the page type for <pre>page</pre>.</p><p>The page type determines the page behavior in the <pre>assistant</pre>.</p>",
             "kind": "method",
             "name": "set_page_type",
             "parameters": [
@@ -423,20 +411,19 @@
             }
         },
         {
-            "doc": "<p>Forces <code>assistant</code> to recompute the buttons state.</p><p>GTK+ automatically takes care of this in most situations,\ne.g. when the user goes to a different page, or when the\nvisibility or completeness of a page changes.</p><p>One situation where it can be necessary to call this\nfunction is when changing a value on the current page\naffects the future page flow of the assistant.</p>",
+            "doc": "<p>Forces <pre>assistant</pre> to recompute the buttons state.</p><p>GTK+ automatically takes care of this in most situations,\ne.g. when the user goes to a different page, or when the\nvisibility or completeness of a page changes.</p><p>One situation where it can be necessary to call this\nfunction is when changing a value on the current page\naffects the future page flow of the assistant.</p>",
             "kind": "method",
             "name": "update_buttons_state",
             "parameters": [],
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Assistant",
     "properties": [
         {
-            "doc": "<p><code>true</code> if the assistant uses a <span data-xref=\"Gtk.HeaderBar\"/> for action buttons\ninstead of the action-area.</p><p>For technical reasons, this property is declared as an integer\nproperty, but you should only set it to <code>true</code> or <code>false</code>.</p>",
+            "doc": "<pre>true</pre>\n\n<p>if the assistant uses a <span data-xref=\"Gtk.HeaderBar\"/> for action buttons\ninstead of the action-area.</p><p>For technical reasons, this property is declared as an integer\nproperty, but you should only set it to <pre>true</pre> or <pre>false</pre>.</p>",
             "kind": "property",
             "name": "use-header-bar",
             "type": "Number(gint)"
@@ -471,7 +458,7 @@
             }
         },
         {
-            "doc": "<p>The ::prepare signal is emitted when a new page is set as the\nassistant's current page, before making the new page visible.</p><p>A handler for this signal can do any preparations which are\nnecessary before showing <code>page</code>.</p>",
+            "doc": "<p>The ::prepare signal is emitted when a new page is set as the\nassistant's current page, before making the new page visible.</p><p>A handler for this signal can do any preparations which are\nnecessary before showing <pre>page</pre>.</p>",
             "kind": "signal",
             "name": "prepare",
             "parameters": [

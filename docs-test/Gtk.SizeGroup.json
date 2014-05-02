@@ -17,19 +17,7 @@
             }
         }
     ],
-    "doc": "<p><span data-xref=\"Gtk.SizeGroup\"/> provides a mechanism for grouping a number of widgets\ntogether so they all request the same amount of space.  This is\ntypically useful when you want a column of widgets to have the same\nsize, but you can\u2019t use a <span data-xref=\"Gtk.Grid\"/> widget.</p><p>In detail, the size requested for each widget in a <span data-xref=\"Gtk.SizeGroup\"/> is\nthe maximum of the sizes that would have been requested for each\nwidget in the size group if they were not in the size group. The mode\nof the size group (see <span data-xref=\"Gtk.SizeGroup.set_mode\"/>) determines whether\nthis applies to the horizontal size, the vertical size, or both sizes.</p><p>Note that size groups only affect the amount of space requested, not\nthe size that the widgets finally receive. If you want the widgets in\na <span data-xref=\"Gtk.SizeGroup\"/> to actually be the same size, you need to pack them in\nsuch a way that they get the size they request and not more. For\nexample, if you are packing your widgets into a table, you would not\ninclude the <span data-xref=\"Gtk.AttachOptions\"/>.fill flag.</p><p><span data-xref=\"Gtk.SizeGroup\"/> objects are referenced by each widget in the size group,\nso once you have added all widgets to a <span data-xref=\"Gtk.SizeGroup\"/>, you can drop\nthe initial reference to the size group with <span data-xref=\"GObject.Object.unref\">GObject.Object.prototype.unref</span>. If the\nwidgets in the size group are subsequently destroyed, then they will\nbe removed from the size group and drop their references on the size\ngroup; when all widgets have been removed, the size group will be\nfreed.</p><p>Widgets can be part of multiple size groups; GTK+ will compute the\nhorizontal size of a widget from the horizontal requisition of all\nwidgets that can be reached from the widget by a chain of size groups\nof type <span data-xref=\"Gtk.SizeGroupMode\"/>.horizontal or <span data-xref=\"Gtk.SizeGroupMode\"/>.both, and the\nvertical size from the vertical requisition of all widgets that can be\nreached from the widget by a chain of size groups of type\n<span data-xref=\"Gtk.SizeGroupMode\"/>.vertical or <span data-xref=\"Gtk.SizeGroupMode\"/>.both.</p><p>Note that only non-contextual sizes of every widget are ever consulted\nby size groups (since size groups have no knowledge of what size a widget\nwill be allocated in one dimension, it cannot derive how much height\na widget will receive for a given width). When grouping widgets that\ntrade height for width in mode <span data-xref=\"Gtk.SizeGroupMode\"/>.vertical or <span data-xref=\"Gtk.SizeGroupMode\"/>.both:\nthe height for the minimum width will be the requested height for all\nwidgets in the group. The same is of course true when horizontally grouping\nwidth for height widgets.</p><p>Widgets that trade height-for-width should set a reasonably large minimum width\nby way of <span data-xref=\"Gtk.Label-width-chars\"/> for instance. Widgets with static sizes as well\nas widgets that grow (such as ellipsizing text) need no such considerations.</p><h1>GtkSizeGroup as GtkBuildable</h1><p>Size groups can be specified in a UI definition by placing an &lt;object&gt;\nelement with <code>class=\"GtkSizeGroup\"</code> somewhere in the UI definition. The\nwidgets that belong to the size group are specified by a &lt;widgets&gt; element\nthat may contain multiple &lt;widget&gt; elements, one for each member of the\nsize group. The \u201dname\u201d attribute gives the id of the widget.</p><p>An example of a UI definition fragment with GtkSizeGroup:\n|[\n&lt;object class=\"GtkSizeGroup\"&gt;\n  &lt;property name=\"mode\"&gt;GTK_SIZE_GROUP_HORIZONTAL&lt;/property&gt;\n  &lt;widgets&gt;\n    &lt;widget name=\"radio1\"/&gt;\n    &lt;widget name=\"radio2\"/&gt;\n  &lt;/widgets&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p><span data-xref=\"Gtk.SizeGroup\"/> provides a mechanism for grouping a number of widgets\ntogether so they all request the same amount of space.  This is\ntypically useful when you want a column of widgets to have the same\nsize, but you can\u2019t use a <span data-xref=\"Gtk.Grid\"/> widget.</p><p>In detail, the size requested for each widget in a <span data-xref=\"Gtk.SizeGroup\"/> is\nthe maximum of the sizes that would have been requested for each\nwidget in the size group if they were not in the size group. The mode\nof the size group (see <span data-xref=\"Gtk.SizeGroup.set_mode\"/>) determines whether\nthis applies to the horizontal size, the vertical size, or both sizes.</p><p>Note that size groups only affect the amount of space requested, not\nthe size that the widgets finally receive. If you want the widgets in\na <span data-xref=\"Gtk.SizeGroup\"/> to actually be the same size, you need to pack them in\nsuch a way that they get the size they request and not more. For\nexample, if you are packing your widgets into a table, you would not\ninclude the <span data-xref=\"Gtk.AttachOptions\"/>.fill flag.</p><p><span data-xref=\"Gtk.SizeGroup\"/> objects are referenced by each widget in the size group,\nso once you have added all widgets to a <span data-xref=\"Gtk.SizeGroup\"/>, you can drop\nthe initial reference to the size group with <span data-xref=\"GObject.Object.unref\">GObject.Object.prototype.unref</span>. If the\nwidgets in the size group are subsequently destroyed, then they will\nbe removed from the size group and drop their references on the size\ngroup; when all widgets have been removed, the size group will be\nfreed.</p><p>Widgets can be part of multiple size groups; GTK+ will compute the\nhorizontal size of a widget from the horizontal requisition of all\nwidgets that can be reached from the widget by a chain of size groups\nof type <span data-xref=\"Gtk.SizeGroupMode\"/>.horizontal or <span data-xref=\"Gtk.SizeGroupMode\"/>.both, and the\nvertical size from the vertical requisition of all widgets that can be\nreached from the widget by a chain of size groups of type\n<span data-xref=\"Gtk.SizeGroupMode\"/>.vertical or <span data-xref=\"Gtk.SizeGroupMode\"/>.both.</p><p>Note that only non-contextual sizes of every widget are ever consulted\nby size groups (since size groups have no knowledge of what size a widget\nwill be allocated in one dimension, it cannot derive how much height\na widget will receive for a given width). When grouping widgets that\ntrade height for width in mode <span data-xref=\"Gtk.SizeGroupMode\"/>.vertical or <span data-xref=\"Gtk.SizeGroupMode\"/>.both:\nthe height for the minimum width will be the requested height for all\nwidgets in the group. The same is of course true when horizontally grouping\nwidth for height widgets.</p><p>Widgets that trade height-for-width should set a reasonably large minimum width\nby way of <span data-xref=\"Gtk.Label-width-chars\"/> for instance. Widgets with static sizes as well\nas widgets that grow (such as ellipsizing text) need no such considerations.</p><h1>GtkSizeGroup as GtkBuildable</h1><p>Size groups can be specified in a UI definition by placing an <object>\nelement with <code>class=\"GtkSizeGroup\"</code> somewhere in the UI definition. The\nwidgets that belong to the size group are specified by a <widgets> element\nthat may contain multiple <widget> elements, one for each member of the\nsize group. The \u201dname\u201d attribute gives the id of the widget.</p><p>An example of a UI definition fragment with GtkSizeGroup:\n|[\n<object class=\"GtkSizeGroup\">\n  <property name=\"mode\">GTK_SIZE_GROUP_HORIZONTAL</property>\n  <widgets>\n    <widget name=\"radio1\"/>\n    <widget name=\"radio2\"/>\n  </widgets>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
@@ -67,7 +55,7 @@
             }
         },
         {
-            "doc": "<p>Returns the list of widgets associated with <code>size_group</code>.</p>",
+            "doc": "<p>Returns the list of widgets associated with <pre>size_group</pre>.</p>",
             "kind": "method",
             "name": "get_widgets",
             "parameters": [],
@@ -122,13 +110,12 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "SizeGroup",
     "properties": [
         {
-            "doc": "<p>If <code>true</code>, unmapped widgets are ignored when determining\nthe size of the group.</p>",
+            "doc": "<p>If <pre>true</pre>, unmapped widgets are ignored when determining\nthe size of the group.</p>",
             "kind": "property",
             "name": "ignore-hidden",
             "type": "Boolean"

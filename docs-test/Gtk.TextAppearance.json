@@ -1,0 +1,54 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>Background <span data-xref=\"Gdk.Color\">Gdk.Color</span>.</p>",
+            "kind": "field",
+            "name": "bg_color"
+        },
+        {
+            "doc": "<p>Foreground <span data-xref=\"Gdk.Color\">Gdk.Color</span>.</p>",
+            "kind": "field",
+            "name": "fg_color"
+        },
+        {
+            "doc": "<p>Super/subscript rise, can be negative.</p>",
+            "kind": "field",
+            "name": "rise"
+        },
+        {
+            "doc": "<p><span data-xref=\"Pango.Underline\">Pango.Underline</span></p>",
+            "kind": "field",
+            "name": "underline"
+        },
+        {
+            "doc": "<p>Strikethrough style</p>",
+            "kind": "field",
+            "name": "strikethrough"
+        },
+        {
+            "doc": "<p>Whether to use background-related values; this is\n  irrelevant for the values struct when in a tag, but is used for\n  the composite values struct; it\u2019s true if any of the tags being\n  composited had background stuff set.</p>",
+            "kind": "field",
+            "name": "draw_bg"
+        },
+        {
+            "doc": "<p>This are only used when we are actually laying\n  out and rendering a paragraph; not when a <span data-xref=\"Gtk.TextAppearance\"/> is\n  part of a <span data-xref=\"Gtk.TextAttributes\"/>.</p>",
+            "kind": "field",
+            "name": "inside_selection"
+        },
+        {
+            "doc": "<p>This are only used when we are actually laying\n  out and rendering a paragraph; not when a <span data-xref=\"Gtk.TextAppearance\"/> is\n  part of a <span data-xref=\"Gtk.TextAttributes\"/>.</p>",
+            "kind": "field",
+            "name": "is_text"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": null
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "TextAppearance"
+}

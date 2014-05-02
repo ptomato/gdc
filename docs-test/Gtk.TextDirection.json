@@ -1,0 +1,22 @@
+{
+    "doc": "<p>Reading directions for text.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>No direction.</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>Left to right text direction.</p>",
+            "kind": "default",
+            "name": "ltr"
+        },
+        {
+            "doc": "<p>Right to left text direction.</p>",
+            "kind": "default",
+            "name": "rtl"
+        }
+    ],
+    "name": "TextDirection"
+}

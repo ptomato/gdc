@@ -10,18 +10,9 @@
             }
         }
     ],
-    "doc": "<p>The <span data-xref=\"Gtk.HSeparator\"/> widget is a horizontal separator, used to group the\nwidgets within a window. It displays a horizontal line with a shadow to\nmake it appear sunken into the interface.</p><p>&gt; The <span data-xref=\"Gtk.HSeparator\"/> widget is not used as a separator within menus.\n&gt; To create a separator in a menu create an empty <span data-xref=\"Gtk.SeparatorMenuItem\"/>\n&gt; widget using <span data-xref=\"Gtk.SeparatorMenuItem.new\"/> and add it to the menu with\n&gt; <span data-xref=\"Gtk.MenuShell.append\"/>.</p><p>GtkHSeparator has been deprecated, use <span data-xref=\"Gtk.Separator\"/> instead.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "separator"
-        }
-    ],
+    "doc": "<p>The <span data-xref=\"Gtk.HSeparator\"/> widget is a horizontal separator, used to group the\nwidgets within a window. It displays a horizontal line with a shadow to\nmake it appear sunken into the interface.</p><blockquote>\n<p>The <span data-xref=\"Gtk.HSeparator\"/> widget is not used as a separator within menus.\nTo create a separator in a menu create an empty <span data-xref=\"Gtk.SeparatorMenuItem\"/>\nwidget using <span data-xref=\"Gtk.SeparatorMenuItem.new\"/> and add it to the menu with\n<span data-xref=\"Gtk.MenuShell.append\"/>.</p>\n</blockquote><p>GtkHSeparator has been deprecated, use <span data-xref=\"Gtk.Separator\"/> instead.</p>",
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "HSeparator",
     "properties": [],
     "signals": [],

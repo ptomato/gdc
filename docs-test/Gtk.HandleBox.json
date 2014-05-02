@@ -10,19 +10,7 @@
             }
         }
     ],
-    "doc": "<p>The <span data-xref=\"Gtk.HandleBox\"/> widget allows a portion of a window to be \"torn\noff\". It is a bin widget which displays its child and a handle that\nthe user can drag to tear off a separate window (the \u201cfloat\nwindow\u201d) containing the child widget. A thin\n\u201cghost\u201d is drawn in the original location of the\nhandlebox. By dragging the separate window back to its original\nlocation, it can be reattached.</p><p>When reattaching, the ghost and float window, must be aligned\nalong one of the edges, the \u201csnap edge\u201d.\nThis either can be specified by the application programmer\nexplicitly, or GTK+ will pick a reasonable default based\non the handle position.</p><p>To make detaching and reattaching the handlebox as minimally confusing\nas possible to the user, it is important to set the snap edge so that\nthe snap edge does not move when the handlebox is deattached. For\ninstance, if the handlebox is packed at the bottom of a VBox, then\nwhen the handlebox is detached, the bottom edge of the handlebox's\nallocation will remain fixed as the height of the handlebox shrinks,\nso the snap edge should be set to <span data-xref=\"Gtk.PositionType\"/>.bottom.</p><p>&gt; <span data-xref=\"Gtk.HandleBox\"/> has been deprecated. It is very specialized, lacks features\n&gt; to make it useful and most importantly does not fit well into modern\n&gt; application design. Do not use it. There is no replacement.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "bin"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>The <span data-xref=\"Gtk.HandleBox\"/> widget allows a portion of a window to be \"torn\noff\". It is a bin widget which displays its child and a handle that\nthe user can drag to tear off a separate window (the \u201cfloat\nwindow\u201d) containing the child widget. A thin\n\u201cghost\u201d is drawn in the original location of the\nhandlebox. By dragging the separate window back to its original\nlocation, it can be reattached.</p><p>When reattaching, the ghost and float window, must be aligned\nalong one of the edges, the \u201csnap edge\u201d.\nThis either can be specified by the application programmer\nexplicitly, or GTK+ will pick a reasonable default based\non the handle position.</p><p>To make detaching and reattaching the handlebox as minimally confusing\nas possible to the user, it is important to set the snap edge so that\nthe snap edge does not move when the handlebox is deattached. For\ninstance, if the handlebox is packed at the bottom of a VBox, then\nwhen the handlebox is detached, the bottom edge of the handlebox's\nallocation will remain fixed as the height of the handlebox shrinks,\nso the snap edge should be set to <span data-xref=\"Gtk.PositionType\"/>.bottom.</p><blockquote>\n<p><span data-xref=\"Gtk.HandleBox\"/> has been deprecated. It is very specialized, lacks features\nto make it useful and most importantly does not fit well into modern\napplication design. Do not use it. There is no replacement.</p>\n</blockquote>",
     "kind": "class",
     "methods": [
         {
@@ -108,8 +96,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "HandleBox",
     "properties": [

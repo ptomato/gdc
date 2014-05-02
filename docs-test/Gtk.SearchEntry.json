@@ -11,17 +11,8 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.SearchEntry\"/> is a subclass of <span data-xref=\"Gtk.Entry\"/> that has\nbeen tailored for use as a search entry.</p><p>It will show an inactive symbolic \u201cfind\u201d icon when the\nsearch entry is empty, and a symbolic \u201cclear\u201d icon when\nthere is text. Clicking on the \u201cclear\u201d icon will empty\nthe search entry.</p><p>Note that the search/clear icon is shown using a secondary\nicon, and thus does not work if you are using the secondary\nicon position for some other purpose.</p><p>To make filtering appear more reactive, it is a good idea to\nnot react to every change in the entry text immediately, but\nonly after a short delay. To support this, <span data-xref=\"Gtk.SearchEntry\"/>\nemits the <span data-xref=\"Gtk.SearchEntry-search-changed\"/> signal which can\nbe used instead of the <span data-xref=\"Gtk.Editable-changed\"/> signal.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "SearchEntry",
     "properties": [],
     "signals": [

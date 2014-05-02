@@ -11,18 +11,6 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.EventBox\"/> widget is a subclass of <span data-xref=\"Gtk.Bin\"/> which also has its\nown window. It is useful since it allows you to catch events for widgets\nwhich do not have their own window.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "bin"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -74,8 +62,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "EventBox",
     "properties": [

@@ -1,0 +1,202 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.IconSet\"/>. A <span data-xref=\"Gtk.IconSet\"/> represents a single icon\nin various sizes and widget states. It can provide a <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>\nfor a given size and state on request, and automatically caches\nsome of the rendered <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span> objects.</p><p>Normally you would use <span data-xref=\"Gtk.Widget.render_icon_pixbuf\"/> instead of\nusing <span data-xref=\"Gtk.IconSet\"/> directly. The one case where you\u2019d use\n<span data-xref=\"Gtk.IconSet\"/> is to create application-specific icon sets to place in\na <span data-xref=\"Gtk.IconFactory\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.IconSet"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.IconSet\"/> with <pre>pixbuf</pre> as the default/fallback\nsource image. If you don\u2019t add any additional <span data-xref=\"Gtk.IconSource\"/> to the\nicon set, all variants of the icon will be created from <pre>pixbuf</pre>,\nusing scaling, pixelation, etc. as required to adjust the icon size\nor make the icon look insensitive/prelighted.</p>",
+            "kind": "constructor",
+            "name": "new_from_pixbuf",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pixbuf",
+                    "direction": "in",
+                    "type": "GdkPixbuf.Pixbuf"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.IconSet"
+            }
+        }
+    ],
+    "doc": "",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Icon sets have a list of <span data-xref=\"Gtk.IconSource\"/>, which they use as base\nicons for rendering icons in different states and sizes. Icons are\nscaled, made to look insensitive, etc. in\n<span data-xref=\"Gtk.IconSet.render_icon\"/>, but <span data-xref=\"Gtk.IconSet\"/> needs base images to\nwork with. The base images and when to use them are described by\na <span data-xref=\"Gtk.IconSource\"/>.</p><p>This function copies <pre>source</pre>, so you can reuse the same source immediately\nwithout affecting the icon set.</p><p>An example of when you\u2019d use this function: a web browser\u2019s \"Back\nto Previous Page\" icon might point in a different direction in\nHebrew and in English; it might look different when insensitive;\nand it might change size depending on toolbar mode (small/large\nicons). So a single icon set would contain all those variants of\nthe icon, and you might add a separate source for each one.</p><p>You should nearly always add a \u201cdefault\u201d icon source with all\nfields wildcarded, which will be used as a fallback if no more\nspecific source matches. <span data-xref=\"Gtk.IconSet\"/> always prefers more specific\nicon sources to more generic icon sources. The order in which you\nadd the sources to the icon set does not matter.</p><p><span data-xref=\"Gtk.IconSet.new_from_pixbuf\"/> creates a new icon set with a\ndefault icon source based on the given pixbuf.</p>",
+            "kind": "method",
+            "name": "add_source",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "source",
+                    "direction": "in",
+                    "type": "Gtk.IconSource"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Copies <pre>icon_set</pre> by value.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.IconSet"
+            }
+        },
+        {
+            "doc": "<p>Obtains a list of icon sizes this icon set can render. The returned\narray must be freed with <span data-xref=\"GLib.free\">GLib.free</span>.</p>",
+            "kind": "method",
+            "name": "get_sizes",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "sizes",
+                    "direction": "out",
+                    "type": "Array(Number(gint))"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_sizes",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Increments the reference count on <pre>icon_set</pre>.</p>",
+            "kind": "method",
+            "name": "ref",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.IconSet"
+            }
+        },
+        {
+            "doc": "<p>Renders an icon using <span data-xref=\"Gtk.Style.render_icon\"/>. In most cases,\n<span data-xref=\"Gtk.Widget.render_icon\"/> is better, since it automatically provides\nmost of the arguments from the current widget settings.  This\nfunction never returns <pre>null</pre>; if the icon can\u2019t be rendered\n(perhaps because an image file fails to load), a default \"missing\nimage\" icon will be returned instead.</p>",
+            "kind": "method",
+            "name": "render_icon",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "style",
+                    "direction": "in",
+                    "type": "Gtk.Style"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "direction",
+                    "direction": "in",
+                    "type": "Gtk.TextDirection"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Renders an icon using <span data-xref=\"Gtk.render_icon_pixbuf\"/>. In most cases,\n<span data-xref=\"Gtk.Widget.render_icon_pixbuf\"/> is better, since it automatically provides\nmost of the arguments from the current widget settings.  This\nfunction never returns <pre>null</pre>; if the icon can\u2019t be rendered\n(perhaps because an image file fails to load), a default \"missing\nimage\" icon will be returned instead.</p>",
+            "kind": "method",
+            "name": "render_icon_pixbuf",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.StyleContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Renders an icon using <span data-xref=\"Gtk.render_icon_pixbuf\"/> and converts it to a\ncairo surface.</p><p>This function never returns <pre>null</pre>; if the icon can\u2019t be rendered\n(perhaps because an image file fails to load), a default \"missing\nimage\" icon will be returned instead.</p>",
+            "kind": "method",
+            "name": "render_icon_surface",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.StyleContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "scale",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "for_window",
+                    "direction": "in",
+                    "type": "Gdk.Window"
+                }
+            ],
+            "retval": {
+                "type": "cairo.Surface"
+            }
+        },
+        {
+            "doc": "<p>Decrements the reference count on <pre>icon_set</pre>, and frees memory\nif the reference count reaches 0.</p>",
+            "kind": "method",
+            "name": "unref",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "IconSet"
+}

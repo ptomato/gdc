@@ -1,0 +1,17 @@
+{
+    "doc": "<p>Determines the direction of a sort.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Sorting is in ascending order.</p>",
+            "kind": "default",
+            "name": "ascending"
+        },
+        {
+            "doc": "<p>Sorting is in descending order.</p>",
+            "kind": "default",
+            "name": "descending"
+        }
+    ],
+    "name": "SortType"
+}

@@ -11,22 +11,10 @@
         }
     ],
     "doc": "<p>A toolbar is created with a call to <span data-xref=\"Gtk.Toolbar.new\"/>.</p><p>A toolbar can contain instances of a subclass of <span data-xref=\"Gtk.ToolItem\"/>. To add\na <span data-xref=\"Gtk.ToolItem\"/> to the a toolbar, use <span data-xref=\"Gtk.Toolbar.insert\"/>. To remove\nan item from the toolbar use <span data-xref=\"Gtk.Container.remove\"/>. To add a button\nto the toolbar, add an instance of <span data-xref=\"Gtk.ToolButton\"/>.</p><p>Toolbar items can be visually grouped by adding instances of\n<span data-xref=\"Gtk.SeparatorToolItem\"/> to the toolbar. If the GtkToolbar child property\n\u201cexpand\u201d is #TRUE and the property <span data-xref=\"Gtk.SeparatorToolItem-draw\"/> is set to</p>\n<h1>FALSE, the effect is to force all following items to the end of the toolbar.</h1><p>Creating a context menu for the toolbar can be done by connecting to\nthe <span data-xref=\"Gtk.Toolbar-popup-context-menu\"/> signal.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "container"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Returns the position corresponding to the indicated point on\n<code>toolbar</code>. This is useful when dragging items to the toolbar:\nthis function returns the position a new item should be\ninserted.</p><p><code>x</code> and <code>y</code> are in <code>toolbar</code> coordinates.</p>",
+            "doc": "<p>Returns the position corresponding to the indicated point on\n<pre>toolbar</pre>. This is useful when dragging items to the toolbar:\nthis function returns the position a new item should be\ninserted.</p><pre>x</pre>\n\n<p>and <pre>y</pre> are in <pre>toolbar</pre> coordinates.</p>",
             "kind": "method",
             "name": "get_drop_index",
             "parameters": [
@@ -57,7 +45,7 @@
             }
         },
         {
-            "doc": "<p>Returns the position of <code>item</code> on the toolbar, starting from 0.\nIt is an error if <code>item</code> is not a child of the toolbar.</p>",
+            "doc": "<p>Returns the position of <pre>item</pre> on the toolbar, starting from 0.\nIt is an error if <pre>item</pre> is not a child of the toolbar.</p>",
             "kind": "method",
             "name": "get_item_index",
             "parameters": [
@@ -82,7 +70,7 @@
             }
         },
         {
-            "doc": "<p>Returns the <code>n</code>'th item on <code>toolbar</code>, or <code>null</code> if the\ntoolbar does not contain an <code>n</code>'th item.</p>",
+            "doc": "<p>Returns the <pre>n</pre>'th item on <pre>toolbar</pre>, or <pre>null</pre> if the\ntoolbar does not contain an <pre>n</pre>'th item.</p>",
             "kind": "method",
             "name": "get_nth_item",
             "parameters": [
@@ -98,7 +86,7 @@
             }
         },
         {
-            "doc": "<p>Returns the relief style of buttons on <code>toolbar</code>. See\n<span data-xref=\"Gtk.Button.set_relief\"/>.</p>",
+            "doc": "<p>Returns the relief style of buttons on <pre>toolbar</pre>. See\n<span data-xref=\"Gtk.Button.set_relief\"/>.</p>",
             "kind": "method",
             "name": "get_relief_style",
             "parameters": [],
@@ -125,7 +113,7 @@
             }
         },
         {
-            "doc": "<p>Insert a <span data-xref=\"Gtk.ToolItem\"/> into the toolbar at position <code>pos</code>. If <code>pos</code> is\n0 the item is prepended to the start of the toolbar. If <code>pos</code> is\nnegative, the item is appended to the end of the toolbar.</p>",
+            "doc": "<p>Insert a <span data-xref=\"Gtk.ToolItem\"/> into the toolbar at position <pre>pos</pre>. If <pre>pos</pre> is\n0 the item is prepended to the start of the toolbar. If <pre>pos</pre> is\nnegative, the item is appended to the end of the toolbar.</p>",
             "kind": "method",
             "name": "insert",
             "parameters": [
@@ -147,7 +135,7 @@
             }
         },
         {
-            "doc": "<p>Highlights <code>toolbar</code> to give an idea of what it would look like\nif @item was added to <code>toolbar</code> at the position indicated by <code>index_</code>.\nIf @item is <code>null</code>, highlighting is turned off. In that case <code>index_</code>\nis ignored.</p><p>The <code>tool_item</code> passed to this function must not be part of any widget\nhierarchy. When an item is set as drop highlight item it can not\nadded to any widget hierarchy or used as highlight item for another\ntoolbar.</p>",
+            "doc": "<p>Highlights <pre>toolbar</pre> to give an idea of what it would look like\nif @item was added to <pre>toolbar</pre> at the position indicated by <pre>index_</pre>.\nIf @item is <pre>null</pre>, highlighting is turned off. In that case <pre>index_</pre>\nis ignored.</p><p>The <pre>tool_item</pre> passed to this function must not be part of any widget\nhierarchy. When an item is set as drop highlight item it can not\nadded to any widget hierarchy or used as highlight item for another\ntoolbar.</p>",
             "kind": "method",
             "name": "set_drop_highlight_item",
             "parameters": [
@@ -185,7 +173,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether to show an overflow menu when\n<code>toolbar</code> doesn\u2019t have room for all items on it. If <code>true</code>,\nitems that there are not room are available through an\noverflow menu.</p>",
+            "doc": "<p>Sets whether to show an overflow menu when\n<pre>toolbar</pre> doesn\u2019t have room for all items on it. If <pre>true</pre>,\nitems that there are not room are available through an\noverflow menu.</p>",
             "kind": "method",
             "name": "set_show_arrow",
             "parameters": [
@@ -201,7 +189,7 @@
             }
         },
         {
-            "doc": "<p>Alters the view of <code>toolbar</code> to display either icons only, text only, or both.</p>",
+            "doc": "<p>Alters the view of <pre>toolbar</pre> to display either icons only, text only, or both.</p>",
             "kind": "method",
             "name": "set_style",
             "parameters": [
@@ -233,8 +221,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Toolbar",
     "properties": [
@@ -245,7 +232,7 @@
             "type": "Gtk.IconSize"
         },
         {
-            "doc": "<p>Is <code>true</code> if the icon-size property has been set.</p>",
+            "doc": "<p>Is <pre>true</pre> if the icon-size property has been set.</p>",
             "kind": "property",
             "name": "icon-size-set",
             "type": "Boolean"
@@ -297,7 +284,7 @@
             }
         },
         {
-            "doc": "<p>Emitted when the user right-clicks the toolbar or uses the\nkeybinding to display a popup menu.</p><p>Application developers should handle this signal if they want\nto display a context menu on the toolbar. The context-menu should\nappear at the coordinates given by <code>x</code> and <code>y</code>. The mouse button\nnumber is given by the <code>button</code> parameter. If the menu was popped\nup using the keybaord, <code>button</code> is -1.</p>",
+            "doc": "<p>Emitted when the user right-clicks the toolbar or uses the\nkeybinding to display a popup menu.</p><p>Application developers should handle this signal if they want\nto display a context menu on the toolbar. The context-menu should\nappear at the coordinates given by <pre>x</pre> and <pre>y</pre>. The mouse button\nnumber is given by the <pre>button</pre> parameter. If the menu was popped\nup using the keybaord, <pre>button</pre> is -1.</p>",
             "kind": "signal",
             "name": "popup-context-menu",
             "parameters": [

@@ -24,22 +24,10 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.EntryBuffer\"/> class contains the actual text displayed in a\n<span data-xref=\"Gtk.Entry\"/> widget.</p><p>A single <span data-xref=\"Gtk.EntryBuffer\"/> object can be shared by multiple <span data-xref=\"Gtk.Entry\"/>\nwidgets which will then share the same text content, but not the cursor\nposition, visibility attributes, icon etc.</p><p><span data-xref=\"Gtk.EntryBuffer\"/> may be derived from. Such a derived class might allow\ntext to be stored in an alternate location, such as non-pageable memory,\nuseful in the case of important passwords. Or a derived class could\nintegrate with an application\u2019s concept of undo/redo.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Deletes a sequence of characters from the buffer. <code>n_chars</code> characters are\ndeleted starting at <code>position</code>. If <code>n_chars</code> is negative, then all characters\nuntil the end of the text are deleted.</p><p>If <code>position</code> or <code>n_chars</code> are out of bounds, then they are coerced to sane\nvalues.</p><p>Note that the positions are specified in characters, not bytes.</p>",
+            "doc": "<p>Deletes a sequence of characters from the buffer. <pre>n_chars</pre> characters are\ndeleted starting at <pre>position</pre>. If <pre>n_chars</pre> is negative, then all characters\nuntil the end of the text are deleted.</p><p>If <pre>position</pre> or <pre>n_chars</pre> are out of bounds, then they are coerced to sane\nvalues.</p><p>Note that the positions are specified in characters, not bytes.</p>",
             "kind": "method",
             "name": "delete_text",
             "parameters": [
@@ -129,7 +117,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves the maximum allowed length of the text in\n<code>buffer</code>. See <span data-xref=\"Gtk.EntryBuffer.set_max_length\"/>.</p>",
+            "doc": "<p>Retrieves the maximum allowed length of the text in\n<pre>buffer</pre>. See <span data-xref=\"Gtk.EntryBuffer.set_max_length\"/>.</p>",
             "kind": "method",
             "name": "get_max_length",
             "parameters": [],
@@ -147,7 +135,7 @@
             }
         },
         {
-            "doc": "<p>Inserts <code>n_chars</code> characters of <code>chars</code> into the contents of the\nbuffer, at position <code>position</code>.</p><p>If <code>n_chars</code> is negative, then characters from chars will be inserted\nuntil a null-terminator is found. If <code>position</code> or <code>n_chars</code> are out of\nbounds, or the maximum buffer text length is exceeded, then they are\ncoerced to sane values.</p><p>Note that the position and length are in characters, not in bytes.</p>",
+            "doc": "<p>Inserts <pre>n_chars</pre> characters of <pre>chars</pre> into the contents of the\nbuffer, at position <pre>position</pre>.</p><p>If <pre>n_chars</pre> is negative, then characters from chars will be inserted\nuntil a null-terminator is found. If <pre>position</pre> or <pre>n_chars</pre> are out of\nbounds, or the maximum buffer text length is exceeded, then they are\ncoerced to sane values.</p><p>Note that the position and length are in characters, not in bytes.</p>",
             "kind": "method",
             "name": "insert_text",
             "parameters": [
@@ -191,7 +179,7 @@
             }
         },
         {
-            "doc": "<p>Sets the text in the buffer.</p><p>This is roughly equivalent to calling <span data-xref=\"Gtk.EntryBuffer.delete_text\"/>\nand <span data-xref=\"Gtk.EntryBuffer.insert_text\"/>.</p><p>Note that <code>n_chars</code> is in characters, not in bytes.</p>",
+            "doc": "<p>Sets the text in the buffer.</p><p>This is roughly equivalent to calling <span data-xref=\"Gtk.EntryBuffer.delete_text\"/>\nand <span data-xref=\"Gtk.EntryBuffer.insert_text\"/>.</p><p>Note that <pre>n_chars</pre> is in characters, not in bytes.</p>",
             "kind": "method",
             "name": "set_text",
             "parameters": [
@@ -211,8 +199,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "EntryBuffer",
     "properties": [
@@ -289,7 +276,7 @@
     ],
     "vfuncs": [
         {
-            "doc": "<p>Deletes a sequence of characters from the buffer. <code>n_chars</code> characters are\ndeleted starting at <code>position</code>. If <code>n_chars</code> is negative, then all characters\nuntil the end of the text are deleted.</p><p>If <code>position</code> or <code>n_chars</code> are out of bounds, then they are coerced to sane\nvalues.</p><p>Note that the positions are specified in characters, not bytes.</p>",
+            "doc": "<p>Deletes a sequence of characters from the buffer. <pre>n_chars</pre> characters are\ndeleted starting at <pre>position</pre>. If <pre>n_chars</pre> is negative, then all characters\nuntil the end of the text are deleted.</p><p>If <pre>position</pre> or <pre>n_chars</pre> are out of bounds, then they are coerced to sane\nvalues.</p><p>Note that the positions are specified in characters, not bytes.</p>",
             "kind": "vfunc",
             "name": "delete_text",
             "parameters": [
@@ -358,7 +345,7 @@
             }
         },
         {
-            "doc": "<p>Inserts <code>n_chars</code> characters of <code>chars</code> into the contents of the\nbuffer, at position <code>position</code>.</p><p>If <code>n_chars</code> is negative, then characters from chars will be inserted\nuntil a null-terminator is found. If <code>position</code> or <code>n_chars</code> are out of\nbounds, or the maximum buffer text length is exceeded, then they are\ncoerced to sane values.</p><p>Note that the position and length are in characters, not in bytes.</p>",
+            "doc": "<p>Inserts <pre>n_chars</pre> characters of <pre>chars</pre> into the contents of the\nbuffer, at position <pre>position</pre>.</p><p>If <pre>n_chars</pre> is negative, then characters from chars will be inserted\nuntil a null-terminator is found. If <pre>position</pre> or <pre>n_chars</pre> are out of\nbounds, or the maximum buffer text length is exceeded, then they are\ncoerced to sane values.</p><p>Note that the position and length are in characters, not in bytes.</p>",
             "kind": "vfunc",
             "name": "insert_text",
             "parameters": [

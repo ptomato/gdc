@@ -1,0 +1,74 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "widget"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "left_attach"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "right_attach"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "top_attach"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "bottom_attach"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "xpadding"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "ypadding"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "xexpand"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "yexpand"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "xshrink"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "yshrink"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "xfill"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "yfill"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "TableChild"
+}

@@ -1,0 +1,44 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "g_iface"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "sort_column_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_sort_column_id"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_sort_column_id"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_sort_func"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_default_sort_func"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "has_default_sort_func"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "TreeSortableIface"
+}

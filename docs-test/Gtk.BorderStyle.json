@@ -1,0 +1,57 @@
+{
+    "doc": "<p>Describes how the border of a UI element should be rendered.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>No visible border</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>A single line segment</p>",
+            "kind": "default",
+            "name": "solid"
+        },
+        {
+            "doc": "<p>Looks as if the content is sunken into the canvas</p>",
+            "kind": "default",
+            "name": "inset"
+        },
+        {
+            "doc": "<p>Looks as if the content is coming out of the canvas</p>",
+            "kind": "default",
+            "name": "outset"
+        },
+        {
+            "doc": "<p>Same as @GTK_BORDER_STYLE_NONE</p>",
+            "kind": "default",
+            "name": "hidden"
+        },
+        {
+            "doc": "<p>A series of round dots</p>",
+            "kind": "default",
+            "name": "dotted"
+        },
+        {
+            "doc": "<p>A series of square-ended dashes</p>",
+            "kind": "default",
+            "name": "dashed"
+        },
+        {
+            "doc": "<p>Two parallel lines with some space between them</p>",
+            "kind": "default",
+            "name": "double"
+        },
+        {
+            "doc": "<p>Looks as if it were carved in the canvas</p>",
+            "kind": "default",
+            "name": "groove"
+        },
+        {
+            "doc": "<p>Looks as if it were coming out of the canvas</p>",
+            "kind": "default",
+            "name": "ridge"
+        }
+    ],
+    "name": "BorderStyle"
+}

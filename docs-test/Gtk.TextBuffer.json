@@ -18,22 +18,10 @@
         }
     ],
     "doc": "<p>You may wish to begin by reading the\n[text widget conceptual overview][TextWidget]\nwhich gives an overview of all the objects and data\ntypes related to the text widget and how they work together.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Adds the mark at position <code>where</code>. The mark must not be added to\nanother buffer, and if its name is not <code>null</code> then there must not\nbe another mark in the buffer with the same name.</p><p>Emits the <span data-xref=\"Gtk.TextBuffer-mark-set\"/> signal as notification of the mark's\ninitial placement.</p>",
+            "doc": "<p>Adds the mark at position <pre>where</pre>. The mark must not be added to\nanother buffer, and if its name is not <pre>null</pre> then there must not\nbe another mark in the buffer with the same name.</p><p>Emits the <span data-xref=\"Gtk.TextBuffer-mark-set\"/> signal as notification of the mark's\ninitial placement.</p>",
             "kind": "method",
             "name": "add_mark",
             "parameters": [
@@ -55,7 +43,7 @@
             }
         },
         {
-            "doc": "<p>Adds <code>clipboard</code> to the list of clipboards in which the selection\ncontents of <code>buffer</code> are available. In most cases, <code>clipboard</code> will be\nthe <span data-xref=\"Gtk.Clipboard\"/> of type %GDK_SELECTION_PRIMARY for a view of <code>buffer</code>.</p>",
+            "doc": "<p>Adds <pre>clipboard</pre> to the list of clipboards in which the selection\ncontents of <pre>buffer</pre> are available. In most cases, <pre>clipboard</pre> will be\nthe <span data-xref=\"Gtk.Clipboard\"/> of type %GDK_SELECTION_PRIMARY for a view of <pre>buffer</pre>.</p>",
             "kind": "method",
             "name": "add_selection_clipboard",
             "parameters": [
@@ -71,7 +59,7 @@
             }
         },
         {
-            "doc": "<p>Emits the \u201capply-tag\u201d signal on <code>buffer</code>. The default\nhandler for the signal applies <code>tag</code> to the given range.\n<code>start</code> and <code>end</code> do not have to be in order.</p>",
+            "doc": "<p>Emits the \u201capply-tag\u201d signal on <pre>buffer</pre>. The default\nhandler for the signal applies <pre>tag</pre> to the given range.\n<pre>start</pre> and <pre>end</pre> do not have to be in order.</p>",
             "kind": "method",
             "name": "apply_tag",
             "parameters": [
@@ -127,7 +115,7 @@
             }
         },
         {
-            "doc": "<p>Performs the appropriate action as if the user hit the delete\nkey with the cursor at the position specified by <code>iter</code>. In the\nnormal case a single character will be deleted, but when\ncombining accents are involved, more than one character can\nbe deleted, and when precomposed character and accent combinations\nare involved, less than one character will be deleted.</p><p>Because the buffer is modified, all outstanding iterators become\ninvalid after calling this function; however, the <code>iter</code> will be\nre-initialized to point to the location where text was deleted.</p>",
+            "doc": "<p>Performs the appropriate action as if the user hit the delete\nkey with the cursor at the position specified by <pre>iter</pre>. In the\nnormal case a single character will be deleted, but when\ncombining accents are involved, more than one character can\nbe deleted, and when precomposed character and accent combinations\nare involved, less than one character will be deleted.</p><p>Because the buffer is modified, all outstanding iterators become\ninvalid after calling this function; however, the <pre>iter</pre> will be\nre-initialized to point to the location where text was deleted.</p>",
             "kind": "method",
             "name": "backspace",
             "parameters": [
@@ -196,7 +184,7 @@
             }
         },
         {
-            "doc": "<p>Creates a mark at position <code>where</code>. If <code>mark_name</code> is <code>null</code>, the mark\nis anonymous; otherwise, the mark can be retrieved by name using\n<span data-xref=\"Gtk.TextBuffer.get_mark\"/>. If a mark has left gravity, and text is\ninserted at the mark\u2019s current location, the mark will be moved to\nthe left of the newly-inserted text. If the mark has right gravity\n(<code>left_gravity</code> = <code>false</code>), the mark will end up on the right of\nnewly-inserted text. The standard left-to-right cursor is a mark\nwith right gravity (when you type, the cursor stays on the right\nside of the text you\u2019re typing).</p><p>The caller of this function does not own a\nreference to the returned <span data-xref=\"Gtk.TextMark\"/>, so you can ignore the\nreturn value if you like. Marks are owned by the buffer and go\naway when the buffer does.</p><p>Emits the <span data-xref=\"Gtk.TextBuffer-mark-set\"/> signal as notification of the mark's\ninitial placement.</p>",
+            "doc": "<p>Creates a mark at position <pre>where</pre>. If <pre>mark_name</pre> is <pre>null</pre>, the mark\nis anonymous; otherwise, the mark can be retrieved by name using\n<span data-xref=\"Gtk.TextBuffer.get_mark\"/>. If a mark has left gravity, and text is\ninserted at the mark\u2019s current location, the mark will be moved to\nthe left of the newly-inserted text. If the mark has right gravity\n(<pre>left_gravity</pre> = <pre>false</pre>), the mark will end up on the right of\nnewly-inserted text. The standard left-to-right cursor is a mark\nwith right gravity (when you type, the cursor stays on the right\nside of the text you\u2019re typing).</p><p>The caller of this function does not own a\nreference to the returned <span data-xref=\"Gtk.TextMark\"/>, so you can ignore the\nreturn value if you like. Marks are owned by the buffer and go\naway when the buffer does.</p><p>Emits the <span data-xref=\"Gtk.TextBuffer-mark-set\"/> signal as notification of the mark's\ninitial placement.</p>",
             "kind": "method",
             "name": "create_mark",
             "parameters": [
@@ -224,7 +212,7 @@
             }
         },
         {
-            "doc": "<p>Creates a tag and adds it to the tag table for <code>buffer</code>.\nEquivalent to calling <span data-xref=\"Gtk.TextTag.new\"/> and then adding the\ntag to the buffer\u2019s tag table. The returned tag is owned by\nthe buffer\u2019s tag table, so the ref count will be equal to one.</p><p>If <code>tag_name</code> is <code>null</code>, the tag is anonymous.</p><p>If <code>tag_name</code> is non-<code>null</code>, a tag called <code>tag_name</code> must not already\nexist in the tag table for this buffer.</p><p>The <code>first_property_name</code> argument and subsequent arguments are a list\nof properties to set on the tag, as with <span data-xref=\"GObject.Object.set\">GObject.Object.set</span>.</p>",
+            "doc": "<p>Creates a tag and adds it to the tag table for <pre>buffer</pre>.\nEquivalent to calling <span data-xref=\"Gtk.TextTag.new\"/> and then adding the\ntag to the buffer\u2019s tag table. The returned tag is owned by\nthe buffer\u2019s tag table, so the ref count will be equal to one.</p><p>If <pre>tag_name</pre> is <pre>null</pre>, the tag is anonymous.</p><p>If <pre>tag_name</pre> is non-<pre>null</pre>, a tag called <pre>tag_name</pre> must not already\nexist in the tag table for this buffer.</p><p>The <pre>first_property_name</pre> argument and subsequent arguments are a list\nof properties to set on the tag, as with <span data-xref=\"GObject.Object.set\">GObject.Object.set</span>.</p>",
             "kind": "method",
             "name": "create_tag",
             "parameters": [
@@ -274,7 +262,7 @@
             }
         },
         {
-            "doc": "<p>Deletes text between <code>start</code> and <code>end</code>. The order of <code>start</code> and <code>end</code>\nis not actually relevant; <span data-xref=\"Gtk.TextBuffer.delete\"/> will reorder\nthem. This function actually emits the \u201cdelete-range\u201d signal, and\nthe default handler of that signal deletes the text. Because the\nbuffer is modified, all outstanding iterators become invalid after\ncalling this function; however, the <code>start</code> and <code>end</code> will be\nre-initialized to point to the location where text was deleted.</p>",
+            "doc": "<p>Deletes text between <pre>start</pre> and <pre>end</pre>. The order of <pre>start</pre> and <pre>end</pre>\nis not actually relevant; <span data-xref=\"Gtk.TextBuffer.delete\"/> will reorder\nthem. This function actually emits the \u201cdelete-range\u201d signal, and\nthe default handler of that signal deletes the text. Because the\nbuffer is modified, all outstanding iterators become invalid after\ncalling this function; however, the <pre>start</pre> and <pre>end</pre> will be\nre-initialized to point to the location where text was deleted.</p>",
             "kind": "method",
             "name": "delete",
             "parameters": [
@@ -324,7 +312,7 @@
             }
         },
         {
-            "doc": "<p>Deletes <code>mark</code>, so that it\u2019s no longer located anywhere in the\nbuffer. Removes the reference the buffer holds to the mark, so if\nyou haven\u2019t called <span data-xref=\"GObject.Object.ref\">GObject.Object.prototype.ref</span> on the mark, it will be freed. Even\nif the mark isn\u2019t freed, most operations on <code>mark</code> become\ninvalid, until it gets added to a buffer again with\n<span data-xref=\"Gtk.TextBuffer.add_mark\"/>. Use <span data-xref=\"Gtk.TextMark.get_deleted\"/> to\nfind out if a mark has been removed from its buffer.\nThe <span data-xref=\"Gtk.TextBuffer-mark-deleted\"/> signal will be emitted as notification after\nthe mark is deleted.</p>",
+            "doc": "<p>Deletes <pre>mark</pre>, so that it\u2019s no longer located anywhere in the\nbuffer. Removes the reference the buffer holds to the mark, so if\nyou haven\u2019t called <span data-xref=\"GObject.Object.ref\">GObject.Object.prototype.ref</span> on the mark, it will be freed. Even\nif the mark isn\u2019t freed, most operations on <pre>mark</pre> become\ninvalid, until it gets added to a buffer again with\n<span data-xref=\"Gtk.TextBuffer.add_mark\"/>. Use <span data-xref=\"Gtk.TextMark.get_deleted\"/> to\nfind out if a mark has been removed from its buffer.\nThe <span data-xref=\"Gtk.TextBuffer-mark-deleted\"/> signal will be emitted as notification after\nthe mark is deleted.</p>",
             "kind": "method",
             "name": "delete_mark",
             "parameters": [
@@ -340,7 +328,7 @@
             }
         },
         {
-            "doc": "<p>Deletes the mark named <code>name</code>; the mark must exist. See\n<span data-xref=\"Gtk.TextBuffer.delete_mark\"/> for details.</p>",
+            "doc": "<p>Deletes the mark named <pre>name</pre>; the mark must exist. See\n<span data-xref=\"Gtk.TextBuffer.delete_mark\"/> for details.</p>",
             "kind": "method",
             "name": "delete_mark_by_name",
             "parameters": [
@@ -356,7 +344,7 @@
             }
         },
         {
-            "doc": "<p>Deletes the range between the \u201cinsert\u201d and \u201cselection_bound\u201d marks,\nthat is, the currently-selected text. If <code>interactive</code> is <code>true</code>,\nthe editability of the selection will be considered (users can\u2019t delete\nuneditable text).</p>",
+            "doc": "<p>Deletes the range between the \u201cinsert\u201d and \u201cselection_bound\u201d marks,\nthat is, the currently-selected text. If <pre>interactive</pre> is <pre>true</pre>,\nthe editability of the selection will be considered (users can\u2019t delete\nuneditable text).</p>",
             "kind": "method",
             "name": "delete_selection",
             "parameters": [
@@ -378,7 +366,7 @@
             }
         },
         {
-            "doc": "<p>This function deserializes rich text in format <code>format</code> and inserts\nit at <code>iter</code>.</p><p>@formats to be used must be registered using\n<span data-xref=\"Gtk.TextBuffer.register_deserialize_format\"/> or\n<span data-xref=\"Gtk.TextBuffer.register_deserialize_tagset\"/> beforehand.</p>",
+            "doc": "<p>This function deserializes rich text in format <pre>format</pre> and inserts\nit at <pre>iter</pre>.</p><p>@formats to be used must be registered using\n<span data-xref=\"Gtk.TextBuffer.register_deserialize_format\"/> or\n<span data-xref=\"Gtk.TextBuffer.register_deserialize_tagset\"/> beforehand.</p>",
             "kind": "method",
             "name": "deserialize",
             "parameters": [
@@ -465,7 +453,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves the first and last iterators in the buffer, i.e. the\nentire buffer lies within the range [<code>start</code>,<code>end</code>).</p>",
+            "doc": "<p>Retrieves the first and last iterators in the buffer, i.e. the\nentire buffer lies within the range [<pre>start</pre>,<pre>end</pre>).</p>",
             "kind": "method",
             "name": "get_bounds",
             "parameters": [
@@ -505,7 +493,7 @@
             }
         },
         {
-            "doc": "<p>This function returns the rich text deserialize formats registered\nwith <code>buffer</code> using <span data-xref=\"Gtk.TextBuffer.register_deserialize_format\"/> or\n<span data-xref=\"Gtk.TextBuffer.register_deserialize_tagset\"/></p>",
+            "doc": "<p>This function returns the rich text deserialize formats registered\nwith <pre>buffer</pre> using <span data-xref=\"Gtk.TextBuffer.register_deserialize_format\"/> or\n<span data-xref=\"Gtk.TextBuffer.register_deserialize_tagset\"/></p>",
             "kind": "method",
             "name": "get_deserialize_formats",
             "parameters": [
@@ -521,7 +509,7 @@
             }
         },
         {
-            "doc": "<p>Initializes <code>iter</code> with the \u201cend iterator,\u201d one past the last valid\ncharacter in the text buffer. If dereferenced with\n<span data-xref=\"Gtk.TextIter.get_char\"/>, the end iterator has a character value of 0.\nThe entire buffer lies in the range from the first position in\nthe buffer (call <span data-xref=\"Gtk.TextBuffer.get_start_iter\"/> to get\ncharacter position 0) to the end iterator.</p>",
+            "doc": "<p>Initializes <pre>iter</pre> with the \u201cend iterator,\u201d one past the last valid\ncharacter in the text buffer. If dereferenced with\n<span data-xref=\"Gtk.TextIter.get_char\"/>, the end iterator has a character value of 0.\nThe entire buffer lies in the range from the first position in\nthe buffer (call <span data-xref=\"Gtk.TextBuffer.get_start_iter\"/> to get\ncharacter position 0) to the end iterator.</p>",
             "kind": "method",
             "name": "get_end_iter",
             "parameters": [
@@ -555,7 +543,7 @@
             }
         },
         {
-            "doc": "<p>Obtains the location of <code>anchor</code> within <code>buffer</code>.</p>",
+            "doc": "<p>Obtains the location of <pre>anchor</pre> within <pre>buffer</pre>.</p>",
             "kind": "method",
             "name": "get_iter_at_child_anchor",
             "parameters": [
@@ -577,7 +565,7 @@
             }
         },
         {
-            "doc": "<p>Initializes <code>iter</code> to the start of the given line. If <code>line_number</code> is greater\nthan the number of lines in the <code>buffer</code>, the end iterator is returned.</p>",
+            "doc": "<p>Initializes <pre>iter</pre> to the start of the given line. If <pre>line_number</pre> is greater\nthan the number of lines in the <pre>buffer</pre>, the end iterator is returned.</p>",
             "kind": "method",
             "name": "get_iter_at_line",
             "parameters": [
@@ -599,7 +587,7 @@
             }
         },
         {
-            "doc": "<p>Obtains an iterator pointing to <code>byte_index</code> within the given line.\n<code>byte_index</code> must be the start of a UTF-8 character, and must not be\nbeyond the end of the line.  Note bytes, not\ncharacters; UTF-8 may encode one character as multiple bytes.</p>",
+            "doc": "<p>Obtains an iterator pointing to <pre>byte_index</pre> within the given line.\n<pre>byte_index</pre> must be the start of a UTF-8 character, and must not be\nbeyond the end of the line.  Note bytes, not\ncharacters; UTF-8 may encode one character as multiple bytes.</p>",
             "kind": "method",
             "name": "get_iter_at_line_index",
             "parameters": [
@@ -627,7 +615,7 @@
             }
         },
         {
-            "doc": "<p>Obtains an iterator pointing to <code>char_offset</code> within the given\nline. The <code>char_offset</code> must exist, offsets off the end of the line\nare not allowed. Note characters, not bytes;\nUTF-8 may encode one character as multiple bytes.</p>",
+            "doc": "<p>Obtains an iterator pointing to <pre>char_offset</pre> within the given\nline. The <pre>char_offset</pre> must exist, offsets off the end of the line\nare not allowed. Note characters, not bytes;\nUTF-8 may encode one character as multiple bytes.</p>",
             "kind": "method",
             "name": "get_iter_at_line_offset",
             "parameters": [
@@ -655,7 +643,7 @@
             }
         },
         {
-            "doc": "<p>Initializes <code>iter</code> with the current position of <code>mark</code>.</p>",
+            "doc": "<p>Initializes <pre>iter</pre> with the current position of <pre>mark</pre>.</p>",
             "kind": "method",
             "name": "get_iter_at_mark",
             "parameters": [
@@ -677,7 +665,7 @@
             }
         },
         {
-            "doc": "<p>Initializes <code>iter</code> to a position <code>char_offset</code> chars from the start\nof the entire buffer. If <code>char_offset</code> is -1 or greater than the number\nof characters in the buffer, <code>iter</code> is initialized to the end iterator,\nthe iterator one past the last valid character in the buffer.</p>",
+            "doc": "<p>Initializes <pre>iter</pre> to a position <pre>char_offset</pre> chars from the start\nof the entire buffer. If <pre>char_offset</pre> is -1 or greater than the number\nof characters in the buffer, <pre>iter</pre> is initialized to the end iterator,\nthe iterator one past the last valid character in the buffer.</p>",
             "kind": "method",
             "name": "get_iter_at_offset",
             "parameters": [
@@ -708,7 +696,7 @@
             }
         },
         {
-            "doc": "<p>Returns the mark named <code>name</code> in buffer <code>buffer</code>, or <code>null</code> if no such\nmark exists in the buffer.</p>",
+            "doc": "<p>Returns the mark named <pre>name</pre> in buffer <pre>buffer</pre>, or <pre>null</pre> if no such\nmark exists in the buffer.</p>",
             "kind": "method",
             "name": "get_mark",
             "parameters": [
@@ -724,7 +712,7 @@
             }
         },
         {
-            "doc": "<p>Indicates whether the buffer has been modified since the last call\nto <span data-xref=\"Gtk.TextBuffer.set_modified\"/> set the modification flag to\n<code>false</code>. Used for example to enable a \u201csave\u201d function in a text\neditor.</p>",
+            "doc": "<p>Indicates whether the buffer has been modified since the last call\nto <span data-xref=\"Gtk.TextBuffer.set_modified\"/> set the modification flag to\n<pre>false</pre>. Used for example to enable a \u201csave\u201d function in a text\neditor.</p>",
             "kind": "method",
             "name": "get_modified",
             "parameters": [],
@@ -742,7 +730,7 @@
             }
         },
         {
-            "doc": "<p>Returns the mark that represents the selection bound.  Equivalent\nto calling <span data-xref=\"Gtk.TextBuffer.get_mark\"/> to get the mark named\n\u201cselection_bound\u201d, but very slightly more efficient, and involves\nless typing.</p><p>The currently-selected text in <code>buffer</code> is the region between the\n\u201cselection_bound\u201d and \u201cinsert\u201d marks. If \u201cselection_bound\u201d and\n\u201cinsert\u201d are in the same place, then there is no current selection.\n<span data-xref=\"Gtk.TextBuffer.get_selection_bounds\"/> is another convenient function\nfor handling the selection, if you just want to know whether there\u2019s a\nselection and what its bounds are.</p>",
+            "doc": "<p>Returns the mark that represents the selection bound.  Equivalent\nto calling <span data-xref=\"Gtk.TextBuffer.get_mark\"/> to get the mark named\n\u201cselection_bound\u201d, but very slightly more efficient, and involves\nless typing.</p><p>The currently-selected text in <pre>buffer</pre> is the region between the\n\u201cselection_bound\u201d and \u201cinsert\u201d marks. If \u201cselection_bound\u201d and\n\u201cinsert\u201d are in the same place, then there is no current selection.\n<span data-xref=\"Gtk.TextBuffer.get_selection_bounds\"/> is another convenient function\nfor handling the selection, if you just want to know whether there\u2019s a\nselection and what its bounds are.</p>",
             "kind": "method",
             "name": "get_selection_bound",
             "parameters": [],
@@ -751,7 +739,7 @@
             }
         },
         {
-            "doc": "<p>Returns <code>true</code> if some text is selected; places the bounds\nof the selection in <code>start</code> and <code>end</code> (if the selection has length 0,\nthen <code>start</code> and <code>end</code> are filled in with the same value).\n<code>start</code> and <code>end</code> will be in ascending order. If <code>start</code> and <code>end</code> are\nNULL, then they are not filled in, but the return value still indicates\nwhether text is selected.</p>",
+            "doc": "<p>Returns <pre>true</pre> if some text is selected; places the bounds\nof the selection in <pre>start</pre> and <pre>end</pre> (if the selection has length 0,\nthen <pre>start</pre> and <pre>end</pre> are filled in with the same value).\n<pre>start</pre> and <pre>end</pre> will be in ascending order. If <pre>start</pre> and <pre>end</pre> are\nNULL, then they are not filled in, but the return value still indicates\nwhether text is selected.</p>",
             "kind": "method",
             "name": "get_selection_bounds",
             "parameters": [
@@ -773,7 +761,7 @@
             }
         },
         {
-            "doc": "<p>This function returns the rich text serialize formats registered\nwith <code>buffer</code> using <span data-xref=\"Gtk.TextBuffer.register_serialize_format\"/> or\n<span data-xref=\"Gtk.TextBuffer.register_serialize_tagset\"/></p>",
+            "doc": "<p>This function returns the rich text serialize formats registered\nwith <pre>buffer</pre> using <span data-xref=\"Gtk.TextBuffer.register_serialize_format\"/> or\n<span data-xref=\"Gtk.TextBuffer.register_serialize_tagset\"/></p>",
             "kind": "method",
             "name": "get_serialize_formats",
             "parameters": [
@@ -789,7 +777,7 @@
             }
         },
         {
-            "doc": "<p>Returns the text in the range [<code>start</code>,<code>end</code>). Excludes undisplayed\ntext (text marked with tags that set the invisibility attribute) if\n<code>include_hidden_chars</code> is <code>false</code>. The returned string includes a\n0xFFFC character whenever the buffer contains\nembedded images, so byte and character indexes into\nthe returned string do correspond to byte\nand character indexes into the buffer. Contrast with\n<span data-xref=\"Gtk.TextBuffer.get_text\"/>. Note that 0xFFFC can occur in normal\ntext as well, so it is not a reliable indicator that a pixbuf or\nwidget is in the buffer.</p>",
+            "doc": "<p>Returns the text in the range [<pre>start</pre>,<pre>end</pre>). Excludes undisplayed\ntext (text marked with tags that set the invisibility attribute) if\n<pre>include_hidden_chars</pre> is <pre>false</pre>. The returned string includes a\n0xFFFC character whenever the buffer contains\nembedded images, so byte and character indexes into\nthe returned string do correspond to byte\nand character indexes into the buffer. Contrast with\n<span data-xref=\"Gtk.TextBuffer.get_text\"/>. Note that 0xFFFC can occur in normal\ntext as well, so it is not a reliable indicator that a pixbuf or\nwidget is in the buffer.</p>",
             "kind": "method",
             "name": "get_slice",
             "parameters": [
@@ -817,7 +805,7 @@
             }
         },
         {
-            "doc": "<p>Initialized <code>iter</code> with the first position in the text buffer. This\nis the same as using <span data-xref=\"Gtk.TextBuffer.get_iter_at_offset\"/> to get\nthe iter at character offset 0.</p>",
+            "doc": "<p>Initialized <pre>iter</pre> with the first position in the text buffer. This\nis the same as using <span data-xref=\"Gtk.TextBuffer.get_iter_at_offset\"/> to get\nthe iter at character offset 0.</p>",
             "kind": "method",
             "name": "get_start_iter",
             "parameters": [
@@ -842,7 +830,7 @@
             }
         },
         {
-            "doc": "<p>Returns the text in the range [<code>start</code>,<code>end</code>). Excludes undisplayed\ntext (text marked with tags that set the invisibility attribute) if\n<code>include_hidden_chars</code> is <code>false</code>. Does not include characters\nrepresenting embedded images, so byte and character indexes into\nthe returned string do not correspond to byte\nand character indexes into the buffer. Contrast with\n<span data-xref=\"Gtk.TextBuffer.get_slice\"/>.</p>",
+            "doc": "<p>Returns the text in the range [<pre>start</pre>,<pre>end</pre>). Excludes undisplayed\ntext (text marked with tags that set the invisibility attribute) if\n<pre>include_hidden_chars</pre> is <pre>false</pre>. Does not include characters\nrepresenting embedded images, so byte and character indexes into\nthe returned string do not correspond to byte\nand character indexes into the buffer. Contrast with\n<span data-xref=\"Gtk.TextBuffer.get_slice\"/>.</p>",
             "kind": "method",
             "name": "get_text",
             "parameters": [
@@ -870,7 +858,7 @@
             }
         },
         {
-            "doc": "<p>Inserts <code>len</code> bytes of <code>text</code> at position <code>iter</code>.  If <code>len</code> is -1,\n<code>text</code> must be nul-terminated and will be inserted in its\nentirety. Emits the \u201cinsert-text\u201d signal; insertion actually occurs\nin the default handler for the signal. <code>iter</code> is invalidated when\ninsertion occurs (because the buffer contents change), but the\ndefault signal handler revalidates it to point to the end of the\ninserted text.</p>",
+            "doc": "<p>Inserts <pre>len</pre> bytes of <pre>text</pre> at position <pre>iter</pre>.  If <pre>len</pre> is -1,\n<pre>text</pre> must be nul-terminated and will be inserted in its\nentirety. Emits the \u201cinsert-text\u201d signal; insertion actually occurs\nin the default handler for the signal. <pre>iter</pre> is invalidated when\ninsertion occurs (because the buffer contents change), but the\ndefault signal handler revalidates it to point to the end of the\ninserted text.</p>",
             "kind": "method",
             "name": "insert",
             "parameters": [
@@ -920,7 +908,7 @@
             }
         },
         {
-            "doc": "<p>Inserts a child widget anchor into the text buffer at <code>iter</code>. The\nanchor will be counted as one character in character counts, and\nwhen obtaining the buffer contents as a string, will be represented\nby the Unicode \u201cobject replacement character\u201d 0xFFFC. Note that the\n\u201cslice\u201d variants for obtaining portions of the buffer as a string\ninclude this character for child anchors, but the \u201ctext\u201d variants do\nnot. E.g. see <span data-xref=\"Gtk.TextBuffer.get_slice\"/> and\n<span data-xref=\"Gtk.TextBuffer.get_text\"/>. Consider\n<span data-xref=\"Gtk.TextBuffer.create_child_anchor\"/> as a more convenient\nalternative to this function. The buffer will add a reference to\nthe anchor, so you can unref it after insertion.</p>",
+            "doc": "<p>Inserts a child widget anchor into the text buffer at <pre>iter</pre>. The\nanchor will be counted as one character in character counts, and\nwhen obtaining the buffer contents as a string, will be represented\nby the Unicode \u201cobject replacement character\u201d 0xFFFC. Note that the\n\u201cslice\u201d variants for obtaining portions of the buffer as a string\ninclude this character for child anchors, but the \u201ctext\u201d variants do\nnot. E.g. see <span data-xref=\"Gtk.TextBuffer.get_slice\"/> and\n<span data-xref=\"Gtk.TextBuffer.get_text\"/>. Consider\n<span data-xref=\"Gtk.TextBuffer.create_child_anchor\"/> as a more convenient\nalternative to this function. The buffer will add a reference to\nthe anchor, so you can unref it after insertion.</p>",
             "kind": "method",
             "name": "insert_child_anchor",
             "parameters": [
@@ -942,7 +930,7 @@
             }
         },
         {
-            "doc": "<p>Like <span data-xref=\"Gtk.TextBuffer.insert\"/>, but the insertion will not occur if\n<code>iter</code> is at a non-editable location in the buffer. Usually you\nwant to prevent insertions at ineditable locations if the insertion\nresults from a user action (is interactive).</p><p><code>default_editable</code> indicates the editability of text that doesn't\nhave a tag affecting editability applied to it. Typically the\nresult of <span data-xref=\"Gtk.TextView.get_editable\"/> is appropriate here.</p>",
+            "doc": "<p>Like <span data-xref=\"Gtk.TextBuffer.insert\"/>, but the insertion will not occur if\n<pre>iter</pre> is at a non-editable location in the buffer. Usually you\nwant to prevent insertions at ineditable locations if the insertion\nresults from a user action (is interactive).</p><pre>default_editable</pre>\n\n<p>indicates the editability of text that doesn't\nhave a tag affecting editability applied to it. Typically the\nresult of <span data-xref=\"Gtk.TextView.get_editable\"/> is appropriate here.</p>",
             "kind": "method",
             "name": "insert_interactive",
             "parameters": [
@@ -976,7 +964,7 @@
             }
         },
         {
-            "doc": "<p>Calls <span data-xref=\"Gtk.TextBuffer.insert_interactive\"/> at the cursor\nposition.</p><p><code>default_editable</code> indicates the editability of text that doesn't\nhave a tag affecting editability applied to it. Typically the\nresult of <span data-xref=\"Gtk.TextView.get_editable\"/> is appropriate here.</p>",
+            "doc": "<p>Calls <span data-xref=\"Gtk.TextBuffer.insert_interactive\"/> at the cursor\nposition.</p><pre>default_editable</pre>\n\n<p>indicates the editability of text that doesn't\nhave a tag affecting editability applied to it. Typically the\nresult of <span data-xref=\"Gtk.TextView.get_editable\"/> is appropriate here.</p>",
             "kind": "method",
             "name": "insert_interactive_at_cursor",
             "parameters": [
@@ -1004,7 +992,7 @@
             }
         },
         {
-            "doc": "<p>Inserts an image into the text buffer at <code>iter</code>. The image will be\ncounted as one character in character counts, and when obtaining\nthe buffer contents as a string, will be represented by the Unicode\n\u201cobject replacement character\u201d 0xFFFC. Note that the \u201cslice\u201d\nvariants for obtaining portions of the buffer as a string include\nthis character for pixbufs, but the \u201ctext\u201d variants do\nnot. e.g. see <span data-xref=\"Gtk.TextBuffer.get_slice\"/> and\n<span data-xref=\"Gtk.TextBuffer.get_text\"/>.</p>",
+            "doc": "<p>Inserts an image into the text buffer at <pre>iter</pre>. The image will be\ncounted as one character in character counts, and when obtaining\nthe buffer contents as a string, will be represented by the Unicode\n\u201cobject replacement character\u201d 0xFFFC. Note that the \u201cslice\u201d\nvariants for obtaining portions of the buffer as a string include\nthis character for pixbufs, but the \u201ctext\u201d variants do\nnot. e.g. see <span data-xref=\"Gtk.TextBuffer.get_slice\"/> and\n<span data-xref=\"Gtk.TextBuffer.get_text\"/>.</p>",
             "kind": "method",
             "name": "insert_pixbuf",
             "parameters": [
@@ -1026,7 +1014,7 @@
             }
         },
         {
-            "doc": "<p>Copies text, tags, and pixbufs between <code>start</code> and <code>end</code> (the order\nof <code>start</code> and <code>end</code> doesn\u2019t matter) and inserts the copy at <code>iter</code>.\nUsed instead of simply getting/inserting text because it preserves\nimages and tags. If <code>start</code> and <code>end</code> are in a different buffer from\n<code>buffer</code>, the two buffers must share the same tag table.</p><p>Implemented via emissions of the insert_text and apply_tag signals,\nso expect those.</p>",
+            "doc": "<p>Copies text, tags, and pixbufs between <pre>start</pre> and <pre>end</pre> (the order\nof <pre>start</pre> and <pre>end</pre> doesn\u2019t matter) and inserts the copy at <pre>iter</pre>.\nUsed instead of simply getting/inserting text because it preserves\nimages and tags. If <pre>start</pre> and <pre>end</pre> are in a different buffer from\n<pre>buffer</pre>, the two buffers must share the same tag table.</p><p>Implemented via emissions of the insert_text and apply_tag signals,\nso expect those.</p>",
             "kind": "method",
             "name": "insert_range",
             "parameters": [
@@ -1054,7 +1042,7 @@
             }
         },
         {
-            "doc": "<p>Same as <span data-xref=\"Gtk.TextBuffer.insert_range\"/>, but does nothing if the\ninsertion point isn\u2019t editable. The <code>default_editable</code> parameter\nindicates whether the text is editable at <code>iter</code> if no tags\nenclosing <code>iter</code> affect editability. Typically the result of\n<span data-xref=\"Gtk.TextView.get_editable\"/> is appropriate here.</p>",
+            "doc": "<p>Same as <span data-xref=\"Gtk.TextBuffer.insert_range\"/>, but does nothing if the\ninsertion point isn\u2019t editable. The <pre>default_editable</pre> parameter\nindicates whether the text is editable at <pre>iter</pre> if no tags\nenclosing <pre>iter</pre> affect editability. Typically the result of\n<span data-xref=\"Gtk.TextView.get_editable\"/> is appropriate here.</p>",
             "kind": "method",
             "name": "insert_range_interactive",
             "parameters": [
@@ -1088,7 +1076,7 @@
             }
         },
         {
-            "doc": "<p>Inserts <code>text</code> into <code>buffer</code> at <code>iter</code>, applying the list of tags to\nthe newly-inserted text. The last tag specified must be <code>null</code> to\nterminate the list. Equivalent to calling <span data-xref=\"Gtk.TextBuffer.insert\"/>,\nthen <span data-xref=\"Gtk.TextBuffer.apply_tag\"/> on the inserted text;\n<span data-xref=\"Gtk.TextBuffer.insert_with_tags\"/> is just a convenience function.</p>",
+            "doc": "<p>Inserts <pre>text</pre> into <pre>buffer</pre> at <pre>iter</pre>, applying the list of tags to\nthe newly-inserted text. The last tag specified must be <pre>null</pre> to\nterminate the list. Equivalent to calling <span data-xref=\"Gtk.TextBuffer.insert\"/>,\nthen <span data-xref=\"Gtk.TextBuffer.apply_tag\"/> on the inserted text;\n<span data-xref=\"Gtk.TextBuffer.insert_with_tags\"/> is just a convenience function.</p>",
             "kind": "method",
             "name": "insert_with_tags",
             "parameters": [
@@ -1168,7 +1156,7 @@
             }
         },
         {
-            "doc": "<p>Moves <code>mark</code> to the new location <code>where</code>. Emits the <span data-xref=\"Gtk.TextBuffer-mark-set\"/>\nsignal as notification of the move.</p>",
+            "doc": "<p>Moves <pre>mark</pre> to the new location <pre>where</pre>. Emits the <span data-xref=\"Gtk.TextBuffer-mark-set\"/>\nsignal as notification of the move.</p>",
             "kind": "method",
             "name": "move_mark",
             "parameters": [
@@ -1190,7 +1178,7 @@
             }
         },
         {
-            "doc": "<p>Moves the mark named <code>name</code> (which must exist) to location <code>where</code>.\nSee <span data-xref=\"Gtk.TextBuffer.move_mark\"/> for details.</p>",
+            "doc": "<p>Moves the mark named <pre>name</pre> (which must exist) to location <pre>where</pre>.\nSee <span data-xref=\"Gtk.TextBuffer.move_mark\"/> for details.</p>",
             "kind": "method",
             "name": "move_mark_by_name",
             "parameters": [
@@ -1212,7 +1200,7 @@
             }
         },
         {
-            "doc": "<p>Pastes the contents of a clipboard.\u00a0If <code>override_location</code> is <code>null</code>, the\npasted text will be inserted at the cursor position, or the buffer selection\nwill be replaced if the selection is non-empty.</p><p>Note: pasting is asynchronous, that is, we\u2019ll ask for the paste data and\nreturn, and at some point later after the main loop runs, the paste data will\nbe inserted.</p>",
+            "doc": "<p>Pastes the contents of a clipboard.\u00a0If <pre>override_location</pre> is <pre>null</pre>, the\npasted text will be inserted at the cursor position, or the buffer selection\nwill be replaced if the selection is non-empty.</p><p>Note: pasting is asynchronous, that is, we\u2019ll ask for the paste data and\nreturn, and at some point later after the main loop runs, the paste data will\nbe inserted.</p>",
             "kind": "method",
             "name": "paste_clipboard",
             "parameters": [
@@ -1256,7 +1244,7 @@
             }
         },
         {
-            "doc": "<p>This function registers a rich text deserialization <code>function</code> along with\nits <code>mime_type</code> with the passed <code>buffer</code>.</p>",
+            "doc": "<p>This function registers a rich text deserialization <pre>function</pre> along with\nits <pre>mime_type</pre> with the passed <pre>buffer</pre>.</p>",
             "kind": "method",
             "name": "register_deserialize_format",
             "parameters": [
@@ -1290,7 +1278,7 @@
             }
         },
         {
-            "doc": "<p>This function registers GTK+\u2019s internal rich text serialization\nformat with the passed <code>buffer</code>. See\n<span data-xref=\"Gtk.TextBuffer.register_serialize_tagset\"/> for details.</p>",
+            "doc": "<p>This function registers GTK+\u2019s internal rich text serialization\nformat with the passed <pre>buffer</pre>. See\n<span data-xref=\"Gtk.TextBuffer.register_serialize_tagset\"/> for details.</p>",
             "kind": "method",
             "name": "register_deserialize_tagset",
             "parameters": [
@@ -1306,7 +1294,7 @@
             }
         },
         {
-            "doc": "<p>This function registers a rich text serialization <code>function</code> along with\nits <code>mime_type</code> with the passed <code>buffer</code>.</p>",
+            "doc": "<p>This function registers a rich text serialization <pre>function</pre> along with\nits <pre>mime_type</pre> with the passed <pre>buffer</pre>.</p>",
             "kind": "method",
             "name": "register_serialize_format",
             "parameters": [
@@ -1340,7 +1328,7 @@
             }
         },
         {
-            "doc": "<p>This function registers GTK+\u2019s internal rich text serialization\nformat with the passed <code>buffer</code>. The internal format does not comply\nto any standard rich text format and only works between <span data-xref=\"Gtk.TextBuffer\"/>\ninstances. It is capable of serializing all of a text buffer\u2019s tags\nand embedded pixbufs.</p><p>This function is just a wrapper around\n<span data-xref=\"Gtk.TextBuffer.register_serialize_format\"/>. The mime type used\nfor registering is \u201capplication/x-gtk-text-buffer-rich-text\u201d, or\n\u201capplication/x-gtk-text-buffer-rich-text;format=<code>tagset_name</code>\u201d if a\n<code>tagset_name</code> was passed.</p><p>The <code>tagset_name</code> can be used to restrict the transfer of rich text\nto buffers with compatible sets of tags, in order to avoid unknown\ntags from being pasted. It is probably the common case to pass an\nidentifier != <code>null</code> here, since the <code>null</code> tagset requires the\nreceiving buffer to deal with with pasting of arbitrary tags.</p>",
+            "doc": "<p>This function registers GTK+\u2019s internal rich text serialization\nformat with the passed <pre>buffer</pre>. The internal format does not comply\nto any standard rich text format and only works between <span data-xref=\"Gtk.TextBuffer\"/>\ninstances. It is capable of serializing all of a text buffer\u2019s tags\nand embedded pixbufs.</p><p>This function is just a wrapper around\n<span data-xref=\"Gtk.TextBuffer.register_serialize_format\"/>. The mime type used\nfor registering is \u201capplication/x-gtk-text-buffer-rich-text\u201d, or\n\u201capplication/x-gtk-text-buffer-rich-text;format=<pre>tagset_name</pre>\u201d if a\n<pre>tagset_name</pre> was passed.</p><p>The <pre>tagset_name</pre> can be used to restrict the transfer of rich text\nto buffers with compatible sets of tags, in order to avoid unknown\ntags from being pasted. It is probably the common case to pass an\nidentifier != <pre>null</pre> here, since the <pre>null</pre> tagset requires the\nreceiving buffer to deal with with pasting of arbitrary tags.</p>",
             "kind": "method",
             "name": "register_serialize_tagset",
             "parameters": [
@@ -1356,7 +1344,7 @@
             }
         },
         {
-            "doc": "<p>Removes all tags in the range between <code>start</code> and <code>end</code>.  Be careful\nwith this function; it could remove tags added in code unrelated to\nthe code you\u2019re currently writing. That is, using this function is\nprobably a bad idea if you have two or more unrelated code sections\nthat add tags.</p>",
+            "doc": "<p>Removes all tags in the range between <pre>start</pre> and <pre>end</pre>.  Be careful\nwith this function; it could remove tags added in code unrelated to\nthe code you\u2019re currently writing. That is, using this function is\nprobably a bad idea if you have two or more unrelated code sections\nthat add tags.</p>",
             "kind": "method",
             "name": "remove_all_tags",
             "parameters": [
@@ -1394,7 +1382,7 @@
             }
         },
         {
-            "doc": "<p>Emits the \u201cremove-tag\u201d signal. The default handler for the signal\nremoves all occurrences of <code>tag</code> from the given range. <code>start</code> and\n<code>end</code> don\u2019t have to be in order.</p>",
+            "doc": "<p>Emits the \u201cremove-tag\u201d signal. The default handler for the signal\nremoves all occurrences of <pre>tag</pre> from the given range. <pre>start</pre> and\n<pre>end</pre> don\u2019t have to be in order.</p>",
             "kind": "method",
             "name": "remove_tag",
             "parameters": [
@@ -1472,7 +1460,7 @@
             }
         },
         {
-            "doc": "<p>This function serializes the portion of text between <code>start</code>\nand <code>end</code> in the rich text format represented by <code>format</code>.</p><p>@formats to be used must be registered using\n<span data-xref=\"Gtk.TextBuffer.register_serialize_format\"/> or\n<span data-xref=\"Gtk.TextBuffer.register_serialize_tagset\"/> beforehand.</p>",
+            "doc": "<p>This function serializes the portion of text between <pre>start</pre>\nand <pre>end</pre> in the rich text format represented by <pre>format</pre>.</p><p>@formats to be used must be registered using\n<span data-xref=\"Gtk.TextBuffer.register_serialize_format\"/> or\n<span data-xref=\"Gtk.TextBuffer.register_serialize_tagset\"/> beforehand.</p>",
             "kind": "method",
             "name": "serialize",
             "parameters": [
@@ -1512,7 +1500,7 @@
             }
         },
         {
-            "doc": "<p>Used to keep track of whether the buffer has been modified since the\nlast time it was saved. Whenever the buffer is saved to disk, call\ngtk_text_buffer_set_modified (<code>buffer</code>, FALSE). When the buffer is modified,\nit will automatically toggled on the modified bit again. When the modified\nbit flips, the buffer emits the <span data-xref=\"Gtk.TextBuffer-modified-changed\"/> signal.</p>",
+            "doc": "<p>Used to keep track of whether the buffer has been modified since the\nlast time it was saved. Whenever the buffer is saved to disk, call\ngtk_text_buffer_set_modified (<pre>buffer</pre>, FALSE). When the buffer is modified,\nit will automatically toggled on the modified bit again. When the modified\nbit flips, the buffer emits the <span data-xref=\"Gtk.TextBuffer-modified-changed\"/> signal.</p>",
             "kind": "method",
             "name": "set_modified",
             "parameters": [
@@ -1528,7 +1516,7 @@
             }
         },
         {
-            "doc": "<p>Deletes current contents of <code>buffer</code>, and inserts <code>text</code> instead. If\n<code>len</code> is -1, <code>text</code> must be nul-terminated. <code>text</code> must be valid UTF-8.</p>",
+            "doc": "<p>Deletes current contents of <pre>buffer</pre>, and inserts <pre>text</pre> instead. If\n<pre>len</pre> is -1, <pre>text</pre> must be nul-terminated. <pre>text</pre> must be valid UTF-8.</p>",
             "kind": "method",
             "name": "set_text",
             "parameters": [
@@ -1580,8 +1568,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "TextBuffer",
     "properties": [
@@ -1624,7 +1611,7 @@
     ],
     "signals": [
         {
-            "doc": "<p>The ::apply-tag signal is emitted to apply a tag to a\nrange of text in a <span data-xref=\"Gtk.TextBuffer\"/>.\nApplying actually occurs in the default handler.</p><p>Note that if your handler runs before the default handler it must not\ninvalidate the <code>start</code> and <code>end</code> iters (or has to revalidate them).</p><p>See also:\n<span data-xref=\"Gtk.TextBuffer.apply_tag\"/>,\n<span data-xref=\"Gtk.TextBuffer.insert_with_tags\"/>,\n<span data-xref=\"Gtk.TextBuffer.insert_range\"/>.</p>",
+            "doc": "<p>The ::apply-tag signal is emitted to apply a tag to a\nrange of text in a <span data-xref=\"Gtk.TextBuffer\"/>.\nApplying actually occurs in the default handler.</p><p>Note that if your handler runs before the default handler it must not\ninvalidate the <pre>start</pre> and <pre>end</pre> iters (or has to revalidate them).</p><p>See also:\n<span data-xref=\"Gtk.TextBuffer.apply_tag\"/>,\n<span data-xref=\"Gtk.TextBuffer.insert_with_tags\"/>,\n<span data-xref=\"Gtk.TextBuffer.insert_range\"/>.</p>",
             "kind": "signal",
             "name": "apply-tag",
             "parameters": [
@@ -1670,7 +1657,7 @@
             }
         },
         {
-            "doc": "<p>The ::delete-range signal is emitted to delete a range\nfrom a <span data-xref=\"Gtk.TextBuffer\"/>.</p><p>Note that if your handler runs before the default handler it must not\ninvalidate the <code>start</code> and <code>end</code> iters (or has to revalidate them).\nThe default signal handler revalidates the <code>start</code> and <code>end</code> iters to\nboth point to the location where text was deleted. Handlers\nwhich run after the default handler (see g_signal_connect_after())\ndo not have access to the deleted text.</p><p>See also: <span data-xref=\"Gtk.TextBuffer.delete\"/>.</p>",
+            "doc": "<p>The ::delete-range signal is emitted to delete a range\nfrom a <span data-xref=\"Gtk.TextBuffer\"/>.</p><p>Note that if your handler runs before the default handler it must not\ninvalidate the <pre>start</pre> and <pre>end</pre> iters (or has to revalidate them).\nThe default signal handler revalidates the <pre>start</pre> and <pre>end</pre> iters to\nboth point to the location where text was deleted. Handlers\nwhich run after the default handler (see g_signal_connect_after())\ndo not have access to the deleted text.</p><p>See also: <span data-xref=\"Gtk.TextBuffer.delete\"/>.</p>",
             "kind": "signal",
             "name": "delete-range",
             "parameters": [
@@ -1701,7 +1688,7 @@
             }
         },
         {
-            "doc": "<p>The ::insert-child-anchor signal is emitted to insert a\n<span data-xref=\"Gtk.TextChildAnchor\"/> in a <span data-xref=\"Gtk.TextBuffer\"/>.\nInsertion actually occurs in the default handler.</p><p>Note that if your handler runs before the default handler it must\nnot invalidate the <code>location</code> iter (or has to revalidate it).\nThe default signal handler revalidates it to be placed after the\ninserted <code>anchor</code>.</p><p>See also: <span data-xref=\"Gtk.TextBuffer.insert_child_anchor\"/>.</p>",
+            "doc": "<p>The ::insert-child-anchor signal is emitted to insert a\n<span data-xref=\"Gtk.TextChildAnchor\"/> in a <span data-xref=\"Gtk.TextBuffer\"/>.\nInsertion actually occurs in the default handler.</p><p>Note that if your handler runs before the default handler it must\nnot invalidate the <pre>location</pre> iter (or has to revalidate it).\nThe default signal handler revalidates it to be placed after the\ninserted <pre>anchor</pre>.</p><p>See also: <span data-xref=\"Gtk.TextBuffer.insert_child_anchor\"/>.</p>",
             "kind": "signal",
             "name": "insert-child-anchor",
             "parameters": [
@@ -1723,7 +1710,7 @@
             }
         },
         {
-            "doc": "<p>The ::insert-pixbuf signal is emitted to insert a <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>\nin a <span data-xref=\"Gtk.TextBuffer\"/>. Insertion actually occurs in the default handler.</p><p>Note that if your handler runs before the default handler it must not\ninvalidate the <code>location</code> iter (or has to revalidate it).\nThe default signal handler revalidates it to be placed after the\ninserted <code>pixbuf</code>.</p><p>See also: <span data-xref=\"Gtk.TextBuffer.insert_pixbuf\"/>.</p>",
+            "doc": "<p>The ::insert-pixbuf signal is emitted to insert a <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>\nin a <span data-xref=\"Gtk.TextBuffer\"/>. Insertion actually occurs in the default handler.</p><p>Note that if your handler runs before the default handler it must not\ninvalidate the <pre>location</pre> iter (or has to revalidate it).\nThe default signal handler revalidates it to be placed after the\ninserted <pre>pixbuf</pre>.</p><p>See also: <span data-xref=\"Gtk.TextBuffer.insert_pixbuf\"/>.</p>",
             "kind": "signal",
             "name": "insert-pixbuf",
             "parameters": [
@@ -1745,7 +1732,7 @@
             }
         },
         {
-            "doc": "<p>The ::insert-text signal is emitted to insert text in a <span data-xref=\"Gtk.TextBuffer\"/>.\nInsertion actually occurs in the default handler.</p><p>Note that if your handler runs before the default handler it must not\ninvalidate the <code>location</code> iter (or has to revalidate it).\nThe default signal handler revalidates it to point to the end of the\ninserted text.</p><p>See also:\n<span data-xref=\"Gtk.TextBuffer.insert\"/>,\n<span data-xref=\"Gtk.TextBuffer.insert_range\"/>.</p>",
+            "doc": "<p>The ::insert-text signal is emitted to insert text in a <span data-xref=\"Gtk.TextBuffer\"/>.\nInsertion actually occurs in the default handler.</p><p>Note that if your handler runs before the default handler it must not\ninvalidate the <pre>location</pre> iter (or has to revalidate it).\nThe default signal handler revalidates it to point to the end of the\ninserted text.</p><p>See also:\n<span data-xref=\"Gtk.TextBuffer.insert\"/>,\n<span data-xref=\"Gtk.TextBuffer.insert_range\"/>.</p>",
             "kind": "signal",
             "name": "insert-text",
             "parameters": [
@@ -1836,7 +1823,7 @@
             }
         },
         {
-            "doc": "<p>The ::remove-tag signal is emitted to remove all occurrences of <code>tag</code> from\na range of text in a <span data-xref=\"Gtk.TextBuffer\"/>.\nRemoval actually occurs in the default handler.</p><p>Note that if your handler runs before the default handler it must not\ninvalidate the <code>start</code> and <code>end</code> iters (or has to revalidate them).</p><p>See also:\n<span data-xref=\"Gtk.TextBuffer.remove_tag\"/>.</p>",
+            "doc": "<p>The ::remove-tag signal is emitted to remove all occurrences of <pre>tag</pre> from\na range of text in a <span data-xref=\"Gtk.TextBuffer\"/>.\nRemoval actually occurs in the default handler.</p><p>Note that if your handler runs before the default handler it must not\ninvalidate the <pre>start</pre> and <pre>end</pre> iters (or has to revalidate them).</p><p>See also:\n<span data-xref=\"Gtk.TextBuffer.remove_tag\"/>.</p>",
             "kind": "signal",
             "name": "remove-tag",
             "parameters": [
@@ -1866,7 +1853,7 @@
     ],
     "vfuncs": [
         {
-            "doc": "<p>Emits the \u201capply-tag\u201d signal on <code>buffer</code>. The default\nhandler for the signal applies <code>tag</code> to the given range.\n<code>start</code> and <code>end</code> do not have to be in order.</p>",
+            "doc": "<p>Emits the \u201capply-tag\u201d signal on <pre>buffer</pre>. The default\nhandler for the signal applies <pre>tag</pre> to the given range.\n<pre>start</pre> and <pre>end</pre> do not have to be in order.</p>",
             "kind": "vfunc",
             "name": "apply_tag",
             "parameters": [
@@ -1943,7 +1930,7 @@
             }
         },
         {
-            "doc": "<p>Inserts a child widget anchor into the text buffer at <code>iter</code>. The\nanchor will be counted as one character in character counts, and\nwhen obtaining the buffer contents as a string, will be represented\nby the Unicode \u201cobject replacement character\u201d 0xFFFC. Note that the\n\u201cslice\u201d variants for obtaining portions of the buffer as a string\ninclude this character for child anchors, but the \u201ctext\u201d variants do\nnot. E.g. see <span data-xref=\"Gtk.TextBuffer.get_slice\"/> and\n<span data-xref=\"Gtk.TextBuffer.get_text\"/>. Consider\n<span data-xref=\"Gtk.TextBuffer.create_child_anchor\"/> as a more convenient\nalternative to this function. The buffer will add a reference to\nthe anchor, so you can unref it after insertion.</p>",
+            "doc": "<p>Inserts a child widget anchor into the text buffer at <pre>iter</pre>. The\nanchor will be counted as one character in character counts, and\nwhen obtaining the buffer contents as a string, will be represented\nby the Unicode \u201cobject replacement character\u201d 0xFFFC. Note that the\n\u201cslice\u201d variants for obtaining portions of the buffer as a string\ninclude this character for child anchors, but the \u201ctext\u201d variants do\nnot. E.g. see <span data-xref=\"Gtk.TextBuffer.get_slice\"/> and\n<span data-xref=\"Gtk.TextBuffer.get_text\"/>. Consider\n<span data-xref=\"Gtk.TextBuffer.create_child_anchor\"/> as a more convenient\nalternative to this function. The buffer will add a reference to\nthe anchor, so you can unref it after insertion.</p>",
             "kind": "vfunc",
             "name": "insert_child_anchor",
             "parameters": [
@@ -1965,7 +1952,7 @@
             }
         },
         {
-            "doc": "<p>Inserts an image into the text buffer at <code>iter</code>. The image will be\ncounted as one character in character counts, and when obtaining\nthe buffer contents as a string, will be represented by the Unicode\n\u201cobject replacement character\u201d 0xFFFC. Note that the \u201cslice\u201d\nvariants for obtaining portions of the buffer as a string include\nthis character for pixbufs, but the \u201ctext\u201d variants do\nnot. e.g. see <span data-xref=\"Gtk.TextBuffer.get_slice\"/> and\n<span data-xref=\"Gtk.TextBuffer.get_text\"/>.</p>",
+            "doc": "<p>Inserts an image into the text buffer at <pre>iter</pre>. The image will be\ncounted as one character in character counts, and when obtaining\nthe buffer contents as a string, will be represented by the Unicode\n\u201cobject replacement character\u201d 0xFFFC. Note that the \u201cslice\u201d\nvariants for obtaining portions of the buffer as a string include\nthis character for pixbufs, but the \u201ctext\u201d variants do\nnot. e.g. see <span data-xref=\"Gtk.TextBuffer.get_slice\"/> and\n<span data-xref=\"Gtk.TextBuffer.get_text\"/>.</p>",
             "kind": "vfunc",
             "name": "insert_pixbuf",
             "parameters": [
@@ -2078,7 +2065,7 @@
             }
         },
         {
-            "doc": "<p>Emits the \u201cremove-tag\u201d signal. The default handler for the signal\nremoves all occurrences of <code>tag</code> from the given range. <code>start</code> and\n<code>end</code> don\u2019t have to be in order.</p>",
+            "doc": "<p>Emits the \u201cremove-tag\u201d signal. The default handler for the signal\nremoves all occurrences of <pre>tag</pre> from the given range. <pre>start</pre> and\n<pre>end</pre> don\u2019t have to be in order.</p>",
             "kind": "vfunc",
             "name": "remove_tag",
             "parameters": [

@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.Frame\"/>, with optional label <code>label</code>.\nIf <code>label</code> is <code>null</code>, the label is omitted.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Frame\"/>, with optional label <pre>label</pre>.\nIf <pre>label</pre> is <pre>null</pre>, the label is omitted.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -17,23 +17,11 @@
             }
         }
     ],
-    "doc": "<p>The frame widget is a Bin that surrounds its child\nwith a decorative frame and an optional label.\nIf present, the label is drawn in a gap in the\ntop side of the frame. The position of the\nlabel can be controlled with <span data-xref=\"Gtk.Frame.set_label_align\"/>.</p><h1>GtkFrame as GtkBuildable</h1><p>The GtkFrame implementation of the GtkBuildable interface supports\nplacing a child in the label position by specifying \u201clabel\u201d as the\n\u201ctype\u201d attribute of a &lt;child&gt; element. A normal content child can\nbe specified without specifying a &lt;child&gt; type attribute.</p><p>An example of a UI definition fragment with GtkFrame:\n|[\n&lt;object class=\"GtkFrame\"&gt;\n  &lt;child type=\"label\"&gt;\n    &lt;object class=\"GtkLabel\" id=\"frame-label\"/&gt;\n  &lt;/child&gt;\n  &lt;child&gt;\n    &lt;object class=\"GtkEntry\" id=\"frame-content\"/&gt;\n  &lt;/child&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "bin"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>The frame widget is a Bin that surrounds its child\nwith a decorative frame and an optional label.\nIf present, the label is drawn in a gap in the\ntop side of the frame. The position of the\nlabel can be controlled with <span data-xref=\"Gtk.Frame.set_label_align\"/>.</p><h1>GtkFrame as GtkBuildable</h1><p>The GtkFrame implementation of the GtkBuildable interface supports\nplacing a child in the label position by specifying \u201clabel\u201d as the\n\u201ctype\u201d attribute of a <child> element. A normal content child can\nbe specified without specifying a <child> type attribute.</p><p>An example of a UI definition fragment with GtkFrame:\n|[\n<object class=\"GtkFrame\">\n  <child type=\"label\">\n    <object class=\"GtkLabel\" id=\"frame-label\"/>\n  </child>\n  <child>\n    <object class=\"GtkEntry\" id=\"frame-content\"/>\n  </child>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>If the frame\u2019s label widget is a <span data-xref=\"Gtk.Label\"/>, returns the\ntext in the label widget. (The frame will have a <span data-xref=\"Gtk.Label\"/>\nfor the label widget if a non-<code>null</code> argument was passed\nto <span data-xref=\"Gtk.Frame.new\"/>.)</p>",
+            "doc": "<p>If the frame\u2019s label widget is a <span data-xref=\"Gtk.Label\"/>, returns the\ntext in the label widget. (The frame will have a <span data-xref=\"Gtk.Label\"/>\nfor the label widget if a non-<pre>null</pre> argument was passed\nto <span data-xref=\"Gtk.Frame.new\"/>.)</p>",
             "kind": "method",
             "name": "get_label",
             "parameters": [],
@@ -82,7 +70,7 @@
             }
         },
         {
-            "doc": "<p>Sets the text of the label. If <code>label</code> is <code>null</code>,\nthe current label is removed.</p>",
+            "doc": "<p>Sets the text of the label. If <pre>label</pre> is <pre>null</pre>,\nthe current label is removed.</p>",
             "kind": "method",
             "name": "set_label",
             "parameters": [
@@ -136,7 +124,7 @@
             }
         },
         {
-            "doc": "<p>Sets the shadow type for <code>frame</code>.</p>",
+            "doc": "<p>Sets the shadow type for <pre>frame</pre>.</p>",
             "kind": "method",
             "name": "set_shadow_type",
             "parameters": [
@@ -150,8 +138,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Frame",
     "properties": [

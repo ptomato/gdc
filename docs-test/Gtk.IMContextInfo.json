@@ -1,0 +1,34 @@
+{
+    "constructors": [],
+    "doc": "<p>Bookkeeping information about a loadable input method.</p>",
+    "fields": [
+        {
+            "doc": "<p>The unique identification string of the input method.</p>",
+            "kind": "field",
+            "name": "context_id"
+        },
+        {
+            "doc": "<p>The human-readable name of the input method.</p>",
+            "kind": "field",
+            "name": "context_name"
+        },
+        {
+            "doc": "<p>Translation domain to be used with dgettext()</p>",
+            "kind": "field",
+            "name": "domain"
+        },
+        {
+            "doc": "<p>Name of locale directory for use with bindtextdomain()</p>",
+            "kind": "field",
+            "name": "domain_dirname"
+        },
+        {
+            "doc": "<p>A colon-separated list of locales where this input method\n  should be the default. The asterisk \u201c*\u201d sets the default for all locales.</p>",
+            "kind": "field",
+            "name": "default_locales"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "IMContextInfo"
+}

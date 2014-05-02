@@ -1,0 +1,44 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "base_iface"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_font_family"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_font_face"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_font_size"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_filter_func"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "font_activated"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "padding"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "FontChooserIface"
+}

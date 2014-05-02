@@ -1,0 +1,74 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "activate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "menu_item_type"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "toolbar_item_type"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "create_menu_item"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "create_tool_item"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "connect_proxy"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "disconnect_proxy"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "create_menu"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "ActionClass"
+}

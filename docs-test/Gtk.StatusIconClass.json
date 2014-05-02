@@ -1,0 +1,69 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "activate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "popup_menu"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "size_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "button_press_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "button_release_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "scroll_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "query_tooltip"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "__gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "__gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "__gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "__gtk_reserved4"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "StatusIconClass"
+}

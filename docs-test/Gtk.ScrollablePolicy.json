@@ -1,0 +1,17 @@
+{
+    "doc": "<p>Defines the policy to be used in a scrollable widget when updating\nthe scrolled window adjustments in a given orientation.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Scrollable adjustments are based on the minimum size</p>",
+            "kind": "default",
+            "name": "minimum"
+        },
+        {
+            "doc": "<p>Scrollable adjustments are based on the natural size</p>",
+            "kind": "default",
+            "name": "natural"
+        }
+    ],
+    "name": "ScrollablePolicy"
+}

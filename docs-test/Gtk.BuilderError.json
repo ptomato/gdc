@@ -1,0 +1,62 @@
+{
+    "doc": "<p>Error codes that identify various errors that can occur while using\n<span data-xref=\"Gtk.Builder\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>A type-func attribute didn\u2019t name\n a function that returns a <span data-xref=\"GLib.Type\">GLib.Type</span>.</p>",
+            "kind": "default",
+            "name": "invalid_type_function"
+        },
+        {
+            "doc": "<p>The input contained a tag that <span data-xref=\"Gtk.Builder\"/>\n can\u2019t handle.</p>",
+            "kind": "default",
+            "name": "unhandled_tag"
+        },
+        {
+            "doc": "<p>An attribute that is required by\n <span data-xref=\"Gtk.Builder\"/> was missing.</p>",
+            "kind": "default",
+            "name": "missing_attribute"
+        },
+        {
+            "doc": "<p><span data-xref=\"Gtk.Builder\"/> found an attribute that\n it doesn\u2019t understand.</p>",
+            "kind": "default",
+            "name": "invalid_attribute"
+        },
+        {
+            "doc": "<p><span data-xref=\"Gtk.Builder\"/> found a tag that\n it doesn\u2019t understand.</p>",
+            "kind": "default",
+            "name": "invalid_tag"
+        },
+        {
+            "doc": "<p>A required property value was\n missing.</p>",
+            "kind": "default",
+            "name": "missing_property_value"
+        },
+        {
+            "doc": "<p><span data-xref=\"Gtk.Builder\"/> couldn\u2019t parse\n some attribute value.</p>",
+            "kind": "default",
+            "name": "invalid_value"
+        },
+        {
+            "doc": "<p>The input file requires a newer version\n of GTK+.</p>",
+            "kind": "default",
+            "name": "version_mismatch"
+        },
+        {
+            "doc": "<p>An object id occurred twice.</p>",
+            "kind": "default",
+            "name": "duplicate_id"
+        },
+        {
+            "doc": "<p>A specified object type is of the same type or\n derived from the type of the composite class being extended with builder XML.</p>",
+            "kind": "default",
+            "name": "object_type_refused"
+        },
+        {
+            "doc": "<p>The wrong type was specified in a composite class\u2019s template XML</p>",
+            "kind": "default",
+            "name": "template_mismatch"
+        }
+    ],
+    "name": "BuilderError"
+}

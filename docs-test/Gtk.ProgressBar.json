@@ -11,18 +11,6 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.ProgressBar\"/> is typically used to display the progress of a long\nrunning operation.  It provides a visual clue that processing\nis underway.  The <span data-xref=\"Gtk.ProgressBar\"/> can be used in two different\nmodes: percentage mode and activity mode.</p><p>When an application can determine how much work needs to take place\n(e.g. read a fixed number of bytes from a file) and can monitor its\nprogress, it can use the <span data-xref=\"Gtk.ProgressBar\"/> in percentage mode and the user\nsees a growing bar indicating the percentage of the work that has\nbeen completed.  In this mode, the application is required to call\n<span data-xref=\"Gtk.ProgressBar.set_fraction\"/> periodically to update the progress bar.</p><p>When an application has no accurate way of knowing the amount of work\nto do, it can use the <span data-xref=\"Gtk.ProgressBar\"/> in activity mode, which shows\nactivity by a block moving back and forth within the progress area. In\nthis mode, the application is required to call <span data-xref=\"Gtk.ProgressBar.pulse\"/>\nperiodically to update the progress bar.</p><p>There is quite a bit of flexibility provided to control the appearance\nof the <span data-xref=\"Gtk.ProgressBar\"/>.  Functions are provided to control the\norientation of the bar, optional text can be displayed along with\nthe bar, and the step size used in activity mode can be set.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -71,7 +59,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves the text displayed superimposed on the progress bar,\nif any, otherwise <code>null</code>. The return value is a reference\nto the text, not a copy of it, so will become invalid\nif you change the text in the progress bar.</p>",
+            "doc": "<p>Retrieves the text displayed superimposed on the progress bar,\nif any, otherwise <pre>null</pre>. The return value is a reference\nto the text, not a copy of it, so will become invalid\nif you change the text in the progress bar.</p>",
             "kind": "method",
             "name": "get_text",
             "parameters": [],
@@ -153,7 +141,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether the progress bar will show text superimposed\nover the bar. The shown text is either the value of\nthe <span data-xref=\"Gtk.ProgressBar-text\"/> property or, if that is <code>null</code>,\nthe <span data-xref=\"Gtk.ProgressBar-fraction\"/> value, as a percentage.</p><p>To make a progress bar that is styled and sized suitably for containing\ntext (even if the actual text is blank), set <span data-xref=\"Gtk.ProgressBar-show-text\"/> to\n<code>true</code> and <span data-xref=\"Gtk.ProgressBar-text\"/> to the empty string (not <code>null</code>).</p>",
+            "doc": "<p>Sets whether the progress bar will show text superimposed\nover the bar. The shown text is either the value of\nthe <span data-xref=\"Gtk.ProgressBar-text\"/> property or, if that is <pre>null</pre>,\nthe <span data-xref=\"Gtk.ProgressBar-fraction\"/> value, as a percentage.</p><p>To make a progress bar that is styled and sized suitably for containing\ntext (even if the actual text is blank), set <span data-xref=\"Gtk.ProgressBar-show-text\"/> to\n<pre>true</pre> and <span data-xref=\"Gtk.ProgressBar-text\"/> to the empty string (not <pre>null</pre>).</p>",
             "kind": "method",
             "name": "set_show_text",
             "parameters": [
@@ -169,7 +157,7 @@
             }
         },
         {
-            "doc": "<p>Causes the given <code>text</code> to appear superimposed on the progress bar.</p><p>If <code>text</code> is <code>null</code> and <span data-xref=\"Gtk.ProgressBar-show-text\"/> is <code>true</code>, the current\nvalue of <span data-xref=\"Gtk.ProgressBar-fraction\"/> will be displayed as a percentage.</p><p>If <code>text</code> is non-<code>null</code> and <span data-xref=\"Gtk.ProgressBar-show-text\"/> is <code>true</code>, the text will\nbe displayed. In this case, it will not display the progress percentage.\nIf <code>text</code> is the empty string, the progress bar will still be styled and sized\nsuitably for containing text, as long as <span data-xref=\"Gtk.ProgressBar-show-text\"/> is <code>true</code>.</p>",
+            "doc": "<p>Causes the given <pre>text</pre> to appear superimposed on the progress bar.</p><p>If <pre>text</pre> is <pre>null</pre> and <span data-xref=\"Gtk.ProgressBar-show-text\"/> is <pre>true</pre>, the current\nvalue of <span data-xref=\"Gtk.ProgressBar-fraction\"/> will be displayed as a percentage.</p><p>If <pre>text</pre> is non-<pre>null</pre> and <span data-xref=\"Gtk.ProgressBar-show-text\"/> is <pre>true</pre>, the text will\nbe displayed. In this case, it will not display the progress percentage.\nIf <pre>text</pre> is the empty string, the progress bar will still be styled and sized\nsuitably for containing text, as long as <span data-xref=\"Gtk.ProgressBar-show-text\"/> is <pre>true</pre>.</p>",
             "kind": "method",
             "name": "set_text",
             "parameters": [
@@ -183,8 +171,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ProgressBar",
     "properties": [
@@ -213,7 +200,7 @@
             "type": "Number(gdouble)"
         },
         {
-            "doc": "<p>Sets whether the progress bar will show text superimposed\nover the bar. The shown text is either the value of\nthe <span data-xref=\"Gtk.ProgressBar-text\"/> property or, if that is <code>null</code>,\nthe <span data-xref=\"Gtk.ProgressBar-fraction\"/> value, as a percentage.</p><p>To make a progress bar that is styled and sized suitably for containing\ntext (even if the actual text is blank), set <span data-xref=\"Gtk.ProgressBar-show-text\"/> to\n<code>true</code> and <span data-xref=\"Gtk.ProgressBar-text\"/> to the empty string (not <code>null</code>).</p>",
+            "doc": "<p>Sets whether the progress bar will show text superimposed\nover the bar. The shown text is either the value of\nthe <span data-xref=\"Gtk.ProgressBar-text\"/> property or, if that is <pre>null</pre>,\nthe <span data-xref=\"Gtk.ProgressBar-fraction\"/> value, as a percentage.</p><p>To make a progress bar that is styled and sized suitably for containing\ntext (even if the actual text is blank), set <span data-xref=\"Gtk.ProgressBar-show-text\"/> to\n<pre>true</pre> and <span data-xref=\"Gtk.ProgressBar-text\"/> to the empty string (not <pre>null</pre>).</p>",
             "kind": "property",
             "name": "show-text",
             "type": "Boolean"

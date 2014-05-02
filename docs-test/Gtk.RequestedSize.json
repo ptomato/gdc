@@ -1,0 +1,24 @@
+{
+    "constructors": [],
+    "doc": "<p>Represents a request of a screen object in a given orientation. These\nare primarily used in container implementations when allocating a natural\nsize for children calling. See <span data-xref=\"Gtk.distribute_natural_allocation\"/>.</p>",
+    "fields": [
+        {
+            "doc": "<p>A client pointer</p>",
+            "kind": "field",
+            "name": "data"
+        },
+        {
+            "doc": "<p>The minimum size needed for allocation in a given orientation</p>",
+            "kind": "field",
+            "name": "minimum_size"
+        },
+        {
+            "doc": "<p>The natural size for allocation in a given orientation</p>",
+            "kind": "field",
+            "name": "natural_size"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "RequestedSize"
+}

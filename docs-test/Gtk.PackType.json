@@ -1,0 +1,17 @@
+{
+    "doc": "<p>Represents the packing location <span data-xref=\"Gtk.Box\"/> children. (See: <span data-xref=\"Gtk.VBox\"/>,\n<span data-xref=\"Gtk.HBox\"/>, and <span data-xref=\"Gtk.ButtonBox\"/>).</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The child is packed into the start of the box</p>",
+            "kind": "default",
+            "name": "start"
+        },
+        {
+            "doc": "<p>The child is packed into the end of the box</p>",
+            "kind": "default",
+            "name": "end"
+        }
+    ],
+    "name": "PackType"
+}

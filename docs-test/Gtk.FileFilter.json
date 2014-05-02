@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.FileFilter\"/> with no rules added to it.\nSuch a filter doesn\u2019t accept any files, so is not\nparticularly useful until you add rules with\n<span data-xref=\"Gtk.FileFilter.add_mime_type\"/>, <span data-xref=\"Gtk.FileFilter.add_pattern\"/>,\nor <span data-xref=\"Gtk.FileFilter.add_custom\"/>. To create a filter\nthat accepts any file, use:\n|[&lt;!-- language=\"C\" --&gt;\nGtkFileFilter <em>filter = gtk_file_filter_new ();\ngtk_file_filter_add_pattern (filter, \"</em>\");\n]|</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.FileFilter\"/> with no rules added to it.\nSuch a filter doesn\u2019t accept any files, so is not\nparticularly useful until you add rules with\n<span data-xref=\"Gtk.FileFilter.add_mime_type\"/>, <span data-xref=\"Gtk.FileFilter.add_pattern\"/>,\nor <span data-xref=\"Gtk.FileFilter.add_custom\"/>. To create a filter\nthat accepts any file, use:\n|[<!-- language=\"C\" -->\nGtkFileFilter <em>filter = gtk_file_filter_new ();\ngtk_file_filter_add_pattern (filter, \"</em>\");\n]|</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [],
@@ -10,12 +10,11 @@
             }
         }
     ],
-    "doc": "<p>A GtkFileFilter can be used to restrict the files being shown in a\n<span data-xref=\"Gtk.FileChooser\"/>. Files can be filtered based on their name (with\n<span data-xref=\"Gtk.FileFilter.add_pattern\"/>), on their mime type (with\n<span data-xref=\"Gtk.FileFilter.add_mime_type\"/>), or by a custom filter function\n(with <span data-xref=\"Gtk.FileFilter.add_custom\"/>).</p><p>Filtering by mime types handles aliasing and subclassing of mime\ntypes; e.g. a filter for text/plain also matches a file with mime\ntype application/rtf, since application/rtf is a subclass of\ntext/plain. Note that <span data-xref=\"Gtk.FileFilter\"/> allows wildcards for the\nsubtype of a mime type, so you can e.g. filter for image/*.</p><p>Normally, filters are used by adding them to a <span data-xref=\"Gtk.FileChooser\"/>,\nsee <span data-xref=\"Gtk.FileChooser.add_filter\"/>, but it is also possible\nto manually use a filter on a file with <span data-xref=\"Gtk.FileFilter.filter\"/>.</p><h1>GtkFileFilter as GtkBuildable</h1><p>The GtkFileFilter implementation of the GtkBuildable interface\nsupports adding rules using the &lt;mime-types&gt;, &lt;patterns&gt; and\n&lt;applications&gt; elements and listing the rules within. Specifying\na &lt;mime-type&gt; or &lt;pattern&gt; has the same effect as as calling\n<span data-xref=\"Gtk.RecentFilter.add_mime_type\"/> or <span data-xref=\"Gtk.RecentFilter.add_pattern\"/>.</p><p>An example of a UI definition fragment specifying GtkFileFilter\nrules:\n|[\n&lt;object class=\"GtkFileFilter\"&gt;\n  &lt;mime-types&gt;\n    &lt;mime-type&gt;text/plain&lt;/mime-type&gt;\n    &lt;mime-type&gt;image/ <em>&lt;/mime-type&gt;\n  &lt;/mime-types&gt;\n  &lt;patterns&gt;\n    &lt;pattern&gt;</em>.txt&lt;/pattern&gt;\n    &lt;pattern&gt;*.png&lt;/pattern&gt;\n  &lt;/patterns&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [],
+    "doc": "<p>A GtkFileFilter can be used to restrict the files being shown in a\n<span data-xref=\"Gtk.FileChooser\"/>. Files can be filtered based on their name (with\n<span data-xref=\"Gtk.FileFilter.add_pattern\"/>), on their mime type (with\n<span data-xref=\"Gtk.FileFilter.add_mime_type\"/>), or by a custom filter function\n(with <span data-xref=\"Gtk.FileFilter.add_custom\"/>).</p><p>Filtering by mime types handles aliasing and subclassing of mime\ntypes; e.g. a filter for text/plain also matches a file with mime\ntype application/rtf, since application/rtf is a subclass of\ntext/plain. Note that <span data-xref=\"Gtk.FileFilter\"/> allows wildcards for the\nsubtype of a mime type, so you can e.g. filter for image/*.</p><p>Normally, filters are used by adding them to a <span data-xref=\"Gtk.FileChooser\"/>,\nsee <span data-xref=\"Gtk.FileChooser.add_filter\"/>, but it is also possible\nto manually use a filter on a file with <span data-xref=\"Gtk.FileFilter.filter\"/>.</p><h1>GtkFileFilter as GtkBuildable</h1><p>The GtkFileFilter implementation of the GtkBuildable interface\nsupports adding rules using the <mime-types>, <patterns> and\n<applications> elements and listing the rules within. Specifying\na <mime-type> or <pattern> has the same effect as as calling\n<span data-xref=\"Gtk.RecentFilter.add_mime_type\"/> or <span data-xref=\"Gtk.RecentFilter.add_pattern\"/>.</p><p>An example of a UI definition fragment specifying GtkFileFilter\nrules:\n|[\n<object class=\"GtkFileFilter\">\n  <mime-types>\n    <mime-type>text/plain</mime-type>\n    <mime-type>image/ <em></mime-type>\n  </mime-types>\n  <patterns>\n    <pattern></em>.txt</pattern>\n    <pattern>*.png</pattern>\n  </patterns>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Adds rule to a filter that allows files based on a custom callback\nfunction. The bitfield <code>needed</code> which is passed in provides information\nabout what sorts of information that the filter function needs;\nthis allows GTK+ to avoid retrieving expensive information when\nit isn\u2019t needed by the filter.</p>",
+            "doc": "<p>Adds rule to a filter that allows files based on a custom callback\nfunction. The bitfield <pre>needed</pre> which is passed in provides information\nabout what sorts of information that the filter function needs;\nthis allows GTK+ to avoid retrieving expensive information when\nit isn\u2019t needed by the filter.</p>",
             "kind": "method",
             "name": "add_custom",
             "parameters": [
@@ -49,7 +48,7 @@
             }
         },
         {
-            "doc": "<p>Adds a rule allowing a given mime type to <code>filter</code>.</p>",
+            "doc": "<p>Adds a rule allowing a given mime type to <pre>filter</pre>.</p>",
             "kind": "method",
             "name": "add_mime_type",
             "parameters": [
@@ -90,7 +89,7 @@
             }
         },
         {
-            "doc": "<p>Tests whether a file should be displayed according to <code>filter</code>.\nThe <span data-xref=\"Gtk.FileFilterInfo\"/> <code>filter_info</code> should include\nthe fields returned from <span data-xref=\"Gtk.FileFilter.get_needed\"/>.</p><p>This function will not typically be used by applications; it\nis intended principally for use in the implementation of\n<span data-xref=\"Gtk.FileChooser\"/>.</p>",
+            "doc": "<p>Tests whether a file should be displayed according to <pre>filter</pre>.\nThe <span data-xref=\"Gtk.FileFilterInfo\"/> <pre>filter_info</pre> should include\nthe fields returned from <span data-xref=\"Gtk.FileFilter.get_needed\"/>.</p><p>This function will not typically be used by applications; it\nis intended principally for use in the implementation of\n<span data-xref=\"Gtk.FileChooser\"/>.</p>",
             "kind": "method",
             "name": "filter",
             "parameters": [
@@ -138,8 +137,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "FileFilter",
     "properties": [],

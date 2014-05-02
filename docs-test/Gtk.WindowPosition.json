@@ -1,0 +1,32 @@
+{
+    "doc": "<p>Window placement can be influenced using this enumeration. Note that\nusing #GTK_WIN_POS_CENTER_ALWAYS is almost always a bad idea.\nIt won\u2019t necessarily work well with all window managers or on all windowing systems.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>No influence is made on placement.</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>Windows should be placed in the center of the screen.</p>",
+            "kind": "default",
+            "name": "center"
+        },
+        {
+            "doc": "<p>Windows should be placed at the current mouse position.</p>",
+            "kind": "default",
+            "name": "mouse"
+        },
+        {
+            "doc": "<p>Keep window centered as it changes size, etc.</p>",
+            "kind": "default",
+            "name": "center_always"
+        },
+        {
+            "doc": "<p>Center the window on its transient\n parent (see <span data-xref=\"Gtk.Window.set_transient_for\"/>).</p>",
+            "kind": "default",
+            "name": "center_on_parent"
+        }
+    ],
+    "name": "WindowPosition"
+}

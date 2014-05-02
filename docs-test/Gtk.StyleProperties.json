@@ -11,22 +11,10 @@
         }
     ],
     "doc": "<p>GtkStyleProperties provides the storage for style information\nthat is used by <span data-xref=\"Gtk.StyleContext\"/> and other <span data-xref=\"Gtk.StyleProvider\"/>\nimplementations.</p><p>Before style properties can be stored in GtkStyleProperties, they\nmust be registered with <span data-xref=\"Gtk.StyleProperties.register_property\"/>.</p><p>Unless you are writing a <span data-xref=\"Gtk.StyleProvider\"/> implementation, you\nare unlikely to use this API directly, as <span data-xref=\"Gtk.StyleContext.get\"/>\nand its variants are the preferred way to access styling information\nfrom widget implementations and theming engine implementations\nshould use the APIs provided by <span data-xref=\"Gtk.ThemingEngine\"/> instead.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_object"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Clears all style information from <code>props</code>.</p>",
+            "doc": "<p>Clears all style information from <pre>props</pre>.</p>",
             "kind": "method",
             "name": "clear",
             "parameters": [],
@@ -35,7 +23,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves several style property values from <code>props</code> for a\ngiven state.</p>",
+            "doc": "<p>Retrieves several style property values from <pre>props</pre> for a\ngiven state.</p>",
             "kind": "method",
             "name": "get",
             "parameters": [
@@ -57,7 +45,7 @@
             }
         },
         {
-            "doc": "<p>Gets a style property from <code>props</code> for the given state. When done with <code>value</code>,\n<span data-xref=\"GObject.Value.unset\">GObject.Value.prototype.unset</span> needs to be called to free any allocated memory.</p>",
+            "doc": "<p>Gets a style property from <pre>props</pre> for the given state. When done with <pre>value</pre>,\n<span data-xref=\"GObject.Value.unset\">GObject.Value.prototype.unset</span> needs to be called to free any allocated memory.</p>",
             "kind": "method",
             "name": "get_property",
             "parameters": [
@@ -85,7 +73,7 @@
             }
         },
         {
-            "doc": "<p>Retrieves several style property values from <code>props</code> for a given state.</p>",
+            "doc": "<p>Retrieves several style property values from <pre>props</pre> for a given state.</p>",
             "kind": "method",
             "name": "get_valist",
             "parameters": [
@@ -107,7 +95,7 @@
             }
         },
         {
-            "doc": "<p>Returns the symbolic color that is mapped\nto <code>name</code>.</p>",
+            "doc": "<p>Returns the symbolic color that is mapped\nto <pre>name</pre>.</p>",
             "kind": "method",
             "name": "lookup_color",
             "parameters": [
@@ -123,7 +111,7 @@
             }
         },
         {
-            "doc": "<p>Maps <code>color</code> so it can be referenced by <code>name</code>. See\n<span data-xref=\"Gtk.StyleProperties.lookup_color\"/></p>",
+            "doc": "<p>Maps <pre>color</pre> so it can be referenced by <pre>name</pre>. See\n<span data-xref=\"Gtk.StyleProperties.lookup_color\"/></p>",
             "kind": "method",
             "name": "map_color",
             "parameters": [
@@ -145,7 +133,7 @@
             }
         },
         {
-            "doc": "<p>Merges into <code>props</code> all the style information contained\nin <code>props_to_merge</code>. If <code>replace</code> is <code>true</code>, the values\nwill be overwritten, if it is <code>false</code>, the older values\nwill prevail.</p>",
+            "doc": "<p>Merges into <pre>props</pre> all the style information contained\nin <pre>props_to_merge</pre>. If <pre>replace</pre> is <pre>true</pre>, the values\nwill be overwritten, if it is <pre>false</pre>, the older values\nwill prevail.</p>",
             "kind": "method",
             "name": "merge",
             "parameters": [
@@ -167,7 +155,7 @@
             }
         },
         {
-            "doc": "<p>Sets several style properties on <code>props</code>.</p>",
+            "doc": "<p>Sets several style properties on <pre>props</pre>.</p>",
             "kind": "method",
             "name": "set",
             "parameters": [
@@ -189,7 +177,7 @@
             }
         },
         {
-            "doc": "<p>Sets a styling property in <code>props</code>.</p>",
+            "doc": "<p>Sets a styling property in <pre>props</pre>.</p>",
             "kind": "method",
             "name": "set_property",
             "parameters": [
@@ -217,7 +205,7 @@
             }
         },
         {
-            "doc": "<p>Sets several style properties on <code>props</code>.</p>",
+            "doc": "<p>Sets several style properties on <pre>props</pre>.</p>",
             "kind": "method",
             "name": "set_valist",
             "parameters": [
@@ -239,7 +227,7 @@
             }
         },
         {
-            "doc": "<p>Unsets a style property in <code>props</code>.</p>",
+            "doc": "<p>Unsets a style property in <pre>props</pre>.</p>",
             "kind": "method",
             "name": "unset_property",
             "parameters": [
@@ -260,58 +248,56 @@
                 "type": "void"
             }
         },
-        [
-            {
-                "doc": "<p>Returns <code>true</code> if a property has been registered, if <code>pspec</code> or\n<code>parse_func</code> are not <code>null</code>, the <span data-xref=\"GObject.ParamSpec\">GObject.ParamSpec</span> and parsing function\nwill be respectively returned.</p>",
-                "kind": "function",
-                "name": "lookup_property",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "property_name",
-                        "direction": "in",
-                        "type": "String"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "parse_func",
-                        "direction": "out",
-                        "type": "Gtk.StylePropertyParser"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "pspec",
-                        "direction": "out",
-                        "type": "GObject.ParamSpec"
-                    }
-                ],
-                "retval": {
-                    "type": "Boolean"
+        {
+            "doc": "<p>Returns <pre>true</pre> if a property has been registered, if <pre>pspec</pre> or\n<pre>parse_func</pre> are not <pre>null</pre>, the <span data-xref=\"GObject.ParamSpec\">GObject.ParamSpec</span> and parsing function\nwill be respectively returned.</p>",
+            "kind": "function",
+            "name": "lookup_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "parse_func",
+                    "direction": "out",
+                    "type": "Gtk.StylePropertyParser"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "out",
+                    "type": "GObject.ParamSpec"
                 }
-            },
-            {
-                "doc": "<p>Registers a property so it can be used in the CSS file format.\nThis function is the low-level equivalent of\n<span data-xref=\"Gtk.ThemingEngine.register_property\"/>, if you are implementing\na theming engine, you want to use that function instead.</p>",
-                "kind": "function",
-                "name": "register_property",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "parse_func",
-                        "direction": "in",
-                        "type": "Gtk.StylePropertyParser"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "pspec",
-                        "direction": "in",
-                        "type": "GObject.ParamSpec"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
+            ],
+            "retval": {
+                "type": "Boolean"
             }
-        ]
+        },
+        {
+            "doc": "<p>Registers a property so it can be used in the CSS file format.\nThis function is the low-level equivalent of\n<span data-xref=\"Gtk.ThemingEngine.register_property\"/>, if you are implementing\na theming engine, you want to use that function instead.</p>",
+            "kind": "function",
+            "name": "register_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "parse_func",
+                    "direction": "in",
+                    "type": "Gtk.StylePropertyParser"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
     ],
     "name": "StyleProperties",
     "properties": [],

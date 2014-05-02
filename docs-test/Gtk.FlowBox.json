@@ -11,13 +11,6 @@
         }
     ],
     "doc": "<p>A GtkFlowBox positions child widgets in sequence according to its\norientation.</p><p>For instance, with the horizontal orientation, the widgets will be\narranged from left to right, starting a new row under the previous\nrow when necessary. Reducing the width in this case will require more\nrows, so a larger height will be requested.</p><p>Likewise, with the vertical orientation, the widgets will be arranged\nfrom top to bottom, starting a new column to the right when necessary.\nReducing the height will require more columns, so a larger width will\nbe requested.</p><p>The children of a GtkFlowBox can be dynamically sorted and filtered.</p><p>Although a GtkFlowBox must have only <span data-xref=\"Gtk.FlowBoxChild\"/> children,\nyou can add any kind of widget to it via <span data-xref=\"Gtk.Container.add\"/>, and\na GtkFlowBoxChild widget will automatically be inserted between\nthe box and the widget.</p><p>Also see <span data-xref=\"Gtk.ListBox\"/>.</p><p>GtkFlowBox was added in GTK+ 3.12.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "container"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -30,7 +23,7 @@
             }
         },
         {
-            "doc": "<p>Gets the nth child in the <code>box</code>.</p>",
+            "doc": "<p>Gets the nth child in the <pre>box</pre>.</p>",
             "kind": "method",
             "name": "get_child_at_index",
             "parameters": [
@@ -100,7 +93,7 @@
             }
         },
         {
-            "doc": "<p>Gets the selection mode of <code>box</code>.</p>",
+            "doc": "<p>Gets the selection mode of <pre>box</pre>.</p>",
             "kind": "method",
             "name": "get_selection_mode",
             "parameters": [],
@@ -109,7 +102,7 @@
             }
         },
         {
-            "doc": "<p>Inserts the <code>widget</code> into <code>box</code> at <code>position</code>.</p><p>If a sort function is set, the widget will actually be inserted\nat the calculated position and this function has the same effect\nas <span data-xref=\"Gtk.Container.add\"/>.</p><p>If <code>position</code> is -1, or larger than the total number of children\nin the <code>box</code>, then the <code>widget</code> will be appended to the end.</p>",
+            "doc": "<p>Inserts the <pre>widget</pre> into <pre>box</pre> at <pre>position</pre>.</p><p>If a sort function is set, the widget will actually be inserted\nat the calculated position and this function has the same effect\nas <span data-xref=\"Gtk.Container.add\"/>.</p><p>If <pre>position</pre> is -1, or larger than the total number of children\nin the <pre>box</pre>, then the <pre>widget</pre> will be appended to the end.</p>",
             "kind": "method",
             "name": "insert",
             "parameters": [
@@ -131,7 +124,7 @@
             }
         },
         {
-            "doc": "<p>Updates the filtering for all children.</p><p>Call this function when the result of the filter\nfunction on the <code>box</code> is changed due ot an external\nfactor. For instance, this would be used if the\nfilter function just looked for a specific search\nterm, and the entry with the string has changed.</p>",
+            "doc": "<p>Updates the filtering for all children.</p><p>Call this function when the result of the filter\nfunction on the <pre>box</pre> is changed due ot an external\nfactor. For instance, this would be used if the\nfilter function just looked for a specific search\nterm, and the entry with the string has changed.</p>",
             "kind": "method",
             "name": "invalidate_filter",
             "parameters": [],
@@ -140,7 +133,7 @@
             }
         },
         {
-            "doc": "<p>Updates the sorting for all children.</p><p>Call this when the result of the sort function on\n<code>box</code> is changed due to an external factor.</p>",
+            "doc": "<p>Updates the sorting for all children.</p><p>Call this when the result of the sort function on\n<pre>box</pre> is changed due to an external factor.</p>",
             "kind": "method",
             "name": "invalidate_sort",
             "parameters": [],
@@ -149,7 +142,7 @@
             }
         },
         {
-            "doc": "<p>Select all children of <code>box</code>, if the selection\nmode allows it.</p>",
+            "doc": "<p>Select all children of <pre>box</pre>, if the selection\nmode allows it.</p>",
             "kind": "method",
             "name": "select_all",
             "parameters": [],
@@ -158,7 +151,7 @@
             }
         },
         {
-            "doc": "<p>Selects a single child of <code>box</code>, if the selection\nmode allows it.</p>",
+            "doc": "<p>Selects a single child of <pre>box</pre>, if the selection\nmode allows it.</p>",
             "kind": "method",
             "name": "select_child",
             "parameters": [
@@ -196,7 +189,7 @@
             }
         },
         {
-            "doc": "<p>If <code>single</code> is <code>true</code>, children will be activated when you click\non them, otherwise you need to double-click.</p>",
+            "doc": "<p>If <pre>single</pre> is <pre>true</pre>, children will be activated when you click\non them, otherwise you need to double-click.</p>",
             "kind": "method",
             "name": "set_activate_on_single_click",
             "parameters": [
@@ -228,7 +221,7 @@
             }
         },
         {
-            "doc": "<p>By setting a filter function on the <code>box</code> one can decide dynamically\nwhich of the children to show. For instance, to implement a search\nfunction that only shows the children matching the search terms.</p><p>The <code>filter_func</code> will be called for each child after the call, and\nit will continue to be called each time a child changes (via\n<span data-xref=\"Gtk.FlowBoxChild.changed\"/>) or when <span data-xref=\"Gtk.FlowBox.invalidate_filter\"/>\nis called.</p>",
+            "doc": "<p>By setting a filter function on the <pre>box</pre> one can decide dynamically\nwhich of the children to show. For instance, to implement a search\nfunction that only shows the children matching the search terms.</p><p>The <pre>filter_func</pre> will be called for each child after the call, and\nit will continue to be called each time a child changes (via\n<span data-xref=\"Gtk.FlowBoxChild.changed\"/>) or when <span data-xref=\"Gtk.FlowBox.invalidate_filter\"/>\nis called.</p>",
             "kind": "method",
             "name": "set_filter_func",
             "parameters": [
@@ -256,7 +249,7 @@
             }
         },
         {
-            "doc": "<p>Hooks up an adjustment to focus handling in <code>box</code>.\nThe adjustment is also used for autoscrolling during\nrubberband selection. See <span data-xref=\"Gtk.ScrolledWindow.get_hadjustment\"/>\nfor a typical way of obtaining the adjustment, and\n<span data-xref=\"Gtk.FlowBox.set_vadjustment\"/>for setting the vertical\nadjustment.</p><p>The adjustments have to be in pixel units and in the same\ncoordinate system as the allocation for immediate children\nof the box.</p>",
+            "doc": "<p>Hooks up an adjustment to focus handling in <pre>box</pre>.\nThe adjustment is also used for autoscrolling during\nrubberband selection. See <span data-xref=\"Gtk.ScrolledWindow.get_hadjustment\"/>\nfor a typical way of obtaining the adjustment, and\n<span data-xref=\"Gtk.FlowBox.set_vadjustment\"/>for setting the vertical\nadjustment.</p><p>The adjustments have to be in pixel units and in the same\ncoordinate system as the allocation for immediate children\nof the box.</p>",
             "kind": "method",
             "name": "set_hadjustment",
             "parameters": [
@@ -272,7 +265,7 @@
             }
         },
         {
-            "doc": "<p>Sets the <span data-xref=\"Gtk.FlowBox-homogeneous\"/> property of <code>box</code>, controlling\nwhether or not all children of <code>box</code> are given equal space\nin the box.</p>",
+            "doc": "<p>Sets the <span data-xref=\"Gtk.FlowBox-homogeneous\"/> property of <pre>box</pre>, controlling\nwhether or not all children of <pre>box</pre> are given equal space\nin the box.</p>",
             "kind": "method",
             "name": "set_homogeneous",
             "parameters": [
@@ -288,7 +281,7 @@
             }
         },
         {
-            "doc": "<p>Sets the maximum number of children to request and\nallocate space for in <code>box</code>\u2019s orientation.</p><p>Setting the maximum number of children per line\nlimits the overall natural size request to be no more\nthan <code>n_children</code> children long in the given orientation.</p>",
+            "doc": "<p>Sets the maximum number of children to request and\nallocate space for in <pre>box</pre>\u2019s orientation.</p><p>Setting the maximum number of children per line\nlimits the overall natural size request to be no more\nthan <pre>n_children</pre> children long in the given orientation.</p>",
             "kind": "method",
             "name": "set_max_children_per_line",
             "parameters": [
@@ -304,7 +297,7 @@
             }
         },
         {
-            "doc": "<p>Sets the minimum number of children to line up\nin <code>box</code>\u2019s orientation before flowing.</p>",
+            "doc": "<p>Sets the minimum number of children to line up\nin <pre>box</pre>\u2019s orientation before flowing.</p>",
             "kind": "method",
             "name": "set_min_children_per_line",
             "parameters": [
@@ -336,7 +329,7 @@
             }
         },
         {
-            "doc": "<p>Sets how selection works in <code>box</code>.\nSee <span data-xref=\"Gtk.SelectionMode\"/> for details.</p>",
+            "doc": "<p>Sets how selection works in <pre>box</pre>.\nSee <span data-xref=\"Gtk.SelectionMode\"/> for details.</p>",
             "kind": "method",
             "name": "set_selection_mode",
             "parameters": [
@@ -352,7 +345,7 @@
             }
         },
         {
-            "doc": "<p>By setting a sort function on the <code>box</code>, one can dynamically\nreorder the children of the box, based on the contents of\nthe children.</p><p>The <code>sort_func</code> will be called for each child after the call,\nand will continue to be called each time a child changes (via\n<span data-xref=\"Gtk.FlowBoxChild.changed\"/>) and when <span data-xref=\"Gtk.FlowBox.invalidate_sort\"/>\nis called.</p>",
+            "doc": "<p>By setting a sort function on the <pre>box</pre>, one can dynamically\nreorder the children of the box, based on the contents of\nthe children.</p><p>The <pre>sort_func</pre> will be called for each child after the call,\nand will continue to be called each time a child changes (via\n<span data-xref=\"Gtk.FlowBoxChild.changed\"/>) and when <span data-xref=\"Gtk.FlowBox.invalidate_sort\"/>\nis called.</p>",
             "kind": "method",
             "name": "set_sort_func",
             "parameters": [
@@ -380,7 +373,7 @@
             }
         },
         {
-            "doc": "<p>Hooks up an adjustment to focus handling in <code>box</code>.\nThe adjustment is also used for autoscrolling during\nrubberband selection. See <span data-xref=\"Gtk.ScrolledWindow.get_vadjustment\"/>\nfor a typical way of obtaining the adjustment, and\n<span data-xref=\"Gtk.FlowBox.set_hadjustment\"/>for setting the horizontal\nadjustment.</p><p>The adjustments have to be in pixel units and in the same\ncoordinate system as the allocation for immediate children\nof the box.</p>",
+            "doc": "<p>Hooks up an adjustment to focus handling in <pre>box</pre>.\nThe adjustment is also used for autoscrolling during\nrubberband selection. See <span data-xref=\"Gtk.ScrolledWindow.get_vadjustment\"/>\nfor a typical way of obtaining the adjustment, and\n<span data-xref=\"Gtk.FlowBox.set_hadjustment\"/>for setting the horizontal\nadjustment.</p><p>The adjustments have to be in pixel units and in the same\ncoordinate system as the allocation for immediate children\nof the box.</p>",
             "kind": "method",
             "name": "set_vadjustment",
             "parameters": [
@@ -396,7 +389,7 @@
             }
         },
         {
-            "doc": "<p>Unselect all children of <code>box</code>, if the selection\nmode allows it.</p>",
+            "doc": "<p>Unselect all children of <pre>box</pre>, if the selection\nmode allows it.</p>",
             "kind": "method",
             "name": "unselect_all",
             "parameters": [],
@@ -405,7 +398,7 @@
             }
         },
         {
-            "doc": "<p>Unselects a single child of <code>box</code>, if the selection\nmode allows it.</p>",
+            "doc": "<p>Unselects a single child of <pre>box</pre>, if the selection\nmode allows it.</p>",
             "kind": "method",
             "name": "unselect_child",
             "parameters": [
@@ -419,8 +412,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "FlowBox",
     "properties": [
@@ -601,7 +593,7 @@
             }
         },
         {
-            "doc": "<p>Select all children of <code>box</code>, if the selection\nmode allows it.</p>",
+            "doc": "<p>Select all children of <pre>box</pre>, if the selection\nmode allows it.</p>",
             "kind": "vfunc",
             "name": "select_all",
             "parameters": [],
@@ -628,7 +620,7 @@
             }
         },
         {
-            "doc": "<p>Unselect all children of <code>box</code>, if the selection\nmode allows it.</p>",
+            "doc": "<p>Unselect all children of <pre>box</pre>, if the selection\nmode allows it.</p>",
             "kind": "vfunc",
             "name": "unselect_all",
             "parameters": [],

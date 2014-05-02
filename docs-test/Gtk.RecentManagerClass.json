@@ -1,0 +1,39 @@
+{
+    "constructors": [],
+    "doc": "<p><span data-xref=\"Gtk.RecentManagerClass\"/> contains only private data.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_recent1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_recent2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_recent3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_recent4"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "RecentManagerClass"
+}

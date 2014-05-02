@@ -1,0 +1,29 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "g_iface"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "editing_done"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "remove_widget"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "start_editing"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "CellEditableIface"
+}

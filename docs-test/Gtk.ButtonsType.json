@@ -1,0 +1,37 @@
+{
+    "doc": "<p>Prebuilt sets of buttons for the dialog. If\nnone of these choices are appropriate, simply use <span data-xref=\"Gtk.ButtonsType\"/>.none\nthen call <span data-xref=\"Gtk.Dialog.add_buttons\"/>.</p><blockquote>\n<p>Please note that <span data-xref=\"Gtk.ButtonsType\"/>.ok, <span data-xref=\"Gtk.ButtonsType\"/>.yes_no\nand <span data-xref=\"Gtk.ButtonsType\"/>.ok_cancel are discouraged by the\n<a href=\"http://library.gnome.org/devel/hig-book/stable/\">GNOME Human Interface Guidelines</a>.</p>\n</blockquote>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>no buttons at all</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>an OK button</p>",
+            "kind": "default",
+            "name": "ok"
+        },
+        {
+            "doc": "<p>a Close button</p>",
+            "kind": "default",
+            "name": "close"
+        },
+        {
+            "doc": "<p>a Cancel button</p>",
+            "kind": "default",
+            "name": "cancel"
+        },
+        {
+            "doc": "<p>Yes and No buttons</p>",
+            "kind": "default",
+            "name": "yes_no"
+        },
+        {
+            "doc": "<p>OK and Cancel buttons</p>",
+            "kind": "default",
+            "name": "ok_cancel"
+        }
+    ],
+    "name": "ButtonsType"
+}

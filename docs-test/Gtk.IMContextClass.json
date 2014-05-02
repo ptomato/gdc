@@ -1,0 +1,124 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "preedit_start"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "preedit_end"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "preedit_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "commit"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "retrieve_surrounding"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "delete_surrounding"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_client_window"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preedit_string"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "filter_keypress"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "focus_in"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "focus_out"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "reset"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_cursor_location"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_use_preedit"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_surrounding"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_surrounding"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved6"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "IMContextClass"
+}

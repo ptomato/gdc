@@ -1,0 +1,27 @@
+{
+    "doc": "<p>Used to specify the style of the expanders drawn by a <span data-xref=\"Gtk.TreeView\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The style used for a collapsed subtree.</p>",
+            "kind": "default",
+            "name": "collapsed"
+        },
+        {
+            "doc": "<p>Intermediate style used during animation.</p>",
+            "kind": "default",
+            "name": "semi_collapsed"
+        },
+        {
+            "doc": "<p>Intermediate style used during animation.</p>",
+            "kind": "default",
+            "name": "semi_expanded"
+        },
+        {
+            "doc": "<p>The style used for an expanded subtree.</p>",
+            "kind": "default",
+            "name": "expanded"
+        }
+    ],
+    "name": "ExpanderStyle"
+}

@@ -1,0 +1,54 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "create_rc_style"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parse"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "merge"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "create_style"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "RcStyleClass"
+}

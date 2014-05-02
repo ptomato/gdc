@@ -1,0 +1,24 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The accelerator keyval</p>",
+            "kind": "field",
+            "name": "accel_key"
+        },
+        {
+            "doc": "<p>The accelerator modifiers</p>",
+            "kind": "field",
+            "name": "accel_mods"
+        },
+        {
+            "doc": "<p>The accelerator flags</p>",
+            "kind": "field",
+            "name": "accel_flags"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "AccelKey"
+}

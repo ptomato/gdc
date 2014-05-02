@@ -11,18 +11,6 @@
         }
     ],
     "doc": "<p>A GtkSpinner widget displays an icon-size spinning animation.\nIt is often used as an alternative to a <span data-xref=\"Gtk.ProgressBar\"/> for\ndisplaying indefinite activity, instead of actual progress.</p><p>To start the animation, use <span data-xref=\"Gtk.Spinner.start\"/>, to stop it\nuse <span data-xref=\"Gtk.Spinner.stop\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -42,8 +30,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Spinner",
     "properties": [

@@ -1,0 +1,37 @@
+{
+    "doc": "<p>Deprecated.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Failed.</p>",
+            "kind": "default",
+            "name": "failed"
+        },
+        {
+            "doc": "<p>Syntax error.</p>",
+            "kind": "default",
+            "name": "syntax"
+        },
+        {
+            "doc": "<p>Import error.</p>",
+            "kind": "default",
+            "name": "import"
+        },
+        {
+            "doc": "<p>Name error.</p>",
+            "kind": "default",
+            "name": "name"
+        },
+        {
+            "doc": "<p>Deprecation error.</p>",
+            "kind": "default",
+            "name": "deprecated"
+        },
+        {
+            "doc": "<p>Unknown value.</p>",
+            "kind": "default",
+            "name": "unknown_value"
+        }
+    ],
+    "name": "CssProviderError"
+}

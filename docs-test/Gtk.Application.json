@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.Application\"/> instance.</p><p>When using <span data-xref=\"Gtk.Application\"/>, it is not necessary to call <span data-xref=\"Gtk.init\"/>\nmanually. It is called as soon as the application gets registered as\nthe primary instance.</p><p>Concretely, <span data-xref=\"Gtk.init\"/> is called in the default handler for the\n<span data-xref=\"Gio.Application-startup\">Gio.Application::startup</span> signal. Therefore, <span data-xref=\"Gtk.Application\"/> subclasses should\nchain up in their <span data-xref=\"Gio.Application-startup\">Gio.Application::startup</span> handler before using any GTK+ API.</p><p>Note that commandline arguments are not passed to <span data-xref=\"Gtk.init\"/>.\nAll GTK+ functionality that is available via commandline arguments\ncan also be achieved by setting suitable environment variables\nsuch as <code>G_DEBUG</code>, so this should not be a big\nproblem. If you absolutely must support GTK+ commandline arguments,\nyou can explicitly call <span data-xref=\"Gtk.init\"/> before creating the application\ninstance.</p><p>If non-<code>null</code>, the application ID must be valid.  See\n<span data-xref=\"Gio.Application.id_is_valid\">Gio.Application.id_is_valid</span>.</p><p>If no application ID is given then some features (most notably application\nuniqueness) will be disabled. A null application ID is only allowed with\nGTK+ 3.6 or later.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Application\"/> instance.</p><p>When using <span data-xref=\"Gtk.Application\"/>, it is not necessary to call <span data-xref=\"Gtk.init\"/>\nmanually. It is called as soon as the application gets registered as\nthe primary instance.</p><p>Concretely, <span data-xref=\"Gtk.init\"/> is called in the default handler for the\n<span data-xref=\"Gio.Application-startup\">Gio.Application::startup</span> signal. Therefore, <span data-xref=\"Gtk.Application\"/> subclasses should\nchain up in their <span data-xref=\"Gio.Application-startup\">Gio.Application::startup</span> handler before using any GTK+ API.</p><p>Note that commandline arguments are not passed to <span data-xref=\"Gtk.init\"/>.\nAll GTK+ functionality that is available via commandline arguments\ncan also be achieved by setting suitable environment variables\nsuch as <code>G_DEBUG</code>, so this should not be a big\nproblem. If you absolutely must support GTK+ commandline arguments,\nyou can explicitly call <span data-xref=\"Gtk.init\"/> before creating the application\ninstance.</p><p>If non-<pre>null</pre>, the application ID must be valid.  See\n<span data-xref=\"Gio.Application.id_is_valid\">Gio.Application.id_is_valid</span>.</p><p>If no application ID is given then some features (most notably application\nuniqueness) will be disabled. A null application ID is only allowed with\nGTK+ 3.6 or later.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -24,22 +24,10 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.Application\"/> is a class that handles many important aspects\nof a GTK+ application in a convenient fashion, without enforcing\na one-size-fits-all application model.</p><p>Currently, GtkApplication handles GTK+ initialization, application\nuniqueness, session management, provides some basic scriptability and\ndesktop shell integration by exporting actions and menus and manages a\nlist of toplevel windows whose life-cycle is automatically tied to the\nlife-cycle of your application.</p><p>While GtkApplication works fine with plain #GtkWindows, it is recommended\nto use it together with <span data-xref=\"Gtk.ApplicationWindow\"/>.</p><p>When GDK threads are enabled, GtkApplication will acquire the GDK\nlock when invoking actions that arrive from other processes.  The GDK\nlock is not touched for local action invocations.  In order to have\nactions invoked in a predictable context it is therefore recommended\nthat the GDK lock be held while invoking actions locally with\n<span data-xref=\"Gio.ActionGroup.activate_action\">Gio.ActionGroup.prototype.activate_action</span>.  The same applies to actions\nassociated with <span data-xref=\"Gtk.ApplicationWindow\"/> and to the \u201cactivate\u201d and\n'open' <span data-xref=\"Gio.Application\">Gio.Application</span> methods.</p><p>To set an application menu for a GtkApplication, use\n<span data-xref=\"Gtk.Application.set_app_menu\"/>. The <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span> that this function\nexpects is usually constructed using <span data-xref=\"Gtk.Builder\"/>, as seen in the\nfollowing example. To specify a menubar that will be shown by</p>\n<h1>GtkApplicationWindows, use <span data-xref=\"Gtk.Application.set_menubar\"/>. Use the base</h1>\n<p><span data-xref=\"Gio.ActionMap\">Gio.ActionMap</span> interface to add actions, to respond to the user\nselecting these menu items.</p><p>GTK+ displays these menus as expected, depending on the platform\nthe application is running on.</p><h2>A simple application ## {#gtkapplication}</h2><p><a href=\"https://git.gnome.org/browse/gtk+/tree/examples/bloatpad.c\">A simple example</a></p><p>GtkApplication optionally registers with a session manager\nof the users session (if you set the <span data-xref=\"Gtk.Application-register-session\"/>\nproperty) and offers various functionality related to the session\nlife-cycle.</p><p>An application can block various ways to end the session with\nthe <span data-xref=\"Gtk.Application.inhibit\"/> function. Typical use cases for\nthis kind of inhibiting are long-running, uninterruptible operations,\nsuch as burning a CD or performing a disk backup. The session\nmanager may not honor the inhibitor, but it can be expected to\ninform the user about the negative consequences of ending the\nsession while inhibitors are present.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Installs an accelerator that will cause the named action\nto be activated when the key combination specificed by <code>accelerator</code>\nis pressed.</p><p><code>accelerator</code> must be a string that can be parsed by <span data-xref=\"Gtk.accelerator_parse\"/>,\ne.g. \"&lt;Primary&gt;q\" or \u201c&lt;Control&gt;&lt;Alt&gt;p\u201d.</p><p><code>action_name</code> must be the name of an action as it would be used\nin the app menu, i.e. actions that have been added to the application\nare referred to with an \u201capp.\u201d prefix, and window-specific actions\nwith a \u201cwin.\u201d prefix.</p><p>GtkApplication also extracts accelerators out of \u201caccel\u201d attributes\nin the #GMenuModels passed to <span data-xref=\"Gtk.Application.set_app_menu\"/> and\n<span data-xref=\"Gtk.Application.set_menubar\"/>, which is usually more convenient\nthan calling this function for each accelerator.</p>",
+            "doc": "<p>Installs an accelerator that will cause the named action\nto be activated when the key combination specificed by <pre>accelerator</pre>\nis pressed.</p><pre>accelerator</pre>\n\n<p>must be a string that can be parsed by <span data-xref=\"Gtk.accelerator_parse\"/>,\ne.g. \"<Primary>q\" or \u201c<Control><Alt>p\u201d.</p><pre>action_name</pre>\n\n<p>must be the name of an action as it would be used\nin the app menu, i.e. actions that have been added to the application\nare referred to with an \u201capp.\u201d prefix, and window-specific actions\nwith a \u201cwin.\u201d prefix.</p><p>GtkApplication also extracts accelerators out of \u201caccel\u201d attributes\nin the #GMenuModels passed to <span data-xref=\"Gtk.Application.set_app_menu\"/> and\n<span data-xref=\"Gtk.Application.set_menubar\"/>, which is usually more convenient\nthan calling this function for each accelerator.</p>",
             "kind": "method",
             "name": "add_accelerator",
             "parameters": [
@@ -67,7 +55,7 @@
             }
         },
         {
-            "doc": "<p>Adds a window to <code>application</code>.</p><p>This call is equivalent to setting the <span data-xref=\"Gtk.Window-application\"/>\nproperty of <code>window</code> to <code>application</code>.</p><p>Normally, the connection between the application and the window\nwill remain until the window is destroyed, but you can explicitly\nremove it with <span data-xref=\"Gtk.Application.remove_window\"/>.</p><p>GTK+ will keep the application running as long as it has\nany windows.</p>",
+            "doc": "<p>Adds a window to <pre>application</pre>.</p><p>This call is equivalent to setting the <span data-xref=\"Gtk.Window-application\"/>\nproperty of <pre>window</pre> to <pre>application</pre>.</p><p>Normally, the connection between the application and the window\nwill remain until the window is destroyed, but you can explicitly\nremove it with <span data-xref=\"Gtk.Application.remove_window\"/>.</p><p>GTK+ will keep the application running as long as it has\nany windows.</p>",
             "kind": "method",
             "name": "add_window",
             "parameters": [
@@ -142,7 +130,7 @@
             }
         },
         {
-            "doc": "<p>Gets a list of the #GtkWindows associated with <code>application</code>.</p><p>The list is sorted by most recently focused window, such that the first\nelement is the currently focused window. (Useful for choosing a parent\nfor a transient window.)</p><p>The list that is returned should not be modified in any way. It will\nonly remain valid until the next focus change or window creation or\ndeletion.</p>",
+            "doc": "<p>Gets a list of the #GtkWindows associated with <pre>application</pre>.</p><p>The list is sorted by most recently focused window, such that the first\nelement is the currently focused window. (Useful for choosing a parent\nfor a transient window.)</p><p>The list that is returned should not be modified in any way. It will\nonly remain valid until the next focus change or window creation or\ndeletion.</p>",
             "kind": "method",
             "name": "get_windows",
             "parameters": [],
@@ -151,7 +139,7 @@
             }
         },
         {
-            "doc": "<p>Inform the session manager that certain types of actions should be\ninhibited. This is not guaranteed to work on all platforms and for\nall types of actions.</p><p>Applications should invoke this method when they begin an operation\nthat should not be interrupted, such as creating a CD or DVD. The\ntypes of actions that may be blocked are specified by the <code>flags</code>\nparameter. When the application completes the operation it should\ncall <span data-xref=\"Gtk.Application.uninhibit\"/> to remove the inhibitor. Note that\nan application can have multiple inhibitors, and all of the must\nbe individually removed. Inhibitors are also cleared when the\napplication exits.</p><p>Applications should not expect that they will always be able to block\nthe action. In most cases, users will be given the option to force\nthe action to take place.</p><p>Reasons should be short and to the point.</p><p>If <code>window</code> is given, the session manager may point the user to\nthis window to find out more about why the action is inhibited.</p>",
+            "doc": "<p>Inform the session manager that certain types of actions should be\ninhibited. This is not guaranteed to work on all platforms and for\nall types of actions.</p><p>Applications should invoke this method when they begin an operation\nthat should not be interrupted, such as creating a CD or DVD. The\ntypes of actions that may be blocked are specified by the <pre>flags</pre>\nparameter. When the application completes the operation it should\ncall <span data-xref=\"Gtk.Application.uninhibit\"/> to remove the inhibitor. Note that\nan application can have multiple inhibitors, and all of the must\nbe individually removed. Inhibitors are also cleared when the\napplication exits.</p><p>Applications should not expect that they will always be able to block\nthe action. In most cases, users will be given the option to force\nthe action to take place.</p><p>Reasons should be short and to the point.</p><p>If <pre>window</pre> is given, the session manager may point the user to\nthis window to find out more about why the action is inhibited.</p>",
             "kind": "method",
             "name": "inhibit",
             "parameters": [
@@ -179,7 +167,7 @@
             }
         },
         {
-            "doc": "<p>Determines if any of the actions specified in <code>flags</code> are\ncurrently inhibited (possibly by another application).</p>",
+            "doc": "<p>Determines if any of the actions specified in <pre>flags</pre> are\ncurrently inhibited (possibly by another application).</p>",
             "kind": "method",
             "name": "is_inhibited",
             "parameters": [
@@ -226,7 +214,7 @@
             }
         },
         {
-            "doc": "<p>Remove a window from <code>application</code>.</p><p>If <code>window</code> belongs to <code>application</code> then this call is equivalent to\nsetting the <span data-xref=\"Gtk.Window-application\"/> property of <code>window</code> to\n<code>null</code>.</p><p>The application may stop running as a result of a call to this\nfunction.</p>",
+            "doc": "<p>Remove a window from <pre>application</pre>.</p><p>If <pre>window</pre> belongs to <pre>application</pre> then this call is equivalent to\nsetting the <span data-xref=\"Gtk.Window-application\"/> property of <pre>window</pre> to\n<pre>null</pre>.</p><p>The application may stop running as a result of a call to this\nfunction.</p>",
             "kind": "method",
             "name": "remove_window",
             "parameters": [
@@ -242,7 +230,7 @@
             }
         },
         {
-            "doc": "<p>Sets one or more keyboard accelerator that will trigger the\ngiven action. The first item in <code>accels</code> will be the primary\naccelerator, which may be displayed in the UI.</p>",
+            "doc": "<p>Sets one or more keyboard accelerator that will trigger the\ngiven action. The first item in <pre>accels</pre> will be the primary\naccelerator, which may be displayed in the UI.</p>",
             "kind": "method",
             "name": "set_accels_for_action",
             "parameters": [
@@ -264,7 +252,7 @@
             }
         },
         {
-            "doc": "<p>Sets or unsets the application menu for <code>application</code>.</p><p>This can only be done in the primary instance of the application,\nafter it has been registered.  <span data-xref=\"Gio.Application-startup\">Gio.Application::startup</span> is a good place\nto call this.</p><p>The application menu is a single menu containing items that typically\nimpact the application as a whole, rather than acting on a specific\nwindow or document.  For example, you would expect to see\n\u201cPreferences\u201d or \u201cQuit\u201d in an application menu, but not \u201cSave\u201d or\n\u201cPrint\u201d.</p><p>If supported, the application menu will be rendered by the desktop\nenvironment.</p><p>Use the base <span data-xref=\"Gio.ActionMap\">Gio.ActionMap</span> interface to add actions, to respond to the user\nselecting these menu items.</p>",
+            "doc": "<p>Sets or unsets the application menu for <pre>application</pre>.</p><p>This can only be done in the primary instance of the application,\nafter it has been registered.  <span data-xref=\"Gio.Application-startup\">Gio.Application::startup</span> is a good place\nto call this.</p><p>The application menu is a single menu containing items that typically\nimpact the application as a whole, rather than acting on a specific\nwindow or document.  For example, you would expect to see\n\u201cPreferences\u201d or \u201cQuit\u201d in an application menu, but not \u201cSave\u201d or\n\u201cPrint\u201d.</p><p>If supported, the application menu will be rendered by the desktop\nenvironment.</p><p>Use the base <span data-xref=\"Gio.ActionMap\">Gio.ActionMap</span> interface to add actions, to respond to the user\nselecting these menu items.</p>",
             "kind": "method",
             "name": "set_app_menu",
             "parameters": [
@@ -280,7 +268,7 @@
             }
         },
         {
-            "doc": "<p>Sets or unsets the menubar for windows of <code>application</code>.</p><p>This is a menubar in the traditional sense.</p><p>This can only be done in the primary instance of the application,\nafter it has been registered.  <span data-xref=\"Gio.Application-startup\">Gio.Application::startup</span> is a good place\nto call this.</p><p>Depending on the desktop environment, this may appear at the top of\neach window, or at the top of the screen.  In some environments, if\nboth the application menu and the menubar are set, the application\nmenu will be presented as if it were the first item of the menubar.\nOther environments treat the two as completely separate -- for\nexample, the application menu may be rendered by the desktop shell\nwhile the menubar (if set) remains in each individual window.</p><p>Use the base <span data-xref=\"Gio.ActionMap\">Gio.ActionMap</span> interface to add actions, to respond to the user\nselecting these menu items.</p>",
+            "doc": "<p>Sets or unsets the menubar for windows of <pre>application</pre>.</p><p>This is a menubar in the traditional sense.</p><p>This can only be done in the primary instance of the application,\nafter it has been registered.  <span data-xref=\"Gio.Application-startup\">Gio.Application::startup</span> is a good place\nto call this.</p><p>Depending on the desktop environment, this may appear at the top of\neach window, or at the top of the screen.  In some environments, if\nboth the application menu and the menubar are set, the application\nmenu will be presented as if it were the first item of the menubar.\nOther environments treat the two as completely separate -- for\nexample, the application menu may be rendered by the desktop shell\nwhile the menubar (if set) remains in each individual window.</p><p>Use the base <span data-xref=\"Gio.ActionMap\">Gio.ActionMap</span> interface to add actions, to respond to the user\nselecting these menu items.</p>",
             "kind": "method",
             "name": "set_menubar",
             "parameters": [
@@ -310,8 +298,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Application",
     "properties": [
@@ -334,7 +321,7 @@
             "type": "Gio.MenuModel"
         },
         {
-            "doc": "<p>Set this property to <code>true</code> to register with the session manager.</p>",
+            "doc": "<p>Set this property to <pre>true</pre> to register with the session manager.</p>",
             "kind": "property",
             "name": "register-session",
             "type": "Boolean"

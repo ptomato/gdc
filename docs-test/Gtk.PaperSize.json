@@ -1,0 +1,363 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.PaperSize\"/> object by parsing a\n<a href=\"ftp://ftp.pwg.org/pub/pwg/candidates/cs-pwgmsn10-20020226-5101.1.pdf\">PWG 5101.1-2002</a>\npaper name.</p><p>If <pre>name</pre> is <pre>null</pre>, the default paper size is returned,\nsee <span data-xref=\"Gtk.paper_size_get_default\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.PaperSize"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.PaperSize\"/> object with the\ngiven parameters.</p>",
+            "kind": "constructor",
+            "name": "new_custom",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "display_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.PaperSize"
+            }
+        },
+        {
+            "doc": "<p>Reads a paper size from the group <pre>group_name</pre> in the key file\n<pre>key_file</pre>.</p>",
+            "kind": "constructor",
+            "name": "new_from_key_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key_file",
+                    "direction": "in",
+                    "type": "GLib.KeyFile"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "group_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.PaperSize"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.PaperSize\"/> object by using\nPPD information.</p><p>If <pre>ppd_name</pre> is not a recognized PPD paper name,\n<pre>ppd_display_name</pre>, <pre>width</pre> and <pre>height</pre> are used to\nconstruct a custom <span data-xref=\"Gtk.PaperSize\"/> object.</p>",
+            "kind": "constructor",
+            "name": "new_from_ppd",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "ppd_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "ppd_display_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.PaperSize"
+            }
+        }
+    ],
+    "doc": "<p>GtkPaperSize handles paper sizes. It uses the standard called\n<a href=\"http://www.pwg.org/standards.html\">PWG 5101.1-2002 PWG: Standard for Media Standardized Names</a>\nto name the paper sizes (and to get the data for the page sizes).\nIn addition to standard paper sizes, GtkPaperSize allows to\nconstruct custom paper sizes with arbitrary dimensions.</p><p>The <span data-xref=\"Gtk.PaperSize\"/> object stores not only the dimensions (width\nand height) of a paper size and its name, it also provides\ndefault [print margins][print-margins].</p><p>Printing support has been added in GTK+ 2.10.</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Copies an existing <span data-xref=\"Gtk.PaperSize\"/>.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PaperSize"
+            }
+        },
+        {
+            "doc": "<p>Free the given <span data-xref=\"Gtk.PaperSize\"/> object.</p>",
+            "kind": "method",
+            "name": "free",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the default bottom margin for the <span data-xref=\"Gtk.PaperSize\"/>.</p>",
+            "kind": "method",
+            "name": "get_default_bottom_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the default left margin for the <span data-xref=\"Gtk.PaperSize\"/>.</p>",
+            "kind": "method",
+            "name": "get_default_left_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the default right margin for the <span data-xref=\"Gtk.PaperSize\"/>.</p>",
+            "kind": "method",
+            "name": "get_default_right_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the default top margin for the <span data-xref=\"Gtk.PaperSize\"/>.</p>",
+            "kind": "method",
+            "name": "get_default_top_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the human-readable name of the <span data-xref=\"Gtk.PaperSize\"/>.</p>",
+            "kind": "method",
+            "name": "get_display_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the paper height of the <span data-xref=\"Gtk.PaperSize\"/>, in\nunits of <pre>unit</pre>.</p>",
+            "kind": "method",
+            "name": "get_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the name of the <span data-xref=\"Gtk.PaperSize\"/>.</p>",
+            "kind": "method",
+            "name": "get_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the PPD name of the <span data-xref=\"Gtk.PaperSize\"/>, which\nmay be <pre>null</pre>.</p>",
+            "kind": "method",
+            "name": "get_ppd_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the paper width of the <span data-xref=\"Gtk.PaperSize\"/>, in\nunits of <pre>unit</pre>.</p>",
+            "kind": "method",
+            "name": "get_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if <pre>size</pre> is not a standard paper size.</p>",
+            "kind": "method",
+            "name": "is_custom",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Compares two <span data-xref=\"Gtk.PaperSize\"/> objects.</p>",
+            "kind": "method",
+            "name": "is_equal",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "size2",
+                    "direction": "in",
+                    "type": "Gtk.PaperSize"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Changes the dimensions of a <pre>size</pre> to <pre>width</pre> x <pre>height</pre>.</p>",
+            "kind": "method",
+            "name": "set_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This function adds the paper size from <pre>size</pre> to <pre>key_file</pre>.</p>",
+            "kind": "method",
+            "name": "to_key_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key_file",
+                    "direction": "in",
+                    "type": "GLib.KeyFile"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "group_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the name of the default paper size, which\ndepends on the current locale.</p>",
+            "kind": "function",
+            "name": "get_default",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Creates a list of known paper sizes.</p>",
+            "kind": "function",
+            "name": "get_paper_sizes",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "include_custom",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Array(Gtk.PaperSize)"
+            }
+        }
+    ],
+    "name": "PaperSize"
+}

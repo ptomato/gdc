@@ -75,23 +75,9 @@
             }
         }
     ],
-    "doc": "<p><span data-xref=\"Gtk.RecentChooserDialog\"/> is a dialog box suitable for displaying the recently\nused documents.  This widgets works by putting a <span data-xref=\"Gtk.RecentChooserWidget\"/> inside\na <span data-xref=\"Gtk.Dialog\"/>.  It exposes the <span data-xref=\"Gtk.RecentChooserIface\"/> interface, so you can use\nall the <span data-xref=\"Gtk.RecentChooser\"/> functions on the recent chooser dialog as well as\nthose for <span data-xref=\"Gtk.Dialog\"/>.</p><p>Note that <span data-xref=\"Gtk.RecentChooserDialog\"/> does not have any methods of its own.\nInstead, you should use the functions that work on a <span data-xref=\"Gtk.RecentChooser\"/>.</p><h2>Typical usage ## {#gtkrecentchooser-typical-usage}</h2><p>In the simplest of cases, you can use the following code to use\na <span data-xref=\"Gtk.RecentChooserDialog\"/> to select a recently used file:</p><p>|[&lt;!-- language=\"C\" --&gt;\nGtkWidget *dialog;\ngint res;</p><p>dialog = gtk_recent_chooser_dialog_new (\"Recent Documents\",\n                                        parent_window,\n                                        <em>(\"_Cancel\"),\n                                        GTK_RESPONSE_CANCEL,\n                                        </em>(\"_Open\"),\n                                        GTK_RESPONSE_ACCEPT,\n                                        NULL);</p><p>res = gtk_dialog_run (GTK_DIALOG (dialog));\nif (res == GTK_RESPONSE_ACCEPT)\n  {\n    GtkRecentInfo <em>info;\n    GtkRecentChooser </em>chooser = GTK_RECENT_CHOOSER (dialog);</p><pre><code>info = gtk_recent_chooser_get_current_item (chooser);\nopen_file (gtk_recent_info_get_uri (info));\ngtk_recent_info_unref (info);\n</code></pre>\n<p>}</p><p>gtk_widget_destroy (dialog);\n]|</p><p>Recently used files are supported since GTK+ 2.10.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p><span data-xref=\"Gtk.RecentChooserDialog\"/> is a dialog box suitable for displaying the recently\nused documents.  This widgets works by putting a <span data-xref=\"Gtk.RecentChooserWidget\"/> inside\na <span data-xref=\"Gtk.Dialog\"/>.  It exposes the <span data-xref=\"Gtk.RecentChooserIface\"/> interface, so you can use\nall the <span data-xref=\"Gtk.RecentChooser\"/> functions on the recent chooser dialog as well as\nthose for <span data-xref=\"Gtk.Dialog\"/>.</p><p>Note that <span data-xref=\"Gtk.RecentChooserDialog\"/> does not have any methods of its own.\nInstead, you should use the functions that work on a <span data-xref=\"Gtk.RecentChooser\"/>.</p><h2>Typical usage ## {#gtkrecentchooser-typical-usage}</h2><p>In the simplest of cases, you can use the following code to use\na <span data-xref=\"Gtk.RecentChooserDialog\"/> to select a recently used file:</p><p>|[<!-- language=\"C\" -->\nGtkWidget *dialog;\ngint res;</p><p>dialog = gtk_recent_chooser_dialog_new (\"Recent Documents\",\n                                        parent_window,\n                                        <em>(\"_Cancel\"),\n                                        GTK_RESPONSE_CANCEL,\n                                        </em>(\"_Open\"),\n                                        GTK_RESPONSE_ACCEPT,\n                                        NULL);</p><p>res = gtk_dialog_run (GTK_DIALOG (dialog));\nif (res == GTK_RESPONSE_ACCEPT)\n  {\n    GtkRecentInfo <em>info;\n    GtkRecentChooser </em>chooser = GTK_RECENT_CHOOSER (dialog);</p><pre><code>info = gtk_recent_chooser_get_current_item (chooser);\nopen_file (gtk_recent_info_get_uri (info));\ngtk_recent_info_unref (info);\n</code></pre>\n<p>}</p><p>gtk_widget_destroy (dialog);\n]|</p><p>Recently used files are supported since GTK+ 2.10.</p>",
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "RecentChooserDialog",
     "properties": [],
     "signals": [],

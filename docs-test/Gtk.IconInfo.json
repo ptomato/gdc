@@ -24,7 +24,6 @@
         }
     ],
     "doc": "<p>Contains information found when looking up an icon in\nan icon theme.</p>",
-    "fields": [],
     "kind": "class",
     "methods": [
         {
@@ -427,7 +426,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether the coordinates returned by <span data-xref=\"Gtk.IconInfo.get_embedded_rect\"/>\nand <span data-xref=\"Gtk.IconInfo.get_attach_points\"/> should be returned in their\noriginal form as specified in the icon theme, instead of scaled\nappropriately for the pixbuf returned by <span data-xref=\"Gtk.IconInfo.load_icon\"/>.</p><p>Raw coordinates are somewhat strange; they are specified to be with\nrespect to the unscaled pixmap for PNG and XPM icons, but for SVG\nicons, they are in a 1000x1000 coordinate space that is scaled\nto the final size of the icon.  You can determine if the icon is an SVG\nicon by using <span data-xref=\"Gtk.IconInfo.get_filename\"/>, and seeing if it is non-<code>null</code>\nand ends in \u201c.svg\u201d.</p><p>This function is provided primarily to allow compatibility wrappers\nfor older API's, and is not expected to be useful for applications.</p>",
+            "doc": "<p>Sets whether the coordinates returned by <span data-xref=\"Gtk.IconInfo.get_embedded_rect\"/>\nand <span data-xref=\"Gtk.IconInfo.get_attach_points\"/> should be returned in their\noriginal form as specified in the icon theme, instead of scaled\nappropriately for the pixbuf returned by <span data-xref=\"Gtk.IconInfo.load_icon\"/>.</p><p>Raw coordinates are somewhat strange; they are specified to be with\nrespect to the unscaled pixmap for PNG and XPM icons, but for SVG\nicons, they are in a 1000x1000 coordinate space that is scaled\nto the final size of the icon.  You can determine if the icon is an SVG\nicon by using <span data-xref=\"Gtk.IconInfo.get_filename\"/>, and seeing if it is non-<pre>null</pre>\nand ends in \u201c.svg\u201d.</p><p>This function is provided primarily to allow compatibility wrappers\nfor older API's, and is not expected to be useful for applications.</p>",
             "kind": "method",
             "name": "set_raw_coordinates",
             "parameters": [
@@ -441,8 +440,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "IconInfo",
     "properties": [],

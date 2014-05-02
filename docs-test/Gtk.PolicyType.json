@@ -1,0 +1,22 @@
+{
+    "doc": "<p>Determines when a scroll bar will be visible.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The scrollbar is always visible.</p>",
+            "kind": "default",
+            "name": "always"
+        },
+        {
+            "doc": "<p>The scrollbar will appear and disappear as necessary. For example,\n when all of a #GtkCList can not be seen.</p>",
+            "kind": "default",
+            "name": "automatic"
+        },
+        {
+            "doc": "<p>The scrollbar will never appear.</p>",
+            "kind": "default",
+            "name": "never"
+        }
+    ],
+    "name": "PolicyType"
+}

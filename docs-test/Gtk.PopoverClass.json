@@ -1,0 +1,24 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "closed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "reserved"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "PopoverClass"
+}

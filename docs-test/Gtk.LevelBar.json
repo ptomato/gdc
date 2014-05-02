@@ -32,23 +32,11 @@
             }
         }
     ],
-    "doc": "<p>The <span data-xref=\"Gtk.LevelBar\"/> is a bar widget that can be used\nas a level indicator. Typical use cases are displaying the strength\nof a password, or showing the charge level of a battery.</p><p>Use <span data-xref=\"Gtk.LevelBar.set_value\"/> to set the current value, and\n<span data-xref=\"Gtk.LevelBar.add_offset_value\"/> to set the value offsets at which\nthe bar will be considered in a different state. GTK will add two offsets\nby default on the level bar: #GTK_LEVEL_BAR_OFFSET_LOW and</p>\n<h1>GTK_LEVEL_BAR_OFFSET_HIGH, with values 0.25 and 0.75 respectively.</h1><h2>Adding a custom offset on the bar</h2><p>|[&lt;!-- language=\"C\" --&gt;</p><p>static GtkWidget <em>\ncreate_level_bar (void)\n{\n  GtkWidget </em>widget;\n  GtkLevelBar *bar;</p><p>widget = gtk_level_bar_new ();\n  bar = GTK_LEVEL_BAR (widget);</p><p>/&lt;!----&gt;<em> This changes the value of the default low offset\n  </em>&lt;!----&gt;/</p><p>gtk_level_bar_add_offset_value (bar,\n                                  GTK_LEVEL_BAR_OFFSET_LOW,\n                                  0.10);</p><p>/&lt;!----&gt;* This adds a new offset to the bar; the application will\n   be able to change its color by using the following selector,\n   either by adding it to its CSS file or using\n   <span data-xref=\"Gtk.CssProvider.load_from_data\"/> and\n   <span data-xref=\"Gtk.StyleContext.add_provider\"/></p><ul>\n<li>.level-bar.fill-block.level-my-offset {</li>\n<li>background-color: green;</li>\n<li>border-style: solid;</li>\n<li>border-color: black;</li>\n<li>border-style: 1px;</li>\n<li>}\n   *&lt;!----&gt;/</li>\n</ul><p>gtk_level_bar_add_offset_value (bar, \"my-offset\", 0.60);</p><p>return widget;\n}\n]|</p><p>The default interval of values is between zero and one, but it\u2019s possible to\nmodify the interval using <span data-xref=\"Gtk.LevelBar.set_min_value\"/> and\n<span data-xref=\"Gtk.LevelBar.set_max_value\"/>. The value will be always drawn in proportion to\nthe admissible interval, i.e. a value of 15 with a specified interval between\n10 and 20 is equivalent to a value of 0.5 with an interval between 0 and 1.\nWhen #GTK_LEVEL_BAR_MODE_DISCRETE is used, the bar level is rendered\nas a finite and number of separated blocks instead of a single one. The number\nof blocks that will be rendered is equal to the number of units specified by\nthe admissible interval.\nFor instance, to build a bar rendered with five blocks, it\u2019s sufficient to\nset the minimum value to 0 and the maximum value to 5 after changing the indicator\nmode to discrete.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>The <span data-xref=\"Gtk.LevelBar\"/> is a bar widget that can be used\nas a level indicator. Typical use cases are displaying the strength\nof a password, or showing the charge level of a battery.</p><p>Use <span data-xref=\"Gtk.LevelBar.set_value\"/> to set the current value, and\n<span data-xref=\"Gtk.LevelBar.add_offset_value\"/> to set the value offsets at which\nthe bar will be considered in a different state. GTK will add two offsets\nby default on the level bar: #GTK_LEVEL_BAR_OFFSET_LOW and</p>\n<h1>GTK_LEVEL_BAR_OFFSET_HIGH, with values 0.25 and 0.75 respectively.</h1><h2>Adding a custom offset on the bar</h2><p>|[<!-- language=\"C\" --></p><p>static GtkWidget <em>\ncreate_level_bar (void)\n{\n  GtkWidget </em>widget;\n  GtkLevelBar *bar;</p><p>widget = gtk_level_bar_new ();\n  bar = GTK_LEVEL_BAR (widget);</p><p>/<!----><em> This changes the value of the default low offset\n  </em><!---->/</p><p>gtk_level_bar_add_offset_value (bar,\n                                  GTK_LEVEL_BAR_OFFSET_LOW,\n                                  0.10);</p><p>/<!---->* This adds a new offset to the bar; the application will\n   be able to change its color by using the following selector,\n   either by adding it to its CSS file or using\n   <span data-xref=\"Gtk.CssProvider.load_from_data\"/> and\n   <span data-xref=\"Gtk.StyleContext.add_provider\"/></p><ul>\n<li>.level-bar.fill-block.level-my-offset {</li>\n<li>background-color: green;</li>\n<li>border-style: solid;</li>\n<li>border-color: black;</li>\n<li>border-style: 1px;</li>\n<li>}\n   *<!---->/</li>\n</ul><p>gtk_level_bar_add_offset_value (bar, \"my-offset\", 0.60);</p><p>return widget;\n}\n]|</p><p>The default interval of values is between zero and one, but it\u2019s possible to\nmodify the interval using <span data-xref=\"Gtk.LevelBar.set_min_value\"/> and\n<span data-xref=\"Gtk.LevelBar.set_max_value\"/>. The value will be always drawn in proportion to\nthe admissible interval, i.e. a value of 15 with a specified interval between\n10 and 20 is equivalent to a value of 0.5 with an interval between 0 and 1.\nWhen #GTK_LEVEL_BAR_MODE_DISCRETE is used, the bar level is rendered\nas a finite and number of separated blocks instead of a single one. The number\nof blocks that will be rendered is equal to the number of units specified by\nthe admissible interval.\nFor instance, to build a bar rendered with five blocks, it\u2019s sufficient to\nset the minimum value to 0 and the maximum value to 5 after changing the indicator\nmode to discrete.</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Adds a new offset marker on <code>self</code> at the position specified by <code>value</code>.\nWhen the bar value is in the interval topped by <code>value</code> (or between <code>value</code>\nand <span data-xref=\"Gtk.LevelBar-max-value\"/> in case the offset is the last one on the bar)\na style class named <code>level-</code><code>name</code> will be applied\nwhen rendering the level bar fill.\nIf another offset marker named <code>name</code> exists, its value will be\nreplaced by <code>value</code>.</p>",
+            "doc": "<p>Adds a new offset marker on <pre>self</pre> at the position specified by <pre>value</pre>.\nWhen the bar value is in the interval topped by <pre>value</pre> (or between <pre>value</pre>\nand <span data-xref=\"Gtk.LevelBar-max-value\"/> in case the offset is the last one on the bar)\na style class named <code>level-</code><pre>name</pre> will be applied\nwhen rendering the level bar fill.\nIf another offset marker named <pre>name</pre> exists, its value will be\nreplaced by <pre>value</pre>.</p>",
             "kind": "method",
             "name": "add_offset_value",
             "parameters": [
@@ -106,7 +94,7 @@
             }
         },
         {
-            "doc": "<p>Fetches the value specified for the offset marker <code>name</code> in <code>self</code>,\nreturning <code>true</code> in case an offset named <code>name</code> was found.</p>",
+            "doc": "<p>Fetches the value specified for the offset marker <pre>name</pre> in <pre>self</pre>,\nreturning <pre>true</pre> in case an offset named <pre>name</pre> was found.</p>",
             "kind": "method",
             "name": "get_offset_value",
             "parameters": [
@@ -231,8 +219,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "LevelBar",
     "properties": [

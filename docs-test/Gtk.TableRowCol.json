@@ -1,0 +1,49 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "requisition"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "allocation"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "spacing"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "need_expand"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "need_shrink"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "expand"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "shrink"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "empty"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "TableRowCol"
+}

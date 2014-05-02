@@ -1,0 +1,37 @@
+{
+    "doc": "<p>An enum for determining the page role inside the <span data-xref=\"Gtk.Assistant\"/>. It's\nused to handle buttons sensitivity and visibility.</p><p>Note that an assistant needs to end its page flow with a page of type\n<span data-xref=\"Gtk.AssistantPageType\"/>.confirm, <span data-xref=\"Gtk.AssistantPageType\"/>.summary or\n<span data-xref=\"Gtk.AssistantPageType\"/>.progress to be correct.</p><p>The Cancel button will only be shown if the page isn\u2019t \u201ccommitted\u201d.\nSee <span data-xref=\"Gtk.Assistant.commit\"/> for details.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The page has regular contents. Both the\n Back and forward buttons will be shown.</p>",
+            "kind": "default",
+            "name": "content"
+        },
+        {
+            "doc": "<p>The page contains an introduction to the\n assistant task. Only the Forward button will be shown if there is a\n  next page.</p>",
+            "kind": "default",
+            "name": "intro"
+        },
+        {
+            "doc": "<p>The page lets the user confirm or deny the\n changes. The Back and Apply buttons will be shown.</p>",
+            "kind": "default",
+            "name": "confirm"
+        },
+        {
+            "doc": "<p>The page informs the user of the changes\n done. Only the Close button will be shown.</p>",
+            "kind": "default",
+            "name": "summary"
+        },
+        {
+            "doc": "<p>Used for tasks that take a long time to\n complete, blocks the assistant until the page is marked as complete.\n  Only the back button will be shown.</p>",
+            "kind": "default",
+            "name": "progress"
+        },
+        {
+            "doc": "<p>Used for when other page types are not\n appropriate. No buttons will be shown, and the application must\n add its own buttons through <span data-xref=\"Gtk.Assistant.add_action_widget\"/>.</p>",
+            "kind": "default",
+            "name": "custom"
+        }
+    ],
+    "name": "AssistantPageType"
+}

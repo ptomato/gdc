@@ -1,0 +1,19 @@
+{
+    "constructors": [],
+    "doc": "<p>See also <span data-xref=\"Gtk.PrintSettings.set_page_ranges\"/>.</p>",
+    "fields": [
+        {
+            "doc": "<p>start of page range.</p>",
+            "kind": "field",
+            "name": "start"
+        },
+        {
+            "doc": "<p>end of page range.</p>",
+            "kind": "field",
+            "name": "end"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "PageRange"
+}

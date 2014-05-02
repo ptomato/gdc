@@ -1,276 +1,273 @@
 {
     "constructors": [],
-    "doc": "<p>Accelerator maps are used to define runtime configurable accelerators.\nFunctions for manipulating them are are usually used by higher level\nconvenience mechanisms like <span data-xref=\"Gtk.UIManager\"/> and are thus considered\n\u201clow-level\u201d. You\u2019ll want to use them if you\u2019re manually creating menus that\nshould have user-configurable accelerators.</p><p>An accelerator is uniquely defined by:\n- accelerator path\n- accelerator key\n- accelerator modifiers</p><p>The accelerator path must consist of\n\u201c&lt;WINDOWTYPE&gt;/Category1/Category2/.../Action\u201d, where WINDOWTYPE\nshould be a unique application-specific identifier that corresponds\nto the kind of window the accelerator is being used in, e.g.\n\u201cGimp-Image\u201d, \u201cAbiword-Document\u201d or \u201cGnumeric-Settings\u201d.\nThe \u201cCategory1/.../Action\u201d portion is most appropriately chosen by\nthe action the accelerator triggers, i.e. for accelerators on menu\nitems, choose the item\u2019s menu path, e.g. \u201cFile/Save As\u201d,\n\u201cImage/View/Zoom\u201d or \u201cEdit/Select All\u201d. So a full valid accelerator\npath may look like: \u201c&lt;Gimp-Toolbox&gt;/File/Dialogs/Tool Options...\u201d.</p><p>All accelerators are stored inside one global <span data-xref=\"Gtk.AccelMap\"/> that can\nbe obtained using <span data-xref=\"Gtk.AccelMap.get\"/>. See\n[Monitoring changes][monitoring-changes] for additional\ndetails.</p><h1>Manipulating accelerators</h1><p>New accelerators can be added using <span data-xref=\"Gtk.AccelMap.add_entry\"/>.\nTo search for specific accelerator, use <span data-xref=\"Gtk.AccelMap.lookup_entry\"/>.\nModifications of existing accelerators should be done using\n<span data-xref=\"Gtk.AccelMap.change_entry\"/>.</p><p>In order to avoid having some accelerators changed, they can be\nlocked using <span data-xref=\"Gtk.AccelMap.lock_path\"/>. Unlocking is done using\n<span data-xref=\"Gtk.AccelMap.unlock_path\"/>.</p><h1>Saving and loading accelerator maps</h1><p>Accelerator maps can be saved to and loaded from some external\nresource. For simple saving and loading from file,\n<span data-xref=\"Gtk.AccelMap.save\"/> and <span data-xref=\"Gtk.AccelMap.load\"/> are provided.\nSaving and loading can also be done by providing file descriptor\nto <span data-xref=\"Gtk.AccelMap.save_fd\"/> and <span data-xref=\"Gtk.AccelMap.load_fd\"/>.</p><h1>Monitoring changes</h1><p><span data-xref=\"Gtk.AccelMap\"/> object is only useful for monitoring changes of\naccelerators. By connecting to <span data-xref=\"Gtk.AccelMap-changed\"/> signal, one\ncan monitor changes of all accelerators. It is also possible to\nmonitor only single accelerator path by using it as a detail of\nthe <span data-xref=\"Gtk.AccelMap-changed\"/> signal.</p>",
-    "fields": [],
+    "doc": "<p>Accelerator maps are used to define runtime configurable accelerators.\nFunctions for manipulating them are are usually used by higher level\nconvenience mechanisms like <span data-xref=\"Gtk.UIManager\"/> and are thus considered\n\u201clow-level\u201d. You\u2019ll want to use them if you\u2019re manually creating menus that\nshould have user-configurable accelerators.</p><p>An accelerator is uniquely defined by:\n- accelerator path\n- accelerator key\n- accelerator modifiers</p><p>The accelerator path must consist of\n\u201c<WINDOWTYPE>/Category1/Category2/.../Action\u201d, where WINDOWTYPE\nshould be a unique application-specific identifier that corresponds\nto the kind of window the accelerator is being used in, e.g.\n\u201cGimp-Image\u201d, \u201cAbiword-Document\u201d or \u201cGnumeric-Settings\u201d.\nThe \u201cCategory1/.../Action\u201d portion is most appropriately chosen by\nthe action the accelerator triggers, i.e. for accelerators on menu\nitems, choose the item\u2019s menu path, e.g. \u201cFile/Save As\u201d,\n\u201cImage/View/Zoom\u201d or \u201cEdit/Select All\u201d. So a full valid accelerator\npath may look like: \u201c<Gimp-Toolbox>/File/Dialogs/Tool Options...\u201d.</p><p>All accelerators are stored inside one global <span data-xref=\"Gtk.AccelMap\"/> that can\nbe obtained using <span data-xref=\"Gtk.AccelMap.get\"/>. See\n[Monitoring changes][monitoring-changes] for additional\ndetails.</p><h1>Manipulating accelerators</h1><p>New accelerators can be added using <span data-xref=\"Gtk.AccelMap.add_entry\"/>.\nTo search for specific accelerator, use <span data-xref=\"Gtk.AccelMap.lookup_entry\"/>.\nModifications of existing accelerators should be done using\n<span data-xref=\"Gtk.AccelMap.change_entry\"/>.</p><p>In order to avoid having some accelerators changed, they can be\nlocked using <span data-xref=\"Gtk.AccelMap.lock_path\"/>. Unlocking is done using\n<span data-xref=\"Gtk.AccelMap.unlock_path\"/>.</p><h1>Saving and loading accelerator maps</h1><p>Accelerator maps can be saved to and loaded from some external\nresource. For simple saving and loading from file,\n<span data-xref=\"Gtk.AccelMap.save\"/> and <span data-xref=\"Gtk.AccelMap.load\"/> are provided.\nSaving and loading can also be done by providing file descriptor\nto <span data-xref=\"Gtk.AccelMap.save_fd\"/> and <span data-xref=\"Gtk.AccelMap.load_fd\"/>.</p><h1>Monitoring changes</h1><p><span data-xref=\"Gtk.AccelMap\"/> object is only useful for monitoring changes of\naccelerators. By connecting to <span data-xref=\"Gtk.AccelMap-changed\"/> signal, one\ncan monitor changes of all accelerators. It is also possible to\nmonitor only single accelerator path by using it as a detail of\nthe <span data-xref=\"Gtk.AccelMap-changed\"/> signal.</p>",
     "kind": "class",
     "methods": [
-        [
-            {
-                "doc": "<p>Registers a new accelerator with the global accelerator map.\nThis function should only be called once per <code>accel_path</code>\nwith the canonical <code>accel_key</code> and <code>accel_mods</code> for this path.\nTo change the accelerator during runtime programatically, use\n<span data-xref=\"Gtk.AccelMap.change_entry\"/>.</p><p>Set <code>accel_key</code> and <code>accel_mods</code> to 0 to request a removal of\nthe accelerator.</p><p>Note that <code>accel_path</code> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>. Therefore, if you\npass a static string, you can save some memory by interning it first with\n<span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
-                "kind": "function",
-                "name": "add_entry",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "accel_path",
-                        "direction": "in",
-                        "type": "String"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "accel_key",
-                        "direction": "in",
-                        "type": "Number(guint)"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "accel_mods",
-                        "direction": "in",
-                        "type": "Gdk.ModifierType"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
+        {
+            "doc": "<p>Registers a new accelerator with the global accelerator map.\nThis function should only be called once per <pre>accel_path</pre>\nwith the canonical <pre>accel_key</pre> and <pre>accel_mods</pre> for this path.\nTo change the accelerator during runtime programatically, use\n<span data-xref=\"Gtk.AccelMap.change_entry\"/>.</p><p>Set <pre>accel_key</pre> and <pre>accel_mods</pre> to 0 to request a removal of\nthe accelerator.</p><p>Note that <pre>accel_path</pre> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>. Therefore, if you\npass a static string, you can save some memory by interning it first with\n<span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
+            "kind": "function",
+            "name": "add_entry",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_path",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_key",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_mods",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
                 }
-            },
-            {
-                "doc": "<p>Adds a filter to the global list of accel path filters.</p><p>Accel map entries whose accel path matches one of the filters\nare skipped by <span data-xref=\"Gtk.AccelMap.foreach\"/>.</p><p>This function is intended for GTK+ modules that create their own\nmenus, but don\u2019t want them to be saved into the applications accelerator\nmap dump.</p>",
-                "kind": "function",
-                "name": "add_filter",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "filter_pattern",
-                        "direction": "in",
-                        "type": "String"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
-            },
-            {
-                "doc": "<p>Changes the <code>accel_key</code> and <code>accel_mods</code> currently associated with <code>accel_path</code>.\nDue to conflicts with other accelerators, a change may not always be possible,\n<code>replace</code> indicates whether other accelerators may be deleted to resolve such\nconflicts. A change will only occur if all conflicts could be resolved (which\nmight not be the case if conflicting accelerators are locked). Successful\nchanges are indicated by a <code>true</code> return value.</p><p>Note that <code>accel_path</code> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>. Therefore, if you\npass a static string, you can save some memory by interning it first with\n<span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
-                "kind": "function",
-                "name": "change_entry",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "accel_path",
-                        "direction": "in",
-                        "type": "String"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "accel_key",
-                        "direction": "in",
-                        "type": "Number(guint)"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "accel_mods",
-                        "direction": "in",
-                        "type": "Gdk.ModifierType"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "replace",
-                        "direction": "in",
-                        "type": "Boolean"
-                    }
-                ],
-                "retval": {
-                    "type": "Boolean"
-                }
-            },
-            {
-                "doc": "<p>Loops over the entries in the accelerator map whose accel path\ndoesn\u2019t match any of the filters added with <span data-xref=\"Gtk.AccelMap.add_filter\"/>,\nand execute <code>foreach_func</code> on each. The signature of <code>foreach_func</code> is\nthat of <span data-xref=\"Gtk.AccelMapForeach\"/>, the @changed parameter indicates whether\nthis accelerator was changed during runtime (thus, would need\nsaving during an accelerator map dump).</p>",
-                "kind": "function",
-                "name": "foreach",
-                "parameters": [
-                    {
-                        "allow_none": true,
-                        "argname": "data",
-                        "direction": "in",
-                        "type": "void"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "foreach_func",
-                        "direction": "in",
-                        "type": "Gtk.AccelMapForeach"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
-            },
-            {
-                "doc": "<p>Loops over all entries in the accelerator map, and execute\n<code>foreach_func</code> on each. The signature of <code>foreach_func</code> is that of\n<span data-xref=\"Gtk.AccelMapForeach\"/>, the @changed parameter indicates whether\nthis accelerator was changed during runtime (thus, would need\nsaving during an accelerator map dump).</p>",
-                "kind": "function",
-                "name": "foreach_unfiltered",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "data",
-                        "direction": "in",
-                        "type": "void"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "foreach_func",
-                        "direction": "in",
-                        "type": "Gtk.AccelMapForeach"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
-            },
-            {
-                "doc": "<p>Gets the singleton global <span data-xref=\"Gtk.AccelMap\"/> object. This object\nis useful only for notification of changes to the accelerator\nmap via the ::changed signal; it isn\u2019t a parameter to the\nother accelerator map functions.</p>",
-                "kind": "function",
-                "name": "get",
-                "parameters": [],
-                "retval": {
-                    "type": "Gtk.AccelMap"
-                }
-            },
-            {
-                "doc": "<p>Parses a file previously saved with <span data-xref=\"Gtk.AccelMap.save\"/> for\naccelerator specifications, and propagates them accordingly.</p>",
-                "kind": "function",
-                "name": "load",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "file_name",
-                        "direction": "in",
-                        "type": "String"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
-            },
-            {
-                "doc": "<p>Filedescriptor variant of <span data-xref=\"Gtk.AccelMap.load\"/>.</p><p>Note that the file descriptor will not be closed by this function.</p>",
-                "kind": "function",
-                "name": "load_fd",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "fd",
-                        "direction": "in",
-                        "type": "Number(gint)"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
-            },
-            {
-                "doc": "<p><span data-xref=\"GLib.Scanner\">GLib.Scanner</span> variant of <span data-xref=\"Gtk.AccelMap.load\"/>.</p>",
-                "kind": "function",
-                "name": "load_scanner",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "scanner",
-                        "direction": "in",
-                        "type": "GLib.Scanner"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
-            },
-            {
-                "doc": "<p>Locks the given accelerator path. If the accelerator map doesn\u2019t yet contain\nan entry for <code>accel_path</code>, a new one is created.</p><p>Locking an accelerator path prevents its accelerator from being changed\nduring runtime. A locked accelerator path can be unlocked by\n<span data-xref=\"Gtk.AccelMap.unlock_path\"/>. Refer to <span data-xref=\"Gtk.AccelMap.change_entry\"/>\nfor information about runtime accelerator changes.</p><p>If called more than once, <code>accel_path</code> remains locked until\n<span data-xref=\"Gtk.AccelMap.unlock_path\"/> has been called an equivalent number\nof times.</p><p>Note that locking of individual accelerator paths is independent from\nlocking the <span data-xref=\"Gtk.AccelGroup\"/> containing them. For runtime accelerator\nchanges to be possible, both the accelerator path and its <span data-xref=\"Gtk.AccelGroup\"/>\nhave to be unlocked.</p>",
-                "kind": "function",
-                "name": "lock_path",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "accel_path",
-                        "direction": "in",
-                        "type": "String"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
-            },
-            {
-                "doc": "<p>Looks up the accelerator entry for <code>accel_path</code> and fills in <code>key</code>.</p>",
-                "kind": "function",
-                "name": "lookup_entry",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "accel_path",
-                        "direction": "in",
-                        "type": "String"
-                    },
-                    {
-                        "allow_none": true,
-                        "argname": "key",
-                        "direction": "out",
-                        "type": "Gtk.AccelKey"
-                    }
-                ],
-                "retval": {
-                    "type": "Boolean"
-                }
-            },
-            {
-                "doc": "<p>Saves current accelerator specifications (accelerator path, key\nand modifiers) to <code>file_name</code>.\nThe file is written in a format suitable to be read back in by\n<span data-xref=\"Gtk.AccelMap.load\"/>.</p>",
-                "kind": "function",
-                "name": "save",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "file_name",
-                        "direction": "in",
-                        "type": "String"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
-            },
-            {
-                "doc": "<p>Filedescriptor variant of <span data-xref=\"Gtk.AccelMap.save\"/>.</p><p>Note that the file descriptor will not be closed by this function.</p>",
-                "kind": "function",
-                "name": "save_fd",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "fd",
-                        "direction": "in",
-                        "type": "Number(gint)"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
-            },
-            {
-                "doc": "<p>Undoes the last call to <span data-xref=\"Gtk.AccelMap.lock_path\"/> on this <code>accel_path</code>.\nRefer to <span data-xref=\"Gtk.AccelMap.lock_path\"/> for information about accelerator path locking.</p>",
-                "kind": "function",
-                "name": "unlock_path",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "accel_path",
-                        "direction": "in",
-                        "type": "String"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
+            ],
+            "retval": {
+                "type": "void"
             }
-        ]
+        },
+        {
+            "doc": "<p>Adds a filter to the global list of accel path filters.</p><p>Accel map entries whose accel path matches one of the filters\nare skipped by <span data-xref=\"Gtk.AccelMap.foreach\"/>.</p><p>This function is intended for GTK+ modules that create their own\nmenus, but don\u2019t want them to be saved into the applications accelerator\nmap dump.</p>",
+            "kind": "function",
+            "name": "add_filter",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "filter_pattern",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Changes the <pre>accel_key</pre> and <pre>accel_mods</pre> currently associated with <pre>accel_path</pre>.\nDue to conflicts with other accelerators, a change may not always be possible,\n<pre>replace</pre> indicates whether other accelerators may be deleted to resolve such\nconflicts. A change will only occur if all conflicts could be resolved (which\nmight not be the case if conflicting accelerators are locked). Successful\nchanges are indicated by a <pre>true</pre> return value.</p><p>Note that <pre>accel_path</pre> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>. Therefore, if you\npass a static string, you can save some memory by interning it first with\n<span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
+            "kind": "function",
+            "name": "change_entry",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_path",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_key",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_mods",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "replace",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Loops over the entries in the accelerator map whose accel path\ndoesn\u2019t match any of the filters added with <span data-xref=\"Gtk.AccelMap.add_filter\"/>,\nand execute <pre>foreach_func</pre> on each. The signature of <pre>foreach_func</pre> is\nthat of <span data-xref=\"Gtk.AccelMapForeach\"/>, the @changed parameter indicates whether\nthis accelerator was changed during runtime (thus, would need\nsaving during an accelerator map dump).</p>",
+            "kind": "function",
+            "name": "foreach",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "foreach_func",
+                    "direction": "in",
+                    "type": "Gtk.AccelMapForeach"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Loops over all entries in the accelerator map, and execute\n<pre>foreach_func</pre> on each. The signature of <pre>foreach_func</pre> is that of\n<span data-xref=\"Gtk.AccelMapForeach\"/>, the @changed parameter indicates whether\nthis accelerator was changed during runtime (thus, would need\nsaving during an accelerator map dump).</p>",
+            "kind": "function",
+            "name": "foreach_unfiltered",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "foreach_func",
+                    "direction": "in",
+                    "type": "Gtk.AccelMapForeach"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the singleton global <span data-xref=\"Gtk.AccelMap\"/> object. This object\nis useful only for notification of changes to the accelerator\nmap via the ::changed signal; it isn\u2019t a parameter to the\nother accelerator map functions.</p>",
+            "kind": "function",
+            "name": "get",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.AccelMap"
+            }
+        },
+        {
+            "doc": "<p>Parses a file previously saved with <span data-xref=\"Gtk.AccelMap.save\"/> for\naccelerator specifications, and propagates them accordingly.</p>",
+            "kind": "function",
+            "name": "load",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "file_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Filedescriptor variant of <span data-xref=\"Gtk.AccelMap.load\"/>.</p><p>Note that the file descriptor will not be closed by this function.</p>",
+            "kind": "function",
+            "name": "load_fd",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "fd",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p><span data-xref=\"GLib.Scanner\">GLib.Scanner</span> variant of <span data-xref=\"Gtk.AccelMap.load\"/>.</p>",
+            "kind": "function",
+            "name": "load_scanner",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "scanner",
+                    "direction": "in",
+                    "type": "GLib.Scanner"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Locks the given accelerator path. If the accelerator map doesn\u2019t yet contain\nan entry for <pre>accel_path</pre>, a new one is created.</p><p>Locking an accelerator path prevents its accelerator from being changed\nduring runtime. A locked accelerator path can be unlocked by\n<span data-xref=\"Gtk.AccelMap.unlock_path\"/>. Refer to <span data-xref=\"Gtk.AccelMap.change_entry\"/>\nfor information about runtime accelerator changes.</p><p>If called more than once, <pre>accel_path</pre> remains locked until\n<span data-xref=\"Gtk.AccelMap.unlock_path\"/> has been called an equivalent number\nof times.</p><p>Note that locking of individual accelerator paths is independent from\nlocking the <span data-xref=\"Gtk.AccelGroup\"/> containing them. For runtime accelerator\nchanges to be possible, both the accelerator path and its <span data-xref=\"Gtk.AccelGroup\"/>\nhave to be unlocked.</p>",
+            "kind": "function",
+            "name": "lock_path",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Looks up the accelerator entry for <pre>accel_path</pre> and fills in <pre>key</pre>.</p>",
+            "kind": "function",
+            "name": "lookup_entry",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_path",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "key",
+                    "direction": "out",
+                    "type": "Gtk.AccelKey"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Saves current accelerator specifications (accelerator path, key\nand modifiers) to <pre>file_name</pre>.\nThe file is written in a format suitable to be read back in by\n<span data-xref=\"Gtk.AccelMap.load\"/>.</p>",
+            "kind": "function",
+            "name": "save",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "file_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Filedescriptor variant of <span data-xref=\"Gtk.AccelMap.save\"/>.</p><p>Note that the file descriptor will not be closed by this function.</p>",
+            "kind": "function",
+            "name": "save_fd",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "fd",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Undoes the last call to <span data-xref=\"Gtk.AccelMap.lock_path\"/> on this <pre>accel_path</pre>.\nRefer to <span data-xref=\"Gtk.AccelMap.lock_path\"/> for information about accelerator path locking.</p>",
+            "kind": "function",
+            "name": "unlock_path",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
     ],
     "name": "AccelMap",
     "properties": [],

@@ -1,0 +1,177 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new linear gradient along the line defined by (x0, y0) and (x1, y1). Before using the gradient\na number of stop colors must be added through <span data-xref=\"Gtk.Gradient.add_color_stop\"/>.</p>",
+            "kind": "constructor",
+            "name": "new_linear",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "x0",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y0",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x1",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y1",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Gradient"
+            }
+        },
+        {
+            "doc": "<p>Creates a new radial gradient along the two circles defined by (x0, y0, radius0) and\n(x1, y1, radius1). Before using the gradient a number of stop colors must be added\nthrough <span data-xref=\"Gtk.Gradient.add_color_stop\"/>.</p>",
+            "kind": "constructor",
+            "name": "new_radial",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "x0",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y0",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "radius0",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x1",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y1",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "radius1",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Gradient"
+            }
+        }
+    ],
+    "doc": "<p>GtkGradient is a boxed type that represents a gradient.\nIt is the result of parsing a\n[gradient expression][gtkcssprovider-gradients].\nTo obtain the gradient represented by a GtkGradient, it has to\nbe resolved with <span data-xref=\"Gtk.Gradient.resolve\"/>, which replaces all\nsymbolic color references by the colors they refer to (in a given\ncontext) and constructs a #cairo_pattern_t value.</p><p>It is not normally necessary to deal directly with #GtkGradients,\nsince they are mostly used behind the scenes by <span data-xref=\"Gtk.StyleContext\"/> and\n<span data-xref=\"Gtk.CssProvider\"/>.</p><p><span data-xref=\"Gtk.Gradient\"/> is deprecated. It was used internally by GTK\u2019s CSS engine\nto represent gradients. As its handling is not conforming to modern\nweb standards, it is not used anymore. If you want to use gradients in\nyour own code, please use Cairo directly.</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds a stop color to <pre>gradient</pre>.</p>",
+            "kind": "method",
+            "name": "add_color_stop",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "offset",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "in",
+                    "type": "Gtk.SymbolicColor"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Increases the reference count of <pre>gradient</pre>.</p>",
+            "kind": "method",
+            "name": "ref",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Gradient"
+            }
+        },
+        {
+            "doc": "<p>If <pre>gradient</pre> is resolvable, <pre>resolved_gradient</pre> will be filled in\nwith the resolved gradient as a cairo_pattern_t, and <pre>true</pre> will\nbe returned. Generally, if <pre>gradient</pre> can\u2019t be resolved, it is\ndue to it being defined on top of a named color that doesn't\nexist in <pre>props</pre>.</p>",
+            "kind": "method",
+            "name": "resolve",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "props",
+                    "direction": "in",
+                    "type": "Gtk.StyleProperties"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "resolved_gradient",
+                    "direction": "out",
+                    "type": "cairo.Pattern"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "method",
+            "name": "resolve_for_context",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.StyleContext"
+                }
+            ],
+            "retval": {
+                "type": "cairo.Pattern"
+            }
+        },
+        {
+            "doc": "<p>Creates a string representation for <pre>gradient</pre> that is suitable\nfor using in GTK CSS files.</p>",
+            "kind": "method",
+            "name": "to_string",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Decreases the reference count of <pre>gradient</pre>, freeing its memory\nif the reference count reaches 0.</p>",
+            "kind": "method",
+            "name": "unref",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "Gradient"
+}

@@ -1,0 +1,58 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Allocates a new <span data-xref=\"Gtk.Border\"/>-struct and initializes its elements to zero.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Border"
+            }
+        }
+    ],
+    "doc": "<p>A struct that specifies a border around a rectangular area\nthat can be of different width on each side.</p>",
+    "fields": [
+        {
+            "doc": "<p>The width of the left border</p>",
+            "kind": "field",
+            "name": "left"
+        },
+        {
+            "doc": "<p>The width of the right border</p>",
+            "kind": "field",
+            "name": "right"
+        },
+        {
+            "doc": "<p>The width of the top border</p>",
+            "kind": "field",
+            "name": "top"
+        },
+        {
+            "doc": "<p>The width of the bottom border</p>",
+            "kind": "field",
+            "name": "bottom"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Copies a <span data-xref=\"Gtk.Border\"/>-struct.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Border"
+            }
+        },
+        {
+            "doc": "<p>Frees a <span data-xref=\"Gtk.Border\"/>-struct.</p>",
+            "kind": "method",
+            "name": "free",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "Border"
+}

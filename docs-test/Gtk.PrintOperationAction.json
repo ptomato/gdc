@@ -1,0 +1,27 @@
+{
+    "doc": "<p>The @action parameter to <span data-xref=\"Gtk.PrintOperation.run\"/>\ndetermines what action the print operation should perform.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Show the print dialog.</p>",
+            "kind": "default",
+            "name": "print_dialog"
+        },
+        {
+            "doc": "<p>Start to print without showing\n    the print dialog, based on the current print settings.</p>",
+            "kind": "default",
+            "name": "print"
+        },
+        {
+            "doc": "<p>Show the print preview.</p>",
+            "kind": "default",
+            "name": "preview"
+        },
+        {
+            "doc": "<p>Export to a file. This requires\n    the export-filename property to be set.</p>",
+            "kind": "default",
+            "name": "export"
+        }
+    ],
+    "name": "PrintOperationAction"
+}

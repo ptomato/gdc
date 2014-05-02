@@ -11,18 +11,6 @@
         }
     ],
     "doc": "",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "object"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -42,7 +30,7 @@
             }
         },
         {
-            "doc": "<p>Gets the id of the currently active slave of the <code>context</code>.</p>",
+            "doc": "<p>Gets the id of the currently active slave of the <pre>context</pre>.</p>",
             "kind": "method",
             "name": "get_context_id",
             "parameters": [],
@@ -51,7 +39,7 @@
             }
         },
         {
-            "doc": "<p>Sets the context id for <code>context</code>.</p><p>This causes the currently active slave of <code>context</code> to be\nreplaced by the slave corresponding to the new context id.</p>",
+            "doc": "<p>Sets the context id for <pre>context</pre>.</p><p>This causes the currently active slave of <pre>context</pre> to be\nreplaced by the slave corresponding to the new context id.</p>",
             "kind": "method",
             "name": "set_context_id",
             "parameters": [
@@ -65,8 +53,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "IMMulticontext",
     "properties": [],

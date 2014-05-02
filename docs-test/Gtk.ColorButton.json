@@ -43,18 +43,6 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.ColorButton\"/> is a button which displays the currently selected\ncolor an allows to open a color selection dialog to change the color.\nIt is suitable widget for selecting a color in a preference dialog.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "button"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -67,7 +55,7 @@
             }
         },
         {
-            "doc": "<p>Sets <code>color</code> to be the current color in the <span data-xref=\"Gtk.ColorButton\"/> widget.</p>",
+            "doc": "<p>Sets <pre>color</pre> to be the current color in the <span data-xref=\"Gtk.ColorButton\"/> widget.</p>",
             "kind": "method",
             "name": "get_color",
             "parameters": [
@@ -83,7 +71,7 @@
             }
         },
         {
-            "doc": "<p>Sets <code>rgba</code> to be the current color in the <span data-xref=\"Gtk.ColorButton\"/> widget.</p>",
+            "doc": "<p>Sets <pre>rgba</pre> to be the current color in the <span data-xref=\"Gtk.ColorButton\"/> widget.</p>",
             "kind": "method",
             "name": "get_rgba",
             "parameters": [
@@ -117,7 +105,7 @@
             }
         },
         {
-            "doc": "<p>Sets the current opacity to be <code>alpha</code>.</p>",
+            "doc": "<p>Sets the current opacity to be <pre>alpha</pre>.</p>",
             "kind": "method",
             "name": "set_alpha",
             "parameters": [
@@ -133,7 +121,7 @@
             }
         },
         {
-            "doc": "<p>Sets the current color to be <code>color</code>.</p>",
+            "doc": "<p>Sets the current color to be <pre>color</pre>.</p>",
             "kind": "method",
             "name": "set_color",
             "parameters": [
@@ -149,7 +137,7 @@
             }
         },
         {
-            "doc": "<p>Sets the current color to be <code>rgba</code>.</p>",
+            "doc": "<p>Sets the current color to be <pre>rgba</pre>.</p>",
             "kind": "method",
             "name": "set_rgba",
             "parameters": [
@@ -195,8 +183,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ColorButton",
     "properties": [
@@ -225,7 +212,7 @@
             "type": "String"
         },
         {
-            "doc": "<p>If this property is set to <code>true</code>, the color swatch on the button is\nrendered against a checkerboard background to show its opacity and\nthe opacity slider is displayed in the color selection dialog.</p>",
+            "doc": "<p>If this property is set to <pre>true</pre>, the color swatch on the button is\nrendered against a checkerboard background to show its opacity and\nthe opacity slider is displayed in the color selection dialog.</p>",
             "kind": "property",
             "name": "use-alpha",
             "type": "Boolean"

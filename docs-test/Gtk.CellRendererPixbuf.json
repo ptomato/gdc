@@ -10,23 +10,9 @@
             }
         }
     ],
-    "doc": "<p>A <span data-xref=\"Gtk.CellRendererPixbuf\"/> can be used to render an image in a cell. It allows\nto render either a given <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span> (set via the\n<span data-xref=\"Gtk.CellRendererPixbuf-pixbuf\"/> property) or a named icon (set via the\n<span data-xref=\"Gtk.CellRendererPixbuf-icon-name\"/> property).</p><p>To support the tree view, <span data-xref=\"Gtk.CellRendererPixbuf\"/> also supports rendering two\nalternative pixbufs, when the <span data-xref=\"Gtk.CellRenderer-is-expander\"/> property is <code>true</code>.\nIf the <span data-xref=\"Gtk.CellRenderer-is-expanded\"/> property is <code>true</code> and the\n<span data-xref=\"Gtk.CellRendererPixbuf-pixbuf-expander-open\"/> property is set to a pixbuf, it\nrenders that pixbuf, if the <span data-xref=\"Gtk.CellRenderer-is-expanded\"/> property is <code>false</code>\nand the <span data-xref=\"Gtk.CellRendererPixbuf-pixbuf-expander-closed\"/> property is set to a\npixbuf, it renders that one.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>A <span data-xref=\"Gtk.CellRendererPixbuf\"/> can be used to render an image in a cell. It allows\nto render either a given <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span> (set via the\n<span data-xref=\"Gtk.CellRendererPixbuf-pixbuf\"/> property) or a named icon (set via the\n<span data-xref=\"Gtk.CellRendererPixbuf-icon-name\"/> property).</p><p>To support the tree view, <span data-xref=\"Gtk.CellRendererPixbuf\"/> also supports rendering two\nalternative pixbufs, when the <span data-xref=\"Gtk.CellRenderer-is-expander\"/> property is <pre>true</pre>.\nIf the <span data-xref=\"Gtk.CellRenderer-is-expanded\"/> property is <pre>true</pre> and the\n<span data-xref=\"Gtk.CellRendererPixbuf-pixbuf-expander-open\"/> property is set to a pixbuf, it\nrenders that pixbuf, if the <span data-xref=\"Gtk.CellRenderer-is-expanded\"/> property is <pre>false</pre>\nand the <span data-xref=\"Gtk.CellRendererPixbuf-pixbuf-expander-closed\"/> property is set to a\npixbuf, it renders that one.</p>",
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "CellRendererPixbuf",
     "properties": [
         {

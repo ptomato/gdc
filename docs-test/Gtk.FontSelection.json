@@ -11,18 +11,6 @@
         }
     ],
     "doc": "",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -116,7 +104,7 @@
             }
         },
         {
-            "doc": "<p>Sets the currently-selected font.</p><p>Note that the <code>fontsel</code> needs to know the screen in which it will appear\nfor this to work; this can be guaranteed by simply making sure that the\n<code>fontsel</code> is inserted in a toplevel window before you call this function.</p>",
+            "doc": "<p>Sets the currently-selected font.</p><p>Note that the <pre>fontsel</pre> needs to know the screen in which it will appear\nfor this to work; this can be guaranteed by simply making sure that the\n<pre>fontsel</pre> is inserted in a toplevel window before you call this function.</p>",
             "kind": "method",
             "name": "set_font_name",
             "parameters": [
@@ -132,7 +120,7 @@
             }
         },
         {
-            "doc": "<p>Sets the text displayed in the preview area.\nThe <code>text</code> is used to show how the selected font looks.</p>",
+            "doc": "<p>Sets the text displayed in the preview area.\nThe <pre>text</pre> is used to show how the selected font looks.</p>",
             "kind": "method",
             "name": "set_preview_text",
             "parameters": [
@@ -146,8 +134,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "FontSelection",
     "properties": [

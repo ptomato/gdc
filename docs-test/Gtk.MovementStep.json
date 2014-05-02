@@ -1,0 +1,57 @@
+{
+    "doc": "",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Move forward or back by graphemes</p>",
+            "kind": "default",
+            "name": "logical_positions"
+        },
+        {
+            "doc": "<p>Move left or right by graphemes</p>",
+            "kind": "default",
+            "name": "visual_positions"
+        },
+        {
+            "doc": "<p>Move forward or back by words</p>",
+            "kind": "default",
+            "name": "words"
+        },
+        {
+            "doc": "<p>Move up or down lines (wrapped lines)</p>",
+            "kind": "default",
+            "name": "display_lines"
+        },
+        {
+            "doc": "<p>Move to either end of a line</p>",
+            "kind": "default",
+            "name": "display_line_ends"
+        },
+        {
+            "doc": "<p>Move up or down paragraphs (newline-ended lines)</p>",
+            "kind": "default",
+            "name": "paragraphs"
+        },
+        {
+            "doc": "<p>Move to either end of a paragraph</p>",
+            "kind": "default",
+            "name": "paragraph_ends"
+        },
+        {
+            "doc": "<p>Move by pages</p>",
+            "kind": "default",
+            "name": "pages"
+        },
+        {
+            "doc": "<p>Move to ends of the buffer</p>",
+            "kind": "default",
+            "name": "buffer_ends"
+        },
+        {
+            "doc": "<p>Move horizontally by pages</p>",
+            "kind": "default",
+            "name": "horizontal_pages"
+        }
+    ],
+    "name": "MovementStep"
+}

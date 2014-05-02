@@ -11,18 +11,6 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.MenuButton\"/> widget is used to display a popup when clicked on.\nThis popup can be provided either as a <span data-xref=\"Gtk.Menu\"/>, a <span data-xref=\"Gtk.Popover\"/> or an\nabstract <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span>.</p><p>The <span data-xref=\"Gtk.MenuButton\"/> widget can hold any valid child widget. That is, it\ncan hold almost any other standard <span data-xref=\"Gtk.Widget\"/>. The most commonly used\nchild is the provided <span data-xref=\"Gtk.Arrow\"/>.</p><p>The positioning of the popup is determined by the <span data-xref=\"Gtk.MenuButton-direction\"/>\nproperty of the menu button.</p><p>For menus, the <span data-xref=\"Gtk.Widget-halign\"/> and <span data-xref=\"Gtk.Widget-valign\"/> properties of the\nmenu are also taken into account. For example, when the direction is\n<span data-xref=\"Gtk.ArrowType\"/>.down and the horizontal alignment is <span data-xref=\"Gtk.Align\"/>.start, the\nmenu will be positioned below the button, with the starting edge\n(depending on the text direction) of the menu aligned with the starting\nedge of the button. If there is not enough space below the button, the\nmenu is popped up above the button instead. If the alignment would move\npart of the menu offscreen, it is \u201cpushed in\u201d.</p><h2>Direction = Down</h2><ul>\n<li>halign = start</li>\n</ul><pre><code>![](down-start.png)\n</code></pre><ul>\n<li>halign = center</li>\n</ul><pre><code>![](down-center.png)\n</code></pre><ul>\n<li>halign = end</li>\n</ul><pre><code>![](down-end.png)\n</code></pre><h2>Direction = Up</h2><ul>\n<li>halign = start</li>\n</ul><pre><code>![](up-start.png)\n</code></pre><ul>\n<li>halign = center</li>\n</ul><pre><code>![](up-center.png)\n</code></pre><ul>\n<li>halign = end</li>\n</ul><pre><code>![](up-end.png)\n</code></pre><h2>Direction = Left</h2><ul>\n<li>valign = start</li>\n</ul><pre><code>![](left-start.png)\n</code></pre><ul>\n<li>valign = center</li>\n</ul><pre><code>![](left-center.png)\n</code></pre><ul>\n<li>valign = end</li>\n</ul><pre><code>![](left-end.png)\n</code></pre><h2>Direction = Right</h2><ul>\n<li>valign = start</li>\n</ul><pre><code>![](right-start.png)\n</code></pre><ul>\n<li>valign = center</li>\n</ul><pre><code>![](right-center.png)\n</code></pre><ul>\n<li>valign = end</li>\n</ul><pre><code>![](right-end.png)\n</code></pre>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -53,7 +41,7 @@
             }
         },
         {
-            "doc": "<p>Returns the <span data-xref=\"Gtk.Popover\"/> that pops out of the button.\nIf the button is not using a <span data-xref=\"Gtk.Popover\"/>, this function\nreturns <code>null</code>.</p>",
+            "doc": "<p>Returns the <span data-xref=\"Gtk.Popover\"/> that pops out of the button.\nIf the button is not using a <span data-xref=\"Gtk.Popover\"/>, this function\nreturns <pre>null</pre>.</p>",
             "kind": "method",
             "name": "get_popover",
             "parameters": [],
@@ -62,7 +50,7 @@
             }
         },
         {
-            "doc": "<p>Returns the <span data-xref=\"Gtk.Menu\"/> that pops out of the button.\nIf the button does not use a <span data-xref=\"Gtk.Menu\"/>, this function\nreturns <code>null</code>.</p>",
+            "doc": "<p>Returns the <span data-xref=\"Gtk.Menu\"/> that pops out of the button.\nIf the button does not use a <span data-xref=\"Gtk.Menu\"/>, this function\nreturns <pre>null</pre>.</p>",
             "kind": "method",
             "name": "get_popup",
             "parameters": [],
@@ -80,7 +68,7 @@
             }
         },
         {
-            "doc": "<p>Sets the <span data-xref=\"Gtk.Widget\"/> to use to line the menu with when popped up.\nNote that the <code>align_widget</code> must contain the <span data-xref=\"Gtk.MenuButton\"/> itself.</p><p>Setting it to <code>null</code> means that the menu will be aligned with the\nbutton itself.</p><p>Note that this property is only used with menus currently,\nand not for popovers.</p>",
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Widget\"/> to use to line the menu with when popped up.\nNote that the <pre>align_widget</pre> must contain the <span data-xref=\"Gtk.MenuButton\"/> itself.</p><p>Setting it to <pre>null</pre> means that the menu will be aligned with the\nbutton itself.</p><p>Note that this property is only used with menus currently,\nand not for popovers.</p>",
             "kind": "method",
             "name": "set_align_widget",
             "parameters": [
@@ -96,7 +84,7 @@
             }
         },
         {
-            "doc": "<p>Sets the direction in which the popup will be popped up, as\nwell as changing the arrow\u2019s direction. The child will not\nbe changed to an arrow if it was customized.</p><p>If the does not fit in the available space in the given direction,\nGTK+ will its best to keep it inside the screen and fully visible.</p><p>If you pass <span data-xref=\"Gtk.ArrowType\"/>.none for a <code>direction</code>, the popup will behave\nas if you passed <span data-xref=\"Gtk.ArrowType\"/>.down (although you won\u2019t see any arrows).</p>",
+            "doc": "<p>Sets the direction in which the popup will be popped up, as\nwell as changing the arrow\u2019s direction. The child will not\nbe changed to an arrow if it was customized.</p><p>If the does not fit in the available space in the given direction,\nGTK+ will its best to keep it inside the screen and fully visible.</p><p>If you pass <span data-xref=\"Gtk.ArrowType\"/>.none for a <pre>direction</pre>, the popup will behave\nas if you passed <span data-xref=\"Gtk.ArrowType\"/>.down (although you won\u2019t see any arrows).</p>",
             "kind": "method",
             "name": "set_direction",
             "parameters": [
@@ -112,7 +100,7 @@
             }
         },
         {
-            "doc": "<p>Sets the <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span> from which the popup will be constructed,\nor <code>null</code> to disable the button.</p><p>Depending on the value of <span data-xref=\"Gtk.MenuButton-use-popover\"/>, either a\n<span data-xref=\"Gtk.Menu\"/> will be created with <span data-xref=\"Gtk.Menu.new_from_model\"/>, or a\n<span data-xref=\"Gtk.Popover\"/> with <span data-xref=\"Gtk.Popover.new_from_model\"/>. In either case,\nactions will be connected as documented for these functions.</p><p>If <span data-xref=\"Gtk.MenuButton-popup\"/> or <span data-xref=\"Gtk.MenuButton-popover\"/> are already set,\ntheir content will be lost and replaced by the newly created popup.</p>",
+            "doc": "<p>Sets the <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span> from which the popup will be constructed,\nor <pre>null</pre> to disable the button.</p><p>Depending on the value of <span data-xref=\"Gtk.MenuButton-use-popover\"/>, either a\n<span data-xref=\"Gtk.Menu\"/> will be created with <span data-xref=\"Gtk.Menu.new_from_model\"/>, or a\n<span data-xref=\"Gtk.Popover\"/> with <span data-xref=\"Gtk.Popover.new_from_model\"/>. In either case,\nactions will be connected as documented for these functions.</p><p>If <span data-xref=\"Gtk.MenuButton-popup\"/> or <span data-xref=\"Gtk.MenuButton-popover\"/> are already set,\ntheir content will be lost and replaced by the newly created popup.</p>",
             "kind": "method",
             "name": "set_menu_model",
             "parameters": [
@@ -128,7 +116,7 @@
             }
         },
         {
-            "doc": "<p>Sets the <span data-xref=\"Gtk.Popover\"/> that will be popped up when the button is\nclicked, or <code>null</code> to disable the button. If <span data-xref=\"Gtk.MenuButton-menu-model\"/>\nor <span data-xref=\"Gtk.MenuButton-popup\"/> are set, they will be set to <code>null</code>.</p>",
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Popover\"/> that will be popped up when the button is\nclicked, or <pre>null</pre> to disable the button. If <span data-xref=\"Gtk.MenuButton-menu-model\"/>\nor <span data-xref=\"Gtk.MenuButton-popup\"/> are set, they will be set to <pre>null</pre>.</p>",
             "kind": "method",
             "name": "set_popover",
             "parameters": [
@@ -144,7 +132,7 @@
             }
         },
         {
-            "doc": "<p>Sets the <span data-xref=\"Gtk.Menu\"/> that will be popped up when the button is clicked,\nor <code>null</code> to disable the button. If <span data-xref=\"Gtk.MenuButton-menu-model\"/> or\n<span data-xref=\"Gtk.MenuButton-popover\"/> are set, they will be set to <code>null</code>.</p>",
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Menu\"/> that will be popped up when the button is clicked,\nor <pre>null</pre> to disable the button. If <span data-xref=\"Gtk.MenuButton-menu-model\"/> or\n<span data-xref=\"Gtk.MenuButton-popover\"/> are set, they will be set to <pre>null</pre>.</p>",
             "kind": "method",
             "name": "set_popup",
             "parameters": [
@@ -174,8 +162,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "MenuButton",
     "properties": [

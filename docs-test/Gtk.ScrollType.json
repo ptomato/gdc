@@ -1,0 +1,87 @@
+{
+    "doc": "<p>Scrolling types.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>No scrolling.</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>Jump to new location.</p>",
+            "kind": "default",
+            "name": "jump"
+        },
+        {
+            "doc": "<p>Step backward.</p>",
+            "kind": "default",
+            "name": "step_backward"
+        },
+        {
+            "doc": "<p>Step forward.</p>",
+            "kind": "default",
+            "name": "step_forward"
+        },
+        {
+            "doc": "<p>Page backward.</p>",
+            "kind": "default",
+            "name": "page_backward"
+        },
+        {
+            "doc": "<p>Page forward.</p>",
+            "kind": "default",
+            "name": "page_forward"
+        },
+        {
+            "doc": "<p>Step up.</p>",
+            "kind": "default",
+            "name": "step_up"
+        },
+        {
+            "doc": "<p>Step down.</p>",
+            "kind": "default",
+            "name": "step_down"
+        },
+        {
+            "doc": "<p>Page up.</p>",
+            "kind": "default",
+            "name": "page_up"
+        },
+        {
+            "doc": "<p>Page down.</p>",
+            "kind": "default",
+            "name": "page_down"
+        },
+        {
+            "doc": "<p>Step to the left.</p>",
+            "kind": "default",
+            "name": "step_left"
+        },
+        {
+            "doc": "<p>Step to the right.</p>",
+            "kind": "default",
+            "name": "step_right"
+        },
+        {
+            "doc": "<p>Page to the left.</p>",
+            "kind": "default",
+            "name": "page_left"
+        },
+        {
+            "doc": "<p>Page to the right.</p>",
+            "kind": "default",
+            "name": "page_right"
+        },
+        {
+            "doc": "<p>Scroll to start.</p>",
+            "kind": "default",
+            "name": "start"
+        },
+        {
+            "doc": "<p>Scroll to end.</p>",
+            "kind": "default",
+            "name": "end"
+        }
+    ],
+    "name": "ScrollType"
+}

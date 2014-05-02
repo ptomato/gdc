@@ -10,7 +10,7 @@
             }
         },
         {
-            "doc": "<p>Creates a status icon displaying the file <code>filename</code>.</p><p>The image will be scaled down to fit in the available\nspace in the notification area, if necessary.</p>",
+            "doc": "<p>Creates a status icon displaying the file <pre>filename</pre>.</p><p>The image will be scaled down to fit in the available\nspace in the notification area, if necessary.</p>",
             "kind": "constructor",
             "name": "new_from_file",
             "parameters": [
@@ -58,7 +58,7 @@
             }
         },
         {
-            "doc": "<p>Creates a status icon displaying <code>pixbuf</code>.</p><p>The image will be scaled down to fit in the available\nspace in the notification area, if necessary.</p>",
+            "doc": "<p>Creates a status icon displaying <pre>pixbuf</pre>.</p><p>The image will be scaled down to fit in the available\nspace in the notification area, if necessary.</p>",
             "kind": "constructor",
             "name": "new_from_pixbuf",
             "parameters": [
@@ -91,18 +91,6 @@
         }
     ],
     "doc": "<p>The \u201csystem tray\u201d or notification area is normally used for transient icons\nthat indicate some special state. For example, a system tray icon might\nappear to tell the user that they have new mail, or have an incoming instant\nmessage, or something along those lines. The basic idea is that creating an\nicon in the notification area is less annoying than popping up a dialog.</p><p>A <span data-xref=\"Gtk.StatusIcon\"/> object can be used to display an icon in a \u201csystem tray\u201d.\nThe icon can have a tooltip, and the user can interact with it by\nactivating it or popping up a context menu. Critical information should\nnot solely be displayed in a <span data-xref=\"Gtk.StatusIcon\"/>, since it may not be\nvisible (e.g. when the user doesn\u2019t have a notification area on his panel).\nThis can be checked with <span data-xref=\"Gtk.StatusIcon.is_embedded\"/>.</p><p>On X11, the implementation follows the\n<a href=\"http://www.freedesktop.org/wiki/Specifications/systemtray-spec\">FreeDesktop System Tray Specification</a>.\nImplementations of the \u201ctray\u201d side of this specification can\nbe found e.g. in the GNOME 2 and KDE panel applications.</p><p>Note that a GtkStatusIcon is not a widget, but just\na <span data-xref=\"GObject.Object\">GObject.Object</span>. Making it a widget would be impractical, since the system tray\non Win32 doesn\u2019t allow to embed arbitrary widgets.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -170,7 +158,7 @@
             }
         },
         {
-            "doc": "<p>Returns the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> associated with <code>status_icon</code>.</p>",
+            "doc": "<p>Returns the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> associated with <pre>status_icon</pre>.</p>",
             "kind": "method",
             "name": "get_screen",
             "parameters": [],
@@ -215,7 +203,7 @@
             }
         },
         {
-            "doc": "<p>Gets the contents of the tooltip for <code>status_icon</code>.</p>",
+            "doc": "<p>Gets the contents of the tooltip for <pre>status_icon</pre>.</p>",
             "kind": "method",
             "name": "get_tooltip_markup",
             "parameters": [],
@@ -224,7 +212,7 @@
             }
         },
         {
-            "doc": "<p>Gets the contents of the tooltip for <code>status_icon</code>.</p>",
+            "doc": "<p>Gets the contents of the tooltip for <pre>status_icon</pre>.</p>",
             "kind": "method",
             "name": "get_tooltip_text",
             "parameters": [],
@@ -260,7 +248,7 @@
             }
         },
         {
-            "doc": "<p>Makes <code>status_icon</code> display the file <code>filename</code>.\nSee <span data-xref=\"Gtk.StatusIcon.new_from_file\"/> for details.</p>",
+            "doc": "<p>Makes <pre>status_icon</pre> display the file <pre>filename</pre>.\nSee <span data-xref=\"Gtk.StatusIcon.new_from_file\"/> for details.</p>",
             "kind": "method",
             "name": "set_from_file",
             "parameters": [
@@ -276,7 +264,7 @@
             }
         },
         {
-            "doc": "<p>Makes <code>status_icon</code> display the <span data-xref=\"Gio.Icon\">Gio.Icon</span>.\nSee <span data-xref=\"Gtk.StatusIcon.new_from_gicon\"/> for details.</p>",
+            "doc": "<p>Makes <pre>status_icon</pre> display the <span data-xref=\"Gio.Icon\">Gio.Icon</span>.\nSee <span data-xref=\"Gtk.StatusIcon.new_from_gicon\"/> for details.</p>",
             "kind": "method",
             "name": "set_from_gicon",
             "parameters": [
@@ -292,7 +280,7 @@
             }
         },
         {
-            "doc": "<p>Makes <code>status_icon</code> display the icon named <code>icon_name</code> from the\ncurrent icon theme.\nSee <span data-xref=\"Gtk.StatusIcon.new_from_icon_name\"/> for details.</p>",
+            "doc": "<p>Makes <pre>status_icon</pre> display the icon named <pre>icon_name</pre> from the\ncurrent icon theme.\nSee <span data-xref=\"Gtk.StatusIcon.new_from_icon_name\"/> for details.</p>",
             "kind": "method",
             "name": "set_from_icon_name",
             "parameters": [
@@ -308,7 +296,7 @@
             }
         },
         {
-            "doc": "<p>Makes <code>status_icon</code> display <code>pixbuf</code>.\nSee <span data-xref=\"Gtk.StatusIcon.new_from_pixbuf\"/> for details.</p>",
+            "doc": "<p>Makes <pre>status_icon</pre> display <pre>pixbuf</pre>.\nSee <span data-xref=\"Gtk.StatusIcon.new_from_pixbuf\"/> for details.</p>",
             "kind": "method",
             "name": "set_from_pixbuf",
             "parameters": [
@@ -324,7 +312,7 @@
             }
         },
         {
-            "doc": "<p>Makes <code>status_icon</code> display the stock icon with the id <code>stock_id</code>.\nSee <span data-xref=\"Gtk.StatusIcon.new_from_stock\"/> for details.</p>",
+            "doc": "<p>Makes <pre>status_icon</pre> display the stock icon with the id <pre>stock_id</pre>.\nSee <span data-xref=\"Gtk.StatusIcon.new_from_stock\"/> for details.</p>",
             "kind": "method",
             "name": "set_from_stock",
             "parameters": [
@@ -340,7 +328,7 @@
             }
         },
         {
-            "doc": "<p>Sets the has-tooltip property on <code>status_icon</code> to <code>has_tooltip</code>.\nSee <span data-xref=\"Gtk.StatusIcon-has-tooltip\"/> for more information.</p>",
+            "doc": "<p>Sets the has-tooltip property on <pre>status_icon</pre> to <pre>has_tooltip</pre>.\nSee <span data-xref=\"Gtk.StatusIcon-has-tooltip\"/> for more information.</p>",
             "kind": "method",
             "name": "set_has_tooltip",
             "parameters": [
@@ -372,7 +360,7 @@
             }
         },
         {
-            "doc": "<p>Sets the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> where <code>status_icon</code> is displayed; if\nthe icon is already mapped, it will be unmapped, and\nthen remapped on the new screen.</p>",
+            "doc": "<p>Sets the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> where <pre>status_icon</pre> is displayed; if\nthe icon is already mapped, it will be unmapped, and\nthen remapped on the new screen.</p>",
             "kind": "method",
             "name": "set_screen",
             "parameters": [
@@ -404,7 +392,7 @@
             }
         },
         {
-            "doc": "<p>Sets <code>markup</code> as the contents of the tooltip, which is marked up with\n the [Pango text markup language][PangoMarkupFormat].</p><p>This function will take care of setting <span data-xref=\"Gtk.StatusIcon-has-tooltip\"/> to <code>true</code>\nand of the default handler for the <span data-xref=\"Gtk.StatusIcon-query-tooltip\"/> signal.</p><p>See also the <span data-xref=\"Gtk.StatusIcon-tooltip-markup\"/> property and\n<span data-xref=\"Gtk.Tooltip.set_markup\"/>.</p>",
+            "doc": "<p>Sets <pre>markup</pre> as the contents of the tooltip, which is marked up with\n the [Pango text markup language][PangoMarkupFormat].</p><p>This function will take care of setting <span data-xref=\"Gtk.StatusIcon-has-tooltip\"/> to <pre>true</pre>\nand of the default handler for the <span data-xref=\"Gtk.StatusIcon-query-tooltip\"/> signal.</p><p>See also the <span data-xref=\"Gtk.StatusIcon-tooltip-markup\"/> property and\n<span data-xref=\"Gtk.Tooltip.set_markup\"/>.</p>",
             "kind": "method",
             "name": "set_tooltip_markup",
             "parameters": [
@@ -420,7 +408,7 @@
             }
         },
         {
-            "doc": "<p>Sets <code>text</code> as the contents of the tooltip.</p><p>This function will take care of setting <span data-xref=\"Gtk.StatusIcon-has-tooltip\"/> to\n<code>true</code> and of the default handler for the <span data-xref=\"Gtk.StatusIcon-query-tooltip\"/>\nsignal.</p><p>See also the <span data-xref=\"Gtk.StatusIcon-tooltip-text\"/> property and\n<span data-xref=\"Gtk.Tooltip.set_text\"/>.</p>",
+            "doc": "<p>Sets <pre>text</pre> as the contents of the tooltip.</p><p>This function will take care of setting <span data-xref=\"Gtk.StatusIcon-has-tooltip\"/> to\n<pre>true</pre> and of the default handler for the <span data-xref=\"Gtk.StatusIcon-query-tooltip\"/>\nsignal.</p><p>See also the <span data-xref=\"Gtk.StatusIcon-tooltip-text\"/> property and\n<span data-xref=\"Gtk.Tooltip.set_text\"/>.</p>",
             "kind": "method",
             "name": "set_tooltip_text",
             "parameters": [
@@ -451,53 +439,51 @@
                 "type": "void"
             }
         },
-        [
-            {
-                "doc": "<p>Menu positioning function to use with <span data-xref=\"Gtk.Menu.popup\"/>\nto position <code>menu</code> aligned to the status icon <code>user_data</code>.</p>",
-                "kind": "function",
-                "name": "position_menu",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "menu",
-                        "direction": "in",
-                        "type": "Gtk.Menu"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "x",
-                        "direction": "out",
-                        "type": "Number(gint)"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "y",
-                        "direction": "out",
-                        "type": "Number(gint)"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "push_in",
-                        "direction": "out",
-                        "type": "Boolean"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "user_data",
-                        "direction": "in",
-                        "type": "Gtk.StatusIcon"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
+        {
+            "doc": "<p>Menu positioning function to use with <span data-xref=\"Gtk.Menu.popup\"/>\nto position <pre>menu</pre> aligned to the status icon <pre>user_data</pre>.</p>",
+            "kind": "function",
+            "name": "position_menu",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "menu",
+                    "direction": "in",
+                    "type": "Gtk.Menu"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "push_in",
+                    "direction": "out",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "Gtk.StatusIcon"
                 }
+            ],
+            "retval": {
+                "type": "void"
             }
-        ]
+        }
     ],
     "name": "StatusIcon",
     "properties": [
         {
-            "doc": "<p><code>true</code> if the statusicon is embedded in a notification area.</p>",
+            "doc": "<pre>true</pre>\n\n<p>if the statusicon is embedded in a notification area.</p>",
             "kind": "property",
             "name": "embedded",
             "type": "Boolean"
@@ -515,7 +501,7 @@
             "type": "Gio.Icon"
         },
         {
-            "doc": "<p>Enables or disables the emission of <span data-xref=\"Gtk.StatusIcon-query-tooltip\"/> on\n@status_icon.  A value of <code>true</code> indicates that @status_icon can have a\ntooltip, in this case the status icon will be queried using\n<span data-xref=\"Gtk.StatusIcon-query-tooltip\"/> to determine whether it will provide a\ntooltip or not.</p><p>Note that setting this property to <code>true</code> for the first time will change\nthe event masks of the windows of this status icon to include leave-notify\nand motion-notify events. This will not be undone when the property is set\nto <code>false</code> again.</p><p>Whether this property is respected is platform dependent.\nFor plain text tooltips, use <span data-xref=\"Gtk.StatusIcon-tooltip-text\"/> in preference.</p>",
+            "doc": "<p>Enables or disables the emission of <span data-xref=\"Gtk.StatusIcon-query-tooltip\"/> on\n@status_icon.  A value of <pre>true</pre> indicates that @status_icon can have a\ntooltip, in this case the status icon will be queried using\n<span data-xref=\"Gtk.StatusIcon-query-tooltip\"/> to determine whether it will provide a\ntooltip or not.</p><p>Note that setting this property to <pre>true</pre> for the first time will change\nthe event masks of the windows of this status icon to include leave-notify\nand motion-notify events. This will not be undone when the property is set\nto <pre>false</pre> again.</p><p>Whether this property is respected is platform dependent.\nFor plain text tooltips, use <span data-xref=\"Gtk.StatusIcon-tooltip-text\"/> in preference.</p>",
             "kind": "property",
             "name": "has-tooltip",
             "type": "Boolean"
@@ -569,13 +555,13 @@
             "type": "String"
         },
         {
-            "doc": "<p>Sets the text of tooltip to be the given string, which is marked up\nwith the [Pango text markup language][PangoMarkupFormat].\nAlso see <span data-xref=\"Gtk.Tooltip.set_markup\"/>.</p><p>This is a convenience property which will take care of getting the\ntooltip shown if the given string is not <code>null</code>.\n<span data-xref=\"Gtk.StatusIcon-has-tooltip\"/> will automatically be set to <code>true</code> and\nthe default handler for the <span data-xref=\"Gtk.StatusIcon-query-tooltip\"/> signal\nwill take care of displaying the tooltip.</p><p>On some platforms, embedded markup will be ignored.</p>",
+            "doc": "<p>Sets the text of tooltip to be the given string, which is marked up\nwith the [Pango text markup language][PangoMarkupFormat].\nAlso see <span data-xref=\"Gtk.Tooltip.set_markup\"/>.</p><p>This is a convenience property which will take care of getting the\ntooltip shown if the given string is not <pre>null</pre>.\n<span data-xref=\"Gtk.StatusIcon-has-tooltip\"/> will automatically be set to <pre>true</pre> and\nthe default handler for the <span data-xref=\"Gtk.StatusIcon-query-tooltip\"/> signal\nwill take care of displaying the tooltip.</p><p>On some platforms, embedded markup will be ignored.</p>",
             "kind": "property",
             "name": "tooltip-markup",
             "type": "String"
         },
         {
-            "doc": "<p>Sets the text of tooltip to be the given string.</p><p>Also see <span data-xref=\"Gtk.Tooltip.set_text\"/>.</p><p>This is a convenience property which will take care of getting the\ntooltip shown if the given string is not <code>null</code>.\n<span data-xref=\"Gtk.StatusIcon-has-tooltip\"/> will automatically be set to <code>true</code> and\nthe default handler for the <span data-xref=\"Gtk.StatusIcon-query-tooltip\"/> signal\nwill take care of displaying the tooltip.</p><p>Note that some platforms have limitations on the length of tooltips\nthat they allow on status icons, e.g. Windows only shows the first\n64 characters.</p>",
+            "doc": "<p>Sets the text of tooltip to be the given string.</p><p>Also see <span data-xref=\"Gtk.Tooltip.set_text\"/>.</p><p>This is a convenience property which will take care of getting the\ntooltip shown if the given string is not <pre>null</pre>.\n<span data-xref=\"Gtk.StatusIcon-has-tooltip\"/> will automatically be set to <pre>true</pre> and\nthe default handler for the <span data-xref=\"Gtk.StatusIcon-query-tooltip\"/> signal\nwill take care of displaying the tooltip.</p><p>Note that some platforms have limitations on the length of tooltips\nthat they allow on status icons, e.g. Windows only shows the first\n64 characters.</p>",
             "kind": "property",
             "name": "tooltip-text",
             "type": "String"
@@ -630,7 +616,7 @@
             }
         },
         {
-            "doc": "<p>Gets emitted when the user brings up the context menu\nof the status icon. Whether status icons can have context\nmenus and how these are activated is platform-dependent.</p><p>The <code>button</code> and <code>activate_time</code> parameters should be\npassed as the last to arguments to <span data-xref=\"Gtk.Menu.popup\"/>.</p><p>Unlike most G_SIGNAL_ACTION signals, this signal is meant to\nbe used by applications and should be wrapped by language bindings.</p>",
+            "doc": "<p>Gets emitted when the user brings up the context menu\nof the status icon. Whether status icons can have context\nmenus and how these are activated is platform-dependent.</p><p>The <pre>button</pre> and <pre>activate_time</pre> parameters should be\npassed as the last to arguments to <span data-xref=\"Gtk.Menu.popup\"/>.</p><p>Unlike most G_SIGNAL_ACTION signals, this signal is meant to\nbe used by applications and should be wrapped by language bindings.</p>",
             "kind": "signal",
             "name": "popup-menu",
             "parameters": [
@@ -652,7 +638,7 @@
             }
         },
         {
-            "doc": "<p>Emitted when the hover timeout has expired with the\ncursor hovering above @status_icon; or emitted when @status_icon got\nfocus in keyboard mode.</p><p>Using the given coordinates, the signal handler should determine\nwhether a tooltip should be shown for @status_icon. If this is\nthe case <code>true</code> should be returned, <code>false</code> otherwise. Note that if\n<code>keyboard_mode</code> is <code>true</code>, the values of <code>x</code> and <code>y</code> are undefined and\nshould not be used.</p><p>The signal handler is free to manipulate <code>tooltip</code> with the therefore\ndestined function calls.</p><p>Whether this signal is emitted is platform-dependent.\nFor plain text tooltips, use <span data-xref=\"Gtk.StatusIcon-tooltip-text\"/> in preference.</p>",
+            "doc": "<p>Emitted when the hover timeout has expired with the\ncursor hovering above @status_icon; or emitted when @status_icon got\nfocus in keyboard mode.</p><p>Using the given coordinates, the signal handler should determine\nwhether a tooltip should be shown for @status_icon. If this is\nthe case <pre>true</pre> should be returned, <pre>false</pre> otherwise. Note that if\n<pre>keyboard_mode</pre> is <pre>true</pre>, the values of <pre>x</pre> and <pre>y</pre> are undefined and\nshould not be used.</p><p>The signal handler is free to manipulate <pre>tooltip</pre> with the therefore\ndestined function calls.</p><p>Whether this signal is emitted is platform-dependent.\nFor plain text tooltips, use <span data-xref=\"Gtk.StatusIcon-tooltip-text\"/> in preference.</p>",
             "kind": "signal",
             "name": "query-tooltip",
             "parameters": [

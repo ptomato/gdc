@@ -1,0 +1,42 @@
+{
+    "doc": "<p>This type indicates the current state of a widget; the state determines how\nthe widget is drawn. The <span data-xref=\"Gtk.StateType\"/> enumeration is also used to\nidentify different colors in a <span data-xref=\"Gtk.Style\"/> for drawing, so states can be\nused for subparts of a widget as well as entire widgets.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>State during normal operation.</p>",
+            "kind": "default",
+            "name": "normal"
+        },
+        {
+            "doc": "<p>State of a currently active widget, such as a depressed button.</p>",
+            "kind": "default",
+            "name": "active"
+        },
+        {
+            "doc": "<p>State indicating that the mouse pointer is over\n                     the widget and the widget will respond to mouse clicks.</p>",
+            "kind": "default",
+            "name": "prelight"
+        },
+        {
+            "doc": "<p>State of a selected item, such the selected row in a list.</p>",
+            "kind": "default",
+            "name": "selected"
+        },
+        {
+            "doc": "<p>State indicating that the widget is\n                        unresponsive to user actions.</p>",
+            "kind": "default",
+            "name": "insensitive"
+        },
+        {
+            "doc": "<p>The widget is inconsistent, such as checkbuttons\n                         or radiobuttons that aren\u2019t either set to <pre>true</pre> nor <pre>false</pre>,\n                         or buttons requiring the user attention.</p>",
+            "kind": "default",
+            "name": "inconsistent"
+        },
+        {
+            "doc": "<p>The widget has the keyboard focus.</p>",
+            "kind": "default",
+            "name": "focused"
+        }
+    ],
+    "name": "StateType"
+}

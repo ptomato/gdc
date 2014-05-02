@@ -1,0 +1,37 @@
+{
+    "doc": "<p>An enum for determining where a dropped item goes.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>no drop possible</p>",
+            "kind": "default",
+            "name": "no_drop"
+        },
+        {
+            "doc": "<p>dropped item replaces the item</p>",
+            "kind": "default",
+            "name": "drop_into"
+        },
+        {
+            "doc": "<p>droppped item is inserted to the left</p>",
+            "kind": "default",
+            "name": "drop_left"
+        },
+        {
+            "doc": "<p>dropped item is inserted to the right</p>",
+            "kind": "default",
+            "name": "drop_right"
+        },
+        {
+            "doc": "<p>dropped item is inserted above</p>",
+            "kind": "default",
+            "name": "drop_above"
+        },
+        {
+            "doc": "<p>dropped item is inserted below</p>",
+            "kind": "default",
+            "name": "drop_below"
+        }
+    ],
+    "name": "IconViewDropPosition"
+}

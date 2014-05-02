@@ -11,17 +11,10 @@
         }
     ],
     "doc": "",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Marks <code>row</code> as changed, causing any state that depends on this\nto be updated. This affects sorting, filtering and headers.</p><p>Note that calls to this method must be in sync with the data\nused for the row functions. For instance, if the list is\nmirroring some external data set, and <em>two</em> rows changed in the\nexternal data set then when you call <span data-xref=\"Gtk.ListBoxRow.changed\"/>\non the first row the sort function must only read the new data\nfor the first of the two changed rows, otherwise the resorting\nof the rows will be wrong.</p><p>This generally means that if you don\u2019t fully control the data\nmodel you have to duplicate the data that affects the listbox\nrow functions into the row widgets themselves. Another alternative\nis to call <span data-xref=\"Gtk.ListBox.invalidate_sort\"/> on any model change,\nbut that is more expensive.</p>",
+            "doc": "<p>Marks <pre>row</pre> as changed, causing any state that depends on this\nto be updated. This affects sorting, filtering and headers.</p><p>Note that calls to this method must be in sync with the data\nused for the row functions. For instance, if the list is\nmirroring some external data set, and <em>two</em> rows changed in the\nexternal data set then when you call <span data-xref=\"Gtk.ListBoxRow.changed\"/>\non the first row the sort function must only read the new data\nfor the first of the two changed rows, otherwise the resorting\nof the rows will be wrong.</p><p>This generally means that if you don\u2019t fully control the data\nmodel you have to duplicate the data that affects the listbox\nrow functions into the row widgets themselves. Another alternative\nis to call <span data-xref=\"Gtk.ListBox.invalidate_sort\"/> on any model change,\nbut that is more expensive.</p>",
             "kind": "method",
             "name": "changed",
             "parameters": [],
@@ -30,7 +23,7 @@
             }
         },
         {
-            "doc": "<p>Returns the current header of the <code>row</code>. This can be used\nin a <span data-xref=\"Gtk.ListBoxUpdateHeaderFunc\"/> to see if there is a header\nset already, and if so to update the state of it.</p>",
+            "doc": "<p>Returns the current header of the <pre>row</pre>. This can be used\nin a <span data-xref=\"Gtk.ListBoxUpdateHeaderFunc\"/> to see if there is a header\nset already, and if so to update the state of it.</p>",
             "kind": "method",
             "name": "get_header",
             "parameters": [],
@@ -39,7 +32,7 @@
             }
         },
         {
-            "doc": "<p>Gets the current index of the <code>row</code> in its <span data-xref=\"Gtk.ListBox\"/> container.</p>",
+            "doc": "<p>Gets the current index of the <pre>row</pre> in its <span data-xref=\"Gtk.ListBox\"/> container.</p>",
             "kind": "method",
             "name": "get_index",
             "parameters": [],
@@ -57,7 +50,7 @@
             }
         },
         {
-            "doc": "<p>Sets the current header of the <code>row</code>. This is only allowed to be called\nfrom a <span data-xref=\"Gtk.ListBoxUpdateHeaderFunc\"/>. It will replace any existing\nheader in the row, and be shown in front of the row in the listbox.</p>",
+            "doc": "<p>Sets the current header of the <pre>row</pre>. This is only allowed to be called\nfrom a <span data-xref=\"Gtk.ListBoxUpdateHeaderFunc\"/>. It will replace any existing\nheader in the row, and be shown in front of the row in the listbox.</p>",
             "kind": "method",
             "name": "set_header",
             "parameters": [
@@ -71,8 +64,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ListBoxRow",
     "properties": [],

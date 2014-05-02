@@ -32,7 +32,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.Button\"/> containing the image and text from a stock item.\nSome stock ids have preprocessor macros like #GTK_STOCK_OK and</p>\n<h1>GTK_STOCK_APPLY.</h1><p>If <code>stock_id</code> is unknown, then it will be treated as a mnemonic\nlabel (as for <span data-xref=\"Gtk.Button.new_with_mnemonic\"/>).</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Button\"/> containing the image and text from a stock item.\nSome stock ids have preprocessor macros like #GTK_STOCK_OK and</p>\n<h1>GTK_STOCK_APPLY.</h1><p>If <pre>stock_id</pre> is unknown, then it will be treated as a mnemonic\nlabel (as for <span data-xref=\"Gtk.Button.new_with_mnemonic\"/>).</p>",
             "kind": "constructor",
             "name": "new_from_stock",
             "parameters": [
@@ -64,7 +64,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.Button\"/> containing a label.\nIf characters in <code>label</code> are preceded by an underscore, they are underlined.\nIf you need a literal underscore character in a label, use \u201c__\u201d (two\nunderscores). The first underlined character represents a keyboard\naccelerator called a mnemonic.\nPressing Alt and that key activates the button.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Button\"/> containing a label.\nIf characters in <pre>label</pre> are preceded by an underscore, they are underlined.\nIf you need a literal underscore character in a label, use \u201c__\u201d (two\nunderscores). The first underlined character represents a keyboard\naccelerator called a mnemonic.\nPressing Alt and that key activates the button.</p>",
             "kind": "constructor",
             "name": "new_with_mnemonic",
             "parameters": [
@@ -81,18 +81,6 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.Button\"/> widget is generally used to trigger a callback function that is\ncalled when the button is pressed.  The various signals and how to use them\nare outlined below.</p><p>The <span data-xref=\"Gtk.Button\"/> widget can hold any valid child widget.  That is, it can hold\nalmost any other standard <span data-xref=\"Gtk.Widget\"/>.  The most commonly used child is the\n<span data-xref=\"Gtk.Label\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "bin"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -145,7 +133,7 @@
             }
         },
         {
-            "doc": "<p>Returns the button\u2019s event window if it is realized, <code>null</code> otherwise.\nThis function should be rarely needed.</p>",
+            "doc": "<p>Returns the button\u2019s event window if it is realized, <pre>null</pre> otherwise.\nThis function should be rarely needed.</p>",
             "kind": "method",
             "name": "get_event_window",
             "parameters": [],
@@ -163,7 +151,7 @@
             }
         },
         {
-            "doc": "<p>Gets the widget that is currenty set as the image of <code>button</code>.\nThis may have been explicitly set by <span data-xref=\"Gtk.Button.set_image\"/>\nor constructed by <span data-xref=\"Gtk.Button.new_from_stock\"/>.</p>",
+            "doc": "<p>Gets the widget that is currenty set as the image of <pre>button</pre>.\nThis may have been explicitly set by <span data-xref=\"Gtk.Button.set_image\"/>\nor constructed by <span data-xref=\"Gtk.Button.new_from_stock\"/>.</p>",
             "kind": "method",
             "name": "get_image",
             "parameters": [],
@@ -181,7 +169,7 @@
             }
         },
         {
-            "doc": "<p>Fetches the text from the label of the button, as set by\n<span data-xref=\"Gtk.Button.set_label\"/>. If the label text has not\nbeen set the return value will be <code>null</code>. This will be the\ncase if you create an empty button with <span data-xref=\"Gtk.Button.new\"/> to\nuse as a container.</p>",
+            "doc": "<p>Fetches the text from the label of the button, as set by\n<span data-xref=\"Gtk.Button.set_label\"/>. If the label text has not\nbeen set the return value will be <pre>null</pre>. This will be the\ncase if you create an empty button with <span data-xref=\"Gtk.Button.new\"/> to\nuse as a container.</p>",
             "kind": "method",
             "name": "get_label",
             "parameters": [],
@@ -266,7 +254,7 @@
             }
         },
         {
-            "doc": "<p>If <code>true</code>, the button will ignore the <span data-xref=\"Gtk.Settings-gtk-button-images\"/>\nsetting and always show the image, if available.</p><p>Use this property if the button  would be useless or hard to use\nwithout the image.</p>",
+            "doc": "<p>If <pre>true</pre>, the button will ignore the <span data-xref=\"Gtk.Settings-gtk-button-images\"/>\nsetting and always show the image, if available.</p><p>Use this property if the button  would be useless or hard to use\nwithout the image.</p>",
             "kind": "method",
             "name": "set_always_show_image",
             "parameters": [
@@ -298,7 +286,7 @@
             }
         },
         {
-            "doc": "<p>Set the image of <code>button</code> to the given widget. The image will be\ndisplayed if the label text is <code>null</code> or if\n<span data-xref=\"Gtk.Button-always-show-image\"/> is <code>true</code>. You don\u2019t have to call\n<span data-xref=\"Gtk.Widget.show\"/> on <code>image</code> yourself.</p>",
+            "doc": "<p>Set the image of <pre>button</pre> to the given widget. The image will be\ndisplayed if the label text is <pre>null</pre> or if\n<span data-xref=\"Gtk.Button-always-show-image\"/> is <pre>true</pre>. You don\u2019t have to call\n<span data-xref=\"Gtk.Widget.show\"/> on <pre>image</pre> yourself.</p>",
             "kind": "method",
             "name": "set_image",
             "parameters": [
@@ -362,7 +350,7 @@
             }
         },
         {
-            "doc": "<p>If <code>true</code>, the label set on the button is used as a\nstock id to select the stock item for the button.</p>",
+            "doc": "<p>If <pre>true</pre>, the label set on the button is used as a\nstock id to select the stock item for the button.</p>",
             "kind": "method",
             "name": "set_use_stock",
             "parameters": [
@@ -392,13 +380,12 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Button",
     "properties": [
         {
-            "doc": "<p>If <code>true</code>, the button will ignore the <span data-xref=\"Gtk.Settings-gtk-button-images\"/>\nsetting and always show the image, if available.</p><p>Use this property if the button would be useless or hard to use\nwithout the image.</p>",
+            "doc": "<p>If <pre>true</pre>, the button will ignore the <span data-xref=\"Gtk.Settings-gtk-button-images\"/>\nsetting and always show the image, if available.</p><p>Use this property if the button would be useless or hard to use\nwithout the image.</p>",
             "kind": "property",
             "name": "always-show-image",
             "type": "Boolean"

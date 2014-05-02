@@ -11,17 +11,8 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.SeparatorMenuItem\"/> is a separator used to group\nitems within a menu. It displays a horizontal line with a shadow to\nmake it appear sunken into the interface.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "menu_item"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "SeparatorMenuItem",
     "properties": [],
     "signals": [],

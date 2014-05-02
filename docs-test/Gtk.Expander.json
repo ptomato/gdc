@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new expander using <code>label</code> as the text of the label.</p>",
+            "doc": "<p>Creates a new expander using <pre>label</pre> as the text of the label.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -17,7 +17,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new expander using <code>label</code> as the text of the label.\nIf characters in <code>label</code> are preceded by an underscore, they are underlined.\nIf you need a literal underscore character in a label, use \u201c__\u201d (two\nunderscores). The first underlined character represents a keyboard\naccelerator called a mnemonic.\nPressing Alt and that key activates the button.</p>",
+            "doc": "<p>Creates a new expander using <pre>label</pre> as the text of the label.\nIf characters in <pre>label</pre> are preceded by an underscore, they are underlined.\nIf you need a literal underscore character in a label, use \u201c__\u201d (two\nunderscores). The first underlined character represents a keyboard\naccelerator called a mnemonic.\nPressing Alt and that key activates the button.</p>",
             "kind": "constructor",
             "name": "new_with_mnemonic",
             "parameters": [
@@ -33,23 +33,11 @@
             }
         }
     ],
-    "doc": "<p>A <span data-xref=\"Gtk.Expander\"/> allows the user to hide or show its child by clicking\non an expander triangle similar to the triangles used in a <span data-xref=\"Gtk.TreeView\"/>.</p><p>Normally you use an expander as you would use any other descendant\nof <span data-xref=\"Gtk.Bin\"/>; you create the child widget and use <span data-xref=\"Gtk.Container.add\"/>\nto add it to the expander. When the expander is toggled, it will take\ncare of showing and hiding the child automatically.</p><h1>Special Usage</h1><p>There are situations in which you may prefer to show and hide the\nexpanded widget yourself, such as when you want to actually create\nthe widget at expansion time. In this case, create a <span data-xref=\"Gtk.Expander\"/>\nbut do not add a child to it. The expander widget has an\n<span data-xref=\"Gtk.Expander-expanded\"/> property which can be used to monitor\nits expansion state. You should watch this property with a signal\nconnection as follows:</p><p>|[&lt;!-- language=\"C\" --&gt;\nexpander = gtk_expander_new_with_mnemonic (\"_More Options\");\ng_signal_connect (expander, \"notify::expanded\",\n                  G_CALLBACK (expander_callback), NULL);</p><p>...</p><p>static void\nexpander_callback (GObject    <em>object,\n                   GParamSpec </em>param_spec,\n                   gpointer    user_data)\n{\n  GtkExpander *expander;</p><p>expander = GTK_EXPANDER (object);</p><p>if (gtk_expander_get_expanded (expander))\n    {\n      // Show or create widgets\n    }\n  else\n    {\n      // Hide or destroy widgets\n    }\n}\n]|</p><h1>GtkExpander as GtkBuildable</h1><p>The GtkExpander implementation of the GtkBuildable interface supports\nplacing a child in the label position by specifying \u201clabel\u201d as the\n\u201ctype\u201d attribute of a &lt;child&gt; element. A normal content child can be\nspecified without specifying a &lt;child&gt; type attribute.</p><p>An example of a UI definition fragment with GtkExpander:\n|[\n&lt;object class=\"GtkExpander\"&gt;\n  &lt;child type=\"label\"&gt;\n    &lt;object class=\"GtkLabel\" id=\"expander-label\"/&gt;\n  &lt;/child&gt;\n  &lt;child&gt;\n    &lt;object class=\"GtkEntry\" id=\"expander-content\"/&gt;\n  &lt;/child&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "bin"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>A <span data-xref=\"Gtk.Expander\"/> allows the user to hide or show its child by clicking\non an expander triangle similar to the triangles used in a <span data-xref=\"Gtk.TreeView\"/>.</p><p>Normally you use an expander as you would use any other descendant\nof <span data-xref=\"Gtk.Bin\"/>; you create the child widget and use <span data-xref=\"Gtk.Container.add\"/>\nto add it to the expander. When the expander is toggled, it will take\ncare of showing and hiding the child automatically.</p><h1>Special Usage</h1><p>There are situations in which you may prefer to show and hide the\nexpanded widget yourself, such as when you want to actually create\nthe widget at expansion time. In this case, create a <span data-xref=\"Gtk.Expander\"/>\nbut do not add a child to it. The expander widget has an\n<span data-xref=\"Gtk.Expander-expanded\"/> property which can be used to monitor\nits expansion state. You should watch this property with a signal\nconnection as follows:</p><p>|[<!-- language=\"C\" -->\nexpander = gtk_expander_new_with_mnemonic (\"_More Options\");\ng_signal_connect (expander, \"notify::expanded\",\n                  G_CALLBACK (expander_callback), NULL);</p><p>...</p><p>static void\nexpander_callback (GObject    <em>object,\n                   GParamSpec </em>param_spec,\n                   gpointer    user_data)\n{\n  GtkExpander *expander;</p><p>expander = GTK_EXPANDER (object);</p><p>if (gtk_expander_get_expanded (expander))\n    {\n      // Show or create widgets\n    }\n  else\n    {\n      // Hide or destroy widgets\n    }\n}\n]|</p><h1>GtkExpander as GtkBuildable</h1><p>The GtkExpander implementation of the GtkBuildable interface supports\nplacing a child in the label position by specifying \u201clabel\u201d as the\n\u201ctype\u201d attribute of a <child> element. A normal content child can be\nspecified without specifying a <child> type attribute.</p><p>An example of a UI definition fragment with GtkExpander:\n|[\n<object class=\"GtkExpander\">\n  <child type=\"label\">\n    <object class=\"GtkLabel\" id=\"expander-label\"/>\n  </child>\n  <child>\n    <object class=\"GtkEntry\" id=\"expander-content\"/>\n  </child>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Queries a <span data-xref=\"Gtk.Expander\"/> and returns its current state. Returns <code>true</code>\nif the child widget is revealed.</p><p>See <span data-xref=\"Gtk.Expander.set_expanded\"/>.</p>",
+            "doc": "<p>Queries a <span data-xref=\"Gtk.Expander\"/> and returns its current state. Returns <pre>true</pre>\nif the child widget is revealed.</p><p>See <span data-xref=\"Gtk.Expander.set_expanded\"/>.</p>",
             "kind": "method",
             "name": "get_expanded",
             "parameters": [],
@@ -58,7 +46,7 @@
             }
         },
         {
-            "doc": "<p>Fetches the text from a label widget including any embedded\nunderlines indicating mnemonics and Pango markup, as set by\n<span data-xref=\"Gtk.Expander.set_label\"/>. If the label text has not been set the\nreturn value will be <code>null</code>. This will be the case if you create an\nempty button with <span data-xref=\"Gtk.Button.new\"/> to use as a container.</p><p>Note that this function behaved differently in versions prior to\n2.14 and used to return the label text stripped of embedded\nunderlines indicating mnemonics and Pango markup. This problem can\nbe avoided by fetching the label text directly from the label\nwidget.</p>",
+            "doc": "<p>Fetches the text from a label widget including any embedded\nunderlines indicating mnemonics and Pango markup, as set by\n<span data-xref=\"Gtk.Expander.set_label\"/>. If the label text has not been set the\nreturn value will be <pre>null</pre>. This will be the case if you create an\nempty button with <span data-xref=\"Gtk.Button.new\"/> to use as a container.</p><p>Note that this function behaved differently in versions prior to\n2.14 and used to return the label text stripped of embedded\nunderlines indicating mnemonics and Pango markup. This problem can\nbe avoided by fetching the label text directly from the label\nwidget.</p>",
             "kind": "method",
             "name": "get_label",
             "parameters": [],
@@ -67,7 +55,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether the label widget will fill all available\nhorizontal space allocated to <code>expander</code>.</p>",
+            "doc": "<p>Returns whether the label widget will fill all available\nhorizontal space allocated to <pre>expander</pre>.</p>",
             "kind": "method",
             "name": "get_label_fill",
             "parameters": [],
@@ -121,7 +109,7 @@
             }
         },
         {
-            "doc": "<p>Sets the state of the expander. Set to <code>true</code>, if you want\nthe child widget to be revealed, and <code>false</code> if you want the\nchild widget to be hidden.</p>",
+            "doc": "<p>Sets the state of the expander. Set to <pre>true</pre>, if you want\nthe child widget to be revealed, and <pre>false</pre> if you want the\nchild widget to be hidden.</p>",
             "kind": "method",
             "name": "set_expanded",
             "parameters": [
@@ -137,7 +125,7 @@
             }
         },
         {
-            "doc": "<p>Sets the text of the label of the expander to <code>label</code>.</p><p>This will also clear any previously set labels.</p>",
+            "doc": "<p>Sets the text of the label of the expander to <pre>label</pre>.</p><p>This will also clear any previously set labels.</p>",
             "kind": "method",
             "name": "set_label",
             "parameters": [
@@ -153,7 +141,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether the label widget should fill all available\nhorizontal space allocated to <code>expander</code>.</p>",
+            "doc": "<p>Sets whether the label widget should fill all available\nhorizontal space allocated to <pre>expander</pre>.</p>",
             "kind": "method",
             "name": "set_label_fill",
             "parameters": [
@@ -201,7 +189,7 @@
             }
         },
         {
-            "doc": "<p>Sets the spacing field of <code>expander</code>, which is the number of\npixels to place between expander and the child.</p>",
+            "doc": "<p>Sets the spacing field of <pre>expander</pre>, which is the number of\npixels to place between expander and the child.</p>",
             "kind": "method",
             "name": "set_spacing",
             "parameters": [
@@ -247,8 +235,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Expander",
     "properties": [
@@ -277,7 +264,7 @@
             "type": "Gtk.Widget"
         },
         {
-            "doc": "<p>When this property is <code>true</code>, the expander will resize the toplevel\nwidget containing the expander upon expanding and collapsing.</p>",
+            "doc": "<p>When this property is <pre>true</pre>, the expander will resize the toplevel\nwidget containing the expander upon expanding and collapsing.</p>",
             "kind": "property",
             "name": "resize-toplevel",
             "type": "Boolean"

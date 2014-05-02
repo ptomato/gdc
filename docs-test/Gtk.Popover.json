@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new popover to point to <code>relative_to</code></p>",
+            "doc": "<p>Creates a new popover to point to <pre>relative_to</pre></p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -17,7 +17,7 @@
             }
         },
         {
-            "doc": "<p>Creates a <span data-xref=\"Gtk.Popover\"/> and populates it according to\n<code>model</code>. The popover is pointed to the <code>relative_to</code> widget.</p><p>The created buttons are connected to actions found in the\n<span data-xref=\"Gtk.ApplicationWindow\"/> to which the popover belongs - typically\nby means of being attached to a widget that is contained within\nthe #GtkApplicationWindows widget hierarchy.</p><p>Actions can also be added using <span data-xref=\"Gtk.Widget.insert_action_group\"/>\non the menus attach widget or on any of its parent widgets.</p>",
+            "doc": "<p>Creates a <span data-xref=\"Gtk.Popover\"/> and populates it according to\n<pre>model</pre>. The popover is pointed to the <pre>relative_to</pre> widget.</p><p>The created buttons are connected to actions found in the\n<span data-xref=\"Gtk.ApplicationWindow\"/> to which the popover belongs - typically\nby means of being attached to a widget that is contained within\nthe #GtkApplicationWindows widget hierarchy.</p><p>Actions can also be added using <span data-xref=\"Gtk.Widget.insert_action_group\"/>\non the menus attach widget or on any of its parent widgets.</p>",
             "kind": "constructor",
             "name": "new_from_model",
             "parameters": [
@@ -39,23 +39,11 @@
             }
         }
     ],
-    "doc": "<p>GtkPopover is a bubble-like context window, primarily meant to\nprovide context-dependent information or options. Popovers are\nattached to a widget, passed at construction time on <span data-xref=\"Gtk.Popover.new\"/>,\nor updated afterwards through <span data-xref=\"Gtk.Popover.set_relative_to\"/>, by\ndefault they will point to the whole widget area, although this\nbehavior can be changed through <span data-xref=\"Gtk.Popover.set_pointing_to\"/>.</p><p>The position of a popover relative to the widget it is attached to\ncan also be changed through <span data-xref=\"Gtk.Popover.set_position\"/>.</p><p>By default, <span data-xref=\"Gtk.Popover\"/> performs a GTK+ grab, in order to ensure\ninput events get redirected to it while it is shown, and also so\nthe popover is dismissed in the expected situations (clicks outside\nthe popover, or the Esc key being pressed). If no such modal behavior\nis desired on a popover, <span data-xref=\"Gtk.Popover.set_modal\"/> may be called on it\nto tweak its behavior.</p><h2>GtkPopover as menu replacement</h2><p>GtkPopover is often used to replace menus. To facilitate this, it\nsupports being populated from a <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span>, using\n<span data-xref=\"Gtk.Popover.new_from_model\"/>. In addition to all the regular menu\nmodel features, this function supports rendering sections in the\nmodel in a more compact form, as a row of icon buttons instead of\nmenu items.</p><p>To use this rendering, set the \u201ddisplay-hint\u201d attribute of the\nsection to \u201dhorizontal-buttons\u201d and set the icons of your items\nwith the \u201dverb-icon\u201d attribute.</p><p>|[\n&lt;section&gt;\n  &lt;attribute name=\"display-hint\"&gt;horizontal-buttons&lt;/attribute&gt;\n  &lt;item&gt;\n    &lt;attribute name=\"label\"&gt;Cut&lt;/attribute&gt;\n    &lt;attribute name=\"action\"&gt;app.cut&lt;/attribute&gt;\n    &lt;attribute name=\"verb-icon\"&gt;edit-cut-symbolic&lt;/attribute&gt;\n  &lt;/item&gt;\n  &lt;item&gt;\n    &lt;attribute name=\"label\"&gt;Copy&lt;/attribute&gt;\n    &lt;attribute name=\"action\"&gt;app.copy&lt;/attribute&gt;\n    &lt;attribute name=\"verb-icon\"&gt;edit-copy-symbolic&lt;/attribute&gt;\n  &lt;/item&gt;\n  &lt;item&gt;\n    &lt;attribute name=\"label\"&gt;Paste&lt;/attribute&gt;\n    &lt;attribute name=\"action\"&gt;app.paste&lt;/attribute&gt;\n    &lt;attribute name=\"verb-icon\"&gt;edit-paste-symbolic&lt;/attribute&gt;\n  &lt;/item&gt;\n&lt;/section&gt;\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>GtkPopover is a bubble-like context window, primarily meant to\nprovide context-dependent information or options. Popovers are\nattached to a widget, passed at construction time on <span data-xref=\"Gtk.Popover.new\"/>,\nor updated afterwards through <span data-xref=\"Gtk.Popover.set_relative_to\"/>, by\ndefault they will point to the whole widget area, although this\nbehavior can be changed through <span data-xref=\"Gtk.Popover.set_pointing_to\"/>.</p><p>The position of a popover relative to the widget it is attached to\ncan also be changed through <span data-xref=\"Gtk.Popover.set_position\"/>.</p><p>By default, <span data-xref=\"Gtk.Popover\"/> performs a GTK+ grab, in order to ensure\ninput events get redirected to it while it is shown, and also so\nthe popover is dismissed in the expected situations (clicks outside\nthe popover, or the Esc key being pressed). If no such modal behavior\nis desired on a popover, <span data-xref=\"Gtk.Popover.set_modal\"/> may be called on it\nto tweak its behavior.</p><h2>GtkPopover as menu replacement</h2><p>GtkPopover is often used to replace menus. To facilitate this, it\nsupports being populated from a <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span>, using\n<span data-xref=\"Gtk.Popover.new_from_model\"/>. In addition to all the regular menu\nmodel features, this function supports rendering sections in the\nmodel in a more compact form, as a row of icon buttons instead of\nmenu items.</p><p>To use this rendering, set the \u201ddisplay-hint\u201d attribute of the\nsection to \u201dhorizontal-buttons\u201d and set the icons of your items\nwith the \u201dverb-icon\u201d attribute.</p><p>|[\n<section>\n  <attribute name=\"display-hint\">horizontal-buttons</attribute>\n  <item>\n    <attribute name=\"label\">Cut</attribute>\n    <attribute name=\"action\">app.cut</attribute>\n    <attribute name=\"verb-icon\">edit-cut-symbolic</attribute>\n  </item>\n  <item>\n    <attribute name=\"label\">Copy</attribute>\n    <attribute name=\"action\">app.copy</attribute>\n    <attribute name=\"verb-icon\">edit-copy-symbolic</attribute>\n  </item>\n  <item>\n    <attribute name=\"label\">Paste</attribute>\n    <attribute name=\"action\">app.paste</attribute>\n    <attribute name=\"verb-icon\">edit-paste-symbolic</attribute>\n  </item>\n</section>\n]|</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Establishes a binding between a <span data-xref=\"Gtk.Popover\"/> and a <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span>.</p><p>The contents of <code>popover</code> are removed and then refilled with menu items\naccording to <code>model</code>.  When <code>model</code> changes, <code>popover</code> is updated.\nCalling this function twice on <code>popover</code> with different <code>model</code> will\ncause the first binding to be replaced with a binding to the new\nmodel. If <code>model</code> is <code>null</code> then any previous binding is undone and\nall children are removed.</p><p>If <code>action_namespace</code> is non-<code>null</code> then the effect is as if all\nactions mentioned in the <code>model</code> have their names prefixed with the\nnamespace, plus a dot.  For example, if the action \u201cquit\u201d is\nmentioned and <code>action_namespace</code> is \u201capp\u201d then the effective action\nname is \u201capp.quit\u201d.</p><p>This function uses <span data-xref=\"Gtk.Actionable\"/> to define the action name and\ntarget values on the created menu items.  If you want to use an\naction group other than \u201capp\u201d and \u201cwin\u201d, or if you want to use a\n<span data-xref=\"Gtk.MenuShell\"/> outside of a <span data-xref=\"Gtk.ApplicationWindow\"/>, then you will need\nto attach your own action group to the widget hierarchy using\n<span data-xref=\"Gtk.Widget.insert_action_group\"/>.  As an example, if you created a\ngroup with a \u201cquit\u201d action and inserted it with the name \u201cmygroup\u201d\nthen you would use the action name \u201cmygroup.quit\u201d in your\n<span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span>.</p>",
+            "doc": "<p>Establishes a binding between a <span data-xref=\"Gtk.Popover\"/> and a <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span>.</p><p>The contents of <pre>popover</pre> are removed and then refilled with menu items\naccording to <pre>model</pre>.  When <pre>model</pre> changes, <pre>popover</pre> is updated.\nCalling this function twice on <pre>popover</pre> with different <pre>model</pre> will\ncause the first binding to be replaced with a binding to the new\nmodel. If <pre>model</pre> is <pre>null</pre> then any previous binding is undone and\nall children are removed.</p><p>If <pre>action_namespace</pre> is non-<pre>null</pre> then the effect is as if all\nactions mentioned in the <pre>model</pre> have their names prefixed with the\nnamespace, plus a dot.  For example, if the action \u201cquit\u201d is\nmentioned and <pre>action_namespace</pre> is \u201capp\u201d then the effective action\nname is \u201capp.quit\u201d.</p><p>This function uses <span data-xref=\"Gtk.Actionable\"/> to define the action name and\ntarget values on the created menu items.  If you want to use an\naction group other than \u201capp\u201d and \u201cwin\u201d, or if you want to use a\n<span data-xref=\"Gtk.MenuShell\"/> outside of a <span data-xref=\"Gtk.ApplicationWindow\"/>, then you will need\nto attach your own action group to the widget hierarchy using\n<span data-xref=\"Gtk.Widget.insert_action_group\"/>.  As an example, if you created a\ngroup with a \u201cquit\u201d action and inserted it with the name \u201cmygroup\u201d\nthen you would use the action name \u201cmygroup.quit\u201d in your\n<span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span>.</p>",
             "kind": "method",
             "name": "bind_model",
             "parameters": [
@@ -86,7 +74,7 @@
             }
         },
         {
-            "doc": "<p>If a rectangle to point to has been set, this function will\nreturn <code>true</code> and fill in <code>rect</code> with such rectangle, otherwise\nit will return <code>false</code> and fill in <code>rect</code> with the attached\nwidget coordinates.</p>",
+            "doc": "<p>If a rectangle to point to has been set, this function will\nreturn <pre>true</pre> and fill in <pre>rect</pre> with such rectangle, otherwise\nit will return <pre>false</pre> and fill in <pre>rect</pre> with the attached\nwidget coordinates.</p>",
             "kind": "method",
             "name": "get_pointing_to",
             "parameters": [
@@ -102,7 +90,7 @@
             }
         },
         {
-            "doc": "<p>Returns the preferred position of <code>popover</code>.</p>",
+            "doc": "<p>Returns the preferred position of <pre>popover</pre>.</p>",
             "kind": "method",
             "name": "get_position",
             "parameters": [],
@@ -111,7 +99,7 @@
             }
         },
         {
-            "doc": "<p>Returns the widget <code>popover</code> is currently attached to</p>",
+            "doc": "<p>Returns the widget <pre>popover</pre> is currently attached to</p>",
             "kind": "method",
             "name": "get_relative_to",
             "parameters": [],
@@ -120,7 +108,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>popover</code> is modal, a modal popover will grab all input\nwithin the toplevel and grab the keyboard focus on it when being\ndisplayed. Clicking outside the popover area or pressing Esc will\ndismiss the popover and ungrab input.</p>",
+            "doc": "<p>Sets whether <pre>popover</pre> is modal, a modal popover will grab all input\nwithin the toplevel and grab the keyboard focus on it when being\ndisplayed. Clicking outside the popover area or pressing Esc will\ndismiss the popover and ungrab input.</p>",
             "kind": "method",
             "name": "set_modal",
             "parameters": [
@@ -136,7 +124,7 @@
             }
         },
         {
-            "doc": "<p>Sets the rectangle that <code>popover</code> will point to, in the\ncoordinate space of the widget <code>popover</code> is attached to,\nsee <span data-xref=\"Gtk.Popover.set_relative_to\"/>.</p>",
+            "doc": "<p>Sets the rectangle that <pre>popover</pre> will point to, in the\ncoordinate space of the widget <pre>popover</pre> is attached to,\nsee <span data-xref=\"Gtk.Popover.set_relative_to\"/>.</p>",
             "kind": "method",
             "name": "set_pointing_to",
             "parameters": [
@@ -152,7 +140,7 @@
             }
         },
         {
-            "doc": "<p>Sets the preferred position for <code>popover</code> to appear. If the <code>popover</code>\nis currently visible, it will be immediately updated.</p><p>This preference will be respected where possible, although\non lack of space (eg. if close to the window edges), the\n<span data-xref=\"Gtk.Popover\"/> may choose to appear on the opposite side</p>",
+            "doc": "<p>Sets the preferred position for <pre>popover</pre> to appear. If the <pre>popover</pre>\nis currently visible, it will be immediately updated.</p><p>This preference will be respected where possible, although\non lack of space (eg. if close to the window edges), the\n<span data-xref=\"Gtk.Popover\"/> may choose to appear on the opposite side</p>",
             "kind": "method",
             "name": "set_position",
             "parameters": [
@@ -168,7 +156,7 @@
             }
         },
         {
-            "doc": "<p>Sets a new widget to be attached to <code>popover</code>. If <code>popover</code> is\nvisible, the position will be updated.</p><p>Note: the ownership of popovers is always given to their <code>relative_to</code>\nwidget, so if <code>relative_to</code> is set to <code>null</code> on an attached <code>popover</code>, it\nwill be detached from its previous widget, and consequently destroyed\nunless extra references are kept.</p>",
+            "doc": "<p>Sets a new widget to be attached to <pre>popover</pre>. If <pre>popover</pre> is\nvisible, the position will be updated.</p><p>Note: the ownership of popovers is always given to their <pre>relative_to</pre>\nwidget, so if <pre>relative_to</pre> is set to <pre>null</pre> on an attached <pre>popover</pre>, it\nwill be detached from its previous widget, and consequently destroyed\nunless extra references are kept.</p>",
             "kind": "method",
             "name": "set_relative_to",
             "parameters": [
@@ -182,8 +170,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Popover",
     "properties": [

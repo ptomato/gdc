@@ -1,0 +1,27 @@
+{
+    "doc": "<p>See also <span data-xref=\"Gtk.PrintSettings.set_orientation\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Portrait mode.</p>",
+            "kind": "default",
+            "name": "portrait"
+        },
+        {
+            "doc": "<p>Landscape mode.</p>",
+            "kind": "default",
+            "name": "landscape"
+        },
+        {
+            "doc": "<p>Reverse portrait mode.</p>",
+            "kind": "default",
+            "name": "reverse_portrait"
+        },
+        {
+            "doc": "<p>Reverse landscape mode.</p>",
+            "kind": "default",
+            "name": "reverse_landscape"
+        }
+    ],
+    "name": "PageOrientation"
+}

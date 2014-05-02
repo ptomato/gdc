@@ -1,18 +1,6 @@
 {
     "constructors": [],
-    "doc": "<p>GtkSettings provide a mechanism to share global settings between\napplications.</p><p>On the X window system, this sharing is realized by an\n<a href=\"http://www.freedesktop.org/wiki/Specifications/xsettings-spec\">XSettings</a>\nmanager that is usually part of the desktop environment, along with\nutilities that let the user change these settings. In the absence of\nan Xsettings manager, GTK+ reads default values for settings from\n<code>settings.ini</code> files in\n<code>/etc/gtk-3.0</code>, <code>$XDG_CONFIG_DIRS/gtk-3.0</code>\nand <code>$XDG_CONFIG_HOME/gtk-3.0</code>.\nThese files must be valid key files (see <span data-xref=\"GLib.KeyFile\">GLib.KeyFile</span>), and have\na section called Settings. Themes can also provide default values\nfor settings by installing a <code>settings.ini</code> file\nnext to their <code>gtk.css</code> file.</p><p>Applications can override system-wide settings with\n<span data-xref=\"Gtk.Settings.set_string_property\"/>, <span data-xref=\"Gtk.Settings.set_long_property\"/>,\netc. This should be restricted to special cases though; GtkSettings are\nnot meant as an application configuration facility. When doing so, you\nneed to be aware that settings that are specific to individual widgets\nmay not be available before the widget type has been realized at least\nonce. The following example demonstrates a way to do this:\n|[&lt;!-- language=\"C\" --&gt;\n  gtk_init (&amp;argc, &amp;argv);</p><p>// make sure the type is realized\n  g_type_class_unref (g_type_class_ref (GTK_TYPE_IMAGE_MENU_ITEM));</p><p>g_object_set (gtk_settings_get_default (), \"gtk-enable-animations\", FALSE, NULL);\n]|</p><p>There is one GtkSettings instance per screen. It can be obtained with\n<span data-xref=\"Gtk.Settings.get_for_screen\"/>, but in many cases, it is more convenient\nto use <span data-xref=\"Gtk.Widget.get_settings\"/>. <span data-xref=\"Gtk.Settings.get_default\"/> returns the\nGtkSettings instance for the default screen.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>GtkSettings provide a mechanism to share global settings between\napplications.</p><p>On the X window system, this sharing is realized by an\n<a href=\"http://www.freedesktop.org/wiki/Specifications/xsettings-spec\">XSettings</a>\nmanager that is usually part of the desktop environment, along with\nutilities that let the user change these settings. In the absence of\nan Xsettings manager, GTK+ reads default values for settings from\n<code>settings.ini</code> files in\n<code>/etc/gtk-3.0</code>, <code>$XDG_CONFIG_DIRS/gtk-3.0</code>\nand <code>$XDG_CONFIG_HOME/gtk-3.0</code>.\nThese files must be valid key files (see <span data-xref=\"GLib.KeyFile\">GLib.KeyFile</span>), and have\na section called Settings. Themes can also provide default values\nfor settings by installing a <code>settings.ini</code> file\nnext to their <code>gtk.css</code> file.</p><p>Applications can override system-wide settings with\n<span data-xref=\"Gtk.Settings.set_string_property\"/>, <span data-xref=\"Gtk.Settings.set_long_property\"/>,\netc. This should be restricted to special cases though; GtkSettings are\nnot meant as an application configuration facility. When doing so, you\nneed to be aware that settings that are specific to individual widgets\nmay not be available before the widget type has been realized at least\nonce. The following example demonstrates a way to do this:\n|[<!-- language=\"C\" -->\n  gtk_init (&amp;argc, &amp;argv);</p><p>// make sure the type is realized\n  g_type_class_unref (g_type_class_ref (GTK_TYPE_IMAGE_MENU_ITEM));</p><p>g_object_set (gtk_settings_get_default (), \"gtk-enable-animations\", FALSE, NULL);\n]|</p><p>There is one GtkSettings instance per screen. It can be obtained with\n<span data-xref=\"Gtk.Settings.get_for_screen\"/>, but in many cases, it is more convenient\nto use <span data-xref=\"Gtk.Widget.get_settings\"/>. <span data-xref=\"Gtk.Settings.get_default\"/> returns the\nGtkSettings instance for the default screen.</p>",
     "kind": "class",
     "methods": [
         {
@@ -121,71 +109,69 @@
                 "type": "void"
             }
         },
-        [
-            {
-                "doc": "<p>Gets the <span data-xref=\"Gtk.Settings\"/> object for the default GDK screen, creating\nit if necessary. See <span data-xref=\"Gtk.Settings.get_for_screen\"/>.</p>",
-                "kind": "function",
-                "name": "get_default",
-                "parameters": [],
-                "retval": {
-                    "type": "Gtk.Settings"
-                }
-            },
-            {
-                "doc": "<p>Gets the <span data-xref=\"Gtk.Settings\"/> object for <code>screen</code>, creating it if necessary.</p>",
-                "kind": "function",
-                "name": "get_for_screen",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "screen",
-                        "direction": "in",
-                        "type": "Gdk.Screen"
-                    }
-                ],
-                "retval": {
-                    "type": "Gtk.Settings"
-                }
-            },
-            {
-                "doc": "",
-                "kind": "function",
-                "name": "install_property",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "pspec",
-                        "direction": "in",
-                        "type": "GObject.ParamSpec"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
-            },
-            {
-                "doc": "",
-                "kind": "function",
-                "name": "install_property_parser",
-                "parameters": [
-                    {
-                        "allow_none": false,
-                        "argname": "pspec",
-                        "direction": "in",
-                        "type": "GObject.ParamSpec"
-                    },
-                    {
-                        "allow_none": false,
-                        "argname": "parser",
-                        "direction": "in",
-                        "type": "Gtk.RcPropertyParser"
-                    }
-                ],
-                "retval": {
-                    "type": "void"
-                }
+        {
+            "doc": "<p>Gets the <span data-xref=\"Gtk.Settings\"/> object for the default GDK screen, creating\nit if necessary. See <span data-xref=\"Gtk.Settings.get_for_screen\"/>.</p>",
+            "kind": "function",
+            "name": "get_default",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Settings"
             }
-        ]
+        },
+        {
+            "doc": "<p>Gets the <span data-xref=\"Gtk.Settings\"/> object for <pre>screen</pre>, creating it if necessary.</p>",
+            "kind": "function",
+            "name": "get_for_screen",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "screen",
+                    "direction": "in",
+                    "type": "Gdk.Screen"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Settings"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "function",
+            "name": "install_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "function",
+            "name": "install_property_parser",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "parser",
+                    "direction": "in",
+                    "type": "Gtk.RcPropertyParser"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
     ],
     "name": "Settings",
     "properties": [
@@ -202,7 +188,7 @@
             "type": "Boolean"
         },
         {
-            "doc": "<p>Controls the direction of the sort indicators in sorted list and tree\nviews. By default an arrow pointing down means the column is sorted\nin ascending order. When set to <code>true</code>, this order will be inverted.</p>",
+            "doc": "<p>Controls the direction of the sort indicators in sorted list and tree\nviews. By default an arrow pointing down means the column is sorted\nin ascending order. When set to <pre>true</pre>, this order will be inverted.</p>",
             "kind": "property",
             "name": "gtk-alternative-sort-arrows",
             "type": "Boolean"
@@ -256,7 +242,7 @@
             "type": "Number(gint)"
         },
         {
-            "doc": "<p>Time after which the cursor stops blinking, in seconds.\nThe timer is reset after each user interaction.</p><p>Setting this to zero has the same effect as setting\n<span data-xref=\"Gtk.Settings-gtk-cursor-blink\"/> to <code>false</code>.</p>",
+            "doc": "<p>Time after which the cursor stops blinking, in seconds.\nThe timer is reset after each user interaction.</p><p>Setting this to zero has the same effect as setting\n<span data-xref=\"Gtk.Settings-gtk-cursor-blink\"/> to <pre>false</pre>.</p>",
             "kind": "property",
             "name": "gtk-cursor-blink-timeout",
             "type": "Number(gint)"
@@ -358,7 +344,7 @@
             "type": "Boolean"
         },
         {
-            "doc": "<p>When <code>true</code>, keyboard navigation and other input-related errors\nwill cause a beep. Since the error bell is implemented using\n<span data-xref=\"Gdk.Window.beep\">Gdk.Window.prototype.beep</span>, the windowing system may offer ways to\nconfigure the error bell in many ways, such as flashing the\nwindow or similar visual effects.</p>",
+            "doc": "<p>When <pre>true</pre>, keyboard navigation and other input-related errors\nwill cause a beep. Since the error bell is implemented using\n<span data-xref=\"Gdk.Window.beep\">Gdk.Window.prototype.beep</span>, the windowing system may offer ways to\nconfigure the error bell in many ways, such as flashing the\nwindow or similar visual effects.</p>",
             "kind": "property",
             "name": "gtk-error-bell",
             "type": "Boolean"
@@ -424,13 +410,13 @@
             "type": "String"
         },
         {
-            "doc": "<p>When <code>true</code>, keyboard navigation should be able to reach all widgets\nby using the cursor keys only. Tab, Shift etc. keys can't be expected\nto be present on the used input device.</p>",
+            "doc": "<p>When <pre>true</pre>, keyboard navigation should be able to reach all widgets\nby using the cursor keys only. Tab, Shift etc. keys can't be expected\nto be present on the used input device.</p>",
             "kind": "property",
             "name": "gtk-keynav-cursor-only",
             "type": "Boolean"
         },
         {
-            "doc": "<p>When <code>true</code>, some widgets will wrap around when doing keyboard\nnavigation, such as menus, menubars and notebooks.</p>",
+            "doc": "<p>When <pre>true</pre>, some widgets will wrap around when doing keyboard\nnavigation, such as menus, menubars and notebooks.</p>",
             "kind": "property",
             "name": "gtk-keynav-wrap-around",
             "type": "Boolean"
@@ -496,7 +482,7 @@
             "type": "String"
         },
         {
-            "doc": "<p>Whether GTK+ should keep track of items inside the recently used\nresources list. If set to <code>false</code>, the list will always be empty.</p>",
+            "doc": "<p>Whether GTK+ should keep track of items inside the recently used\nresources list. If set to <pre>false</pre>, the list will always be empty.</p>",
             "kind": "property",
             "name": "gtk-recent-files-enabled",
             "type": "Boolean"
@@ -616,7 +602,7 @@
             "type": "Number(gint)"
         },
         {
-            "doc": "<p>When <code>true</code>, there are no motion notify events delivered on this screen,\nand widgets can't use the pointer hovering them for any essential\nfunctionality.</p>",
+            "doc": "<p>When <pre>true</pre>, there are no motion notify events delivered on this screen,\nand widgets can't use the pointer hovering them for any essential\nfunctionality.</p>",
             "kind": "property",
             "name": "gtk-touchscreen-mode",
             "type": "Boolean"

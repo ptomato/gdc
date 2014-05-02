@@ -1,0 +1,293 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Makes a copy of a <span data-xref=\"Gtk.SelectionData\"/>-struct and its data.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.SelectionData"
+            }
+        },
+        {
+            "doc": "<p>Frees a <span data-xref=\"Gtk.SelectionData\"/>-struct returned from\n<span data-xref=\"Gtk.SelectionData.copy\"/>.</p>",
+            "kind": "method",
+            "name": "free",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the raw data of the selection.</p>",
+            "kind": "method",
+            "name": "get_data",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint8)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the data type of the selection.</p>",
+            "kind": "method",
+            "name": "get_data_type",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Atom"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the raw data of the selection along with its length.</p>",
+            "kind": "method",
+            "name": "get_data_with_length",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "length",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "ByteArray"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the display of the selection.</p>",
+            "kind": "method",
+            "name": "get_display",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Display"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the format of the selection.</p>",
+            "kind": "method",
+            "name": "get_format",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the length of the raw data of the selection.</p>",
+            "kind": "method",
+            "name": "get_length",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the contents of the selection data as a <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>.</p>",
+            "kind": "method",
+            "name": "get_pixbuf",
+            "parameters": [],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the selection <span data-xref=\"Gdk.Atom\">Gdk.Atom</span> of the selection data.</p>",
+            "kind": "method",
+            "name": "get_selection",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Atom"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the target of the selection.</p>",
+            "kind": "method",
+            "name": "get_target",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Atom"
+            }
+        },
+        {
+            "doc": "<p>Gets the contents of <pre>selection_data</pre> as an array of targets.\nThis can be used to interpret the results of getting\nthe standard TARGETS target that is always supplied for\nany selection.</p>",
+            "kind": "method",
+            "name": "get_targets",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "targets",
+                    "direction": "out",
+                    "type": "Array(Gdk.Atom)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_atoms",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the contents of the selection data as a UTF-8 string.</p>",
+            "kind": "method",
+            "name": "get_text",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the contents of the selection data as array of URIs.</p>",
+            "kind": "method",
+            "name": "get_uris",
+            "parameters": [],
+            "retval": {
+                "type": "Array(String)"
+            }
+        },
+        {
+            "doc": "<p>Stores new data into a <span data-xref=\"Gtk.SelectionData\"/> object. Should\nonly be called from a selection handler callback.\nZero-terminates the stored data.</p>",
+            "kind": "method",
+            "name": "set",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gdk.Atom"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "format",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "ByteArray"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "length",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the contents of the selection from a <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>\nThe pixbuf is converted to the form determined by\n<pre>selection_data</pre>-&gt;target.</p>",
+            "kind": "method",
+            "name": "set_pixbuf",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pixbuf",
+                    "direction": "in",
+                    "type": "GdkPixbuf.Pixbuf"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the contents of the selection from a UTF-8 encoded string.\nThe string is converted to the form determined by\n<pre>selection_data</pre>-&gt;target.</p>",
+            "kind": "method",
+            "name": "set_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "str",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "len",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the contents of the selection from a list of URIs.\nThe string is converted to the form determined by\n<pre>selection_data</pre>-&gt;target.</p>",
+            "kind": "method",
+            "name": "set_uris",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "uris",
+                    "direction": "in",
+                    "type": "Array(String)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Given a <span data-xref=\"Gtk.SelectionData\"/> object holding a list of targets,\ndetermines if any of the targets in @targets can be used to\nprovide a <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>.</p>",
+            "kind": "method",
+            "name": "targets_include_image",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "writable",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Given a <span data-xref=\"Gtk.SelectionData\"/> object holding a list of targets,\ndetermines if any of the targets in @targets can be used to\nprovide rich text.</p>",
+            "kind": "method",
+            "name": "targets_include_rich_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "buffer",
+                    "direction": "in",
+                    "type": "Gtk.TextBuffer"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Given a <span data-xref=\"Gtk.SelectionData\"/> object holding a list of targets,\ndetermines if any of the targets in @targets can be used to\nprovide text.</p>",
+            "kind": "method",
+            "name": "targets_include_text",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Given a <span data-xref=\"Gtk.SelectionData\"/> object holding a list of targets,\ndetermines if any of the targets in @targets can be used to\nprovide a list or URIs.</p>",
+            "kind": "method",
+            "name": "targets_include_uri",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ],
+    "name": "SelectionData"
+}

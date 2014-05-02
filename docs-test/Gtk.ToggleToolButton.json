@@ -10,7 +10,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.ToggleToolButton\"/> containing the image and text from a\nstock item. Some stock ids have preprocessor macros like #GTK_STOCK_OK\nand #GTK_STOCK_APPLY.</p><p>It is an error if <code>stock_id</code> is not a name of a stock item.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ToggleToolButton\"/> containing the image and text from a\nstock item. Some stock ids have preprocessor macros like #GTK_STOCK_OK\nand #GTK_STOCK_APPLY.</p><p>It is an error if <pre>stock_id</pre> is not a name of a stock item.</p>",
             "kind": "constructor",
             "name": "new_from_stock",
             "parameters": [
@@ -27,22 +27,10 @@
         }
     ],
     "doc": "<p>A <span data-xref=\"Gtk.ToggleToolButton\"/> is a <span data-xref=\"Gtk.ToolItem\"/> that contains a toggle\nbutton.</p><p>Use <span data-xref=\"Gtk.ToggleToolButton.new\"/> to create a new\n<span data-xref=\"Gtk.ToggleToolButton\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Queries a <span data-xref=\"Gtk.ToggleToolButton\"/> and returns its current state.\nReturns <code>true</code> if the toggle button is pressed in and <code>false</code> if it is raised.</p>",
+            "doc": "<p>Queries a <span data-xref=\"Gtk.ToggleToolButton\"/> and returns its current state.\nReturns <pre>true</pre> if the toggle button is pressed in and <pre>false</pre> if it is raised.</p>",
             "kind": "method",
             "name": "get_active",
             "parameters": [],
@@ -51,7 +39,7 @@
             }
         },
         {
-            "doc": "<p>Sets the status of the toggle tool button. Set to <code>true</code> if you\nwant the GtkToggleButton to be \u201cpressed in\u201d, and <code>false</code> to raise it.\nThis action causes the toggled signal to be emitted.</p>",
+            "doc": "<p>Sets the status of the toggle tool button. Set to <pre>true</pre> if you\nwant the GtkToggleButton to be \u201cpressed in\u201d, and <pre>false</pre> to raise it.\nThis action causes the toggled signal to be emitted.</p>",
             "kind": "method",
             "name": "set_active",
             "parameters": [
@@ -65,8 +53,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ToggleToolButton",
     "properties": [

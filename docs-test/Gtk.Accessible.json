@@ -1,18 +1,6 @@
 {
     "constructors": [],
     "doc": "<p>The <span data-xref=\"Gtk.Accessible\"/> class is the base class for accessible\nimplementations for <span data-xref=\"Gtk.Widget\"/> subclasses. It is a thin\nwrapper around <span data-xref=\"Atk.Object\">Atk.Object</span>, which adds facilities for associating\na widget with its accessible object.</p><p>An accessible implementation for a third-party widget should\nderive from <span data-xref=\"Gtk.Accessible\"/> and implement the suitable interfaces\nfrom ATK, such as <span data-xref=\"Atk.Text\">Atk.Text</span> or <span data-xref=\"Atk.Selection\">Atk.Selection</span>. To establish\nthe connection between the widget class and its corresponding\nacccessible implementation, override the get_accessible vfunc\nin <span data-xref=\"Gtk.WidgetClass\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -34,7 +22,7 @@
             }
         },
         {
-            "doc": "<p>Sets the <span data-xref=\"Gtk.Widget\"/> corresponding to the <span data-xref=\"Gtk.Accessible\"/>.</p><p><code>accessible</code> will not hold a reference to <code>widget</code>.\nIt is the caller\u2019s responsibility to ensure that when <code>widget</code>\nis destroyed, the widget is unset by calling this function\nagain with <code>widget</code> set to <code>null</code>.</p>",
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Widget\"/> corresponding to the <span data-xref=\"Gtk.Accessible\"/>.</p><pre>accessible</pre>\n\n<p>will not hold a reference to <pre>widget</pre>.\nIt is the caller\u2019s responsibility to ensure that when <pre>widget</pre>\nis destroyed, the widget is unset by calling this function\nagain with <pre>widget</pre> set to <pre>null</pre>.</p>",
             "kind": "method",
             "name": "set_widget",
             "parameters": [
@@ -48,8 +36,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Accessible",
     "properties": [

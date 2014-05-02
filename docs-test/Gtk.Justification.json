@@ -1,0 +1,27 @@
+{
+    "doc": "<p>Used for justifying the text inside a <span data-xref=\"Gtk.Label\"/> widget. (See also\n<span data-xref=\"Gtk.Alignment\"/>).</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The text is placed at the left edge of the label.</p>",
+            "kind": "default",
+            "name": "left"
+        },
+        {
+            "doc": "<p>The text is placed at the right edge of the label.</p>",
+            "kind": "default",
+            "name": "right"
+        },
+        {
+            "doc": "<p>The text is placed in the center of the label.</p>",
+            "kind": "default",
+            "name": "center"
+        },
+        {
+            "doc": "<p>The text is placed is distributed across the label.</p>",
+            "kind": "default",
+            "name": "fill"
+        }
+    ],
+    "name": "Justification"
+}

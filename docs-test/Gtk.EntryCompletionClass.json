@@ -1,0 +1,54 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "match_selected"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "action_activated"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "insert_prefix"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "cursor_on_match"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved0"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "EntryCompletionClass"
+}

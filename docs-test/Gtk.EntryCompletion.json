@@ -10,7 +10,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.EntryCompletion\"/> object using the\nspecified <code>area</code> to layout cells in the underlying\n<span data-xref=\"Gtk.TreeViewColumn\"/> for the drop-down menu.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.EntryCompletion\"/> object using the\nspecified <pre>area</pre> to layout cells in the underlying\n<span data-xref=\"Gtk.TreeViewColumn\"/> for the drop-down menu.</p>",
             "kind": "constructor",
             "name": "new_with_area",
             "parameters": [
@@ -26,19 +26,7 @@
             }
         }
     ],
-    "doc": "<p><span data-xref=\"Gtk.EntryCompletion\"/> is an auxiliary object to be used in conjunction with\n<span data-xref=\"Gtk.Entry\"/> to provide the completion functionality. It implements the\n<span data-xref=\"Gtk.CellLayout\"/> interface, to allow the user to add extra cells to the\n<span data-xref=\"Gtk.TreeView\"/> with completion matches.</p><p>\u201cCompletion functionality\u201d means that when the user modifies the text\nin the entry, <span data-xref=\"Gtk.EntryCompletion\"/> checks which rows in the model match\nthe current content of the entry, and displays a list of matches.\nBy default, the matching is done by comparing the entry text\ncase-insensitively against the text column of the model (see\n<span data-xref=\"Gtk.EntryCompletion.set_text_column\"/>), but this can be overridden\nwith a custom match function (see <span data-xref=\"Gtk.EntryCompletion.set_match_func\"/>).</p><p>When the user selects a completion, the content of the entry is\nupdated. By default, the content of the entry is replaced by the\ntext column of the model, but this can be overridden by connecting\nto the <span data-xref=\"Gtk.EntryCompletion-match-selected\"/> signal and updating the\nentry in the signal handler. Note that you should return <code>true</code> from\nthe signal handler to suppress the default behaviour.</p><p>To add completion functionality to an entry, use <span data-xref=\"Gtk.Entry.set_completion\"/>.</p><p>In addition to regular completion matches, which will be inserted into the\nentry when they are selected, <span data-xref=\"Gtk.EntryCompletion\"/> also allows to display\n\u201cactions\u201d in the popup window. Their appearance is similar to menuitems,\nto differentiate them clearly from completion strings. When an action is\nselected, the <span data-xref=\"Gtk.EntryCompletion-action-activated\"/> signal is emitted.</p><p>GtkEntryCompletion uses a <span data-xref=\"Gtk.TreeModelFilter\"/> model to represent the\nsubset of the entire model that is currently matching. While the\nGtkEntryCompletion signals <span data-xref=\"Gtk.EntryCompletion-match-selected\"/> and\n<span data-xref=\"Gtk.EntryCompletion-cursor-on-match\"/> take the original model and an\niter pointing to that model as arguments, other callbacks and signals\n(such as #GtkCellLayoutDataFuncs or <span data-xref=\"Gtk.CellArea-apply-attributes\"/>)\nwill generally take the filter model as argument. As long as you are\nonly calling <span data-xref=\"Gtk.TreeModel.get\"/>, this will make no difference to\nyou. If for some reason, you need the original model, use\n<span data-xref=\"Gtk.TreeModelFilter.get_model\"/>. Don\u2019t forget to use\n<span data-xref=\"Gtk.TreeModelFilter.convert_iter_to_child_iter\"/> to obtain a\nmatching iter.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p><span data-xref=\"Gtk.EntryCompletion\"/> is an auxiliary object to be used in conjunction with\n<span data-xref=\"Gtk.Entry\"/> to provide the completion functionality. It implements the\n<span data-xref=\"Gtk.CellLayout\"/> interface, to allow the user to add extra cells to the\n<span data-xref=\"Gtk.TreeView\"/> with completion matches.</p><p>\u201cCompletion functionality\u201d means that when the user modifies the text\nin the entry, <span data-xref=\"Gtk.EntryCompletion\"/> checks which rows in the model match\nthe current content of the entry, and displays a list of matches.\nBy default, the matching is done by comparing the entry text\ncase-insensitively against the text column of the model (see\n<span data-xref=\"Gtk.EntryCompletion.set_text_column\"/>), but this can be overridden\nwith a custom match function (see <span data-xref=\"Gtk.EntryCompletion.set_match_func\"/>).</p><p>When the user selects a completion, the content of the entry is\nupdated. By default, the content of the entry is replaced by the\ntext column of the model, but this can be overridden by connecting\nto the <span data-xref=\"Gtk.EntryCompletion-match-selected\"/> signal and updating the\nentry in the signal handler. Note that you should return <pre>true</pre> from\nthe signal handler to suppress the default behaviour.</p><p>To add completion functionality to an entry, use <span data-xref=\"Gtk.Entry.set_completion\"/>.</p><p>In addition to regular completion matches, which will be inserted into the\nentry when they are selected, <span data-xref=\"Gtk.EntryCompletion\"/> also allows to display\n\u201cactions\u201d in the popup window. Their appearance is similar to menuitems,\nto differentiate them clearly from completion strings. When an action is\nselected, the <span data-xref=\"Gtk.EntryCompletion-action-activated\"/> signal is emitted.</p><p>GtkEntryCompletion uses a <span data-xref=\"Gtk.TreeModelFilter\"/> model to represent the\nsubset of the entire model that is currently matching. While the\nGtkEntryCompletion signals <span data-xref=\"Gtk.EntryCompletion-match-selected\"/> and\n<span data-xref=\"Gtk.EntryCompletion-cursor-on-match\"/> take the original model and an\niter pointing to that model as arguments, other callbacks and signals\n(such as #GtkCellLayoutDataFuncs or <span data-xref=\"Gtk.CellArea-apply-attributes\"/>)\nwill generally take the filter model as argument. As long as you are\nonly calling <span data-xref=\"Gtk.TreeModel.get\"/>, this will make no difference to\nyou. If for some reason, you need the original model, use\n<span data-xref=\"Gtk.TreeModelFilter.get_model\"/>. Don\u2019t forget to use\n<span data-xref=\"Gtk.TreeModelFilter.convert_iter_to_child_iter\"/> to obtain a\nmatching iter.</p>",
     "kind": "class",
     "methods": [
         {
@@ -51,7 +39,7 @@
             }
         },
         {
-            "doc": "<p>Computes the common prefix that is shared by all rows in <code>completion</code>\nthat start with <code>key</code>. If no row matches <code>key</code>, <code>null</code> will be returned.\nNote that a text column must have been set for this function to work,\nsee <span data-xref=\"Gtk.EntryCompletion.set_text_column\"/> for details.</p>",
+            "doc": "<p>Computes the common prefix that is shared by all rows in <pre>completion</pre>\nthat start with <pre>key</pre>. If no row matches <pre>key</pre>, <pre>null</pre> will be returned.\nNote that a text column must have been set for this function to work,\nsee <span data-xref=\"Gtk.EntryCompletion.set_text_column\"/> for details.</p>",
             "kind": "method",
             "name": "compute_prefix",
             "parameters": [
@@ -67,7 +55,7 @@
             }
         },
         {
-            "doc": "<p>Deletes the action at <code>index_</code> from <code>completion</code>\u2019s action list.</p>",
+            "doc": "<p>Deletes the action at <pre>index_</pre> from <pre>completion</pre>\u2019s action list.</p>",
             "kind": "method",
             "name": "delete_action",
             "parameters": [
@@ -83,7 +71,7 @@
             }
         },
         {
-            "doc": "<p>Get the original text entered by the user that triggered\nthe completion or <code>null</code> if there\u2019s no completion ongoing.</p>",
+            "doc": "<p>Get the original text entered by the user that triggered\nthe completion or <pre>null</pre> if there\u2019s no completion ongoing.</p>",
             "kind": "method",
             "name": "get_completion_prefix",
             "parameters": [],
@@ -92,7 +80,7 @@
             }
         },
         {
-            "doc": "<p>Gets the entry <code>completion</code> has been attached to.</p>",
+            "doc": "<p>Gets the entry <pre>completion</pre> has been attached to.</p>",
             "kind": "method",
             "name": "get_entry",
             "parameters": [],
@@ -110,7 +98,7 @@
             }
         },
         {
-            "doc": "<p>Returns <code>true</code> if inline-selection mode is turned on.</p>",
+            "doc": "<p>Returns <pre>true</pre> if inline-selection mode is turned on.</p>",
             "kind": "method",
             "name": "get_inline_selection",
             "parameters": [],
@@ -119,7 +107,7 @@
             }
         },
         {
-            "doc": "<p>Returns the minimum key length as set for <code>completion</code>.</p>",
+            "doc": "<p>Returns the minimum key length as set for <pre>completion</pre>.</p>",
             "kind": "method",
             "name": "get_minimum_key_length",
             "parameters": [],
@@ -128,7 +116,7 @@
             }
         },
         {
-            "doc": "<p>Returns the model the <span data-xref=\"Gtk.EntryCompletion\"/> is using as data source.\nReturns <code>null</code> if the model is unset.</p>",
+            "doc": "<p>Returns the model the <span data-xref=\"Gtk.EntryCompletion\"/> is using as data source.\nReturns <pre>null</pre> if the model is unset.</p>",
             "kind": "method",
             "name": "get_model",
             "parameters": [],
@@ -164,7 +152,7 @@
             }
         },
         {
-            "doc": "<p>Returns the column in the model of <code>completion</code> to get strings from.</p>",
+            "doc": "<p>Returns the column in the model of <pre>completion</pre> to get strings from.</p>",
             "kind": "method",
             "name": "get_text_column",
             "parameters": [],
@@ -173,7 +161,7 @@
             }
         },
         {
-            "doc": "<p>Inserts an action in <code>completion</code>\u2019s action item list at position <code>index_</code>\nwith markup <code>markup</code>.</p>",
+            "doc": "<p>Inserts an action in <pre>completion</pre>\u2019s action item list at position <pre>index_</pre>\nwith markup <pre>markup</pre>.</p>",
             "kind": "method",
             "name": "insert_action_markup",
             "parameters": [
@@ -195,7 +183,7 @@
             }
         },
         {
-            "doc": "<p>Inserts an action in <code>completion</code>\u2019s action item list at position <code>index_</code>\nwith text <code>text</code>. If you want the action item to have markup, use\n<span data-xref=\"Gtk.EntryCompletion.insert_action_markup\"/>.</p>",
+            "doc": "<p>Inserts an action in <pre>completion</pre>\u2019s action item list at position <pre>index_</pre>\nwith text <pre>text</pre>. If you want the action item to have markup, use\n<span data-xref=\"Gtk.EntryCompletion.insert_action_markup\"/>.</p>",
             "kind": "method",
             "name": "insert_action_text",
             "parameters": [
@@ -258,7 +246,7 @@
             }
         },
         {
-            "doc": "<p>Sets the match function for <code>completion</code> to be <code>func</code>. The match function\nis used to determine if a row should or should not be in the completion\nlist.</p>",
+            "doc": "<p>Sets the match function for <pre>completion</pre> to be <pre>func</pre>. The match function\nis used to determine if a row should or should not be in the completion\nlist.</p>",
             "kind": "method",
             "name": "set_match_func",
             "parameters": [
@@ -286,7 +274,7 @@
             }
         },
         {
-            "doc": "<p>Requires the length of the search key for <code>completion</code> to be at least\n<code>length</code>. This is useful for long lists, where completing using a small\nkey takes a lot of time and will come up with meaningless results anyway\n(ie, a too large dataset).</p>",
+            "doc": "<p>Requires the length of the search key for <pre>completion</pre> to be at least\n<pre>length</pre>. This is useful for long lists, where completing using a small\nkey takes a lot of time and will come up with meaningless results anyway\n(ie, a too large dataset).</p>",
             "kind": "method",
             "name": "set_minimum_key_length",
             "parameters": [
@@ -302,7 +290,7 @@
             }
         },
         {
-            "doc": "<p>Sets the model for a <span data-xref=\"Gtk.EntryCompletion\"/>. If <code>completion</code> already has\na model set, it will remove it before setting the new model.\nIf model is <code>null</code>, then it will unset the model.</p>",
+            "doc": "<p>Sets the model for a <span data-xref=\"Gtk.EntryCompletion\"/>. If <pre>completion</pre> already has\na model set, it will remove it before setting the new model.\nIf model is <pre>null</pre>, then it will unset the model.</p>",
             "kind": "method",
             "name": "set_model",
             "parameters": [
@@ -350,7 +338,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether the completion popup window will appear even if there is\nonly a single match. You may want to set this to <code>false</code> if you\nare using [inline completion][GtkEntryCompletion--inline-completion].</p>",
+            "doc": "<p>Sets whether the completion popup window will appear even if there is\nonly a single match. You may want to set this to <pre>false</pre> if you\nare using [inline completion][GtkEntryCompletion--inline-completion].</p>",
             "kind": "method",
             "name": "set_popup_single_match",
             "parameters": [
@@ -366,7 +354,7 @@
             }
         },
         {
-            "doc": "<p>Convenience function for setting up the most used case of this code: a\ncompletion list with just strings. This function will set up <code>completion</code>\nto have a list displaying all (and just) strings in the completion list,\nand to get those strings from <code>column</code> in the model of <code>completion</code>.</p><p>This functions creates and adds a <span data-xref=\"Gtk.CellRendererText\"/> for the selected\ncolumn. If you need to set the text column, but don't want the cell\nrenderer, use <span data-xref=\"GObject.Object.set\">GObject.Object.set</span> to set the <span data-xref=\"Gtk.EntryCompletion-text-column\"/>\nproperty directly.</p>",
+            "doc": "<p>Convenience function for setting up the most used case of this code: a\ncompletion list with just strings. This function will set up <pre>completion</pre>\nto have a list displaying all (and just) strings in the completion list,\nand to get those strings from <pre>column</pre> in the model of <pre>completion</pre>.</p><p>This functions creates and adds a <span data-xref=\"Gtk.CellRendererText\"/> for the selected\ncolumn. If you need to set the text column, but don't want the cell\nrenderer, use <span data-xref=\"GObject.Object.set\">GObject.Object.set</span> to set the <span data-xref=\"Gtk.EntryCompletion-text-column\"/>\nproperty directly.</p>",
             "kind": "method",
             "name": "set_text_column",
             "parameters": [
@@ -380,8 +368,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "EntryCompletion",
     "properties": [
@@ -428,7 +415,7 @@
             "type": "Boolean"
         },
         {
-            "doc": "<p>Determines whether the completions popup window will shown\nfor a single possible completion. You probably want to set\nthis to <code>false</code> if you are using\n[inline completion][GtkEntryCompletion--inline-completion].</p>",
+            "doc": "<p>Determines whether the completions popup window will shown\nfor a single possible completion. You probably want to set\nthis to <pre>false</pre> if you are using\n[inline completion][GtkEntryCompletion--inline-completion].</p>",
             "kind": "property",
             "name": "popup-single-match",
             "type": "Boolean"
@@ -458,7 +445,7 @@
             }
         },
         {
-            "doc": "<p>Gets emitted when a match from the cursor is on a match\nof the list. The default behaviour is to replace the contents\nof the entry with the contents of the text column in the row\npointed to by <code>iter</code>.</p><p>Note that <code>model</code> is the model that was passed to\n<span data-xref=\"Gtk.EntryCompletion.set_model\"/>.</p>",
+            "doc": "<p>Gets emitted when a match from the cursor is on a match\nof the list. The default behaviour is to replace the contents\nof the entry with the contents of the text column in the row\npointed to by <pre>iter</pre>.</p><p>Note that <pre>model</pre> is the model that was passed to\n<span data-xref=\"Gtk.EntryCompletion.set_model\"/>.</p>",
             "kind": "signal",
             "name": "cursor-on-match",
             "parameters": [
@@ -480,7 +467,7 @@
             }
         },
         {
-            "doc": "<p>Gets emitted when the inline autocompletion is triggered.\nThe default behaviour is to make the entry display the\nwhole prefix and select the newly inserted part.</p><p>Applications may connect to this signal in order to insert only a\nsmaller part of the <code>prefix</code> into the entry - e.g. the entry used in\nthe <span data-xref=\"Gtk.FileChooser\"/> inserts only the part of the prefix up to the\nnext '/'.</p>",
+            "doc": "<p>Gets emitted when the inline autocompletion is triggered.\nThe default behaviour is to make the entry display the\nwhole prefix and select the newly inserted part.</p><p>Applications may connect to this signal in order to insert only a\nsmaller part of the <pre>prefix</pre> into the entry - e.g. the entry used in\nthe <span data-xref=\"Gtk.FileChooser\"/> inserts only the part of the prefix up to the\nnext '/'.</p>",
             "kind": "signal",
             "name": "insert-prefix",
             "parameters": [
@@ -496,7 +483,7 @@
             }
         },
         {
-            "doc": "<p>Gets emitted when a match from the list is selected.\nThe default behaviour is to replace the contents of the\nentry with the contents of the text column in the row\npointed to by <code>iter</code>.</p><p>Note that <code>model</code> is the model that was passed to\n<span data-xref=\"Gtk.EntryCompletion.set_model\"/>.</p>",
+            "doc": "<p>Gets emitted when a match from the list is selected.\nThe default behaviour is to replace the contents of the\nentry with the contents of the text column in the row\npointed to by <pre>iter</pre>.</p><p>Note that <pre>model</pre> is the model that was passed to\n<span data-xref=\"Gtk.EntryCompletion.set_model\"/>.</p>",
             "kind": "signal",
             "name": "match-selected",
             "parameters": [

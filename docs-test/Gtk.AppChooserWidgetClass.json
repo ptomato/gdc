@@ -1,0 +1,34 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "application_selected"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "application_activated"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "populate_popup"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "padding"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "AppChooserWidgetClass"
+}

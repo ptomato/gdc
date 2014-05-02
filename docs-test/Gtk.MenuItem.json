@@ -26,7 +26,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuItem\"/> containing a label.</p><p>The label will be created using <span data-xref=\"Gtk.Label.new_with_mnemonic\"/>,\nso underscores in <code>label</code> indicate the mnemonic for the menu item.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuItem\"/> containing a label.</p><p>The label will be created using <span data-xref=\"Gtk.Label.new_with_mnemonic\"/>,\nso underscores in <pre>label</pre> indicate the mnemonic for the menu item.</p>",
             "kind": "constructor",
             "name": "new_with_mnemonic",
             "parameters": [
@@ -42,19 +42,7 @@
             }
         }
     ],
-    "doc": "<p>The <span data-xref=\"Gtk.MenuItem\"/> widget and the derived widgets are the only valid\nchildren for menus. Their function is to correctly handle highlighting,\nalignment, events and submenus.</p><p>As a GtkMenuItem derives from <span data-xref=\"Gtk.Bin\"/> it can hold any valid child widget,\nalthough only a few are really useful.</p><p>By default, a GtkMenuItem sets a <span data-xref=\"Gtk.AccelLabel\"/> as its child.\nGtkMenuItem has direct functions to set the label and its mnemonic.\nFor more advanced label settings, you can fetch the child widget from the GtkBin.</p><p>An example for setting markup and accelerator on a MenuItem:\n|[&lt;!-- language=\"C\" --&gt;\nGtkWidget *child = gtk_bin_get_child (GTK_BIN (menu_item));\ngtk_label_set_markup (GTK_LABEL (child), \"&lt;i&gt;new label&lt;/i&gt; with &lt;b&gt;markup&lt;/b&gt;\");\ngtk_accel_label_set_accel (GTK_ACCEL_LABEL (child), GDK_KEY_1, 0);\n]|</p><h1>GtkMenuItem as GtkBuildable</h1><p>The GtkMenuItem implementation of the <span data-xref=\"Gtk.Buildable\"/> interface supports\nadding a submenu by specifying \u201csubmenu\u201d as the \u201ctype\u201d attribute of\na &lt;child&gt; element.</p><p>An example of UI definition fragment with submenus:\n|[\n&lt;object class=\"GtkMenuItem\"&gt;\n  &lt;child type=\"submenu\"&gt;\n    &lt;object class=\"GtkMenu\"/&gt;\n  &lt;/child&gt;\n&lt;/object&gt;\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "bin"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>The <span data-xref=\"Gtk.MenuItem\"/> widget and the derived widgets are the only valid\nchildren for menus. Their function is to correctly handle highlighting,\nalignment, events and submenus.</p><p>As a GtkMenuItem derives from <span data-xref=\"Gtk.Bin\"/> it can hold any valid child widget,\nalthough only a few are really useful.</p><p>By default, a GtkMenuItem sets a <span data-xref=\"Gtk.AccelLabel\"/> as its child.\nGtkMenuItem has direct functions to set the label and its mnemonic.\nFor more advanced label settings, you can fetch the child widget from the GtkBin.</p><p>An example for setting markup and accelerator on a MenuItem:\n|[<!-- language=\"C\" -->\nGtkWidget *child = gtk_bin_get_child (GTK_BIN (menu_item));\ngtk_label_set_markup (GTK_LABEL (child), \"<i>new label</i> with <b>markup</b>\");\ngtk_accel_label_set_accel (GTK_ACCEL_LABEL (child), GDK_KEY_1, 0);\n]|</p><h1>GtkMenuItem as GtkBuildable</h1><p>The GtkMenuItem implementation of the <span data-xref=\"Gtk.Buildable\"/> interface supports\nadding a submenu by specifying \u201csubmenu\u201d as the \u201ctype\u201d attribute of\na <child> element.</p><p>An example of UI definition fragment with submenus:\n|[\n<object class=\"GtkMenuItem\">\n  <child type=\"submenu\">\n    <object class=\"GtkMenu\"/>\n  </child>\n</object>\n]|</p>",
     "kind": "class",
     "methods": [
         {
@@ -76,7 +64,7 @@
             }
         },
         {
-            "doc": "<p>Retrieve the accelerator path that was previously set on <code>menu_item</code>.</p><p>See <span data-xref=\"Gtk.MenuItem.set_accel_path\"/> for details.</p>",
+            "doc": "<p>Retrieve the accelerator path that was previously set on <pre>menu_item</pre>.</p><p>See <span data-xref=\"Gtk.MenuItem.set_accel_path\"/> for details.</p>",
             "kind": "method",
             "name": "get_accel_path",
             "parameters": [],
@@ -85,7 +73,7 @@
             }
         },
         {
-            "doc": "<p>Sets @text on the <code>menu_item</code> label</p>",
+            "doc": "<p>Sets @text on the <pre>menu_item</pre> label</p>",
             "kind": "method",
             "name": "get_label",
             "parameters": [],
@@ -94,7 +82,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether the <code>menu_item</code> reserves space for\nthe submenu indicator, regardless if it has a submenu\nor not.</p>",
+            "doc": "<p>Returns whether the <pre>menu_item</pre> reserves space for\nthe submenu indicator, regardless if it has a submenu\nor not.</p>",
             "kind": "method",
             "name": "get_reserve_indicator",
             "parameters": [],
@@ -139,7 +127,7 @@
             }
         },
         {
-            "doc": "<p>Set the accelerator path on <code>menu_item</code>, through which runtime\nchanges of the menu item\u2019s accelerator caused by the user can be\nidentified and saved to persistent storage (see <span data-xref=\"Gtk.AccelMap.save\"/>\non this). To set up a default accelerator for this menu item, call\n<span data-xref=\"Gtk.AccelMap.add_entry\"/> with the same <code>accel_path</code>. See also\n<span data-xref=\"Gtk.AccelMap.add_entry\"/> on the specifics of accelerator paths,\nand <span data-xref=\"Gtk.Menu.set_accel_path\"/> for a more convenient variant of\nthis function.</p><p>This function is basically a convenience wrapper that handles\ncalling <span data-xref=\"Gtk.Widget.set_accel_path\"/> with the appropriate accelerator\ngroup for the menu item.</p><p>Note that you do need to set an accelerator on the parent menu with\n<span data-xref=\"Gtk.Menu.set_accel_group\"/> for this to work.</p><p>Note that <code>accel_path</code> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>.\nTherefore, if you pass a static string, you can save some memory\nby interning it first with <span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
+            "doc": "<p>Set the accelerator path on <pre>menu_item</pre>, through which runtime\nchanges of the menu item\u2019s accelerator caused by the user can be\nidentified and saved to persistent storage (see <span data-xref=\"Gtk.AccelMap.save\"/>\non this). To set up a default accelerator for this menu item, call\n<span data-xref=\"Gtk.AccelMap.add_entry\"/> with the same <pre>accel_path</pre>. See also\n<span data-xref=\"Gtk.AccelMap.add_entry\"/> on the specifics of accelerator paths,\nand <span data-xref=\"Gtk.Menu.set_accel_path\"/> for a more convenient variant of\nthis function.</p><p>This function is basically a convenience wrapper that handles\ncalling <span data-xref=\"Gtk.Widget.set_accel_path\"/> with the appropriate accelerator\ngroup for the menu item.</p><p>Note that you do need to set an accelerator on the parent menu with\n<span data-xref=\"Gtk.Menu.set_accel_group\"/> for this to work.</p><p>Note that <pre>accel_path</pre> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>.\nTherefore, if you pass a static string, you can save some memory\nby interning it first with <span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
             "kind": "method",
             "name": "set_accel_path",
             "parameters": [
@@ -155,7 +143,7 @@
             }
         },
         {
-            "doc": "<p>Sets @text on the <code>menu_item</code> label</p>",
+            "doc": "<p>Sets @text on the <pre>menu_item</pre> label</p>",
             "kind": "method",
             "name": "set_label",
             "parameters": [
@@ -171,7 +159,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether the <code>menu_item</code> should reserve space for\nthe submenu indicator, regardless if it actually has\na submenu or not.</p><p>There should be little need for applications to call\nthis functions.</p>",
+            "doc": "<p>Sets whether the <pre>menu_item</pre> should reserve space for\nthe submenu indicator, regardless if it actually has\na submenu or not.</p><p>There should be little need for applications to call\nthis functions.</p>",
             "kind": "method",
             "name": "set_reserve_indicator",
             "parameters": [
@@ -203,7 +191,7 @@
             }
         },
         {
-            "doc": "<p>Sets or replaces the menu item\u2019s submenu, or removes it when a <code>null</code>\nsubmenu is passed.</p>",
+            "doc": "<p>Sets or replaces the menu item\u2019s submenu, or removes it when a <pre>null</pre>\nsubmenu is passed.</p>",
             "kind": "method",
             "name": "set_submenu",
             "parameters": [
@@ -265,8 +253,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "MenuItem",
     "properties": [
@@ -289,13 +276,13 @@
             "type": "Boolean"
         },
         {
-            "doc": "<p>The submenu attached to the menu item, or <code>null</code> if it has none.</p>",
+            "doc": "<p>The submenu attached to the menu item, or <pre>null</pre> if it has none.</p>",
             "kind": "property",
             "name": "submenu",
             "type": "Gtk.Menu"
         },
         {
-            "doc": "<p><code>true</code> if underlines in the text indicate mnemonics.</p>",
+            "doc": "<pre>true</pre>\n\n<p>if underlines in the text indicate mnemonics.</p>",
             "kind": "property",
             "name": "use-underline",
             "type": "Boolean"
@@ -400,7 +387,7 @@
             }
         },
         {
-            "doc": "<p>Sets @text on the <code>menu_item</code> label</p>",
+            "doc": "<p>Sets @text on the <pre>menu_item</pre> label</p>",
             "kind": "vfunc",
             "name": "get_label",
             "parameters": [],
@@ -418,7 +405,7 @@
             }
         },
         {
-            "doc": "<p>Sets @text on the <code>menu_item</code> label</p>",
+            "doc": "<p>Sets @text on the <pre>menu_item</pre> label</p>",
             "kind": "vfunc",
             "name": "set_label",
             "parameters": [

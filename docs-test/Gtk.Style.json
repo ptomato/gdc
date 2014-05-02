@@ -10,119 +10,7 @@
             }
         }
     ],
-    "doc": "<p>A <span data-xref=\"Gtk.Style\"/> object encapsulates the information that provides the look and\nfeel for a widget.</p><p>&gt; In GTK+ 3.0, GtkStyle has been deprecated and replaced by\n&gt; <span data-xref=\"Gtk.StyleContext\"/>.</p><p>Each <span data-xref=\"Gtk.Widget\"/> has an associated <span data-xref=\"Gtk.Style\"/> object that is used when\nrendering that widget. Also, a <span data-xref=\"Gtk.Style\"/> holds information for the five\npossible widget states though not every widget supports all five\nstates; see <span data-xref=\"Gtk.StateType\"/>.</p><p>Usually the <span data-xref=\"Gtk.Style\"/> for a widget is the same as the default style that\nis set by GTK+ and modified the theme engine.</p><p>Usually applications should not need to use or modify the <span data-xref=\"Gtk.Style\"/> of\ntheir widgets.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "<p>Set of foreground <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
-            "kind": "field",
-            "name": "fg"
-        },
-        {
-            "doc": "<p>Set of background <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
-            "kind": "field",
-            "name": "bg"
-        },
-        {
-            "doc": "<p>Set of light <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
-            "kind": "field",
-            "name": "light"
-        },
-        {
-            "doc": "<p>Set of dark <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
-            "kind": "field",
-            "name": "dark"
-        },
-        {
-            "doc": "<p>Set of mid <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
-            "kind": "field",
-            "name": "mid"
-        },
-        {
-            "doc": "<p>Set of text <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
-            "kind": "field",
-            "name": "text"
-        },
-        {
-            "doc": "<p>Set of base <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
-            "kind": "field",
-            "name": "base"
-        },
-        {
-            "doc": "<p>Color halfway between text/base</p>",
-            "kind": "field",
-            "name": "text_aa"
-        },
-        {
-            "doc": "<p><span data-xref=\"Gdk.Color\">Gdk.Color</span> to use for black</p>",
-            "kind": "field",
-            "name": "black"
-        },
-        {
-            "doc": "<p><span data-xref=\"Gdk.Color\">Gdk.Color</span> to use for white</p>",
-            "kind": "field",
-            "name": "white"
-        },
-        {
-            "doc": "<p><span data-xref=\"Pango.FontDescription\">Pango.FontDescription</span></p>",
-            "kind": "field",
-            "name": "font_desc"
-        },
-        {
-            "doc": "<p>Thickness in X direction</p>",
-            "kind": "field",
-            "name": "xthickness"
-        },
-        {
-            "doc": "<p>Thickness in Y direction</p>",
-            "kind": "field",
-            "name": "ythickness"
-        },
-        {
-            "doc": "<p>Set of background #cairo_pattern_t</p>",
-            "kind": "field",
-            "name": "background"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "attach_count"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "visual"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "private_font_desc"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "rc_style"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "styles"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "property_cache"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "icon_factories"
-        }
-    ],
+    "doc": "<p>A <span data-xref=\"Gtk.Style\"/> object encapsulates the information that provides the look and\nfeel for a widget.</p><blockquote>\n<p>In GTK+ 3.0, GtkStyle has been deprecated and replaced by\n<span data-xref=\"Gtk.StyleContext\"/>.</p>\n</blockquote><p>Each <span data-xref=\"Gtk.Widget\"/> has an associated <span data-xref=\"Gtk.Style\"/> object that is used when\nrendering that widget. Also, a <span data-xref=\"Gtk.Style\"/> holds information for the five\npossible widget states though not every widget supports all five\nstates; see <span data-xref=\"Gtk.StateType\"/>.</p><p>Usually the <span data-xref=\"Gtk.Style\"/> for a widget is the same as the default style that\nis set by GTK+ and modified the theme engine.</p><p>Usually applications should not need to use or modify the <span data-xref=\"Gtk.Style\"/> of\ntheir widgets.</p>",
     "kind": "class",
     "methods": [
         {
@@ -212,7 +100,7 @@
             }
         },
         {
-            "doc": "<p>Gets the values of a multiple style properties for <code>widget_type</code>\nfrom <code>style</code>.</p>",
+            "doc": "<p>Gets the values of a multiple style properties for <pre>widget_type</pre>\nfrom <pre>style</pre>.</p>",
             "kind": "method",
             "name": "get",
             "parameters": [
@@ -296,7 +184,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether <code>style</code> has an associated <span data-xref=\"Gtk.StyleContext\"/>.</p>",
+            "doc": "<p>Returns whether <pre>style</pre> has an associated <span data-xref=\"Gtk.StyleContext\"/>.</p>",
             "kind": "method",
             "name": "has_context",
             "parameters": [],
@@ -305,7 +193,7 @@
             }
         },
         {
-            "doc": "<p>Looks up <code>color_name</code> in the style\u2019s logical color mappings,\nfilling in <code>color</code> and returning <code>true</code> if found, otherwise\nreturning <code>false</code>. Do not cache the found mapping, because\nit depends on the <span data-xref=\"Gtk.Style\"/> and might change when a theme\nswitch occurs.</p>",
+            "doc": "<p>Looks up <pre>color_name</pre> in the style\u2019s logical color mappings,\nfilling in <pre>color</pre> and returning <pre>true</pre> if found, otherwise\nreturning <pre>false</pre>. Do not cache the found mapping, because\nit depends on the <span data-xref=\"Gtk.Style\"/> and might change when a theme\nswitch occurs.</p>",
             "kind": "method",
             "name": "lookup_color",
             "parameters": [
@@ -327,7 +215,7 @@
             }
         },
         {
-            "doc": "<p>Looks up <code>stock_id</code> in the icon factories associated with <code>style</code>\nand the default icon factory, returning an icon set if found,\notherwise <code>null</code>.</p>",
+            "doc": "<p>Looks up <pre>stock_id</pre> in the icon factories associated with <pre>style</pre>\nand the default icon factory, returning an icon set if found,\notherwise <pre>null</pre>.</p>",
             "kind": "method",
             "name": "lookup_icon_set",
             "parameters": [
@@ -343,7 +231,7 @@
             }
         },
         {
-            "doc": "<p>Renders the icon specified by <code>source</code> at the given <code>size</code>\naccording to the given parameters and returns the result in a\npixbuf.</p>",
+            "doc": "<p>Renders the icon specified by <pre>source</pre> at the given <pre>size</pre>\naccording to the given parameters and returns the result in a\npixbuf.</p>",
             "kind": "method",
             "name": "render_icon",
             "parameters": [
@@ -389,7 +277,7 @@
             }
         },
         {
-            "doc": "<p>Sets the background of <code>window</code> to the background color or pixmap\nspecified by <code>style</code> for the given state.</p>",
+            "doc": "<p>Sets the background of <pre>window</pre> to the background color or pixmap\nspecified by <pre>style</pre> for the given state.</p>",
             "kind": "method",
             "name": "set_background",
             "parameters": [
@@ -409,8 +297,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Style",
     "properties": [
@@ -1791,7 +1678,7 @@
             }
         },
         {
-            "doc": "<p>Renders the icon specified by <code>source</code> at the given <code>size</code>\naccording to the given parameters and returns the result in a\npixbuf.</p>",
+            "doc": "<p>Renders the icon specified by <pre>source</pre> at the given <pre>size</pre>\naccording to the given parameters and returns the result in a\npixbuf.</p>",
             "kind": "vfunc",
             "name": "render_icon",
             "parameters": [
@@ -1837,7 +1724,7 @@
             }
         },
         {
-            "doc": "<p>Sets the background of <code>window</code> to the background color or pixmap\nspecified by <code>style</code> for the given state.</p>",
+            "doc": "<p>Sets the background of <pre>window</pre> to the background color or pixmap\nspecified by <pre>style</pre> for the given state.</p>",
             "kind": "vfunc",
             "name": "set_background",
             "parameters": [

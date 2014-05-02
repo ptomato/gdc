@@ -1,0 +1,32 @@
+{
+    "doc": "<p>Used to change the appearance of an outline typically provided by a <span data-xref=\"Gtk.Frame\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>No outline.</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>The outline is bevelled inwards.</p>",
+            "kind": "default",
+            "name": "in"
+        },
+        {
+            "doc": "<p>The outline is bevelled outwards like a button.</p>",
+            "kind": "default",
+            "name": "out"
+        },
+        {
+            "doc": "<p>The outline has a sunken 3d appearance.</p>",
+            "kind": "default",
+            "name": "etched_in"
+        },
+        {
+            "doc": "<p>The outline has a raised 3d appearance.</p>",
+            "kind": "default",
+            "name": "etched_out"
+        }
+    ],
+    "name": "ShadowType"
+}

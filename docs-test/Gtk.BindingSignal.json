@@ -1,0 +1,29 @@
+{
+    "constructors": [],
+    "doc": "<p>A GtkBindingSignal stores the necessary information to\nactivate a widget in response to a key press via a signal\nemission.</p>",
+    "fields": [
+        {
+            "doc": "<p>implementation detail</p>",
+            "kind": "field",
+            "name": "next"
+        },
+        {
+            "doc": "<p>the action signal to be emitted</p>",
+            "kind": "field",
+            "name": "signal_name"
+        },
+        {
+            "doc": "<p>number of arguments specified for the signal</p>",
+            "kind": "field",
+            "name": "n_args"
+        },
+        {
+            "doc": "<p>the arguments specified for the signal</p>",
+            "kind": "field",
+            "name": "args"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "BindingSignal"
+}

@@ -1,0 +1,17 @@
+{
+    "doc": "<p>The spin button update policy determines whether the spin button displays\nvalues even if they are outside the bounds of its adjustment.\nSee <span data-xref=\"Gtk.SpinButton.set_update_policy\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>When refreshing your <span data-xref=\"Gtk.SpinButton\"/>, the value is\n    always displayed</p>",
+            "kind": "default",
+            "name": "always"
+        },
+        {
+            "doc": "<p>When refreshing your <span data-xref=\"Gtk.SpinButton\"/>, the value is\n    only displayed if it is valid within the bounds of the spin button's\n    adjustment</p>",
+            "kind": "default",
+            "name": "if_valid"
+        }
+    ],
+    "name": "SpinButtonUpdatePolicy"
+}

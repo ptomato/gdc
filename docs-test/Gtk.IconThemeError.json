@@ -1,0 +1,17 @@
+{
+    "doc": "<p>Error codes for GtkIconTheme operations.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The icon specified does not exist in the theme</p>",
+            "kind": "default",
+            "name": "not_found"
+        },
+        {
+            "doc": "<p>An unspecified error occurred.</p>",
+            "kind": "default",
+            "name": "failed"
+        }
+    ],
+    "name": "IconThemeError"
+}

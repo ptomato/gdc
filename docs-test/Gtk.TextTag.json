@@ -18,18 +18,6 @@
         }
     ],
     "doc": "<p>You may wish to begin by reading the\n[text widget conceptual overview][TextWidget]\nwhich gives an overview of all the objects and\ndata types related to the text widget and how they work together.</p><p>Tags should be in the <span data-xref=\"Gtk.TextTagTable\"/> for a given <span data-xref=\"Gtk.TextBuffer\"/>\nbefore using them with that buffer.</p><p><span data-xref=\"Gtk.TextBuffer.create_tag\"/> is the best way to create tags.\nSee \u201cgtk3-demo\u201d for numerous examples.</p><p>For each property of <span data-xref=\"Gtk.TextTag\"/>, there is a \u201cset\u201d property, e.g.\n\u201cfont-set\u201d corresponds to \u201cfont\u201d. These \u201cset\u201d properties reflect\nwhether a property has been set or not.\nThey are maintained by GTK+ and you should not set them independently.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -84,13 +72,12 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "TextTag",
     "properties": [
         {
-            "doc": "<p>Whether the margins accumulate or override each other.</p><p>When set to <code>true</code> the margins of this tag are added to the margins\nof any other non-accumulative margins present. When set to <code>false</code>\nthe margins override one another (the default).</p>",
+            "doc": "<p>Whether the margins accumulate or override each other.</p><p>When set to <pre>true</pre> the margins of this tag are added to the margins\nof any other non-accumulative margins present. When set to <pre>false</pre>\nthe margins override one another (the default).</p>",
             "kind": "property",
             "name": "accumulative-margin",
             "type": "Boolean"

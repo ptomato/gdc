@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new lock button which reflects the <code>permission</code>.</p>",
+            "doc": "<p>Creates a new lock button which reflects the <pre>permission</pre>.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -18,22 +18,10 @@
         }
     ],
     "doc": "<p>GtkLockButton is a widget that can be used in control panels or\npreference dialogs to allow users to obtain and revoke authorizations\nneeded to operate the controls. The required authorization is represented\nby a <span data-xref=\"Gio.Permission\">Gio.Permission</span> object. Concrete implementations of <span data-xref=\"Gio.Permission\">Gio.Permission</span> may use\nPolicyKit or some other authorization framework. To obtain a PolicyKit-based\n<span data-xref=\"Gio.Permission\">Gio.Permission</span>, use polkit_permission_new().</p><p>If the user is not currently allowed to perform the action, but can obtain\nthe permission, the widget looks like this:</p><p><img alt=\"\" src=\"lockbutton-locked.png\" /></p><p>and the user can click the button to request the permission. Depending\non the platform, this may pop up an authentication dialog or ask the user\nto authenticate in some other way. Once the user has obtained the permission,\nthe widget changes to this:</p><p><img alt=\"\" src=\"lockbutton-unlocked.png\" /></p><p>and the permission can be dropped again by clicking the button. If the user\nis not able to obtain the permission at all, the widget looks like this:</p><p><img alt=\"\" src=\"lockbutton-sorry.png\" /></p><p>If the user has the permission and cannot drop it, the button is hidden.</p><p>The text (and tooltips) that are shown in the various cases can be adjusted\nwith the <span data-xref=\"Gtk.LockButton-text-lock\"/>, <span data-xref=\"Gtk.LockButton-text-unlock\"/>,\n<span data-xref=\"Gtk.LockButton-tooltip-lock\"/>, <span data-xref=\"Gtk.LockButton-tooltip-unlock\"/> and\n<span data-xref=\"Gtk.LockButton-tooltip-not-authorized\"/> properties.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Obtains the <span data-xref=\"Gio.Permission\">Gio.Permission</span> object that controls <code>button</code>.</p>",
+            "doc": "<p>Obtains the <span data-xref=\"Gio.Permission\">Gio.Permission</span> object that controls <pre>button</pre>.</p>",
             "kind": "method",
             "name": "get_permission",
             "parameters": [],
@@ -42,7 +30,7 @@
             }
         },
         {
-            "doc": "<p>Sets the <span data-xref=\"Gio.Permission\">Gio.Permission</span> object that controls <code>button</code>.</p>",
+            "doc": "<p>Sets the <span data-xref=\"Gio.Permission\">Gio.Permission</span> object that controls <pre>button</pre>.</p>",
             "kind": "method",
             "name": "set_permission",
             "parameters": [
@@ -56,8 +44,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "LockButton",
     "properties": [

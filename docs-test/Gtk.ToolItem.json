@@ -11,22 +11,10 @@
         }
     ],
     "doc": "<h1>GtkToolItems are widgets that can appear on a toolbar. To</h1>\n<p>create a toolbar item that contain something else than a button, use\n<span data-xref=\"Gtk.ToolItem.new\"/>. Use <span data-xref=\"Gtk.Container.add\"/> to add a child\nwidget to the tool item.</p><p>For toolbar items that contain buttons, see the <span data-xref=\"Gtk.ToolButton\"/>,\n<span data-xref=\"Gtk.ToggleToolButton\"/> and <span data-xref=\"Gtk.RadioToolButton\"/> classes.</p><p>See the <span data-xref=\"Gtk.Toolbar\"/> class for a description of the toolbar widget, and\n<span data-xref=\"Gtk.ToolShell\"/> for a description of the tool shell interface.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Returns the ellipsize mode used for <code>tool_item</code>. Custom subclasses of\n<span data-xref=\"Gtk.ToolItem\"/> should call this function to find out how text should\nbe ellipsized.</p>",
+            "doc": "<p>Returns the ellipsize mode used for <pre>tool_item</pre>. Custom subclasses of\n<span data-xref=\"Gtk.ToolItem\"/> should call this function to find out how text should\nbe ellipsized.</p>",
             "kind": "method",
             "name": "get_ellipsize_mode",
             "parameters": [],
@@ -35,7 +23,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether <code>tool_item</code> is allocated extra space.\nSee <span data-xref=\"Gtk.ToolItem.set_expand\"/>.</p>",
+            "doc": "<p>Returns whether <pre>tool_item</pre> is allocated extra space.\nSee <span data-xref=\"Gtk.ToolItem.set_expand\"/>.</p>",
             "kind": "method",
             "name": "get_expand",
             "parameters": [],
@@ -44,7 +32,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether <code>tool_item</code> is the same size as other homogeneous\nitems. See <span data-xref=\"Gtk.ToolItem.set_homogeneous\"/>.</p>",
+            "doc": "<p>Returns whether <pre>tool_item</pre> is the same size as other homogeneous\nitems. See <span data-xref=\"Gtk.ToolItem.set_homogeneous\"/>.</p>",
             "kind": "method",
             "name": "get_homogeneous",
             "parameters": [],
@@ -53,7 +41,7 @@
             }
         },
         {
-            "doc": "<p>Returns the icon size used for <code>tool_item</code>. Custom subclasses of\n<span data-xref=\"Gtk.ToolItem\"/> should call this function to find out what size icons\nthey should use.</p>",
+            "doc": "<p>Returns the icon size used for <pre>tool_item</pre>. Custom subclasses of\n<span data-xref=\"Gtk.ToolItem\"/> should call this function to find out what size icons\nthey should use.</p>",
             "kind": "method",
             "name": "get_icon_size",
             "parameters": [],
@@ -62,7 +50,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether <code>tool_item</code> is considered important. See\n<span data-xref=\"Gtk.ToolItem.set_is_important\"/></p>",
+            "doc": "<p>Returns whether <pre>tool_item</pre> is considered important. See\n<span data-xref=\"Gtk.ToolItem.set_is_important\"/></p>",
             "kind": "method",
             "name": "get_is_important",
             "parameters": [],
@@ -71,7 +59,7 @@
             }
         },
         {
-            "doc": "<p>Returns the orientation used for <code>tool_item</code>. Custom subclasses of\n<span data-xref=\"Gtk.ToolItem\"/> should call this function to find out what size icons\nthey should use.</p>",
+            "doc": "<p>Returns the orientation used for <pre>tool_item</pre>. Custom subclasses of\n<span data-xref=\"Gtk.ToolItem\"/> should call this function to find out what size icons\nthey should use.</p>",
             "kind": "method",
             "name": "get_orientation",
             "parameters": [],
@@ -80,7 +68,7 @@
             }
         },
         {
-            "doc": "<p>If <code>menu_item_id</code> matches the string passed to\n<span data-xref=\"Gtk.ToolItem.set_proxy_menu_item\"/> return the corresponding <span data-xref=\"Gtk.MenuItem\"/>.</p><p>Custom subclasses of <span data-xref=\"Gtk.ToolItem\"/> should use this function to\nupdate their menu item when the <span data-xref=\"Gtk.ToolItem\"/> changes. That the\n@menu_item_ids must match ensures that a <span data-xref=\"Gtk.ToolItem\"/>\nwill not inadvertently change a menu item that they did not create.</p>",
+            "doc": "<p>If <pre>menu_item_id</pre> matches the string passed to\n<span data-xref=\"Gtk.ToolItem.set_proxy_menu_item\"/> return the corresponding <span data-xref=\"Gtk.MenuItem\"/>.</p><p>Custom subclasses of <span data-xref=\"Gtk.ToolItem\"/> should use this function to\nupdate their menu item when the <span data-xref=\"Gtk.ToolItem\"/> changes. That the\n@menu_item_ids must match ensures that a <span data-xref=\"Gtk.ToolItem\"/>\nwill not inadvertently change a menu item that they did not create.</p>",
             "kind": "method",
             "name": "get_proxy_menu_item",
             "parameters": [
@@ -96,7 +84,7 @@
             }
         },
         {
-            "doc": "<p>Returns the relief style of <code>tool_item</code>. See <span data-xref=\"Gtk.Button.set_relief\"/>.\nCustom subclasses of <span data-xref=\"Gtk.ToolItem\"/> should call this function in the handler\nof the #GtkToolItem::toolbar_reconfigured signal to find out the\nrelief style of buttons.</p>",
+            "doc": "<p>Returns the relief style of <pre>tool_item</pre>. See <span data-xref=\"Gtk.Button.set_relief\"/>.\nCustom subclasses of <span data-xref=\"Gtk.ToolItem\"/> should call this function in the handler\nof the #GtkToolItem::toolbar_reconfigured signal to find out the\nrelief style of buttons.</p>",
             "kind": "method",
             "name": "get_relief_style",
             "parameters": [],
@@ -105,7 +93,7 @@
             }
         },
         {
-            "doc": "<p>Returns the text alignment used for <code>tool_item</code>. Custom subclasses of\n<span data-xref=\"Gtk.ToolItem\"/> should call this function to find out how text should\nbe aligned.</p>",
+            "doc": "<p>Returns the text alignment used for <pre>tool_item</pre>. Custom subclasses of\n<span data-xref=\"Gtk.ToolItem\"/> should call this function to find out how text should\nbe aligned.</p>",
             "kind": "method",
             "name": "get_text_alignment",
             "parameters": [],
@@ -114,7 +102,7 @@
             }
         },
         {
-            "doc": "<p>Returns the text orientation used for <code>tool_item</code>. Custom subclasses of\n<span data-xref=\"Gtk.ToolItem\"/> should call this function to find out how text should\nbe orientated.</p>",
+            "doc": "<p>Returns the text orientation used for <pre>tool_item</pre>. Custom subclasses of\n<span data-xref=\"Gtk.ToolItem\"/> should call this function to find out how text should\nbe orientated.</p>",
             "kind": "method",
             "name": "get_text_orientation",
             "parameters": [],
@@ -123,7 +111,7 @@
             }
         },
         {
-            "doc": "<p>Returns the size group used for labels in <code>tool_item</code>.\nCustom subclasses of <span data-xref=\"Gtk.ToolItem\"/> should call this function\nand use the size group for labels.</p>",
+            "doc": "<p>Returns the size group used for labels in <pre>tool_item</pre>.\nCustom subclasses of <span data-xref=\"Gtk.ToolItem\"/> should call this function\nand use the size group for labels.</p>",
             "kind": "method",
             "name": "get_text_size_group",
             "parameters": [],
@@ -132,7 +120,7 @@
             }
         },
         {
-            "doc": "<p>Returns the toolbar style used for <code>tool_item</code>. Custom subclasses of\n<span data-xref=\"Gtk.ToolItem\"/> should call this function in the handler of the\nGtkToolItem::toolbar_reconfigured signal to find out in what style\nthe toolbar is displayed and change themselves accordingly</p><p>Possibilities are:\n- <span data-xref=\"Gtk.ToolbarStyle\"/>.both, meaning the tool item should show\n  both an icon and a label, stacked vertically\n- <span data-xref=\"Gtk.ToolbarStyle\"/>.icons, meaning the toolbar shows only icons\n- <span data-xref=\"Gtk.ToolbarStyle\"/>.text, meaning the tool item should only show text\n- <span data-xref=\"Gtk.ToolbarStyle\"/>.both_horiz, meaning the tool item should show\n  both an icon and a label, arranged horizontally</p>",
+            "doc": "<p>Returns the toolbar style used for <pre>tool_item</pre>. Custom subclasses of\n<span data-xref=\"Gtk.ToolItem\"/> should call this function in the handler of the\nGtkToolItem::toolbar_reconfigured signal to find out in what style\nthe toolbar is displayed and change themselves accordingly</p><p>Possibilities are:\n- <span data-xref=\"Gtk.ToolbarStyle\"/>.both, meaning the tool item should show\n  both an icon and a label, stacked vertically\n- <span data-xref=\"Gtk.ToolbarStyle\"/>.icons, meaning the toolbar shows only icons\n- <span data-xref=\"Gtk.ToolbarStyle\"/>.text, meaning the tool item should only show text\n- <span data-xref=\"Gtk.ToolbarStyle\"/>.both_horiz, meaning the tool item should show\n  both an icon and a label, arranged horizontally</p>",
             "kind": "method",
             "name": "get_toolbar_style",
             "parameters": [],
@@ -141,7 +129,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether <code>tool_item</code> has a drag window. See\n<span data-xref=\"Gtk.ToolItem.set_use_drag_window\"/>.</p>",
+            "doc": "<p>Returns whether <pre>tool_item</pre> has a drag window. See\n<span data-xref=\"Gtk.ToolItem.set_use_drag_window\"/>.</p>",
             "kind": "method",
             "name": "get_use_drag_window",
             "parameters": [],
@@ -150,7 +138,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether the <code>tool_item</code> is visible on toolbars that are\ndocked horizontally.</p>",
+            "doc": "<p>Returns whether the <pre>tool_item</pre> is visible on toolbars that are\ndocked horizontally.</p>",
             "kind": "method",
             "name": "get_visible_horizontal",
             "parameters": [],
@@ -159,7 +147,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether <code>tool_item</code> is visible when the toolbar is docked vertically.\nSee <span data-xref=\"Gtk.ToolItem.set_visible_vertical\"/>.</p>",
+            "doc": "<p>Returns whether <pre>tool_item</pre> is visible when the toolbar is docked vertically.\nSee <span data-xref=\"Gtk.ToolItem.set_visible_vertical\"/>.</p>",
             "kind": "method",
             "name": "get_visible_vertical",
             "parameters": [],
@@ -168,7 +156,7 @@
             }
         },
         {
-            "doc": "<p>Calling this function signals to the toolbar that the\noverflow menu item for <code>tool_item</code> has changed. If the\noverflow menu is visible when this function it called,\nthe menu will be rebuilt.</p><p>The function must be called when the tool item changes what it\nwill do in response to the <span data-xref=\"Gtk.ToolItem-create-menu-proxy\"/> signal.</p>",
+            "doc": "<p>Calling this function signals to the toolbar that the\noverflow menu item for <pre>tool_item</pre> has changed. If the\noverflow menu is visible when this function it called,\nthe menu will be rebuilt.</p><p>The function must be called when the tool item changes what it\nwill do in response to the <span data-xref=\"Gtk.ToolItem-create-menu-proxy\"/> signal.</p>",
             "kind": "method",
             "name": "rebuild_menu",
             "parameters": [],
@@ -186,7 +174,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>tool_item</code> is allocated extra space when there\nis more room on the toolbar then needed for the items. The\neffect is that the item gets bigger when the toolbar gets bigger\nand smaller when the toolbar gets smaller.</p>",
+            "doc": "<p>Sets whether <pre>tool_item</pre> is allocated extra space when there\nis more room on the toolbar then needed for the items. The\neffect is that the item gets bigger when the toolbar gets bigger\nand smaller when the toolbar gets smaller.</p>",
             "kind": "method",
             "name": "set_expand",
             "parameters": [
@@ -202,7 +190,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>tool_item</code> is to be allocated the same size as other\nhomogeneous items. The effect is that all homogeneous items will have\nthe same width as the widest of the items.</p>",
+            "doc": "<p>Sets whether <pre>tool_item</pre> is to be allocated the same size as other\nhomogeneous items. The effect is that all homogeneous items will have\nthe same width as the widest of the items.</p>",
             "kind": "method",
             "name": "set_homogeneous",
             "parameters": [
@@ -218,7 +206,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>tool_item</code> should be considered important. The <span data-xref=\"Gtk.ToolButton\"/>\nclass uses this property to determine whether to show or hide its label\nwhen the toolbar style is <span data-xref=\"Gtk.ToolbarStyle\"/>.both_horiz. The result is that\nonly tool buttons with the \u201cis_important\u201d property set have labels, an\neffect known as \u201cpriority text\u201d</p>",
+            "doc": "<p>Sets whether <pre>tool_item</pre> should be considered important. The <span data-xref=\"Gtk.ToolButton\"/>\nclass uses this property to determine whether to show or hide its label\nwhen the toolbar style is <span data-xref=\"Gtk.ToolbarStyle\"/>.both_horiz. The result is that\nonly tool buttons with the \u201cis_important\u201d property set have labels, an\neffect known as \u201cpriority text\u201d</p>",
             "kind": "method",
             "name": "set_is_important",
             "parameters": [
@@ -234,7 +222,7 @@
             }
         },
         {
-            "doc": "<p>Sets the <span data-xref=\"Gtk.MenuItem\"/> used in the toolbar overflow menu. The\n<code>menu_item_id</code> is used to identify the caller of this function and\nshould also be used with <span data-xref=\"Gtk.ToolItem.get_proxy_menu_item\"/>.</p>",
+            "doc": "<p>Sets the <span data-xref=\"Gtk.MenuItem\"/> used in the toolbar overflow menu. The\n<pre>menu_item_id</pre> is used to identify the caller of this function and\nshould also be used with <span data-xref=\"Gtk.ToolItem.get_proxy_menu_item\"/>.</p>",
             "kind": "method",
             "name": "set_proxy_menu_item",
             "parameters": [
@@ -288,7 +276,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>tool_item</code> has a drag window. When <code>true</code> the\ntoolitem can be used as a drag source through <span data-xref=\"Gtk.Widget.drag_source_set\"/>.\nWhen <code>tool_item</code> has a drag window it will intercept all events,\neven those that would otherwise be sent to a child of <code>tool_item</code>.</p>",
+            "doc": "<p>Sets whether <pre>tool_item</pre> has a drag window. When <pre>true</pre> the\ntoolitem can be used as a drag source through <span data-xref=\"Gtk.Widget.drag_source_set\"/>.\nWhen <pre>tool_item</pre> has a drag window it will intercept all events,\neven those that would otherwise be sent to a child of <pre>tool_item</pre>.</p>",
             "kind": "method",
             "name": "set_use_drag_window",
             "parameters": [
@@ -304,7 +292,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>tool_item</code> is visible when the toolbar is docked horizontally.</p>",
+            "doc": "<p>Sets whether <pre>tool_item</pre> is visible when the toolbar is docked horizontally.</p>",
             "kind": "method",
             "name": "set_visible_horizontal",
             "parameters": [
@@ -320,7 +308,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>tool_item</code> is visible when the toolbar is docked\nvertically. Some tool items, such as text entries, are too wide to be\nuseful on a vertically docked toolbar. If <code>visible_vertical</code> is <code>false</code>\n<code>tool_item</code> will not appear on toolbars that are docked vertically.</p>",
+            "doc": "<p>Sets whether <pre>tool_item</pre> is visible when the toolbar is docked\nvertically. Some tool items, such as text entries, are too wide to be\nuseful on a vertically docked toolbar. If <pre>visible_vertical</pre> is <pre>false</pre>\n<pre>tool_item</pre> will not appear on toolbars that are docked vertically.</p>",
             "kind": "method",
             "name": "set_visible_vertical",
             "parameters": [
@@ -336,15 +324,14 @@
             }
         },
         {
-            "doc": "<p>Emits the signal #GtkToolItem::toolbar_reconfigured on <code>tool_item</code>.\n<span data-xref=\"Gtk.Toolbar\"/> and other <span data-xref=\"Gtk.ToolShell\"/> implementations use this function\nto notify children, when some aspect of their configuration changes.</p>",
+            "doc": "<p>Emits the signal #GtkToolItem::toolbar_reconfigured on <pre>tool_item</pre>.\n<span data-xref=\"Gtk.Toolbar\"/> and other <span data-xref=\"Gtk.ToolShell\"/> implementations use this function\nto notify children, when some aspect of their configuration changes.</p>",
             "kind": "method",
             "name": "toolbar_reconfigured",
             "parameters": [],
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ToolItem",
     "properties": [
@@ -369,7 +356,7 @@
     ],
     "signals": [
         {
-            "doc": "<p>This signal is emitted when the toolbar needs information from @tool_item\nabout whether the item should appear in the toolbar overflow menu. In\nresponse the tool item should either</p><ul>\n<li>call <span data-xref=\"Gtk.ToolItem.set_proxy_menu_item\"/> with a <code>null</code>\n  pointer and return <code>true</code> to indicate that the item should not appear\n  in the overflow menu</li>\n</ul><ul>\n<li>call <span data-xref=\"Gtk.ToolItem.set_proxy_menu_item\"/> with a new menu\n  item and return <code>true</code>, or</li>\n</ul><ul>\n<li>return <code>false</code> to indicate that the signal was not handled by the item.\n  This means that the item will not appear in the overflow menu unless\n  a later handler installs a menu item.</li>\n</ul><p>The toolbar may cache the result of this signal. When the tool item changes\nhow it will respond to this signal it must call <span data-xref=\"Gtk.ToolItem.rebuild_menu\"/>\nto invalidate the cache and ensure that the toolbar rebuilds its overflow\nmenu.</p>",
+            "doc": "<p>This signal is emitted when the toolbar needs information from @tool_item\nabout whether the item should appear in the toolbar overflow menu. In\nresponse the tool item should either</p><ul>\n<li>call <span data-xref=\"Gtk.ToolItem.set_proxy_menu_item\"/> with a <pre>null</pre>\n  pointer and return <pre>true</pre> to indicate that the item should not appear\n  in the overflow menu</li>\n</ul><ul>\n<li>call <span data-xref=\"Gtk.ToolItem.set_proxy_menu_item\"/> with a new menu\n  item and return <pre>true</pre>, or</li>\n</ul><ul>\n<li>return <pre>false</pre> to indicate that the signal was not handled by the item.\n  This means that the item will not appear in the overflow menu unless\n  a later handler installs a menu item.</li>\n</ul><p>The toolbar may cache the result of this signal. When the tool item changes\nhow it will respond to this signal it must call <span data-xref=\"Gtk.ToolItem.rebuild_menu\"/>\nto invalidate the cache and ensure that the toolbar rebuilds its overflow\nmenu.</p>",
             "kind": "signal",
             "name": "create-menu-proxy",
             "parameters": [],
@@ -398,7 +385,7 @@
             }
         },
         {
-            "doc": "<p>Emits the signal #GtkToolItem::toolbar_reconfigured on <code>tool_item</code>.\n<span data-xref=\"Gtk.Toolbar\"/> and other <span data-xref=\"Gtk.ToolShell\"/> implementations use this function\nto notify children, when some aspect of their configuration changes.</p>",
+            "doc": "<p>Emits the signal #GtkToolItem::toolbar_reconfigured on <pre>tool_item</pre>.\n<span data-xref=\"Gtk.Toolbar\"/> and other <span data-xref=\"Gtk.ToolShell\"/> implementations use this function\nto notify children, when some aspect of their configuration changes.</p>",
             "kind": "vfunc",
             "name": "toolbar_reconfigured",
             "parameters": [],

@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a <span data-xref=\"Gtk.ScaleButton\"/>, with a range between <code>min</code> and <code>max</code>, with\na stepping of <code>step</code>.</p>",
+            "doc": "<p>Creates a <span data-xref=\"Gtk.ScaleButton\"/>, with a range between <pre>min</pre> and <pre>max</pre>, with\na stepping of <pre>step</pre>.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -42,18 +42,6 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.ScaleButton\"/> provides a button which pops up a scale widget.\nThis kind of widget is commonly used for volume controls in multimedia\napplications, and GTK+ provides a <span data-xref=\"Gtk.VolumeButton\"/> subclass that\nis tailored for this use case.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -148,8 +136,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ScaleButton",
     "properties": [

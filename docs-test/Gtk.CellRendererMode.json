@@ -1,0 +1,22 @@
+{
+    "doc": "<p>Identifies how the user can interact with a particular cell.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>The cell is just for display\n and cannot be interacted with.  Note that this doesn\u2019t mean that eg. the\n row being drawn can\u2019t be selected -- just that a particular element of\n it cannot be individually modified.</p>",
+            "kind": "default",
+            "name": "inert"
+        },
+        {
+            "doc": "<p>The cell can be clicked.</p>",
+            "kind": "default",
+            "name": "activatable"
+        },
+        {
+            "doc": "<p>The cell can be edited or otherwise modified.</p>",
+            "kind": "default",
+            "name": "editable"
+        }
+    ],
+    "name": "CellRendererMode"
+}

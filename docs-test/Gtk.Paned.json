@@ -17,19 +17,7 @@
             }
         }
     ],
-    "doc": "<p><span data-xref=\"Gtk.Paned\"/> has two panes, arranged either\nhorizontally or vertically. The division between\nthe two panes is adjustable by the user by dragging\na handle.</p><p>Child widgets are\nadded to the panes of the widget with <span data-xref=\"Gtk.Paned.pack1\"/> and\n<span data-xref=\"Gtk.Paned.pack2\"/>. The division between the two children is set by default\nfrom the size requests of the children, but it can be adjusted by the\nuser.</p><p>A paned widget draws a separator between the two child widgets and a\nsmall handle that the user can drag to adjust the division. It does not\ndraw any relief around the children or around the separator. (The space\nin which the separator is called the gutter.) Often, it is useful to put\neach child inside a <span data-xref=\"Gtk.Frame\"/> with the shadow type set to <span data-xref=\"Gtk.ShadowType\"/>.in\nso that the gutter appears as a ridge. No separator is drawn if one of\nthe children is missing.</p><p>Each child has two options that can be set, @resize and @shrink. If\n@resize is true, then when the <span data-xref=\"Gtk.Paned\"/> is resized, that child will\nexpand or shrink along with the paned widget. If @shrink is true, then\nthat child can be made smaller than its requisition by the user.\nSetting @shrink to <code>false</code> allows the application to set a minimum size.\nIf @resize is false for both children, then this is treated as if\n@resize is true for both children.</p><p>The application can set the position of the slider as if it were set\nby the user, by calling <span data-xref=\"Gtk.Paned.set_position\"/>.</p><h2>Creating a paned widget with minimum sizes.</h2><p>|[&lt;!-- language=\"C\" --&gt;\nGtkWidget <em>hpaned = gtk_paned_new (GTK_ORIENTATION_HORIZONTAL);\nGtkWidget </em>frame1 = gtk_frame_new (NULL);\nGtkWidget *frame2 = gtk_frame_new (NULL);\ngtk_frame_set_shadow_type (GTK_FRAME (frame1), GTK_SHADOW_IN);\ngtk_frame_set_shadow_type (GTK_FRAME (frame2), GTK_SHADOW_IN);</p><p>gtk_widget_set_size_request (hpaned, 200, -1);</p><p>gtk_paned_pack1 (GTK_PANED (hpaned), frame1, TRUE, FALSE);\ngtk_widget_set_size_request (frame1, 50, -1);</p><p>gtk_paned_pack2 (GTK_PANED (hpaned), frame2, FALSE, FALSE);\ngtk_widget_set_size_request (frame2, 50, -1);\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "container"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p><span data-xref=\"Gtk.Paned\"/> has two panes, arranged either\nhorizontally or vertically. The division between\nthe two panes is adjustable by the user by dragging\na handle.</p><p>Child widgets are\nadded to the panes of the widget with <span data-xref=\"Gtk.Paned.pack1\"/> and\n<span data-xref=\"Gtk.Paned.pack2\"/>. The division between the two children is set by default\nfrom the size requests of the children, but it can be adjusted by the\nuser.</p><p>A paned widget draws a separator between the two child widgets and a\nsmall handle that the user can drag to adjust the division. It does not\ndraw any relief around the children or around the separator. (The space\nin which the separator is called the gutter.) Often, it is useful to put\neach child inside a <span data-xref=\"Gtk.Frame\"/> with the shadow type set to <span data-xref=\"Gtk.ShadowType\"/>.in\nso that the gutter appears as a ridge. No separator is drawn if one of\nthe children is missing.</p><p>Each child has two options that can be set, @resize and @shrink. If\n@resize is true, then when the <span data-xref=\"Gtk.Paned\"/> is resized, that child will\nexpand or shrink along with the paned widget. If @shrink is true, then\nthat child can be made smaller than its requisition by the user.\nSetting @shrink to <pre>false</pre> allows the application to set a minimum size.\nIf @resize is false for both children, then this is treated as if\n@resize is true for both children.</p><p>The application can set the position of the slider as if it were set\nby the user, by calling <span data-xref=\"Gtk.Paned.set_position\"/>.</p><h2>Creating a paned widget with minimum sizes.</h2><p>|[<!-- language=\"C\" -->\nGtkWidget <em>hpaned = gtk_paned_new (GTK_ORIENTATION_HORIZONTAL);\nGtkWidget </em>frame1 = gtk_frame_new (NULL);\nGtkWidget *frame2 = gtk_frame_new (NULL);\ngtk_frame_set_shadow_type (GTK_FRAME (frame1), GTK_SHADOW_IN);\ngtk_frame_set_shadow_type (GTK_FRAME (frame2), GTK_SHADOW_IN);</p><p>gtk_widget_set_size_request (hpaned, 200, -1);</p><p>gtk_paned_pack1 (GTK_PANED (hpaned), frame1, TRUE, FALSE);\ngtk_widget_set_size_request (frame1, 50, -1);</p><p>gtk_paned_pack2 (GTK_PANED (hpaned), frame2, FALSE, FALSE);\ngtk_widget_set_size_request (frame2, 50, -1);\n]|</p>",
     "kind": "class",
     "methods": [
         {
@@ -171,8 +159,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Paned",
     "properties": [

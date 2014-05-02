@@ -26,7 +26,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.CheckMenuItem\"/> containing a label. The label\nwill be created using <span data-xref=\"Gtk.Label.new_with_mnemonic\"/>, so underscores\nin <code>label</code> indicate the mnemonic for the menu item.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CheckMenuItem\"/> containing a label. The label\nwill be created using <span data-xref=\"Gtk.Label.new_with_mnemonic\"/>, so underscores\nin <pre>label</pre> indicate the mnemonic for the menu item.</p>",
             "kind": "constructor",
             "name": "new_with_mnemonic",
             "parameters": [
@@ -43,18 +43,6 @@
         }
     ],
     "doc": "<p>A <span data-xref=\"Gtk.CheckMenuItem\"/> is a menu item that maintains the state of a boolean\nvalue in addition to a <span data-xref=\"Gtk.MenuItem\"/> usual role in activating application\ncode.</p><p>A check box indicating the state of the boolean value is displayed\nat the left side of the <span data-xref=\"Gtk.MenuItem\"/>.  Activating the <span data-xref=\"Gtk.MenuItem\"/>\ntoggles the value.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "menu_item"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -67,7 +55,7 @@
             }
         },
         {
-            "doc": "<p>Returns whether <code>check_menu_item</code> looks like a <span data-xref=\"Gtk.RadioMenuItem\"/></p>",
+            "doc": "<p>Returns whether <pre>check_menu_item</pre> looks like a <span data-xref=\"Gtk.RadioMenuItem\"/></p>",
             "kind": "method",
             "name": "get_draw_as_radio",
             "parameters": [],
@@ -101,7 +89,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether <code>check_menu_item</code> is drawn like a <span data-xref=\"Gtk.RadioMenuItem\"/></p>",
+            "doc": "<p>Sets whether <pre>check_menu_item</pre> is drawn like a <span data-xref=\"Gtk.RadioMenuItem\"/></p>",
             "kind": "method",
             "name": "set_draw_as_radio",
             "parameters": [
@@ -140,8 +128,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "CheckMenuItem",
     "properties": [

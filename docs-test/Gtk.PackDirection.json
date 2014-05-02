@@ -1,0 +1,27 @@
+{
+    "doc": "<p>Determines how widgets should be packed inside menubars\nand menuitems contained in menubars.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Widgets are packed left-to-right</p>",
+            "kind": "default",
+            "name": "ltr"
+        },
+        {
+            "doc": "<p>Widgets are packed right-to-left</p>",
+            "kind": "default",
+            "name": "rtl"
+        },
+        {
+            "doc": "<p>Widgets are packed top-to-bottom</p>",
+            "kind": "default",
+            "name": "ttb"
+        },
+        {
+            "doc": "<p>Widgets are packed bottom-to-top</p>",
+            "kind": "default",
+            "name": "btt"
+        }
+    ],
+    "name": "PackDirection"
+}

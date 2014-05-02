@@ -1,0 +1,34 @@
+{
+    "constructors": [],
+    "doc": "<p>The interface vtable for <span data-xref=\"Gtk.Actionable\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "g_iface"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_action_name"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_action_name"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_action_target_value"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "set_action_target_value"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "ActionableInterface"
+}

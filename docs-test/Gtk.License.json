@@ -1,0 +1,72 @@
+{
+    "doc": "<p>The type of license for an application.</p><p>This enumeration can be expanded at later date.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>No license specified</p>",
+            "kind": "default",
+            "name": "unknown"
+        },
+        {
+            "doc": "<p>A license text is going to be specified by the\n  developer</p>",
+            "kind": "default",
+            "name": "custom"
+        },
+        {
+            "doc": "<p>The GNU General Public License, version 2.0 or later</p>",
+            "kind": "default",
+            "name": "gpl_2_0"
+        },
+        {
+            "doc": "<p>The GNU General Public License, version 3.0 or later</p>",
+            "kind": "default",
+            "name": "gpl_3_0"
+        },
+        {
+            "doc": "<p>The GNU Lesser General Public License, version 2.1 or later</p>",
+            "kind": "default",
+            "name": "lgpl_2_1"
+        },
+        {
+            "doc": "<p>The GNU Lesser General Public License, version 3.0 or later</p>",
+            "kind": "default",
+            "name": "lgpl_3_0"
+        },
+        {
+            "doc": "<p>The BSD standard license</p>",
+            "kind": "default",
+            "name": "bsd"
+        },
+        {
+            "doc": "<p>The MIT/X11 standard license</p>",
+            "kind": "default",
+            "name": "mit_x11"
+        },
+        {
+            "doc": "<p>The Artistic License, version 2.0</p>",
+            "kind": "default",
+            "name": "artistic"
+        },
+        {
+            "doc": "<p>The GNU General Public License, version 2.0 only. Since 3.12.</p>",
+            "kind": "default",
+            "name": "gpl_2_0_only"
+        },
+        {
+            "doc": "<p>The GNU General Public License, version 3.0 only. Since 3.12.</p>",
+            "kind": "default",
+            "name": "gpl_3_0_only"
+        },
+        {
+            "doc": "<p>The GNU Lesser General Public License, version 2.1 only. Since 3.12.</p>",
+            "kind": "default",
+            "name": "lgpl_2_1_only"
+        },
+        {
+            "doc": "<p>The GNU Lesser General Public License, version 3.0 only. Since 3.12.</p>",
+            "kind": "default",
+            "name": "lgpl_3_0_only"
+        }
+    ],
+    "name": "License"
+}

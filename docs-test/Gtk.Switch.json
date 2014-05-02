@@ -11,18 +11,6 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.Switch\"/> is a widget that has two states: on or off. The user can control\nwhich state should be active by clicking the empty area, or by dragging the\nhandle.</p><p>GtkSwitch can also handle situations where the underlying state changes with\na delay. See <span data-xref=\"Gtk.Switch-state-set\"/> for details.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -44,7 +32,7 @@
             }
         },
         {
-            "doc": "<p>Changes the state of <code>sw</code> to the desired one.</p>",
+            "doc": "<p>Changes the state of <pre>sw</pre> to the desired one.</p>",
             "kind": "method",
             "name": "set_active",
             "parameters": [
@@ -74,8 +62,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "Switch",
     "properties": [
@@ -103,7 +90,7 @@
             }
         },
         {
-            "doc": "<p>The ::state-set signal on GtkSwitch is emitted to change the underlying\nstate. It is emitted when the user changes the switch position. The\ndefault handler keeps the state in sync with the #GtkState:active\nproperty.</p><p>To implement delayed state change, applications can connect to this signal,\ninitiate the change of the underlying state, and call <span data-xref=\"Gtk.Switch.set_state\"/>\nwhen the underlying state change is complete. The signal handler should\nreturn <code>true</code> to prevent the default handler from running.</p><p>Visually, the underlying state is represented by the trough color of\nthe switch, while the <span data-xref=\"Gtk.Switch-active\"/> property is represented by the\nposition of the switch.</p>",
+            "doc": "<p>The ::state-set signal on GtkSwitch is emitted to change the underlying\nstate. It is emitted when the user changes the switch position. The\ndefault handler keeps the state in sync with the #GtkState:active\nproperty.</p><p>To implement delayed state change, applications can connect to this signal,\ninitiate the change of the underlying state, and call <span data-xref=\"Gtk.Switch.set_state\"/>\nwhen the underlying state change is complete. The signal handler should\nreturn <pre>true</pre> to prevent the default handler from running.</p><p>Visually, the underlying state is represented by the trough color of\nthe switch, while the <span data-xref=\"Gtk.Switch-active\"/> property is represented by the\nposition of the switch.</p>",
             "kind": "signal",
             "name": "state-set",
             "parameters": [

@@ -1,0 +1,27 @@
+{
+    "doc": "<p>Used to specify the sorting method to be applyed to the recently\nused resource list.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Do not sort the returned list of recently used\n  resources.</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>Sort the returned list with the most recently used\n  items first.</p>",
+            "kind": "default",
+            "name": "mru"
+        },
+        {
+            "doc": "<p>Sort the returned list with the least recently used\n  items first.</p>",
+            "kind": "default",
+            "name": "lru"
+        },
+        {
+            "doc": "<p>Sort the returned list using a custom sorting\n  function passed using <span data-xref=\"Gtk.RecentChooser.set_sort_func\"/>.</p>",
+            "kind": "default",
+            "name": "custom"
+        }
+    ],
+    "name": "RecentSortType"
+}

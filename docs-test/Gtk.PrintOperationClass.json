@@ -1,0 +1,109 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The parent class.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "done"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "begin_print"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "paginate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "request_page_setup"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw_page"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "end_print"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "status_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "create_custom_widget"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "custom_widget_apply"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "preview"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "update_custom_widget"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved6"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved7"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved8"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "PrintOperationClass"
+}

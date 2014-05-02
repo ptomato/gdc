@@ -29,7 +29,7 @@
             }
         },
         {
-            "doc": "<p>This is a convenience constructor that allows creation of a numeric\n<span data-xref=\"Gtk.SpinButton\"/> without manually creating an adjustment. The value is\ninitially set to the minimum value and a page increment of 10 * <code>step</code>\nis the default. The precision of the spin button is equivalent to the\nprecision of <code>step</code>.</p><p>Note that the way in which the precision is derived works best if <code>step</code>\nis a power of ten. If the resulting precision is not suitable for your\nneeds, use <span data-xref=\"Gtk.SpinButton.set_digits\"/> to correct it.</p>",
+            "doc": "<p>This is a convenience constructor that allows creation of a numeric\n<span data-xref=\"Gtk.SpinButton\"/> without manually creating an adjustment. The value is\ninitially set to the minimum value and a page increment of 10 * <pre>step</pre>\nis the default. The precision of the spin button is equivalent to the\nprecision of <pre>step</pre>.</p><p>Note that the way in which the precision is derived works best if <pre>step</pre>\nis a power of ten. If the resulting precision is not suitable for your\nneeds, use <span data-xref=\"Gtk.SpinButton.set_digits\"/> to correct it.</p>",
             "kind": "constructor",
             "name": "new_with_range",
             "parameters": [
@@ -57,19 +57,7 @@
             }
         }
     ],
-    "doc": "<p>A <span data-xref=\"Gtk.SpinButton\"/> is an ideal way to allow the user to set the value of\nsome attribute. Rather than having to directly type a number into a\n<span data-xref=\"Gtk.Entry\"/>, GtkSpinButton allows the user to click on one of two arrows\nto increment or decrement the displayed value. A value can still be\ntyped in, with the bonus that it can be checked to ensure it is in a\ngiven range.</p><p>The main properties of a GtkSpinButton are through an adjustment.\nSee the <span data-xref=\"Gtk.Adjustment\"/> section for more details about an adjustment's\nproperties.</p><h2>Using a GtkSpinButton to get an integer</h2><p>|[&lt;!-- language=\"C\" --&gt;\n// Provides a function to retrieve an integer value from a GtkSpinButton\n// and creates a spin button to model percentage values.</p><p>gint\ngrab_int_value (GtkSpinButton *button,\n                gpointer       user_data)\n{\n  return gtk_spin_button_get_value_as_int (button);\n}</p><p>void\ncreate_integer_spin_button (void)\n{</p><p>GtkWidget <em>window, </em>button;\n  GtkAdjustment *adjustment;</p><p>adjustment = gtk_adjustment_new (50.0, 0.0, 100.0, 1.0, 5.0, 0.0);</p><p>window = gtk_window_new (GTK_WINDOW_TOPLEVEL);\n  gtk_container_set_border_width (GTK_CONTAINER (window), 5);</p><p>// creates the spinbutton, with no decimal places\n  button = gtk_spin_button_new (adjustment, 1.0, 0);\n  gtk_container_add (GTK_CONTAINER (window), button);</p><p>gtk_widget_show_all (window);\n}\n]|</p><h2>Using a GtkSpinButton to get a floating point value</h2><p>|[&lt;!-- language=\"C\" --&gt;\n// Provides a function to retrieve a floating point value from a\n// GtkSpinButton, and creates a high precision spin button.</p><p>gfloat\ngrab_float_value (GtkSpinButton *button,\n                  gpointer       user_data)\n{\n  return gtk_spin_button_get_value (button);\n}</p><p>void\ncreate_floating_spin_button (void)\n{\n  GtkWidget <em>window, </em>button;\n  GtkAdjustment *adjustment;</p><p>adjustment = gtk_adjustment_new (2.500, 0.0, 5.0, 0.001, 0.1, 0.0);</p><p>window = gtk_window_new (GTK_WINDOW_TOPLEVEL);\n  gtk_container_set_border_width (GTK_CONTAINER (window), 5);</p><p>// creates the spinbutton, with three decimal places\n  button = gtk_spin_button_new (adjustment, 0.001, 3);\n  gtk_container_add (GTK_CONTAINER (window), button);</p><p>gtk_widget_show_all (window);\n}\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "entry"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>A <span data-xref=\"Gtk.SpinButton\"/> is an ideal way to allow the user to set the value of\nsome attribute. Rather than having to directly type a number into a\n<span data-xref=\"Gtk.Entry\"/>, GtkSpinButton allows the user to click on one of two arrows\nto increment or decrement the displayed value. A value can still be\ntyped in, with the bonus that it can be checked to ensure it is in a\ngiven range.</p><p>The main properties of a GtkSpinButton are through an adjustment.\nSee the <span data-xref=\"Gtk.Adjustment\"/> section for more details about an adjustment's\nproperties.</p><h2>Using a GtkSpinButton to get an integer</h2><p>|[<!-- language=\"C\" -->\n// Provides a function to retrieve an integer value from a GtkSpinButton\n// and creates a spin button to model percentage values.</p><p>gint\ngrab_int_value (GtkSpinButton *button,\n                gpointer       user_data)\n{\n  return gtk_spin_button_get_value_as_int (button);\n}</p><p>void\ncreate_integer_spin_button (void)\n{</p><p>GtkWidget <em>window, </em>button;\n  GtkAdjustment *adjustment;</p><p>adjustment = gtk_adjustment_new (50.0, 0.0, 100.0, 1.0, 5.0, 0.0);</p><p>window = gtk_window_new (GTK_WINDOW_TOPLEVEL);\n  gtk_container_set_border_width (GTK_CONTAINER (window), 5);</p><p>// creates the spinbutton, with no decimal places\n  button = gtk_spin_button_new (adjustment, 1.0, 0);\n  gtk_container_add (GTK_CONTAINER (window), button);</p><p>gtk_widget_show_all (window);\n}\n]|</p><h2>Using a GtkSpinButton to get a floating point value</h2><p>|[<!-- language=\"C\" -->\n// Provides a function to retrieve a floating point value from a\n// GtkSpinButton, and creates a high precision spin button.</p><p>gfloat\ngrab_float_value (GtkSpinButton *button,\n                  gpointer       user_data)\n{\n  return gtk_spin_button_get_value (button);\n}</p><p>void\ncreate_floating_spin_button (void)\n{\n  GtkWidget <em>window, </em>button;\n  GtkAdjustment *adjustment;</p><p>adjustment = gtk_adjustment_new (2.500, 0.0, 5.0, 0.001, 0.1, 0.0);</p><p>window = gtk_window_new (GTK_WINDOW_TOPLEVEL);\n  gtk_container_set_border_width (GTK_CONTAINER (window), 5);</p><p>// creates the spinbutton, with three decimal places\n  button = gtk_spin_button_new (adjustment, 0.001, 3);\n  gtk_container_add (GTK_CONTAINER (window), button);</p><p>gtk_widget_show_all (window);\n}\n]|</p>",
     "kind": "class",
     "methods": [
         {
@@ -110,7 +98,7 @@
             }
         },
         {
-            "doc": "<p>Fetches the precision of <code>spin_button</code>. See <span data-xref=\"Gtk.SpinButton.set_digits\"/>.</p>",
+            "doc": "<p>Fetches the precision of <pre>spin_button</pre>. See <span data-xref=\"Gtk.SpinButton.set_digits\"/>.</p>",
             "kind": "method",
             "name": "get_digits",
             "parameters": [],
@@ -119,7 +107,7 @@
             }
         },
         {
-            "doc": "<p>Gets the current step and page the increments used by <code>spin_button</code>. See\n<span data-xref=\"Gtk.SpinButton.set_increments\"/>.</p>",
+            "doc": "<p>Gets the current step and page the increments used by <pre>spin_button</pre>. See\n<span data-xref=\"Gtk.SpinButton.set_increments\"/>.</p>",
             "kind": "method",
             "name": "get_increments",
             "parameters": [
@@ -150,7 +138,7 @@
             }
         },
         {
-            "doc": "<p>Gets the range allowed for <code>spin_button</code>.\nSee <span data-xref=\"Gtk.SpinButton.set_range\"/>.</p>",
+            "doc": "<p>Gets the range allowed for <pre>spin_button</pre>.\nSee <span data-xref=\"Gtk.SpinButton.set_range\"/>.</p>",
             "kind": "method",
             "name": "get_range",
             "parameters": [
@@ -190,7 +178,7 @@
             }
         },
         {
-            "doc": "<p>Get the value in the <code>spin_button</code>.</p>",
+            "doc": "<p>Get the value in the <pre>spin_button</pre>.</p>",
             "kind": "method",
             "name": "get_value",
             "parameters": [],
@@ -199,7 +187,7 @@
             }
         },
         {
-            "doc": "<p>Get the value <code>spin_button</code> represented as an integer.</p>",
+            "doc": "<p>Get the value <pre>spin_button</pre> represented as an integer.</p>",
             "kind": "method",
             "name": "get_value_as_int",
             "parameters": [],
@@ -217,7 +205,7 @@
             }
         },
         {
-            "doc": "<p>Replaces the <span data-xref=\"Gtk.Adjustment\"/> associated with <code>spin_button</code>.</p>",
+            "doc": "<p>Replaces the <span data-xref=\"Gtk.Adjustment\"/> associated with <pre>spin_button</pre>.</p>",
             "kind": "method",
             "name": "set_adjustment",
             "parameters": [
@@ -233,7 +221,7 @@
             }
         },
         {
-            "doc": "<p>Set the precision to be displayed by <code>spin_button</code>. Up to 20 digit precision\nis allowed.</p>",
+            "doc": "<p>Set the precision to be displayed by <pre>spin_button</pre>. Up to 20 digit precision\nis allowed.</p>",
             "kind": "method",
             "name": "set_digits",
             "parameters": [
@@ -287,7 +275,7 @@
             }
         },
         {
-            "doc": "<p>Sets the minimum and maximum allowable values for <code>spin_button</code>.</p><p>If the current value is outside this range, it will be adjusted\nto fit within the range, otherwise it will remain unchanged.</p>",
+            "doc": "<p>Sets the minimum and maximum allowable values for <pre>spin_button</pre>.</p><p>If the current value is outside this range, it will be adjusted\nto fit within the range, otherwise it will remain unchanged.</p>",
             "kind": "method",
             "name": "set_range",
             "parameters": [
@@ -341,7 +329,7 @@
             }
         },
         {
-            "doc": "<p>Sets the value of <code>spin_button</code>.</p>",
+            "doc": "<p>Sets the value of <pre>spin_button</pre>.</p>",
             "kind": "method",
             "name": "set_value",
             "parameters": [
@@ -402,8 +390,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "SpinButton",
     "properties": [
@@ -474,7 +461,7 @@
             }
         },
         {
-            "doc": "<p>The ::input signal can be used to influence the conversion of\nthe users input into a double value. The signal handler is\nexpected to use <span data-xref=\"Gtk.Entry.get_text\"/> to retrieve the text of\nthe entry and set <code>new_value</code> to the new value.</p><p>The default conversion uses <span data-xref=\"GLib.strtod\">GLib.strtod</span>.</p>",
+            "doc": "<p>The ::input signal can be used to influence the conversion of\nthe users input into a double value. The signal handler is\nexpected to use <span data-xref=\"Gtk.Entry.get_text\"/> to retrieve the text of\nthe entry and set <pre>new_value</pre> to the new value.</p><p>The default conversion uses <span data-xref=\"GLib.strtod\">GLib.strtod</span>.</p>",
             "kind": "signal",
             "name": "input",
             "parameters": [
@@ -490,7 +477,7 @@
             }
         },
         {
-            "doc": "<p>The ::output signal can be used to change to formatting\nof the value that is displayed in the spin buttons entry.\n|[&lt;!-- language=\"C\" --&gt;\n// show leading zeros\nstatic gboolean\non_output (GtkSpinButton <em>spin,\n           gpointer       data)\n{\n   GtkAdjustment </em>adjustment;\n   gchar *text;\n   int value;</p><p>adjustment = gtk_spin_button_get_adjustment (spin);\n   value = (int)gtk_adjustment_get_value (adjustment);\n   text = g_strdup_printf (\"%02d\", value);\n   gtk_entry_set_text (GTK_ENTRY (spin), text);\n   g_free (text);</p><p>return TRUE;\n}\n]|</p>",
+            "doc": "<p>The ::output signal can be used to change to formatting\nof the value that is displayed in the spin buttons entry.\n|[<!-- language=\"C\" -->\n// show leading zeros\nstatic gboolean\non_output (GtkSpinButton <em>spin,\n           gpointer       data)\n{\n   GtkAdjustment </em>adjustment;\n   gchar *text;\n   int value;</p><p>adjustment = gtk_spin_button_get_adjustment (spin);\n   value = (int)gtk_adjustment_get_value (adjustment);\n   text = g_strdup_printf (\"%02d\", value);\n   gtk_entry_set_text (GTK_ENTRY (spin), text);\n   g_free (text);</p><p>return TRUE;\n}\n]|</p>",
             "kind": "signal",
             "name": "output",
             "parameters": [],

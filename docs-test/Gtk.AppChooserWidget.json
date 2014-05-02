@@ -18,18 +18,6 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.AppChooserWidget\"/> is a widget for selecting applications.\nIt is the main building block for <span data-xref=\"Gtk.AppChooserDialog\"/>. Most\napplications only need to use the latter; but you can use\nthis widget as part of a larger widget if you have special needs.</p><p><span data-xref=\"Gtk.AppChooserWidget\"/> offers detailed control over what applications\nare shown, using the\n<span data-xref=\"Gtk.AppChooserWidget-show-default\"/>,\n<span data-xref=\"Gtk.AppChooserWidget-show-recommended\"/>,\n<span data-xref=\"Gtk.AppChooserWidget-show-fallback\"/>,\n<span data-xref=\"Gtk.AppChooserWidget-show-other\"/> and\n<span data-xref=\"Gtk.AppChooserWidget-show-all\"/>\nproperties. See the <span data-xref=\"Gtk.AppChooser\"/> documentation for more information\nabout these groups of applications.</p><p>To keep track of the selected application, use the\n<span data-xref=\"Gtk.AppChooserWidget-application-selected\"/> and <span data-xref=\"Gtk.AppChooserWidget-application-activated\"/> signals.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -181,8 +169,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "AppChooserWidget",
     "properties": [
@@ -193,19 +180,19 @@
             "type": "String"
         },
         {
-            "doc": "<p>If the <span data-xref=\"Gtk.AppChooserWidget-show-all\"/> property is <code>true</code>, the app\nchooser presents all applications in a single list, without\nsubsections for default, recommended or related applications.</p>",
+            "doc": "<p>If the <span data-xref=\"Gtk.AppChooserWidget-show-all\"/> property is <pre>true</pre>, the app\nchooser presents all applications in a single list, without\nsubsections for default, recommended or related applications.</p>",
             "kind": "property",
             "name": "show-all",
             "type": "Boolean"
         },
         {
-            "doc": "<p>The ::show-default property determines whether the app chooser\nshould show the default handler for the content type in a\nseparate section. If <code>false</code>, the default handler is listed\namong the recommended applications.</p>",
+            "doc": "<p>The ::show-default property determines whether the app chooser\nshould show the default handler for the content type in a\nseparate section. If <pre>false</pre>, the default handler is listed\namong the recommended applications.</p>",
             "kind": "property",
             "name": "show-default",
             "type": "Boolean"
         },
         {
-            "doc": "<p>The <span data-xref=\"Gtk.AppChooserWidget-show-fallback\"/> property determines whether\nthe app chooser should show a section for fallback applications.\nIf <code>false</code>, the fallback applications are listed among the other\napplications.</p>",
+            "doc": "<p>The <span data-xref=\"Gtk.AppChooserWidget-show-fallback\"/> property determines whether\nthe app chooser should show a section for fallback applications.\nIf <pre>false</pre>, the fallback applications are listed among the other\napplications.</p>",
             "kind": "property",
             "name": "show-fallback",
             "type": "Boolean"
@@ -217,7 +204,7 @@
             "type": "Boolean"
         },
         {
-            "doc": "<p>The <span data-xref=\"Gtk.AppChooserWidget-show-recommended\"/> property determines\nwhether the app chooser should show a section for recommended\napplications. If <code>false</code>, the recommended applications are listed\namong the other applications.</p>",
+            "doc": "<p>The <span data-xref=\"Gtk.AppChooserWidget-show-recommended\"/> property determines\nwhether the app chooser should show a section for recommended\napplications. If <pre>false</pre>, the recommended applications are listed\namong the other applications.</p>",
             "kind": "property",
             "name": "show-recommended",
             "type": "Boolean"

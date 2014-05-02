@@ -1,0 +1,27 @@
+{
+    "doc": "<p>See also gtk_print_job_set_pages()</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>All pages.</p>",
+            "kind": "default",
+            "name": "all"
+        },
+        {
+            "doc": "<p>Current page.</p>",
+            "kind": "default",
+            "name": "current"
+        },
+        {
+            "doc": "<p>Range of pages.</p>",
+            "kind": "default",
+            "name": "ranges"
+        },
+        {
+            "doc": "<p>Selected pages.</p>",
+            "kind": "default",
+            "name": "selection"
+        }
+    ],
+    "name": "PrintPages"
+}

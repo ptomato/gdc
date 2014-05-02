@@ -1,0 +1,27 @@
+{
+    "doc": "<p>Describes a type of line wrapping.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>do not wrap lines; just make the text area wider</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>wrap text, breaking lines anywhere the cursor can\n    appear (between characters, usually - if you want to be technical,\n    between graphemes, see <span data-xref=\"Pango.get_log_attrs\">Pango.get_log_attrs</span>)</p>",
+            "kind": "default",
+            "name": "char"
+        },
+        {
+            "doc": "<p>wrap text, breaking lines in between words</p>",
+            "kind": "default",
+            "name": "word"
+        },
+        {
+            "doc": "<p>wrap text, breaking lines in between words, or if\n    that is not enough, also between graphemes</p>",
+            "kind": "default",
+            "name": "word_char"
+        }
+    ],
+    "name": "WrapMode"
+}

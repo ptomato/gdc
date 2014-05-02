@@ -1,0 +1,657 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "<p>The object class structure needs to be the first\n  element in the widget class structure in order for the class mechanism\n  to work correctly. This allows a GtkWidgetClass pointer to be cast to\n  a GObjectClass pointer.</p>",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "<p>The signal to emit when a widget of this class is\n  activated, <span data-xref=\"Gtk.Widget.activate\"/> handles the emission.\n  Implementation of this signal is optional.</p>",
+            "kind": "field",
+            "name": "activate_signal"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dispatch_child_properties_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "destroy"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "show"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "show_all"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "hide"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "map"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "unmap"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "realize"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "unrealize"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "size_allocate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "state_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "state_flags_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_set"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "hierarchy_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "style_set"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "direction_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "grab_notify"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "child_notify"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "draw"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_request_mode"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_height"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_width_for_height"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_width"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_height_for_width"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "mnemonic_activate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "grab_focus"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "focus"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "move_focus"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "keynav_failed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "button_press_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "button_release_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "scroll_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "motion_notify_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "delete_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "destroy_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "key_press_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "key_release_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "enter_notify_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "leave_notify_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "configure_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "focus_in_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "focus_out_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "map_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "unmap_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "property_notify_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "selection_clear_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "selection_request_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "selection_notify_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "proximity_in_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "proximity_out_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "visibility_notify_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "window_state_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "damage_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "grab_broken_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "selection_get"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "selection_received"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "drag_begin"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "drag_end"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "drag_data_get"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "drag_data_delete"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "drag_leave"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "drag_motion"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "drag_drop"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "drag_data_received"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "drag_failed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "popup_menu"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "show_help"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_accessible"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "screen_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "can_activate_accel"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "composited_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "query_tooltip"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "compute_expand"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "adjust_size_request"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "adjust_size_allocation"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "style_updated"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "touch_event"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_height_and_baseline_for_width"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "adjust_baseline_request"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "adjust_baseline_allocation"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "queue_draw_region"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved6"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved7"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Declares a <pre>callback_symbol</pre> to handle <pre>callback_name</pre> from the template XML\ndefined for @widget_type. See <span data-xref=\"Gtk.Builder.add_callback_symbol\"/>.</p><p>Note that this must be called from a composite widget classes class\ninitializer after calling <span data-xref=\"Gtk.WidgetClass.set_template\"/>.</p>",
+            "kind": "method",
+            "name": "bind_template_callback_full",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "callback_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback_symbol",
+                    "direction": "in",
+                    "type": "GObject.Callback"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Automatically assign an object declared in the class template XML to be set to a location\non a freshly built instance\u2019s private data, or alternatively accessible via <span data-xref=\"Gtk.Widget.get_template_child\"/>.</p><p>The struct can point either into the public instance, then you should use G_STRUCT_OFFSET(WidgetType, member)\nfor <pre>struct_offset</pre>,  or in the private struct, then you should use G_PRIVATE_OFFSET(WidgetType, member).</p><p>An explicit strong reference will be held automatically for the duration of your\ninstance\u2019s life cycle, it will be released automatically when <span data-xref=\"GObject.ObjectClass\">GObject.ObjectClass</span>.dispose() runs\non your instance and if a <pre>struct_offset</pre> that is != 0 is specified, then the automatic location\nin your instance public or private data will be set to <pre>null</pre>. You can however access an automated child\npointer the first time your classes <span data-xref=\"GObject.ObjectClass\">GObject.ObjectClass</span>.dispose() runs, or alternatively in\n<span data-xref=\"Gtk.WidgetClass\"/>.destroy().</p><p>If <pre>internal_child</pre> is specified, <span data-xref=\"Gtk.BuildableIface\"/>.get_internal_child() will be automatically\nimplemented by the <span data-xref=\"Gtk.Widget\"/> class so there is no need to implement it manually.</p><p>The wrapper macros gtk_widget_class_bind_template_child(), gtk_widget_class_bind_template_child_internal(),\ngtk_widget_class_bind_template_child_private() and gtk_widget_class_bind_template_child_internal_private()\nmight be more convenient to use.</p><p>Note that this must be called from a composite widget classes class\ninitializer after calling <span data-xref=\"Gtk.WidgetClass.set_template\"/>.</p>",
+            "kind": "method",
+            "name": "bind_template_child_full",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "internal_child",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "struct_offset",
+                    "direction": "in",
+                    "type": "Number(gssize)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Finds a style property of a widget class by name.</p>",
+            "kind": "method",
+            "name": "find_style_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "property_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "GObject.ParamSpec"
+            }
+        },
+        {
+            "doc": "<p>Installs a style property on a widget class. The parser for the\nstyle property is determined by the value type of <pre>pspec</pre>.</p>",
+            "kind": "method",
+            "name": "install_style_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Installs a style property on a widget class.</p>",
+            "kind": "method",
+            "name": "install_style_property_parser",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "parser",
+                    "direction": "in",
+                    "type": "Gtk.RcPropertyParser"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns all style properties of a widget class.</p>",
+            "kind": "method",
+            "name": "list_style_properties",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "n_properties",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Array(GObject.ParamSpec)"
+            }
+        },
+        {
+            "doc": "<p>Sets the default <span data-xref=\"Atk.Role\">Atk.Role</span> to be set on accessibles created for\nwidgets of <pre>widget_class</pre>. Accessibles may decide to not honor this\nsetting if their role reporting is more refined. Calls to\n<span data-xref=\"Gtk.WidgetClass.set_accessible_type\"/> will reset this value.</p><p>In cases where you want more fine-grained control over the role of\naccessibles created for <pre>widget_class</pre>, you should provide your own\naccessible type and use <span data-xref=\"Gtk.WidgetClass.set_accessible_type\"/>\ninstead.</p><p>If <pre>role</pre> is #ATK_ROLE_INVALID, the default role will not be changed\nand the accessible\u2019s default role will be used instead.</p><p>This function should only be called from class init functions of widgets.</p>",
+            "kind": "method",
+            "name": "set_accessible_role",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "role",
+                    "direction": "in",
+                    "type": "Atk.Role"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the type to be used for creating accessibles for widgets of\n<pre>widget_class</pre>. The given <pre>type</pre> must be a subtype of the type used for\naccessibles of the parent class.</p><p>This function should only be called from class init functions of widgets.</p>",
+            "kind": "method",
+            "name": "set_accessible_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "GObject.Type"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>For use in lanuage bindings, this will override the default <span data-xref=\"Gtk.BuilderConnectFunc\"/> to be\nused when parsing GtkBuilder xml from this class\u2019s template data.</p><p>Note that this must be called from a composite widget classes class\ninitializer after calling <span data-xref=\"Gtk.WidgetClass.set_template\"/>.</p>",
+            "kind": "method",
+            "name": "set_connect_func",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "connect_func",
+                    "direction": "in",
+                    "type": "Gtk.BuilderConnectFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "connect_data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "connect_data_destroy",
+                    "direction": "in",
+                    "type": "GLib.DestroyNotify"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This should be called at class initialization time to specify\nthe GtkBuilder XML to be used to extend a widget.</p><p>For convenience, <span data-xref=\"Gtk.WidgetClass.set_template_from_resource\"/> is also provided.</p><p>Note that any class that installs templates must call <span data-xref=\"Gtk.Widget.init_template\"/>\nin the widget\u2019s instance initializer.</p>",
+            "kind": "method",
+            "name": "set_template",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "template_bytes",
+                    "direction": "in",
+                    "type": "ByteArray"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>A convenience function to call <span data-xref=\"Gtk.WidgetClass.set_template\"/>.</p><p>Note that any class that installs templates must call <span data-xref=\"Gtk.Widget.init_template\"/>\nin the widget\u2019s instance initializer.</p>",
+            "kind": "method",
+            "name": "set_template_from_resource",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "resource_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "WidgetClass"
+}

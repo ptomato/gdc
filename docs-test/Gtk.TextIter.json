@@ -1,0 +1,1292 @@
+{
+    "constructors": [],
+    "doc": "<p>You may wish to begin by reading the\n[text widget conceptual overview][TextWidget]\nwhich gives an overview of all the objects and data\ntypes related to the text widget and how they work together.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy4"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy5"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy6"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy7"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy8"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy9"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy10"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy11"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy12"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy13"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "dummy14"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Assigns the value of <pre>other</pre> to <pre>iter</pre>.  This function\nis not useful in applications, because iterators can be assigned\nwith <code>GtkTextIter i = j;</code>. The\nfunction is used by language bindings.</p>",
+            "kind": "method",
+            "name": "assign",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "other",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Moves backward by one character offset. Returns <pre>true</pre> if movement\nwas possible; if <pre>iter</pre> was the first in the buffer (character\noffset 0), gtk_text_iter_backward_char () returns <pre>false</pre> for convenience when\nwriting loops.</p>",
+            "kind": "method",
+            "name": "backward_char",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>count</pre> characters backward, if possible (if <pre>count</pre> would move\npast the start or end of the buffer, moves to the start or end of\nthe buffer).  The return value indicates whether the iterator moved\nonto a dereferenceable position; if the iterator didn\u2019t move, or\nmoved onto the end iterator, then <pre>false</pre> is returned. If <pre>count</pre> is 0,\nthe function does nothing and returns <pre>false</pre>.</p>",
+            "kind": "method",
+            "name": "backward_chars",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Like <span data-xref=\"Gtk.TextIter.forward_cursor_position\"/>, but moves backward.</p>",
+            "kind": "method",
+            "name": "backward_cursor_position",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves up to <pre>count</pre> cursor positions. See\n<span data-xref=\"Gtk.TextIter.forward_cursor_position\"/> for details.</p>",
+            "kind": "method",
+            "name": "backward_cursor_positions",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Same as <span data-xref=\"Gtk.TextIter.forward_find_char\"/>, but goes backward from <pre>iter</pre>.</p>",
+            "kind": "method",
+            "name": "backward_find_char",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pred",
+                    "direction": "in",
+                    "type": "Gtk.TextCharPredicate"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "limit",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>iter</pre> to the start of the previous line. Returns <pre>true</pre> if\n<pre>iter</pre> could be moved; i.e. if <pre>iter</pre> was at character offset 0, this\nfunction returns <pre>false</pre>. Therefore if <pre>iter</pre> was already on line 0,\nbut not at the start of the line, <pre>iter</pre> is snapped to the start of\nthe line and the function returns <pre>true</pre>. (Note that this implies that\nin a loop calling this function, the line number may not change on\nevery iteration, if your first iteration is on line 0.)</p>",
+            "kind": "method",
+            "name": "backward_line",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>count</pre> lines backward, if possible (if <pre>count</pre> would move\npast the start or end of the buffer, moves to the start or end of\nthe buffer).  The return value indicates whether the iterator moved\nonto a dereferenceable position; if the iterator didn\u2019t move, or\nmoved onto the end iterator, then <pre>false</pre> is returned. If <pre>count</pre> is 0,\nthe function does nothing and returns <pre>false</pre>. If <pre>count</pre> is negative,\nmoves forward by 0 - <pre>count</pre> lines.</p>",
+            "kind": "method",
+            "name": "backward_lines",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Same as <span data-xref=\"Gtk.TextIter.forward_search\"/>, but moves backward.</p><pre>match_end</pre>\n\n<p>will never be set to a <span data-xref=\"Gtk.TextIter\"/> located after <pre>iter</pre>, even if\nthere is a possible <pre>match_start</pre> before or at <pre>iter</pre>.</p>",
+            "kind": "method",
+            "name": "backward_search",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "str",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.TextSearchFlags"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "match_start",
+                    "direction": "out",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "match_end",
+                    "direction": "out",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "limit",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves backward to the previous sentence start; if <pre>iter</pre> is already at\nthe start of a sentence, moves backward to the next one.  Sentence\nboundaries are determined by Pango and should be correct for nearly\nany language (if not, the correct fix would be to the Pango text\nboundary algorithms).</p>",
+            "kind": "method",
+            "name": "backward_sentence_start",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Calls <span data-xref=\"Gtk.TextIter.backward_sentence_start\"/> up to <pre>count</pre> times,\nor until it returns <pre>false</pre>. If <pre>count</pre> is negative, moves forward\ninstead of backward.</p>",
+            "kind": "method",
+            "name": "backward_sentence_starts",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves backward to the next toggle (on or off) of the\n<span data-xref=\"Gtk.TextTag\"/> <pre>tag</pre>, or to the next toggle of any tag if\n<pre>tag</pre> is <pre>null</pre>. If no matching tag toggles are found,\nreturns <pre>false</pre>, otherwise <pre>true</pre>. Does not return toggles\nlocated at <pre>iter</pre>, only toggles before <pre>iter</pre>. Sets <pre>iter</pre>\nto the location of the toggle, or the start of the buffer\nif no toggle is found.</p>",
+            "kind": "method",
+            "name": "backward_to_tag_toggle",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>iter</pre> forward to the previous visible cursor position. See\n<span data-xref=\"Gtk.TextIter.backward_cursor_position\"/> for details.</p>",
+            "kind": "method",
+            "name": "backward_visible_cursor_position",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves up to <pre>count</pre> visible cursor positions. See\n<span data-xref=\"Gtk.TextIter.backward_cursor_position\"/> for details.</p>",
+            "kind": "method",
+            "name": "backward_visible_cursor_positions",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>iter</pre> to the start of the previous visible line. Returns <pre>true</pre> if\n<pre>iter</pre> could be moved; i.e. if <pre>iter</pre> was at character offset 0, this\nfunction returns <pre>false</pre>. Therefore if <pre>iter</pre> was already on line 0,\nbut not at the start of the line, <pre>iter</pre> is snapped to the start of\nthe line and the function returns <pre>true</pre>. (Note that this implies that\nin a loop calling this function, the line number may not change on\nevery iteration, if your first iteration is on line 0.)</p>",
+            "kind": "method",
+            "name": "backward_visible_line",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>count</pre> visible lines backward, if possible (if <pre>count</pre> would move\npast the start or end of the buffer, moves to the start or end of\nthe buffer).  The return value indicates whether the iterator moved\nonto a dereferenceable position; if the iterator didn\u2019t move, or\nmoved onto the end iterator, then <pre>false</pre> is returned. If <pre>count</pre> is 0,\nthe function does nothing and returns <pre>false</pre>. If <pre>count</pre> is negative,\nmoves forward by 0 - <pre>count</pre> lines.</p>",
+            "kind": "method",
+            "name": "backward_visible_lines",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves backward to the previous visible word start. (If <pre>iter</pre> is currently\non a word start, moves backward to the next one after that.) Word breaks\nare determined by Pango and should be correct for nearly any\nlanguage (if not, the correct fix would be to the Pango word break\nalgorithms).</p>",
+            "kind": "method",
+            "name": "backward_visible_word_start",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Calls <span data-xref=\"Gtk.TextIter.backward_visible_word_start\"/> up to <pre>count</pre> times.</p>",
+            "kind": "method",
+            "name": "backward_visible_word_starts",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves backward to the previous word start. (If <pre>iter</pre> is currently on a\nword start, moves backward to the next one after that.) Word breaks\nare determined by Pango and should be correct for nearly any\nlanguage (if not, the correct fix would be to the Pango word break\nalgorithms).</p>",
+            "kind": "method",
+            "name": "backward_word_start",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Calls <span data-xref=\"Gtk.TextIter.backward_word_start\"/> up to <pre>count</pre> times.</p>",
+            "kind": "method",
+            "name": "backward_word_starts",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if <pre>tag</pre> is toggled on at exactly this point. If <pre>tag</pre>\nis <pre>null</pre>, returns <pre>true</pre> if any tag is toggled on at this point.</p><p>Note that if <span data-xref=\"Gtk.TextIter.begins_tag\"/> returns <pre>true</pre>, it means that <pre>iter</pre> is\nat the beginning of the tagged range, and that the\ncharacter at <pre>iter</pre> is inside the tagged range. In other\nwords, unlike <span data-xref=\"Gtk.TextIter.ends_tag\"/>, if <span data-xref=\"Gtk.TextIter.begins_tag\"/> returns\n<pre>true</pre>, <span data-xref=\"Gtk.TextIter.has_tag\"/> will also return <pre>true</pre> for the same\nparameters.</p>",
+            "kind": "method",
+            "name": "begins_tag",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Considering the default editability of the buffer, and tags that\naffect editability, determines whether text inserted at <pre>iter</pre> would\nbe editable. If text inserted at <pre>iter</pre> would be editable then the\nuser should be allowed to insert text at <pre>iter</pre>.\n<span data-xref=\"Gtk.TextBuffer.insert_interactive\"/> uses this function to decide\nwhether insertions are allowed at a given position.</p>",
+            "kind": "method",
+            "name": "can_insert",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "default_editability",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>A qsort()-style function that returns negative if <pre>lhs</pre> is less than\n<pre>rhs</pre>, positive if <pre>lhs</pre> is greater than <pre>rhs</pre>, and 0 if they\u2019re equal.\nOrdering is in character offset order, i.e. the first character in the buffer\nis less than the second character in the buffer.</p>",
+            "kind": "method",
+            "name": "compare",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rhs",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Creates a dynamically-allocated copy of an iterator. This function\nis not useful in applications, because iterators can be copied with a\nsimple assignment (<code>GtkTextIter i = j;</code>). The\nfunction is used by language bindings.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TextIter"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the character at <pre>iter</pre> is within an editable region\nof text.  Non-editable text is \u201clocked\u201d and can\u2019t be changed by the\nuser via <span data-xref=\"Gtk.TextView\"/>. This function is simply a convenience\nwrapper around gtk_text_iter_get_attributes (). If no tags applied\nto this text affect editability, <pre>default_setting</pre> will be returned.</p><p>You don\u2019t want to use this function to decide whether text can be\ninserted at <pre>iter</pre>, because for insertion you don\u2019t want to know\nwhether the char at <pre>iter</pre> is inside an editable range, you want to\nknow whether a new character inserted at <pre>iter</pre> would be inside an\neditable range. Use <span data-xref=\"Gtk.TextIter.can_insert\"/> to handle this\ncase.</p>",
+            "kind": "method",
+            "name": "editable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "default_setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if <pre>iter</pre> points to the start of the paragraph\ndelimiter characters for a line (delimiters will be either a\nnewline, a carriage return, a carriage return followed by a\nnewline, or a Unicode paragraph separator character). Note that an\niterator pointing to the \\n of a \\r\\n pair will not be counted as\nthe end of a line, the line ends before the \\r. The end iterator is\nconsidered to be at the end of a line, even though there are no\nparagraph delimiter chars there.</p>",
+            "kind": "method",
+            "name": "ends_line",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Determines whether <pre>iter</pre> ends a sentence.  Sentence boundaries are\ndetermined by Pango and should be correct for nearly any language\n(if not, the correct fix would be to the Pango text boundary\nalgorithms).</p>",
+            "kind": "method",
+            "name": "ends_sentence",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if <pre>tag</pre> is toggled off at exactly this point. If <pre>tag</pre>\nis <pre>null</pre>, returns <pre>true</pre> if any tag is toggled off at this point.</p><p>Note that if <span data-xref=\"Gtk.TextIter.ends_tag\"/> returns <pre>true</pre>, it means that <pre>iter</pre> is\nat the end of the tagged range, but that the character\nat <pre>iter</pre> is outside the tagged range. In other words,\nunlike <span data-xref=\"Gtk.TextIter.begins_tag\"/>, if <span data-xref=\"Gtk.TextIter.ends_tag\"/> returns <pre>true</pre>,\n<span data-xref=\"Gtk.TextIter.has_tag\"/> will return <pre>false</pre> for the same parameters.</p>",
+            "kind": "method",
+            "name": "ends_tag",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Determines whether <pre>iter</pre> ends a natural-language word.  Word breaks\nare determined by Pango and should be correct for nearly any\nlanguage (if not, the correct fix would be to the Pango word break\nalgorithms).</p>",
+            "kind": "method",
+            "name": "ends_word",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Tests whether two iterators are equal, using the fastest possible\nmechanism. This function is very fast; you can expect it to perform\nbetter than e.g. getting the character offset for each iterator and\ncomparing the offsets yourself. Also, it\u2019s a bit faster than\n<span data-xref=\"Gtk.TextIter.compare\"/>.</p>",
+            "kind": "method",
+            "name": "equal",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rhs",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>iter</pre> forward by one character offset. Note that images\nembedded in the buffer occupy 1 character slot, so\ngtk_text_iter_forward_char () may actually move onto an image instead\nof a character, if you have images in your buffer.  If <pre>iter</pre> is the\nend iterator or one character before it, <pre>iter</pre> will now point at\nthe end iterator, and gtk_text_iter_forward_char () returns <pre>false</pre> for\nconvenience when writing loops.</p>",
+            "kind": "method",
+            "name": "forward_char",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>count</pre> characters if possible (if <pre>count</pre> would move past the\nstart or end of the buffer, moves to the start or end of the\nbuffer). The return value indicates whether the new position of\n<pre>iter</pre> is different from its original position, and dereferenceable\n(the last iterator in the buffer is not dereferenceable). If <pre>count</pre>\nis 0, the function does nothing and returns <pre>false</pre>.</p>",
+            "kind": "method",
+            "name": "forward_chars",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>iter</pre> forward by a single cursor position. Cursor positions\nare (unsurprisingly) positions where the cursor can appear. Perhaps\nsurprisingly, there may not be a cursor position between all\ncharacters. The most common example for European languages would be\na carriage return/newline sequence. For some Unicode characters,\nthe equivalent of say the letter \u201ca\u201d with an accent mark will be\nrepresented as two characters, first the letter then a \"combining\nmark\" that causes the accent to be rendered; so the cursor can\u2019t go\nbetween those two characters. See also the <span data-xref=\"Pango.LogAttr\">Pango.LogAttr</span>-struct and\n<span data-xref=\"Pango.break\">Pango.break</span> function.</p>",
+            "kind": "method",
+            "name": "forward_cursor_position",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves up to <pre>count</pre> cursor positions. See\n<span data-xref=\"Gtk.TextIter.forward_cursor_position\"/> for details.</p>",
+            "kind": "method",
+            "name": "forward_cursor_positions",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Advances <pre>iter</pre>, calling <pre>pred</pre> on each character. If\n<pre>pred</pre> returns <pre>true</pre>, returns <pre>true</pre> and stops scanning.\nIf <pre>pred</pre> never returns <pre>true</pre>, <pre>iter</pre> is set to <pre>limit</pre> if\n<pre>limit</pre> is non-<pre>null</pre>, otherwise to the end iterator.</p>",
+            "kind": "method",
+            "name": "forward_find_char",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pred",
+                    "direction": "in",
+                    "type": "Gtk.TextCharPredicate"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "limit",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>iter</pre> to the start of the next line. If the iter is already on the\nlast line of the buffer, moves the iter to the end of the current line.\nIf after the operation, the iter is at the end of the buffer and not\ndereferencable, returns <pre>false</pre>. Otherwise, returns <pre>true</pre>.</p>",
+            "kind": "method",
+            "name": "forward_line",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>count</pre> lines forward, if possible (if <pre>count</pre> would move\npast the start or end of the buffer, moves to the start or end of\nthe buffer).  The return value indicates whether the iterator moved\nonto a dereferenceable position; if the iterator didn\u2019t move, or\nmoved onto the end iterator, then <pre>false</pre> is returned. If <pre>count</pre> is 0,\nthe function does nothing and returns <pre>false</pre>. If <pre>count</pre> is negative,\nmoves backward by 0 - <pre>count</pre> lines.</p>",
+            "kind": "method",
+            "name": "forward_lines",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Searches forward for <pre>str</pre>. Any match is returned by setting\n<pre>match_start</pre> to the first character of the match and <pre>match_end</pre> to the\nfirst character after the match. The search will not continue past\n<pre>limit</pre>. Note that a search is a linear or O(n) operation, so you\nmay wish to use <pre>limit</pre> to avoid locking up your UI on large\nbuffers.</p><pre>match_start</pre>\n\n<p>will never be set to a <span data-xref=\"Gtk.TextIter\"/> located before <pre>iter</pre>, even if\nthere is a possible <pre>match_end</pre> after or at <pre>iter</pre>.</p>",
+            "kind": "method",
+            "name": "forward_search",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "str",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.TextSearchFlags"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "match_start",
+                    "direction": "out",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "match_end",
+                    "direction": "out",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "limit",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves forward to the next sentence end. (If <pre>iter</pre> is at the end of\na sentence, moves to the next end of sentence.)  Sentence\nboundaries are determined by Pango and should be correct for nearly\nany language (if not, the correct fix would be to the Pango text\nboundary algorithms).</p>",
+            "kind": "method",
+            "name": "forward_sentence_end",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Calls <span data-xref=\"Gtk.TextIter.forward_sentence_end\"/> <pre>count</pre> times (or until\n<span data-xref=\"Gtk.TextIter.forward_sentence_end\"/> returns <pre>false</pre>). If <pre>count</pre> is\nnegative, moves backward instead of forward.</p>",
+            "kind": "method",
+            "name": "forward_sentence_ends",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>iter</pre> forward to the \u201cend iterator,\u201d which points one past the last\nvalid character in the buffer. <span data-xref=\"Gtk.TextIter.get_char\"/> called on the\nend iterator returns 0, which is convenient for writing loops.</p>",
+            "kind": "method",
+            "name": "forward_to_end",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Moves the iterator to point to the paragraph delimiter characters,\nwhich will be either a newline, a carriage return, a carriage\nreturn/newline in sequence, or the Unicode paragraph separator\ncharacter. If the iterator is already at the paragraph delimiter\ncharacters, moves to the paragraph delimiter characters for the\nnext line. If <pre>iter</pre> is on the last line in the buffer, which does\nnot end in paragraph delimiters, moves to the end iterator (end of\nthe last line), and returns <pre>false</pre>.</p>",
+            "kind": "method",
+            "name": "forward_to_line_end",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves forward to the next toggle (on or off) of the\n<span data-xref=\"Gtk.TextTag\"/> <pre>tag</pre>, or to the next toggle of any tag if\n<pre>tag</pre> is <pre>null</pre>. If no matching tag toggles are found,\nreturns <pre>false</pre>, otherwise <pre>true</pre>. Does not return toggles\nlocated at <pre>iter</pre>, only toggles after <pre>iter</pre>. Sets <pre>iter</pre> to\nthe location of the toggle, or to the end of the buffer\nif no toggle is found.</p>",
+            "kind": "method",
+            "name": "forward_to_tag_toggle",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>iter</pre> forward to the next visible cursor position. See\n<span data-xref=\"Gtk.TextIter.forward_cursor_position\"/> for details.</p>",
+            "kind": "method",
+            "name": "forward_visible_cursor_position",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves up to <pre>count</pre> visible cursor positions. See\n<span data-xref=\"Gtk.TextIter.forward_cursor_position\"/> for details.</p>",
+            "kind": "method",
+            "name": "forward_visible_cursor_positions",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>iter</pre> to the start of the next visible line. Returns <pre>true</pre> if there\nwas a next line to move to, and <pre>false</pre> if <pre>iter</pre> was simply moved to\nthe end of the buffer and is now not dereferenceable, or if <pre>iter</pre> was\nalready at the end of the buffer.</p>",
+            "kind": "method",
+            "name": "forward_visible_line",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>count</pre> visible lines forward, if possible (if <pre>count</pre> would move\npast the start or end of the buffer, moves to the start or end of\nthe buffer).  The return value indicates whether the iterator moved\nonto a dereferenceable position; if the iterator didn\u2019t move, or\nmoved onto the end iterator, then <pre>false</pre> is returned. If <pre>count</pre> is 0,\nthe function does nothing and returns <pre>false</pre>. If <pre>count</pre> is negative,\nmoves backward by 0 - <pre>count</pre> lines.</p>",
+            "kind": "method",
+            "name": "forward_visible_lines",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves forward to the next visible word end. (If <pre>iter</pre> is currently on a\nword end, moves forward to the next one after that.) Word breaks\nare determined by Pango and should be correct for nearly any\nlanguage (if not, the correct fix would be to the Pango word break\nalgorithms).</p>",
+            "kind": "method",
+            "name": "forward_visible_word_end",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Calls <span data-xref=\"Gtk.TextIter.forward_visible_word_end\"/> up to <pre>count</pre> times.</p>",
+            "kind": "method",
+            "name": "forward_visible_word_ends",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves forward to the next word end. (If <pre>iter</pre> is currently on a\nword end, moves forward to the next one after that.) Word breaks\nare determined by Pango and should be correct for nearly any\nlanguage (if not, the correct fix would be to the Pango word break\nalgorithms).</p>",
+            "kind": "method",
+            "name": "forward_word_end",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Calls <span data-xref=\"Gtk.TextIter.forward_word_end\"/> up to <pre>count</pre> times.</p>",
+            "kind": "method",
+            "name": "forward_word_ends",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Free an iterator allocated on the heap. This function\nis intended for use in language bindings, and is not\nespecially useful for applications, because iterators can\nsimply be allocated on the stack.</p>",
+            "kind": "method",
+            "name": "free",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Computes the effect of any tags applied to this spot in the\ntext. The <pre>values</pre> parameter should be initialized to the default\nsettings you wish to use if no tags are in effect. You\u2019d typically\nobtain the defaults from <span data-xref=\"Gtk.TextView.get_default_attributes\"/>.</p><p>gtk_text_iter_get_attributes () will modify <pre>values</pre>, applying the\neffects of any tags present at <pre>iter</pre>. If any tags affected <pre>values</pre>,\nthe function returns <pre>true</pre>.</p>",
+            "kind": "method",
+            "name": "get_attributes",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "values",
+                    "direction": "out",
+                    "type": "Gtk.TextAttributes"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the <span data-xref=\"Gtk.TextBuffer\"/> this iterator is associated with.</p>",
+            "kind": "method",
+            "name": "get_buffer",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TextBuffer"
+            }
+        },
+        {
+            "doc": "<p>Returns the number of bytes in the line containing <pre>iter</pre>,\nincluding the paragraph delimiters.</p>",
+            "kind": "method",
+            "name": "get_bytes_in_line",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>The Unicode character at this iterator is returned.  (Equivalent to\noperator* on a C++ iterator.)  If the element at this iterator is a\nnon-character element, such as an image embedded in the buffer, the\nUnicode \u201cunknown\u201d character 0xFFFC is returned. If invoked on\nthe end iterator, zero is returned; zero is not a valid Unicode character.\nSo you can write a loop which ends when <span data-xref=\"Gtk.TextIter.get_char\"/>\nreturns 0.</p>",
+            "kind": "method",
+            "name": "get_char",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the number of characters in the line containing <pre>iter</pre>,\nincluding the paragraph delimiters.</p>",
+            "kind": "method",
+            "name": "get_chars_in_line",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>If the location at <pre>iter</pre> contains a child anchor, the\nanchor is returned (with no new reference count added). Otherwise,\n<pre>null</pre> is returned.</p>",
+            "kind": "method",
+            "name": "get_child_anchor",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TextChildAnchor"
+            }
+        },
+        {
+            "doc": "<p>A convenience wrapper around gtk_text_iter_get_attributes (),\nwhich returns the language in effect at <pre>iter</pre>. If no tags affecting\nlanguage apply to <pre>iter</pre>, the return value is identical to that of\ngtk_get_default_language ().</p>",
+            "kind": "method",
+            "name": "get_language",
+            "parameters": [],
+            "retval": {
+                "type": "Pango.Language"
+            }
+        },
+        {
+            "doc": "<p>Returns the line number containing the iterator. Lines in\na <span data-xref=\"Gtk.TextBuffer\"/> are numbered beginning with 0 for the first\nline in the buffer.</p>",
+            "kind": "method",
+            "name": "get_line",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the byte index of the iterator, counting\nfrom the start of a newline-terminated line.\nRemember that <span data-xref=\"Gtk.TextBuffer\"/> encodes text in\nUTF-8, and that characters can require a variable\nnumber of bytes to represent.</p>",
+            "kind": "method",
+            "name": "get_line_index",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the character offset of the iterator,\ncounting from the start of a newline-terminated line.\nThe first character on the line has offset 0.</p>",
+            "kind": "method",
+            "name": "get_line_offset",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns a list of all <span data-xref=\"Gtk.TextMark\"/> at this location. Because marks\nare not iterable (they don\u2019t take up any \"space\" in the buffer,\nthey are just marks in between iterable locations), multiple marks\ncan exist in the same place. The returned list is not in any\nmeaningful order.</p>",
+            "kind": "method",
+            "name": "get_marks",
+            "parameters": [],
+            "retval": {
+                "type": "Array(Gtk.TextMark)"
+            }
+        },
+        {
+            "doc": "<p>Returns the character offset of an iterator.\nEach character in a <span data-xref=\"Gtk.TextBuffer\"/> has an offset,\nstarting with 0 for the first character in the buffer.\nUse gtk_text_buffer_get_iter_at_offset () to convert an\noffset back into an iterator.</p>",
+            "kind": "method",
+            "name": "get_offset",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>If the element at <pre>iter</pre> is a pixbuf, the pixbuf is returned\n(with no new reference count added). Otherwise,\n<pre>null</pre> is returned.</p>",
+            "kind": "method",
+            "name": "get_pixbuf",
+            "parameters": [],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Returns the text in the given range. A \u201cslice\u201d is an array of\ncharacters encoded in UTF-8 format, including the Unicode \u201cunknown\u201d\ncharacter 0xFFFC for iterable non-character elements in the buffer,\nsuch as images.  Because images are encoded in the slice, byte and\ncharacter offsets in the returned array will correspond to byte\noffsets in the text buffer. Note that 0xFFFC can occur in normal\ntext as well, so it is not a reliable indicator that a pixbuf or\nwidget is in the buffer.</p>",
+            "kind": "method",
+            "name": "get_slice",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "end",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns a list of tags that apply to <pre>iter</pre>, in ascending order of\npriority (highest-priority tags are last). The <span data-xref=\"Gtk.TextTag\"/> in the\nlist don\u2019t have a reference added, but you have to free the list\nitself.</p>",
+            "kind": "method",
+            "name": "get_tags",
+            "parameters": [],
+            "retval": {
+                "type": "Array(Gtk.TextTag)"
+            }
+        },
+        {
+            "doc": "<p>Returns text in the given range.  If the range\ncontains non-text elements such as images, the character and byte\noffsets in the returned string will not correspond to character and\nbyte offsets in the buffer. If you want offsets to correspond, see\ngtk_text_iter_get_slice ().</p>",
+            "kind": "method",
+            "name": "get_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "end",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns a list of <span data-xref=\"Gtk.TextTag\"/> that are toggled on or off at this\npoint.  (If <pre>toggled_on</pre> is <pre>true</pre>, the list contains tags that are\ntoggled on.) If a tag is toggled on at <pre>iter</pre>, then some non-empty\nrange of characters following <pre>iter</pre> has that tag applied to it.  If\na tag is toggled off, then some non-empty range following <pre>iter</pre>\ndoes not have the tag applied to it.</p>",
+            "kind": "method",
+            "name": "get_toggled_tags",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "toggled_on",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Array(Gtk.TextTag)"
+            }
+        },
+        {
+            "doc": "<p>Returns the number of bytes from the start of the\nline to the given <pre>iter</pre>, not counting bytes that\nare invisible due to tags with the \u201cinvisible\u201d flag\ntoggled on.</p>",
+            "kind": "method",
+            "name": "get_visible_line_index",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the offset in characters from the start of the\nline to the given <pre>iter</pre>, not counting characters that\nare invisible due to tags with the \u201cinvisible\u201d flag\ntoggled on.</p>",
+            "kind": "method",
+            "name": "get_visible_line_offset",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Like gtk_text_iter_get_slice (), but invisible text is not included.\nInvisible text is usually invisible because a <span data-xref=\"Gtk.TextTag\"/> with the\n\u201cinvisible\u201d attribute turned on has been applied to it.</p>",
+            "kind": "method",
+            "name": "get_visible_slice",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "end",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Like gtk_text_iter_get_text (), but invisible text is not included.\nInvisible text is usually invisible because a <span data-xref=\"Gtk.TextTag\"/> with the\n\u201cinvisible\u201d attribute turned on has been applied to it.</p>",
+            "kind": "method",
+            "name": "get_visible_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "end",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if <pre>iter</pre> points to a character that is part of a range tagged\nwith <pre>tag</pre>. See also <span data-xref=\"Gtk.TextIter.begins_tag\"/> and <span data-xref=\"Gtk.TextIter.ends_tag\"/>.</p>",
+            "kind": "method",
+            "name": "has_tag",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Checks whether <pre>iter</pre> falls in the range [<pre>start</pre>, <pre>end</pre>).\n<pre>start</pre> and <pre>end</pre> must be in ascending order.</p>",
+            "kind": "method",
+            "name": "in_range",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "start",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "end",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Determines whether <pre>iter</pre> is inside a sentence (as opposed to in\nbetween two sentences, e.g. after a period and before the first\nletter of the next sentence).  Sentence boundaries are determined\nby Pango and should be correct for nearly any language (if not, the\ncorrect fix would be to the Pango text boundary algorithms).</p>",
+            "kind": "method",
+            "name": "inside_sentence",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Determines whether the character pointed by <pre>iter</pre> is part of a\nnatural-language word (as opposed to say inside some whitespace).  Word\nbreaks are determined by Pango and should be correct for nearly any language\n(if not, the correct fix would be to the Pango word break algorithms).</p><p>Note that if <span data-xref=\"Gtk.TextIter.starts_word\"/> returns <pre>true</pre>, then this function\nreturns <pre>true</pre> too, since <pre>iter</pre> points to the first character of the word.</p>",
+            "kind": "method",
+            "name": "inside_word",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>See <span data-xref=\"Gtk.TextIter.forward_cursor_position\"/> or <span data-xref=\"Pango.LogAttr\">Pango.LogAttr</span> or\n<span data-xref=\"Pango.break\">Pango.break</span> for details on what a cursor position is.</p>",
+            "kind": "method",
+            "name": "is_cursor_position",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if <pre>iter</pre> is the end iterator, i.e. one past the last\ndereferenceable iterator in the buffer. gtk_text_iter_is_end () is\nthe most efficient way to check whether an iterator is the end\niterator.</p>",
+            "kind": "method",
+            "name": "is_end",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if <pre>iter</pre> is the first iterator in the buffer, that is\nif <pre>iter</pre> has a character offset of 0.</p>",
+            "kind": "method",
+            "name": "is_start",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Swaps the value of <pre>first</pre> and <pre>second</pre> if <pre>second</pre> comes before\n<pre>first</pre> in the buffer. That is, ensures that <pre>first</pre> and <pre>second</pre> are\nin sequence. Most text buffer functions that take a range call this\nautomatically on your behalf, so there\u2019s no real reason to call it yourself\nin those cases. There are some exceptions, such as <span data-xref=\"Gtk.TextIter.in_range\"/>,\nthat expect a pre-sorted range.</p>",
+            "kind": "method",
+            "name": "order",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "second",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Moves iterator <pre>iter</pre> to the start of the line <pre>line_number</pre>.  If\n<pre>line_number</pre> is negative or larger than the number of lines in the\nbuffer, moves <pre>iter</pre> to the start of the last line in the buffer.</p>",
+            "kind": "method",
+            "name": "set_line",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "line_number",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Same as <span data-xref=\"Gtk.TextIter.set_line_offset\"/>, but works with a\nbyte index. The given byte index must be at\nthe start of a character, it can\u2019t be in the middle of a UTF-8\nencoded character.</p>",
+            "kind": "method",
+            "name": "set_line_index",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "byte_on_line",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Moves <pre>iter</pre> within a line, to a new character\n(not byte) offset. The given character offset must be less than or\nequal to the number of characters in the line; if equal, <pre>iter</pre>\nmoves to the start of the next line. See\n<span data-xref=\"Gtk.TextIter.set_line_index\"/> if you have a byte index rather than\na character offset.</p>",
+            "kind": "method",
+            "name": "set_line_offset",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "char_on_line",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets <pre>iter</pre> to point to <pre>char_offset</pre>. <pre>char_offset</pre> counts from the start\nof the entire text buffer, starting with 0.</p>",
+            "kind": "method",
+            "name": "set_offset",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "char_offset",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Like <span data-xref=\"Gtk.TextIter.set_line_index\"/>, but the index is in visible\nbytes, i.e. text with a tag making it invisible is not counted\nin the index.</p>",
+            "kind": "method",
+            "name": "set_visible_line_index",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "byte_on_line",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Like <span data-xref=\"Gtk.TextIter.set_line_offset\"/>, but the offset is in visible\ncharacters, i.e. text with a tag making it invisible is not\ncounted in the offset.</p>",
+            "kind": "method",
+            "name": "set_visible_line_offset",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "char_on_line",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if <pre>iter</pre> begins a paragraph,\ni.e. if gtk_text_iter_get_line_offset () would return 0.\nHowever this function is potentially more efficient than\ngtk_text_iter_get_line_offset () because it doesn\u2019t have to compute\nthe offset, it just has to see whether it\u2019s 0.</p>",
+            "kind": "method",
+            "name": "starts_line",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Determines whether <pre>iter</pre> begins a sentence.  Sentence boundaries are\ndetermined by Pango and should be correct for nearly any language\n(if not, the correct fix would be to the Pango text boundary\nalgorithms).</p>",
+            "kind": "method",
+            "name": "starts_sentence",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Determines whether <pre>iter</pre> begins a natural-language word.  Word\nbreaks are determined by Pango and should be correct for nearly any\nlanguage (if not, the correct fix would be to the Pango word break\nalgorithms).</p>",
+            "kind": "method",
+            "name": "starts_word",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>This is equivalent to (gtk_text_iter_begins_tag () ||\ngtk_text_iter_ends_tag ()), i.e. it tells you whether a range with\n<pre>tag</pre> applied to it begins or ends at <pre>iter</pre>.</p>",
+            "kind": "method",
+            "name": "toggles_tag",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ],
+    "name": "TextIter"
+}

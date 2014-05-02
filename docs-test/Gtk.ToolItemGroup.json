@@ -1,7 +1,7 @@
 {
     "constructors": [
         {
-            "doc": "<p>Creates a new tool item group with label <code>label</code>.</p>",
+            "doc": "<p>Creates a new tool item group with label <pre>label</pre>.</p>",
             "kind": "constructor",
             "name": "new",
             "parameters": [
@@ -18,22 +18,10 @@
         }
     ],
     "doc": "<p>A <span data-xref=\"Gtk.ToolItemGroup\"/> is used together with <span data-xref=\"Gtk.ToolPalette\"/> to add</p>\n<h1>GtkToolItems to a palette like container with different</h1>\n<p>categories and drag and drop support.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Gets whether <code>group</code> is collapsed or expanded.</p>",
+            "doc": "<p>Gets whether <pre>group</pre> is collapsed or expanded.</p>",
             "kind": "method",
             "name": "get_collapsed",
             "parameters": [],
@@ -64,7 +52,7 @@
             }
         },
         {
-            "doc": "<p>Gets the ellipsization mode of <code>group</code>.</p>",
+            "doc": "<p>Gets the ellipsization mode of <pre>group</pre>.</p>",
             "kind": "method",
             "name": "get_ellipsize",
             "parameters": [],
@@ -73,7 +61,7 @@
             }
         },
         {
-            "doc": "<p>Gets the relief mode of the header button of <code>group</code>.</p>",
+            "doc": "<p>Gets the relief mode of the header button of <pre>group</pre>.</p>",
             "kind": "method",
             "name": "get_header_relief",
             "parameters": [],
@@ -82,7 +70,7 @@
             }
         },
         {
-            "doc": "<p>Gets the position of <code>item</code> in <code>group</code> as index.</p>",
+            "doc": "<p>Gets the position of <pre>item</pre> in <pre>group</pre> as index.</p>",
             "kind": "method",
             "name": "get_item_position",
             "parameters": [
@@ -98,7 +86,7 @@
             }
         },
         {
-            "doc": "<p>Gets the label of <code>group</code>.</p>",
+            "doc": "<p>Gets the label of <pre>group</pre>.</p>",
             "kind": "method",
             "name": "get_label",
             "parameters": [],
@@ -107,7 +95,7 @@
             }
         },
         {
-            "doc": "<p>Gets the label widget of <code>group</code>.\nSee <span data-xref=\"Gtk.ToolItemGroup.set_label_widget\"/>.</p>",
+            "doc": "<p>Gets the label widget of <pre>group</pre>.\nSee <span data-xref=\"Gtk.ToolItemGroup.set_label_widget\"/>.</p>",
             "kind": "method",
             "name": "get_label_widget",
             "parameters": [],
@@ -116,7 +104,7 @@
             }
         },
         {
-            "doc": "<p>Gets the number of tool items in <code>group</code>.</p>",
+            "doc": "<p>Gets the number of tool items in <pre>group</pre>.</p>",
             "kind": "method",
             "name": "get_n_items",
             "parameters": [],
@@ -125,7 +113,7 @@
             }
         },
         {
-            "doc": "<p>Gets the tool item at <code>index</code> in group.</p>",
+            "doc": "<p>Gets the tool item at <pre>index</pre> in group.</p>",
             "kind": "method",
             "name": "get_nth_item",
             "parameters": [
@@ -141,7 +129,7 @@
             }
         },
         {
-            "doc": "<p>Inserts <code>item</code> at <code>position</code> in the list of children of <code>group</code>.</p>",
+            "doc": "<p>Inserts <pre>item</pre> at <pre>position</pre> in the list of children of <pre>group</pre>.</p>",
             "kind": "method",
             "name": "insert",
             "parameters": [
@@ -163,7 +151,7 @@
             }
         },
         {
-            "doc": "<p>Sets whether the <code>group</code> should be collapsed or expanded.</p>",
+            "doc": "<p>Sets whether the <pre>group</pre> should be collapsed or expanded.</p>",
             "kind": "method",
             "name": "set_collapsed",
             "parameters": [
@@ -179,7 +167,7 @@
             }
         },
         {
-            "doc": "<p>Sets the ellipsization mode which should be used by labels in <code>group</code>.</p>",
+            "doc": "<p>Sets the ellipsization mode which should be used by labels in <pre>group</pre>.</p>",
             "kind": "method",
             "name": "set_ellipsize",
             "parameters": [
@@ -211,7 +199,7 @@
             }
         },
         {
-            "doc": "<p>Sets the position of <code>item</code> in the list of children of <code>group</code>.</p>",
+            "doc": "<p>Sets the position of <pre>item</pre> in the list of children of <pre>group</pre>.</p>",
             "kind": "method",
             "name": "set_item_position",
             "parameters": [
@@ -263,8 +251,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "ToolItemGroup",
     "properties": [

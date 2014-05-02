@@ -1,0 +1,185 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a symbolic color by modifying the relative alpha\nvalue of <pre>color</pre>. A factor &lt; 1.0 would resolve to a more\ntransparent color, while &gt; 1.0 would resolve to a more\nopaque color.</p>",
+            "kind": "constructor",
+            "name": "new_alpha",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "in",
+                    "type": "Gtk.SymbolicColor"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "factor",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.SymbolicColor"
+            }
+        },
+        {
+            "doc": "<p>Creates a symbolic color pointing to a literal color.</p>",
+            "kind": "constructor",
+            "name": "new_literal",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.SymbolicColor"
+            }
+        },
+        {
+            "doc": "<p>Creates a symbolic color defined as a mix of another\ntwo colors. a mix factor of 0 would resolve to <pre>color1</pre>,\nwhile a factor of 1 would resolve to <pre>color2</pre>.</p>",
+            "kind": "constructor",
+            "name": "new_mix",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color1",
+                    "direction": "in",
+                    "type": "Gtk.SymbolicColor"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "color2",
+                    "direction": "in",
+                    "type": "Gtk.SymbolicColor"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "factor",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.SymbolicColor"
+            }
+        },
+        {
+            "doc": "<p>Creates a symbolic color pointing to an unresolved named\ncolor. See <span data-xref=\"Gtk.StyleContext.lookup_color\"/> and\n<span data-xref=\"Gtk.StyleProperties.lookup_color\"/>.</p>",
+            "kind": "constructor",
+            "name": "new_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.SymbolicColor"
+            }
+        },
+        {
+            "doc": "<p>Creates a symbolic color defined as a shade of\nanother color. A factor &gt; 1.0 would resolve to\na brighter color, while &lt; 1.0 would resolve to\na darker color.</p>",
+            "kind": "constructor",
+            "name": "new_shade",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "in",
+                    "type": "Gtk.SymbolicColor"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "factor",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.SymbolicColor"
+            }
+        },
+        {
+            "doc": "<p>Creates a symbolic color based on the current win32\ntheme.</p><p>Note that while this call is available on all platforms\nthe actual value returned is not reliable on non-win32\nplatforms.</p>",
+            "kind": "constructor",
+            "name": "new_win32",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "theme_class",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "id",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.SymbolicColor"
+            }
+        }
+    ],
+    "doc": "<p>GtkSymbolicColor is a boxed type that represents a symbolic color.\nIt is the result of parsing a\n[color expression][gtkcssprovider-symbolic-colors].\nTo obtain the color represented by a GtkSymbolicColor, it has to\nbe resolved with <span data-xref=\"Gtk.SymbolicColor.resolve\"/>, which replaces all\nsymbolic color references by the colors they refer to (in a given\ncontext) and evaluates mix, shade and other expressions, resulting\nin a <span data-xref=\"Gdk.RGBA\">Gdk.RGBA</span> value.</p><p>It is not normally necessary to deal directly with #GtkSymbolicColors,\nsince they are mostly used behind the scenes by <span data-xref=\"Gtk.StyleContext\"/> and\n<span data-xref=\"Gtk.CssProvider\"/>.</p><p><span data-xref=\"Gtk.SymbolicColor\"/> is deprecated. Symbolic colors are considered an\nimplementation detail of GTK+.</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Increases the reference count of <pre>color</pre></p>",
+            "kind": "method",
+            "name": "ref",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.SymbolicColor"
+            }
+        },
+        {
+            "doc": "<p>If <pre>color</pre> is resolvable, <pre>resolved_color</pre> will be filled in\nwith the resolved color, and <pre>true</pre> will be returned. Generally,\nif <pre>color</pre> can\u2019t be resolved, it is due to it being defined on\ntop of a named color that doesn\u2019t exist in <pre>props</pre>.</p><p>When <pre>props</pre> is <pre>null</pre>, resolving of named colors will fail, so if\nyour <pre>color</pre> is or references such a color, this function will\nreturn <pre>false</pre>.</p>",
+            "kind": "method",
+            "name": "resolve",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "props",
+                    "direction": "in",
+                    "type": "Gtk.StyleProperties"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "resolved_color",
+                    "direction": "out",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Converts the given <pre>color</pre> to a string representation. This is useful\nboth for debugging and for serialization of strings. The format of\nthe string may change between different versions of GTK, but it is\nguaranteed that the GTK css parser is able to read the string and\ncreate the same symbolic color from it.</p>",
+            "kind": "method",
+            "name": "to_string",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Decreases the reference count of <pre>color</pre>, freeing its memory if the\nreference count reaches 0.</p>",
+            "kind": "method",
+            "name": "unref",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "SymbolicColor"
+}

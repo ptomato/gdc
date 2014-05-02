@@ -11,13 +11,6 @@
         }
     ],
     "doc": "<p>GtkOffscreenWindow is strictly intended to be used for obtaining\nsnapshots of widgets that are not part of a normal widget hierarchy.\nSince <span data-xref=\"Gtk.OffscreenWindow\"/> is a toplevel widget you cannot obtain\nsnapshots of a full window with it since you cannot pack a toplevel\nwidget in another toplevel.</p><p>The idea is to take a widget and manually set the state of it,\nadd it to a GtkOffscreenWindow and then retrieve the snapshot\nas a #cairo_surface_t or <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>.</p><p>GtkOffscreenWindow derives from <span data-xref=\"Gtk.Window\"/> only as an implementation\ndetail.  Applications should not use any API specific to <span data-xref=\"Gtk.Window\"/>\nto operate on this object.  It should be treated as a <span data-xref=\"Gtk.Bin\"/> that\nhas no parent widget.</p><p>When contained offscreen widgets are redrawn, GtkOffscreenWindow\nwill emit a <span data-xref=\"Gtk.Widget-damage-event\"/> signal.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_object"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -37,8 +30,7 @@
             "retval": {
                 "type": "cairo.Surface"
             }
-        },
-        []
+        }
     ],
     "name": "OffscreenWindow",
     "properties": [],

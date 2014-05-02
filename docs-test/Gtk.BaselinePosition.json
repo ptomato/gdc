@@ -1,0 +1,22 @@
+{
+    "doc": "<p>Whenever a container has some form of natural row it may align\nchildren in that row along a common typographical baseline. If\nthe amount of verical space in the row is taller than the total\nrequested height of the baseline-aligned children then it can use a\n<span data-xref=\"Gtk.BaselinePosition\"/> to select where to put the baseline inside the\nextra availible space.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Align the baseline at the top</p>",
+            "kind": "default",
+            "name": "top"
+        },
+        {
+            "doc": "<p>Center the baseline</p>",
+            "kind": "default",
+            "name": "center"
+        },
+        {
+            "doc": "<p>Align the baseline at the bottom</p>",
+            "kind": "default",
+            "name": "bottom"
+        }
+    ],
+    "name": "BaselinePosition"
+}

@@ -1,0 +1,39 @@
+{
+    "constructors": [],
+    "doc": "<p>The <span data-xref=\"Gtk.LinkButtonClass\"/> contains only\nprivate data.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "activate_link"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_padding1"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_padding2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_padding3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_padding4"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "LinkButtonClass"
+}

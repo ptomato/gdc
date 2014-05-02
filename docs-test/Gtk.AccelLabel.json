@@ -17,19 +17,7 @@
             }
         }
     ],
-    "doc": "<p>The <span data-xref=\"Gtk.AccelLabel\"/> widget is a subclass of <span data-xref=\"Gtk.Label\"/> that also displays an\naccelerator key on the right of the label text, e.g. \u201cCtl+S\u201d.\nIt is commonly used in menus to show the keyboard short-cuts for commands.</p><p>The accelerator key to display is not set explicitly.\nInstead, the <span data-xref=\"Gtk.AccelLabel\"/> displays the accelerators which have been added to\na particular widget. This widget is set by calling\n<span data-xref=\"Gtk.AccelLabel.set_accel_widget\"/>.</p><p>For example, a <span data-xref=\"Gtk.MenuItem\"/> widget may have an accelerator added to emit the\n\u201cactivate\u201d signal when the \u201cCtl+S\u201d key combination is pressed.\nA <span data-xref=\"Gtk.AccelLabel\"/> is created and added to the <span data-xref=\"Gtk.MenuItem\"/>, and\n<span data-xref=\"Gtk.AccelLabel.set_accel_widget\"/> is called with the <span data-xref=\"Gtk.MenuItem\"/> as the\nsecond argument. The <span data-xref=\"Gtk.AccelLabel\"/> will now display \u201cCtl+S\u201d after its label.</p><p>Note that creating a <span data-xref=\"Gtk.MenuItem\"/> with <span data-xref=\"Gtk.MenuItem.new_with_label\"/> (or\none of the similar functions for <span data-xref=\"Gtk.CheckMenuItem\"/> and <span data-xref=\"Gtk.RadioMenuItem\"/>)\nautomatically adds a <span data-xref=\"Gtk.AccelLabel\"/> to the <span data-xref=\"Gtk.MenuItem\"/> and calls\n<span data-xref=\"Gtk.AccelLabel.set_accel_widget\"/> to set it up for you.</p><p>A <span data-xref=\"Gtk.AccelLabel\"/> will only display accelerators which have <span data-xref=\"Gtk.AccelFlags\"/>.visible\nset (see <span data-xref=\"Gtk.AccelFlags\"/>).\nA <span data-xref=\"Gtk.AccelLabel\"/> can display multiple accelerators and even signal names,\nthough it is almost always used to display just one accelerator key.</p><h2>Creating a simple menu item with an accelerator key.</h2><p>|[&lt;!-- language=\"C\" --&gt;\n  GtkWidget <em>save_item;\n  GtkAccelGroup </em>accel_group;</p><p>// Create a GtkAccelGroup and add it to the window.\n  accel_group = gtk_accel_group_new ();\n  gtk_window_add_accel_group (GTK_WINDOW (window), accel_group);</p><p>// Create the menu item using the convenience function.\n  save_item = gtk_menu_item_new_with_label (\"Save\");\n  gtk_widget_show (save_item);\n  gtk_container_add (GTK_CONTAINER (menu), save_item);</p><p>// Now add the accelerator to the GtkMenuItem. Note that since we\n  // called <span data-xref=\"Gtk.MenuItem.new_with_label\"/> to create the GtkMenuItem\n  // the GtkAccelLabel is automatically set up to display the\n  // GtkMenuItem accelerators. We just need to make sure we use\n  // GTK_ACCEL_VISIBLE here.\n  gtk_widget_add_accelerator (save_item, \"activate\", accel_group,\n                              GDK_KEY_s, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "label"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>The <span data-xref=\"Gtk.AccelLabel\"/> widget is a subclass of <span data-xref=\"Gtk.Label\"/> that also displays an\naccelerator key on the right of the label text, e.g. \u201cCtl+S\u201d.\nIt is commonly used in menus to show the keyboard short-cuts for commands.</p><p>The accelerator key to display is not set explicitly.\nInstead, the <span data-xref=\"Gtk.AccelLabel\"/> displays the accelerators which have been added to\na particular widget. This widget is set by calling\n<span data-xref=\"Gtk.AccelLabel.set_accel_widget\"/>.</p><p>For example, a <span data-xref=\"Gtk.MenuItem\"/> widget may have an accelerator added to emit the\n\u201cactivate\u201d signal when the \u201cCtl+S\u201d key combination is pressed.\nA <span data-xref=\"Gtk.AccelLabel\"/> is created and added to the <span data-xref=\"Gtk.MenuItem\"/>, and\n<span data-xref=\"Gtk.AccelLabel.set_accel_widget\"/> is called with the <span data-xref=\"Gtk.MenuItem\"/> as the\nsecond argument. The <span data-xref=\"Gtk.AccelLabel\"/> will now display \u201cCtl+S\u201d after its label.</p><p>Note that creating a <span data-xref=\"Gtk.MenuItem\"/> with <span data-xref=\"Gtk.MenuItem.new_with_label\"/> (or\none of the similar functions for <span data-xref=\"Gtk.CheckMenuItem\"/> and <span data-xref=\"Gtk.RadioMenuItem\"/>)\nautomatically adds a <span data-xref=\"Gtk.AccelLabel\"/> to the <span data-xref=\"Gtk.MenuItem\"/> and calls\n<span data-xref=\"Gtk.AccelLabel.set_accel_widget\"/> to set it up for you.</p><p>A <span data-xref=\"Gtk.AccelLabel\"/> will only display accelerators which have <span data-xref=\"Gtk.AccelFlags\"/>.visible\nset (see <span data-xref=\"Gtk.AccelFlags\"/>).\nA <span data-xref=\"Gtk.AccelLabel\"/> can display multiple accelerators and even signal names,\nthough it is almost always used to display just one accelerator key.</p><h2>Creating a simple menu item with an accelerator key.</h2><p>|[<!-- language=\"C\" -->\n  GtkWidget <em>save_item;\n  GtkAccelGroup </em>accel_group;</p><p>// Create a GtkAccelGroup and add it to the window.\n  accel_group = gtk_accel_group_new ();\n  gtk_window_add_accel_group (GTK_WINDOW (window), accel_group);</p><p>// Create the menu item using the convenience function.\n  save_item = gtk_menu_item_new_with_label (\"Save\");\n  gtk_widget_show (save_item);\n  gtk_container_add (GTK_CONTAINER (menu), save_item);</p><p>// Now add the accelerator to the GtkMenuItem. Note that since we\n  // called <span data-xref=\"Gtk.MenuItem.new_with_label\"/> to create the GtkMenuItem\n  // the GtkAccelLabel is automatically set up to display the\n  // GtkMenuItem accelerators. We just need to make sure we use\n  // GTK_ACCEL_VISIBLE here.\n  gtk_widget_add_accelerator (save_item, \"activate\", accel_group,\n                              GDK_KEY_s, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);\n]|</p>",
     "kind": "class",
     "methods": [
         {
@@ -82,7 +70,7 @@
             }
         },
         {
-            "doc": "<p>Manually sets a keyval and modifier mask as the accelerator rendered\nby <code>accel_label</code>.</p><p>If a keyval and modifier are explicitly set then these values are\nused regardless of any associated accel closure or widget.</p><p>Providing an <code>accelerator_key</code> of 0 removes the manual setting.</p>",
+            "doc": "<p>Manually sets a keyval and modifier mask as the accelerator rendered\nby <pre>accel_label</pre>.</p><p>If a keyval and modifier are explicitly set then these values are\nused regardless of any associated accel closure or widget.</p><p>Providing an <pre>accelerator_key</pre> of 0 removes the manual setting.</p>",
             "kind": "method",
             "name": "set_accel",
             "parameters": [
@@ -134,8 +122,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "AccelLabel",
     "properties": [

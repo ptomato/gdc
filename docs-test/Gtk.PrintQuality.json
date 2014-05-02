@@ -1,0 +1,27 @@
+{
+    "doc": "<p>See also <span data-xref=\"Gtk.PrintSettings.set_quality\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Low quality.</p>",
+            "kind": "default",
+            "name": "low"
+        },
+        {
+            "doc": "<p>Normal quality.</p>",
+            "kind": "default",
+            "name": "normal"
+        },
+        {
+            "doc": "<p>High quality.</p>",
+            "kind": "default",
+            "name": "high"
+        },
+        {
+            "doc": "<p>Draft quality.</p>",
+            "kind": "default",
+            "name": "draft"
+        }
+    ],
+    "name": "PrintQuality"
+}

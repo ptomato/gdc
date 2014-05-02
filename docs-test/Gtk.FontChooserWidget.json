@@ -11,22 +11,8 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.FontChooserWidget\"/> widget lists the available fonts,\nstyles and sizes, allowing the user to select a font. It is\nused in the <span data-xref=\"Gtk.FontChooserDialog\"/> widget to provide a\ndialog box for selecting fonts.</p><p>To set the font which is initially selected, use\n<span data-xref=\"Gtk.FontChooser.set_font\"/> or <span data-xref=\"Gtk.FontChooser.set_font_desc\"/>.</p><p>To get the selected font use <span data-xref=\"Gtk.FontChooser.get_font\"/> or\n<span data-xref=\"Gtk.FontChooser.get_font_desc\"/>.</p><p>To change the text which is shown in the preview area, use\n<span data-xref=\"Gtk.FontChooser.set_preview_text\"/>.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "FontChooserWidget",
     "properties": [],
     "signals": [],

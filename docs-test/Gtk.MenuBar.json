@@ -10,7 +10,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuBar\"/> and populates it with menu items\nand submenus according to <code>model</code>.</p><p>The created menu items are connected to actions found in the\n<span data-xref=\"Gtk.ApplicationWindow\"/> to which the menu bar belongs - typically\nby means of being contained within the #GtkApplicationWindows\nwidget hierarchy.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuBar\"/> and populates it with menu items\nand submenus according to <pre>model</pre>.</p><p>The created menu items are connected to actions found in the\n<span data-xref=\"Gtk.ApplicationWindow\"/> to which the menu bar belongs - typically\nby means of being contained within the #GtkApplicationWindows\nwidget hierarchy.</p>",
             "kind": "constructor",
             "name": "new_from_model",
             "parameters": [
@@ -27,18 +27,6 @@
         }
     ],
     "doc": "<p>The <span data-xref=\"Gtk.MenuBar\"/> is a subclass of <span data-xref=\"Gtk.MenuShell\"/> which contains one or\nmore #GtkMenuItems. The result is a standard menu bar which can hold\nmany menu items.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "menu_shell"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -90,8 +78,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "MenuBar",
     "properties": [

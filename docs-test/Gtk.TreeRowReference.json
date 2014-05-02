@@ -1,0 +1,183 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a row reference based on <pre>path</pre>.</p><p>This reference will keep pointing to the node pointed to\nby <pre>path</pre>, so long as it exists. Any changes that occur on <pre>model</pre> are\npropagated, and the path is updated appropriately. If\n<pre>path</pre> isn\u2019t a valid path in <pre>model</pre>, then <pre>null</pre> is returned.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "model",
+                    "direction": "in",
+                    "type": "Gtk.TreeModel"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.TreeRowReference"
+            }
+        },
+        {
+            "doc": "<p>You do not need to use this function.</p><p>Creates a row reference based on <pre>path</pre>.</p><p>This reference will keep pointing to the node pointed to\nby <pre>path</pre>, so long as it exists. If <pre>path</pre> isn\u2019t a valid\npath in <pre>model</pre>, then <pre>null</pre> is returned. However, unlike\nreferences created with <span data-xref=\"Gtk.TreeRowReference.new\"/>, it\ndoes not listen to the model for changes. The creator of\nthe row reference must do this explicitly using\n<span data-xref=\"Gtk.tree_row_reference_inserted\"/>, <span data-xref=\"Gtk.tree_row_reference_deleted\"/>,\n<span data-xref=\"Gtk.tree_row_reference_reordered\"/>.</p><p>These functions must be called exactly once per proxy when the\ncorresponding signal on the model is emitted. This single call\nupdates all row references for that proxy. Since built-in GTK+\nobjects like <span data-xref=\"Gtk.TreeView\"/> already use this mechanism internally,\nusing them as the proxy object will produce unpredictable results.\nFurther more, passing the same object as <pre>model</pre> and <pre>proxy</pre>\ndoesn\u2019t work for reasons of internal implementation.</p><p>This type of row reference is primarily meant by structures that\nneed to carefully monitor exactly when a row reference updates\nitself, and is not generally needed by most applications.</p>",
+            "kind": "constructor",
+            "name": "new_proxy",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "proxy",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "model",
+                    "direction": "in",
+                    "type": "Gtk.TreeModel"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.TreeRowReference"
+            }
+        }
+    ],
+    "doc": "<p>A GtkTreeRowReference tracks model changes so that it always refers to the\nsame row (a <span data-xref=\"Gtk.TreePath\"/> refers to a position, not a fixed row). Create a\nnew GtkTreeRowReference with <span data-xref=\"Gtk.TreeRowReference.new\"/>.</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Copies a <span data-xref=\"Gtk.TreeRowReference\"/>.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TreeRowReference"
+            }
+        },
+        {
+            "doc": "<p>Free\u2019s <pre>reference</pre>. <pre>reference</pre> may be <pre>null</pre></p>",
+            "kind": "method",
+            "name": "free",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the model that the row reference is monitoring.</p>",
+            "kind": "method",
+            "name": "get_model",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TreeModel"
+            }
+        },
+        {
+            "doc": "<p>Returns a path that the row reference currently points to,\nor <pre>null</pre> if the path pointed to is no longer valid.</p>",
+            "kind": "method",
+            "name": "get_path",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TreePath"
+            }
+        },
+        {
+            "doc": "<p>Returns <pre>true</pre> if the <pre>reference</pre> is non-<pre>null</pre> and refers to\na current valid path.</p>",
+            "kind": "method",
+            "name": "valid",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Lets a set of row reference created by\n<span data-xref=\"Gtk.TreeRowReference.new_proxy\"/> know that the\nmodel emitted the <span data-xref=\"Gtk.TreeModel-row-deleted\"/> signal.</p>",
+            "kind": "function",
+            "name": "deleted",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "proxy",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Lets a set of row reference created by\n<span data-xref=\"Gtk.TreeRowReference.new_proxy\"/> know that the\nmodel emitted the <span data-xref=\"Gtk.TreeModel-row-inserted\"/> signal.</p>",
+            "kind": "function",
+            "name": "inserted",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "proxy",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Lets a set of row reference created by\n<span data-xref=\"Gtk.TreeRowReference.new_proxy\"/> know that the\nmodel emitted the <span data-xref=\"Gtk.TreeModel-rows-reordered\"/> signal.</p>",
+            "kind": "function",
+            "name": "reordered",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "proxy",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TreeIter"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "new_order",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "TreeRowReference"
+}

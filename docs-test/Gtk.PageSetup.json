@@ -10,7 +10,7 @@
             }
         },
         {
-            "doc": "<p>Reads the page setup from the file <code>file_name</code>. Returns a\nnew <span data-xref=\"Gtk.PageSetup\"/> object with the restored page setup,\nor <code>null</code> if an error occurred. See <span data-xref=\"Gtk.PageSetup.to_file\"/>.</p>",
+            "doc": "<p>Reads the page setup from the file <pre>file_name</pre>. Returns a\nnew <span data-xref=\"Gtk.PageSetup\"/> object with the restored page setup,\nor <pre>null</pre> if an error occurred. See <span data-xref=\"Gtk.PageSetup.to_file\"/>.</p>",
             "kind": "constructor",
             "name": "new_from_file",
             "parameters": [
@@ -26,7 +26,7 @@
             }
         },
         {
-            "doc": "<p>Reads the page setup from the group <code>group_name</code> in the key file\n<code>key_file</code>. Returns a new <span data-xref=\"Gtk.PageSetup\"/> object with the restored\npage setup, or <code>null</code> if an error occurred.</p>",
+            "doc": "<p>Reads the page setup from the group <pre>group_name</pre> in the key file\n<pre>key_file</pre>. Returns a new <span data-xref=\"Gtk.PageSetup\"/> object with the restored\npage setup, or <pre>null</pre> if an error occurred.</p>",
             "kind": "constructor",
             "name": "new_from_key_file",
             "parameters": [
@@ -48,8 +48,7 @@
             }
         }
     ],
-    "doc": "<p>A GtkPageSetup object stores the page size, orientation and margins.\nThe idea is that you can get one of these from the page setup dialog\nand then pass it to the <span data-xref=\"Gtk.PrintOperation\"/> when printing.\nThe benefit of splitting this out of the <span data-xref=\"Gtk.PrintSettings\"/> is that\nthese affect the actual layout of the page, and thus need to be set\nlong before user prints.</p><h2>Margins ## {#print-margins}</h2>\n<p>The margins specified in this object are the \u201cprint margins\u201d, i.e. the\nparts of the page that the printer cannot print on. These are different\nfrom the layout margins that a word processor uses; they are typically\nused to determine the minimal size for the layout\nmargins.</p><p>To obtain a <span data-xref=\"Gtk.PageSetup\"/> use <span data-xref=\"Gtk.PageSetup.new\"/> to get the defaults,\nor use <span data-xref=\"Gtk.print_run_page_setup_dialog\"/> to show the page setup dialog\nand receive the resulting page setup.</p><h2>A page setup dialog</h2><p>|[&lt;!-- language=\"C\" --&gt;\nstatic GtkPrintSettings <em>settings = NULL;\nstatic GtkPageSetup </em>page_setup = NULL;</p><p>static void\ndo_page_setup (void)\n{\n  GtkPageSetup *new_page_setup;</p><p>if (settings == NULL)\n    settings = gtk_print_settings_new ();</p><p>new_page_setup = gtk_print_run_page_setup_dialog (GTK_WINDOW (main_window),\n                                                    page_setup, settings);</p><p>if (page_setup)\n    g_object_unref (page_setup);</p><p>page_setup = new_page_setup;\n}\n]|</p><p>Printing support was added in GTK+ 2.10.</p>",
-    "fields": [],
+    "doc": "<p>A GtkPageSetup object stores the page size, orientation and margins.\nThe idea is that you can get one of these from the page setup dialog\nand then pass it to the <span data-xref=\"Gtk.PrintOperation\"/> when printing.\nThe benefit of splitting this out of the <span data-xref=\"Gtk.PrintSettings\"/> is that\nthese affect the actual layout of the page, and thus need to be set\nlong before user prints.</p><h2>Margins ## {#print-margins}</h2>\n<p>The margins specified in this object are the \u201cprint margins\u201d, i.e. the\nparts of the page that the printer cannot print on. These are different\nfrom the layout margins that a word processor uses; they are typically\nused to determine the minimal size for the layout\nmargins.</p><p>To obtain a <span data-xref=\"Gtk.PageSetup\"/> use <span data-xref=\"Gtk.PageSetup.new\"/> to get the defaults,\nor use <span data-xref=\"Gtk.print_run_page_setup_dialog\"/> to show the page setup dialog\nand receive the resulting page setup.</p><h2>A page setup dialog</h2><p>|[<!-- language=\"C\" -->\nstatic GtkPrintSettings <em>settings = NULL;\nstatic GtkPageSetup </em>page_setup = NULL;</p><p>static void\ndo_page_setup (void)\n{\n  GtkPageSetup *new_page_setup;</p><p>if (settings == NULL)\n    settings = gtk_print_settings_new ();</p><p>new_page_setup = gtk_print_run_page_setup_dialog (GTK_WINDOW (main_window),\n                                                    page_setup, settings);</p><p>if (page_setup)\n    g_object_unref (page_setup);</p><p>page_setup = new_page_setup;\n}\n]|</p><p>Printing support was added in GTK+ 2.10.</p>",
     "kind": "class",
     "methods": [
         {
@@ -62,7 +61,7 @@
             }
         },
         {
-            "doc": "<p>Gets the bottom margin in units of <code>unit</code>.</p>",
+            "doc": "<p>Gets the bottom margin in units of <pre>unit</pre>.</p>",
             "kind": "method",
             "name": "get_bottom_margin",
             "parameters": [
@@ -78,7 +77,7 @@
             }
         },
         {
-            "doc": "<p>Gets the left margin in units of <code>unit</code>.</p>",
+            "doc": "<p>Gets the left margin in units of <pre>unit</pre>.</p>",
             "kind": "method",
             "name": "get_left_margin",
             "parameters": [
@@ -103,7 +102,7 @@
             }
         },
         {
-            "doc": "<p>Returns the page height in units of <code>unit</code>.</p><p>Note that this function takes orientation and\nmargins into consideration.\nSee <span data-xref=\"Gtk.PageSetup.get_paper_height\"/>.</p>",
+            "doc": "<p>Returns the page height in units of <pre>unit</pre>.</p><p>Note that this function takes orientation and\nmargins into consideration.\nSee <span data-xref=\"Gtk.PageSetup.get_paper_height\"/>.</p>",
             "kind": "method",
             "name": "get_page_height",
             "parameters": [
@@ -119,7 +118,7 @@
             }
         },
         {
-            "doc": "<p>Returns the page width in units of <code>unit</code>.</p><p>Note that this function takes orientation and\nmargins into consideration.\nSee <span data-xref=\"Gtk.PageSetup.get_paper_width\"/>.</p>",
+            "doc": "<p>Returns the page width in units of <pre>unit</pre>.</p><p>Note that this function takes orientation and\nmargins into consideration.\nSee <span data-xref=\"Gtk.PageSetup.get_paper_width\"/>.</p>",
             "kind": "method",
             "name": "get_page_width",
             "parameters": [
@@ -135,7 +134,7 @@
             }
         },
         {
-            "doc": "<p>Returns the paper height in units of <code>unit</code>.</p><p>Note that this function takes orientation, but\nnot margins into consideration.\nSee <span data-xref=\"Gtk.PageSetup.get_page_height\"/>.</p>",
+            "doc": "<p>Returns the paper height in units of <pre>unit</pre>.</p><p>Note that this function takes orientation, but\nnot margins into consideration.\nSee <span data-xref=\"Gtk.PageSetup.get_page_height\"/>.</p>",
             "kind": "method",
             "name": "get_paper_height",
             "parameters": [
@@ -160,7 +159,7 @@
             }
         },
         {
-            "doc": "<p>Returns the paper width in units of <code>unit</code>.</p><p>Note that this function takes orientation, but\nnot margins into consideration.\nSee <span data-xref=\"Gtk.PageSetup.get_page_width\"/>.</p>",
+            "doc": "<p>Returns the paper width in units of <pre>unit</pre>.</p><p>Note that this function takes orientation, but\nnot margins into consideration.\nSee <span data-xref=\"Gtk.PageSetup.get_page_width\"/>.</p>",
             "kind": "method",
             "name": "get_paper_width",
             "parameters": [
@@ -176,7 +175,7 @@
             }
         },
         {
-            "doc": "<p>Gets the right margin in units of <code>unit</code>.</p>",
+            "doc": "<p>Gets the right margin in units of <pre>unit</pre>.</p>",
             "kind": "method",
             "name": "get_right_margin",
             "parameters": [
@@ -192,7 +191,7 @@
             }
         },
         {
-            "doc": "<p>Gets the top margin in units of <code>unit</code>.</p>",
+            "doc": "<p>Gets the top margin in units of <pre>unit</pre>.</p>",
             "kind": "method",
             "name": "get_top_margin",
             "parameters": [
@@ -208,7 +207,7 @@
             }
         },
         {
-            "doc": "<p>Reads the page setup from the file <code>file_name</code>.\nSee <span data-xref=\"Gtk.PageSetup.to_file\"/>.</p>",
+            "doc": "<p>Reads the page setup from the file <pre>file_name</pre>.\nSee <span data-xref=\"Gtk.PageSetup.to_file\"/>.</p>",
             "kind": "method",
             "name": "load_file",
             "parameters": [
@@ -224,7 +223,7 @@
             }
         },
         {
-            "doc": "<p>Reads the page setup from the group <code>group_name</code> in the key file\n<code>key_file</code>.</p>",
+            "doc": "<p>Reads the page setup from the group <pre>group_name</pre> in the key file\n<pre>key_file</pre>.</p>",
             "kind": "method",
             "name": "load_key_file",
             "parameters": [
@@ -382,7 +381,7 @@
             }
         },
         {
-            "doc": "<p>This function saves the information from <code>setup</code> to <code>file_name</code>.</p>",
+            "doc": "<p>This function saves the information from <pre>setup</pre> to <pre>file_name</pre>.</p>",
             "kind": "method",
             "name": "to_file",
             "parameters": [
@@ -398,7 +397,7 @@
             }
         },
         {
-            "doc": "<p>This function adds the page setup from <code>setup</code> to <code>key_file</code>.</p>",
+            "doc": "<p>This function adds the page setup from <pre>setup</pre> to <pre>key_file</pre>.</p>",
             "kind": "method",
             "name": "to_key_file",
             "parameters": [
@@ -418,8 +417,7 @@
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "PageSetup",
     "properties": [],

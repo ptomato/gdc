@@ -1,0 +1,42 @@
+{
+    "doc": "<p>Error codes for <span data-xref=\"Gtk.RecentManager\"/> operations</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>the URI specified does not exists in\n  the recently used resources list.</p>",
+            "kind": "default",
+            "name": "not_found"
+        },
+        {
+            "doc": "<p>the URI specified is not valid.</p>",
+            "kind": "default",
+            "name": "invalid_uri"
+        },
+        {
+            "doc": "<p>the supplied string is not\n  UTF-8 encoded.</p>",
+            "kind": "default",
+            "name": "invalid_encoding"
+        },
+        {
+            "doc": "<p>no application has registered\n  the specified item.</p>",
+            "kind": "default",
+            "name": "not_registered"
+        },
+        {
+            "doc": "<p>failure while reading the recently used\n  resources file.</p>",
+            "kind": "default",
+            "name": "read"
+        },
+        {
+            "doc": "<p>failure while writing the recently used\n  resources file.</p>",
+            "kind": "default",
+            "name": "write"
+        },
+        {
+            "doc": "<p>unspecified error.</p>",
+            "kind": "default",
+            "name": "unknown"
+        }
+    ],
+    "name": "RecentManagerError"
+}

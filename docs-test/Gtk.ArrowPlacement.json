@@ -1,0 +1,22 @@
+{
+    "doc": "<p>Used to specify the placement of scroll arrows in scrolling menus.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Place one arrow on each end of the menu.</p>",
+            "kind": "default",
+            "name": "both"
+        },
+        {
+            "doc": "<p>Place both arrows at the top of the menu.</p>",
+            "kind": "default",
+            "name": "start"
+        },
+        {
+            "doc": "<p>Place both arrows at the bottom of the menu.</p>",
+            "kind": "default",
+            "name": "end"
+        }
+    ],
+    "name": "ArrowPlacement"
+}

@@ -1,0 +1,17 @@
+{
+    "doc": "<p>A <span data-xref=\"Gtk.Window\"/> can be one of these types. Most things you\u2019d consider a\n\u201cwindow\u201d should have type #GTK_WINDOW_TOPLEVEL; windows with this type\nare managed by the window manager and have a frame by default (call\n<span data-xref=\"Gtk.Window.set_decorated\"/> to toggle the frame).  Windows with type</p>\n<h1>GTK_WINDOW_POPUP are ignored by the window manager; window manager</h1>\n<p>keybindings won\u2019t work on them, the window manager won\u2019t decorate the\nwindow with a frame, many GTK+ features that rely on the window\nmanager will not work (e.g. resize grips and\nmaximization/minimization). #GTK_WINDOW_POPUP is used to implement\nwidgets such as <span data-xref=\"Gtk.Menu\"/> or tooltips that you normally don\u2019t think of\nas windows per se. Nearly all windows should be #GTK_WINDOW_TOPLEVEL.\nIn particular, do not use #GTK_WINDOW_POPUP just to turn off\nthe window borders; use <span data-xref=\"Gtk.Window.set_decorated\"/> for that.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>A regular window, such as a dialog.</p>",
+            "kind": "default",
+            "name": "toplevel"
+        },
+        {
+            "doc": "<p>A special window such as a tooltip.</p>",
+            "kind": "default",
+            "name": "popup"
+        }
+    ],
+    "name": "WindowType"
+}

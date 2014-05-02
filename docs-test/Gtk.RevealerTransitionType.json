@@ -1,0 +1,37 @@
+{
+    "doc": "<p>These enumeration values describe the possible transitions\nwhen the child of a <span data-xref=\"Gtk.Revealer\"/> widget is shown or hidden.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>No transition</p>",
+            "kind": "default",
+            "name": "none"
+        },
+        {
+            "doc": "<p>Fade in</p>",
+            "kind": "default",
+            "name": "crossfade"
+        },
+        {
+            "doc": "<p>Slide in from the left</p>",
+            "kind": "default",
+            "name": "slide_right"
+        },
+        {
+            "doc": "<p>Slide in from the right</p>",
+            "kind": "default",
+            "name": "slide_left"
+        },
+        {
+            "doc": "<p>Slide in from the bottom</p>",
+            "kind": "default",
+            "name": "slide_up"
+        },
+        {
+            "doc": "<p>Slide in from the top</p>",
+            "kind": "default",
+            "name": "slide_down"
+        }
+    ],
+    "name": "RevealerTransitionType"
+}

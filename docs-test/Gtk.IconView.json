@@ -10,7 +10,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.IconView\"/> widget using the\nspecified <code>area</code> to layout cells inside the icons.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.IconView\"/> widget using the\nspecified <pre>area</pre> to layout cells inside the icons.</p>",
             "kind": "constructor",
             "name": "new_with_area",
             "parameters": [
@@ -26,7 +26,7 @@
             }
         },
         {
-            "doc": "<p>Creates a new <span data-xref=\"Gtk.IconView\"/> widget with the model <code>model</code>.</p>",
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.IconView\"/> widget with the model <pre>model</pre>.</p>",
             "kind": "constructor",
             "name": "new_with_model",
             "parameters": [
@@ -43,18 +43,6 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.IconView\"/> provides an alternative view on a <span data-xref=\"Gtk.TreeModel\"/>.\nIt displays the model as a grid of icons with labels. Like\n<span data-xref=\"Gtk.TreeView\"/>, it allows to select one or multiple items\n(depending on the selection mode, see <span data-xref=\"Gtk.IconView.set_selection_mode\"/>).\nIn addition to selection with the arrow keys, <span data-xref=\"Gtk.IconView\"/> supports\nrubberband selection, which is controlled by dragging the pointer.</p><p>Note that if the tree model is backed by an actual tree store (as\nopposed to a flat list where the mapping to icons is obvious),\n<span data-xref=\"Gtk.IconView\"/> will only display the first level of the tree and\nignore the tree\u2019s branches.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
     "methods": [
         {
@@ -92,7 +80,7 @@
             }
         },
         {
-            "doc": "<p>Creates a #cairo_surface_t representation of the item at <code>path</code>.\nThis image is used for a drag icon.</p>",
+            "doc": "<p>Creates a #cairo_surface_t representation of the item at <pre>path</pre>.\nThis image is used for a drag icon.</p>",
             "kind": "method",
             "name": "create_drag_icon",
             "parameters": [
@@ -108,7 +96,7 @@
             }
         },
         {
-            "doc": "<p>Turns <code>icon_view</code> into a drop destination for automatic DND. Calling this\nmethod sets <span data-xref=\"Gtk.IconView-reorderable\"/> to <code>false</code>.</p>",
+            "doc": "<p>Turns <pre>icon_view</pre> into a drop destination for automatic DND. Calling this\nmethod sets <span data-xref=\"Gtk.IconView-reorderable\"/> to <pre>false</pre>.</p>",
             "kind": "method",
             "name": "enable_model_drag_dest",
             "parameters": [
@@ -136,7 +124,7 @@
             }
         },
         {
-            "doc": "<p>Turns <code>icon_view</code> into a drag source for automatic DND. Calling this\nmethod sets <span data-xref=\"Gtk.IconView-reorderable\"/> to <code>false</code>.</p>",
+            "doc": "<p>Turns <pre>icon_view</pre> into a drag source for automatic DND. Calling this\nmethod sets <span data-xref=\"Gtk.IconView-reorderable\"/> to <pre>false</pre>.</p>",
             "kind": "method",
             "name": "enable_model_drag_source",
             "parameters": [
@@ -179,7 +167,7 @@
             }
         },
         {
-            "doc": "<p>Fills the bounding rectangle in widget coordinates for the cell specified by\n<code>path</code> and <code>cell</code>. If <code>cell</code> is <code>null</code> the main cell area is used.</p><p>This function is only valid if <code>icon_view</code> is realized.</p>",
+            "doc": "<p>Fills the bounding rectangle in widget coordinates for the cell specified by\n<pre>path</pre> and <pre>cell</pre>. If <pre>cell</pre> is <pre>null</pre> the main cell area is used.</p><p>This function is only valid if <pre>icon_view</pre> is realized.</p>",
             "kind": "method",
             "name": "get_cell_rect",
             "parameters": [
@@ -225,7 +213,7 @@
             }
         },
         {
-            "doc": "<p>Fills in <code>path</code> and <code>cell</code> with the current cursor path and cell.\nIf the cursor isn\u2019t currently set, then <em><code>path</code> will be <code>null</code>.\nIf no cell currently has focus, then </em><code>cell</code> will be <code>null</code>.</p><p>The returned <span data-xref=\"Gtk.TreePath\"/> must be freed with <span data-xref=\"Gtk.TreePath.free\"/>.</p>",
+            "doc": "<p>Fills in <pre>path</pre> and <pre>cell</pre> with the current cursor path and cell.\nIf the cursor isn\u2019t currently set, then <em><pre>path</pre> will be <pre>null</pre>.\nIf no cell currently has focus, then </em><pre>cell</pre> will be <pre>null</pre>.</p><p>The returned <span data-xref=\"Gtk.TreePath\"/> must be freed with <span data-xref=\"Gtk.TreePath.free\"/>.</p>",
             "kind": "method",
             "name": "get_cursor",
             "parameters": [
@@ -303,7 +291,7 @@
             }
         },
         {
-            "doc": "<p>Finds the path at the point (<code>x</code>, <code>y</code>), relative to bin_window coordinates.\nIn contrast to <span data-xref=\"Gtk.IconView.get_path_at_pos\"/>, this function also\nobtains the cell at the specified position. The returned path should\nbe freed with <span data-xref=\"Gtk.TreePath.free\"/>.\nSee <span data-xref=\"Gtk.IconView.convert_widget_to_bin_window_coords\"/> for converting\nwidget coordinates to bin_window coordinates.</p>",
+            "doc": "<p>Finds the path at the point (<pre>x</pre>, <pre>y</pre>), relative to bin_window coordinates.\nIn contrast to <span data-xref=\"Gtk.IconView.get_path_at_pos\"/>, this function also\nobtains the cell at the specified position. The returned path should\nbe freed with <span data-xref=\"Gtk.TreePath.free\"/>.\nSee <span data-xref=\"Gtk.IconView.convert_widget_to_bin_window_coords\"/> for converting\nwidget coordinates to bin_window coordinates.</p>",
             "kind": "method",
             "name": "get_item_at_pos",
             "parameters": [
@@ -337,7 +325,7 @@
             }
         },
         {
-            "doc": "<p>Gets the column in which the item <code>path</code> is currently\ndisplayed. Column numbers start at 0.</p>",
+            "doc": "<p>Gets the column in which the item <pre>path</pre> is currently\ndisplayed. Column numbers start at 0.</p>",
             "kind": "method",
             "name": "get_item_column",
             "parameters": [
@@ -371,7 +359,7 @@
             }
         },
         {
-            "doc": "<p>Gets the row in which the item <code>path</code> is currently\ndisplayed. Row numbers start at 0.</p>",
+            "doc": "<p>Gets the row in which the item <pre>path</pre> is currently\ndisplayed. Row numbers start at 0.</p>",
             "kind": "method",
             "name": "get_item_row",
             "parameters": [
@@ -405,7 +393,7 @@
             }
         },
         {
-            "doc": "<p>Returns the column with markup text for <code>icon_view</code>.</p>",
+            "doc": "<p>Returns the column with markup text for <pre>icon_view</pre>.</p>",
             "kind": "method",
             "name": "get_markup_column",
             "parameters": [],
@@ -414,7 +402,7 @@
             }
         },
         {
-            "doc": "<p>Returns the model the <span data-xref=\"Gtk.IconView\"/> is based on.  Returns <code>null</code> if the\nmodel is unset.</p>",
+            "doc": "<p>Returns the model the <span data-xref=\"Gtk.IconView\"/> is based on.  Returns <pre>null</pre> if the\nmodel is unset.</p>",
             "kind": "method",
             "name": "get_model",
             "parameters": [],
@@ -423,7 +411,7 @@
             }
         },
         {
-            "doc": "<p>Finds the path at the point (<code>x</code>, <code>y</code>), relative to bin_window coordinates.\nSee <span data-xref=\"Gtk.IconView.get_item_at_pos\"/>, if you are also interested in\nthe cell at the specified position.\nSee <span data-xref=\"Gtk.IconView.convert_widget_to_bin_window_coords\"/> for converting\nwidget coordinates to bin_window coordinates.</p>",
+            "doc": "<p>Finds the path at the point (<pre>x</pre>, <pre>y</pre>), relative to bin_window coordinates.\nSee <span data-xref=\"Gtk.IconView.get_item_at_pos\"/>, if you are also interested in\nthe cell at the specified position.\nSee <span data-xref=\"Gtk.IconView.convert_widget_to_bin_window_coords\"/> for converting\nwidget coordinates to bin_window coordinates.</p>",
             "kind": "method",
             "name": "get_path_at_pos",
             "parameters": [
@@ -445,7 +433,7 @@
             }
         },
         {
-            "doc": "<p>Returns the column with pixbufs for <code>icon_view</code>.</p>",
+            "doc": "<p>Returns the column with pixbufs for <pre>icon_view</pre>.</p>",
             "kind": "method",
             "name": "get_pixbuf_column",
             "parameters": [],
@@ -472,7 +460,7 @@
             }
         },
         {
-            "doc": "<p>Creates a list of paths of all selected items. Additionally, if you are\nplanning on modifying the model after calling this function, you may\nwant to convert the returned list into a list of #GtkTreeRowReferences.\nTo do this, you can use <span data-xref=\"Gtk.TreeRowReference.new\"/>.</p><p>To free the return value, use:\n|[&lt;!-- language=\"C\" --&gt;\ng_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);\n]|</p>",
+            "doc": "<p>Creates a list of paths of all selected items. Additionally, if you are\nplanning on modifying the model after calling this function, you may\nwant to convert the returned list into a list of #GtkTreeRowReferences.\nTo do this, you can use <span data-xref=\"Gtk.TreeRowReference.new\"/>.</p><p>To free the return value, use:\n|[<!-- language=\"C\" -->\ng_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);\n]|</p>",
             "kind": "method",
             "name": "get_selected_items",
             "parameters": [],
@@ -481,7 +469,7 @@
             }
         },
         {
-            "doc": "<p>Gets the selection mode of the <code>icon_view</code>.</p>",
+            "doc": "<p>Gets the selection mode of the <pre>icon_view</pre>.</p>",
             "kind": "method",
             "name": "get_selection_mode",
             "parameters": [],
@@ -499,7 +487,7 @@
             }
         },
         {
-            "doc": "<p>Returns the column with text for <code>icon_view</code>.</p>",
+            "doc": "<p>Returns the column with text for <pre>icon_view</pre>.</p>",
             "kind": "method",
             "name": "get_text_column",
             "parameters": [],
@@ -508,7 +496,7 @@
             }
         },
         {
-            "doc": "<p>Returns the column of <code>icon_view</code>\u2019s model which is being used for\ndisplaying tooltips on <code>icon_view</code>\u2019s rows.</p>",
+            "doc": "<p>Returns the column of <pre>icon_view</pre>\u2019s model which is being used for\ndisplaying tooltips on <pre>icon_view</pre>\u2019s rows.</p>",
             "kind": "method",
             "name": "get_tooltip_column",
             "parameters": [],
@@ -517,7 +505,7 @@
             }
         },
         {
-            "doc": "<p>This function is supposed to be used in a <span data-xref=\"Gtk.Widget-query-tooltip\"/>\nsignal handler for <span data-xref=\"Gtk.IconView\"/>.  The <code>x</code>, <code>y</code> and <code>keyboard_tip</code> values\nwhich are received in the signal handler, should be passed to this\nfunction without modification.</p><p>The return value indicates whether there is an icon view item at the given\ncoordinates (<code>true</code>) or not (<code>false</code>) for mouse tooltips. For keyboard\ntooltips the item returned will be the cursor item. When <code>true</code>, then any of\n<code>model</code>, <code>path</code> and <code>iter</code> which have been provided will be set to point to\nthat row and the corresponding model. <code>x</code> and <code>y</code> will always be converted\nto be relative to <code>icon_view</code>\u2019s bin_window if @keyboard_tooltip is <code>false</code>.</p>",
+            "doc": "<p>This function is supposed to be used in a <span data-xref=\"Gtk.Widget-query-tooltip\"/>\nsignal handler for <span data-xref=\"Gtk.IconView\"/>.  The <pre>x</pre>, <pre>y</pre> and <pre>keyboard_tip</pre> values\nwhich are received in the signal handler, should be passed to this\nfunction without modification.</p><p>The return value indicates whether there is an icon view item at the given\ncoordinates (<pre>true</pre>) or not (<pre>false</pre>) for mouse tooltips. For keyboard\ntooltips the item returned will be the cursor item. When <pre>true</pre>, then any of\n<pre>model</pre>, <pre>path</pre> and <pre>iter</pre> which have been provided will be set to point to\nthat row and the corresponding model. <pre>x</pre> and <pre>y</pre> will always be converted\nto be relative to <pre>icon_view</pre>\u2019s bin_window if @keyboard_tooltip is <pre>false</pre>.</p>",
             "kind": "method",
             "name": "get_tooltip_context",
             "parameters": [
@@ -563,7 +551,7 @@
             }
         },
         {
-            "doc": "<p>Sets <code>start_path</code> and <code>end_path</code> to be the first and last visible path.\nNote that there may be invisible paths in between.</p><p>Both paths should be freed with <span data-xref=\"Gtk.TreePath.free\"/> after use.</p>",
+            "doc": "<p>Sets <pre>start_path</pre> and <pre>end_path</pre> to be the first and last visible path.\nNote that there may be invisible paths in between.</p><p>Both paths should be freed with <span data-xref=\"Gtk.TreePath.free\"/> after use.</p>",
             "kind": "method",
             "name": "get_visible_range",
             "parameters": [
@@ -585,7 +573,7 @@
             }
         },
         {
-            "doc": "<p>Activates the item determined by <code>path</code>.</p>",
+            "doc": "<p>Activates the item determined by <pre>path</pre>.</p>",
             "kind": "method",
             "name": "item_activated",
             "parameters": [
@@ -601,7 +589,7 @@
             }
         },
         {
-            "doc": "<p>Returns <code>true</code> if the icon pointed to by <code>path</code> is currently\nselected. If <code>path</code> does not point to a valid location, <code>false</code> is returned.</p>",
+            "doc": "<p>Returns <pre>true</pre> if the icon pointed to by <pre>path</pre> is currently\nselected. If <pre>path</pre> does not point to a valid location, <pre>false</pre> is returned.</p>",
             "kind": "method",
             "name": "path_is_selected",
             "parameters": [
@@ -617,7 +605,7 @@
             }
         },
         {
-            "doc": "<p>Moves the alignments of <code>icon_view</code> to the position specified by <code>path</code>.\n<code>row_align</code> determines where the row is placed, and <code>col_align</code> determines\nwhere @column is placed.  Both are expected to be between 0.0 and 1.0.\n0.0 means left/top alignment, 1.0 means right/bottom alignment, 0.5 means\ncenter.</p><p>If <code>use_align</code> is <code>false</code>, then the alignment arguments are ignored, and the\ntree does the minimum amount of work to scroll the item onto the screen.\nThis means that the item will be scrolled to the edge closest to its current\nposition.  If the item is currently visible on the screen, nothing is done.</p><p>This function only works if the model is set, and <code>path</code> is a valid row on\nthe model. If the model changes before the <code>icon_view</code> is realized, the\ncentered path will be modified to reflect this change.</p>",
+            "doc": "<p>Moves the alignments of <pre>icon_view</pre> to the position specified by <pre>path</pre>.\n<pre>row_align</pre> determines where the row is placed, and <pre>col_align</pre> determines\nwhere @column is placed.  Both are expected to be between 0.0 and 1.0.\n0.0 means left/top alignment, 1.0 means right/bottom alignment, 0.5 means\ncenter.</p><p>If <pre>use_align</pre> is <pre>false</pre>, then the alignment arguments are ignored, and the\ntree does the minimum amount of work to scroll the item onto the screen.\nThis means that the item will be scrolled to the edge closest to its current\nposition.  If the item is currently visible on the screen, nothing is done.</p><p>This function only works if the model is set, and <pre>path</pre> is a valid row on\nthe model. If the model changes before the <pre>icon_view</pre> is realized, the\ncentered path will be modified to reflect this change.</p>",
             "kind": "method",
             "name": "scroll_to_path",
             "parameters": [
@@ -651,7 +639,7 @@
             }
         },
         {
-            "doc": "<p>Selects all the icons. <code>icon_view</code> must has its selection mode set\nto #GTK_SELECTION_MULTIPLE.</p>",
+            "doc": "<p>Selects all the icons. <pre>icon_view</pre> must has its selection mode set\nto #GTK_SELECTION_MULTIPLE.</p>",
             "kind": "method",
             "name": "select_all",
             "parameters": [],
@@ -660,7 +648,7 @@
             }
         },
         {
-            "doc": "<p>Selects the row at <code>path</code>.</p>",
+            "doc": "<p>Selects the row at <pre>path</pre>.</p>",
             "kind": "method",
             "name": "select_path",
             "parameters": [
@@ -730,7 +718,7 @@
             }
         },
         {
-            "doc": "<p>Sets the ::columns property which determines in how\nmany columns the icons are arranged. If <code>columns</code> is\n-1, the number of columns will be chosen automatically\nto fill the available area.</p>",
+            "doc": "<p>Sets the ::columns property which determines in how\nmany columns the icons are arranged. If <pre>columns</pre> is\n-1, the number of columns will be chosen automatically\nto fill the available area.</p>",
             "kind": "method",
             "name": "set_columns",
             "parameters": [
@@ -746,7 +734,7 @@
             }
         },
         {
-            "doc": "<p>Sets the current keyboard focus to be at <code>path</code>, and selects it.  This is\nuseful when you want to focus the user\u2019s attention on a particular item.\nIf <code>cell</code> is not <code>null</code>, then focus is given to the cell specified by\nit. Additionally, if <code>start_editing</code> is <code>true</code>, then editing should be\nstarted in the specified cell.</p><p>This function is often followed by <code>gtk_widget_grab_focus\n(icon_view)</code> in order to give keyboard focus to the widget.\nPlease note that editing can only happen when the widget is realized.</p>",
+            "doc": "<p>Sets the current keyboard focus to be at <pre>path</pre>, and selects it.  This is\nuseful when you want to focus the user\u2019s attention on a particular item.\nIf <pre>cell</pre> is not <pre>null</pre>, then focus is given to the cell specified by\nit. Additionally, if <pre>start_editing</pre> is <pre>true</pre>, then editing should be\nstarted in the specified cell.</p><p>This function is often followed by <code>gtk_widget_grab_focus\n(icon_view)</code> in order to give keyboard focus to the widget.\nPlease note that editing can only happen when the widget is realized.</p>",
             "kind": "method",
             "name": "set_cursor",
             "parameters": [
@@ -860,7 +848,7 @@
             }
         },
         {
-            "doc": "<p>Sets the column with markup information for <code>icon_view</code> to be\n<code>column</code>. The markup column must be of type #G_TYPE_STRING.\nIf the markup column is set to something, it overrides\nthe text column set by <span data-xref=\"Gtk.IconView.set_text_column\"/>.</p>",
+            "doc": "<p>Sets the column with markup information for <pre>icon_view</pre> to be\n<pre>column</pre>. The markup column must be of type #G_TYPE_STRING.\nIf the markup column is set to something, it overrides\nthe text column set by <span data-xref=\"Gtk.IconView.set_text_column\"/>.</p>",
             "kind": "method",
             "name": "set_markup_column",
             "parameters": [
@@ -876,7 +864,7 @@
             }
         },
         {
-            "doc": "<p>Sets the model for a <span data-xref=\"Gtk.IconView\"/>.\nIf the <code>icon_view</code> already has a model set, it will remove\nit before setting the new model.  If <code>model</code> is <code>null</code>, then\nit will unset the old model.</p>",
+            "doc": "<p>Sets the model for a <span data-xref=\"Gtk.IconView\"/>.\nIf the <pre>icon_view</pre> already has a model set, it will remove\nit before setting the new model.  If <pre>model</pre> is <pre>null</pre>, then\nit will unset the old model.</p>",
             "kind": "method",
             "name": "set_model",
             "parameters": [
@@ -892,7 +880,7 @@
             }
         },
         {
-            "doc": "<p>Sets the column with pixbufs for <code>icon_view</code> to be <code>column</code>. The pixbuf\ncolumn must be of type #GDK_TYPE_PIXBUF</p>",
+            "doc": "<p>Sets the column with pixbufs for <pre>icon_view</pre> to be <pre>column</pre>. The pixbuf\ncolumn must be of type #GDK_TYPE_PIXBUF</p>",
             "kind": "method",
             "name": "set_pixbuf_column",
             "parameters": [
@@ -908,7 +896,7 @@
             }
         },
         {
-            "doc": "<p>This function is a convenience function to allow you to reorder models that\nsupport the <span data-xref=\"Gtk.TreeDragSourceIface\"/> and the <span data-xref=\"Gtk.TreeDragDestIface\"/>.  Both\n<span data-xref=\"Gtk.TreeStore\"/> and <span data-xref=\"Gtk.ListStore\"/> support these.  If <code>reorderable</code> is <code>true</code>, then\nthe user can reorder the model by dragging and dropping rows.  The\ndeveloper can listen to these changes by connecting to the model's\nrow_inserted and row_deleted signals. The reordering is implemented by setting up\nthe icon view as a drag source and destination. Therefore, drag and\ndrop can not be used in a reorderable view for any other purpose.</p><p>This function does not give you any degree of control over the order -- any\nreordering is allowed.  If more control is needed, you should probably\nhandle drag and drop manually.</p>",
+            "doc": "<p>This function is a convenience function to allow you to reorder models that\nsupport the <span data-xref=\"Gtk.TreeDragSourceIface\"/> and the <span data-xref=\"Gtk.TreeDragDestIface\"/>.  Both\n<span data-xref=\"Gtk.TreeStore\"/> and <span data-xref=\"Gtk.ListStore\"/> support these.  If <pre>reorderable</pre> is <pre>true</pre>, then\nthe user can reorder the model by dragging and dropping rows.  The\ndeveloper can listen to these changes by connecting to the model's\nrow_inserted and row_deleted signals. The reordering is implemented by setting up\nthe icon view as a drag source and destination. Therefore, drag and\ndrop can not be used in a reorderable view for any other purpose.</p><p>This function does not give you any degree of control over the order -- any\nreordering is allowed.  If more control is needed, you should probably\nhandle drag and drop manually.</p>",
             "kind": "method",
             "name": "set_reorderable",
             "parameters": [
@@ -940,7 +928,7 @@
             }
         },
         {
-            "doc": "<p>Sets the selection mode of the <code>icon_view</code>.</p>",
+            "doc": "<p>Sets the selection mode of the <pre>icon_view</pre>.</p>",
             "kind": "method",
             "name": "set_selection_mode",
             "parameters": [
@@ -972,7 +960,7 @@
             }
         },
         {
-            "doc": "<p>Sets the column with text for <code>icon_view</code> to be <code>column</code>. The text\ncolumn must be of type #G_TYPE_STRING.</p>",
+            "doc": "<p>Sets the column with text for <pre>icon_view</pre> to be <pre>column</pre>. The text\ncolumn must be of type #G_TYPE_STRING.</p>",
             "kind": "method",
             "name": "set_text_column",
             "parameters": [
@@ -988,7 +976,7 @@
             }
         },
         {
-            "doc": "<p>Sets the tip area of <code>tooltip</code> to the area which <code>cell</code> occupies in\nthe item pointed to by <code>path</code>. See also <span data-xref=\"Gtk.Tooltip.set_tip_area\"/>.</p><p>See also <span data-xref=\"Gtk.IconView.set_tooltip_column\"/> for a simpler alternative.</p>",
+            "doc": "<p>Sets the tip area of <pre>tooltip</pre> to the area which <pre>cell</pre> occupies in\nthe item pointed to by <pre>path</pre>. See also <span data-xref=\"Gtk.Tooltip.set_tip_area\"/>.</p><p>See also <span data-xref=\"Gtk.IconView.set_tooltip_column\"/> for a simpler alternative.</p>",
             "kind": "method",
             "name": "set_tooltip_cell",
             "parameters": [
@@ -1016,7 +1004,7 @@
             }
         },
         {
-            "doc": "<p>If you only plan to have simple (text-only) tooltips on full items, you\ncan use this function to have <span data-xref=\"Gtk.IconView\"/> handle these automatically\nfor you. <code>column</code> should be set to the column in <code>icon_view</code>\u2019s model\ncontaining the tooltip texts, or -1 to disable this feature.</p><p>When enabled, <span data-xref=\"Gtk.Widget-has-tooltip\"/> will be set to <code>true</code> and\n<code>icon_view</code> will connect a <span data-xref=\"Gtk.Widget-query-tooltip\"/> signal handler.</p><p>Note that the signal handler sets the text with <span data-xref=\"Gtk.Tooltip.set_markup\"/>,\nso &amp;, &lt;, etc have to be escaped in the text.</p>",
+            "doc": "<p>If you only plan to have simple (text-only) tooltips on full items, you\ncan use this function to have <span data-xref=\"Gtk.IconView\"/> handle these automatically\nfor you. <pre>column</pre> should be set to the column in <pre>icon_view</pre>\u2019s model\ncontaining the tooltip texts, or -1 to disable this feature.</p><p>When enabled, <span data-xref=\"Gtk.Widget-has-tooltip\"/> will be set to <pre>true</pre> and\n<pre>icon_view</pre> will connect a <span data-xref=\"Gtk.Widget-query-tooltip\"/> signal handler.</p><p>Note that the signal handler sets the text with <span data-xref=\"Gtk.Tooltip.set_markup\"/>,\nso &amp;, &lt;, etc have to be escaped in the text.</p>",
             "kind": "method",
             "name": "set_tooltip_column",
             "parameters": [
@@ -1032,7 +1020,7 @@
             }
         },
         {
-            "doc": "<p>Sets the tip area of <code>tooltip</code> to be the area covered by the item at <code>path</code>.\nSee also <span data-xref=\"Gtk.IconView.set_tooltip_column\"/> for a simpler alternative.\nSee also <span data-xref=\"Gtk.Tooltip.set_tip_area\"/>.</p>",
+            "doc": "<p>Sets the tip area of <pre>tooltip</pre> to be the area covered by the item at <pre>path</pre>.\nSee also <span data-xref=\"Gtk.IconView.set_tooltip_column\"/> for a simpler alternative.\nSee also <span data-xref=\"Gtk.Tooltip.set_tip_area\"/>.</p>",
             "kind": "method",
             "name": "set_tooltip_item",
             "parameters": [
@@ -1063,7 +1051,7 @@
             }
         },
         {
-            "doc": "<p>Unselects the row at <code>path</code>.</p>",
+            "doc": "<p>Unselects the row at <pre>path</pre>.</p>",
             "kind": "method",
             "name": "unselect_path",
             "parameters": [
@@ -1079,7 +1067,7 @@
             }
         },
         {
-            "doc": "<p>Undoes the effect of <span data-xref=\"Gtk.IconView.enable_model_drag_dest\"/>. Calling this\nmethod sets <span data-xref=\"Gtk.IconView-reorderable\"/> to <code>false</code>.</p>",
+            "doc": "<p>Undoes the effect of <span data-xref=\"Gtk.IconView.enable_model_drag_dest\"/>. Calling this\nmethod sets <span data-xref=\"Gtk.IconView-reorderable\"/> to <pre>false</pre>.</p>",
             "kind": "method",
             "name": "unset_model_drag_dest",
             "parameters": [],
@@ -1088,15 +1076,14 @@
             }
         },
         {
-            "doc": "<p>Undoes the effect of <span data-xref=\"Gtk.IconView.enable_model_drag_source\"/>. Calling this\nmethod sets <span data-xref=\"Gtk.IconView-reorderable\"/> to <code>false</code>.</p>",
+            "doc": "<p>Undoes the effect of <span data-xref=\"Gtk.IconView.enable_model_drag_source\"/>. Calling this\nmethod sets <span data-xref=\"Gtk.IconView-reorderable\"/> to <pre>false</pre>.</p>",
             "kind": "method",
             "name": "unset_model_drag_source",
             "parameters": [],
             "retval": {
                 "type": "void"
             }
-        },
-        []
+        }
     ],
     "name": "IconView",
     "properties": [
@@ -1214,7 +1201,7 @@
             }
         },
         {
-            "doc": "<p>The ::item-activated signal is emitted when the method\n<span data-xref=\"Gtk.IconView.item_activated\"/> is called, when the user double\nclicks an item with the \"activate-on-single-click\" property set\nto <code>false</code>, or when the user single clicks an item when the\n\"activate-on-single-click\" property set to <code>true</code>. It is also\nemitted when a non-editable item is selected and one of the keys:\nSpace, Return or Enter is pressed.</p>",
+            "doc": "<p>The ::item-activated signal is emitted when the method\n<span data-xref=\"Gtk.IconView.item_activated\"/> is called, when the user double\nclicks an item with the \"activate-on-single-click\" property set\nto <pre>false</pre>, or when the user single clicks an item when the\n\"activate-on-single-click\" property set to <pre>true</pre>. It is also\nemitted when a non-editable item is selected and one of the keys:\nSpace, Return or Enter is pressed.</p>",
             "kind": "signal",
             "name": "item-activated",
             "parameters": [
@@ -1308,7 +1295,7 @@
             }
         },
         {
-            "doc": "<p>Activates the item determined by <code>path</code>.</p>",
+            "doc": "<p>Activates the item determined by <pre>path</pre>.</p>",
             "kind": "vfunc",
             "name": "item_activated",
             "parameters": [
@@ -1346,7 +1333,7 @@
             }
         },
         {
-            "doc": "<p>Selects all the icons. <code>icon_view</code> must has its selection mode set\nto #GTK_SELECTION_MULTIPLE.</p>",
+            "doc": "<p>Selects all the icons. <pre>icon_view</pre> must has its selection mode set\nto #GTK_SELECTION_MULTIPLE.</p>",
             "kind": "vfunc",
             "name": "select_all",
             "parameters": [],

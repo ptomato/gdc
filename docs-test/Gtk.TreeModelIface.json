@@ -1,0 +1,114 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "g_iface"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "row_changed"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "row_inserted"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "row_has_child_toggled"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "row_deleted"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "rows_reordered"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_flags"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_n_columns"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_column_type"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_iter"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_path"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_value"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "iter_next"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "iter_previous"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "iter_children"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "iter_has_child"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "iter_n_children"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "iter_nth_child"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "iter_parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "ref_node"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "unref_node"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "TreeModelIface"
+}

@@ -1,0 +1,27 @@
+{
+    "doc": "<p>A value of this type is returned by <span data-xref=\"Gtk.PrintOperation.run\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>An error has occured.</p>",
+            "kind": "default",
+            "name": "error"
+        },
+        {
+            "doc": "<p>The print settings should be stored.</p>",
+            "kind": "default",
+            "name": "apply"
+        },
+        {
+            "doc": "<p>The print operation has been canceled,\n    the print settings should not be stored.</p>",
+            "kind": "default",
+            "name": "cancel"
+        },
+        {
+            "doc": "<p>The print operation is not complete\n    yet. This value will only be returned when running asynchronously.</p>",
+            "kind": "default",
+            "name": "in_progress"
+        }
+    ],
+    "name": "PrintOperationResult"
+}

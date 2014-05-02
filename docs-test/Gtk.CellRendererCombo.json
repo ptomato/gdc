@@ -11,26 +11,12 @@
         }
     ],
     "doc": "<p><span data-xref=\"Gtk.CellRendererCombo\"/> renders text in a cell like <span data-xref=\"Gtk.CellRendererText\"/> from\nwhich it is derived. But while <span data-xref=\"Gtk.CellRendererText\"/> offers a simple entry to\nedit the text, <span data-xref=\"Gtk.CellRendererCombo\"/> offers a <span data-xref=\"Gtk.ComboBox\"/>\nwidget to edit the text. The values to display in the combo box are taken from\nthe tree model specified in the <span data-xref=\"Gtk.CellRendererCombo-model\"/> property.</p><p>The combo cell renderer takes care of adding a text cell renderer to the combo\nbox and sets it to display the column specified by its\n<span data-xref=\"Gtk.CellRendererCombo-text-column\"/> property. Further properties of the combo box\ncan be set in a handler for the <span data-xref=\"Gtk.CellRenderer-editing-started\"/> signal.</p><p>The <span data-xref=\"Gtk.CellRendererCombo\"/> cell renderer was added in GTK+ 2.6.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "CellRendererCombo",
     "properties": [
         {
-            "doc": "<p>If <code>true</code>, the cell renderer will include an entry and allow to enter\nvalues other than the ones in the popup list.</p>",
+            "doc": "<p>If <pre>true</pre>, the cell renderer will include an entry and allow to enter\nvalues other than the ones in the popup list.</p>",
             "kind": "property",
             "name": "has-entry",
             "type": "Boolean"
@@ -50,7 +36,7 @@
     ],
     "signals": [
         {
-            "doc": "<p>This signal is emitted each time after the user selected an item in\nthe combo box, either by using the mouse or the arrow keys.  Contrary\nto GtkComboBox, GtkCellRendererCombo::changed is not emitted for\nchanges made to a selected item in the entry.  The argument <code>new_iter</code>\ncorresponds to the newly selected item in the combo box and it is relative\nto the GtkTreeModel set via the model property on GtkCellRendererCombo.</p><p>Note that as soon as you change the model displayed in the tree view,\nthe tree view will immediately cease the editing operating.  This\nmeans that you most probably want to refrain from changing the model\nuntil the combo cell renderer emits the edited or editing_canceled signal.</p>",
+            "doc": "<p>This signal is emitted each time after the user selected an item in\nthe combo box, either by using the mouse or the arrow keys.  Contrary\nto GtkComboBox, GtkCellRendererCombo::changed is not emitted for\nchanges made to a selected item in the entry.  The argument <pre>new_iter</pre>\ncorresponds to the newly selected item in the combo box and it is relative\nto the GtkTreeModel set via the model property on GtkCellRendererCombo.</p><p>Note that as soon as you change the model displayed in the tree view,\nthe tree view will immediately cease the editing operating.  This\nmeans that you most probably want to refrain from changing the model\nuntil the combo cell renderer emits the edited or editing_canceled signal.</p>",
             "kind": "signal",
             "name": "changed",
             "parameters": [

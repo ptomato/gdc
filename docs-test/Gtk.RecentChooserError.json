@@ -1,0 +1,17 @@
+{
+    "doc": "<p>These identify the various errors that can occur while calling\n<span data-xref=\"Gtk.RecentChooser\"/> functions.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Indicates that a file does not exist</p>",
+            "kind": "default",
+            "name": "not_found"
+        },
+        {
+            "doc": "<p>Indicates a malformed URI</p>",
+            "kind": "default",
+            "name": "invalid_uri"
+        }
+    ],
+    "name": "RecentChooserError"
+}

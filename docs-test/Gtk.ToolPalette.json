@@ -10,23 +10,11 @@
             }
         }
     ],
-    "doc": "<p>A <span data-xref=\"Gtk.ToolPalette\"/> allows you to add #GtkToolItems to a palette-like\ncontainer with different categories and drag and drop support.</p><p>A <span data-xref=\"Gtk.ToolPalette\"/> is created with a call to <span data-xref=\"Gtk.ToolPalette.new\"/>.</p><h1>GtkToolItems cannot be added directly to a <span data-xref=\"Gtk.ToolPalette\"/> -</h1>\n<p>instead they are added to a <span data-xref=\"Gtk.ToolItemGroup\"/> which can than be added\nto a <span data-xref=\"Gtk.ToolPalette\"/>. To add a <span data-xref=\"Gtk.ToolItemGroup\"/> to a <span data-xref=\"Gtk.ToolPalette\"/>,\nuse <span data-xref=\"Gtk.Container.add\"/>.</p><p>|[&lt;!-- language=\"C\" --&gt;\nGtkWidget <em>palette, </em>group;\nGtkToolItem *item;</p><p>palette = gtk_tool_palette_new ();\ngroup = gtk_tool_item_group_new (_(\"Test Category\"));\ngtk_container_add (GTK_CONTAINER (palette), group);</p><p>item = gtk_tool_button_new_new (NULL, _(\"_Open\"));\ngtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (item), \"document-open\");\ngtk_tool_item_group_insert (GTK_TOOL_ITEM_GROUP (group), item, -1);\n]|</p><p>The easiest way to use drag and drop with <span data-xref=\"Gtk.ToolPalette\"/> is to call\n<span data-xref=\"Gtk.ToolPalette.add_drag_dest\"/> with the desired drag source @palette\nand the desired drag target @widget. Then <span data-xref=\"Gtk.ToolPalette.get_drag_item\"/>\ncan be used to get the dragged item in the <span data-xref=\"Gtk.Widget-drag-data-received\"/>\nsignal handler of the drag target.</p><p>|[&lt;!-- language=\"C\" --&gt;\nstatic void\npassive_canvas_drag_data_received (GtkWidget        <em>widget,\n                                   GdkDragContext   </em>context,\n                                   gint              x,\n                                   gint              y,\n                                   GtkSelectionData <em>selection,\n                                   guint             info,\n                                   guint             time,\n                                   gpointer          data)\n{\n  GtkWidget </em>palette;\n  GtkWidget *item;</p><p>// Get the dragged item\n  palette = gtk_widget_get_ancestor (gtk_drag_get_source_widget (context),\n                                     GTK_TYPE_TOOL_PALETTE);\n  if (palette != NULL)\n    item = gtk_tool_palette_get_drag_item (GTK_TOOL_PALETTE (palette),\n                                           selection);</p><p>// Do something with item\n}</p><p>GtkWidget *target, palette;</p><p>palette = gtk_tool_palette_new ();\ntarget = gtk_drawing_area_new ();</p><p>g_signal_connect (G_OBJECT (target), \"drag-data-received\",\n                  G_CALLBACK (passive_canvas_drag_data_received), NULL);\ngtk_tool_palette_add_drag_dest (GTK_TOOL_PALETTE (palette), target,\n                                GTK_DEST_DEFAULT_ALL,\n                                GTK_TOOL_PALETTE_DRAG_ITEMS,\n                                GDK_ACTION_COPY);\n]|</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p>A <span data-xref=\"Gtk.ToolPalette\"/> allows you to add #GtkToolItems to a palette-like\ncontainer with different categories and drag and drop support.</p><p>A <span data-xref=\"Gtk.ToolPalette\"/> is created with a call to <span data-xref=\"Gtk.ToolPalette.new\"/>.</p><h1>GtkToolItems cannot be added directly to a <span data-xref=\"Gtk.ToolPalette\"/> -</h1>\n<p>instead they are added to a <span data-xref=\"Gtk.ToolItemGroup\"/> which can than be added\nto a <span data-xref=\"Gtk.ToolPalette\"/>. To add a <span data-xref=\"Gtk.ToolItemGroup\"/> to a <span data-xref=\"Gtk.ToolPalette\"/>,\nuse <span data-xref=\"Gtk.Container.add\"/>.</p><p>|[<!-- language=\"C\" -->\nGtkWidget <em>palette, </em>group;\nGtkToolItem *item;</p><p>palette = gtk_tool_palette_new ();\ngroup = gtk_tool_item_group_new (_(\"Test Category\"));\ngtk_container_add (GTK_CONTAINER (palette), group);</p><p>item = gtk_tool_button_new_new (NULL, _(\"_Open\"));\ngtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (item), \"document-open\");\ngtk_tool_item_group_insert (GTK_TOOL_ITEM_GROUP (group), item, -1);\n]|</p><p>The easiest way to use drag and drop with <span data-xref=\"Gtk.ToolPalette\"/> is to call\n<span data-xref=\"Gtk.ToolPalette.add_drag_dest\"/> with the desired drag source @palette\nand the desired drag target @widget. Then <span data-xref=\"Gtk.ToolPalette.get_drag_item\"/>\ncan be used to get the dragged item in the <span data-xref=\"Gtk.Widget-drag-data-received\"/>\nsignal handler of the drag target.</p><p>|[<!-- language=\"C\" -->\nstatic void\npassive_canvas_drag_data_received (GtkWidget        <em>widget,\n                                   GdkDragContext   </em>context,\n                                   gint              x,\n                                   gint              y,\n                                   GtkSelectionData <em>selection,\n                                   guint             info,\n                                   guint             time,\n                                   gpointer          data)\n{\n  GtkWidget </em>palette;\n  GtkWidget *item;</p><p>// Get the dragged item\n  palette = gtk_widget_get_ancestor (gtk_drag_get_source_widget (context),\n                                     GTK_TYPE_TOOL_PALETTE);\n  if (palette != NULL)\n    item = gtk_tool_palette_get_drag_item (GTK_TOOL_PALETTE (palette),\n                                           selection);</p><p>// Do something with item\n}</p><p>GtkWidget *target, palette;</p><p>palette = gtk_tool_palette_new ();\ntarget = gtk_drawing_area_new ();</p><p>g_signal_connect (G_OBJECT (target), \"drag-data-received\",\n                  G_CALLBACK (passive_canvas_drag_data_received), NULL);\ngtk_tool_palette_add_drag_dest (GTK_TOOL_PALETTE (palette), target,\n                                GTK_DEST_DEFAULT_ALL,\n                                GTK_TOOL_PALETTE_DRAG_ITEMS,\n                                GDK_ACTION_COPY);\n]|</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Sets <code>palette</code> as drag source (see <span data-xref=\"Gtk.ToolPalette.set_drag_source\"/>)\nand sets <code>widget</code> as a drag destination for drags from <code>palette</code>.\nSee <span data-xref=\"Gtk.Widget.drag_dest_set\"/>.</p>",
+            "doc": "<p>Sets <pre>palette</pre> as drag source (see <span data-xref=\"Gtk.ToolPalette.set_drag_source\"/>)\nand sets <pre>widget</pre> as a drag destination for drags from <pre>palette</pre>.\nSee <span data-xref=\"Gtk.Widget.drag_dest_set\"/>.</p>",
             "kind": "method",
             "name": "add_drag_dest",
             "parameters": [
@@ -120,7 +108,7 @@
             }
         },
         {
-            "doc": "<p>Gets whether <code>group</code> is exclusive or not.\nSee <span data-xref=\"Gtk.ToolPalette.set_exclusive\"/>.</p>",
+            "doc": "<p>Gets whether <pre>group</pre> is exclusive or not.\nSee <span data-xref=\"Gtk.ToolPalette.set_exclusive\"/>.</p>",
             "kind": "method",
             "name": "get_exclusive",
             "parameters": [
@@ -152,7 +140,7 @@
             }
         },
         {
-            "doc": "<p>Gets the position of <code>group</code> in <code>palette</code> as index.\nSee <span data-xref=\"Gtk.ToolPalette.set_group_position\"/>.</p>",
+            "doc": "<p>Gets the position of <pre>group</pre> in <pre>palette</pre> as index.\nSee <span data-xref=\"Gtk.ToolPalette.set_group_position\"/>.</p>",
             "kind": "method",
             "name": "get_group_position",
             "parameters": [
@@ -335,26 +323,24 @@
                 "type": "void"
             }
         },
-        [
-            {
-                "doc": "<p>Get the target entry for a dragged <span data-xref=\"Gtk.ToolItemGroup\"/>.</p>",
-                "kind": "function",
-                "name": "get_drag_target_group",
-                "parameters": [],
-                "retval": {
-                    "type": "Gtk.TargetEntry"
-                }
-            },
-            {
-                "doc": "<p>Gets the target entry for a dragged <span data-xref=\"Gtk.ToolItem\"/>.</p>",
-                "kind": "function",
-                "name": "get_drag_target_item",
-                "parameters": [],
-                "retval": {
-                    "type": "Gtk.TargetEntry"
-                }
+        {
+            "doc": "<p>Get the target entry for a dragged <span data-xref=\"Gtk.ToolItemGroup\"/>.</p>",
+            "kind": "function",
+            "name": "get_drag_target_group",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TargetEntry"
             }
-        ]
+        },
+        {
+            "doc": "<p>Gets the target entry for a dragged <span data-xref=\"Gtk.ToolItem\"/>.</p>",
+            "kind": "function",
+            "name": "get_drag_target_item",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TargetEntry"
+            }
+        }
     ],
     "name": "ToolPalette",
     "properties": [
@@ -365,7 +351,7 @@
             "type": "Gtk.IconSize"
         },
         {
-            "doc": "<p>Is <code>true</code> if the <span data-xref=\"Gtk.ToolPalette-icon-size\"/> property has been set.</p>",
+            "doc": "<p>Is <pre>true</pre> if the <span data-xref=\"Gtk.ToolPalette-icon-size\"/> property has been set.</p>",
             "kind": "property",
             "name": "icon-size-set",
             "type": "Boolean"

@@ -10,23 +10,11 @@
             }
         }
     ],
-    "doc": "<p><span data-xref=\"Gtk.RecentManager\"/> provides a facility for adding, removing and\nlooking up recently used files. Each recently used file is\nidentified by its URI, and has meta-data associated to it, like\nthe names and command lines of the applications that have\nregistered it, the number of time each application has registered\nthe same file, the mime type of the file and whether the file\nshould be displayed only by the applications that have\nregistered it.</p><p>The recently used files list is per user.</p><p>The <span data-xref=\"Gtk.RecentManager\"/> acts like a database of all the recently\nused files. You can create new <span data-xref=\"Gtk.RecentManager\"/> objects, but\nit is more efficient to use the default manager created by GTK+.</p><p>Adding a new recently used file is as simple as:</p><p>|[&lt;!-- language=\"C\" --&gt;\nGtkRecentManager *manager;</p><p>manager = gtk_recent_manager_get_default ();\ngtk_recent_manager_add_item (manager, file_uri);\n]|</p><p>The <span data-xref=\"Gtk.RecentManager\"/> will try to gather all the needed information\nfrom the file itself through GIO.</p><p>Looking up the meta-data associated with a recently used file\ngiven its URI requires calling <span data-xref=\"Gtk.RecentManager.lookup_item\"/>:</p><p>|[&lt;!-- language=\"C\" --&gt;\nGtkRecentManager <em>manager;\nGtkRecentInfo </em>info;\nGError *error = NULL;</p><p>manager = gtk_recent_manager_get_default ();\ninfo = gtk_recent_manager_lookup_item (manager, file_uri, &amp;error);\nif (error)\n  {\n    g_warning (\"Could not find the file: %s\", error-&gt;message);\n    g_error_free (error);\n  }\nelse\n {\n   // Use the info object\n   gtk_recent_info_unref (info);\n }\n]|</p><p>In order to retrieve the list of recently used files, you can use\n<span data-xref=\"Gtk.RecentManager.get_items\"/>, which returns a list of <span data-xref=\"Gtk.RecentInfo\"/>-structs.</p><p>A <span data-xref=\"Gtk.RecentManager\"/> is the model used to populate the contents of\none, or more <span data-xref=\"Gtk.RecentChooser\"/> implementations.</p><p>Note that the maximum age of the recently used files list is\ncontrollable through the <span data-xref=\"Gtk.Settings-gtk-recent-files-max-age\"/>\nproperty.</p><p>Recently used files are supported since GTK+ 2.10.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
+    "doc": "<p><span data-xref=\"Gtk.RecentManager\"/> provides a facility for adding, removing and\nlooking up recently used files. Each recently used file is\nidentified by its URI, and has meta-data associated to it, like\nthe names and command lines of the applications that have\nregistered it, the number of time each application has registered\nthe same file, the mime type of the file and whether the file\nshould be displayed only by the applications that have\nregistered it.</p><p>The recently used files list is per user.</p><p>The <span data-xref=\"Gtk.RecentManager\"/> acts like a database of all the recently\nused files. You can create new <span data-xref=\"Gtk.RecentManager\"/> objects, but\nit is more efficient to use the default manager created by GTK+.</p><p>Adding a new recently used file is as simple as:</p><p>|[<!-- language=\"C\" -->\nGtkRecentManager *manager;</p><p>manager = gtk_recent_manager_get_default ();\ngtk_recent_manager_add_item (manager, file_uri);\n]|</p><p>The <span data-xref=\"Gtk.RecentManager\"/> will try to gather all the needed information\nfrom the file itself through GIO.</p><p>Looking up the meta-data associated with a recently used file\ngiven its URI requires calling <span data-xref=\"Gtk.RecentManager.lookup_item\"/>:</p><p>|[<!-- language=\"C\" -->\nGtkRecentManager <em>manager;\nGtkRecentInfo </em>info;\nGError *error = NULL;</p><p>manager = gtk_recent_manager_get_default ();\ninfo = gtk_recent_manager_lookup_item (manager, file_uri, &amp;error);\nif (error)\n  {\n    g_warning (\"Could not find the file: %s\", error-&gt;message);\n    g_error_free (error);\n  }\nelse\n {\n   // Use the info object\n   gtk_recent_info_unref (info);\n }\n]|</p><p>In order to retrieve the list of recently used files, you can use\n<span data-xref=\"Gtk.RecentManager.get_items\"/>, which returns a list of <span data-xref=\"Gtk.RecentInfo\"/>-structs.</p><p>A <span data-xref=\"Gtk.RecentManager\"/> is the model used to populate the contents of\none, or more <span data-xref=\"Gtk.RecentChooser\"/> implementations.</p><p>Note that the maximum age of the recently used files list is\ncontrollable through the <span data-xref=\"Gtk.Settings-gtk-recent-files-max-age\"/>\nproperty.</p><p>Recently used files are supported since GTK+ 2.10.</p>",
     "kind": "class",
     "methods": [
         {
-            "doc": "<p>Adds a new resource, pointed by <code>uri</code>, into the recently used\nresources list, using the metadata specified inside the <span data-xref=\"Gtk.RecentData\"/>-struct\npassed in <code>recent_data</code>.</p><p>The passed URI will be used to identify this resource inside the\nlist.</p><p>In order to register the new recently used resource, metadata about\nthe resource must be passed as well as the URI; the metadata is\nstored in a <span data-xref=\"Gtk.RecentData\"/>-struct, which must contain the MIME\ntype of the resource pointed by the URI; the name of the application\nthat is registering the item, and a command line to be used when\nlaunching the item.</p><p>Optionally, a <span data-xref=\"Gtk.RecentData\"/>-struct might contain a UTF-8 string\nto be used when viewing the item instead of the last component of the\nURI; a short description of the item; whether the item should be\nconsidered private - that is, should be displayed only by the\napplications that have registered it.</p>",
+            "doc": "<p>Adds a new resource, pointed by <pre>uri</pre>, into the recently used\nresources list, using the metadata specified inside the <span data-xref=\"Gtk.RecentData\"/>-struct\npassed in <pre>recent_data</pre>.</p><p>The passed URI will be used to identify this resource inside the\nlist.</p><p>In order to register the new recently used resource, metadata about\nthe resource must be passed as well as the URI; the metadata is\nstored in a <span data-xref=\"Gtk.RecentData\"/>-struct, which must contain the MIME\ntype of the resource pointed by the URI; the name of the application\nthat is registering the item, and a command line to be used when\nlaunching the item.</p><p>Optionally, a <span data-xref=\"Gtk.RecentData\"/>-struct might contain a UTF-8 string\nto be used when viewing the item instead of the last component of the\nURI; a short description of the item; whether the item should be\nconsidered private - that is, should be displayed only by the\napplications that have registered it.</p>",
             "kind": "method",
             "name": "add_full",
             "parameters": [
@@ -48,7 +36,7 @@
             }
         },
         {
-            "doc": "<p>Adds a new resource, pointed by <code>uri</code>, into the recently used\nresources list.</p><p>This function automatically retrieves some of the needed\nmetadata and setting other metadata to common default values; it\nthen feeds the data to <span data-xref=\"Gtk.RecentManager.add_full\"/>.</p><p>See <span data-xref=\"Gtk.RecentManager.add_full\"/> if you want to explicitly\ndefine the metadata for the resource pointed by <code>uri</code>.</p>",
+            "doc": "<p>Adds a new resource, pointed by <pre>uri</pre>, into the recently used\nresources list.</p><p>This function automatically retrieves some of the needed\nmetadata and setting other metadata to common default values; it\nthen feeds the data to <span data-xref=\"Gtk.RecentManager.add_full\"/>.</p><p>See <span data-xref=\"Gtk.RecentManager.add_full\"/> if you want to explicitly\ndefine the metadata for the resource pointed by <pre>uri</pre>.</p>",
             "kind": "method",
             "name": "add_item",
             "parameters": [
@@ -73,7 +61,7 @@
             }
         },
         {
-            "doc": "<p>Checks whether there is a recently used resource registered\nwith <code>uri</code> inside the recent manager.</p>",
+            "doc": "<p>Checks whether there is a recently used resource registered\nwith <pre>uri</pre> inside the recent manager.</p>",
             "kind": "method",
             "name": "has_item",
             "parameters": [
@@ -105,7 +93,7 @@
             }
         },
         {
-            "doc": "<p>Changes the location of a recently used resource from <code>uri</code> to <code>new_uri</code>.</p><p>Please note that this function will not affect the resource pointed\nby the URIs, but only the URI used in the recently used resources list.</p>",
+            "doc": "<p>Changes the location of a recently used resource from <pre>uri</pre> to <pre>new_uri</pre>.</p><p>Please note that this function will not affect the resource pointed\nby the URIs, but only the URI used in the recently used resources list.</p>",
             "kind": "method",
             "name": "move_item",
             "parameters": [
@@ -136,7 +124,7 @@
             }
         },
         {
-            "doc": "<p>Removes a resource pointed by <code>uri</code> from the recently used resources\nlist handled by a recent manager.</p>",
+            "doc": "<p>Removes a resource pointed by <pre>uri</pre> from the recently used resources\nlist handled by a recent manager.</p>",
             "kind": "method",
             "name": "remove_item",
             "parameters": [
@@ -151,17 +139,15 @@
                 "type": "Boolean"
             }
         },
-        [
-            {
-                "doc": "<p>Gets a unique instance of <span data-xref=\"Gtk.RecentManager\"/>, that you can share\nin your application without caring about memory management.</p>",
-                "kind": "function",
-                "name": "get_default",
-                "parameters": [],
-                "retval": {
-                    "type": "Gtk.RecentManager"
-                }
+        {
+            "doc": "<p>Gets a unique instance of <span data-xref=\"Gtk.RecentManager\"/>, that you can share\nin your application without caring about memory management.</p>",
+            "kind": "function",
+            "name": "get_default",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.RecentManager"
             }
-        ]
+        }
     ],
     "name": "RecentManager",
     "properties": [

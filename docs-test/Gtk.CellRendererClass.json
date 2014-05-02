@@ -1,0 +1,111 @@
+{
+    "constructors": [],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_class"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_request_mode"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_width"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_height_for_width"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_height"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_preferred_width_for_height"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_aligned_area"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "get_size"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "render"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "activate"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "start_editing"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "editing_canceled"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "editing_started"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved2"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved3"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "_gtk_reserved4"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Sets the type to be used for creating accessibles for cells rendered by\ncell renderers of <pre>renderer_class</pre>. Note that multiple accessibles will\nbe created.</p><p>This function should only be called from class init functions of cell\nrenderers.</p>",
+            "kind": "method",
+            "name": "set_accessible_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "GObject.Type"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "name": "CellRendererClass"
+}

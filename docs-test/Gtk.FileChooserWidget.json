@@ -18,22 +18,8 @@
         }
     ],
     "doc": "<p>Short_description: A file chooser widget\n<span data-xref=\"Gtk.FileChooserWidget\"/> is a widget for choosing files.\nIt exposes the <span data-xref=\"Gtk.FileChooser\"/> interface, and you should\nuse the methods of this interface to interact with the\nwidget.</p>",
-    "fields": [
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "parent_instance"
-        },
-        {
-            "doc": "",
-            "kind": "field",
-            "name": "priv"
-        }
-    ],
     "kind": "class",
-    "methods": [
-        []
-    ],
+    "methods": [],
     "name": "FileChooserWidget",
     "properties": [],
     "signals": [
@@ -65,7 +51,7 @@
             }
         },
         {
-            "doc": "<p>The ::location-popup signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser show a \"Location\"\nprompt which the user can use to manually type the name of\nthe file he wishes to select.</p><p>The default bindings for this signal are\n<code>Control + L</code>\nwith a <code>path</code> string of \"\" (the empty\nstring).  It is also bound to <code>/</code> with a\n<code>path</code> string of \"<code>/</code>\"\n(a slash):  this lets you type <code>/</code> and\nimmediately type a path name.  On Unix systems, this is bound to\n<code>~</code> (tilde) with a <code>path</code> string\nof \"~\" itself for access to home directories.</p>",
+            "doc": "<p>The ::location-popup signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser show a \"Location\"\nprompt which the user can use to manually type the name of\nthe file he wishes to select.</p><p>The default bindings for this signal are\n<code>Control + L</code>\nwith a <pre>path</pre> string of \"\" (the empty\nstring).  It is also bound to <code>/</code> with a\n<pre>path</pre> string of \"<code>/</code>\"\n(a slash):  this lets you type <code>/</code> and\nimmediately type a path name.  On Unix systems, this is bound to\n<code>~</code> (tilde) with a <pre>path</pre> string\nof \"~\" itself for access to home directories.</p>",
             "kind": "signal",
             "name": "location-popup",
             "parameters": [
@@ -99,7 +85,7 @@
             }
         },
         {
-            "doc": "<p>The ::quick-bookmark signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser switch to the bookmark\nspecified in the <code>bookmark_index</code> parameter.\nFor example, if you have three bookmarks, you can pass 0, 1, 2 to\nthis signal to switch to each of them, respectively.</p><p>The default binding for this signal is <code>Alt + 1</code>, <code>Alt + 2</code>,\netc. until <code>Alt + 0</code>.  Note that in the default binding, that\n<code>Alt + 1</code> is actually defined to switch to the bookmark at index\n0, and so on successively; <code>Alt + 0</code> is defined to switch to the\nbookmark at index 10.</p>",
+            "doc": "<p>The ::quick-bookmark signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser switch to the bookmark\nspecified in the <pre>bookmark_index</pre> parameter.\nFor example, if you have three bookmarks, you can pass 0, 1, 2 to\nthis signal to switch to each of them, respectively.</p><p>The default binding for this signal is <code>Alt + 1</code>, <code>Alt + 2</code>,\netc. until <code>Alt + 0</code>.  Note that in the default binding, that\n<code>Alt + 1</code> is actually defined to switch to the bookmark at index\n0, and so on successively; <code>Alt + 0</code> is defined to switch to the\nbookmark at index 10.</p>",
             "kind": "signal",
             "name": "quick-bookmark",
             "parameters": [

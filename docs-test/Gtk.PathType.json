@@ -1,0 +1,22 @@
+{
+    "doc": "<p>Widget path types.\nSee also <span data-xref=\"Gtk.BindingSet.add_path\"/>.</p>",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "widget"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "widget_class"
+        },
+        {
+            "doc": "<p>Deprecated</p>",
+            "kind": "default",
+            "name": "class"
+        }
+    ],
+    "name": "PathType"
+}

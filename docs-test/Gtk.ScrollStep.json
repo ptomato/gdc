@@ -1,0 +1,37 @@
+{
+    "doc": "",
+    "kind": "enum",
+    "members": [
+        {
+            "doc": "<p>Scroll in steps.</p>",
+            "kind": "default",
+            "name": "steps"
+        },
+        {
+            "doc": "<p>Scroll by pages.</p>",
+            "kind": "default",
+            "name": "pages"
+        },
+        {
+            "doc": "<p>Scroll to ends.</p>",
+            "kind": "default",
+            "name": "ends"
+        },
+        {
+            "doc": "<p>Scroll in horizontal steps.</p>",
+            "kind": "default",
+            "name": "horizontal_steps"
+        },
+        {
+            "doc": "<p>Scroll by horizontal pages.</p>",
+            "kind": "default",
+            "name": "horizontal_pages"
+        },
+        {
+            "doc": "<p>Scroll to the horizontal ends.</p>",
+            "kind": "default",
+            "name": "horizontal_ends"
+        }
+    ],
+    "name": "ScrollStep"
+}

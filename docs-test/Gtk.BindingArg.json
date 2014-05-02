@@ -1,0 +1,19 @@
+{
+    "constructors": [],
+    "doc": "<p>A <span data-xref=\"Gtk.BindingArg\"/> holds the data associated with\nan argument for a key binding signal emission as\nstored in <span data-xref=\"Gtk.BindingSignal\"/>.</p>",
+    "fields": [
+        {
+            "doc": "<p>implementation detail</p>",
+            "kind": "field",
+            "name": "arg_type"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "d"
+        }
+    ],
+    "kind": "class",
+    "methods": [],
+    "name": "BindingArg"
+}
