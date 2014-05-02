@@ -1,0 +1,309 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.InfoBar\"/> object.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.InfoBar\"/> with buttons. Button text/response ID\npairs should be listed, with a <code>null</code> pointer ending the list.\nButton text can be either a stock ID such as %GTK_STOCK_OK, or\nsome arbitrary text. A response ID can be any positive number,\nor one of the values in the <span data-xref=\"Gtk.ResponseType\"/> enumeration. If the\nuser clicks one of these dialog buttons, GtkInfoBar will emit\nthe \u201cresponse\u201d signal with the corresponding response ID.</p>",
+            "kind": "constructor",
+            "name": "new_with_buttons",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "first_button_text",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.InfoBar\"/> is a widget that can be used to show messages to\nthe user without showing a dialog. It is often temporarily shown\nat the top or bottom of a document. In contrast to <span data-xref=\"Gtk.Dialog\"/>, which\nhas a action area at the bottom, <span data-xref=\"Gtk.InfoBar\"/> has an action area\nat the side.</p><p>The API of <span data-xref=\"Gtk.InfoBar\"/> is very similar to <span data-xref=\"Gtk.Dialog\"/>, allowing you\nto add buttons to the action area with <span data-xref=\"Gtk.InfoBar.add_button\"/> or\n<span data-xref=\"Gtk.InfoBar.new_with_buttons\"/>. The sensitivity of action widgets\ncan be controlled with <span data-xref=\"Gtk.InfoBar.set_response_sensitive\"/>.\nTo add widgets to the main content area of a <span data-xref=\"Gtk.InfoBar\"/>, use\n<span data-xref=\"Gtk.InfoBar.get_content_area\"/> and add your widgets to the container.</p><p>Similar to <span data-xref=\"Gtk.MessageDialog\"/>, the contents of a <span data-xref=\"Gtk.InfoBar\"/> can by\nclassified as error message, warning, informational message, etc,\nby using <span data-xref=\"Gtk.InfoBar.set_message_type\"/>. GTK+ may use the message type\nto determine how the message is displayed.</p><p>A simple example for using a GtkInfoBar:\n|[&lt;!-- language=\"C\" --&gt;\n// set up info bar\nGtkWidget <em>widget;\nGtkInfoBar </em>bar;</p><p>widget = gtk_info_bar_new ();\nbar = GTK_INFO_BAR (bar);</p><p>gtk_widget_set_no_show_all (widget, TRUE);\nmessage_label = gtk_label_new (\"\");\ngtk_widget_show (message_label);\ncontent_area = gtk_info_bar_get_content_area (bar);\ngtk_container_add (GTK_CONTAINER (content_area),\n                   message_label);\ngtk_info_bar_add_button (bar,\n                         _(\"_OK\"),\n                         GTK_RESPONSE_OK);\ng_signal_connect (bar,\n                  \"response\",\n                  G_CALLBACK (gtk_widget_hide),\n                  NULL);\ngtk_grid_attach (GTK_GRID (grid),\n                 widget,\n                 0, 2, 1, 1);</p><p>...</p><p>// show an error message\ngtk_label_set_text (GTK_LABEL (message_label), message);\ngtk_info_bar_set_message_type (bar,\n                               GTK_MESSAGE_ERROR);\ngtk_widget_show (bar);\n]|</p><h1>GtkInfoBar as GtkBuildable</h1><p>The GtkInfoBar implementation of the GtkBuildable interface exposes\nthe content area and action area as internal children with the names\n\u201ccontent_area\u201d and \u201caction_area\u201d.</p><p>GtkInfoBar supports a custom &lt;action-widgets&gt; element, which can contain\nmultiple &lt;action-widget&gt; elements. The \u201cresponse\u201d attribute specifies a\nnumeric response, and the content of the element is the id of widget\n(which should be a child of the dialogs @action_area).</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Add an activatable widget to the action area of a <span data-xref=\"Gtk.InfoBar\"/>,\nconnecting a signal handler that will emit the <span data-xref=\"Gtk.InfoBar-response\"/>\nsignal on the message area when the widget is activated. The widget\nis appended to the end of the message areas action area.</p>",
+            "kind": "method",
+            "name": "add_action_widget",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "response_id",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a button with the given text and sets things up so that\nclicking the button will emit the \u201cresponse\u201d signal with the given\nresponse_id. The button is appended to the end of the info bars's\naction area. The button widget is returned, but usually you don't\nneed it.</p>",
+            "kind": "method",
+            "name": "add_button",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "button_text",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "response_id",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Adds more buttons, same as calling <span data-xref=\"Gtk.InfoBar.add_button\"/>\nrepeatedly. The variable argument list should be <code>null</code>-terminated\nas with <span data-xref=\"Gtk.InfoBar.new_with_buttons\"/>. Each button must have both\ntext and response ID.</p>",
+            "kind": "method",
+            "name": "add_buttons",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "first_button_text",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the action area of <code>info_bar</code>.</p>",
+            "kind": "method",
+            "name": "get_action_area",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns the content area of <code>info_bar</code>.</p>",
+            "kind": "method",
+            "name": "get_content_area",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns the message type of the message area.</p>",
+            "kind": "method",
+            "name": "get_message_type",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.MessageType"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the widget will display a standard close button.</p>",
+            "kind": "method",
+            "name": "get_show_close_button",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Emits the \u201cresponse\u201d signal with the given <code>response_id</code>.</p>",
+            "kind": "method",
+            "name": "response",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "response_id",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the last widget in the info bar\u2019s action area with\nthe given response_id as the default widget for the dialog.\nPressing \u201cEnter\u201d normally activates the default widget.</p><p>Note that this function currently requires <code>info_bar</code> to\nbe added to a widget hierarchy.</p>",
+            "kind": "method",
+            "name": "set_default_response",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "response_id",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the message type of the message area.\nGTK+ uses this type to determine what color to use\nwhen drawing the message area.</p>",
+            "kind": "method",
+            "name": "set_message_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "message_type",
+                    "direction": "in",
+                    "type": "Gtk.MessageType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Calls gtk_widget_set_sensitive (widget, setting) for each\nwidget in the info bars\u2019s action area with the given response_id.\nA convenient way to sensitize/desensitize dialog buttons.</p>",
+            "kind": "method",
+            "name": "set_response_sensitive",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "response_id",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If true, a standard close button is shown. When clicked it emits\nthe response <span data-xref=\"Gtk.ResponseType\"/>.close.</p>",
+            "kind": "method",
+            "name": "set_show_close_button",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "InfoBar",
+    "properties": [
+        {
+            "doc": "<p>The type of the message.</p><p>The type may be used to determine the appearance of the info bar.</p>",
+            "kind": "property",
+            "name": "message-type",
+            "type": "Gtk.MessageType"
+        },
+        {
+            "doc": "<p>Whether to include a standard close button.</p>",
+            "kind": "property",
+            "name": "show-close-button",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::close signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user uses a keybinding to dismiss\nthe info bar.</p><p>The default binding for this signal is the Escape key.</p>",
+            "kind": "signal",
+            "name": "close",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when an action widget is clicked or the application programmer\ncalls <span data-xref=\"Gtk.Dialog.response\"/>. The <code>response_id</code> depends on which action\nwidget was clicked.</p>",
+            "kind": "signal",
+            "name": "response",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "response_id",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "close",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits the \u201cresponse\u201d signal with the given <code>response_id</code>.</p>",
+            "kind": "vfunc",
+            "name": "response",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "response_id",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

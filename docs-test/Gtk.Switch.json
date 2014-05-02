@@ -1,0 +1,149 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Switch\"/> widget.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.Switch\"/> is a widget that has two states: on or off. The user can control\nwhich state should be active by clicking the empty area, or by dragging the\nhandle.</p><p>GtkSwitch can also handle situations where the underlying state changes with\na delay. See <span data-xref=\"Gtk.Switch-state-set\"/> for details.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Gets whether the <span data-xref=\"Gtk.Switch\"/> is in its \u201con\u201d or \u201coff\u201d state.</p>",
+            "kind": "method",
+            "name": "get_active",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the underlying state of the <span data-xref=\"Gtk.Switch\"/>.</p>",
+            "kind": "method",
+            "name": "get_state",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Changes the state of <code>sw</code> to the desired one.</p>",
+            "kind": "method",
+            "name": "set_active",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "is_active",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the underlying state of the <span data-xref=\"Gtk.Switch\"/>.</p><p>Normally, this is the same as <span data-xref=\"Gtk.Switch-active\"/>, unless the switch\nis set up for delayed state changes. This function is typically\ncalled from a <span data-xref=\"Gtk.Switch-state-set\"/> signal handler.</p><p>See <span data-xref=\"Gtk.Switch-state-set\"/> for details.</p>",
+            "kind": "method",
+            "name": "set_state",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Switch",
+    "properties": [
+        {
+            "doc": "<p>Whether the <span data-xref=\"Gtk.Switch\"/> widget is in its on or off state.</p>",
+            "kind": "property",
+            "name": "active",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The backend state that is controlled by the switch.\nSee <span data-xref=\"Gtk.Switch-state-set\"/> for details.</p>",
+            "kind": "property",
+            "name": "state",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::activate signal on GtkSwitch is an action signal and\nemitting it causes the switch to animate.\nApplications should never connect to this signal, but use the\nnotify::active signal.</p>",
+            "kind": "signal",
+            "name": "activate",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::state-set signal on GtkSwitch is emitted to change the underlying\nstate. It is emitted when the user changes the switch position. The\ndefault handler keeps the state in sync with the #GtkState:active\nproperty.</p><p>To implement delayed state change, applications can connect to this signal,\ninitiate the change of the underlying state, and call <span data-xref=\"Gtk.Switch.set_state\"/>\nwhen the underlying state change is complete. The signal handler should\nreturn <code>true</code> to prevent the default handler from running.</p><p>Visually, the underlying state is represented by the trough color of\nthe switch, while the <span data-xref=\"Gtk.Switch-active\"/> property is represented by the\nposition of the switch.</p>",
+            "kind": "signal",
+            "name": "state-set",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "activate",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "state_set",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ]
+}

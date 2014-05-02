@@ -1,0 +1,96 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Overlay\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>GtkOverlay is a container which contains a single main child, on top\nof which it can place \u201coverlay\u201d widgets. The\nposition of each overlay widget is determined by its <span data-xref=\"Gtk.Widget-halign\"/>\nand <span data-xref=\"Gtk.Widget-valign\"/> properties. E.g. a widget with both alignments\nset to <span data-xref=\"Gtk.Align\"/>.start will be placed at the top left corner of the\nmain widget, whereas an overlay with halign set to <span data-xref=\"Gtk.Align\"/>.center\nand valign set to <span data-xref=\"Gtk.Align\"/>.end will be placed a the bottom edge of\nthe main widget, horizontally centered. The position can be adjusted\nby setting the margin properties of the child to non-zero values.</p><p>More complicated placement of overlays is possible by connecting\nto the <span data-xref=\"Gtk.Overlay-get-child-position\"/> signal.</p><h1>GtkOverlay as GtkBuildable</h1><p>The GtkOverlay implementation of the GtkBuildable interface\nsupports placing a child as an overlay by specifying \u201coverlay\u201d as\nthe \u201ctype\u201d attribute of a <code>&amp;lt;child&amp;gt;</code> element.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds <code>widget</code> to <code>overlay</code>.</p><p>The widget will be stacked on top of the main widget\nadded with <span data-xref=\"Gtk.Container.add\"/>.</p><p>The position at which <code>widget</code> is placed is determined\nfrom its <span data-xref=\"Gtk.Widget-halign\"/> and <span data-xref=\"Gtk.Widget-valign\"/> properties.</p>",
+            "kind": "method",
+            "name": "add_overlay",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Overlay",
+    "properties": [],
+    "signals": [
+        {
+            "doc": "<p>The ::get-child-position signal is emitted to determine\nthe position and size of any overlay child widgets. A\nhandler for this signal should fill <code>allocation</code> with\nthe desired position and size for <code>widget</code>, relative to\nthe 'main' child of @overlay.</p><p>The default handler for this signal uses the <code>widget</code>'s\nhalign and valign properties to determine the position\nand gives the widget its natural size (except that an\nalignment of <span data-xref=\"Gtk.Align\"/>.fill will cause the overlay to\nbe full-width/height). If the main child is a\n<span data-xref=\"Gtk.ScrolledWindow\"/>, the overlays are placed relative\nto its contents.</p>",
+            "kind": "signal",
+            "name": "get-child-position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "allocation",
+                    "direction": "out",
+                    "type": "cairo.RectangleInt"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "get_child_position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "allocation",
+                    "direction": "in",
+                    "type": "Gtk.Allocation"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ]
+}

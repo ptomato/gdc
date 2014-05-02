@@ -1,0 +1,124 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a <span data-xref=\"Gtk.SearchBar\"/>. You will need to tell it about\nwhich widget is going to be your text entry using\n<span data-xref=\"Gtk.SearchBar.connect_entry\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.SearchBar\"/> is a container made to have a search entry (possibly\nwith additional connex widgets, such as drop-down menus, or buttons)\nbuilt-in. The search bar would appear when a search is started through\ntyping on the keyboard, or the application\u2019s search mode is toggled on.</p><p>For keyboard presses to start a search, events will need to be\nforwarded from the top-level window that contains the search bar.\nSee <span data-xref=\"Gtk.SearchBar.handle_event\"/> for example code. Common shortcuts\nsuch as Ctrl+F should be handled as an application action, or through\nthe menu items.</p><p>You will also need to tell the search bar about which entry you\nare using as your search entry using <span data-xref=\"Gtk.SearchBar.connect_entry\"/>.\nThe following example shows you how to create a more complex search\nentry.</p><h2>Creating a search bar</h2><p><a href=\"https://git.gnome.org/browse/gtk+/tree/examples/search-bar.c\">A simple example</a></p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Connects the <span data-xref=\"Gtk.Entry\"/> widget passed as the one to be used in\nthis search bar. The entry should be a descendant of the search bar.\nThis is only required if the entry isn\u2019t the direct child of the\nsearch bar (as in our main example).</p>",
+            "kind": "method",
+            "name": "connect_entry",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "entry",
+                    "direction": "in",
+                    "type": "Gtk.Entry"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the search mode is on or off.</p>",
+            "kind": "method",
+            "name": "get_search_mode",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the close button is shown.</p>",
+            "kind": "method",
+            "name": "get_show_close_button",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>This function should be called when the top-level\nwindow which contains the search bar received a key event.</p><p>If the key event is handled by the search bar, the bar will\nbe shown, the entry populated with the entered text and %GDK_EVENT_STOP\nwill be returned. The caller should ensure that events are\nnot propagated further.</p><p>If no entry has been connected to the search bar, using\n<span data-xref=\"Gtk.SearchBar.connect_entry\"/>, this function will return\nimmediately with a warning.</p><h2>Showing the search bar on key presses</h2><p>|[&lt;!-- language=\"C\" --&gt;\nstatic gboolean\non_key_press_event (GtkWidget <em>widget,\n                    GdkEvent  </em>event,\n                    gpointer   user_data)\n{\n  GtkSearchBar *bar = GTK_SEARCH_BAR (user_data);\n  return gtk_search_bar_handle_event (bar, event);\n}</p><p>g_signal_connect (window,\n                 \"key-press-event\",\n                  G_CALLBACK (on_key_press_event),\n                  search_bar);\n]|</p>",
+            "kind": "method",
+            "name": "handle_event",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.Event"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Switches the search mode on or off.</p>",
+            "kind": "method",
+            "name": "set_search_mode",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "search_mode",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Shows or hides the close button. Applications that\nalready have a \u201csearch\u201d toggle button should not show a close\nbutton in their search bar, as it duplicates the role of the\ntoggle button.</p>",
+            "kind": "method",
+            "name": "set_show_close_button",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "visible",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "SearchBar",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "search-mode-enabled",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "show-close-button",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

@@ -1,0 +1,428 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.PageSetup\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PageSetup"
+            }
+        },
+        {
+            "doc": "<p>Reads the page setup from the file <code>file_name</code>. Returns a\nnew <span data-xref=\"Gtk.PageSetup\"/> object with the restored page setup,\nor <code>null</code> if an error occurred. See <span data-xref=\"Gtk.PageSetup.to_file\"/>.</p>",
+            "kind": "constructor",
+            "name": "new_from_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "file_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.PageSetup"
+            }
+        },
+        {
+            "doc": "<p>Reads the page setup from the group <code>group_name</code> in the key file\n<code>key_file</code>. Returns a new <span data-xref=\"Gtk.PageSetup\"/> object with the restored\npage setup, or <code>null</code> if an error occurred.</p>",
+            "kind": "constructor",
+            "name": "new_from_key_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key_file",
+                    "direction": "in",
+                    "type": "GLib.KeyFile"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "group_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.PageSetup"
+            }
+        }
+    ],
+    "doc": "<p>A GtkPageSetup object stores the page size, orientation and margins.\nThe idea is that you can get one of these from the page setup dialog\nand then pass it to the <span data-xref=\"Gtk.PrintOperation\"/> when printing.\nThe benefit of splitting this out of the <span data-xref=\"Gtk.PrintSettings\"/> is that\nthese affect the actual layout of the page, and thus need to be set\nlong before user prints.</p><h2>Margins ## {#print-margins}</h2>\n<p>The margins specified in this object are the \u201cprint margins\u201d, i.e. the\nparts of the page that the printer cannot print on. These are different\nfrom the layout margins that a word processor uses; they are typically\nused to determine the minimal size for the layout\nmargins.</p><p>To obtain a <span data-xref=\"Gtk.PageSetup\"/> use <span data-xref=\"Gtk.PageSetup.new\"/> to get the defaults,\nor use <span data-xref=\"Gtk.print_run_page_setup_dialog\"/> to show the page setup dialog\nand receive the resulting page setup.</p><h2>A page setup dialog</h2><p>|[&lt;!-- language=\"C\" --&gt;\nstatic GtkPrintSettings <em>settings = NULL;\nstatic GtkPageSetup </em>page_setup = NULL;</p><p>static void\ndo_page_setup (void)\n{\n  GtkPageSetup *new_page_setup;</p><p>if (settings == NULL)\n    settings = gtk_print_settings_new ();</p><p>new_page_setup = gtk_print_run_page_setup_dialog (GTK_WINDOW (main_window),\n                                                    page_setup, settings);</p><p>if (page_setup)\n    g_object_unref (page_setup);</p><p>page_setup = new_page_setup;\n}\n]|</p><p>Printing support was added in GTK+ 2.10.</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Copies a <span data-xref=\"Gtk.PageSetup\"/>.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PageSetup"
+            }
+        },
+        {
+            "doc": "<p>Gets the bottom margin in units of <code>unit</code>.</p>",
+            "kind": "method",
+            "name": "get_bottom_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the left margin in units of <code>unit</code>.</p>",
+            "kind": "method",
+            "name": "get_left_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the page orientation of the <span data-xref=\"Gtk.PageSetup\"/>.</p>",
+            "kind": "method",
+            "name": "get_orientation",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PageOrientation"
+            }
+        },
+        {
+            "doc": "<p>Returns the page height in units of <code>unit</code>.</p><p>Note that this function takes orientation and\nmargins into consideration.\nSee <span data-xref=\"Gtk.PageSetup.get_paper_height\"/>.</p>",
+            "kind": "method",
+            "name": "get_page_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Returns the page width in units of <code>unit</code>.</p><p>Note that this function takes orientation and\nmargins into consideration.\nSee <span data-xref=\"Gtk.PageSetup.get_paper_width\"/>.</p>",
+            "kind": "method",
+            "name": "get_page_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Returns the paper height in units of <code>unit</code>.</p><p>Note that this function takes orientation, but\nnot margins into consideration.\nSee <span data-xref=\"Gtk.PageSetup.get_page_height\"/>.</p>",
+            "kind": "method",
+            "name": "get_paper_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the paper size of the <span data-xref=\"Gtk.PageSetup\"/>.</p>",
+            "kind": "method",
+            "name": "get_paper_size",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PaperSize"
+            }
+        },
+        {
+            "doc": "<p>Returns the paper width in units of <code>unit</code>.</p><p>Note that this function takes orientation, but\nnot margins into consideration.\nSee <span data-xref=\"Gtk.PageSetup.get_page_width\"/>.</p>",
+            "kind": "method",
+            "name": "get_paper_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the right margin in units of <code>unit</code>.</p>",
+            "kind": "method",
+            "name": "get_right_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the top margin in units of <code>unit</code>.</p>",
+            "kind": "method",
+            "name": "get_top_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Reads the page setup from the file <code>file_name</code>.\nSee <span data-xref=\"Gtk.PageSetup.to_file\"/>.</p>",
+            "kind": "method",
+            "name": "load_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "file_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Reads the page setup from the group <code>group_name</code> in the key file\n<code>key_file</code>.</p>",
+            "kind": "method",
+            "name": "load_key_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key_file",
+                    "direction": "in",
+                    "type": "GLib.KeyFile"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "group_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the bottom margin of the <span data-xref=\"Gtk.PageSetup\"/>.</p>",
+            "kind": "method",
+            "name": "set_bottom_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "margin",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the left margin of the <span data-xref=\"Gtk.PageSetup\"/>.</p>",
+            "kind": "method",
+            "name": "set_left_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "margin",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the page orientation of the <span data-xref=\"Gtk.PageSetup\"/>.</p>",
+            "kind": "method",
+            "name": "set_orientation",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.PageOrientation"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the paper size of the <span data-xref=\"Gtk.PageSetup\"/> without\nchanging the margins. See\n<span data-xref=\"Gtk.PageSetup.set_paper_size_and_default_margins\"/>.</p>",
+            "kind": "method",
+            "name": "set_paper_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Gtk.PaperSize"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the paper size of the <span data-xref=\"Gtk.PageSetup\"/> and modifies\nthe margins according to the new paper size.</p>",
+            "kind": "method",
+            "name": "set_paper_size_and_default_margins",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Gtk.PaperSize"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the right margin of the <span data-xref=\"Gtk.PageSetup\"/>.</p>",
+            "kind": "method",
+            "name": "set_right_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "margin",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the top margin of the <span data-xref=\"Gtk.PageSetup\"/>.</p>",
+            "kind": "method",
+            "name": "set_top_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "margin",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This function saves the information from <code>setup</code> to <code>file_name</code>.</p>",
+            "kind": "method",
+            "name": "to_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "file_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>This function adds the page setup from <code>setup</code> to <code>key_file</code>.</p>",
+            "kind": "method",
+            "name": "to_key_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key_file",
+                    "direction": "in",
+                    "type": "GLib.KeyFile"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "group_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "PageSetup",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

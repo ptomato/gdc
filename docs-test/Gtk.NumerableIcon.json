@@ -1,0 +1,219 @@
+{
+    "constructors": [],
+    "doc": "<p>GtkNumerableIcon is a subclass of <span data-xref=\"Gio.EmblemedIcon\">Gio.EmblemedIcon</span> that can\nshow a number or short string as an emblem. The number can\nbe overlayed on top of another emblem, if desired.</p><p>It supports theming by taking font and color information\nfrom a provided <span data-xref=\"Gtk.StyleContext\"/>; see\n<span data-xref=\"Gtk.NumerableIcon.set_style_context\"/>.</p><p>Typical numerable icons:\n<img alt=\"\" src=\"numerableicon.png\" />\n<img alt=\"\" src=\"numerableicon2.png\" /></p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the <span data-xref=\"Gio.Icon\">Gio.Icon</span> that was set as the base background image, or\n<code>null</code> if there\u2019s none. The caller of this function does not own\na reference to the returned <span data-xref=\"Gio.Icon\">Gio.Icon</span>.</p>",
+            "kind": "method",
+            "name": "get_background_gicon",
+            "parameters": [],
+            "retval": {
+                "type": "Gio.Icon"
+            }
+        },
+        {
+            "doc": "<p>Returns the icon name used as the base background image,\nor <code>null</code> if there\u2019s none.</p>",
+            "kind": "method",
+            "name": "get_background_icon_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the value currently displayed by <code>self</code>.</p>",
+            "kind": "method",
+            "name": "get_count",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the currently displayed label of the icon, or <code>null</code>.</p>",
+            "kind": "method",
+            "name": "get_label",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the <span data-xref=\"Gtk.StyleContext\"/> used by the icon for theming,\nor <code>null</code> if there\u2019s none.</p>",
+            "kind": "method",
+            "name": "get_style_context",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.StyleContext"
+            }
+        },
+        {
+            "doc": "<p>Updates the icon to use <code>icon</code> as the base background image.\nIf <code>icon</code> is <code>null</code>, <code>self</code> will go back using style information\nor default theming for its background image.</p><p>If this method is called and an icon name was already set as\nbackground for the icon, <code>icon</code> will be used, i.e. the last method\ncalled between <span data-xref=\"Gtk.NumerableIcon.set_background_gicon\"/> and\n<span data-xref=\"Gtk.NumerableIcon.set_background_icon_name\"/> has always priority.</p>",
+            "kind": "method",
+            "name": "set_background_gicon",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "icon",
+                    "direction": "in",
+                    "type": "Gio.Icon"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Updates the icon to use the icon named <code>icon_name</code> from the\ncurrent icon theme as the base background image. If <code>icon_name</code>\nis <code>null</code>, <code>self</code> will go back using style information or default\ntheming for its background image.</p><p>If this method is called and a <span data-xref=\"Gio.Icon\">Gio.Icon</span> was already set as\nbackground for the icon, <code>icon_name</code> will be used, i.e. the\nlast method called between <span data-xref=\"Gtk.NumerableIcon.set_background_icon_name\"/>\nand <span data-xref=\"Gtk.NumerableIcon.set_background_gicon\"/> has always priority.</p>",
+            "kind": "method",
+            "name": "set_background_icon_name",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "icon_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the currently displayed value of <code>self</code> to <code>count</code>.</p><p>The numeric value is always clamped to make it two digits, i.e.\nbetween -99 and 99. Setting a count of zero removes the emblem.\nIf this method is called, and a label was already set on the icon,\nit will automatically be reset to <code>null</code> before rendering the number,\ni.e. the last method called between <span data-xref=\"Gtk.NumerableIcon.set_count\"/>\nand <span data-xref=\"Gtk.NumerableIcon.set_label\"/> has always priority.</p>",
+            "kind": "method",
+            "name": "set_count",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the currently displayed value of <code>self</code> to the string\nin <code>label</code>. Setting an empty label removes the emblem.</p><p>Note that this is meant for displaying short labels, such as\nroman numbers, or single letters. For roman numbers, consider\nusing the Unicode characters U+2160 - U+217F. Strings longer\nthan two characters will likely not be rendered very well.</p><p>If this method is called, and a number was already set on the\nicon, it will automatically be reset to zero before rendering\nthe label, i.e. the last method called between\n<span data-xref=\"Gtk.NumerableIcon.set_label\"/> and <span data-xref=\"Gtk.NumerableIcon.set_count\"/>\nhas always priority.</p>",
+            "kind": "method",
+            "name": "set_label",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Updates the icon to fetch theme information from the\ngiven <span data-xref=\"Gtk.StyleContext\"/>.</p>",
+            "kind": "method",
+            "name": "set_style_context",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "style",
+                    "direction": "in",
+                    "type": "Gtk.StyleContext"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        [
+            {
+                "doc": "<p>Creates a new unthemed <span data-xref=\"Gtk.NumerableIcon\"/>.</p>",
+                "kind": "function",
+                "name": "new",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "base_icon",
+                        "direction": "in",
+                        "type": "Gio.Icon"
+                    }
+                ],
+                "retval": {
+                    "type": "Gio.Icon"
+                }
+            },
+            {
+                "doc": "<p>Creates a new <span data-xref=\"Gtk.NumerableIcon\"/> which will themed according\nto the passed <span data-xref=\"Gtk.StyleContext\"/>. This is a convenience constructor\nthat calls <span data-xref=\"Gtk.NumerableIcon.set_style_context\"/> internally.</p>",
+                "kind": "function",
+                "name": "new_with_style_context",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "base_icon",
+                        "direction": "in",
+                        "type": "Gio.Icon"
+                    },
+                    {
+                        "allow_none": false,
+                        "argname": "context",
+                        "direction": "in",
+                        "type": "Gtk.StyleContext"
+                    }
+                ],
+                "retval": {
+                    "type": "Gio.Icon"
+                }
+            }
+        ]
+    ],
+    "name": "NumerableIcon",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "background-icon",
+            "type": "Gio.Icon"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "background-icon-name",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "count",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "label",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "style-context",
+            "type": "Gtk.StyleContext"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

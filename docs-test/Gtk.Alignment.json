@@ -1,0 +1,210 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Alignment\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "xalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "xscale",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yscale",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.Alignment\"/> widget controls the alignment and size of its child widget.\nIt has four settings: xscale, yscale, xalign, and yalign.</p><p>The scale settings are used to specify how much the child widget should\nexpand to fill the space allocated to the <span data-xref=\"Gtk.Alignment\"/>.\nThe values can range from 0 (meaning the child doesn\u2019t expand at all) to\n1 (meaning the child expands to fill all of the available space).</p><p>The align settings are used to place the child widget within the available\narea. The values range from 0 (top or left) to 1 (bottom or right).\nOf course, if the scale settings are both set to 1, the alignment settings\nhave no effect.</p><p>Note that the desired effect can in most cases be achieved by using the\n<span data-xref=\"Gtk.Widget-halign\"/>, <span data-xref=\"Gtk.Widget-valign\"/> and <span data-xref=\"Gtk.Widget-margin\"/> properties\non the child widget, so <span data-xref=\"Gtk.Alignment\"/> should not be used in new code.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "bin"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Gets the padding on the different sides of the widget.\nSee gtk_alignment_set_padding ().</p>",
+            "kind": "method",
+            "name": "get_padding",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "padding_top",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "padding_bottom",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "padding_left",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "padding_right",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Alignment\"/> values.</p>",
+            "kind": "method",
+            "name": "set",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "xalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "xscale",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yscale",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the padding on the different sides of the widget.\nThe padding adds blank space to the sides of the widget. For instance,\nthis can be used to indent the child widget towards the right by adding\npadding on the left.</p>",
+            "kind": "method",
+            "name": "set_padding",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "padding_top",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "padding_bottom",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "padding_left",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "padding_right",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Alignment",
+    "properties": [
+        {
+            "doc": "<p>The padding to insert at the bottom of the widget.</p>",
+            "kind": "property",
+            "name": "bottom-padding",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "<p>The padding to insert at the left of the widget.</p>",
+            "kind": "property",
+            "name": "left-padding",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "<p>The padding to insert at the right of the widget.</p>",
+            "kind": "property",
+            "name": "right-padding",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "<p>The padding to insert at the top of the widget.</p>",
+            "kind": "property",
+            "name": "top-padding",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "xalign",
+            "type": "Number(gfloat)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "xscale",
+            "type": "Number(gfloat)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "yalign",
+            "type": "Number(gfloat)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "yscale",
+            "type": "Number(gfloat)"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

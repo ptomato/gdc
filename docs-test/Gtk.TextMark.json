@@ -1,0 +1,121 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a text mark. Add it to a buffer using <span data-xref=\"Gtk.TextBuffer.add_mark\"/>.\nIf <code>name</code> is <code>null</code>, the mark is anonymous; otherwise, the mark can be\nretrieved by name using <span data-xref=\"Gtk.TextBuffer.get_mark\"/>. If a mark has left\ngravity, and text is inserted at the mark\u2019s current location, the mark\nwill be moved to the left of the newly-inserted text. If the mark has\nright gravity (<code>left_gravity</code> = <code>false</code>), the mark will end up on the\nright of newly-inserted text. The standard left-to-right cursor is a\nmark with right gravity (when you type, the cursor stays on the right\nside of the text you\u2019re typing).</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "left_gravity",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.TextMark"
+            }
+        }
+    ],
+    "doc": "<p>You may wish to begin by reading the\n[text widget conceptual overview][TextWidget]\nwhich gives an overview of all the objects and data\ntypes related to the text widget and how they work together.</p><p>A <span data-xref=\"Gtk.TextMark\"/> is like a bookmark in a text buffer; it preserves a position in\nthe text. You can convert the mark to an iterator using\n<span data-xref=\"Gtk.TextBuffer.get_iter_at_mark\"/>. Unlike iterators, marks remain valid across\nbuffer mutations, because their behavior is defined when text is inserted or\ndeleted. When text containing a mark is deleted, the mark remains in the\nposition originally occupied by the deleted text. When text is inserted at a\nmark, a mark with \u201cleft gravity\u201d will be moved to the\nbeginning of the newly-inserted text, and a mark with \u201cright\ngravity\u201d will be moved to the end.</p><p>Note that \u201cleft\u201d and \u201cright\u201d here refer to logical direction (left\nis the toward the start of the buffer); in some languages such as\nHebrew the logically-leftmost text is not actually on the left when\ndisplayed.</p><p>Marks are reference counted, but the reference count only controls the validity\nof the memory; marks can be deleted from the buffer at any time with\n<span data-xref=\"Gtk.TextBuffer.delete_mark\"/>. Once deleted from the buffer, a mark is\nessentially useless.</p><p>Marks optionally have names; these can be convenient to avoid passing the\n<span data-xref=\"Gtk.TextMark\"/> object around.</p><p>Marks are typically created using the <span data-xref=\"Gtk.TextBuffer.create_mark\"/> function.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "segment"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Gets the buffer this mark is located inside,\nor <code>null</code> if the mark is deleted.</p>",
+            "kind": "method",
+            "name": "get_buffer",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TextBuffer"
+            }
+        },
+        {
+            "doc": "<p>Returns <code>true</code> if the mark has been removed from its buffer\nwith <span data-xref=\"Gtk.TextBuffer.delete_mark\"/>. See <span data-xref=\"Gtk.TextBuffer.add_mark\"/>\nfor a way to add it to a buffer again.</p>",
+            "kind": "method",
+            "name": "get_deleted",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Determines whether the mark has left gravity.</p>",
+            "kind": "method",
+            "name": "get_left_gravity",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the mark name; returns NULL for anonymous marks.</p>",
+            "kind": "method",
+            "name": "get_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns <code>true</code> if the mark is visible (i.e. a cursor is displayed\nfor it).</p>",
+            "kind": "method",
+            "name": "get_visible",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the visibility of <code>mark</code>; the insertion point is normally\nvisible, i.e. you can see it as a vertical bar. Also, the text\nwidget uses a visible mark to indicate where a drop will occur when\ndragging-and-dropping text. Most other marks are not visible.\nMarks are not visible by default.</p>",
+            "kind": "method",
+            "name": "set_visible",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "TextMark",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "left-gravity",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "name",
+            "type": "String"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

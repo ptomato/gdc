@@ -1,0 +1,349 @@
+{
+    "constructors": [],
+    "doc": "<p>The <span data-xref=\"Gtk.CellAreaContext\"/> object is created by a given <span data-xref=\"Gtk.CellArea\"/>\nimplementation via its <span data-xref=\"Gtk.CellAreaClass\"/>.create_context() virtual\nmethod and is used to store cell sizes and alignments for a series of\n<span data-xref=\"Gtk.TreeModel\"/> rows that are requested and rendered in the same context.</p><p><span data-xref=\"Gtk.CellLayout\"/> widgets can create any number of contexts in which to\nrequest and render groups of data rows. However, it\u2019s important that the\nsame context which was used to request sizes for a given <span data-xref=\"Gtk.TreeModel\"/>\nrow also be used for the same row when calling other <span data-xref=\"Gtk.CellArea\"/> APIs\nsuch as <span data-xref=\"Gtk.CellArea.render\"/> and <span data-xref=\"Gtk.CellArea.event\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Allocates a width and/or a height for all rows which are to be\nrendered with <code>context</code>.</p><p>Usually allocation is performed only horizontally or sometimes\nvertically since a group of rows are usually rendered side by\nside vertically or horizontally and share either the same width\nor the same height. Sometimes they are allocated in both horizontal\nand vertical orientations producing a homogeneous effect of the\nrows. This is generally the case for <span data-xref=\"Gtk.TreeView\"/> when\n<span data-xref=\"Gtk.TreeView-fixed-height-mode\"/> is enabled.</p><p>Since 3.0</p>",
+            "kind": "method",
+            "name": "allocate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Fetches the current allocation size for <code>context</code>.</p><p>If the context was not allocated in width or height, or if the\ncontext was recently reset with <span data-xref=\"Gtk.CellAreaContext.reset\"/>,\nthe returned value will be -1.</p>",
+            "kind": "method",
+            "name": "get_allocation",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Fetches the <span data-xref=\"Gtk.CellArea\"/> this <code>context</code> was created by.</p><p>This is generally unneeded by layouting widgets; however,\nit is important for the context implementation itself to\nfetch information about the area it is being used for.</p><p>For instance at <span data-xref=\"Gtk.CellAreaContextClass\"/>.allocate() time\nit\u2019s important to know details about any cell spacing\nthat the <span data-xref=\"Gtk.CellArea\"/> is configured with in order to\ncompute a proper allocation.</p>",
+            "kind": "method",
+            "name": "get_area",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CellArea"
+            }
+        },
+        {
+            "doc": "<p>Gets the accumulative preferred height for all rows which have been\nrequested with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are 0.</p>",
+            "kind": "method",
+            "name": "get_preferred_height",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "minimum_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the accumulative preferred height for <code>width</code> for all rows\nwhich have been requested for the same said <code>width</code> with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are -1.</p>",
+            "kind": "method",
+            "name": "get_preferred_height_for_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the accumulative preferred width for all rows which have been\nrequested with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are 0.</p>",
+            "kind": "method",
+            "name": "get_preferred_width",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "minimum_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the accumulative preferred width for <code>height</code> for all rows which\nhave been requested for the same said <code>height</code> with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are -1.</p>",
+            "kind": "method",
+            "name": "get_preferred_width_for_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Causes the minimum and/or natural height to grow if the new\nproposed sizes exceed the current minimum and natural height.</p><p>This is used by <span data-xref=\"Gtk.CellAreaContext\"/> implementations during\nthe request process over a series of <span data-xref=\"Gtk.TreeModel\"/> rows to\nprogressively push the requested height over a series of\n<span data-xref=\"Gtk.CellArea.get_preferred_height\"/> requests.</p>",
+            "kind": "method",
+            "name": "push_preferred_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "minimum_height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "natural_height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Causes the minimum and/or natural width to grow if the new\nproposed sizes exceed the current minimum and natural width.</p><p>This is used by <span data-xref=\"Gtk.CellAreaContext\"/> implementations during\nthe request process over a series of <span data-xref=\"Gtk.TreeModel\"/> rows to\nprogressively push the requested width over a series of\n<span data-xref=\"Gtk.CellArea.get_preferred_width\"/> requests.</p>",
+            "kind": "method",
+            "name": "push_preferred_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "minimum_width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "natural_width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Resets any previously cached request and allocation\ndata.</p><p>When underlying <span data-xref=\"Gtk.TreeModel\"/> data changes its\nimportant to reset the context if the content\nsize is allowed to shrink. If the content size\nis only allowed to grow (this is usually an option\nfor views rendering large data stores as a measure\nof optimization), then only the row that changed\nor was inserted needs to be (re)requested with\n<span data-xref=\"Gtk.CellArea.get_preferred_width\"/>.</p><p>When the new overall size of the context requires\nthat the allocated size changes (or whenever this\nallocation changes at all), the variable row\nsizes need to be re-requested for every row.</p><p>For instance, if the rows are displayed all with\nthe same width from top to bottom then a change\nin the allocated width necessitates a recalculation\nof all the displayed row heights using\n<span data-xref=\"Gtk.CellArea.get_preferred_height_for_width\"/>.</p><p>Since 3.0</p>",
+            "kind": "method",
+            "name": "reset",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "CellAreaContext",
+    "properties": [
+        {
+            "doc": "<p>The <span data-xref=\"Gtk.CellArea\"/> this context was created by</p>",
+            "kind": "property",
+            "name": "area",
+            "type": "Gtk.CellArea"
+        },
+        {
+            "doc": "<p>The minimum height for the <span data-xref=\"Gtk.CellArea\"/> in this context\nfor all <span data-xref=\"Gtk.TreeModel\"/> rows that this context was requested\nfor using <span data-xref=\"Gtk.CellArea.get_preferred_height\"/>.</p>",
+            "kind": "property",
+            "name": "minimum-height",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>The minimum width for the <span data-xref=\"Gtk.CellArea\"/> in this context\nfor all <span data-xref=\"Gtk.TreeModel\"/> rows that this context was requested\nfor using <span data-xref=\"Gtk.CellArea.get_preferred_width\"/>.</p>",
+            "kind": "property",
+            "name": "minimum-width",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>The natural height for the <span data-xref=\"Gtk.CellArea\"/> in this context\nfor all <span data-xref=\"Gtk.TreeModel\"/> rows that this context was requested\nfor using <span data-xref=\"Gtk.CellArea.get_preferred_height\"/>.</p>",
+            "kind": "property",
+            "name": "natural-height",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>The natural width for the <span data-xref=\"Gtk.CellArea\"/> in this context\nfor all <span data-xref=\"Gtk.TreeModel\"/> rows that this context was requested\nfor using <span data-xref=\"Gtk.CellArea.get_preferred_width\"/>.</p>",
+            "kind": "property",
+            "name": "natural-width",
+            "type": "Number(gint)"
+        }
+    ],
+    "signals": [],
+    "vfuncs": [
+        {
+            "doc": "<p>Allocates a width and/or a height for all rows which are to be\nrendered with <code>context</code>.</p><p>Usually allocation is performed only horizontally or sometimes\nvertically since a group of rows are usually rendered side by\nside vertically or horizontally and share either the same width\nor the same height. Sometimes they are allocated in both horizontal\nand vertical orientations producing a homogeneous effect of the\nrows. This is generally the case for <span data-xref=\"Gtk.TreeView\"/> when\n<span data-xref=\"Gtk.TreeView-fixed-height-mode\"/> is enabled.</p><p>Since 3.0</p>",
+            "kind": "vfunc",
+            "name": "allocate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the accumulative preferred height for <code>width</code> for all rows\nwhich have been requested for the same said <code>width</code> with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are -1.</p>",
+            "kind": "vfunc",
+            "name": "get_preferred_height_for_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the accumulative preferred width for <code>height</code> for all rows which\nhave been requested for the same said <code>height</code> with this context.</p><p>After <span data-xref=\"Gtk.CellAreaContext.reset\"/> is called and/or before ever\nrequesting the size of a <span data-xref=\"Gtk.CellArea\"/>, the returned values are -1.</p>",
+            "kind": "vfunc",
+            "name": "get_preferred_width_for_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Resets any previously cached request and allocation\ndata.</p><p>When underlying <span data-xref=\"Gtk.TreeModel\"/> data changes its\nimportant to reset the context if the content\nsize is allowed to shrink. If the content size\nis only allowed to grow (this is usually an option\nfor views rendering large data stores as a measure\nof optimization), then only the row that changed\nor was inserted needs to be (re)requested with\n<span data-xref=\"Gtk.CellArea.get_preferred_width\"/>.</p><p>When the new overall size of the context requires\nthat the allocated size changes (or whenever this\nallocation changes at all), the variable row\nsizes need to be re-requested for every row.</p><p>For instance, if the rows are displayed all with\nthe same width from top to bottom then a change\nin the allocated width necessitates a recalculation\nof all the displayed row heights using\n<span data-xref=\"Gtk.CellArea.get_preferred_height_for_width\"/>.</p><p>Since 3.0</p>",
+            "kind": "vfunc",
+            "name": "reset",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

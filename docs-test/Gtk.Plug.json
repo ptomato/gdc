@@ -1,0 +1,161 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new plug widget inside the <span data-xref=\"Gtk.Socket\"/> identified\nby <code>socket_id</code>. If <code>socket_id</code> is 0, the plug is left \u201cunplugged\u201d and\ncan later be plugged into a <span data-xref=\"Gtk.Socket\"/> by  <span data-xref=\"Gtk.Socket.add_id\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "socket_id",
+                    "direction": "in",
+                    "type": "xlib.Window"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Create a new plug widget inside the <span data-xref=\"Gtk.Socket\"/> identified by socket_id.</p>",
+            "kind": "constructor",
+            "name": "new_for_display",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "display",
+                    "direction": "in",
+                    "type": "Gdk.Display"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "socket_id",
+                    "direction": "in",
+                    "type": "xlib.Window"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>Together with <span data-xref=\"Gtk.Socket\"/>, <span data-xref=\"Gtk.Plug\"/> provides the ability to embed\nwidgets from one process into another process in a fashion that is\ntransparent to the user. One process creates a <span data-xref=\"Gtk.Socket\"/> widget\nand passes the ID of that widget\u2019s window to the other process,\nwhich then creates a <span data-xref=\"Gtk.Plug\"/> with that window ID. Any widgets\ncontained in the <span data-xref=\"Gtk.Plug\"/> then will appear inside the first\napplication\u2019s window.</p><p>The communication between a <span data-xref=\"Gtk.Socket\"/> and a <span data-xref=\"Gtk.Plug\"/> follows the\n<a href=\"http://www.freedesktop.org/Standards/xembed-spec\">XEmbed Protocol</a>.\nThis protocol has also been implemented in other toolkits,\ne.g. Qt, allowing the same level of\nintegration when embedding a Qt widget\nin GTK+ or vice versa.</p><p>The <span data-xref=\"Gtk.Plug\"/> and <span data-xref=\"Gtk.Socket\"/> widgets are only available when GTK+\nis compiled for the X11 platform and %GDK_WINDOWING_X11 is defined.\nThey can only be used on a #GdkX11Display. To use <span data-xref=\"Gtk.Plug\"/> and\n<span data-xref=\"Gtk.Socket\"/>, you need to include the <code>gtk/gtkx.h</code>\nheader.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "window"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Finish the initialization of <code>plug</code> for a given <span data-xref=\"Gtk.Socket\"/> identified by\n<code>socket_id</code>. This function will generally only be used by classes deriving from <span data-xref=\"Gtk.Plug\"/>.</p>",
+            "kind": "method",
+            "name": "construct",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "socket_id",
+                    "direction": "in",
+                    "type": "xlib.Window"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Finish the initialization of <code>plug</code> for a given <span data-xref=\"Gtk.Socket\"/> identified by\n<code>socket_id</code> which is currently displayed on <code>display</code>.\nThis function will generally only be used by classes deriving from <span data-xref=\"Gtk.Plug\"/>.</p>",
+            "kind": "method",
+            "name": "construct_for_display",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "display",
+                    "direction": "in",
+                    "type": "Gdk.Display"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "socket_id",
+                    "direction": "in",
+                    "type": "xlib.Window"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Determines whether the plug is embedded in a socket.</p>",
+            "kind": "method",
+            "name": "get_embedded",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the window ID of a <span data-xref=\"Gtk.Plug\"/> widget, which can then\nbe used to embed this window inside another window, for\ninstance with <span data-xref=\"Gtk.Socket.add_id\"/>.</p>",
+            "kind": "method",
+            "name": "get_id",
+            "parameters": [],
+            "retval": {
+                "type": "xlib.Window"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the socket the plug is embedded in.</p>",
+            "kind": "method",
+            "name": "get_socket_window",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Window"
+            }
+        },
+        []
+    ],
+    "name": "Plug",
+    "properties": [
+        {
+            "doc": "<p><code>true</code> if the plug is embedded in a socket.</p>",
+            "kind": "property",
+            "name": "embedded",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The window of the socket the plug is embedded in.</p>",
+            "kind": "property",
+            "name": "socket-window",
+            "type": "Gdk.Window"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Gets emitted when the plug becomes embedded in a socket.</p>",
+            "kind": "signal",
+            "name": "embedded",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "embedded",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

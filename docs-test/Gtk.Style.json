@@ -1,0 +1,1871 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Style\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Style"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.Style\"/> object encapsulates the information that provides the look and\nfeel for a widget.</p><p>&gt; In GTK+ 3.0, GtkStyle has been deprecated and replaced by\n&gt; <span data-xref=\"Gtk.StyleContext\"/>.</p><p>Each <span data-xref=\"Gtk.Widget\"/> has an associated <span data-xref=\"Gtk.Style\"/> object that is used when\nrendering that widget. Also, a <span data-xref=\"Gtk.Style\"/> holds information for the five\npossible widget states though not every widget supports all five\nstates; see <span data-xref=\"Gtk.StateType\"/>.</p><p>Usually the <span data-xref=\"Gtk.Style\"/> for a widget is the same as the default style that\nis set by GTK+ and modified the theme engine.</p><p>Usually applications should not need to use or modify the <span data-xref=\"Gtk.Style\"/> of\ntheir widgets.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "<p>Set of foreground <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
+            "kind": "field",
+            "name": "fg"
+        },
+        {
+            "doc": "<p>Set of background <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
+            "kind": "field",
+            "name": "bg"
+        },
+        {
+            "doc": "<p>Set of light <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
+            "kind": "field",
+            "name": "light"
+        },
+        {
+            "doc": "<p>Set of dark <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
+            "kind": "field",
+            "name": "dark"
+        },
+        {
+            "doc": "<p>Set of mid <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
+            "kind": "field",
+            "name": "mid"
+        },
+        {
+            "doc": "<p>Set of text <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
+            "kind": "field",
+            "name": "text"
+        },
+        {
+            "doc": "<p>Set of base <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
+            "kind": "field",
+            "name": "base"
+        },
+        {
+            "doc": "<p>Color halfway between text/base</p>",
+            "kind": "field",
+            "name": "text_aa"
+        },
+        {
+            "doc": "<p><span data-xref=\"Gdk.Color\">Gdk.Color</span> to use for black</p>",
+            "kind": "field",
+            "name": "black"
+        },
+        {
+            "doc": "<p><span data-xref=\"Gdk.Color\">Gdk.Color</span> to use for white</p>",
+            "kind": "field",
+            "name": "white"
+        },
+        {
+            "doc": "<p><span data-xref=\"Pango.FontDescription\">Pango.FontDescription</span></p>",
+            "kind": "field",
+            "name": "font_desc"
+        },
+        {
+            "doc": "<p>Thickness in X direction</p>",
+            "kind": "field",
+            "name": "xthickness"
+        },
+        {
+            "doc": "<p>Thickness in Y direction</p>",
+            "kind": "field",
+            "name": "ythickness"
+        },
+        {
+            "doc": "<p>Set of background #cairo_pattern_t</p>",
+            "kind": "field",
+            "name": "background"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "attach_count"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "visual"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "private_font_desc"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "rc_style"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "styles"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "property_cache"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "icon_factories"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "",
+            "kind": "method",
+            "name": "apply_default_background",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "window",
+                    "direction": "in",
+                    "type": "Gdk.Window"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Attaches a style to a window; this process allocates the\ncolors and creates the GC\u2019s for the style - it specializes\nit to a particular visual. The process may involve the creation\nof a new style if the style has already been attached to a\nwindow with a different style and visual.</p><p>Since this function may return a new object, you have to use it\nin the following way:\n<code>style = gtk_style_attach (style, window)</code></p>",
+            "kind": "method",
+            "name": "attach",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "window",
+                    "direction": "in",
+                    "type": "Gdk.Window"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Style"
+            }
+        },
+        {
+            "doc": "<p>Creates a copy of the passed in <span data-xref=\"Gtk.Style\"/> object.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Style"
+            }
+        },
+        {
+            "doc": "<p>Detaches a style from a window. If the style is not attached\nto any windows anymore, it is unrealized. See <span data-xref=\"Gtk.Style.attach\"/>.</p>",
+            "kind": "method",
+            "name": "detach",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the values of a multiple style properties for <code>widget_type</code>\nfrom <code>style</code>.</p>",
+            "kind": "method",
+            "name": "get",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget_type",
+                    "direction": "in",
+                    "type": "GObject.Type"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "first_property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Queries the value of a style property corresponding to a\nwidget class is in the given style.</p>",
+            "kind": "method",
+            "name": "get_style_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget_type",
+                    "direction": "in",
+                    "type": "GObject.Type"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Any"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Non-vararg variant of <span data-xref=\"Gtk.Style.get\"/>.\nUsed primarily by language bindings.</p>",
+            "kind": "method",
+            "name": "get_valist",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget_type",
+                    "direction": "in",
+                    "type": "GObject.Type"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "first_property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "var_args",
+                    "direction": "in",
+                    "type": "va_list"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns whether <code>style</code> has an associated <span data-xref=\"Gtk.StyleContext\"/>.</p>",
+            "kind": "method",
+            "name": "has_context",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Looks up <code>color_name</code> in the style\u2019s logical color mappings,\nfilling in <code>color</code> and returning <code>true</code> if found, otherwise\nreturning <code>false</code>. Do not cache the found mapping, because\nit depends on the <span data-xref=\"Gtk.Style\"/> and might change when a theme\nswitch occurs.</p>",
+            "kind": "method",
+            "name": "lookup_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "out",
+                    "type": "Gdk.Color"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Looks up <code>stock_id</code> in the icon factories associated with <code>style</code>\nand the default icon factory, returning an icon set if found,\notherwise <code>null</code>.</p>",
+            "kind": "method",
+            "name": "lookup_icon_set",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "stock_id",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.IconSet"
+            }
+        },
+        {
+            "doc": "<p>Renders the icon specified by <code>source</code> at the given <code>size</code>\naccording to the given parameters and returns the result in a\npixbuf.</p>",
+            "kind": "method",
+            "name": "render_icon",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "source",
+                    "direction": "in",
+                    "type": "Gtk.IconSource"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "direction",
+                    "direction": "in",
+                    "type": "Gtk.TextDirection"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Sets the background of <code>window</code> to the background color or pixmap\nspecified by <code>style</code> for the given state.</p>",
+            "kind": "method",
+            "name": "set_background",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "window",
+                    "direction": "in",
+                    "type": "Gdk.Window"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Style",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "context",
+            "type": "Gtk.StyleContext"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Emitted when the style has been initialized for a particular\nvisual. Connecting to this signal is probably seldom\nuseful since most of the time applications and widgets only\ndeal with styles that have been already realized.</p>",
+            "kind": "signal",
+            "name": "realize",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the aspects of the style specific to a particular visual\nis being cleaned up. A connection to this signal can be useful\nif a widget wants to cache objects as object data on <span data-xref=\"Gtk.Style\"/>.\nThis signal provides a convenient place to free such cached objects.</p>",
+            "kind": "signal",
+            "name": "unrealize",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "clone",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Style"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "copy",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "src",
+                    "direction": "in",
+                    "type": "Gtk.Style"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_arrow",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "arrow_type",
+                    "direction": "in",
+                    "type": "Gtk.ArrowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "fill",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_box",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_box_gap",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gap_side",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gap_x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gap_width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_check",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_diamond",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_expander",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "expander_style",
+                    "direction": "in",
+                    "type": "Gtk.ExpanderStyle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_extension",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gap_side",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_flat_box",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_focus",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_handle",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_hline",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x1",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x2",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_layout",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "use_text",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "layout",
+                    "direction": "in",
+                    "type": "Pango.Layout"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_option",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_resize_grip",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "edge",
+                    "direction": "in",
+                    "type": "Gdk.WindowEdge"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_shadow",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_shadow_gap",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gap_side",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gap_x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gap_width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_slider",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_spinner",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "step",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_tab",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_vline",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y1_",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y2_",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "init_from_rc",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rc_style",
+                    "direction": "in",
+                    "type": "Gtk.RcStyle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "realize",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Renders the icon specified by <code>source</code> at the given <code>size</code>\naccording to the given parameters and returns the result in a\npixbuf.</p>",
+            "kind": "vfunc",
+            "name": "render_icon",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "source",
+                    "direction": "in",
+                    "type": "Gtk.IconSource"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "direction",
+                    "direction": "in",
+                    "type": "Gtk.TextDirection"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "detail",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Sets the background of <code>window</code> to the background color or pixmap\nspecified by <code>style</code> for the given state.</p>",
+            "kind": "vfunc",
+            "name": "set_background",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "window",
+                    "direction": "in",
+                    "type": "Gdk.Window"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state_type",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "unrealize",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

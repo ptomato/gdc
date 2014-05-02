@@ -1,0 +1,304 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new tool item group with label <code>label</code>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.ToolItemGroup\"/> is used together with <span data-xref=\"Gtk.ToolPalette\"/> to add</p>\n<h1>GtkToolItems to a palette like container with different</h1>\n<p>categories and drag and drop support.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Gets whether <code>group</code> is collapsed or expanded.</p>",
+            "kind": "method",
+            "name": "get_collapsed",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the tool item at position (x, y).</p>",
+            "kind": "method",
+            "name": "get_drop_item",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.ToolItem"
+            }
+        },
+        {
+            "doc": "<p>Gets the ellipsization mode of <code>group</code>.</p>",
+            "kind": "method",
+            "name": "get_ellipsize",
+            "parameters": [],
+            "retval": {
+                "type": "Pango.EllipsizeMode"
+            }
+        },
+        {
+            "doc": "<p>Gets the relief mode of the header button of <code>group</code>.</p>",
+            "kind": "method",
+            "name": "get_header_relief",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.ReliefStyle"
+            }
+        },
+        {
+            "doc": "<p>Gets the position of <code>item</code> in <code>group</code> as index.</p>",
+            "kind": "method",
+            "name": "get_item_position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "item",
+                    "direction": "in",
+                    "type": "Gtk.ToolItem"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the label of <code>group</code>.</p>",
+            "kind": "method",
+            "name": "get_label",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the label widget of <code>group</code>.\nSee <span data-xref=\"Gtk.ToolItemGroup.set_label_widget\"/>.</p>",
+            "kind": "method",
+            "name": "get_label_widget",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets the number of tool items in <code>group</code>.</p>",
+            "kind": "method",
+            "name": "get_n_items",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the tool item at <code>index</code> in group.</p>",
+            "kind": "method",
+            "name": "get_nth_item",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "index",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.ToolItem"
+            }
+        },
+        {
+            "doc": "<p>Inserts <code>item</code> at <code>position</code> in the list of children of <code>group</code>.</p>",
+            "kind": "method",
+            "name": "insert",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "item",
+                    "direction": "in",
+                    "type": "Gtk.ToolItem"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the <code>group</code> should be collapsed or expanded.</p>",
+            "kind": "method",
+            "name": "set_collapsed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "collapsed",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the ellipsization mode which should be used by labels in <code>group</code>.</p>",
+            "kind": "method",
+            "name": "set_ellipsize",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "ellipsize",
+                    "direction": "in",
+                    "type": "Pango.EllipsizeMode"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Set the button relief of the group header.\nSee <span data-xref=\"Gtk.Button.set_relief\"/> for details.</p>",
+            "kind": "method",
+            "name": "set_header_relief",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "style",
+                    "direction": "in",
+                    "type": "Gtk.ReliefStyle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the position of <code>item</code> in the list of children of <code>group</code>.</p>",
+            "kind": "method",
+            "name": "set_item_position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "item",
+                    "direction": "in",
+                    "type": "Gtk.ToolItem"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the label of the tool item group. The label is displayed in the header\nof the group.</p>",
+            "kind": "method",
+            "name": "set_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the label of the tool item group.\nThe label widget is displayed in the header of the group, in place\nof the usual label.</p>",
+            "kind": "method",
+            "name": "set_label_widget",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label_widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "ToolItemGroup",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "collapsed",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "ellipsize",
+            "type": "Pango.EllipsizeMode"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "header-relief",
+            "type": "Gtk.ReliefStyle"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "label",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "label-widget",
+            "type": "Gtk.Widget"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

@@ -1,0 +1,29 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new vertical button box.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "button_box"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        []
+    ],
+    "name": "VButtonBox",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

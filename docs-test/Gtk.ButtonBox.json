@@ -1,0 +1,149 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ButtonBox\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "box"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns whether the child is exempted from homogenous\nsizing.</p>",
+            "kind": "method",
+            "name": "get_child_non_homogeneous",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether <code>child</code> should appear in a secondary group of children.</p>",
+            "kind": "method",
+            "name": "get_child_secondary",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the method being used to arrange the buttons in a button box.</p>",
+            "kind": "method",
+            "name": "get_layout",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.ButtonBoxStyle"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the child is exempted from homogeous sizing.</p>",
+            "kind": "method",
+            "name": "set_child_non_homogeneous",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "non_homogeneous",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether <code>child</code> should appear in a secondary group of children.\nA typical use of a secondary child is the help button in a dialog.</p><p>This group appears after the other children if the style\nis <span data-xref=\"Gtk.ButtonBoxStyle\"/>.start, <span data-xref=\"Gtk.ButtonBoxStyle\"/>.spread or\n<span data-xref=\"Gtk.ButtonBoxStyle\"/>.edge, and before the other children if the style\nis <span data-xref=\"Gtk.ButtonBoxStyle\"/>.end. For horizontal button boxes, the definition\nof before/after depends on direction of the widget (see\n<span data-xref=\"Gtk.Widget.set_direction\"/>). If the style is <span data-xref=\"Gtk.ButtonBoxStyle\"/>.start\nor <span data-xref=\"Gtk.ButtonBoxStyle\"/>.end, then the secondary children are aligned at\nthe other end of the button box from the main children. For the\nother styles, they appear immediately next to the main children.</p>",
+            "kind": "method",
+            "name": "set_child_secondary",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "is_secondary",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Changes the way buttons are arranged in their container.</p>",
+            "kind": "method",
+            "name": "set_layout",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "layout_style",
+                    "direction": "in",
+                    "type": "Gtk.ButtonBoxStyle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "ButtonBox",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "layout-style",
+            "type": "Gtk.ButtonBoxStyle"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

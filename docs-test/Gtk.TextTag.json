@@ -1,0 +1,537 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a <span data-xref=\"Gtk.TextTag\"/>. Configure the tag using object arguments,\ni.e. using <span data-xref=\"GObject.Object.set\">GObject.Object.set</span>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.TextTag"
+            }
+        }
+    ],
+    "doc": "<p>You may wish to begin by reading the\n[text widget conceptual overview][TextWidget]\nwhich gives an overview of all the objects and\ndata types related to the text widget and how they work together.</p><p>Tags should be in the <span data-xref=\"Gtk.TextTagTable\"/> for a given <span data-xref=\"Gtk.TextBuffer\"/>\nbefore using them with that buffer.</p><p><span data-xref=\"Gtk.TextBuffer.create_tag\"/> is the best way to create tags.\nSee \u201cgtk3-demo\u201d for numerous examples.</p><p>For each property of <span data-xref=\"Gtk.TextTag\"/>, there is a \u201cset\u201d property, e.g.\n\u201cfont-set\u201d corresponds to \u201cfont\u201d. These \u201cset\u201d properties reflect\nwhether a property has been set or not.\nThey are maintained by GTK+ and you should not set them independently.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Emits the \u201cevent\u201d signal on the <span data-xref=\"Gtk.TextTag\"/>.</p>",
+            "kind": "method",
+            "name": "event",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "event_object",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.Event"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Get the tag priority.</p>",
+            "kind": "method",
+            "name": "get_priority",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Sets the priority of a <span data-xref=\"Gtk.TextTag\"/>. Valid priorities\nstart at 0 and go to one less than <span data-xref=\"Gtk.TextTagTable.get_size\"/>.\nEach tag in a table has a unique priority; setting the priority\nof one tag shifts the priorities of all the other tags in the\ntable to maintain a unique priority for each tag. Higher priority\ntags \u201cwin\u201d if two tags both set the same text attribute. When adding\na tag to a tag table, it will be assigned the highest priority in\nthe table by default; so normally the precedence of a set of tags\nis the order in which they were added to the table, or created with\n<span data-xref=\"Gtk.TextBuffer.create_tag\"/>, which adds the tag to the buffer\u2019s table\nautomatically.</p>",
+            "kind": "method",
+            "name": "set_priority",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "priority",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "TextTag",
+    "properties": [
+        {
+            "doc": "<p>Whether the margins accumulate or override each other.</p><p>When set to <code>true</code> the margins of this tag are added to the margins\nof any other non-accumulative margins present. When set to <code>false</code>\nthe margins override one another (the default).</p>",
+            "kind": "property",
+            "name": "accumulative-margin",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "background",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "background-full-height",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "background-full-height-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Background color as a <span data-xref=\"Gdk.Color\">Gdk.Color</span>.</p>",
+            "kind": "property",
+            "name": "background-gdk",
+            "type": "Gdk.Color"
+        },
+        {
+            "doc": "<p>Background color as a <span data-xref=\"Gdk.RGBA\">Gdk.RGBA</span>.</p>",
+            "kind": "property",
+            "name": "background-rgba",
+            "type": "Gdk.RGBA"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "background-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "direction",
+            "type": "Gtk.TextDirection"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "editable",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "editable-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "family",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "family-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Font description as string, e.g. \\\"Sans Italic 12\\\".</p><p>Note that the initial value of this property depends on\nthe internals of <span data-xref=\"Pango.FontDescription\">Pango.FontDescription</span>.</p>",
+            "kind": "property",
+            "name": "font",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "font-desc",
+            "type": "Pango.FontDescription"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "foreground",
+            "type": "String"
+        },
+        {
+            "doc": "<p>Foreground color as a <span data-xref=\"Gdk.Color\">Gdk.Color</span>.</p>",
+            "kind": "property",
+            "name": "foreground-gdk",
+            "type": "Gdk.Color"
+        },
+        {
+            "doc": "<p>Foreground color as a <span data-xref=\"Gdk.RGBA\">Gdk.RGBA</span>.</p>",
+            "kind": "property",
+            "name": "foreground-rgba",
+            "type": "Gdk.RGBA"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "foreground-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "indent",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "indent-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Whether this text is hidden.</p><p>Note that there may still be problems with the support for invisible\ntext, in particular when navigating programmatically inside a buffer\ncontaining invisible segments.</p>",
+            "kind": "property",
+            "name": "invisible",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "invisible-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "justification",
+            "type": "Gtk.Justification"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "justification-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The language this text is in, as an ISO code. Pango can use this as a\nhint when rendering the text. If not set, an appropriate default will be\nused.</p><p>Note that the initial value of this property depends on the current\nlocale, see also <span data-xref=\"Gtk.get_default_language\"/>.</p>",
+            "kind": "property",
+            "name": "language",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "language-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "left-margin",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "left-margin-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "name",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The paragraph background color as a string.</p>",
+            "kind": "property",
+            "name": "paragraph-background",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The paragraph background color as a <span data-xref=\"Gdk.Color\">Gdk.Color</span>.</p>",
+            "kind": "property",
+            "name": "paragraph-background-gdk",
+            "type": "Gdk.Color"
+        },
+        {
+            "doc": "<p>The paragraph background color as a <span data-xref=\"Gdk.RGBA\">Gdk.RGBA</span>.</p>",
+            "kind": "property",
+            "name": "paragraph-background-rgba",
+            "type": "Gdk.RGBA"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "paragraph-background-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "pixels-above-lines",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "pixels-above-lines-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "pixels-below-lines",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "pixels-below-lines-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "pixels-inside-wrap",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "pixels-inside-wrap-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "right-margin",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "right-margin-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "rise",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "rise-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "scale",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "scale-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "size",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "size-points",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "size-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "stretch",
+            "type": "Pango.Stretch"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "stretch-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "strikethrough",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "strikethrough-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "style",
+            "type": "Pango.Style"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "style-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "tabs",
+            "type": "Pango.TabArray"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "tabs-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "underline",
+            "type": "Pango.Underline"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "underline-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "variant",
+            "type": "Pango.Variant"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "variant-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "weight",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "weight-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "wrap-mode",
+            "type": "Gtk.WrapMode"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "wrap-mode-set",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::event signal is emitted when an event occurs on a region of the\nbuffer marked with this tag.</p>",
+            "kind": "signal",
+            "name": "event",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.Event"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "<p>Emits the \u201cevent\u201d signal on the <span data-xref=\"Gtk.TextTag\"/>.</p>",
+            "kind": "vfunc",
+            "name": "event",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "event_object",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.Event"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ]
+}

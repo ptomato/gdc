@@ -1,0 +1,41 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ColorChooserWidget\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.ColorChooserWidget\"/> widget lets the user select a\ncolor. By default, the chooser presents a prefined palette\nof colors, plus a small number of settable custom colors.\nIt is also possible to select a different color with the\nsingle-color editor. To enter the single-color editing mode,\nuse the context menu of any color of the palette, or use the\n'+' button to add a new custom color.</p><p>The chooser automatically remembers the last selection, as well\nas custom colors.</p><p>To change the initially selected color, use <span data-xref=\"Gtk.ColorChooser.set_rgba\"/>.\nTo get the selected font use <span data-xref=\"Gtk.ColorChooser.get_rgba\"/>.</p><p>The <span data-xref=\"Gtk.ColorChooserWidget\"/> is used in the <span data-xref=\"Gtk.ColorChooserDialog\"/>\nto provide a dialog for selecting colors.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        []
+    ],
+    "name": "ColorChooserWidget",
+    "properties": [
+        {
+            "doc": "<p>The ::show-editor property is <code>true</code> when the color chooser\nis showing the single-color editor. It can be set to switch\nthe color chooser into single-color editing mode.</p>",
+            "kind": "property",
+            "name": "show-editor",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

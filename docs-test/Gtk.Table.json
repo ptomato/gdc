@@ -1,0 +1,383 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Used to create a new table widget. An initial size must be given by\nspecifying how many rows and columns the table should have, although\nthis can be changed later with <span data-xref=\"Gtk.Table.resize\"/>.  <code>rows</code> and <code>columns</code>\nmust both be in the range 1 .. 65535. For historical reasons, 0 is accepted\nas well and is silently interpreted as 1.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rows",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "columns",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "homogeneous",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.Table\"/> functions allow the programmer to arrange widgets in rows and\ncolumns, making it easy to align many widgets next to each other,\nhorizontally and vertically.</p><p>Tables are created with a call to <span data-xref=\"Gtk.Table.new\"/>, the size of which can\nlater be changed with <span data-xref=\"Gtk.Table.resize\"/>.</p><p>Widgets can be added to a table using <span data-xref=\"Gtk.Table.attach\"/> or the more\nconvenient (but slightly less flexible) <span data-xref=\"Gtk.Table.attach_defaults\"/>.</p><p>To alter the space next to a specific row, use <span data-xref=\"Gtk.Table.set_row_spacing\"/>,\nand for a column, <span data-xref=\"Gtk.Table.set_col_spacing\"/>.\nThe gaps between all rows or columns can be changed by\ncalling <span data-xref=\"Gtk.Table.set_row_spacings\"/> or <span data-xref=\"Gtk.Table.set_col_spacings\"/>\nrespectively. Note that spacing is added between the\nchildren, while padding added by <span data-xref=\"Gtk.Table.attach\"/> is added on\neither side of the widget it belongs to.</p><p><span data-xref=\"Gtk.Table.set_homogeneous\"/>, can be used to set whether all cells in the\ntable will resize themselves to the size of the largest widget in the table.</p><p>&gt; <span data-xref=\"Gtk.Table\"/> has been deprecated. Use <span data-xref=\"Gtk.Grid\"/> instead. It provides the same\n&gt; capabilities as GtkTable for arranging widgets in a rectangular grid, but\n&gt; does support height-for-width geometry management.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "container"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds a widget to a table. The number of \u201ccells\u201d that a widget will occupy is\nspecified by <code>left_attach</code>, <code>right_attach</code>, <code>top_attach</code> and <code>bottom_attach</code>.\nThese each represent the leftmost, rightmost, uppermost and lowest column\nand row numbers of the table. (Columns and rows are indexed from zero).</p><p>To make a button occupy the lower right cell of a 2x2 table, use\n|[\ngtk_table_attach (table, button,\n                  1, 2, // left, right attach\n                  1, 2, // top, bottom attach\n                  xoptions, yoptions,\n                  xpadding, ypadding);\n]|\nIf you want to make the button span the entire bottom row, use <code>left_attach</code> == 0 and <code>right_attach</code> = 2 instead.</p>",
+            "kind": "method",
+            "name": "attach",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "left_attach",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "right_attach",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "top_attach",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "bottom_attach",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "xoptions",
+                    "direction": "in",
+                    "type": "Gtk.AttachOptions"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yoptions",
+                    "direction": "in",
+                    "type": "Gtk.AttachOptions"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "xpadding",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "ypadding",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>As there are many options associated with <span data-xref=\"Gtk.Table.attach\"/>, this convenience\nfunction provides the programmer with a means to add children to a table with\nidentical padding and expansion options. The values used for the <span data-xref=\"Gtk.AttachOptions\"/>\nare <code>GTK_EXPAND | GTK_FILL</code>, and the padding is set to 0.</p>",
+            "kind": "method",
+            "name": "attach_defaults",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "left_attach",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "right_attach",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "top_attach",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "bottom_attach",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the amount of space between column @col, and\ncolumn @col + 1. See <span data-xref=\"Gtk.Table.set_col_spacing\"/>.</p>",
+            "kind": "method",
+            "name": "get_col_spacing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "column",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the default column spacing for the table. This is\nthe spacing that will be used for newly added columns.\n(See <span data-xref=\"Gtk.Table.set_col_spacings\"/>)</p>",
+            "kind": "method",
+            "name": "get_default_col_spacing",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the default row spacing for the table. This is\nthe spacing that will be used for newly added rows.\n(See <span data-xref=\"Gtk.Table.set_row_spacings\"/>)</p>",
+            "kind": "method",
+            "name": "get_default_row_spacing",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the table cells are all constrained to the same\nwidth and height. (See gtk_table_set_homogeneous ())</p>",
+            "kind": "method",
+            "name": "get_homogeneous",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the amount of space between row <code>row</code>, and\nrow <code>row</code> + 1. See <span data-xref=\"Gtk.Table.set_row_spacing\"/>.</p>",
+            "kind": "method",
+            "name": "get_row_spacing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "row",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the number of rows and columns in the table.</p>",
+            "kind": "method",
+            "name": "get_size",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "rows",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "columns",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If you need to change a table\u2019s size after\nit has been created, this function allows you to do so.</p>",
+            "kind": "method",
+            "name": "resize",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rows",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "columns",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Alters the amount of space between a given table column and the following\ncolumn.</p>",
+            "kind": "method",
+            "name": "set_col_spacing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "column",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "spacing",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the space between every column in <code>table</code> equal to <code>spacing</code>.</p>",
+            "kind": "method",
+            "name": "set_col_spacings",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "spacing",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Changes the homogenous property of table cells, ie. whether all cells are\nan equal size or not.</p>",
+            "kind": "method",
+            "name": "set_homogeneous",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "homogeneous",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Changes the space between a given table row and the subsequent row.</p>",
+            "kind": "method",
+            "name": "set_row_spacing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "row",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "spacing",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the space between every row in <code>table</code> equal to <code>spacing</code>.</p>",
+            "kind": "method",
+            "name": "set_row_spacings",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "spacing",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Table",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "column-spacing",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "homogeneous",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "n-columns",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "n-rows",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "row-spacing",
+            "type": "Number(guint)"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

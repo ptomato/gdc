@@ -1,0 +1,535 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Assistant\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.Assistant\"/> is a widget used to represent a generally complex\noperation splitted in several steps, guiding the user through its\npages and controlling the page flow to collect the necessary data.</p><p>The design of GtkAssistant is that it controls what buttons to show\nand to make sensitive, based on what it knows about the page sequence\nand the [type][GtkAssistantPageType] of each page,\nin addition to state information like the page\n[completion][gtk-assistant-set-page-complete]\nand [committed][gtk-assistant-commit] status.</p><p>If you have a case that doesn\u2019t quite fit in #GtkAssistants way of\nhandling buttons, you can use the #GTK_ASSISTANT_PAGE_CUSTOM page\ntype and handle buttons yourself.</p><h1>GtkAssistant as GtkBuildable</h1><p>The GtkAssistant implementation of the <span data-xref=\"Gtk.Buildable\"/> interface\nexposes the @action_area as internal children with the name\n\u201caction_area\u201d.</p><p>To add pages to an assistant in <span data-xref=\"Gtk.Builder\"/>, simply add it as a\nchild to the GtkAssistant object, and set its child properties\nas necessary.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds a widget to the action area of a <span data-xref=\"Gtk.Assistant\"/>.</p>",
+            "kind": "method",
+            "name": "add_action_widget",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Appends a page to the <code>assistant</code>.</p>",
+            "kind": "method",
+            "name": "append_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Erases the visited page history so the back button is not\nshown on the current page, and removes the cancel button\nfrom subsequent pages.</p><p>Use this when the information provided up to the current\npage is hereafter deemed permanent and cannot be modified\nor undone. For example, showing a progress page to track\na long-running, unreversible operation after the user has\nclicked apply on a confirmation page.</p>",
+            "kind": "method",
+            "name": "commit",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the page number of the current page.</p>",
+            "kind": "method",
+            "name": "get_current_page",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the number of pages in the <code>assistant</code></p>",
+            "kind": "method",
+            "name": "get_n_pages",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the child widget contained in page number <code>page_num</code>.</p>",
+            "kind": "method",
+            "name": "get_nth_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets whether <code>page</code> is complete.</p>",
+            "kind": "method",
+            "name": "get_page_complete",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the header image for <code>page</code>.</p>",
+            "kind": "method",
+            "name": "get_page_header_image",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Gets the side image for <code>page</code>.</p>",
+            "kind": "method",
+            "name": "get_page_side_image",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Gets the title for <code>page</code>.</p>",
+            "kind": "method",
+            "name": "get_page_title",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the page type of <code>page</code>.</p>",
+            "kind": "method",
+            "name": "get_page_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.AssistantPageType"
+            }
+        },
+        {
+            "doc": "<p>Inserts a page in the <code>assistant</code> at a given position.</p>",
+            "kind": "method",
+            "name": "insert_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Navigate to the next page.</p><p>It is a programming error to call this function when\nthere is no next page.</p><p>This function is for use when creating pages of the</p>\n<h1>GTK_ASSISTANT_PAGE_CUSTOM type.</h1>",
+            "kind": "method",
+            "name": "next_page",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Prepends a page to the <code>assistant</code>.</p>",
+            "kind": "method",
+            "name": "prepend_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Navigate to the previous visited page.</p><p>It is a programming error to call this function when\nno previous page is available.</p><p>This function is for use when creating pages of the</p>\n<h1>GTK_ASSISTANT_PAGE_CUSTOM type.</h1>",
+            "kind": "method",
+            "name": "previous_page",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes a widget from the action area of a <span data-xref=\"Gtk.Assistant\"/>.</p>",
+            "kind": "method",
+            "name": "remove_action_widget",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes the <code>page_num</code>\u2019s page from <code>assistant</code>.</p>",
+            "kind": "method",
+            "name": "remove_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Switches the page to <code>page_num</code>.</p><p>Note that this will only be necessary in custom buttons,\nas the <code>assistant</code> flow can be set with\n<span data-xref=\"Gtk.Assistant.set_forward_page_func\"/>.</p>",
+            "kind": "method",
+            "name": "set_current_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the page forwarding function to be <code>page_func</code>.</p><p>This function will be used to determine what will be\nthe next page when the user presses the forward button.\nSetting <code>page_func</code> to <code>null</code> will make the assistant to\nuse the default forward function, which just goes to the\nnext visible page.</p>",
+            "kind": "method",
+            "name": "set_forward_page_func",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "page_func",
+                    "direction": "in",
+                    "type": "Gtk.AssistantPageFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "destroy",
+                    "direction": "in",
+                    "type": "GLib.DestroyNotify"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether <code>page</code> contents are complete.</p><p>This will make <code>assistant</code> update the buttons state\nto be able to continue the task.</p>",
+            "kind": "method",
+            "name": "set_page_complete",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "complete",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a header image for <code>page</code>.</p>",
+            "kind": "method",
+            "name": "set_page_header_image",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "pixbuf",
+                    "direction": "in",
+                    "type": "GdkPixbuf.Pixbuf"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a side image for <code>page</code>.</p><p>This image used to be displayed in the side area of the assistant\nwhen <code>page</code> is the current page.</p>",
+            "kind": "method",
+            "name": "set_page_side_image",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "pixbuf",
+                    "direction": "in",
+                    "type": "GdkPixbuf.Pixbuf"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a title for <code>page</code>.</p><p>The title is displayed in the header area of the assistant\nwhen <code>page</code> is the current page.</p>",
+            "kind": "method",
+            "name": "set_page_title",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "title",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the page type for <code>page</code>.</p><p>The page type determines the page behavior in the <code>assistant</code>.</p>",
+            "kind": "method",
+            "name": "set_page_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.AssistantPageType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Forces <code>assistant</code> to recompute the buttons state.</p><p>GTK+ automatically takes care of this in most situations,\ne.g. when the user goes to a different page, or when the\nvisibility or completeness of a page changes.</p><p>One situation where it can be necessary to call this\nfunction is when changing a value on the current page\naffects the future page flow of the assistant.</p>",
+            "kind": "method",
+            "name": "update_buttons_state",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Assistant",
+    "properties": [
+        {
+            "doc": "<p><code>true</code> if the assistant uses a <span data-xref=\"Gtk.HeaderBar\"/> for action buttons\ninstead of the action-area.</p><p>For technical reasons, this property is declared as an integer\nproperty, but you should only set it to <code>true</code> or <code>false</code>.</p>",
+            "kind": "property",
+            "name": "use-header-bar",
+            "type": "Number(gint)"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::apply signal is emitted when the apply button is clicked.</p><p>The default behavior of the <span data-xref=\"Gtk.Assistant\"/> is to switch to the page\nafter the current page, unless the current page is the last one.</p><p>A handler for the ::apply signal should carry out the actions for\nwhich the wizard has collected data. If the action takes a long time\nto complete, you might consider putting a page of type\n<span data-xref=\"Gtk.AssistantPageType\"/>.progress after the confirmation page and handle\nthis operation within the <span data-xref=\"Gtk.Assistant-prepare\"/> signal of the progress\npage.</p>",
+            "kind": "signal",
+            "name": "apply",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::cancel signal is emitted when then the cancel button is clicked.</p>",
+            "kind": "signal",
+            "name": "cancel",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::close signal is emitted either when the close button of\na summary page is clicked, or when the apply button in the last\npage in the flow (of type <span data-xref=\"Gtk.AssistantPageType\"/>.confirm) is clicked.</p>",
+            "kind": "signal",
+            "name": "close",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::prepare signal is emitted when a new page is set as the\nassistant's current page, before making the new page visible.</p><p>A handler for this signal can do any preparations which are\nnecessary before showing <code>page</code>.</p>",
+            "kind": "signal",
+            "name": "prepare",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "apply",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "cancel",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "close",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "prepare",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

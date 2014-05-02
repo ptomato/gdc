@@ -1,0 +1,430 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.PlacesSidebar\"/> widget.</p><p>The application should connect to at least the\n<span data-xref=\"Gtk.PlacesSidebar-open-location\"/> signal to be notified\nwhen the user makes a selection in the sidebar.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.PlacesSidebar\"/> is a widget that displays a list of frequently-used places in the\nfile system:  the user\u2019s home directory, the user\u2019s bookmarks, and volumes and drives.\nThis widget is used as a sidebar in <span data-xref=\"Gtk.FileChooser\"/> and may be used by file managers\nand similar programs.</p><p>The places sidebar displays drives and volumes, and will automatically mount\nor unmount them when the user selects them.</p><p>Applications can hook to various signals in the places sidebar to customize\nits behavior.  For example, they can add extra commands to the context menu\nof the sidebar.</p><p>While bookmarks are completely in control of the user, the places sidebar also\nallows individual applications to provide extra shortcut folders that are unique\nto each application.  For example, a Paint program may want to add a shortcut\nfor a Clipart folder.  You can do this with <span data-xref=\"Gtk.PlacesSidebar.add_shortcut\"/>.</p><p>To make use of the places sidebar, an application at least needs to connect\nto the <span data-xref=\"Gtk.PlacesSidebar-open-location\"/> signal.  This is emitted when the\nuser selects in the sidebar a location to open.  The application should also\ncall <span data-xref=\"Gtk.PlacesSidebar.set_location\"/> when it changes the currently-viewed\nlocation.</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Applications may want to present some folders in the places sidebar if\nthey could be immediately useful to users.  For example, a drawing\nprogram could add a \u201c/usr/share/clipart\u201d location when the sidebar is\nbeing used in an \u201cInsert Clipart\u201d dialog box.</p><p>This function adds the specified <code>location</code> to a special place for immutable\nshortcuts.  The shortcuts are application-specific; they are not shared\nacross applications, and they are not persistent.  If this function\nis called multiple times with different locations, then they are added\nto the sidebar\u2019s list in the same order as the function is called.</p>",
+            "kind": "method",
+            "name": "add_shortcut",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "location",
+                    "direction": "in",
+                    "type": "Gio.File"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the value previously set with <span data-xref=\"Gtk.PlacesSidebar.set_local_only\"/>.</p>",
+            "kind": "method",
+            "name": "get_local_only",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the currently-selected location in the <code>sidebar</code>.  This can be #NULL when\nnothing is selected, for example, when <span data-xref=\"Gtk.PlacesSidebar.set_location\"/> has\nbeen called with a location that is not among the sidebar\u2019s list of places to\nshow.</p><p>You can use this function to get the selection in the <code>sidebar</code>.  Also, if you\nconnect to the <span data-xref=\"Gtk.PlacesSidebar-populate-popup\"/> signal, you can use this\nfunction to get the location that is being referred to during the callbacks\nfor your menu items.</p>",
+            "kind": "method",
+            "name": "get_location",
+            "parameters": [],
+            "retval": {
+                "type": "Gio.File"
+            }
+        },
+        {
+            "doc": "<p>This function queries the bookmarks added by the user to the places sidebar,\nand returns one of them.  This function is used by <span data-xref=\"Gtk.FileChooser\"/> to implement\nthe \u201cAlt-1\u201d, \u201cAlt-2\u201d, etc. shortcuts, which activate the cooresponding bookmark.</p>",
+            "kind": "method",
+            "name": "get_nth_bookmark",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "n",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gio.File"
+            }
+        },
+        {
+            "doc": "<p>Gets the open flags.</p>",
+            "kind": "method",
+            "name": "get_open_flags",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PlacesOpenFlags"
+            }
+        },
+        {
+            "doc": "<p>Returns the value previously set with <span data-xref=\"Gtk.PlacesSidebar.set_show_connect_to_server\"/></p>",
+            "kind": "method",
+            "name": "get_show_connect_to_server",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the value previously set with <span data-xref=\"Gtk.PlacesSidebar.set_show_desktop\"/></p>",
+            "kind": "method",
+            "name": "get_show_desktop",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the value previously set with <span data-xref=\"Gtk.PlacesSidebar.set_show_enter_location\"/></p>",
+            "kind": "method",
+            "name": "get_show_enter_location",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the list of shortcuts.</p>",
+            "kind": "method",
+            "name": "list_shortcuts",
+            "parameters": [],
+            "retval": {
+                "type": "Array(Gio.File)"
+            }
+        },
+        {
+            "doc": "<p>Removes an application-specific shortcut that has been previously been\ninserted with <span data-xref=\"Gtk.PlacesSidebar.add_shortcut\"/>.  If the <code>location</code> is not a\nshortcut in the sidebar, then nothing is done.</p>",
+            "kind": "method",
+            "name": "remove_shortcut",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "location",
+                    "direction": "in",
+                    "type": "Gio.File"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the <code>sidebar</code> should only show local files.</p>",
+            "kind": "method",
+            "name": "set_local_only",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "local_only",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the location that is being shown in the widgets surrounding the\n<code>sidebar</code>, for example, in a folder view in a file manager.  In turn, the\n<code>sidebar</code> will highlight that location if it is being shown in the list of\nplaces, or it will unhighlight everything if the <code>location</code> is not among the\nplaces in the list.</p>",
+            "kind": "method",
+            "name": "set_location",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "location",
+                    "direction": "in",
+                    "type": "Gio.File"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the way in which the calling application can open new locations from\nthe places sidebar.  For example, some applications only open locations\n\u201cdirectly\u201d into their main view, while others may support opening locations\nin a new notebook tab or a new window.</p><p>This function is used to tell the places <code>sidebar</code> about the ways in which the\napplication can open new locations, so that the sidebar can display (or not)\nthe \u201cOpen in new tab\u201d and \u201cOpen in new window\u201d menu items as appropriate.</p><p>When the <span data-xref=\"Gtk.PlacesSidebar-open-location\"/> signal is emitted, its flags\nargument will be set to one of the <code>flags</code> that was passed in\n<span data-xref=\"Gtk.PlacesSidebar.set_open_flags\"/>.</p><p>Passing 0 for <code>flags</code> will cause #GTK_PLACES_OPEN_NORMAL to always be sent\nto callbacks for the \u201copen-location\u201d signal.</p>",
+            "kind": "method",
+            "name": "set_open_flags",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.PlacesOpenFlags"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the <code>sidebar</code> should show an item for connecting to a network server; this is off by default.\nAn application may want to turn this on if it implements a way for the user to connect\nto network servers directly.</p>",
+            "kind": "method",
+            "name": "set_show_connect_to_server",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "show_connect_to_server",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the <code>sidebar</code> should show an item for the Desktop folder.\nThe default value for this option is determined by the desktop\nenvironment and the user\u2019s configuration, but this function can be\nused to override it on a per-application basis.</p>",
+            "kind": "method",
+            "name": "set_show_desktop",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "show_desktop",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the <code>sidebar</code> should show an item for connecting to a network server; this is off by default.\nAn application may want to turn this on if it implements a way for the user to connect\nto network servers directly.</p>",
+            "kind": "method",
+            "name": "set_show_enter_location",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "show_enter_location",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "PlacesSidebar",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "local-only",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "location",
+            "type": "Gio.File"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "open-flags",
+            "type": "Gtk.PlacesOpenFlags"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "show-connect-to-server",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "show-desktop",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "show-enter-location",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The places sidebar emits this signal when it needs to ask the application\nto pop up a menu to ask the user for which drag action to perform.</p>",
+            "kind": "signal",
+            "name": "drag-action-ask",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "actions",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>When the user starts a drag-and-drop operation and the sidebar needs\nto ask the application for which drag action to perform, then the\nsidebar will emit this signal.</p><p>The application can evaluate the <code>context</code> for customary actions, or\nit can check the type of the files indicated by <code>source_file_list</code> against the\npossible actions for the destination <code>dest_file</code>.</p><p>The drag action to use must be the return value of the signal handler.</p>",
+            "kind": "signal",
+            "name": "drag-action-requested",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gdk.DragContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "dest_file",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "source_file_list",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>The places sidebar emits this signal when the user completes a\ndrag-and-drop operation and one of the sidebar's items is the\ndestination.  This item is in the <code>dest_file</code>, and the\n<code>source_file_list</code> has the list of files that are dropped into it and\nwhich should be copied/moved/etc. based on the specified <code>action</code>.</p>",
+            "kind": "signal",
+            "name": "drag-perform-drop",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "dest_file",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "source_file_list",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "action",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The places sidebar emits this signal when the user selects a location\nin it.  The calling application should display the contents of that\nlocation; for example, a file manager should show a list of files in\nthe specified location.</p>",
+            "kind": "signal",
+            "name": "open-location",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "location",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "open_flags",
+                    "direction": "in",
+                    "type": "Gtk.PlacesOpenFlags"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The places sidebar emits this signal when the user invokes a contextual\nmenu on one of its items.  In the signal handler, the application may\nadd extra items to the menu as appropriate.  For example, a file manager\nmay want to add a \"Properties\" command to the menu.</p><p>It is not necessary to store the <code>selected_item</code> for each menu item;\nduring their GtkMenuItem::activate callbacks, the application can use\n<span data-xref=\"Gtk.PlacesSidebar.get_location\"/> to get the file to which the item\nrefers.</p><p>The <code>selected_item</code> argument may be #NULL in case the selection refers to\na volume.  In this case, <code>selected_volume</code> will be non-NULL.  In this case,\nthe calling application will have to <span data-xref=\"GObject.Object.ref\">GObject.Object.prototype.ref</span> the <code>selected_volume</code> and\nkeep it around for the purposes of its menu item's \"activate\" callback.</p><p>The <code>menu</code> and all its menu items are destroyed after the user\ndismisses the menu.  The menu is re-created (and thus, this signal is\nemitted) every time the user activates the contextual menu.</p>",
+            "kind": "signal",
+            "name": "populate-popup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "menu",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "selected_item",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "selected_volume",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The places sidebar emits this signal when it needs the calling\napplication to present an way to connect directly to a network server.\nFor example, the application may bring up a dialog box asking for\na URL like \"sftp://ftp.example.com\".  It is up to the application to create\nthe corresponding mount by using, for example, <span data-xref=\"Gio.File.mount_enclosing_volume\">Gio.File.prototype.mount_enclosing_volume</span>.</p>",
+            "kind": "signal",
+            "name": "show-connect-to-server",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The places sidebar emits this signal when it needs the calling\napplication to present an way to directly enter a location.\nFor example, the application may bring up a dialog box asking for\na URL like \"http://http.example.com\".</p>",
+            "kind": "signal",
+            "name": "show-enter-location",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The places sidebar emits this signal when it needs the calling\napplication to present an error message.  Most of these messages\nrefer to mounting or unmounting media, for example, when a drive\ncannot be started for some reason.</p>",
+            "kind": "signal",
+            "name": "show-error-message",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "primary",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "secondary",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": []
+}

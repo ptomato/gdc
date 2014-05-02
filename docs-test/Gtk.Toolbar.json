@@ -1,0 +1,406 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new toolbar.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A toolbar is created with a call to <span data-xref=\"Gtk.Toolbar.new\"/>.</p><p>A toolbar can contain instances of a subclass of <span data-xref=\"Gtk.ToolItem\"/>. To add\na <span data-xref=\"Gtk.ToolItem\"/> to the a toolbar, use <span data-xref=\"Gtk.Toolbar.insert\"/>. To remove\nan item from the toolbar use <span data-xref=\"Gtk.Container.remove\"/>. To add a button\nto the toolbar, add an instance of <span data-xref=\"Gtk.ToolButton\"/>.</p><p>Toolbar items can be visually grouped by adding instances of\n<span data-xref=\"Gtk.SeparatorToolItem\"/> to the toolbar. If the GtkToolbar child property\n\u201cexpand\u201d is #TRUE and the property <span data-xref=\"Gtk.SeparatorToolItem-draw\"/> is set to</p>\n<h1>FALSE, the effect is to force all following items to the end of the toolbar.</h1><p>Creating a context menu for the toolbar can be done by connecting to\nthe <span data-xref=\"Gtk.Toolbar-popup-context-menu\"/> signal.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "container"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the position corresponding to the indicated point on\n<code>toolbar</code>. This is useful when dragging items to the toolbar:\nthis function returns the position a new item should be\ninserted.</p><p><code>x</code> and <code>y</code> are in <code>toolbar</code> coordinates.</p>",
+            "kind": "method",
+            "name": "get_drop_index",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the icon size for the toolbar. See <span data-xref=\"Gtk.Toolbar.set_icon_size\"/>.</p>",
+            "kind": "method",
+            "name": "get_icon_size",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.IconSize"
+            }
+        },
+        {
+            "doc": "<p>Returns the position of <code>item</code> on the toolbar, starting from 0.\nIt is an error if <code>item</code> is not a child of the toolbar.</p>",
+            "kind": "method",
+            "name": "get_item_index",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "item",
+                    "direction": "in",
+                    "type": "Gtk.ToolItem"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the number of items on the toolbar.</p>",
+            "kind": "method",
+            "name": "get_n_items",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the <code>n</code>'th item on <code>toolbar</code>, or <code>null</code> if the\ntoolbar does not contain an <code>n</code>'th item.</p>",
+            "kind": "method",
+            "name": "get_nth_item",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "n",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.ToolItem"
+            }
+        },
+        {
+            "doc": "<p>Returns the relief style of buttons on <code>toolbar</code>. See\n<span data-xref=\"Gtk.Button.set_relief\"/>.</p>",
+            "kind": "method",
+            "name": "get_relief_style",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.ReliefStyle"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the toolbar has an overflow menu.\nSee <span data-xref=\"Gtk.Toolbar.set_show_arrow\"/>.</p>",
+            "kind": "method",
+            "name": "get_show_arrow",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Retrieves whether the toolbar has text, icons, or both . See\n<span data-xref=\"Gtk.Toolbar.set_style\"/>.</p>",
+            "kind": "method",
+            "name": "get_style",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.ToolbarStyle"
+            }
+        },
+        {
+            "doc": "<p>Insert a <span data-xref=\"Gtk.ToolItem\"/> into the toolbar at position <code>pos</code>. If <code>pos</code> is\n0 the item is prepended to the start of the toolbar. If <code>pos</code> is\nnegative, the item is appended to the end of the toolbar.</p>",
+            "kind": "method",
+            "name": "insert",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "item",
+                    "direction": "in",
+                    "type": "Gtk.ToolItem"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Highlights <code>toolbar</code> to give an idea of what it would look like\nif @item was added to <code>toolbar</code> at the position indicated by <code>index_</code>.\nIf @item is <code>null</code>, highlighting is turned off. In that case <code>index_</code>\nis ignored.</p><p>The <code>tool_item</code> passed to this function must not be part of any widget\nhierarchy. When an item is set as drop highlight item it can not\nadded to any widget hierarchy or used as highlight item for another\ntoolbar.</p>",
+            "kind": "method",
+            "name": "set_drop_highlight_item",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "tool_item",
+                    "direction": "in",
+                    "type": "Gtk.ToolItem"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "index_",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This function sets the size of stock icons in the toolbar. You\ncan call it both before you add the icons and after they\u2019ve been\nadded. The size you set will override user preferences for the default\nicon size.</p><p>This should only be used for special-purpose toolbars, normal\napplication toolbars should respect the user preferences for the\nsize of icons.</p>",
+            "kind": "method",
+            "name": "set_icon_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_size",
+                    "direction": "in",
+                    "type": "Gtk.IconSize"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether to show an overflow menu when\n<code>toolbar</code> doesn\u2019t have room for all items on it. If <code>true</code>,\nitems that there are not room are available through an\noverflow menu.</p>",
+            "kind": "method",
+            "name": "set_show_arrow",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "show_arrow",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Alters the view of <code>toolbar</code> to display either icons only, text only, or both.</p>",
+            "kind": "method",
+            "name": "set_style",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "style",
+                    "direction": "in",
+                    "type": "Gtk.ToolbarStyle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unsets toolbar icon size set with <span data-xref=\"Gtk.Toolbar.set_icon_size\"/>, so that\nuser preferences will be used to determine the icon size.</p>",
+            "kind": "method",
+            "name": "unset_icon_size",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unsets a toolbar style set with <span data-xref=\"Gtk.Toolbar.set_style\"/>, so that\nuser preferences will be used to determine the toolbar style.</p>",
+            "kind": "method",
+            "name": "unset_style",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Toolbar",
+    "properties": [
+        {
+            "doc": "<p>The size of the icons in a toolbar is normally determined by\nthe toolbar-icon-size setting. When this property is set, it\noverrides the setting.</p><p>This should only be used for special-purpose toolbars, normal\napplication toolbars should respect the user preferences for the\nsize of icons.</p>",
+            "kind": "property",
+            "name": "icon-size",
+            "type": "Gtk.IconSize"
+        },
+        {
+            "doc": "<p>Is <code>true</code> if the icon-size property has been set.</p>",
+            "kind": "property",
+            "name": "icon-size-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "show-arrow",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "toolbar-style",
+            "type": "Gtk.ToolbarStyle"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>A keybinding signal used internally by GTK+. This signal can't\nbe used in application code</p>",
+            "kind": "signal",
+            "name": "focus-home-or-end",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "focus_home",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the orientation of the toolbar changes.</p>",
+            "kind": "signal",
+            "name": "orientation-changed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the user right-clicks the toolbar or uses the\nkeybinding to display a popup menu.</p><p>Application developers should handle this signal if they want\nto display a context menu on the toolbar. The context-menu should\nappear at the coordinates given by <code>x</code> and <code>y</code>. The mouse button\nnumber is given by the <code>button</code> parameter. If the menu was popped\nup using the keybaord, <code>button</code> is -1.</p>",
+            "kind": "signal",
+            "name": "popup-context-menu",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "button",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the style of the toolbar changes.</p>",
+            "kind": "signal",
+            "name": "style-changed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "style",
+                    "direction": "in",
+                    "type": "Gtk.ToolbarStyle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "orientation_changed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "popup_context_menu",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "button_number",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "style_changed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "style",
+                    "direction": "in",
+                    "type": "Gtk.ToolbarStyle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

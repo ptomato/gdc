@@ -1,0 +1,1931 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Window\"/>, which is a toplevel window that can\ncontain other widgets. Nearly always, the type of the window should\nbe #GTK_WINDOW_TOPLEVEL. If you\u2019re implementing something like a\npopup menu from scratch (which is a bad idea, just use <span data-xref=\"Gtk.Menu\"/>),\nyou might use #GTK_WINDOW_POPUP. #GTK_WINDOW_POPUP is not for\ndialogs, though in some other toolkits dialogs are called \u201cpopups\u201d.\nIn GTK+, #GTK_WINDOW_POPUP means a pop-up menu or pop-up tooltip.\nOn X11, popup windows are not controlled by the\n[window manager][gtk-X11-arch].</p><p>If you simply want an undecorated window (no window borders), use\n<span data-xref=\"Gtk.Window.set_decorated\"/>, don\u2019t use #GTK_WINDOW_POPUP.</p><p>All top-level windows created by <span data-xref=\"Gtk.Window.new\"/> are stored in\nan internal top-level window list.  This list can be obtained from\n<span data-xref=\"Gtk.Window.list_toplevels\"/>.  Due to Gtk+ keeping a reference to\nthe window internally, <span data-xref=\"Gtk.Window.new\"/> does not return a reference\nto the caller.</p><p>To delete a <span data-xref=\"Gtk.Window\"/>, call <span data-xref=\"Gtk.Widget.destroy\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.WindowType"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A GtkWindow is a toplevel window which can contain other widgets.\nWindows normally have decorations that are under the control\nof the windowing system and allow the user to manipulate the window\n(resize it, move it, close it,...).</p><p>GTK+ also allows windows to have a resize grip (a small area in the lower\nright or left corner) which can be clicked to resize the window. To\ncontrol whether a window has a resize grip, use\n<span data-xref=\"Gtk.Window.set_has_resize_grip\"/>.</p><h1>GtkWindow as GtkBuildable</h1><p>The GtkWindow implementation of the GtkBuildable interface supports a\ncustom &lt;accel-groups&gt; element, which supports any number of &lt;group&gt;\nelements representing the <span data-xref=\"Gtk.AccelGroup\"/> objects you want to add to\nyour window (synonymous with <span data-xref=\"Gtk.Window.add_accel_group\"/>.</p><p>An example of a UI definition fragment with accel groups:\n|[\n&lt;object class=\"GtkWindow\"&gt;\n  &lt;accel-groups&gt;\n    &lt;group name=\"accelgroup1\"/&gt;\n  &lt;/accel-groups&gt;\n&lt;/object&gt;</p><p>...</p><p>&lt;object class=\"GtkAccelGroup\" id=\"accelgroup1\"/&gt;\n]|</p><p>The GtkWindow implementation of the GtkBuildable interface supports\nsetting a child as the titlebar by specifying \u201ctitlebar\u201d as the \u201ctype\u201d\nattribute of a &lt;child&gt; element.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "bin"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Activates the default widget for the window, unless the current\nfocused widget has been configured to receive the default action\n(see <span data-xref=\"Gtk.Widget.set_receives_default\"/>), in which case the\nfocused widget is activated.</p>",
+            "kind": "method",
+            "name": "activate_default",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Activates the current focused widget within the window.</p>",
+            "kind": "method",
+            "name": "activate_focus",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Activates mnemonics and accelerators for this <span data-xref=\"Gtk.Window\"/>. This is normally\ncalled by the default ::key_press_event handler for toplevel windows,\nhowever in some cases it may be useful to call this directly when\noverriding the standard key handling for a toplevel window.</p>",
+            "kind": "method",
+            "name": "activate_key",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.EventKey"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Associate <code>accel_group</code> with <code>window</code>, such that calling\n<span data-xref=\"Gtk.accel_groups_activate\"/> on <code>window</code> will activate accelerators\nin <code>accel_group</code>.</p>",
+            "kind": "method",
+            "name": "add_accel_group",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_group",
+                    "direction": "in",
+                    "type": "Gtk.AccelGroup"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a mnemonic to this window.</p>",
+            "kind": "method",
+            "name": "add_mnemonic",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "keyval",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "target",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Starts moving a window. This function is used if an application has\nwindow movement grips. When GDK can support it, the window movement\nwill be done using the standard mechanism for the\n[window manager][gtk-X11-arch] or windowing\nsystem. Otherwise, GDK will try to emulate window movement,\npotentially not all that well, depending on the windowing system.</p>",
+            "kind": "method",
+            "name": "begin_move_drag",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "button",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "root_x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "root_y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "timestamp",
+                    "direction": "in",
+                    "type": "Number(guint32)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Starts resizing a window. This function is used if an application\nhas window resizing controls. When GDK can support it, the resize\nwill be done using the standard mechanism for the\n[window manager][gtk-X11-arch] or windowing\nsystem. Otherwise, GDK will try to emulate window resizing,\npotentially not all that well, depending on the windowing system.</p>",
+            "kind": "method",
+            "name": "begin_resize_drag",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "edge",
+                    "direction": "in",
+                    "type": "Gdk.WindowEdge"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "button",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "root_x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "root_y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "timestamp",
+                    "direction": "in",
+                    "type": "Number(guint32)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Requests that the window is closed, similar to what happens\nwhen a window manager close button is clicked.</p><p>This function can be used with close buttons in custom\ntitlebars.</p>",
+            "kind": "method",
+            "name": "close",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Asks to deiconify (i.e. unminimize) the specified <code>window</code>. Note\nthat you shouldn\u2019t assume the window is definitely deiconified\nafterward, because other entities (e.g. the user or\n[window manager][gtk-X11-arch])) could iconify it\nagain before your code which assumes deiconification gets to run.</p><p>You can track iconification via the \u201cwindow-state-event\u201d signal\non <span data-xref=\"Gtk.Widget\"/>.</p>",
+            "kind": "method",
+            "name": "deiconify",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Asks to place <code>window</code> in the fullscreen state. Note that you\nshouldn\u2019t assume the window is definitely full screen afterward,\nbecause other entities (e.g. the user or\n[window manager][gtk-X11-arch]) could unfullscreen it\nagain, and not all window managers honor requests to fullscreen\nwindows. But normally the window will end up fullscreen. Just\ndon\u2019t write code that crashes if not.</p><p>You can track the fullscreen state via the \u201cwindow-state-event\u201d signal\non <span data-xref=\"Gtk.Widget\"/>.</p>",
+            "kind": "method",
+            "name": "fullscreen",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Window.set_accept_focus\"/>.</p>",
+            "kind": "method",
+            "name": "get_accept_focus",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the <span data-xref=\"Gtk.Application\"/> associated with the window (if any).</p>",
+            "kind": "method",
+            "name": "get_application",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Application"
+            }
+        },
+        {
+            "doc": "<p>Fetches the attach widget for this window. See\n<span data-xref=\"Gtk.Window.set_attached_to\"/>.</p>",
+            "kind": "method",
+            "name": "get_attached_to",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the window has been set to have decorations\nsuch as a title bar via <span data-xref=\"Gtk.Window.set_decorated\"/>.</p>",
+            "kind": "method",
+            "name": "get_decorated",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the default size of the window. A value of -1 for the width or\nheight indicates that a default size has not been explicitly set\nfor that dimension, so the \u201cnatural\u201d size of the window will be\nused.</p>",
+            "kind": "method",
+            "name": "get_default_size",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the default widget for <code>window</code>. See <span data-xref=\"Gtk.Window.set_default\"/>\nfor more details.</p>",
+            "kind": "method",
+            "name": "get_default_widget",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the window has been set to have a close button\nvia <span data-xref=\"Gtk.Window.set_deletable\"/>.</p>",
+            "kind": "method",
+            "name": "get_deletable",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the window will be destroyed with its transient parent. See\ngtk_window_set_destroy_with_parent ().</p>",
+            "kind": "method",
+            "name": "get_destroy_with_parent",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the current focused widget within the window.\nNote that this is the widget that would have the focus\nif the toplevel window focused; if the toplevel window\nis not focused then  <code>gtk_widget_has_focus (widget)</code> will\nnot be <code>true</code> for the widget.</p>",
+            "kind": "method",
+            "name": "get_focus",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Window.set_focus_on_map\"/>.</p>",
+            "kind": "method",
+            "name": "get_focus_on_map",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of the <span data-xref=\"Gtk.Window-focus-visible\"/> property.</p>",
+            "kind": "method",
+            "name": "get_focus_visible",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Window.set_gravity\"/>.</p>",
+            "kind": "method",
+            "name": "get_gravity",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Gravity"
+            }
+        },
+        {
+            "doc": "<p>Returns the group for <code>window</code> or the default group, if\n<code>window</code> is <code>null</code> or if <code>window</code> does not have an explicit\nwindow group.</p>",
+            "kind": "method",
+            "name": "get_group",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.WindowGroup"
+            }
+        },
+        {
+            "doc": "<p>Determines whether the window may have a resize grip.</p>",
+            "kind": "method",
+            "name": "get_has_resize_grip",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the window has requested to have its titlebar hidden\nwhen maximized. See gtk_window_set_hide_titlebar_when_maximized ().</p>",
+            "kind": "method",
+            "name": "get_hide_titlebar_when_maximized",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Window.set_icon\"/> (or if you've\ncalled <span data-xref=\"Gtk.Window.set_icon_list\"/>, gets the first icon in\nthe icon list).</p>",
+            "kind": "method",
+            "name": "get_icon",
+            "parameters": [],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the list of icons set by <span data-xref=\"Gtk.Window.set_icon_list\"/>.\nThe list is copied, but the reference count on each\nmember won\u2019t be incremented.</p>",
+            "kind": "method",
+            "name": "get_icon_list",
+            "parameters": [],
+            "retval": {
+                "type": "Array(GdkPixbuf.Pixbuf)"
+            }
+        },
+        {
+            "doc": "<p>Returns the name of the themed icon for the window,\nsee <span data-xref=\"Gtk.Window.set_icon_name\"/>.</p>",
+            "kind": "method",
+            "name": "get_icon_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the mnemonic modifier for this window. See\n<span data-xref=\"Gtk.Window.set_mnemonic_modifier\"/>.</p>",
+            "kind": "method",
+            "name": "get_mnemonic_modifier",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.ModifierType"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of the <span data-xref=\"Gtk.Window-mnemonics-visible\"/> property.</p>",
+            "kind": "method",
+            "name": "get_mnemonics_visible",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the window is modal. See <span data-xref=\"Gtk.Window.set_modal\"/>.</p>",
+            "kind": "method",
+            "name": "get_modal",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Fetches the requested opacity for this window. See\n<span data-xref=\"Gtk.Window.set_opacity\"/>.</p>",
+            "kind": "method",
+            "name": "get_opacity",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>This function returns the position you need to pass to\n<span data-xref=\"Gtk.Window.move\"/> to keep <code>window</code> in its current position.\nThis means that the meaning of the returned value varies with\nwindow gravity. See <span data-xref=\"Gtk.Window.move\"/> for more details.</p><p>If you haven\u2019t changed the window gravity, its gravity will be</p>\n<h1>GDK_GRAVITY_NORTH_WEST. This means that <span data-xref=\"Gtk.Window.get_position\"/></h1>\n<p>gets the position of the top-left corner of the window manager\nframe for the window. <span data-xref=\"Gtk.Window.move\"/> sets the position of this\nsame top-left corner.</p><p><span data-xref=\"Gtk.Window.get_position\"/> is not 100% reliable because the X Window System\ndoes not specify a way to obtain the geometry of the\ndecorations placed on a window by the window manager.\nThus GTK+ is using a \u201cbest guess\u201d that works with most\nwindow managers.</p><p>Moreover, nearly all window managers are historically broken with\nrespect to their handling of window gravity. So moving a window to\nits current position as returned by <span data-xref=\"Gtk.Window.get_position\"/> tends\nto result in moving the window slightly. Window managers are\nslowly getting better over time.</p><p>If a window has gravity #GDK_GRAVITY_STATIC the window manager\nframe is not relevant, and thus <span data-xref=\"Gtk.Window.get_position\"/> will\nalways produce accurate results. However you can\u2019t use static\ngravity to do things like place a window in a corner of the screen,\nbecause static gravity ignores the window manager decorations.</p><p>If you are saving and restoring your application\u2019s window\npositions, you should know that it\u2019s impossible for applications to\ndo this without getting it somewhat wrong because applications do\nnot have sufficient knowledge of window manager state. The Correct\nMechanism is to support the session management protocol (see the\n\u201cGnomeClient\u201d object in the GNOME libraries for example) and allow\nthe window manager to save your window sizes and positions.</p>",
+            "kind": "method",
+            "name": "get_position",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "root_x",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "root_y",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Window.set_resizable\"/>.</p>",
+            "kind": "method",
+            "name": "get_resizable",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>If a window has a resize grip, this will retrieve the grip\nposition, width and height into the specified <span data-xref=\"Gdk.Rectangle\">Gdk.Rectangle</span>.</p>",
+            "kind": "method",
+            "name": "get_resize_grip_area",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rect",
+                    "direction": "out",
+                    "type": "Gdk.Rectangle"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the role of the window. See <span data-xref=\"Gtk.Window.set_role\"/> for\nfurther explanation.</p>",
+            "kind": "method",
+            "name": "get_role",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> associated with <code>window</code>.</p>",
+            "kind": "method",
+            "name": "get_screen",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Screen"
+            }
+        },
+        {
+            "doc": "<p>Obtains the current size of <code>window</code>. If <code>window</code> is not onscreen,\nit returns the size GTK+ will suggest to the\n[window manager][gtk-X11-arch]\nfor the initial window\nsize (but this is not reliably the same as the size the window\nmanager will actually select). The size obtained by\n<span data-xref=\"Gtk.Window.get_size\"/> is the last size received in a\n<span data-xref=\"Gdk.EventConfigure\">Gdk.EventConfigure</span>, that is, GTK+ uses its locally-stored size,\nrather than querying the X server for the size. As a result, if you\ncall <span data-xref=\"Gtk.Window.resize\"/> then immediately call\n<span data-xref=\"Gtk.Window.get_size\"/>, the size won\u2019t have taken effect yet. After\nthe window manager processes the resize request, GTK+ receives\nnotification that the size has changed via a configure event, and\nthe size of the window gets updated.</p><p>Note 1: Nearly any use of this function creates a race condition,\nbecause the size of the window may change between the time that you\nget the size and the time that you perform some action assuming\nthat size is the current size. To avoid race conditions, connect to\n\u201cconfigure-event\u201d on the window and adjust your size-dependent\nstate to match the size delivered in the <span data-xref=\"Gdk.EventConfigure\">Gdk.EventConfigure</span>.</p><p>Note 2: The returned size does not include the\nsize of the window manager decorations (aka the window frame or\nborder). Those are not drawn by GTK+ and GTK+ has no reliable\nmethod of determining their size.</p><p>Note 3: If you are getting a window size in order to position\nthe window onscreen, there may be a better way. The preferred\nway is to simply set the window\u2019s semantic type with\n<span data-xref=\"Gtk.Window.set_type_hint\"/>, which allows the window manager to\ne.g. center dialogs. Also, if you set the transient parent of\ndialogs with <span data-xref=\"Gtk.Window.set_transient_for\"/> window managers\nwill often center the dialog over its parent window. It's\nmuch preferred to let the window manager handle these\nthings rather than doing it yourself, because all apps will\nbehave consistently and according to user prefs if the window\nmanager handles it. Also, the window manager can take the size\nof the window decorations/border into account, while your\napplication cannot.</p><p>In any case, if you insist on application-specified window\npositioning, there\u2019s still a better way than\ndoing it yourself - <span data-xref=\"Gtk.Window.set_position\"/> will frequently\nhandle the details for you.</p>",
+            "kind": "method",
+            "name": "get_size",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Window.set_skip_pager_hint\"/>.</p>",
+            "kind": "method",
+            "name": "get_skip_pager_hint",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Window.set_skip_taskbar_hint\"/></p>",
+            "kind": "method",
+            "name": "get_skip_taskbar_hint",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the title of the window. See <span data-xref=\"Gtk.Window.set_title\"/>.</p>",
+            "kind": "method",
+            "name": "get_title",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Fetches the transient parent for this window. See\n<span data-xref=\"Gtk.Window.set_transient_for\"/>.</p>",
+            "kind": "method",
+            "name": "get_transient_for",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Window"
+            }
+        },
+        {
+            "doc": "<p>Gets the type hint for this window. See <span data-xref=\"Gtk.Window.set_type_hint\"/>.</p>",
+            "kind": "method",
+            "name": "get_type_hint",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.WindowTypeHint"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Window.set_urgency_hint\"/></p>",
+            "kind": "method",
+            "name": "get_urgency_hint",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the type of the window. See <span data-xref=\"Gtk.WindowType\"/>.</p>",
+            "kind": "method",
+            "name": "get_window_type",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.WindowType"
+            }
+        },
+        {
+            "doc": "<p>Returns whether <code>window</code> has an explicit window group.</p>",
+            "kind": "method",
+            "name": "has_group",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the input focus is within this GtkWindow.\nFor real toplevel windows, this is identical to <span data-xref=\"Gtk.Window.is_active\"/>,\nbut for embedded windows, like <span data-xref=\"Gtk.Plug\"/>, the results will differ.</p>",
+            "kind": "method",
+            "name": "has_toplevel_focus",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Asks to iconify (i.e. minimize) the specified <code>window</code>. Note that\nyou shouldn\u2019t assume the window is definitely iconified afterward,\nbecause other entities (e.g. the user or\n[window manager][gtk-X11-arch]) could deiconify it\nagain, or there may not be a window manager in which case\niconification isn\u2019t possible, etc. But normally the window will end\nup iconified. Just don\u2019t write code that crashes if not.</p><p>It\u2019s permitted to call this function before showing a window,\nin which case the window will be iconified before it ever appears\nonscreen.</p><p>You can track iconification via the \u201cwindow-state-event\u201d signal\non <span data-xref=\"Gtk.Widget\"/>.</p>",
+            "kind": "method",
+            "name": "iconify",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the window is part of the current active toplevel.\n(That is, the toplevel window receiving keystrokes.)\nThe return value is <code>true</code> if the window is active toplevel\nitself, but also if it is, say, a <span data-xref=\"Gtk.Plug\"/> embedded in the active toplevel.\nYou might use this function if you wanted to draw a widget\ndifferently in an active window from a widget in an inactive window.\nSee <span data-xref=\"Gtk.Window.has_toplevel_focus\"/></p>",
+            "kind": "method",
+            "name": "is_active",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the current maximized state of <code>window</code>.</p><p>Note that since maximization is ultimately handled by the window\nmanager and happens asynchronously to an application request, you\nshouldn\u2019t assume the return value of this function changing\nimmediately (or at all), as an effect of calling\n<span data-xref=\"Gtk.Window.maximize\"/> or <span data-xref=\"Gtk.Window.unmaximize\"/>.</p>",
+            "kind": "method",
+            "name": "is_maximized",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Asks to maximize <code>window</code>, so that it becomes full-screen. Note that\nyou shouldn\u2019t assume the window is definitely maximized afterward,\nbecause other entities (e.g. the user or\n[window manager][gtk-X11-arch]) could unmaximize it\nagain, and not all window managers support maximization. But\nnormally the window will end up maximized. Just don\u2019t write code\nthat crashes if not.</p><p>It\u2019s permitted to call this function before showing a window,\nin which case the window will be maximized when it appears onscreen\ninitially.</p><p>You can track maximization via the \u201cwindow-state-event\u201d signal\non <span data-xref=\"Gtk.Widget\"/>, or by listening to notifications on the\n<span data-xref=\"Gtk.Window-is-maximized\"/> property.</p>",
+            "kind": "method",
+            "name": "maximize",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Activates the targets associated with the mnemonic.</p>",
+            "kind": "method",
+            "name": "mnemonic_activate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "keyval",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "modifier",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Asks the [window manager][gtk-X11-arch] to move\n<code>window</code> to the given position.  Window managers are free to ignore\nthis; most window managers ignore requests for initial window\npositions (instead using a user-defined placement algorithm) and\nhonor requests after the window has already been shown.</p><p>Note: the position is the position of the gravity-determined\nreference point for the window. The gravity determines two things:\nfirst, the location of the reference point in root window\ncoordinates; and second, which point on the window is positioned at\nthe reference point.</p><p>By default the gravity is #GDK_GRAVITY_NORTH_WEST, so the reference\npoint is simply the <code>x</code>, <code>y</code> supplied to <span data-xref=\"Gtk.Window.move\"/>. The\ntop-left corner of the window decorations (aka window frame or\nborder) will be placed at <code>x</code>, <code>y</code>.  Therefore, to position a window\nat the top left of the screen, you want to use the default gravity\n(which is #GDK_GRAVITY_NORTH_WEST) and move the window to 0,0.</p><p>To position a window at the bottom right corner of the screen, you\nwould set #GDK_GRAVITY_SOUTH_EAST, which means that the reference\npoint is at <code>x</code> + the window width and <code>y</code> + the window height, and\nthe bottom-right corner of the window border will be placed at that\nreference point. So, to place a window in the bottom right corner\nyou would first set gravity to south east, then write:\n<code>gtk_window_move (window, gdk_screen_width () - window_width,\ngdk_screen_height () - window_height)</code> (note that this\nexample does not take multi-head scenarios into account).</p><p>The <a href=\"http://www.freedesktop.org/Standards/wm-spec\">Extended Window Manager Hints Specification</a>\nhas a nice table of gravities in the \u201cimplementation notes\u201d section.</p><p>The <span data-xref=\"Gtk.Window.get_position\"/> documentation may also be relevant.</p>",
+            "kind": "method",
+            "name": "move",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Parses a standard X Window System geometry string - see the\nmanual page for X (type \u201cman X\u201d) for details on this.\n<span data-xref=\"Gtk.Window.parse_geometry\"/> does work on all GTK+ ports\nincluding Win32 but is primarily intended for an X environment.</p><p>If either a size or a position can be extracted from the\ngeometry string, <span data-xref=\"Gtk.Window.parse_geometry\"/> returns <code>true</code>\nand calls <span data-xref=\"Gtk.Window.set_default_size\"/> and/or <span data-xref=\"Gtk.Window.move\"/>\nto resize/move the window.</p><p>If <span data-xref=\"Gtk.Window.parse_geometry\"/> returns <code>true</code>, it will also\nset the #GDK_HINT_USER_POS and/or #GDK_HINT_USER_SIZE hints\nindicating to the window manager that the size/position of\nthe window was user-specified. This causes most window\nmanagers to honor the geometry.</p><p>Note that for <span data-xref=\"Gtk.Window.parse_geometry\"/> to work as expected, it has\nto be called when the window has its \u201cfinal\u201d size, i.e. after calling\n<span data-xref=\"Gtk.Widget.show_all\"/> on the contents and <span data-xref=\"Gtk.Window.set_geometry_hints\"/>\non the window.\n|[&lt;!-- language=\"C\" --&gt;</p>\n<h1>include &lt;gtk/gtk.h&gt;</h1><p>static void\nfill_with_content (GtkWidget *vbox)\n{\n  // fill with content...\n}</p><p>int\nmain (int argc, char <em>argv[])\n{\n  GtkWidget </em>window, *vbox;\n  GdkGeometry size_hints = {\n    100, 50, 0, 0, 100, 50, 10,\n    10, 0.0, 0.0, GDK_GRAVITY_NORTH_WEST\n  };</p><p>gtk_init (&amp;argc, &amp;argv);</p><p>window = gtk_window_new (GTK_WINDOW_TOPLEVEL);\n  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL,\n                      FALSE, 0);</p><p>gtk_container_add (GTK_CONTAINER (window), vbox);\n  fill_with_content (vbox);\n  gtk_widget_show_all (vbox);</p><p>gtk_window_set_geometry_hints (GTK_WINDOW (window),\n                    window,\n                    &amp;size_hints,\n                    GDK_HINT_MIN_SIZE |\n                    GDK_HINT_BASE_SIZE |\n                    GDK_HINT_RESIZE_INC);</p><p>if (argc &gt; 1)\n    {\n      gboolean res;\n      res = gtk_window_parse_geometry (GTK_WINDOW (window),\n                                       argv[1]);\n      if (! res)\n        fprintf (stderr,\n                 \"Failed to parse \u201c%s\u201d\\n\",\n                 argv[1]);\n    }</p><p>gtk_widget_show_all (window);\n  gtk_main ();</p><p>return 0;\n}\n]|</p>",
+            "kind": "method",
+            "name": "parse_geometry",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "geometry",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Presents a window to the user. This may mean raising the window\nin the stacking order, deiconifying it, moving it to the current\ndesktop, and/or giving it the keyboard focus, possibly dependent\non the user\u2019s platform, window manager, and preferences.</p><p>If <code>window</code> is hidden, this function calls <span data-xref=\"Gtk.Widget.show\"/>\nas well.</p><p>This function should be used when the user tries to open a window\nthat\u2019s already open. Say for example the preferences dialog is\ncurrently open, and the user chooses Preferences from the menu\na second time; use <span data-xref=\"Gtk.Window.present\"/> to move the already-open dialog\nwhere the user can see it.</p><p>If you are calling this function in response to a user interaction,\nit is preferable to use <span data-xref=\"Gtk.Window.present_with_time\"/>.</p>",
+            "kind": "method",
+            "name": "present",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Presents a window to the user in response to a user interaction.\nIf you need to present a window without a timestamp, use\n<span data-xref=\"Gtk.Window.present\"/>. See <span data-xref=\"Gtk.Window.present\"/> for details.</p>",
+            "kind": "method",
+            "name": "present_with_time",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "timestamp",
+                    "direction": "in",
+                    "type": "Number(guint32)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Propagate a key press or release event to the focus widget and\nup the focus container chain until a widget handles <code>event</code>.\nThis is normally called by the default ::key_press_event and\n::key_release_event handlers for toplevel windows,\nhowever in some cases it may be useful to call this directly when\noverriding the standard key handling for a toplevel window.</p>",
+            "kind": "method",
+            "name": "propagate_key_event",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.EventKey"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Reverses the effects of <span data-xref=\"Gtk.Window.add_accel_group\"/>.</p>",
+            "kind": "method",
+            "name": "remove_accel_group",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_group",
+                    "direction": "in",
+                    "type": "Gtk.AccelGroup"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes a mnemonic from this window.</p>",
+            "kind": "method",
+            "name": "remove_mnemonic",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "keyval",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "target",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Hides <code>window</code>, then reshows it, resetting the\ndefault size and position of the window. Used\nby GUI builders only.</p>",
+            "kind": "method",
+            "name": "reshow_with_initial_size",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Resizes the window as if the user had done so, obeying geometry\nconstraints. The default geometry constraint is that windows may\nnot be smaller than their size request; to override this\nconstraint, call <span data-xref=\"Gtk.Widget.set_size_request\"/> to set the window's\nrequest to a smaller value.</p><p>If <span data-xref=\"Gtk.Window.resize\"/> is called before showing a window for the\nfirst time, it overrides any default size set with\n<span data-xref=\"Gtk.Window.set_default_size\"/>.</p><p>Windows may not be resized smaller than 1 by 1 pixels.</p>",
+            "kind": "method",
+            "name": "resize",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Determines whether a resize grip is visible for the specified window.</p>",
+            "kind": "method",
+            "name": "resize_grip_is_visible",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Like <span data-xref=\"Gtk.Window.resize\"/>, but <code>width</code> and <code>height</code> are interpreted\nin terms of the base size and increment set with\ngtk_window_set_geometry_hints.</p>",
+            "kind": "method",
+            "name": "resize_to_geometry",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Windows may set a hint asking the desktop environment not to receive\nthe input focus. This function sets this hint.</p>",
+            "kind": "method",
+            "name": "set_accept_focus",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets or unsets the <span data-xref=\"Gtk.Application\"/> associated with the window.</p><p>The application will be kept alive for at least as long as the window\nis open.</p>",
+            "kind": "method",
+            "name": "set_application",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "application",
+                    "direction": "in",
+                    "type": "Gtk.Application"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Marks <code>window</code> as attached to <code>attach_widget</code>. This creates a logical binding\nbetween the window and the widget it belongs to, which is used by GTK+ to\npropagate information such as styling or accessibility to <code>window</code> as if it\nwas a children of <code>attach_widget</code>.</p><p>Examples of places where specifying this relation is useful are for instance\na <span data-xref=\"Gtk.Menu\"/> created by a <span data-xref=\"Gtk.ComboBox\"/>, a completion popup window\ncreated by <span data-xref=\"Gtk.Entry\"/> or a typeahead search entry created by <span data-xref=\"Gtk.TreeView\"/>.</p><p>Note that this function should not be confused with\n<span data-xref=\"Gtk.Window.set_transient_for\"/>, which specifies a window manager relation\nbetween two toplevels instead.</p><p>Passing <code>null</code> for <code>attach_widget</code> detaches the window.</p>",
+            "kind": "method",
+            "name": "set_attached_to",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "attach_widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>By default, windows are decorated with a title bar, resize\ncontrols, etc.  Some [window managers][gtk-X11-arch]\nallow GTK+ to disable these decorations, creating a\nborderless window. If you set the decorated property to <code>false</code>\nusing this function, GTK+ will do its best to convince the window\nmanager not to decorate the window. Depending on the system, this\nfunction may not have any effect when called on a window that is\nalready visible, so you should call it before calling <span data-xref=\"Gtk.Widget.show\"/>.</p><p>On Windows, this function always works, since there\u2019s no window manager\npolicy involved.</p>",
+            "kind": "method",
+            "name": "set_decorated",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The default widget is the widget that\u2019s activated when the user\npresses Enter in a dialog (for example). This function sets or\nunsets the default widget for a <span data-xref=\"Gtk.Window\"/>. When setting (rather\nthan unsetting) the default widget it\u2019s generally easier to call\n<span data-xref=\"Gtk.Widget.grab_default\"/> on the widget. Before making a widget\nthe default widget, you must call <span data-xref=\"Gtk.Widget.set_can_default\"/> on\nthe widget you\u2019d like to make the default.</p>",
+            "kind": "method",
+            "name": "set_default",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "default_widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Like <span data-xref=\"Gtk.Window.set_default_size\"/>, but <code>width</code> and <code>height</code> are interpreted\nin terms of the base size and increment set with\ngtk_window_set_geometry_hints.</p>",
+            "kind": "method",
+            "name": "set_default_geometry",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the default size of a window. If the window\u2019s \u201cnatural\u201d size\n(its size request) is larger than the default, the default will be\nignored. More generally, if the default size does not obey the\ngeometry hints for the window (<span data-xref=\"Gtk.Window.set_geometry_hints\"/> can\nbe used to set these explicitly), the default size will be clamped\nto the nearest permitted size.</p><p>Unlike <span data-xref=\"Gtk.Widget.set_size_request\"/>, which sets a size request for\na widget and thus would keep users from shrinking the window, this\nfunction only sets the initial size, just as if the user had\nresized the window themselves. Users can still shrink the window\nagain as they normally would. Setting a default size of -1 means to\nuse the \u201cnatural\u201d default size (the size request of the window).</p><p>For more control over a window\u2019s initial size and how resizing works,\ninvestigate <span data-xref=\"Gtk.Window.set_geometry_hints\"/>.</p><p>For some uses, <span data-xref=\"Gtk.Window.resize\"/> is a more appropriate function.\n<span data-xref=\"Gtk.Window.resize\"/> changes the current size of the window, rather\nthan the size to be used on initial display. <span data-xref=\"Gtk.Window.resize\"/> always\naffects the window itself, not the geometry widget.</p><p>The default size of a window only affects the first time a window is\nshown; if a window is hidden and re-shown, it will remember the size\nit had prior to hiding, rather than using the default size.</p><p>Windows can\u2019t actually be 0x0 in size, they must be at least 1x1, but\npassing 0 for <code>width</code> and <code>height</code> is OK, resulting in a 1x1 default size.</p>",
+            "kind": "method",
+            "name": "set_default_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>By default, windows have a close button in the window frame. Some\n[window managers][gtk-X11-arch] allow GTK+ to\ndisable this button. If you set the deletable property to <code>false</code>\nusing this function, GTK+ will do its best to convince the window\nmanager not to show a close button. Depending on the system, this\nfunction may not have any effect when called on a window that is\nalready visible, so you should call it before calling <span data-xref=\"Gtk.Widget.show\"/>.</p><p>On Windows, this function always works, since there\u2019s no window manager\npolicy involved.</p>",
+            "kind": "method",
+            "name": "set_deletable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>setting</code> is <code>true</code>, then destroying the transient parent of <code>window</code>\nwill also destroy <code>window</code> itself. This is useful for dialogs that\nshouldn\u2019t persist beyond the lifetime of the main window they're\nassociated with, for example.</p>",
+            "kind": "method",
+            "name": "set_destroy_with_parent",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>focus</code> is not the current focus widget, and is focusable, sets\nit as the focus widget for the window. If <code>focus</code> is <code>null</code>, unsets\nthe focus widget for this window. To set the focus to a particular\nwidget in the toplevel, it is usually more convenient to use\n<span data-xref=\"Gtk.Widget.grab_focus\"/> instead of this function.</p>",
+            "kind": "method",
+            "name": "set_focus",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "focus",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Windows may set a hint asking the desktop environment not to receive\nthe input focus when the window is mapped.  This function sets this\nhint.</p>",
+            "kind": "method",
+            "name": "set_focus_on_map",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Window-focus-visible\"/> property.</p>",
+            "kind": "method",
+            "name": "set_focus_visible",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This function sets up hints about how a window can be resized by\nthe user.  You can set a minimum and maximum size; allowed resize\nincrements (e.g. for xterm, you can only resize by the size of a\ncharacter); aspect ratios; and more. See the <span data-xref=\"Gdk.Geometry\">Gdk.Geometry</span> struct.</p>",
+            "kind": "method",
+            "name": "set_geometry_hints",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "geometry_widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "geometry",
+                    "direction": "in",
+                    "type": "Gdk.Geometry"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "geom_mask",
+                    "direction": "in",
+                    "type": "Gdk.WindowHints"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Window gravity defines the meaning of coordinates passed to\n<span data-xref=\"Gtk.Window.move\"/>. See <span data-xref=\"Gtk.Window.move\"/> and <span data-xref=\"Gdk.Gravity\">Gdk.Gravity</span> for\nmore details.</p><p>The default window gravity is #GDK_GRAVITY_NORTH_WEST which will\ntypically \u201cdo what you mean.\u201d</p>",
+            "kind": "method",
+            "name": "set_gravity",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "gravity",
+                    "direction": "in",
+                    "type": "Gdk.Gravity"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether <code>window</code> has a corner resize grip.</p><p>Note that the resize grip is only shown if the window\nis actually resizable and not maximized. Use\n<span data-xref=\"Gtk.Window.resize_grip_is_visible\"/> to find out if the\nresize grip is currently shown.</p>",
+            "kind": "method",
+            "name": "set_has_resize_grip",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Tells GTK+ whether to drop its extra reference to the window\nwhen <span data-xref=\"Gtk.Widget.destroy\"/> is called.</p><p>This function is only exported for the benefit of language\nbindings which may need to keep the window alive until their\nwrapper object is garbage collected. There is no justification\nfor ever calling this function in an application.</p>",
+            "kind": "method",
+            "name": "set_has_user_ref_count",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>setting</code> is <code>true</code>, then <code>window</code> will request that it\u2019s titlebar\nshould be hidden when maximized.\nThis is useful for windows that don\u2019t convey any information other\nthan the application name in the titlebar, to put the available\nscreen space to better use. If the underlying window system does not\nsupport the request, the setting will not have any effect.</p><p>Note that custom titlebars set with <span data-xref=\"Gtk.Window.set_titlebar\"/> are\nnot affected by this. The application is in full control of their\ncontent and visibility anyway.</p>",
+            "kind": "method",
+            "name": "set_hide_titlebar_when_maximized",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets up the icon representing a <span data-xref=\"Gtk.Window\"/>. This icon is used when\nthe window is minimized (also known as iconified).  Some window\nmanagers or desktop environments may also place it in the window\nframe, or display it in other contexts.</p><p>The icon should be provided in whatever size it was naturally\ndrawn; that is, don\u2019t scale the image before passing it to\nGTK+. Scaling is postponed until the last minute, when the desired\nfinal size is known, to allow best quality.</p><p>If you have your icon hand-drawn in multiple sizes, use\n<span data-xref=\"Gtk.Window.set_icon_list\"/>. Then the best size will be used.</p><p>This function is equivalent to calling <span data-xref=\"Gtk.Window.set_icon_list\"/>\nwith a 1-element list.</p><p>See also <span data-xref=\"Gtk.Window.set_default_icon_list\"/> to set the icon\nfor all windows in your application in one go.</p>",
+            "kind": "method",
+            "name": "set_icon",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "icon",
+                    "direction": "in",
+                    "type": "GdkPixbuf.Pixbuf"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the icon for <code>window</code>.\nWarns on failure if @err is <code>null</code>.</p><p>This function is equivalent to calling <span data-xref=\"Gtk.Window.set_icon\"/>\nwith a pixbuf created by loading the image from <code>filename</code>.</p>",
+            "kind": "method",
+            "name": "set_icon_from_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "filename",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets up the icon representing a <span data-xref=\"Gtk.Window\"/>. The icon is used when\nthe window is minimized (also known as iconified).  Some window\nmanagers or desktop environments may also place it in the window\nframe, or display it in other contexts.</p><p><span data-xref=\"Gtk.Window.set_icon_list\"/> allows you to pass in the same icon in\nseveral hand-drawn sizes. The list should contain the natural sizes\nyour icon is available in; that is, don\u2019t scale the image before\npassing it to GTK+. Scaling is postponed until the last minute,\nwhen the desired final size is known, to allow best quality.</p><p>By passing several sizes, you may improve the final image quality\nof the icon, by reducing or eliminating automatic image scaling.</p><p>Recommended sizes to provide: 16x16, 32x32, 48x48 at minimum, and\nlarger images (64x64, 128x128) if you have them.</p><p>See also <span data-xref=\"Gtk.Window.set_default_icon_list\"/> to set the icon\nfor all windows in your application in one go.</p><p>Note that transient windows (those who have been set transient for another\nwindow using <span data-xref=\"Gtk.Window.set_transient_for\"/>) will inherit their\nicon from their transient parent. So there\u2019s no need to explicitly\nset the icon on transient windows.</p>",
+            "kind": "method",
+            "name": "set_icon_list",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "list",
+                    "direction": "in",
+                    "type": "Array(GdkPixbuf.Pixbuf)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the icon for the window from a named themed icon. See\nthe docs for <span data-xref=\"Gtk.IconTheme\"/> for more details.</p><p>Note that this has nothing to do with the WM_ICON_NAME\nproperty which is mentioned in the ICCCM.</p>",
+            "kind": "method",
+            "name": "set_icon_name",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Asks to keep <code>window</code> above, so that it stays on top. Note that\nyou shouldn\u2019t assume the window is definitely above afterward,\nbecause other entities (e.g. the user or\n[window manager][gtk-X11-arch]) could not keep it above,\nand not all window managers support keeping windows above. But\nnormally the window will end kept above. Just don\u2019t write code\nthat crashes if not.</p><p>It\u2019s permitted to call this function before showing a window,\nin which case the window will be kept above when it appears onscreen\ninitially.</p><p>You can track the above state via the \u201cwindow-state-event\u201d signal\non <span data-xref=\"Gtk.Widget\"/>.</p><p>Note that, according to the\n<a href=\"http://www.freedesktop.org/Standards/wm-spec\">Extended Window Manager Hints Specification</a>,\nthe above state is mainly meant for user preferences and should not\nbe used by applications e.g. for drawing attention to their\ndialogs.</p>",
+            "kind": "method",
+            "name": "set_keep_above",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Asks to keep <code>window</code> below, so that it stays in bottom. Note that\nyou shouldn\u2019t assume the window is definitely below afterward,\nbecause other entities (e.g. the user or\n[window manager][gtk-X11-arch]) could not keep it below,\nand not all window managers support putting windows below. But\nnormally the window will be kept below. Just don\u2019t write code\nthat crashes if not.</p><p>It\u2019s permitted to call this function before showing a window,\nin which case the window will be kept below when it appears onscreen\ninitially.</p><p>You can track the below state via the \u201cwindow-state-event\u201d signal\non <span data-xref=\"Gtk.Widget\"/>.</p><p>Note that, according to the\n<a href=\"http://www.freedesktop.org/Standards/wm-spec\">Extended Window Manager Hints Specification</a>,\nthe above state is mainly meant for user preferences and should not\nbe used by applications e.g. for drawing attention to their\ndialogs.</p>",
+            "kind": "method",
+            "name": "set_keep_below",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the mnemonic modifier for this window.</p>",
+            "kind": "method",
+            "name": "set_mnemonic_modifier",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "modifier",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Window-mnemonics-visible\"/> property.</p>",
+            "kind": "method",
+            "name": "set_mnemonics_visible",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a window modal or non-modal. Modal windows prevent interaction\nwith other windows in the same application. To keep modal dialogs\non top of main application windows, use\n<span data-xref=\"Gtk.Window.set_transient_for\"/> to make the dialog transient for the\nparent; most [window managers][gtk-X11-arch]\nwill then disallow lowering the dialog below the parent.</p>",
+            "kind": "method",
+            "name": "set_modal",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "modal",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Request the windowing system to make <code>window</code> partially transparent,\nwith opacity 0 being fully transparent and 1 fully opaque. (Values\nof the opacity parameter are clamped to the [0,1] range.) On X11\nthis has any effect only on X screens with a compositing manager\nrunning. See <span data-xref=\"Gtk.Widget.is_composited\"/>. On Windows it should work\nalways.</p><p>Note that setting a window\u2019s opacity after the window has been\nshown causes it to flicker once on Windows.</p>",
+            "kind": "method",
+            "name": "set_opacity",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "opacity",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a position constraint for this window. If the old or new\nconstraint is <span data-xref=\"Gtk.WindowPosition\"/>.center_always, this will also cause\nthe window to be repositioned to satisfy the new constraint.</p>",
+            "kind": "method",
+            "name": "set_position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Gtk.WindowPosition"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the user can resize a window. Windows are user resizable\nby default.</p>",
+            "kind": "method",
+            "name": "set_resizable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "resizable",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This function is only useful on X11, not with other GTK+ targets.</p><p>In combination with the window title, the window role allows a\n[window manager][gtk-X11-arch] to identify \"the\nsame\" window when an application is restarted. So for example you\nmight set the \u201ctoolbox\u201d role on your app\u2019s toolbox window, so that\nwhen the user restarts their session, the window manager can put\nthe toolbox back in the same place.</p><p>If a window already has a unique title, you don\u2019t need to set the\nrole, since the WM can use the title to identify the window when\nrestoring the session.</p>",
+            "kind": "method",
+            "name": "set_role",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "role",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> where the <code>window</code> is displayed; if\nthe window is already mapped, it will be unmapped, and\nthen remapped on the new screen.</p>",
+            "kind": "method",
+            "name": "set_screen",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "screen",
+                    "direction": "in",
+                    "type": "Gdk.Screen"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Windows may set a hint asking the desktop environment not to display\nthe window in the pager. This function sets this hint.\n(A \"pager\" is any desktop navigation tool such as a workspace\nswitcher that displays a thumbnail representation of the windows\non the screen.)</p>",
+            "kind": "method",
+            "name": "set_skip_pager_hint",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Windows may set a hint asking the desktop environment not to display\nthe window in the task bar. This function sets this hint.</p>",
+            "kind": "method",
+            "name": "set_skip_taskbar_hint",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Startup notification identifiers are used by desktop environment to\ntrack application startup, to provide user feedback and other\nfeatures. This function changes the corresponding property on the\nunderlying GdkWindow. Normally, startup identifier is managed\nautomatically and you should only use this function in special cases\nlike transferring focus from other processes. You should use this\nfunction before calling <span data-xref=\"Gtk.Window.present\"/> or any equivalent\nfunction generating a window map event.</p><p>This function is only useful on X11, not with other GTK+ targets.</p>",
+            "kind": "method",
+            "name": "set_startup_id",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "startup_id",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the title of the <span data-xref=\"Gtk.Window\"/>. The title of a window will be\ndisplayed in its title bar; on the X Window System, the title bar\nis rendered by the [window manager][gtk-X11-arch],\nso exactly how the title appears to users may vary\naccording to a user\u2019s exact configuration. The title should help a\nuser distinguish this window from other windows they may have\nopen. A good title might include the application name and current\ndocument filename, for example.</p>",
+            "kind": "method",
+            "name": "set_title",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "title",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a custom titlebar for <code>window</code>.</p><p>If you set a custom titlebar, GTK+ will do its best to convince\nthe window manager not to put its own titlebar on the window.\nDepending on the system, this function may not work for a window\nthat is already visible, so you set the titlebar before calling\n<span data-xref=\"Gtk.Widget.show\"/>.</p>",
+            "kind": "method",
+            "name": "set_titlebar",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "titlebar",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Dialog windows should be set transient for the main application\nwindow they were spawned from. This allows\n[window managers][gtk-X11-arch] to e.g. keep the\ndialog on top of the main window, or center the dialog over the\nmain window. <span data-xref=\"Gtk.Dialog.new_with_buttons\"/> and other convenience\nfunctions in GTK+ will sometimes call\n<span data-xref=\"Gtk.Window.set_transient_for\"/> on your behalf.</p><p>Passing <code>null</code> for <code>parent</code> unsets the current transient window.</p><p>On Windows, this function puts the child window on top of the parent,\nmuch as the window manager would have done on X.</p>",
+            "kind": "method",
+            "name": "set_transient_for",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "parent",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>By setting the type hint for the window, you allow the window\nmanager to decorate and handle the window in a way which is\nsuitable to the function of the window in your application.</p><p>This function should be called before the window becomes visible.</p><p><span data-xref=\"Gtk.Dialog.new_with_buttons\"/> and other convenience functions in GTK+\nwill sometimes call <span data-xref=\"Gtk.Window.set_type_hint\"/> on your behalf.</p>",
+            "kind": "method",
+            "name": "set_type_hint",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "hint",
+                    "direction": "in",
+                    "type": "Gdk.WindowTypeHint"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Windows may set a hint asking the desktop environment to draw\nthe users attention to the window. This function sets this hint.</p>",
+            "kind": "method",
+            "name": "set_urgency_hint",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Don\u2019t use this function. It sets the X Window System \u201cclass\u201d and\n\u201cname\u201d hints for a window.  According to the ICCCM, you should\nalways set these to the same value for all windows in an\napplication, and GTK+ sets them to that value by default, so calling\nthis function is sort of pointless. However, you may want to call\n<span data-xref=\"Gtk.Window.set_role\"/> on each window in your application, for the\nbenefit of the session manager. Setting the role allows the window\nmanager to restore window positions when loading a saved session.</p>",
+            "kind": "method",
+            "name": "set_wmclass",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "wmclass_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "wmclass_class",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Asks to stick <code>window</code>, which means that it will appear on all user\ndesktops. Note that you shouldn\u2019t assume the window is definitely\nstuck afterward, because other entities (e.g. the user or\n[window manager][gtk-X11-arch] could unstick it\nagain, and some window managers do not support sticking\nwindows. But normally the window will end up stuck. Just don't\nwrite code that crashes if not.</p><p>It\u2019s permitted to call this function before showing a window.</p><p>You can track stickiness via the \u201cwindow-state-event\u201d signal\non <span data-xref=\"Gtk.Widget\"/>.</p>",
+            "kind": "method",
+            "name": "stick",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Asks to toggle off the fullscreen state for <code>window</code>. Note that you\nshouldn\u2019t assume the window is definitely not full screen\nafterward, because other entities (e.g. the user or\n[window manager][gtk-X11-arch]) could fullscreen it\nagain, and not all window managers honor requests to unfullscreen\nwindows. But normally the window will end up restored to its normal\nstate. Just don\u2019t write code that crashes if not.</p><p>You can track the fullscreen state via the \u201cwindow-state-event\u201d signal\non <span data-xref=\"Gtk.Widget\"/>.</p>",
+            "kind": "method",
+            "name": "unfullscreen",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Asks to unmaximize <code>window</code>. Note that you shouldn\u2019t assume the\nwindow is definitely unmaximized afterward, because other entities\n(e.g. the user or [window manager][gtk-X11-arch])\ncould maximize it again, and not all window\nmanagers honor requests to unmaximize. But normally the window will\nend up unmaximized. Just don\u2019t write code that crashes if not.</p><p>You can track maximization via the \u201cwindow-state-event\u201d signal\non <span data-xref=\"Gtk.Widget\"/>.</p>",
+            "kind": "method",
+            "name": "unmaximize",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Asks to unstick <code>window</code>, which means that it will appear on only\none of the user\u2019s desktops. Note that you shouldn\u2019t assume the\nwindow is definitely unstuck afterward, because other entities\n(e.g. the user or [window manager][gtk-X11-arch]) could\nstick it again. But normally the window will\nend up stuck. Just don\u2019t write code that crashes if not.</p><p>You can track stickiness via the \u201cwindow-state-event\u201d signal\non <span data-xref=\"Gtk.Widget\"/>.</p>",
+            "kind": "method",
+            "name": "unstick",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        [
+            {
+                "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Window.set_default_icon_list\"/>.\nThe list is a copy and should be freed with <span data-xref=\"GLib.List.free\">GLib.List.free</span>,\nbut the pixbufs in the list have not had their reference count\nincremented.</p>",
+                "kind": "function",
+                "name": "get_default_icon_list",
+                "parameters": [],
+                "retval": {
+                    "type": "Array(GdkPixbuf.Pixbuf)"
+                }
+            },
+            {
+                "doc": "<p>Returns the fallback icon name for windows that has been set\nwith <span data-xref=\"Gtk.Window.set_default_icon_name\"/>. The returned\nstring is owned by GTK+ and should not be modified. It\nis only valid until the next call to\n<span data-xref=\"Gtk.Window.set_default_icon_name\"/>.</p>",
+                "kind": "function",
+                "name": "get_default_icon_name",
+                "parameters": [],
+                "retval": {
+                    "type": "String"
+                }
+            },
+            {
+                "doc": "<p>Returns a list of all existing toplevel windows. The widgets\nin the list are not individually referenced. If you want\nto iterate through the list and perform actions involving\ncallbacks that might destroy the widgets, you must call\n<code>g_list_foreach (result, (GFunc)g_object_ref, NULL)</code> first, and\nthen unref all the widgets afterwards.</p>",
+                "kind": "function",
+                "name": "list_toplevels",
+                "parameters": [],
+                "retval": {
+                    "type": "Array(Gtk.Widget)"
+                }
+            },
+            {
+                "doc": "<p>By default, after showing the first <span data-xref=\"Gtk.Window\"/>, GTK+ calls\n<span data-xref=\"Gdk.notify_startup_complete\">Gdk.notify_startup_complete</span>.  Call this function to disable\nthe automatic startup notification. You might do this if your\nfirst window is a splash screen, and you want to delay notification\nuntil after your real main window has been shown, for example.</p><p>In that example, you would disable startup notification\ntemporarily, show your splash screen, then re-enable it so that\nshowing the main window would automatically result in notification.</p>",
+                "kind": "function",
+                "name": "set_auto_startup_notification",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "setting",
+                        "direction": "in",
+                        "type": "Boolean"
+                    }
+                ],
+                "retval": {
+                    "type": "void"
+                }
+            },
+            {
+                "doc": "<p>Sets an icon to be used as fallback for windows that haven't\nhad <span data-xref=\"Gtk.Window.set_icon\"/> called on them from a pixbuf.</p>",
+                "kind": "function",
+                "name": "set_default_icon",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "icon",
+                        "direction": "in",
+                        "type": "GdkPixbuf.Pixbuf"
+                    }
+                ],
+                "retval": {
+                    "type": "void"
+                }
+            },
+            {
+                "doc": "<p>Sets an icon to be used as fallback for windows that haven't\nhad <span data-xref=\"Gtk.Window.set_icon_list\"/> called on them from a file\non disk. Warns on failure if @err is <code>null</code>.</p>",
+                "kind": "function",
+                "name": "set_default_icon_from_file",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "filename",
+                        "direction": "in",
+                        "type": "String"
+                    }
+                ],
+                "retval": {
+                    "type": "Boolean"
+                }
+            },
+            {
+                "doc": "<p>Sets an icon list to be used as fallback for windows that haven't\nhad <span data-xref=\"Gtk.Window.set_icon_list\"/> called on them to set up a\nwindow-specific icon list. This function allows you to set up the\nicon for all windows in your app at once.</p><p>See <span data-xref=\"Gtk.Window.set_icon_list\"/> for more details.</p>",
+                "kind": "function",
+                "name": "set_default_icon_list",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "list",
+                        "direction": "in",
+                        "type": "Array(GdkPixbuf.Pixbuf)"
+                    }
+                ],
+                "retval": {
+                    "type": "void"
+                }
+            },
+            {
+                "doc": "<p>Sets an icon to be used as fallback for windows that haven't\nhad <span data-xref=\"Gtk.Window.set_icon_list\"/> called on them from a named\nthemed icon, see <span data-xref=\"Gtk.Window.set_icon_name\"/>.</p>",
+                "kind": "function",
+                "name": "set_default_icon_name",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "name",
+                        "direction": "in",
+                        "type": "String"
+                    }
+                ],
+                "retval": {
+                    "type": "void"
+                }
+            }
+        ]
+    ],
+    "name": "Window",
+    "properties": [
+        {
+            "doc": "<p>Whether the window should receive the input focus.</p>",
+            "kind": "property",
+            "name": "accept-focus",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The <span data-xref=\"Gtk.Application\"/> associated with the window.</p><p>The application will be kept alive for at least as long as it\nhas any windows associated with it (see <span data-xref=\"Gio.Application.hold\">Gio.Application.prototype.hold</span>\nfor a way to keep it alive without windows).</p><p>Normally, the connection between the application and the window\nwill remain until the window is destroyed, but you can explicitly\nremove it by setting the ::application property to <code>null</code>.</p>",
+            "kind": "property",
+            "name": "application",
+            "type": "Gtk.Application"
+        },
+        {
+            "doc": "<p>The widget to which this window is attached.\nSee <span data-xref=\"Gtk.Window.set_attached_to\"/>.</p><p>Examples of places where specifying this relation is useful are\nfor instance a <span data-xref=\"Gtk.Menu\"/> created by a <span data-xref=\"Gtk.ComboBox\"/>, a completion\npopup window created by <span data-xref=\"Gtk.Entry\"/> or a typeahead search entry\ncreated by <span data-xref=\"Gtk.TreeView\"/>.</p>",
+            "kind": "property",
+            "name": "attached-to",
+            "type": "Gtk.Widget"
+        },
+        {
+            "doc": "<p>Whether the window should be decorated by the window manager.</p>",
+            "kind": "property",
+            "name": "decorated",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "default-height",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "default-width",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>Whether the window frame should have a close button.</p>",
+            "kind": "property",
+            "name": "deletable",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "destroy-with-parent",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Whether the window should receive the input focus when mapped.</p>",
+            "kind": "property",
+            "name": "focus-on-map",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Whether 'focus rectangles' are currently visible in this window.</p><p>This property is maintained by GTK+ based on user input\nand should not be set by applications.</p>",
+            "kind": "property",
+            "name": "focus-visible",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The window gravity of the window. See <span data-xref=\"Gtk.Window.move\"/> and <span data-xref=\"Gdk.Gravity\">Gdk.Gravity</span> for\nmore details about window gravity.</p>",
+            "kind": "property",
+            "name": "gravity",
+            "type": "Gdk.Gravity"
+        },
+        {
+            "doc": "<p>Whether the window has a corner resize grip.</p><p>Note that the resize grip is only shown if the window is\nactually resizable and not maximized. Use\n<span data-xref=\"Gtk.Window-resize-grip-visible\"/> to find out if the resize\ngrip is currently shown.</p>",
+            "kind": "property",
+            "name": "has-resize-grip",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "has-toplevel-focus",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Whether the titlebar should be hidden during maximization.</p>",
+            "kind": "property",
+            "name": "hide-titlebar-when-maximized",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "icon",
+            "type": "GdkPixbuf.Pixbuf"
+        },
+        {
+            "doc": "<p>The :icon-name property specifies the name of the themed icon to\nuse as the window icon. See <span data-xref=\"Gtk.IconTheme\"/> for more details.</p>",
+            "kind": "property",
+            "name": "icon-name",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "is-active",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "is-maximized",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Whether mnemonics are currently visible in this window.</p><p>This property is maintained by GTK+ based on user input,\nand should not be set by applications.</p>",
+            "kind": "property",
+            "name": "mnemonics-visible",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "modal",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "resizable",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Whether a corner resize grip is currently shown.</p>",
+            "kind": "property",
+            "name": "resize-grip-visible",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "role",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "screen",
+            "type": "Gdk.Screen"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "skip-pager-hint",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "skip-taskbar-hint",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The :startup-id is a write-only property for setting window's\nstartup notification identifier. See <span data-xref=\"Gtk.Window.set_startup_id\"/>\nfor more details.</p>",
+            "kind": "property",
+            "name": "startup-id",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "title",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The transient parent of the window. See <span data-xref=\"Gtk.Window.set_transient_for\"/> for\nmore details about transient windows.</p>",
+            "kind": "property",
+            "name": "transient-for",
+            "type": "Gtk.Window"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "type",
+            "type": "Gtk.WindowType"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "type-hint",
+            "type": "Gdk.WindowTypeHint"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "urgency-hint",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "window-position",
+            "type": "Gtk.WindowPosition"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::activate-default signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user activates the default widget\nof @window.</p>",
+            "kind": "signal",
+            "name": "activate-default",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::activate-focus signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user activates the currently\nfocused widget of @window.</p>",
+            "kind": "signal",
+            "name": "activate-focus",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::keys-changed signal gets emitted when the set of accelerators\nor mnemonics that are associated with @window changes.</p>",
+            "kind": "signal",
+            "name": "keys-changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "set-focus",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "activate_default",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "activate_focus",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "keys_changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>focus</code> is not the current focus widget, and is focusable, sets\nit as the focus widget for the window. If <code>focus</code> is <code>null</code>, unsets\nthe focus widget for this window. To set the focus to a particular\nwidget in the toplevel, it is usually more convenient to use\n<span data-xref=\"Gtk.Widget.grab_focus\"/> instead of this function.</p>",
+            "kind": "vfunc",
+            "name": "set_focus",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "focus",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

@@ -1,0 +1,205 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CheckMenuItem\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CheckMenuItem\"/> with a label.</p>",
+            "kind": "constructor",
+            "name": "new_with_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CheckMenuItem\"/> containing a label. The label\nwill be created using <span data-xref=\"Gtk.Label.new_with_mnemonic\"/>, so underscores\nin <code>label</code> indicate the mnemonic for the menu item.</p>",
+            "kind": "constructor",
+            "name": "new_with_mnemonic",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.CheckMenuItem\"/> is a menu item that maintains the state of a boolean\nvalue in addition to a <span data-xref=\"Gtk.MenuItem\"/> usual role in activating application\ncode.</p><p>A check box indicating the state of the boolean value is displayed\nat the left side of the <span data-xref=\"Gtk.MenuItem\"/>.  Activating the <span data-xref=\"Gtk.MenuItem\"/>\ntoggles the value.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "menu_item"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns whether the check menu item is active. See\ngtk_check_menu_item_set_active ().</p>",
+            "kind": "method",
+            "name": "get_active",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether <code>check_menu_item</code> looks like a <span data-xref=\"Gtk.RadioMenuItem\"/></p>",
+            "kind": "method",
+            "name": "get_draw_as_radio",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the value set by <span data-xref=\"Gtk.CheckMenuItem.set_inconsistent\"/>.</p>",
+            "kind": "method",
+            "name": "get_inconsistent",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the active state of the menu item\u2019s check box.</p>",
+            "kind": "method",
+            "name": "set_active",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "is_active",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether <code>check_menu_item</code> is drawn like a <span data-xref=\"Gtk.RadioMenuItem\"/></p>",
+            "kind": "method",
+            "name": "set_draw_as_radio",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "draw_as_radio",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If the user has selected a range of elements (such as some text or\nspreadsheet cells) that are affected by a boolean setting, and the\ncurrent values in that range are inconsistent, you may want to\ndisplay the check in an \u201cin between\u201d state. This function turns on\n\u201cin between\u201d display.  Normally you would turn off the inconsistent\nstate again if the user explicitly selects a setting. This has to be\ndone manually, <span data-xref=\"Gtk.CheckMenuItem.set_inconsistent\"/> only affects\nvisual appearance, it doesn\u2019t affect the semantics of the widget.</p>",
+            "kind": "method",
+            "name": "set_inconsistent",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits the <span data-xref=\"Gtk.CheckMenuItem-toggled\"/> signal.</p>",
+            "kind": "method",
+            "name": "toggled",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "CheckMenuItem",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "active",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "draw-as-radio",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "inconsistent",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>This signal is emitted when the state of the check box is changed.</p><p>A signal handler can use <span data-xref=\"Gtk.CheckMenuItem.get_active\"/>\nto discover the new state.</p>",
+            "kind": "signal",
+            "name": "toggled",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_indicator",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits the <span data-xref=\"Gtk.CheckMenuItem-toggled\"/> signal.</p>",
+            "kind": "vfunc",
+            "name": "toggled",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

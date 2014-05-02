@@ -1,0 +1,256 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new color button.</p><p>This returns a widget in the form of a small button containing\na swatch representing the current selected color. When the button\nis clicked, a color-selection dialog will open, allowing the user\nto select a color. The swatch will be updated to reflect the new\ncolor when the user finishes.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new color button.</p>",
+            "kind": "constructor",
+            "name": "new_with_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "in",
+                    "type": "Gdk.Color"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new color button.</p>",
+            "kind": "constructor",
+            "name": "new_with_rgba",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rgba",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.ColorButton\"/> is a button which displays the currently selected\ncolor an allows to open a color selection dialog to change the color.\nIt is suitable widget for selecting a color in a preference dialog.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "button"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the current alpha value.</p>",
+            "kind": "method",
+            "name": "get_alpha",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint16)"
+            }
+        },
+        {
+            "doc": "<p>Sets <code>color</code> to be the current color in the <span data-xref=\"Gtk.ColorButton\"/> widget.</p>",
+            "kind": "method",
+            "name": "get_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "out",
+                    "type": "Gdk.Color"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets <code>rgba</code> to be the current color in the <span data-xref=\"Gtk.ColorButton\"/> widget.</p>",
+            "kind": "method",
+            "name": "get_rgba",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rgba",
+                    "direction": "out",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the title of the color selection dialog.</p>",
+            "kind": "method",
+            "name": "get_title",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Does the color selection dialog use the alpha channel ?</p>",
+            "kind": "method",
+            "name": "get_use_alpha",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the current opacity to be <code>alpha</code>.</p>",
+            "kind": "method",
+            "name": "set_alpha",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "alpha",
+                    "direction": "in",
+                    "type": "Number(guint16)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the current color to be <code>color</code>.</p>",
+            "kind": "method",
+            "name": "set_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "in",
+                    "type": "Gdk.Color"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the current color to be <code>rgba</code>.</p>",
+            "kind": "method",
+            "name": "set_rgba",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rgba",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the title for the color selection dialog.</p>",
+            "kind": "method",
+            "name": "set_title",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "title",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether or not the color button should use the alpha channel.</p>",
+            "kind": "method",
+            "name": "set_use_alpha",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "use_alpha",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "ColorButton",
+    "properties": [
+        {
+            "doc": "<p>The selected opacity value (0 fully transparent, 65535 fully opaque).</p>",
+            "kind": "property",
+            "name": "alpha",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "<p>The selected color.</p>",
+            "kind": "property",
+            "name": "color",
+            "type": "Gdk.Color"
+        },
+        {
+            "doc": "<p>The RGBA color.</p>",
+            "kind": "property",
+            "name": "rgba",
+            "type": "Gdk.RGBA"
+        },
+        {
+            "doc": "<p>The title of the color selection dialog</p>",
+            "kind": "property",
+            "name": "title",
+            "type": "String"
+        },
+        {
+            "doc": "<p>If this property is set to <code>true</code>, the color swatch on the button is\nrendered against a checkerboard background to show its opacity and\nthe opacity slider is displayed in the color selection dialog.</p>",
+            "kind": "property",
+            "name": "use-alpha",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::color-set signal is emitted when the user selects a color.\nWhen handling this signal, use <span data-xref=\"Gtk.ColorButton.get_rgba\"/> to\nfind out which color was just selected.</p><p>Note that this signal is only emitted when the user\nchanges the color. If you need to react to programmatic color changes\nas well, use the notify::color signal.</p>",
+            "kind": "signal",
+            "name": "color-set",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "color_set",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

@@ -1,0 +1,1598 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.TextView\"/>. If you don\u2019t call <span data-xref=\"Gtk.TextView.set_buffer\"/>\nbefore using the text view, an empty default buffer will be created\nfor you. Get the buffer with <span data-xref=\"Gtk.TextView.get_buffer\"/>. If you want\nto specify your own buffer, consider <span data-xref=\"Gtk.TextView.new_with_buffer\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.TextView\"/> widget displaying the buffer\n<code>buffer</code>. One buffer can be shared among many widgets.\n<code>buffer</code> may be <code>null</code> to create a default buffer, in which case\nthis function is equivalent to <span data-xref=\"Gtk.TextView.new\"/>. The\ntext view adds its own reference count to the buffer; it does not\ntake over an existing reference.</p>",
+            "kind": "constructor",
+            "name": "new_with_buffer",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "buffer",
+                    "direction": "in",
+                    "type": "Gtk.TextBuffer"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>You may wish to begin by reading the\n[text widget conceptual overview][TextWidget]\nwhich gives an overview of all the objects and data\ntypes related to the text widget and how they work together.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds a child widget in the text buffer, at the given <code>anchor</code>.</p>",
+            "kind": "method",
+            "name": "add_child_at_anchor",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "anchor",
+                    "direction": "in",
+                    "type": "Gtk.TextChildAnchor"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a child at fixed coordinates in one of the text widget's\nwindows.</p><p>The window must have nonzero size (see\n<span data-xref=\"Gtk.TextView.set_border_window_size\"/>). Note that the child\ncoordinates are given relative to scrolling. When\nplacing a child in #GTK_TEXT_WINDOW_WIDGET, scrolling is\nirrelevant, the child floats above all scrollable areas. But when\nplacing a child in one of the scrollable windows (border windows or\ntext window) it will move with the scrolling as needed.</p>",
+            "kind": "method",
+            "name": "add_child_in_window",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "which_window",
+                    "direction": "in",
+                    "type": "Gtk.TextWindowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "xpos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "ypos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Moves the given <code>iter</code> backward by one display (wrapped) line.\nA display line is different from a paragraph. Paragraphs are\nseparated by newlines or other paragraph separator characters.\nDisplay lines are created by line-wrapping a paragraph. If\nwrapping is turned off, display lines and paragraphs will be the\nsame. Display lines are divided differently for each view, since\nthey depend on the view\u2019s width; paragraphs are the same in all\nviews, since they depend on the contents of the <span data-xref=\"Gtk.TextBuffer\"/>.</p>",
+            "kind": "method",
+            "name": "backward_display_line",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves the given <code>iter</code> backward to the next display line start.\nA display line is different from a paragraph. Paragraphs are\nseparated by newlines or other paragraph separator characters.\nDisplay lines are created by line-wrapping a paragraph. If\nwrapping is turned off, display lines and paragraphs will be the\nsame. Display lines are divided differently for each view, since\nthey depend on the view\u2019s width; paragraphs are the same in all\nviews, since they depend on the contents of the <span data-xref=\"Gtk.TextBuffer\"/>.</p>",
+            "kind": "method",
+            "name": "backward_display_line_start",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Converts coordinate (<code>buffer_x</code>, <code>buffer_y</code>) to coordinates for the window\n<code>win</code>, and stores the result in (<code>window_x</code>, <code>window_y</code>).</p><p>Note that you can\u2019t convert coordinates for a nonexisting window (see\n<span data-xref=\"Gtk.TextView.set_border_window_size\"/>).</p>",
+            "kind": "method",
+            "name": "buffer_to_window_coords",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "win",
+                    "direction": "in",
+                    "type": "Gtk.TextWindowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "buffer_x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "buffer_y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "window_x",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "window_y",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Moves the given <code>iter</code> forward by one display (wrapped) line.\nA display line is different from a paragraph. Paragraphs are\nseparated by newlines or other paragraph separator characters.\nDisplay lines are created by line-wrapping a paragraph. If\nwrapping is turned off, display lines and paragraphs will be the\nsame. Display lines are divided differently for each view, since\nthey depend on the view\u2019s width; paragraphs are the same in all\nviews, since they depend on the contents of the <span data-xref=\"Gtk.TextBuffer\"/>.</p>",
+            "kind": "method",
+            "name": "forward_display_line",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves the given <code>iter</code> forward to the next display line end.\nA display line is different from a paragraph. Paragraphs are\nseparated by newlines or other paragraph separator characters.\nDisplay lines are created by line-wrapping a paragraph. If\nwrapping is turned off, display lines and paragraphs will be the\nsame. Display lines are divided differently for each view, since\nthey depend on the view\u2019s width; paragraphs are the same in all\nviews, since they depend on the contents of the <span data-xref=\"Gtk.TextBuffer\"/>.</p>",
+            "kind": "method",
+            "name": "forward_display_line_end",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether pressing the Tab key inserts a tab characters.\n<span data-xref=\"Gtk.TextView.set_accepts_tab\"/>.</p>",
+            "kind": "method",
+            "name": "get_accepts_tab",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the width of the specified border window. See\n<span data-xref=\"Gtk.TextView.set_border_window_size\"/>.</p>",
+            "kind": "method",
+            "name": "get_border_window_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.TextWindowType"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the <span data-xref=\"Gtk.TextBuffer\"/> being displayed by this text view.\nThe reference count on the buffer is not incremented; the caller\nof this function won\u2019t own a new reference.</p>",
+            "kind": "method",
+            "name": "get_buffer",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TextBuffer"
+            }
+        },
+        {
+            "doc": "<p>Given an <code>iter</code> within a text layout, determine the positions of the\nstrong and weak cursors if the insertion point is at that\niterator. The position of each cursor is stored as a zero-width\nrectangle. The strong cursor location is the location where\ncharacters of the directionality equal to the base direction of the\nparagraph are inserted.  The weak cursor location is the location\nwhere characters of the directionality opposite to the base\ndirection of the paragraph are inserted.</p><p>If <code>iter</code> is <code>null</code>, the actual cursor position is used.</p><p>Note that if <code>iter</code> happens to be the actual cursor position, and\nthere is currently an IM preedit sequence being entered, the\nreturned locations will be adjusted to account for the preedit\ncursor\u2019s offset within the preedit sequence.</p><p>The rectangle position is in buffer coordinates; use\n<span data-xref=\"Gtk.TextView.buffer_to_window_coords\"/> to convert these\ncoordinates to coordinates for one of the windows in the text view.</p>",
+            "kind": "method",
+            "name": "get_cursor_locations",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "strong",
+                    "direction": "out",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "weak",
+                    "direction": "out",
+                    "type": "Gdk.Rectangle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Find out whether the cursor is being displayed.</p>",
+            "kind": "method",
+            "name": "get_cursor_visible",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Obtains a copy of the default text attributes. These are the\nattributes used for text unless a tag overrides them.\nYou\u2019d typically pass the default attributes in to\n<span data-xref=\"Gtk.TextIter.get_attributes\"/> in order to get the\nattributes in effect at a given text position.</p><p>The return value is a copy owned by the caller of this function,\nand should be freed.</p>",
+            "kind": "method",
+            "name": "get_default_attributes",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TextAttributes"
+            }
+        },
+        {
+            "doc": "<p>Returns the default editability of the <span data-xref=\"Gtk.TextView\"/>. Tags in the\nbuffer may override this setting for some ranges of text.</p>",
+            "kind": "method",
+            "name": "get_editable",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the horizontal-scrolling <span data-xref=\"Gtk.Adjustment\"/>.</p>",
+            "kind": "method",
+            "name": "get_hadjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Gets the default indentation of paragraphs in <code>text_view</code>.\nTags in the view\u2019s buffer may override the default.\nThe indentation may be negative.</p>",
+            "kind": "method",
+            "name": "get_indent",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of the <span data-xref=\"Gtk.TextView-input-hints\"/> property.</p>",
+            "kind": "method",
+            "name": "get_input_hints",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.InputHints"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of the <span data-xref=\"Gtk.TextView-input-purpose\"/> property.</p>",
+            "kind": "method",
+            "name": "get_input_purpose",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.InputPurpose"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the iterator at buffer coordinates <code>x</code> and <code>y</code>. Buffer\ncoordinates are coordinates for the entire buffer, not just the\ncurrently-displayed portion.  If you have coordinates from an\nevent, you have to convert those to buffer coordinates with\n<span data-xref=\"Gtk.TextView.window_to_buffer_coords\"/>.</p>",
+            "kind": "method",
+            "name": "get_iter_at_location",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "out",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the iterator pointing to the character at buffer\ncoordinates <code>x</code> and <code>y</code>. Buffer coordinates are coordinates for\nthe entire buffer, not just the currently-displayed portion.\nIf you have coordinates from an event, you have to convert\nthose to buffer coordinates with\n<span data-xref=\"Gtk.TextView.window_to_buffer_coords\"/>.</p><p>Note that this is different from <span data-xref=\"Gtk.TextView.get_iter_at_location\"/>,\nwhich returns cursor locations, i.e. positions between\ncharacters.</p>",
+            "kind": "method",
+            "name": "get_iter_at_position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "out",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "trailing",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets a rectangle which roughly contains the character at <code>iter</code>.\nThe rectangle position is in buffer coordinates; use\n<span data-xref=\"Gtk.TextView.buffer_to_window_coords\"/> to convert these\ncoordinates to coordinates for one of the windows in the text view.</p>",
+            "kind": "method",
+            "name": "get_iter_location",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "location",
+                    "direction": "out",
+                    "type": "Gdk.Rectangle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the default justification of paragraphs in <code>text_view</code>.\nTags in the buffer may override the default.</p>",
+            "kind": "method",
+            "name": "get_justification",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Justification"
+            }
+        },
+        {
+            "doc": "<p>Gets the default left margin size of paragraphs in the <code>text_view</code>.\nTags in the buffer may override the default.</p>",
+            "kind": "method",
+            "name": "get_left_margin",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the <span data-xref=\"Gtk.TextIter\"/> at the start of the line containing\nthe coordinate <code>y</code>. <code>y</code> is in buffer coordinates, convert from\nwindow coordinates with <span data-xref=\"Gtk.TextView.window_to_buffer_coords\"/>.\nIf non-<code>null</code>, <code>line_top</code> will be filled with the coordinate of the top\nedge of the line.</p>",
+            "kind": "method",
+            "name": "get_line_at_y",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "target_iter",
+                    "direction": "out",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "line_top",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the y coordinate of the top of the line containing <code>iter</code>,\nand the height of the line. The coordinate is a buffer coordinate;\nconvert to window coordinates with <span data-xref=\"Gtk.TextView.buffer_to_window_coords\"/>.</p>",
+            "kind": "method",
+            "name": "get_line_yrange",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the <span data-xref=\"Gtk.TextView\"/> is in overwrite mode or not.</p>",
+            "kind": "method",
+            "name": "get_overwrite",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the default number of pixels to put above paragraphs.</p>",
+            "kind": "method",
+            "name": "get_pixels_above_lines",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.TextView.set_pixels_below_lines\"/>.</p>",
+            "kind": "method",
+            "name": "get_pixels_below_lines",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.TextView.set_pixels_inside_wrap\"/>.</p>",
+            "kind": "method",
+            "name": "get_pixels_inside_wrap",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the default right margin for text in <code>text_view</code>. Tags\nin the buffer may override the default.</p>",
+            "kind": "method",
+            "name": "get_right_margin",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the default tabs for <code>text_view</code>. Tags in the buffer may\noverride the defaults. The returned array will be <code>null</code> if\n\u201cstandard\u201d (8-space) tabs are used. Free the return value\nwith <span data-xref=\"Pango.TabArray.free\">Pango.TabArray.prototype.free</span>.</p>",
+            "kind": "method",
+            "name": "get_tabs",
+            "parameters": [],
+            "retval": {
+                "type": "Pango.TabArray"
+            }
+        },
+        {
+            "doc": "<p>Gets the vertical-scrolling <span data-xref=\"Gtk.Adjustment\"/>.</p>",
+            "kind": "method",
+            "name": "get_vadjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Fills <code>visible_rect</code> with the currently-visible\nregion of the buffer, in buffer coordinates. Convert to window coordinates\nwith <span data-xref=\"Gtk.TextView.buffer_to_window_coords\"/>.</p>",
+            "kind": "method",
+            "name": "get_visible_rect",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "visible_rect",
+                    "direction": "out",
+                    "type": "Gdk.Rectangle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the <span data-xref=\"Gdk.Window\">Gdk.Window</span> corresponding to an area of the text view;\npossible windows include the overall widget window, child windows\non the left, right, top, bottom, and the window that displays the\ntext buffer. Windows are <code>null</code> and nonexistent if their width or\nheight is 0, and are nonexistent before the widget has been\nrealized.</p>",
+            "kind": "method",
+            "name": "get_window",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "win",
+                    "direction": "in",
+                    "type": "Gtk.TextWindowType"
+                }
+            ],
+            "retval": {
+                "type": "Gdk.Window"
+            }
+        },
+        {
+            "doc": "<p>Usually used to find out which window an event corresponds to.\nIf you connect to an event signal on <code>text_view</code>, this function\nshould be called on <code>event-&amp;amp;gt;window</code> to\nsee which window it was.</p>",
+            "kind": "method",
+            "name": "get_window_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "window",
+                    "direction": "in",
+                    "type": "Gdk.Window"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.TextWindowType"
+            }
+        },
+        {
+            "doc": "<p>Gets the line wrapping for the view.</p>",
+            "kind": "method",
+            "name": "get_wrap_mode",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.WrapMode"
+            }
+        },
+        {
+            "doc": "<p>Allow the <span data-xref=\"Gtk.TextView\"/> input method to internally handle key press\nand release events. If this function returns <code>true</code>, then no further\nprocessing should be done for this key event. See\n<span data-xref=\"Gtk.IMContext.filter_keypress\"/>.</p><p>Note that you are expected to call this function from your handler\nwhen overriding key event handling. This is needed in the case when\nyou need to insert your own key handling between the input method\nand the default key event handling of the <span data-xref=\"Gtk.TextView\"/>.</p><p>|[&lt;!-- language=\"C\" --&gt;\nstatic gboolean\ngtk_foo_bar_key_press_event (GtkWidget   <em>widget,\n                             GdkEventKey </em>event)\n{\n  if ((key-&gt;keyval == GDK_KEY_Return || key-&gt;keyval == GDK_KEY_KP_Enter))\n    {\n      if (gtk_text_view_im_context_filter_keypress (GTK_TEXT_VIEW (view), event))\n        return TRUE;\n    }</p><pre><code>// Do some stuff\n</code></pre><p>return GTK_WIDGET_CLASS (gtk_foo_bar_parent_class)-&gt;key_press_event (widget, event);\n}\n]|</p>",
+            "kind": "method",
+            "name": "im_context_filter_keypress",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.EventKey"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Updates the position of a child, as for <span data-xref=\"Gtk.TextView.add_child_in_window\"/>.</p>",
+            "kind": "method",
+            "name": "move_child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "xpos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "ypos",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Moves a mark within the buffer so that it's\nlocated within the currently-visible text area.</p>",
+            "kind": "method",
+            "name": "move_mark_onscreen",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "mark",
+                    "direction": "in",
+                    "type": "Gtk.TextMark"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Move the iterator a given number of characters visually, treating\nit as the strong cursor position. If <code>count</code> is positive, then the\nnew strong cursor position will be <code>count</code> positions to the right of\nthe old cursor position. If <code>count</code> is negative then the new strong\ncursor position will be <code>count</code> positions to the left of the old\ncursor position.</p><p>In the presence of bi-directional text, the correspondence\nbetween logical and visual order will depend on the direction\nof the current run, and there may be jumps when the cursor\nis moved off of the end of a run.</p>",
+            "kind": "method",
+            "name": "move_visually",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Moves the cursor to the currently visible region of the\nbuffer, it it isn\u2019t there already.</p>",
+            "kind": "method",
+            "name": "place_cursor_onscreen",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Reset the input method context of the text view if needed.</p><p>This can be necessary in the case where modifying the buffer\nwould confuse on-going input method behavior.</p>",
+            "kind": "method",
+            "name": "reset_im_context",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Scrolls <code>text_view</code> the minimum distance such that <code>mark</code> is contained\nwithin the visible area of the widget.</p>",
+            "kind": "method",
+            "name": "scroll_mark_onscreen",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "mark",
+                    "direction": "in",
+                    "type": "Gtk.TextMark"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Scrolls <code>text_view</code> so that <code>iter</code> is on the screen in the position\nindicated by <code>xalign</code> and <code>yalign</code>. An alignment of 0.0 indicates\nleft or top, 1.0 indicates right or bottom, 0.5 means center.\nIf <code>use_align</code> is <code>false</code>, the text scrolls the minimal distance to\nget the mark onscreen, possibly not scrolling at all. The effective\nscreen for purposes of this function is reduced by a margin of size\n<code>within_margin</code>.</p><p>Note that this function uses the currently-computed height of the\nlines in the text buffer. Line heights are computed in an idle\nhandler; so this function may not have the desired effect if it\u2019s\ncalled before the height computations. To avoid oddness, consider\nusing <span data-xref=\"Gtk.TextView.scroll_to_mark\"/> which saves a point to be\nscrolled to after line validation.</p>",
+            "kind": "method",
+            "name": "scroll_to_iter",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "within_margin",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "use_align",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "xalign",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yalign",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Scrolls <code>text_view</code> so that <code>mark</code> is on the screen in the position\nindicated by <code>xalign</code> and <code>yalign</code>. An alignment of 0.0 indicates\nleft or top, 1.0 indicates right or bottom, 0.5 means center.\nIf <code>use_align</code> is <code>false</code>, the text scrolls the minimal distance to\nget the mark onscreen, possibly not scrolling at all. The effective\nscreen for purposes of this function is reduced by a margin of size\n<code>within_margin</code>.</p>",
+            "kind": "method",
+            "name": "scroll_to_mark",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "mark",
+                    "direction": "in",
+                    "type": "Gtk.TextMark"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "within_margin",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "use_align",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "xalign",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yalign",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the behavior of the text widget when the Tab key is pressed.\nIf <code>accepts_tab</code> is <code>true</code>, a tab character is inserted. If <code>accepts_tab</code>\nis <code>false</code> the keyboard focus is moved to the next widget in the focus\nchain.</p>",
+            "kind": "method",
+            "name": "set_accepts_tab",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accepts_tab",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the width of <span data-xref=\"Gtk.TextWindowType\"/>.left or <span data-xref=\"Gtk.TextWindowType\"/>.right,\nor the height of <span data-xref=\"Gtk.TextWindowType\"/>.top or <span data-xref=\"Gtk.TextWindowType\"/>.bottom.\nAutomatically destroys the corresponding window if the size is set\nto 0, and creates the window if the size is set to non-zero.  This\nfunction can only be used for the \u201cborder windows,\u201d it doesn\u2019t work\nwith #GTK_TEXT_WINDOW_WIDGET, #GTK_TEXT_WINDOW_TEXT, or</p>\n<h1>GTK_TEXT_WINDOW_PRIVATE.</h1>",
+            "kind": "method",
+            "name": "set_border_window_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.TextWindowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets <code>buffer</code> as the buffer being displayed by <code>text_view</code>. The previous\nbuffer displayed by the text view is unreferenced, and a reference is\nadded to <code>buffer</code>. If you owned a reference to <code>buffer</code> before passing it\nto this function, you must remove that reference yourself; <span data-xref=\"Gtk.TextView\"/>\nwill not \u201cadopt\u201d it.</p>",
+            "kind": "method",
+            "name": "set_buffer",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "buffer",
+                    "direction": "in",
+                    "type": "Gtk.TextBuffer"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Toggles whether the insertion point is displayed. A buffer with no editable\ntext probably shouldn\u2019t have a visible cursor, so you may want to turn\nthe cursor off.</p>",
+            "kind": "method",
+            "name": "set_cursor_visible",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the default editability of the <span data-xref=\"Gtk.TextView\"/>. You can override\nthis default setting with tags in the buffer, using the \u201ceditable\u201d\nattribute of tags.</p>",
+            "kind": "method",
+            "name": "set_editable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the default indentation for paragraphs in <code>text_view</code>.\nTags in the buffer may override the default.</p>",
+            "kind": "method",
+            "name": "set_indent",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "indent",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.TextView-input-hints\"/> property, which\nallows input methods to fine-tune their behaviour.</p>",
+            "kind": "method",
+            "name": "set_input_hints",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "hints",
+                    "direction": "in",
+                    "type": "Gtk.InputHints"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.TextView-input-purpose\"/> property which\ncan be used by on-screen keyboards and other input\nmethods to adjust their behaviour.</p>",
+            "kind": "method",
+            "name": "set_input_purpose",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "purpose",
+                    "direction": "in",
+                    "type": "Gtk.InputPurpose"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the default justification of text in <code>text_view</code>.\nTags in the view\u2019s buffer may override the default.</p>",
+            "kind": "method",
+            "name": "set_justification",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "justification",
+                    "direction": "in",
+                    "type": "Gtk.Justification"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the default left margin for text in <code>text_view</code>.\nTags in the buffer may override the default.</p>",
+            "kind": "method",
+            "name": "set_left_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "left_margin",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Changes the <span data-xref=\"Gtk.TextView\"/> overwrite mode.</p>",
+            "kind": "method",
+            "name": "set_overwrite",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "overwrite",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the default number of blank pixels above paragraphs in <code>text_view</code>.\nTags in the buffer for <code>text_view</code> may override the defaults.</p>",
+            "kind": "method",
+            "name": "set_pixels_above_lines",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pixels_above_lines",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the default number of pixels of blank space\nto put below paragraphs in <code>text_view</code>. May be overridden\nby tags applied to <code>text_view</code>\u2019s buffer.</p>",
+            "kind": "method",
+            "name": "set_pixels_below_lines",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pixels_below_lines",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the default number of pixels of blank space to leave between\ndisplay/wrapped lines within a paragraph. May be overridden by\ntags in <code>text_view</code>\u2019s buffer.</p>",
+            "kind": "method",
+            "name": "set_pixels_inside_wrap",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pixels_inside_wrap",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the default right margin for text in the text view.\nTags in the buffer may override the default.</p>",
+            "kind": "method",
+            "name": "set_right_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "right_margin",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the default tab stops for paragraphs in <code>text_view</code>.\nTags in the buffer may override the default.</p>",
+            "kind": "method",
+            "name": "set_tabs",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "tabs",
+                    "direction": "in",
+                    "type": "Pango.TabArray"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the line wrapping for the view.</p>",
+            "kind": "method",
+            "name": "set_wrap_mode",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "wrap_mode",
+                    "direction": "in",
+                    "type": "Gtk.WrapMode"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Determines whether <code>iter</code> is at the start of a display line.\nSee <span data-xref=\"Gtk.TextView.forward_display_line\"/> for an explanation of\ndisplay lines vs. paragraphs.</p>",
+            "kind": "method",
+            "name": "starts_display_line",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TextIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Converts coordinates on the window identified by <code>win</code> to buffer\ncoordinates, storing the result in (<code>buffer_x</code>,<code>buffer_y</code>).</p><p>Note that you can\u2019t convert coordinates for a nonexisting window (see\n<span data-xref=\"Gtk.TextView.set_border_window_size\"/>).</p>",
+            "kind": "method",
+            "name": "window_to_buffer_coords",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "win",
+                    "direction": "in",
+                    "type": "Gtk.TextWindowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "window_x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "window_y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "buffer_x",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "buffer_y",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "TextView",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "accepts-tab",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "buffer",
+            "type": "Gtk.TextBuffer"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "cursor-visible",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "editable",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Which IM (input method) module should be used for this text_view.\nSee <span data-xref=\"Gtk.IMContext\"/>.</p><p>Setting this to a non-<code>null</code> value overrides the\nsystem-wide IM module setting. See the GtkSettings\n<span data-xref=\"Gtk.Settings-gtk-im-module\"/> property.</p>",
+            "kind": "property",
+            "name": "im-module",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "indent",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>Additional hints (beyond <span data-xref=\"Gtk.TextView-input-purpose\"/>) that\nallow input methods to fine-tune their behaviour.</p>",
+            "kind": "property",
+            "name": "input-hints",
+            "type": "Gtk.InputHints"
+        },
+        {
+            "doc": "<p>The purpose of this text field.</p><p>This property can be used by on-screen keyboards and other input\nmethods to adjust their behaviour.</p>",
+            "kind": "property",
+            "name": "input-purpose",
+            "type": "Gtk.InputPurpose"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "justification",
+            "type": "Gtk.Justification"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "left-margin",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "overwrite",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "pixels-above-lines",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "pixels-below-lines",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "pixels-inside-wrap",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>If :populate-all is <code>true</code>, the <span data-xref=\"Gtk.TextView-populate-popup\"/>\nsignal is also emitted for touch popups.</p>",
+            "kind": "property",
+            "name": "populate-all",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "right-margin",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "tabs",
+            "type": "Pango.TabArray"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "wrap-mode",
+            "type": "Gtk.WrapMode"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::backspace signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>The default bindings for this signal are\nBackspace and Shift-Backspace.</p>",
+            "kind": "signal",
+            "name": "backspace",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::copy-clipboard signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to copy the selection to the clipboard.</p><p>The default bindings for this signal are\nCtrl-c and Ctrl-Insert.</p>",
+            "kind": "signal",
+            "name": "copy-clipboard",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::cut-clipboard signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to cut the selection to the clipboard.</p><p>The default bindings for this signal are\nCtrl-x and Shift-Delete.</p>",
+            "kind": "signal",
+            "name": "cut-clipboard",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::delete-from-cursor signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user initiates a text deletion.</p><p>If the <code>type</code> is <span data-xref=\"Gtk.DeleteType\"/>.chars, GTK+ deletes the selection\nif there is one, otherwise it deletes the requested number\nof characters.</p><p>The default bindings for this signal are\nDelete for deleting a character, Ctrl-Delete for\ndeleting a word and Ctrl-Backspace for deleting a word\nbackwords.</p>",
+            "kind": "signal",
+            "name": "delete-from-cursor",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.DeleteType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::insert-at-cursor signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user initiates the insertion of a\nfixed string at the cursor.</p><p>This signal has no default bindings.</p>",
+            "kind": "signal",
+            "name": "insert-at-cursor",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "string",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::move-cursor signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user initiates a cursor movement.\nIf the cursor is not visible in @text_view, this signal causes\nthe viewport to be moved instead.</p><p>Applications should not connect to it, but may emit it with\n<span data-xref=\"GObject.signal_emit_by_name\">GObject.signal_emit_by_name</span> if they need to control the cursor\nprogrammatically.</p><p>The default bindings for this signal come in two variants,\nthe variant with the Shift modifier extends the selection,\nthe variant without the Shift modifer does not.\nThere are too many key combinations to list them all here.\n- Arrow keys move by individual characters/lines\n- Ctrl-arrow key combinations move by words/paragraphs\n- Home/End keys move to the ends of the buffer\n- PageUp/PageDown keys move vertically by pages\n- Ctrl-PageUp/PageDown keys move horizontally by pages</p>",
+            "kind": "signal",
+            "name": "move-cursor",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "step",
+                    "direction": "in",
+                    "type": "Gtk.MovementStep"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "extend_selection",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::move-viewport signal is a\n[keybinding signal][GtkBindingSignal]\nwhich can be bound to key combinations to allow the user\nto move the viewport, i.e. change what part of the text view\nis visible in a containing scrolled window.</p><p>There are no default bindings for this signal.</p>",
+            "kind": "signal",
+            "name": "move-viewport",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "step",
+                    "direction": "in",
+                    "type": "Gtk.ScrollStep"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::paste-clipboard signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to paste the contents of the clipboard\ninto the text view.</p><p>The default bindings for this signal are\nCtrl-v and Shift-Insert.</p>",
+            "kind": "signal",
+            "name": "paste-clipboard",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::populate-popup signal gets emitted before showing the\ncontext menu of the text view.</p><p>If you need to add items to the context menu, connect\nto this signal and append your items to the <code>popup</code>, which\nwill be a <span data-xref=\"Gtk.Menu\"/> in this case.</p><p>If <span data-xref=\"Gtk.TextView-populate-all\"/> is <code>true</code>, this signal will\nalso be emitted to populate touch popups. In this case,\n<code>popup</code> will be a different container, e.g. a <span data-xref=\"Gtk.Toolbar\"/>.</p><p>The signal handler should not make assumptions about the\ntype of @widget, but check whether <code>popup</code> is a <span data-xref=\"Gtk.Menu\"/>\nor <span data-xref=\"Gtk.Toolbar\"/> or another kind of container.</p>",
+            "kind": "signal",
+            "name": "populate-popup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "popup",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If an input method is used, the typed text will not immediately\nbe committed to the buffer. So if you are interested in the text,\nconnect to this signal.</p><p>This signal is only emitted if the text at the given position\nis actually editable.</p>",
+            "kind": "signal",
+            "name": "preedit-changed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "preedit",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::select-all signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to select or unselect the complete\ncontents of the text view.</p><p>The default bindings for this signal are Ctrl-a and Ctrl-/\nfor selecting and Shift-Ctrl-a and Ctrl-\\ for unselecting.</p>",
+            "kind": "signal",
+            "name": "select-all",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "select",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::set-anchor signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user initiates setting the \"anchor\"\nmark. The \"anchor\" mark gets placed at the same position as the\n\"insert\" mark.</p><p>This signal has no default bindings.</p>",
+            "kind": "signal",
+            "name": "set-anchor",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::toggle-cursor-visible signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to toggle the visibility of the cursor.</p><p>The default binding for this signal is F7.</p>",
+            "kind": "signal",
+            "name": "toggle-cursor-visible",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::toggle-overwrite signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to toggle the overwrite mode of the text view.</p><p>The default bindings for this signal is Insert.</p>",
+            "kind": "signal",
+            "name": "toggle-overwrite",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "backspace",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "copy_clipboard",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "create_buffer",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TextBuffer"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "cut_clipboard",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "delete_from_cursor",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.DeleteType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "insert_at_cursor",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "str",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "move_cursor",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "step",
+                    "direction": "in",
+                    "type": "Gtk.MovementStep"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "extend_selection",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "paste_clipboard",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "populate_popup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "popup",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "set_anchor",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "toggle_overwrite",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

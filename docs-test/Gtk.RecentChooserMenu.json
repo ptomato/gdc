@@ -1,0 +1,82 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RecentChooserMenu\"/> widget.</p><p>This kind of widget shows the list of recently used resources as\na menu, each item as a menu item.  Each item inside the menu might\nhave an icon, representing its MIME type, and a number, for mnemonic\naccess.</p><p>This widget implements the <span data-xref=\"Gtk.RecentChooser\"/> interface.</p><p>This widget creates its own <span data-xref=\"Gtk.RecentManager\"/> object.  See the\n<span data-xref=\"Gtk.RecentChooserMenu.new_for_manager\"/> function to know how to create\na <span data-xref=\"Gtk.RecentChooserMenu\"/> widget bound to another <span data-xref=\"Gtk.RecentManager\"/> object.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RecentChooserMenu\"/> widget using <code>manager</code> as\nthe underlying recently used resources manager.</p><p>This is useful if you have implemented your own recent manager,\nor if you have a customized instance of a <span data-xref=\"Gtk.RecentManager\"/>\nobject or if you wish to share a common <span data-xref=\"Gtk.RecentManager\"/> object\namong multiple <span data-xref=\"Gtk.RecentChooser\"/> widgets.</p>",
+            "kind": "constructor",
+            "name": "new_for_manager",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "manager",
+                    "direction": "in",
+                    "type": "Gtk.RecentManager"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.RecentChooserMenu\"/> is a widget suitable for displaying recently used files\ninside a menu.  It can be used to set a sub-menu of a <span data-xref=\"Gtk.MenuItem\"/> using\n<span data-xref=\"Gtk.MenuItem.set_submenu\"/>, or as the menu of a <span data-xref=\"Gtk.MenuToolButton\"/>.</p><p>Note that <span data-xref=\"Gtk.RecentChooserMenu\"/> does not have any methods of its own. Instead,\nyou should use the functions that work on a <span data-xref=\"Gtk.RecentChooser\"/>.</p><p>Note also that <span data-xref=\"Gtk.RecentChooserMenu\"/> does not support multiple filters, as it\nhas no way to let the user choose between them as the <span data-xref=\"Gtk.RecentChooserWidget\"/>\nand <span data-xref=\"Gtk.RecentChooserDialog\"/> widgets do. Thus using <span data-xref=\"Gtk.RecentChooser.add_filter\"/>\non a <span data-xref=\"Gtk.RecentChooserMenu\"/> widget will yield the same effects as using\n<span data-xref=\"Gtk.RecentChooser.set_filter\"/>, replacing any currently set filter\nwith the supplied filter; <span data-xref=\"Gtk.RecentChooser.remove_filter\"/> will remove\nany currently set <span data-xref=\"Gtk.RecentFilter\"/> object and will unset the current filter;\n<span data-xref=\"Gtk.RecentChooser.list_filters\"/> will return a list containing a single\n<span data-xref=\"Gtk.RecentFilter\"/> object.</p><p>Recently used files are supported since GTK+ 2.10.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the value set by <span data-xref=\"Gtk.RecentChooserMenu.set_show_numbers\"/>.</p>",
+            "kind": "method",
+            "name": "get_show_numbers",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets whether a number should be added to the items of <code>menu</code>.  The\nnumbers are shown to provide a unique character for a mnemonic to\nbe used inside ten menu item\u2019s label.  Only the first the items\nget a number to avoid clashes.</p>",
+            "kind": "method",
+            "name": "set_show_numbers",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "show_numbers",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "RecentChooserMenu",
+    "properties": [
+        {
+            "doc": "<p>Whether the first ten items in the menu should be prepended by\na number acting as a unique mnemonic.</p>",
+            "kind": "property",
+            "name": "show-numbers",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

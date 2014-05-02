@@ -1,0 +1,128 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.AppChooserDialog\"/> for the provided <span data-xref=\"Gio.File\">Gio.File</span>,\nto allow the user to select an application for it.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "parent",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.DialogFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "file",
+                    "direction": "in",
+                    "type": "Gio.File"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.AppChooserDialog\"/> for the provided content type,\nto allow the user to select an application for it.</p>",
+            "kind": "constructor",
+            "name": "new_for_content_type",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "parent",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.DialogFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "content_type",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.AppChooserDialog\"/> shows a <span data-xref=\"Gtk.AppChooserWidget\"/> inside a <span data-xref=\"Gtk.Dialog\"/>.</p><p>Note that <span data-xref=\"Gtk.AppChooserDialog\"/> does not have any interesting methods\nof its own. Instead, you should get the embedded <span data-xref=\"Gtk.AppChooserWidget\"/>\nusing <span data-xref=\"Gtk.AppChooserDialog.get_widget\"/> and call its methods if\nthe generic <span data-xref=\"Gtk.AppChooser\"/> interface is not sufficient for your needs.</p><p>To set the heading that is shown above the <span data-xref=\"Gtk.AppChooserWidget\"/>,\nuse <span data-xref=\"Gtk.AppChooserDialog.set_heading\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the text to display at the top of the dialog.</p>",
+            "kind": "method",
+            "name": "get_heading",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the <span data-xref=\"Gtk.AppChooserWidget\"/> of this dialog.</p>",
+            "kind": "method",
+            "name": "get_widget",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Sets the text to display at the top of the dialog.\nIf the heading is not set, the dialog displays a default text.</p>",
+            "kind": "method",
+            "name": "set_heading",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "heading",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "AppChooserDialog",
+    "properties": [
+        {
+            "doc": "<p>The GFile used by the <span data-xref=\"Gtk.AppChooserDialog\"/>.\nThe dialog's <span data-xref=\"Gtk.AppChooserWidget\"/> content type will be guessed from the\nfile, if present.</p>",
+            "kind": "property",
+            "name": "gfile",
+            "type": "Gio.File"
+        },
+        {
+            "doc": "<p>The text to show at the top of the dialog.\nThe string may contain Pango markup.</p>",
+            "kind": "property",
+            "name": "heading",
+            "type": "String"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

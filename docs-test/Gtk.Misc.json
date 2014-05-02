@@ -1,0 +1,137 @@
+{
+    "constructors": [],
+    "doc": "<p>The <span data-xref=\"Gtk.Misc\"/> widget is an abstract widget which is not useful itself, but\nis used to derive subclasses which have alignment and padding attributes.</p><p>The horizontal and vertical padding attributes allows extra space to be\nadded around the widget.</p><p>The horizontal and vertical alignment attributes enable the widget to be\npositioned within its allocated area. Note that if the widget is added to\na container in such a way that it expands automatically to fill its\nallocated area, the alignment settings will not alter the widgets position.</p><p>Note that the desired effect can in most cases be achieved by using the\n<span data-xref=\"Gtk.Widget-halign\"/>, <span data-xref=\"Gtk.Widget-valign\"/> and <span data-xref=\"Gtk.Widget-margin\"/> properties\non the child widget, so GtkMisc should not be used in new code.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "widget"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Gets the X and Y alignment of the widget within its allocation.\nSee <span data-xref=\"Gtk.Misc.set_alignment\"/>.</p>",
+            "kind": "method",
+            "name": "get_alignment",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "xalign",
+                    "direction": "out",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "yalign",
+                    "direction": "out",
+                    "type": "Number(gfloat)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the padding in the X and Y directions of the widget.\nSee <span data-xref=\"Gtk.Misc.set_padding\"/>.</p>",
+            "kind": "method",
+            "name": "get_padding",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "xpad",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "ypad",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the alignment of the widget.</p>",
+            "kind": "method",
+            "name": "set_alignment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "xalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the amount of space to add around the widget.</p>",
+            "kind": "method",
+            "name": "set_padding",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "xpad",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "ypad",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Misc",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "xalign",
+            "type": "Number(gfloat)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "xpad",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "yalign",
+            "type": "Number(gfloat)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "ypad",
+            "type": "Number(gint)"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

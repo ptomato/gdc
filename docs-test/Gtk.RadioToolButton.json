@@ -1,0 +1,128 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioToolButton\"/>, adding it to <code>group</code>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "group",
+                    "direction": "in",
+                    "type": "Array(Gtk.RadioButton)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.ToolItem"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioToolButton\"/>, adding it to <code>group</code>.\nThe new <span data-xref=\"Gtk.RadioToolButton\"/> will contain an icon and label from the\nstock item indicated by <code>stock_id</code>.</p>",
+            "kind": "constructor",
+            "name": "new_from_stock",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "group",
+                    "direction": "in",
+                    "type": "Array(Gtk.RadioButton)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "stock_id",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.ToolItem"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioToolButton\"/> adding it to the same group as @gruup</p>",
+            "kind": "constructor",
+            "name": "new_from_widget",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "group",
+                    "direction": "in",
+                    "type": "Gtk.RadioToolButton"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.ToolItem"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioToolButton\"/> adding it to the same group as <code>group</code>.\nThe new <span data-xref=\"Gtk.RadioToolButton\"/> will contain an icon and label from the\nstock item indicated by <code>stock_id</code>.</p>",
+            "kind": "constructor",
+            "name": "new_with_stock_from_widget",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "group",
+                    "direction": "in",
+                    "type": "Gtk.RadioToolButton"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "stock_id",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.ToolItem"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.RadioToolButton\"/> is a <span data-xref=\"Gtk.ToolItem\"/> that contains a radio button,\nthat is, a button that is part of a group of toggle buttons where only\none button can be active at a time.</p><p>Use <span data-xref=\"Gtk.RadioToolButton.new\"/> to create a new\n<span data-xref=\"Gtk.RadioToolButton\"/>. Use <span data-xref=\"Gtk.RadioToolButton.new_from_widget\"/> to\ncreate a new <span data-xref=\"Gtk.RadioToolButton\"/> that is part of the same group as an\nexisting <span data-xref=\"Gtk.RadioToolButton\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the radio button group <code>button</code> belongs to.</p>",
+            "kind": "method",
+            "name": "get_group",
+            "parameters": [],
+            "retval": {
+                "type": "Array(Gtk.RadioButton)"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>button</code> to <code>group</code>, removing it from the group it belonged to before.</p>",
+            "kind": "method",
+            "name": "set_group",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "group",
+                    "direction": "in",
+                    "type": "Array(Gtk.RadioButton)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "RadioToolButton",
+    "properties": [
+        {
+            "doc": "<p>Sets a new group for a radio tool button.</p>",
+            "kind": "property",
+            "name": "group",
+            "type": "Gtk.RadioToolButton"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

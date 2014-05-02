@@ -1,0 +1,203 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ComboBoxText\"/>, which is a <span data-xref=\"Gtk.ComboBox\"/> just displaying\nstrings.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ComboBoxText\"/>, which is a <span data-xref=\"Gtk.ComboBox\"/> just displaying\nstrings. The combo box created by this function has an entry.</p>",
+            "kind": "constructor",
+            "name": "new_with_entry",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A GtkComboBoxText is a simple variant of <span data-xref=\"Gtk.ComboBox\"/> that hides\nthe model-view complexity for simple text-only use cases.</p><p>To create a GtkComboBoxText, use <span data-xref=\"Gtk.ComboBoxText.new\"/> or\n<span data-xref=\"Gtk.ComboBoxText.new_with_entry\"/>.</p><p>You can add items to a GtkComboBoxText with\n<span data-xref=\"Gtk.ComboBoxText.append_text\"/>, <span data-xref=\"Gtk.ComboBoxText.insert_text\"/>\nor <span data-xref=\"Gtk.ComboBoxText.prepend_text\"/> and remove options with\n<span data-xref=\"Gtk.ComboBoxText.remove\"/>.</p><p>If the GtkComboBoxText contains an entry (via the \u201chas-entry\u201d property),\nits contents can be retrieved using <span data-xref=\"Gtk.ComboBoxText.get_active_text\"/>.\nThe entry itself can be accessed by calling <span data-xref=\"Gtk.Bin.get_child\"/> on the\ncombo box.</p><p>You should not call <span data-xref=\"Gtk.ComboBox.set_model\"/> or attempt to pack more cells\ninto this combo box via its GtkCellLayout interface.</p><h1>GtkComboBoxText as GtkBuildable</h1><p>The GtkComboBoxText implementation of the GtkBuildable interface supports\nadding items directly using the &lt;items&gt; element and specifying &lt;item&gt;\nelements for each item. Each &lt;item&gt; element can specify the \u201cid\u201d\ncorresponding to the appended text and also supports the regular\ntranslation attributes \u201ctranslatable\u201d, \u201ccontext\u201d and \u201ccomments\u201d.</p><p>Here is a UI definition fragment specifying GtkComboBoxText items:\n|[\n&lt;object class=\"GtkComboBoxText\"&gt;\n  &lt;items&gt;\n    &lt;item translatable=\"yes\" id=\"factory\"&gt;Factory&lt;/item&gt;\n    &lt;item translatable=\"yes\" id=\"home\"&gt;Home&lt;/item&gt;\n    &lt;item translatable=\"yes\" id=\"subway\"&gt;Subway&lt;/item&gt;\n  &lt;/items&gt;\n&lt;/object&gt;\n]|</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Appends <code>text</code> to the list of strings stored in <code>combo_box</code>.\nIf <code>id</code> is non-<code>null</code> then it is used as the ID of the row.</p><p>This is the same as calling <span data-xref=\"Gtk.ComboBoxText.insert\"/> with a\nposition of -1.</p>",
+            "kind": "method",
+            "name": "append",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "id",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Appends <code>text</code> to the list of strings stored in <code>combo_box</code>.</p><p>This is the same as calling <span data-xref=\"Gtk.ComboBoxText.insert_text\"/> with a\nposition of -1.</p>",
+            "kind": "method",
+            "name": "append_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the currently active string in <code>combo_box</code>, or <code>null</code>\nif none is selected. If <code>combo_box</code> contains an entry, this\nfunction will return its contents (which will not necessarily\nbe an item from the list).</p>",
+            "kind": "method",
+            "name": "get_active_text",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Inserts <code>text</code> at <code>position</code> in the list of strings stored in <code>combo_box</code>.\nIf <code>id</code> is non-<code>null</code> then it is used as the ID of the row.  See\n<span data-xref=\"Gtk.ComboBox-id-column\"/>.</p><p>If <code>position</code> is negative then <code>text</code> is appended.</p>",
+            "kind": "method",
+            "name": "insert",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "id",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Inserts <code>text</code> at <code>position</code> in the list of strings stored in <code>combo_box</code>.</p><p>If <code>position</code> is negative then <code>text</code> is appended.</p><p>This is the same as calling <span data-xref=\"Gtk.ComboBoxText.insert\"/> with a <code>null</code>\nID string.</p>",
+            "kind": "method",
+            "name": "insert_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Prepends <code>text</code> to the list of strings stored in <code>combo_box</code>.\nIf <code>id</code> is non-<code>null</code> then it is used as the ID of the row.</p><p>This is the same as calling <span data-xref=\"Gtk.ComboBoxText.insert\"/> with a\nposition of 0.</p>",
+            "kind": "method",
+            "name": "prepend",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "id",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Prepends <code>text</code> to the list of strings stored in <code>combo_box</code>.</p><p>This is the same as calling <span data-xref=\"Gtk.ComboBoxText.insert_text\"/> with a\nposition of 0.</p>",
+            "kind": "method",
+            "name": "prepend_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes the string at <code>position</code> from <code>combo_box</code>.</p>",
+            "kind": "method",
+            "name": "remove",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes all the text entries from the combo box.</p>",
+            "kind": "method",
+            "name": "remove_all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "ComboBoxText",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

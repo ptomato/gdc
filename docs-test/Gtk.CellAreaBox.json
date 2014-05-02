@@ -1,0 +1,134 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CellAreaBox\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CellArea"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.CellAreaBox\"/> renders cell renderers into a row or a column\ndepending on its <span data-xref=\"Gtk.Orientation\"/>.</p><p>GtkCellAreaBox uses a notion of packing. Packing\nrefers to adding cell renderers with reference to a particular position\nin a <span data-xref=\"Gtk.CellAreaBox\"/>. There are two reference positions: the\nstart and the end of the box.\nWhen the <span data-xref=\"Gtk.CellAreaBox\"/> is oriented in the <span data-xref=\"Gtk.Orientation\"/>.vertical\norientation, the start is defined as the top of the box and the end is\ndefined as the bottom. In the <span data-xref=\"Gtk.Orientation\"/>.horizontal orientation\nstart is defined as the left side and the end is defined as the right\nside.</p><p>Alignments of #GtkCellRenderers rendered in adjacent rows can be\nconfigured by configuring the <span data-xref=\"Gtk.CellAreaBox\"/> align child cell property\nwith <span data-xref=\"Gtk.CellArea.cell_set_property\"/> or by specifying the \"align\"\nargument to <span data-xref=\"Gtk.CellAreaBox.pack_start\"/> and <span data-xref=\"Gtk.CellAreaBox.pack_end\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Gets the spacing added between cell renderers.</p>",
+            "kind": "method",
+            "name": "get_spacing",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>renderer</code> to <code>box</code>, packed with reference to the end of <code>box</code>.</p><p>The <code>renderer</code> is packed after (away from end of) any other\n<span data-xref=\"Gtk.CellRenderer\"/> packed with reference to the end of <code>box</code>.</p>",
+            "kind": "method",
+            "name": "pack_end",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "expand",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "align",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "fixed",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>renderer</code> to <code>box</code>, packed with reference to the start of <code>box</code>.</p><p>The <code>renderer</code> is packed after any other <span data-xref=\"Gtk.CellRenderer\"/> packed\nwith reference to the start of <code>box</code>.</p>",
+            "kind": "method",
+            "name": "pack_start",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "expand",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "align",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "fixed",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the spacing to add between cell renderers in <code>box</code>.</p>",
+            "kind": "method",
+            "name": "set_spacing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "spacing",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "CellAreaBox",
+    "properties": [
+        {
+            "doc": "<p>The amount of space to reserve between cells.</p>",
+            "kind": "property",
+            "name": "spacing",
+            "type": "Number(gint)"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

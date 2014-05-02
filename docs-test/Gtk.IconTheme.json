@@ -1,0 +1,579 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new icon theme object. Icon theme objects are used\nto lookup up an icon by name in a particular icon theme.\nUsually, you\u2019ll want to use <span data-xref=\"Gtk.IconTheme.get_default\"/>\nor <span data-xref=\"Gtk.IconTheme.get_for_screen\"/> rather than creating\na new icon theme object for scratch.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.IconTheme"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.IconTheme\"/> provides a facility for looking up icons by name\nand size. The main reason for using a name rather than simply\nproviding a filename is to allow different icons to be used\ndepending on what \u201cicon theme\u201d is selected\nby the user. The operation of icon themes on Linux and Unix\nfollows the <a href=\"http://www.freedesktop.org/Standards/icon-theme-spec\">Icon Theme Specification</a>\nThere is a default icon theme,\nnamed <code>hicolor</code> where applications should install\ntheir icons, but more additional application themes can be\ninstalled as operating system vendors and users choose.</p><p>Named icons are similar to the deprecated [Stock Items][gtkstock],\nand the distinction between the two may be a bit confusing.\nA few things to keep in mind:</p><ul>\n<li>Stock images usually are used in conjunction with\n  [Stock Items][gtkstock], such as %GTK_STOCK_OK or\n  %GTK_STOCK_OPEN. Named icons are easier to set up and therefore\n  are more useful for new icons that an application wants to\n  add, such as application icons or window icons.</li>\n</ul><ul>\n<li>Stock images can only be loaded at the symbolic sizes defined\n  by the <span data-xref=\"Gtk.IconSize\"/> enumeration, or by custom sizes defined\n  by <span data-xref=\"Gtk.icon_size_register\"/>, while named icons are more flexible\n  and any pixel size can be specified.</li>\n</ul><ul>\n<li>Because stock images are closely tied to stock items, and thus\n  to actions in the user interface, stock images may come in\n  multiple variants for different widget states or writing\n  directions.</li>\n</ul><p>A good rule of thumb is that if there is a stock image for what\nyou want to use, use it, otherwise use a named icon. It turns\nout that internally stock images are generally defined in\nterms of one or more named icons. (An example of the\nmore than one case is icons that depend on writing direction;\n%GTK_STOCK_GO_FORWARD uses the two themed icons\n\u201cgtk-stock-go-forward-ltr\u201d and \u201cgtk-stock-go-forward-rtl\u201d.)</p><p>In many cases, named themes are used indirectly, via <span data-xref=\"Gtk.Image\"/>\nor stock items, rather than directly, but looking up icons\ndirectly is also simple. The <span data-xref=\"Gtk.IconTheme\"/> object acts\nas a database of all the icons in the current theme. You\ncan create new <span data-xref=\"Gtk.IconTheme\"/> objects, but it\u2019s much more\nefficient to use the standard icon theme for the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span>\nso that the icon information is shared with other people\nlooking up icons. In the case where the default screen is\nbeing used, looking up an icon can be as simple as:\n|[&lt;!-- language=\"C\" --&gt;\nGError <em>error = NULL;\nGtkIconTheme </em>icon_theme;\nGdkPixbuf *pixbuf;</p><p>icon_theme = gtk_icon_theme_get_default ();\npixbuf = gtk_icon_theme_load_icon (icon_theme,\n                                   \"my-icon-name\", // icon name\n                                   48, // icon size\n                                   0,  // flags\n                                   &amp;error);\nif (!pixbuf)\n  {\n    g_warning (\"Couldn\u2019t load icon: %s\", error-&gt;message);\n    g_error_free (error);\n  }\nelse\n  {\n    // Use the pixbuf\n    g_object_unref (pixbuf);\n  }\n]|</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Appends a directory to the search path.\nSee <span data-xref=\"Gtk.IconTheme.set_search_path\"/>.</p>",
+            "kind": "method",
+            "name": "append_search_path",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Looks up a named icon and returns a <span data-xref=\"Gtk.IconInfo\"/> containing\ninformation such as the filename of the icon. The icon\ncan then be rendered into a pixbuf using\n<span data-xref=\"Gtk.IconInfo.load_icon\"/>. (<span data-xref=\"Gtk.IconTheme.load_icon\"/>\ncombines these two steps if all you need is the pixbuf.)</p><p>If <code>icon_names</code> contains more than one name, this function\ntries them all in the given order before falling back to\ninherited icon themes.</p>",
+            "kind": "method",
+            "name": "choose_icon",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_names",
+                    "direction": "in",
+                    "type": "Array(String)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.IconLookupFlags"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.IconInfo"
+            }
+        },
+        {
+            "doc": "<p>Looks up a named icon for a particular window scale and returns a\n<span data-xref=\"Gtk.IconInfo\"/> containing information such as the filename of the\nicon. The icon can then be rendered into a pixbuf using\n<span data-xref=\"Gtk.IconInfo.load_icon\"/>. (<span data-xref=\"Gtk.IconTheme.load_icon\"/> combines\nthese two steps if all you need is the pixbuf.)</p><p>If <code>icon_names</code> contains more than one name, this function\ntries them all in the given order before falling back to\ninherited icon themes.</p>",
+            "kind": "method",
+            "name": "choose_icon_for_scale",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_names",
+                    "direction": "in",
+                    "type": "Array(String)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "scale",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.IconLookupFlags"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.IconInfo"
+            }
+        },
+        {
+            "doc": "<p>Gets the name of an icon that is representative of the\ncurrent theme (for instance, to use when presenting\na list of themes to the user.)</p>",
+            "kind": "method",
+            "name": "get_example_icon_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns an array of integers describing the sizes at which\nthe icon is available without scaling. A size of -1 means\nthat the icon is available in a scalable format. The array\nis zero-terminated.</p>",
+            "kind": "method",
+            "name": "get_icon_sizes",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Array(Number(gint))"
+            }
+        },
+        {
+            "doc": "<p>Gets the current search path. See <span data-xref=\"Gtk.IconTheme.set_search_path\"/>.</p>",
+            "kind": "method",
+            "name": "get_search_path",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "path",
+                    "direction": "out",
+                    "type": "Array(String)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_elements",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Checks whether an icon theme includes an icon\nfor a particular name.</p>",
+            "kind": "method",
+            "name": "has_icon",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the list of contexts available within the current\nhierarchy of icon themes</p>",
+            "kind": "method",
+            "name": "list_contexts",
+            "parameters": [],
+            "retval": {
+                "type": "Array(String)"
+            }
+        },
+        {
+            "doc": "<p>Lists the icons in the current icon theme. Only a subset\nof the icons can be listed by providing a context string.\nThe set of values for the context string is system dependent,\nbut will typically include such values as \u201cApplications\u201d and\n\u201cMimeTypes\u201d.</p>",
+            "kind": "method",
+            "name": "list_icons",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Array(String)"
+            }
+        },
+        {
+            "doc": "<p>Looks up an icon in an icon theme, scales it to the given size\nand renders it into a pixbuf. This is a convenience function;\nif more details about the icon are needed, use\n<span data-xref=\"Gtk.IconTheme.lookup_icon\"/> followed by <span data-xref=\"Gtk.IconInfo.load_icon\"/>.</p><p>Note that you probably want to listen for icon theme changes and\nupdate the icon. This is usually done by connecting to the\nGtkWidget::style-set signal. If for some reason you do not want to\nupdate the icon when the icon theme changes, you should consider\nusing <span data-xref=\"GdkPixbuf.Pixbuf.copy\">GdkPixbuf.Pixbuf.prototype.copy</span> to make a private copy of the pixbuf\nreturned by this function. Otherwise GTK+ may need to keep the old\nicon theme loaded, which would be a waste of memory.</p>",
+            "kind": "method",
+            "name": "load_icon",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.IconLookupFlags"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Looks up an icon in an icon theme for a particular window scale,\nscales it to the given size and renders it into a pixbuf. This is a\nconvenience function; if more details about the icon are needed,\nuse <span data-xref=\"Gtk.IconTheme.lookup_icon\"/> followed by\n<span data-xref=\"Gtk.IconInfo.load_icon\"/>.</p><p>Note that you probably want to listen for icon theme changes and\nupdate the icon. This is usually done by connecting to the\nGtkWidget::style-set signal. If for some reason you do not want to\nupdate the icon when the icon theme changes, you should consider\nusing <span data-xref=\"GdkPixbuf.Pixbuf.copy\">GdkPixbuf.Pixbuf.prototype.copy</span> to make a private copy of the pixbuf\nreturned by this function. Otherwise GTK+ may need to keep the old\nicon theme loaded, which would be a waste of memory.</p>",
+            "kind": "method",
+            "name": "load_icon_for_scale",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "scale",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.IconLookupFlags"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Looks up an icon in an icon theme for a particular window scale,\nscales it to the given size and renders it into a cairo surface. This is a\nconvenience function; if more details about the icon are needed,\nuse <span data-xref=\"Gtk.IconTheme.lookup_icon\"/> followed by\n<span data-xref=\"Gtk.IconInfo.load_surface\"/>.</p><p>Note that you probably want to listen for icon theme changes and\nupdate the icon. This is usually done by connecting to the\nGtkWidget::style-set signal.</p>",
+            "kind": "method",
+            "name": "load_surface",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "scale",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "for_window",
+                    "direction": "in",
+                    "type": "Gdk.Window"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.IconLookupFlags"
+                }
+            ],
+            "retval": {
+                "type": "cairo.Surface"
+            }
+        },
+        {
+            "doc": "<p>Looks up an icon and returns a <span data-xref=\"Gtk.IconInfo\"/> containing\ninformation such as the filename of the icon.\nThe icon can then be rendered into a pixbuf using\n<span data-xref=\"Gtk.IconInfo.load_icon\"/>.</p>",
+            "kind": "method",
+            "name": "lookup_by_gicon",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon",
+                    "direction": "in",
+                    "type": "Gio.Icon"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.IconLookupFlags"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.IconInfo"
+            }
+        },
+        {
+            "doc": "<p>Looks up an icon and returns a <span data-xref=\"Gtk.IconInfo\"/> containing\ninformation such as the filename of the icon.\nThe icon can then be rendered into a pixbuf using\n<span data-xref=\"Gtk.IconInfo.load_icon\"/>.</p>",
+            "kind": "method",
+            "name": "lookup_by_gicon_for_scale",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon",
+                    "direction": "in",
+                    "type": "Gio.Icon"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "scale",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.IconLookupFlags"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.IconInfo"
+            }
+        },
+        {
+            "doc": "<p>Looks up a named icon and returns a <span data-xref=\"Gtk.IconInfo\"/> containing\ninformation such as the filename of the icon. The icon\ncan then be rendered into a pixbuf using\n<span data-xref=\"Gtk.IconInfo.load_icon\"/>. (<span data-xref=\"Gtk.IconTheme.load_icon\"/>\ncombines these two steps if all you need is the pixbuf.)</p>",
+            "kind": "method",
+            "name": "lookup_icon",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.IconLookupFlags"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.IconInfo"
+            }
+        },
+        {
+            "doc": "<p>Looks up a named icon for a particular window scale and returns a\n<span data-xref=\"Gtk.IconInfo\"/> containing information such as the filename of the\nicon. The icon can then be rendered into a pixbuf using\n<span data-xref=\"Gtk.IconInfo.load_icon\"/>. (<span data-xref=\"Gtk.IconTheme.load_icon\"/> combines\nthese two steps if all you need is the pixbuf.)</p>",
+            "kind": "method",
+            "name": "lookup_icon_for_scale",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "scale",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.IconLookupFlags"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.IconInfo"
+            }
+        },
+        {
+            "doc": "<p>Prepends a directory to the search path.\nSee <span data-xref=\"Gtk.IconTheme.set_search_path\"/>.</p>",
+            "kind": "method",
+            "name": "prepend_search_path",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Checks to see if the icon theme has changed; if it has, any\ncurrently cached information is discarded and will be reloaded\nnext time <code>icon_theme</code> is accessed.</p>",
+            "kind": "method",
+            "name": "rescan_if_needed",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the name of the icon theme that the <span data-xref=\"Gtk.IconTheme\"/> object uses\noverriding system configuration. This function cannot be called\non the icon theme objects returned from <span data-xref=\"Gtk.IconTheme.get_default\"/>\nand <span data-xref=\"Gtk.IconTheme.get_for_screen\"/>.</p>",
+            "kind": "method",
+            "name": "set_custom_theme",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "theme_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the screen for an icon theme; the screen is used\nto track the user\u2019s currently configured icon theme,\nwhich might be different for different screens.</p>",
+            "kind": "method",
+            "name": "set_screen",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "screen",
+                    "direction": "in",
+                    "type": "Gdk.Screen"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the search path for the icon theme object. When looking\nfor an icon theme, GTK+ will search for a subdirectory of\none or more of the directories in <code>path</code> with the same name\nas the icon theme. (Themes from multiple of the path elements\nare combined to allow themes to be extended by adding icons\nin the user\u2019s home directory.)</p><p>In addition if an icon found isn\u2019t found either in the current\nicon theme or the default icon theme, and an image file with\nthe right name is found directly in one of the elements of\n<code>path</code>, then that image will be used for the icon name.\n(This is legacy feature, and new icons should be put\ninto the default icon theme, which is called hicolor,\nrather than directly on the icon path.)</p>",
+            "kind": "method",
+            "name": "set_search_path",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "Array(String)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_elements",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        [
+            {
+                "doc": "<p>Registers a built-in icon for icon theme lookups. The idea\nof built-in icons is to allow an application or library\nthat uses themed icons to function requiring files to\nbe present in the file system. For instance, the default\nimages for all of GTK+\u2019s stock icons are registered\nas built-icons.</p><p>In general, if you use <span data-xref=\"Gtk.IconTheme.add_builtin_icon\"/>\nyou should also install the icon in the icon theme, so\nthat the icon is generally available.</p><p>This function will generally be used with pixbufs loaded\nvia <span data-xref=\"GdkPixbuf.Pixbuf.new_from_inline\">GdkPixbuf.Pixbuf.new_from_inline</span>.</p>",
+                "kind": "function",
+                "name": "add_builtin_icon",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "icon_name",
+                        "direction": "in",
+                        "type": "String"
+                    },
+                    {
+                        "allow_none": false,
+                        "argname": "size",
+                        "direction": "in",
+                        "type": "Number(gint)"
+                    },
+                    {
+                        "allow_none": false,
+                        "argname": "pixbuf",
+                        "direction": "in",
+                        "type": "GdkPixbuf.Pixbuf"
+                    }
+                ],
+                "retval": {
+                    "type": "void"
+                }
+            },
+            {
+                "doc": "<p>Gets the icon theme for the default screen. See\n<span data-xref=\"Gtk.IconTheme.get_for_screen\"/>.</p>",
+                "kind": "function",
+                "name": "get_default",
+                "parameters": [],
+                "retval": {
+                    "type": "Gtk.IconTheme"
+                }
+            },
+            {
+                "doc": "<p>Gets the icon theme object associated with <code>screen</code>; if this\nfunction has not previously been called for the given\nscreen, a new icon theme object will be created and\nassociated with the screen. Icon theme objects are\nfairly expensive to create, so using this function\nis usually a better choice than calling than <span data-xref=\"Gtk.IconTheme.new\"/>\nand setting the screen yourself; by using this function\na single icon theme object will be shared between users.</p>",
+                "kind": "function",
+                "name": "get_for_screen",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "screen",
+                        "direction": "in",
+                        "type": "Gdk.Screen"
+                    }
+                ],
+                "retval": {
+                    "type": "Gtk.IconTheme"
+                }
+            }
+        ]
+    ],
+    "name": "IconTheme",
+    "properties": [],
+    "signals": [
+        {
+            "doc": "<p>Emitted when the current icon theme is switched or GTK+ detects\nthat a change has occurred in the contents of the current\nicon theme.</p>",
+            "kind": "signal",
+            "name": "changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

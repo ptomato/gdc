@@ -1,0 +1,59 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Returns a new spinner widget. Not yet started.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A GtkSpinner widget displays an icon-size spinning animation.\nIt is often used as an alternative to a <span data-xref=\"Gtk.ProgressBar\"/> for\ndisplaying indefinite activity, instead of actual progress.</p><p>To start the animation, use <span data-xref=\"Gtk.Spinner.start\"/>, to stop it\nuse <span data-xref=\"Gtk.Spinner.stop\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Starts the animation of the spinner.</p>",
+            "kind": "method",
+            "name": "start",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Stops the animation of the spinner.</p>",
+            "kind": "method",
+            "name": "stop",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Spinner",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "active",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

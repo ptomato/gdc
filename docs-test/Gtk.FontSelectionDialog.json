@@ -1,0 +1,118 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.FontSelectionDialog\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "title",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Gets the \u201cCancel\u201d button.</p>",
+            "kind": "method",
+            "name": "get_cancel_button",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets the currently-selected font name.</p><p>Note that this can be a different string than what you set with\n<span data-xref=\"Gtk.FontSelectionDialog.set_font_name\"/>, as the font selection widget\nmay normalize font names and thus return a string with a different\nstructure. For example, \u201cHelvetica Italic Bold 12\u201d could be normalized\nto \u201cHelvetica Bold Italic 12\u201d.  Use <span data-xref=\"Pango.FontDescription.equal\">Pango.FontDescription.prototype.equal</span>\nif you want to compare two font descriptions.</p>",
+            "kind": "method",
+            "name": "get_font_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the <span data-xref=\"Gtk.FontSelection\"/> widget embedded in the dialog.</p>",
+            "kind": "method",
+            "name": "get_font_selection",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets the \u201cOK\u201d button.</p>",
+            "kind": "method",
+            "name": "get_ok_button",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets the text displayed in the preview area.</p>",
+            "kind": "method",
+            "name": "get_preview_text",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Sets the currently selected font.</p>",
+            "kind": "method",
+            "name": "set_font_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "fontname",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the text displayed in the preview area.</p>",
+            "kind": "method",
+            "name": "set_preview_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "FontSelectionDialog",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

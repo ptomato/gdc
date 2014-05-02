@@ -1,0 +1,29 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.VSeparator\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.VSeparator\"/> widget is a vertical separator, used to group the\nwidgets within a window. It displays a vertical line with a shadow to\nmake it appear sunken into the interface.</p><p>GtkVSeparator has been deprecated, use <span data-xref=\"Gtk.Separator\"/> instead.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "separator"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        []
+    ],
+    "name": "VSeparator",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

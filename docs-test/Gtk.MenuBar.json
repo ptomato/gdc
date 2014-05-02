@@ -1,0 +1,113 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuBar\"/></p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuBar\"/> and populates it with menu items\nand submenus according to <code>model</code>.</p><p>The created menu items are connected to actions found in the\n<span data-xref=\"Gtk.ApplicationWindow\"/> to which the menu bar belongs - typically\nby means of being contained within the #GtkApplicationWindows\nwidget hierarchy.</p>",
+            "kind": "constructor",
+            "name": "new_from_model",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "model",
+                    "direction": "in",
+                    "type": "Gio.MenuModel"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.MenuBar\"/> is a subclass of <span data-xref=\"Gtk.MenuShell\"/> which contains one or\nmore #GtkMenuItems. The result is a standard menu bar which can hold\nmany menu items.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "menu_shell"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Retrieves the current child pack direction of the menubar.\nSee <span data-xref=\"Gtk.MenuBar.set_child_pack_direction\"/>.</p>",
+            "kind": "method",
+            "name": "get_child_pack_direction",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PackDirection"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the current pack direction of the menubar.\nSee <span data-xref=\"Gtk.MenuBar.set_pack_direction\"/>.</p>",
+            "kind": "method",
+            "name": "get_pack_direction",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PackDirection"
+            }
+        },
+        {
+            "doc": "<p>Sets how widgets should be packed inside the children of a menubar.</p>",
+            "kind": "method",
+            "name": "set_child_pack_direction",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child_pack_dir",
+                    "direction": "in",
+                    "type": "Gtk.PackDirection"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets how items should be packed inside a menubar.</p>",
+            "kind": "method",
+            "name": "set_pack_direction",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pack_dir",
+                    "direction": "in",
+                    "type": "Gtk.PackDirection"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "MenuBar",
+    "properties": [
+        {
+            "doc": "<p>The child pack direction of the menubar. It determines how\nthe widgets contained in child menuitems are arranged.</p>",
+            "kind": "property",
+            "name": "child-pack-direction",
+            "type": "Gtk.PackDirection"
+        },
+        {
+            "doc": "<p>The pack direction of the menubar. It determines how\nmenuitems are arranged in the menubar.</p>",
+            "kind": "property",
+            "name": "pack-direction",
+            "type": "Gtk.PackDirection"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

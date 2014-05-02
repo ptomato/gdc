@@ -1,0 +1,119 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.MountOperation\"/></p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "parent",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                }
+            ],
+            "retval": {
+                "type": "Gio.MountOperation"
+            }
+        }
+    ],
+    "doc": "<p>This should not be accessed directly. Use the accessor functions below.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Gets the transient parent used by the <span data-xref=\"Gtk.MountOperation\"/></p>",
+            "kind": "method",
+            "name": "get_parent",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Window"
+            }
+        },
+        {
+            "doc": "<p>Gets the screen on which windows of the <span data-xref=\"Gtk.MountOperation\"/>\nwill be shown.</p>",
+            "kind": "method",
+            "name": "get_screen",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Screen"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the <span data-xref=\"Gtk.MountOperation\"/> is currently displaying\na window.</p>",
+            "kind": "method",
+            "name": "is_showing",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the transient parent for windows shown by the\n<span data-xref=\"Gtk.MountOperation\"/>.</p>",
+            "kind": "method",
+            "name": "set_parent",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "parent",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the screen to show windows of the <span data-xref=\"Gtk.MountOperation\"/> on.</p>",
+            "kind": "method",
+            "name": "set_screen",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "screen",
+                    "direction": "in",
+                    "type": "Gdk.Screen"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "MountOperation",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "is-showing",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "parent",
+            "type": "Gtk.Window"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "screen",
+            "type": "Gdk.Screen"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

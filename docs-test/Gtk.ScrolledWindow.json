@@ -1,0 +1,473 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new scrolled window.</p><p>The two arguments are the scrolled window\u2019s adjustments; these will be\nshared with the scrollbars and the child widget to keep the bars in sync\nwith the child. Usually you want to pass <code>null</code> for the adjustments, which\nwill cause the scrolled window to create them for you.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "hadjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "vadjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.ScrolledWindow\"/> is a <span data-xref=\"Gtk.Bin\"/> subclass: it\u2019s a container\nthe accepts a single child widget. <span data-xref=\"Gtk.ScrolledWindow\"/> adds scrollbars\nto the child widget and optionally draws a beveled frame around the\nchild widget.</p><p>The scrolled window can work in two ways. Some widgets have native\nscrolling support; these widgets implement the <span data-xref=\"Gtk.Scrollable\"/> interface.\nWidgets with native scroll support include <span data-xref=\"Gtk.TreeView\"/>, <span data-xref=\"Gtk.TextView\"/>,\nand <span data-xref=\"Gtk.Layout\"/>.</p><p>For widgets that lack native scrolling support, the <span data-xref=\"Gtk.Viewport\"/>\nwidget acts as an adaptor class, implementing scrollability for child\nwidgets that lack their own scrolling capabilities. Use <span data-xref=\"Gtk.Viewport\"/>\nto scroll child widgets such as <span data-xref=\"Gtk.Grid\"/>, <span data-xref=\"Gtk.Box\"/>, and so on.</p><p>If a widget has native scrolling abilities, it can be added to the\n<span data-xref=\"Gtk.ScrolledWindow\"/> with <span data-xref=\"Gtk.Container.add\"/>. If a widget does not, you\nmust first add the widget to a <span data-xref=\"Gtk.Viewport\"/>, then add the <span data-xref=\"Gtk.Viewport\"/>\nto the scrolled window. <span data-xref=\"Gtk.Container.add\"/> will do this for you for\nwidgets that don\u2019t implement <span data-xref=\"Gtk.Scrollable\"/> natively, so you can\nignore the presence of the viewport.</p><p>The position of the scrollbars is controlled by the scroll\nadjustments. See <span data-xref=\"Gtk.Adjustment\"/> for the fields in an adjustment - for\n<span data-xref=\"Gtk.Scrollbar\"/>, used by <span data-xref=\"Gtk.ScrolledWindow\"/>, the \u201cvalue\u201d field\nrepresents the position of the scrollbar, which must be between the\n\u201clower\u201d field and \u201cupper - page_size.\u201d The \u201cpage_size\u201d field\nrepresents the size of the visible scrollable area. The\n\u201cstep_increment\u201d and \u201cpage_increment\u201d fields are used when the user\nasks to step down (using the small stepper arrows) or page down (using\nfor example the PageDown key).</p><p>If a <span data-xref=\"Gtk.ScrolledWindow\"/> doesn\u2019t behave quite as you would like, or\ndoesn\u2019t have exactly the right layout, it\u2019s very possible to set up\nyour own scrolling with <span data-xref=\"Gtk.Scrollbar\"/> and for example a <span data-xref=\"Gtk.Grid\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "container"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Used to add children without native scrolling capabilities. This\nis simply a convenience function; it is equivalent to adding the\nunscrollable child to a viewport, then adding the viewport to the\nscrolled window. If a child has native scrolling, use\n<span data-xref=\"Gtk.Container.add\"/> instead of this function.</p><p>The viewport scrolls the child by moving its <span data-xref=\"Gdk.Window\">Gdk.Window</span>, and takes\nthe size of the child to be the size of its toplevel <span data-xref=\"Gdk.Window\">Gdk.Window</span>.\nThis will be very wrong for most widgets that support native scrolling;\nfor example, if you add a widget such as <span data-xref=\"Gtk.TreeView\"/> with a viewport,\nthe whole widget will scroll, including the column headings. Thus,\nwidgets with native scrolling support should not be used with the\n<span data-xref=\"Gtk.Viewport\"/> proxy.</p><p>A widget supports scrolling natively if it implements the\n<span data-xref=\"Gtk.Scrollable\"/> interface.</p>",
+            "kind": "method",
+            "name": "add_with_viewport",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Return whether button presses are captured during kinetic\nscrolling. See <span data-xref=\"Gtk.ScrolledWindow.set_capture_button_press\"/>.</p>",
+            "kind": "method",
+            "name": "get_capture_button_press",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the horizontal scrollbar\u2019s adjustment, used to connect the\nhorizontal scrollbar to the child widget\u2019s horizontal scroll\nfunctionality.</p>",
+            "kind": "method",
+            "name": "get_hadjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Returns the horizontal scrollbar of <code>scrolled_window</code>.</p>",
+            "kind": "method",
+            "name": "get_hscrollbar",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns the specified kinetic scrolling behavior.</p>",
+            "kind": "method",
+            "name": "get_kinetic_scrolling",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the minimal content height of <code>scrolled_window</code>, or -1 if not set.</p>",
+            "kind": "method",
+            "name": "get_min_content_height",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the minimum content width of <code>scrolled_window</code>, or -1 if not set.</p>",
+            "kind": "method",
+            "name": "get_min_content_width",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the placement of the contents with respect to the scrollbars\nfor the scrolled window. See <span data-xref=\"Gtk.ScrolledWindow.set_placement\"/>.</p>",
+            "kind": "method",
+            "name": "get_placement",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CornerType"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the current policy values for the horizontal and vertical\nscrollbars. See <span data-xref=\"Gtk.ScrolledWindow.set_policy\"/>.</p>",
+            "kind": "method",
+            "name": "get_policy",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "hscrollbar_policy",
+                    "direction": "out",
+                    "type": "Gtk.PolicyType"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "vscrollbar_policy",
+                    "direction": "out",
+                    "type": "Gtk.PolicyType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the shadow type of the scrolled window. See\n<span data-xref=\"Gtk.ScrolledWindow.set_shadow_type\"/>.</p>",
+            "kind": "method",
+            "name": "get_shadow_type",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.ShadowType"
+            }
+        },
+        {
+            "doc": "<p>Returns the vertical scrollbar\u2019s adjustment, used to connect the\nvertical scrollbar to the child widget\u2019s vertical scroll functionality.</p>",
+            "kind": "method",
+            "name": "get_vadjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Returns the vertical scrollbar of <code>scrolled_window</code>.</p>",
+            "kind": "method",
+            "name": "get_vscrollbar",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Changes the behaviour of <code>scrolled_window</code> wrt. to the initial\nevent that possibly starts kinetic scrolling. When <code>capture_button_press</code>\nis set to <code>true</code>, the event is captured by the scrolled window, and\nthen later replayed if it is meant to go to the child widget.</p><p>This should be enabled if any child widgets perform non-reversible\nactions on <span data-xref=\"Gtk.Widget-button-press-event\"/>. If they don't, and handle\nadditionally handle <span data-xref=\"Gtk.Widget-grab-broken-event\"/>, it might be better\nto set <code>capture_button_press</code> to <code>false</code>.</p><p>This setting only has an effect if kinetic scrolling is enabled.</p>",
+            "kind": "method",
+            "name": "set_capture_button_press",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "capture_button_press",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Adjustment\"/> for the horizontal scrollbar.</p>",
+            "kind": "method",
+            "name": "set_hadjustment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "hadjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Turns kinetic scrolling on or off.\nKinetic scrolling only applies to devices with source\n<span data-xref=\"Gdk.InputSource\">Gdk.InputSource</span>.touchscreen.</p>",
+            "kind": "method",
+            "name": "set_kinetic_scrolling",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "kinetic_scrolling",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the minimum height that <code>scrolled_window</code> should keep visible.\nNote that this can and (usually will) be smaller than the minimum\nsize of the content.</p>",
+            "kind": "method",
+            "name": "set_min_content_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the minimum width that <code>scrolled_window</code> should keep visible.\nNote that this can and (usually will) be smaller than the minimum\nsize of the content.</p>",
+            "kind": "method",
+            "name": "set_min_content_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the placement of the contents with respect to the scrollbars\nfor the scrolled window.</p><p>The default is <span data-xref=\"Gtk.CornerType\"/>.top_left, meaning the child is\nin the top left, with the scrollbars underneath and to the right.\nOther values in <span data-xref=\"Gtk.CornerType\"/> are <span data-xref=\"Gtk.CornerType\"/>.top_right,\n<span data-xref=\"Gtk.CornerType\"/>.bottom_left, and <span data-xref=\"Gtk.CornerType\"/>.bottom_right.</p><p>See also <span data-xref=\"Gtk.ScrolledWindow.get_placement\"/> and\n<span data-xref=\"Gtk.ScrolledWindow.unset_placement\"/>.</p>",
+            "kind": "method",
+            "name": "set_placement",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "window_placement",
+                    "direction": "in",
+                    "type": "Gtk.CornerType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the scrollbar policy for the horizontal and vertical scrollbars.</p><p>The policy determines when the scrollbar should appear; it is a value\nfrom the <span data-xref=\"Gtk.PolicyType\"/> enumeration. If <span data-xref=\"Gtk.PolicyType\"/>.always, the\nscrollbar is always present; if <span data-xref=\"Gtk.PolicyType\"/>.never, the scrollbar is\nnever present; if <span data-xref=\"Gtk.PolicyType\"/>.automatic, the scrollbar is present only\nif needed (that is, if the slider part of the bar would be smaller\nthan the trough - the display is larger than the page size).</p>",
+            "kind": "method",
+            "name": "set_policy",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "hscrollbar_policy",
+                    "direction": "in",
+                    "type": "Gtk.PolicyType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "vscrollbar_policy",
+                    "direction": "in",
+                    "type": "Gtk.PolicyType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Changes the type of shadow drawn around the contents of\n<code>scrolled_window</code>.</p>",
+            "kind": "method",
+            "name": "set_shadow_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Adjustment\"/> for the vertical scrollbar.</p>",
+            "kind": "method",
+            "name": "set_vadjustment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "vadjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unsets the placement of the contents with respect to the scrollbars\nfor the scrolled window. If no window placement is set for a scrolled\nwindow, it defaults to GTK_CORNER_TOP_LEFT.</p><p>See also <span data-xref=\"Gtk.ScrolledWindow.set_placement\"/> and\n<span data-xref=\"Gtk.ScrolledWindow.get_placement\"/>.</p>",
+            "kind": "method",
+            "name": "unset_placement",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "ScrolledWindow",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "hadjustment",
+            "type": "Gtk.Adjustment"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "hscrollbar-policy",
+            "type": "Gtk.PolicyType"
+        },
+        {
+            "doc": "<p>The kinetic scrolling behavior flags. Kinetic scrolling\nonly applies to devices with source <span data-xref=\"Gdk.InputSource\">Gdk.InputSource</span>.touchscreen</p>",
+            "kind": "property",
+            "name": "kinetic-scrolling",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The minimum content height of @scrolled_window, or -1 if not set.</p>",
+            "kind": "property",
+            "name": "min-content-height",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>The minimum content width of @scrolled_window, or -1 if not set.</p>",
+            "kind": "property",
+            "name": "min-content-width",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "shadow-type",
+            "type": "Gtk.ShadowType"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "vadjustment",
+            "type": "Gtk.Adjustment"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "vscrollbar-policy",
+            "type": "Gtk.PolicyType"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "window-placement",
+            "type": "Gtk.CornerType"
+        },
+        {
+            "doc": "<p>Whether \"window-placement\" should be used to determine the location\nof the contents with respect to the scrollbars.</p>",
+            "kind": "property",
+            "name": "window-placement-set",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::move-focus-out signal is a\n[keybinding signal][GtkBindingSignal] which gets\nemitted when focus is moved away from the scrolled window by a\nkeybinding.  The <span data-xref=\"Gtk.Widget-move-focus\"/> signal is emitted with\n<code>direction_type</code> on this scrolled windows toplevel parent in the\ncontainer hierarchy.  The default bindings for this signal are\n<code>Tab + Ctrl</code> and <code>Tab + Ctrl + Shift</code>.</p>",
+            "kind": "signal",
+            "name": "move-focus-out",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "direction_type",
+                    "direction": "in",
+                    "type": "Gtk.DirectionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::scroll-child signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when a keybinding that scrolls is pressed.\nThe horizontal or vertical adjustment is updated which triggers a\nsignal that the scrolled windows child may listen to and scroll itself.</p>",
+            "kind": "signal",
+            "name": "scroll-child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "scroll",
+                    "direction": "in",
+                    "type": "Gtk.ScrollType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "horizontal",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "move_focus_out",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "direction",
+                    "direction": "in",
+                    "type": "Gtk.DirectionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "scroll_child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "scroll",
+                    "direction": "in",
+                    "type": "Gtk.ScrollType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "horizontal",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ]
+}

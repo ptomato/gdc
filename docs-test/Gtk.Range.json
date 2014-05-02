@@ -1,0 +1,599 @@
+{
+    "constructors": [],
+    "doc": "<p><span data-xref=\"Gtk.Range\"/> is the common base class for widgets which visualize an\nadjustment, e.g <span data-xref=\"Gtk.Scale\"/> or <span data-xref=\"Gtk.Scrollbar\"/>.</p><p>Apart from signals for monitoring the parameters of the adjustment,\n<span data-xref=\"Gtk.Range\"/> provides properties and methods for influencing the sensitivity\nof the \u201csteppers\u201d. It also provides properties and methods for setting a\n\u201cfill level\u201d on range widgets. See <span data-xref=\"Gtk.Range.set_fill_level\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "widget"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Get the <span data-xref=\"Gtk.Adjustment\"/> which is the \u201cmodel\u201d object for <span data-xref=\"Gtk.Range\"/>.\nSee <span data-xref=\"Gtk.Range.set_adjustment\"/> for details.\nThe return value does not have a reference added, so should not\nbe unreferenced.</p>",
+            "kind": "method",
+            "name": "get_adjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Gets the current position of the fill level indicator.</p>",
+            "kind": "method",
+            "name": "get_fill_level",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Range.set_flippable\"/>.</p>",
+            "kind": "method",
+            "name": "get_flippable",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Range.set_inverted\"/>.</p>",
+            "kind": "method",
+            "name": "get_inverted",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the sensitivity policy for the stepper that points to the\n'lower' end of the GtkRange\u2019s adjustment.</p>",
+            "kind": "method",
+            "name": "get_lower_stepper_sensitivity",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.SensitivityType"
+            }
+        },
+        {
+            "doc": "<p>This function is useful mainly for <span data-xref=\"Gtk.Range\"/> subclasses.</p><p>See <span data-xref=\"Gtk.Range.set_min_slider_size\"/>.</p>",
+            "kind": "method",
+            "name": "get_min_slider_size",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>This function returns the area that contains the range\u2019s trough\nand its steppers, in widget-&gt;window coordinates.</p><p>This function is useful mainly for <span data-xref=\"Gtk.Range\"/> subclasses.</p>",
+            "kind": "method",
+            "name": "get_range_rect",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "range_rect",
+                    "direction": "out",
+                    "type": "Gdk.Rectangle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets whether the range is restricted to the fill level.</p>",
+            "kind": "method",
+            "name": "get_restrict_to_fill_level",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the number of digits to round the value to when\nit changes. See <span data-xref=\"Gtk.Range-change-value\"/>.</p>",
+            "kind": "method",
+            "name": "get_round_digits",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets whether the range displays the fill level graphically.</p>",
+            "kind": "method",
+            "name": "get_show_fill_level",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>This function returns sliders range along the long dimension,\nin widget-&gt;window coordinates.</p><p>This function is useful mainly for <span data-xref=\"Gtk.Range\"/> subclasses.</p>",
+            "kind": "method",
+            "name": "get_slider_range",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "slider_start",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "slider_end",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This function is useful mainly for <span data-xref=\"Gtk.Range\"/> subclasses.</p><p>See <span data-xref=\"Gtk.Range.set_slider_size_fixed\"/>.</p>",
+            "kind": "method",
+            "name": "get_slider_size_fixed",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the sensitivity policy for the stepper that points to the\n'upper' end of the GtkRange\u2019s adjustment.</p>",
+            "kind": "method",
+            "name": "get_upper_stepper_sensitivity",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.SensitivityType"
+            }
+        },
+        {
+            "doc": "<p>Gets the current value of the range.</p>",
+            "kind": "method",
+            "name": "get_value",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Sets the adjustment to be used as the \u201cmodel\u201d object for this range\nwidget. The adjustment indicates the current range value, the\nminimum and maximum range values, the step/page increments used\nfor keybindings and scrolling, and the page size. The page size\nis normally 0 for <span data-xref=\"Gtk.Scale\"/> and nonzero for <span data-xref=\"Gtk.Scrollbar\"/>, and\nindicates the size of the visible area of the widget being scrolled.\nThe page size affects the size of the scrollbar slider.</p>",
+            "kind": "method",
+            "name": "set_adjustment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Set the new position of the fill level indicator.</p><p>The \u201cfill level\u201d is probably best described by its most prominent\nuse case, which is an indicator for the amount of pre-buffering in\na streaming media player. In that use case, the value of the range\nwould indicate the current play position, and the fill level would\nbe the position up to which the file/stream has been downloaded.</p><p>This amount of prebuffering can be displayed on the range\u2019s trough\nand is themeable separately from the trough. To enable fill level\ndisplay, use <span data-xref=\"Gtk.Range.set_show_fill_level\"/>. The range defaults\nto not showing the fill level.</p><p>Additionally, it\u2019s possible to restrict the range\u2019s slider position\nto values which are smaller than the fill level. This is controller\nby <span data-xref=\"Gtk.Range.set_restrict_to_fill_level\"/> and is by default\nenabled.</p>",
+            "kind": "method",
+            "name": "set_fill_level",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "fill_level",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If a range is flippable, it will switch its direction if it is\nhorizontal and its direction is <span data-xref=\"Gtk.TextDirection\"/>.rtl.</p><p>See <span data-xref=\"Gtk.Widget.get_direction\"/>.</p>",
+            "kind": "method",
+            "name": "set_flippable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "flippable",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the step and page sizes for the range.\nThe step size is used when the user clicks the <span data-xref=\"Gtk.Scrollbar\"/>\narrows or moves <span data-xref=\"Gtk.Scale\"/> via arrow keys. The page size\nis used for example when moving via Page Up or Page Down keys.</p>",
+            "kind": "method",
+            "name": "set_increments",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "step",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Ranges normally move from lower to higher values as the\nslider moves from top to bottom or left to right. Inverted\nranges have higher values at the top or on the right rather than\non the bottom or left.</p>",
+            "kind": "method",
+            "name": "set_inverted",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the sensitivity policy for the stepper that points to the\n'lower' end of the GtkRange\u2019s adjustment.</p>",
+            "kind": "method",
+            "name": "set_lower_stepper_sensitivity",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "sensitivity",
+                    "direction": "in",
+                    "type": "Gtk.SensitivityType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the minimum size of the range\u2019s slider.</p><p>This function is useful mainly for <span data-xref=\"Gtk.Range\"/> subclasses.</p>",
+            "kind": "method",
+            "name": "set_min_slider_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "min_size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the allowable values in the <span data-xref=\"Gtk.Range\"/>, and clamps the range\nvalue to be between <code>min</code> and <code>max</code>. (If the range has a non-zero\npage size, it is clamped between <code>min</code> and <code>max</code> - page-size.)</p>",
+            "kind": "method",
+            "name": "set_range",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "min",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "max",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the slider is restricted to the fill level. See\n<span data-xref=\"Gtk.Range.set_fill_level\"/> for a general description of the fill\nlevel concept.</p>",
+            "kind": "method",
+            "name": "set_restrict_to_fill_level",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "restrict_to_fill_level",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the number of digits to round the value to when\nit changes. See <span data-xref=\"Gtk.Range-change-value\"/>.</p>",
+            "kind": "method",
+            "name": "set_round_digits",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "round_digits",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether a graphical fill level is show on the trough. See\n<span data-xref=\"Gtk.Range.set_fill_level\"/> for a general description of the fill\nlevel concept.</p>",
+            "kind": "method",
+            "name": "set_show_fill_level",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "show_fill_level",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the range\u2019s slider has a fixed size, or a size that\ndepends on its adjustment\u2019s page size.</p><p>This function is useful mainly for <span data-xref=\"Gtk.Range\"/> subclasses.</p>",
+            "kind": "method",
+            "name": "set_slider_size_fixed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "size_fixed",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the sensitivity policy for the stepper that points to the\n'upper' end of the GtkRange\u2019s adjustment.</p>",
+            "kind": "method",
+            "name": "set_upper_stepper_sensitivity",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "sensitivity",
+                    "direction": "in",
+                    "type": "Gtk.SensitivityType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the current value of the range; if the value is outside the\nminimum or maximum range values, it will be clamped to fit inside\nthem. The range emits the <span data-xref=\"Gtk.Range-value-changed\"/> signal if the\nvalue changes.</p>",
+            "kind": "method",
+            "name": "set_value",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Range",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "adjustment",
+            "type": "Gtk.Adjustment"
+        },
+        {
+            "doc": "<p>The fill level (e.g. prebuffering of a network stream).\nSee <span data-xref=\"Gtk.Range.set_fill_level\"/>.</p>",
+            "kind": "property",
+            "name": "fill-level",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "inverted",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "lower-stepper-sensitivity",
+            "type": "Gtk.SensitivityType"
+        },
+        {
+            "doc": "<p>The restrict-to-fill-level property controls whether slider\nmovement is restricted to an upper boundary set by the\nfill level. See <span data-xref=\"Gtk.Range.set_restrict_to_fill_level\"/>.</p>",
+            "kind": "property",
+            "name": "restrict-to-fill-level",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The number of digits to round the value to when\nit changes, or -1. See <span data-xref=\"Gtk.Range-change-value\"/>.</p>",
+            "kind": "property",
+            "name": "round-digits",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>The show-fill-level property controls whether fill level indicator\ngraphics are displayed on the trough. See\n<span data-xref=\"Gtk.Range.set_show_fill_level\"/>.</p>",
+            "kind": "property",
+            "name": "show-fill-level",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "upper-stepper-sensitivity",
+            "type": "Gtk.SensitivityType"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Emitted before clamping a value, to give the application a\nchance to adjust the bounds.</p>",
+            "kind": "signal",
+            "name": "adjust-bounds",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The <span data-xref=\"Gtk.Range-change-value\"/> signal is emitted when a scroll action is\nperformed on a range.  It allows an application to determine the\ntype of scroll event that occurred and the resultant new value.\nThe application can handle the event itself and return <code>true</code> to\nprevent further processing.  Or, by returning <code>false</code>, it can pass\nthe event to other handlers until the default GTK+ handler is\nreached.</p><p>The value parameter is unrounded.  An application that overrides\nthe GtkRange::change-value signal is responsible for clamping the\nvalue to the desired number of decimal digits; the default GTK+\nhandler clamps the value based on <span data-xref=\"Gtk.Range-round-digits\"/>.</p><p>It is not possible to use delayed update policies in an overridden\n<span data-xref=\"Gtk.Range-change-value\"/> handler.</p>",
+            "kind": "signal",
+            "name": "change-value",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "scroll",
+                    "direction": "in",
+                    "type": "Gtk.ScrollType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Virtual function that moves the slider. Used for keybindings.</p>",
+            "kind": "signal",
+            "name": "move-slider",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "step",
+                    "direction": "in",
+                    "type": "Gtk.ScrollType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the range value changes.</p>",
+            "kind": "signal",
+            "name": "value-changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "adjust_bounds",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "new_value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "change_value",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "scroll",
+                    "direction": "in",
+                    "type": "Gtk.ScrollType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "new_value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "get_range_border",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "border_",
+                    "direction": "in",
+                    "type": "Gtk.Border"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "move_slider",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "scroll",
+                    "direction": "in",
+                    "type": "Gtk.ScrollType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "value_changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

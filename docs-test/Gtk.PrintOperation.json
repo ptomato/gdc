@@ -1,0 +1,932 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.PrintOperation\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PrintOperation"
+            }
+        }
+    ],
+    "doc": "<p>GtkPrintOperation is the high-level, portable printing API.\nIt looks a bit different than other GTK+ dialogs such as the\n<span data-xref=\"Gtk.FileChooser\"/>, since some platforms don\u2019t expose enough\ninfrastructure to implement a good print dialog. On such\nplatforms, GtkPrintOperation uses the native print dialog.\nOn platforms which do not provide a native print dialog, GTK+\nuses its own, see #GtkPrintUnixDialog.</p><p>The typical way to use the high-level printing API is to create\na GtkPrintOperation object with <span data-xref=\"Gtk.PrintOperation.new\"/> when\nthe user selects to print. Then you set some properties on it,\ne.g. the page size, any <span data-xref=\"Gtk.PrintSettings\"/> from previous print\noperations, the number of pages, the current page, etc.</p><p>Then you start the print operation by calling <span data-xref=\"Gtk.PrintOperation.run\"/>.\nIt will then show a dialog, let the user select a printer and\noptions. When the user finished the dialog various signals will\nbe emitted on the <span data-xref=\"Gtk.PrintOperation\"/>, the main one being\n<span data-xref=\"Gtk.PrintOperation-draw-page\"/>, which you are supposed to catch\nand render the page on the provided <span data-xref=\"Gtk.PrintContext\"/> using Cairo.</p><h1>The high-level printing API</h1><p>|[&lt;!-- language=\"C\" --&gt;\nstatic GtkPrintSettings *settings = NULL;</p><p>static void\ndo_print (void)\n{\n  GtkPrintOperation *print;\n  GtkPrintOperationResult res;</p><p>print = gtk_print_operation_new ();</p><p>if (settings != NULL)\n    gtk_print_operation_set_print_settings (print, settings);</p><p>g_signal_connect (print, \"begin_print\", G_CALLBACK (begin_print), NULL);\n  g_signal_connect (print, \"draw_page\", G_CALLBACK (draw_page), NULL);</p><p>res = gtk_print_operation_run (print, GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG,\n                                 GTK_WINDOW (main_window), NULL);</p><p>if (res == GTK_PRINT_OPERATION_RESULT_APPLY)\n    {\n      if (settings != NULL)\n        g_object_unref (settings);\n      settings = g_object_ref (gtk_print_operation_get_print_settings (print));\n    }</p><p>g_object_unref (print);\n}\n]|</p><p>By default GtkPrintOperation uses an external application to do\nprint preview. To implement a custom print preview, an application\nmust connect to the preview signal. The functions\n<span data-xref=\"Gtk.PrintOperationPreview.render_page\"/>,\n<span data-xref=\"Gtk.PrintOperationPreview.end_preview\"/> and\n<span data-xref=\"Gtk.PrintOperationPreview.is_selected\"/>\nare useful when implementing a print preview.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Cancels a running print operation. This function may\nbe called from a <span data-xref=\"Gtk.PrintOperation-begin-print\"/>,\n<span data-xref=\"Gtk.PrintOperation-paginate\"/> or <span data-xref=\"Gtk.PrintOperation-draw-page\"/>\nsignal handler to stop the currently running print\noperation.</p>",
+            "kind": "method",
+            "name": "cancel",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Signalize that drawing of particular page is complete.</p><p>It is called after completion of page drawing (e.g. drawing in another\nthread).\nIf <span data-xref=\"Gtk.PrintOperation.set_defer_drawing\"/> was called before, then this function\nhas to be called by application. In another case it is called by the library\nitself.</p>",
+            "kind": "method",
+            "name": "draw_page_finish",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the default page setup, see\n<span data-xref=\"Gtk.PrintOperation.set_default_page_setup\"/>.</p>",
+            "kind": "method",
+            "name": "get_default_page_setup",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PageSetup"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of <span data-xref=\"Gtk.PrintOperation-embed-page-setup\"/> property.</p>",
+            "kind": "method",
+            "name": "get_embed_page_setup",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Call this when the result of a print operation is\n<span data-xref=\"Gtk.PrintOperationResult\"/>.error, either as returned by\n<span data-xref=\"Gtk.PrintOperation.run\"/>, or in the <span data-xref=\"Gtk.PrintOperation-done\"/> signal\nhandler. The returned <span data-xref=\"GLib.Error\">GLib.Error</span> will contain more details on what went wrong.</p>",
+            "kind": "method",
+            "name": "get_error",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of <span data-xref=\"Gtk.PrintOperation-has-selection\"/> property.</p>",
+            "kind": "method",
+            "name": "get_has_selection",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the number of pages that will be printed.</p><p>Note that this value is set during print preparation phase\n(<span data-xref=\"Gtk.PrintStatus\"/>.preparing), so this function should never be\ncalled before the data generation phase (<span data-xref=\"Gtk.PrintStatus\"/>.generating_data).\nYou can connect to the <span data-xref=\"Gtk.PrintOperation-status-changed\"/> signal\nand call <span data-xref=\"Gtk.PrintOperation.get_n_pages_to_print\"/> when\nprint status is <span data-xref=\"Gtk.PrintStatus\"/>.generating_data.\nThis is typically used to track the progress of print operation.</p>",
+            "kind": "method",
+            "name": "get_n_pages_to_print",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the current print settings.</p><p>Note that the return value is <code>null</code> until either\n<span data-xref=\"Gtk.PrintOperation.set_print_settings\"/> or\n<span data-xref=\"Gtk.PrintOperation.run\"/> have been called.</p>",
+            "kind": "method",
+            "name": "get_print_settings",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PrintSettings"
+            }
+        },
+        {
+            "doc": "<p>Returns the status of the print operation.\nAlso see <span data-xref=\"Gtk.PrintOperation.get_status_string\"/>.</p>",
+            "kind": "method",
+            "name": "get_status",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PrintStatus"
+            }
+        },
+        {
+            "doc": "<p>Returns a string representation of the status of the\nprint operation. The string is translated and suitable\nfor displaying the print status e.g. in a <span data-xref=\"Gtk.Statusbar\"/>.</p><p>Use <span data-xref=\"Gtk.PrintOperation.get_status\"/> to obtain a status\nvalue that is suitable for programmatic use.</p>",
+            "kind": "method",
+            "name": "get_status_string",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of <span data-xref=\"Gtk.PrintOperation-support-selection\"/> property.</p>",
+            "kind": "method",
+            "name": "get_support_selection",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>A convenience function to find out if the print operation\nis finished, either successfully (<span data-xref=\"Gtk.PrintStatus\"/>.finished)\nor unsuccessfully (<span data-xref=\"Gtk.PrintStatus\"/>.finished_aborted).</p><p>Note: when you enable print status tracking the print operation\ncan be in a non-finished state even after done has been called, as\nthe operation status then tracks the print job status on the printer.</p>",
+            "kind": "method",
+            "name": "is_finished",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Runs the print operation, by first letting the user modify\nprint settings in the print dialog, and then print the document.</p><p>Normally that this function does not return until the rendering of all\npages is complete. You can connect to the\n<span data-xref=\"Gtk.PrintOperation-status-changed\"/> signal on <code>op</code> to obtain some\ninformation about the progress of the print operation.\nFurthermore, it may use a recursive mainloop to show the print dialog.</p><p>If you call <span data-xref=\"Gtk.PrintOperation.set_allow_async\"/> or set the\n<span data-xref=\"Gtk.PrintOperation-allow-async\"/> property the operation will run\nasynchronously if this is supported on the platform. The\n<span data-xref=\"Gtk.PrintOperation-done\"/> signal will be emitted with the result of the\noperation when the it is done (i.e. when the dialog is canceled, or when\nthe print succeeds or fails).\n|[&lt;!-- language=\"C\" --&gt;\nif (settings != NULL)\n  gtk_print_operation_set_print_settings (print, settings);</p>\n<p>if (page_setup != NULL)\n  gtk_print_operation_set_default_page_setup (print, page_setup);</p>\n<p>g_signal_connect (print, \"begin-print\",\n                  G_CALLBACK (begin_print), &amp;data);\ng_signal_connect (print, \"draw-page\",\n                  G_CALLBACK (draw_page), &amp;data);</p>\n<p>res = gtk_print_operation_run (print,\n                               GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG,\n                               parent,\n                               &amp;error);</p>\n<p>if (res == GTK_PRINT_OPERATION_RESULT_ERROR)\n {\n   error_dialog = gtk_message_dialog_new (GTK_WINDOW (parent),\n                                 GTK_DIALOG_DESTROY_WITH_PARENT,\n                         GTK_MESSAGE_ERROR,\n                         GTK_BUTTONS_CLOSE,\n                         \"Error printing file:\\n%s\",\n                         error-&gt;message);\n   g_signal_connect (error_dialog, \"response\",\n                     G_CALLBACK (gtk_widget_destroy), NULL);\n   gtk_widget_show (error_dialog);\n   g_error_free (error);\n }\nelse if (res == GTK_PRINT_OPERATION_RESULT_APPLY)\n {\n   if (settings != NULL)\ng_object_unref (settings);\n   settings = g_object_ref (gtk_print_operation_get_print_settings (print));\n }\n]|</p><p>Note that <span data-xref=\"Gtk.PrintOperation.run\"/> can only be called once on a\ngiven <span data-xref=\"Gtk.PrintOperation\"/>.</p>",
+            "kind": "method",
+            "name": "run",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "action",
+                    "direction": "in",
+                    "type": "Gtk.PrintOperationAction"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "parent",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.PrintOperationResult"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the <span data-xref=\"Gtk.PrintOperation.run\"/> may return\nbefore the print operation is completed. Note that\nsome platforms may not allow asynchronous operation.</p>",
+            "kind": "method",
+            "name": "set_allow_async",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "allow_async",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the current page.</p><p>If this is called before <span data-xref=\"Gtk.PrintOperation.run\"/>,\nthe user will be able to select to print only the current page.</p><p>Note that this only makes sense for pre-paginated documents.</p>",
+            "kind": "method",
+            "name": "set_current_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "current_page",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the label for the tab holding custom widgets.</p>",
+            "kind": "method",
+            "name": "set_custom_tab_label",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Makes <code>default_page_setup</code> the default page setup for <code>op</code>.</p><p>This page setup will be used by <span data-xref=\"Gtk.PrintOperation.run\"/>,\nbut it can be overridden on a per-page basis by connecting\nto the <span data-xref=\"Gtk.PrintOperation-request-page-setup\"/> signal.</p>",
+            "kind": "method",
+            "name": "set_default_page_setup",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "default_page_setup",
+                    "direction": "in",
+                    "type": "Gtk.PageSetup"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets up the <span data-xref=\"Gtk.PrintOperation\"/> to wait for calling of\n<span data-xref=\"Gtk.PrintOperation.draw_page_finish\"/> from application. It can\nbe used for drawing page in another thread.</p><p>This function must be called in the callback of \u201cdraw-page\u201d signal.</p>",
+            "kind": "method",
+            "name": "set_defer_drawing",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Embed page size combo box and orientation combo box into page setup page.\nSelected page setup is stored as default page setup in <span data-xref=\"Gtk.PrintOperation\"/>.</p>",
+            "kind": "method",
+            "name": "set_embed_page_setup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "embed",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets up the <span data-xref=\"Gtk.PrintOperation\"/> to generate a file instead\nof showing the print dialog. The indended use of this function\nis for implementing \u201cExport to PDF\u201d actions. Currently, PDF\nis the only supported format.</p><p>\u201cPrint to PDF\u201d support is independent of this and is done\nby letting the user pick the \u201cPrint to PDF\u201d item from the list\nof printers in the print dialog.</p>",
+            "kind": "method",
+            "name": "set_export_filename",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "filename",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether there is a selection to print.</p><p>Application has to set number of pages to which the selection\nwill draw by <span data-xref=\"Gtk.PrintOperation.set_n_pages\"/> in a callback of\n<span data-xref=\"Gtk.PrintOperation-begin-print\"/>.</p>",
+            "kind": "method",
+            "name": "set_has_selection",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "has_selection",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the name of the print job. The name is used to identify\nthe job (e.g. in monitoring applications like eggcups).</p><p>If you don\u2019t set a job name, GTK+ picks a default one by\nnumbering successive print jobs.</p>",
+            "kind": "method",
+            "name": "set_job_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "job_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the number of pages in the document.</p><p>This must be set to a positive number\nbefore the rendering starts. It may be set in a\n<span data-xref=\"Gtk.PrintOperation-begin-print\"/> signal hander.</p><p>Note that the page numbers passed to the\n<span data-xref=\"Gtk.PrintOperation-request-page-setup\"/>\nand <span data-xref=\"Gtk.PrintOperation-draw-page\"/> signals are 0-based, i.e. if\nthe user chooses to print all pages, the last ::draw-page signal\nwill be for page <code>n_pages</code> - 1.</p>",
+            "kind": "method",
+            "name": "set_n_pages",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "n_pages",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the print settings for <code>op</code>. This is typically used to\nre-establish print settings from a previous print operation,\nsee <span data-xref=\"Gtk.PrintOperation.run\"/>.</p>",
+            "kind": "method",
+            "name": "set_print_settings",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "print_settings",
+                    "direction": "in",
+                    "type": "Gtk.PrintSettings"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>show_progress</code> is <code>true</code>, the print operation will show a\nprogress dialog during the print operation.</p>",
+            "kind": "method",
+            "name": "set_show_progress",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "show_progress",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether selection is supported by <span data-xref=\"Gtk.PrintOperation\"/>.</p>",
+            "kind": "method",
+            "name": "set_support_selection",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "support_selection",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If track_status is <code>true</code>, the print operation will try to continue report\non the status of the print job in the printer queues and printer. This\ncan allow your application to show things like \u201cout of paper\u201d issues,\nand when the print job actually reaches the printer.</p><p>This function is often implemented using some form of polling, so it should\nnot be enabled unless needed.</p>",
+            "kind": "method",
+            "name": "set_track_print_status",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "track_status",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets up the transformation for the cairo context obtained from\n<span data-xref=\"Gtk.PrintContext\"/> in such a way that distances are measured in\nunits of <code>unit</code>.</p>",
+            "kind": "method",
+            "name": "set_unit",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>full_page</code> is <code>true</code>, the transformation for the cairo context\nobtained from <span data-xref=\"Gtk.PrintContext\"/> puts the origin at the top left\ncorner of the page (which may not be the top left corner of the\nsheet, depending on page orientation and the number of pages per\nsheet). Otherwise, the origin is at the top left corner of the\nimageable area (i.e. inside the margins).</p>",
+            "kind": "method",
+            "name": "set_use_full_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "full_page",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "PrintOperation",
+    "properties": [
+        {
+            "doc": "<p>Determines whether the print operation may run asynchronously or not.</p><p>Some systems don't support asynchronous printing, but those that do\nwill return <span data-xref=\"Gtk.PrintOperationResult\"/>.in_progress as the status, and\nemit the <span data-xref=\"Gtk.PrintOperation-done\"/> signal when the operation is actually\ndone.</p><p>The Windows port does not support asynchronous operation at all (this\nis unlikely to change). On other platforms, all actions except for\n<span data-xref=\"Gtk.PrintOperationAction\"/>.export support asynchronous operation.</p>",
+            "kind": "property",
+            "name": "allow-async",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The current page in the document.</p><p>If this is set before <span data-xref=\"Gtk.PrintOperation.run\"/>,\nthe user will be able to select to print only the current page.</p><p>Note that this only makes sense for pre-paginated documents.</p>",
+            "kind": "property",
+            "name": "current-page",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>Used as the label of the tab containing custom widgets.\nNote that this property may be ignored on some platforms.</p><p>If this is <code>null</code>, GTK+ uses a default label.</p>",
+            "kind": "property",
+            "name": "custom-tab-label",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The <span data-xref=\"Gtk.PageSetup\"/> used by default.</p><p>This page setup will be used by <span data-xref=\"Gtk.PrintOperation.run\"/>,\nbut it can be overridden on a per-page basis by connecting\nto the <span data-xref=\"Gtk.PrintOperation-request-page-setup\"/> signal.</p>",
+            "kind": "property",
+            "name": "default-page-setup",
+            "type": "Gtk.PageSetup"
+        },
+        {
+            "doc": "<p>If <code>true</code>, page size combo box and orientation combo box are embedded into page setup page.</p>",
+            "kind": "property",
+            "name": "embed-page-setup",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The name of a file to generate instead of showing the print dialog.\nCurrently, PDF is the only supported format.</p><p>The intended use of this property is for implementing\n\u201cExport to PDF\u201d actions.</p><p>\u201cPrint to PDF\u201d support is independent of this and is done\nby letting the user pick the \u201cPrint to PDF\u201d item from the\nlist of printers in the print dialog.</p>",
+            "kind": "property",
+            "name": "export-filename",
+            "type": "String"
+        },
+        {
+            "doc": "<p>Determines whether there is a selection in your application.\nThis can allow your application to print the selection.\nThis is typically used to make a \"Selection\" button sensitive.</p>",
+            "kind": "property",
+            "name": "has-selection",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>A string used to identify the job (e.g. in monitoring\napplications like eggcups).</p><p>If you don't set a job name, GTK+ picks a default one\nby numbering successive print jobs.</p>",
+            "kind": "property",
+            "name": "job-name",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The number of pages in the document.</p><p>This must be set to a positive number\nbefore the rendering starts. It may be set in a\n<span data-xref=\"Gtk.PrintOperation-begin-print\"/> signal hander.</p><p>Note that the page numbers passed to the\n<span data-xref=\"Gtk.PrintOperation-request-page-setup\"/> and\n<span data-xref=\"Gtk.PrintOperation-draw-page\"/> signals are 0-based, i.e. if\nthe user chooses to print all pages, the last ::draw-page signal\nwill be for page @n_pages - 1.</p>",
+            "kind": "property",
+            "name": "n-pages",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>The number of pages that will be printed.</p><p>Note that this value is set during print preparation phase\n(<span data-xref=\"Gtk.PrintStatus\"/>.preparing), so this value should never be\nget before the data generation phase (<span data-xref=\"Gtk.PrintStatus\"/>.generating_data).\nYou can connect to the <span data-xref=\"Gtk.PrintOperation-status-changed\"/> signal\nand call <span data-xref=\"Gtk.PrintOperation.get_n_pages_to_print\"/> when\nprint status is <span data-xref=\"Gtk.PrintStatus\"/>.generating_data.\nThis is typically used to track the progress of print operation.</p>",
+            "kind": "property",
+            "name": "n-pages-to-print",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>The <span data-xref=\"Gtk.PrintSettings\"/> used for initializing the dialog.</p><p>Setting this property is typically used to re-establish\nprint settings from a previous print operation, see\n<span data-xref=\"Gtk.PrintOperation.run\"/>.</p>",
+            "kind": "property",
+            "name": "print-settings",
+            "type": "Gtk.PrintSettings"
+        },
+        {
+            "doc": "<p>Determines whether to show a progress dialog during the\nprint operation.</p>",
+            "kind": "property",
+            "name": "show-progress",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The status of the print operation.</p>",
+            "kind": "property",
+            "name": "status",
+            "type": "Gtk.PrintStatus"
+        },
+        {
+            "doc": "<p>A string representation of the status of the print operation.\nThe string is translated and suitable for displaying the print\nstatus e.g. in a <span data-xref=\"Gtk.Statusbar\"/>.</p><p>See the <span data-xref=\"Gtk.PrintOperation-status\"/> property for a status value that\nis suitable for programmatic use.</p>",
+            "kind": "property",
+            "name": "status-string",
+            "type": "String"
+        },
+        {
+            "doc": "<p>If <code>true</code>, the print operation will support print of selection.\nThis allows the print dialog to show a \"Selection\" button.</p>",
+            "kind": "property",
+            "name": "support-selection",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>If <code>true</code>, the print operation will try to continue report on\nthe status of the print job in the printer queues and printer.\nThis can allow your application to show things like \u201cout of paper\u201d\nissues, and when the print job actually reaches the printer.\nHowever, this is often implemented using polling, and should\nnot be enabled unless needed.</p>",
+            "kind": "property",
+            "name": "track-print-status",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The transformation for the cairo context obtained from\n<span data-xref=\"Gtk.PrintContext\"/> is set up in such a way that distances\nare measured in units of @unit.</p>",
+            "kind": "property",
+            "name": "unit",
+            "type": "Gtk.Unit"
+        },
+        {
+            "doc": "<p>If <code>true</code>, the transformation for the cairo context obtained\nfrom <span data-xref=\"Gtk.PrintContext\"/> puts the origin at the top left corner\nof the page (which may not be the top left corner of the sheet,\ndepending on page orientation and the number of pages per sheet).\nOtherwise, the origin is at the top left corner of the imageable\narea (i.e. inside the margins).</p>",
+            "kind": "property",
+            "name": "use-full-page",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Emitted after the user has finished changing print settings\nin the dialog, before the actual rendering starts.</p><p>A typical use for ::begin-print is to use the parameters from the\n<span data-xref=\"Gtk.PrintContext\"/> and paginate the document accordingly, and then\nset the number of pages with <span data-xref=\"Gtk.PrintOperation.set_n_pages\"/>.</p>",
+            "kind": "signal",
+            "name": "begin-print",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.PrintContext"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when displaying the print dialog. If you return a\nwidget in a handler for this signal it will be added to a custom\ntab in the print dialog. You typically return a container widget\nwith multiple widgets in it.</p><p>The print dialog owns the returned widget, and its lifetime is not\ncontrolled by the application. However, the widget is guaranteed\nto stay around until the <span data-xref=\"Gtk.PrintOperation-custom-widget-apply\"/>\nsignal is emitted on the operation. Then you can read out any\ninformation you need from the widgets.</p>",
+            "kind": "signal",
+            "name": "create-custom-widget",
+            "parameters": [],
+            "retval": {
+                "type": "GObject.Object"
+            }
+        },
+        {
+            "doc": "<p>Emitted right before <span data-xref=\"Gtk.PrintOperation-begin-print\"/> if you added\na custom widget in the <span data-xref=\"Gtk.PrintOperation-create-custom-widget\"/> handler.\nWhen you get this signal you should read the information from the\ncustom widgets, as the widgets are not guaraneed to be around at a\nlater time.</p>",
+            "kind": "signal",
+            "name": "custom-widget-apply",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the print operation run has finished doing\neverything required for printing.</p><p><code>result</code> gives you information about what happened during the run.\nIf <code>result</code> is <span data-xref=\"Gtk.PrintOperationResult\"/>.error then you can call\n<span data-xref=\"Gtk.PrintOperation.get_error\"/> for more information.</p><p>If you enabled print status tracking then\n<span data-xref=\"Gtk.PrintOperation.is_finished\"/> may still return <code>false</code>\nafter <span data-xref=\"Gtk.PrintOperation-done\"/> was emitted.</p>",
+            "kind": "signal",
+            "name": "done",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "result",
+                    "direction": "in",
+                    "type": "Gtk.PrintOperationResult"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted for every page that is printed. The signal handler\nmust render the <code>page_nr</code>'s page onto the cairo context obtained\nfrom <code>context</code> using <span data-xref=\"Gtk.PrintContext.get_cairo_context\"/>.\n|[&lt;!-- language=\"C\" --&gt;\nstatic void\ndraw_page (GtkPrintOperation <em>operation,\n           GtkPrintContext   </em>context,\n           gint               page_nr,\n           gpointer           user_data)\n{\n  cairo_t <em>cr;\n  PangoLayout </em>layout;\n  gdouble width, text_height;\n  gint layout_height;\n  PangoFontDescription *desc;</p>\n<p>cr = gtk_print_context_get_cairo_context (context);\n  width = gtk_print_context_get_width (context);</p>\n<p>cairo_rectangle (cr, 0, 0, width, HEADER_HEIGHT);</p>\n<p>cairo_set_source_rgb (cr, 0.8, 0.8, 0.8);\n  cairo_fill (cr);</p>\n<p>layout = gtk_print_context_create_pango_layout (context);</p>\n<p>desc = pango_font_description_from_string (\"sans 14\");\n  pango_layout_set_font_description (layout, desc);\n  pango_font_description_free (desc);</p>\n<p>pango_layout_set_text (layout, \"some text\", -1);\n  pango_layout_set_width (layout, width * PANGO_SCALE);\n  pango_layout_set_alignment (layout, PANGO_ALIGN_CENTER);</p>\n<p>pango_layout_get_size (layout, NULL, &amp;layout_height);\n  text_height = (gdouble)layout_height / PANGO_SCALE;</p>\n<p>cairo_move_to (cr, width / 2,  (HEADER_HEIGHT - text_height) / 2);\n  pango_cairo_show_layout (cr, layout);</p>\n<p>g_object_unref (layout);\n}\n]|</p><p>Use <span data-xref=\"Gtk.PrintOperation.set_use_full_page\"/> and\n<span data-xref=\"Gtk.PrintOperation.set_unit\"/> before starting the print operation\nto set up the transformation of the cairo context according to your\nneeds.</p>",
+            "kind": "signal",
+            "name": "draw-page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.PrintContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_nr",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted after all pages have been rendered.\nA handler for this signal can clean up any resources that have\nbeen allocated in the <span data-xref=\"Gtk.PrintOperation-begin-print\"/> handler.</p>",
+            "kind": "signal",
+            "name": "end-print",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.PrintContext"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted after the <span data-xref=\"Gtk.PrintOperation-begin-print\"/> signal, but before\nthe actual rendering starts. It keeps getting emitted until a connected\nsignal handler returns <code>true</code>.</p><p>The ::paginate signal is intended to be used for paginating a document\nin small chunks, to avoid blocking the user interface for a long\ntime. The signal handler should update the number of pages using\n<span data-xref=\"Gtk.PrintOperation.set_n_pages\"/>, and return <code>true</code> if the document\nhas been completely paginated.</p><p>If you don't need to do pagination in chunks, you can simply do\nit all in the ::begin-print handler, and set the number of pages\nfrom there.</p>",
+            "kind": "signal",
+            "name": "paginate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.PrintContext"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets emitted when a preview is requested from the native dialog.</p><p>The default handler for this signal uses an external viewer\napplication to preview.</p><p>To implement a custom print preview, an application must return\n<code>true</code> from its handler for this signal. In order to use the\nprovided <code>context</code> for the preview implementation, it must be\ngiven a suitable cairo context with <span data-xref=\"Gtk.PrintContext.set_cairo_context\"/>.</p><p>The custom preview implementation can use\n<span data-xref=\"Gtk.PrintOperationPreview.is_selected\"/> and\n<span data-xref=\"Gtk.PrintOperationPreview.render_page\"/> to find pages which\nare selected for print and render them. The preview must be\nfinished by calling <span data-xref=\"Gtk.PrintOperationPreview.end_preview\"/>\n(typically in response to the user clicking a close button).</p>",
+            "kind": "signal",
+            "name": "preview",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "preview",
+                    "direction": "in",
+                    "type": "Gtk.PrintOperationPreview"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.PrintContext"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "parent",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Emitted once for every page that is printed, to give\nthe application a chance to modify the page setup. Any changes\ndone to <code>setup</code> will be in force only for printing this page.</p>",
+            "kind": "signal",
+            "name": "request-page-setup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.PrintContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_nr",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "setup",
+                    "direction": "in",
+                    "type": "Gtk.PageSetup"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted at between the various phases of the print operation.\nSee <span data-xref=\"Gtk.PrintStatus\"/> for the phases that are being discriminated.\nUse <span data-xref=\"Gtk.PrintOperation.get_status\"/> to find out the current\nstatus.</p>",
+            "kind": "signal",
+            "name": "status-changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted after change of selected printer. The actual page setup and\nprint settings are passed to the custom widget, which can actualize\nitself according to this change.</p>",
+            "kind": "signal",
+            "name": "update-custom-widget",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "setup",
+                    "direction": "in",
+                    "type": "Gtk.PageSetup"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "settings",
+                    "direction": "in",
+                    "type": "Gtk.PrintSettings"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "begin_print",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.PrintContext"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "create_custom_widget",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "custom_widget_apply",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "done",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "result",
+                    "direction": "in",
+                    "type": "Gtk.PrintOperationResult"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.PrintContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_nr",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "end_print",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.PrintContext"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "paginate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.PrintContext"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "preview",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "preview",
+                    "direction": "in",
+                    "type": "Gtk.PrintOperationPreview"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.PrintContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "parent",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "request_page_setup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.PrintContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_nr",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "setup",
+                    "direction": "in",
+                    "type": "Gtk.PageSetup"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "status_changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "update_custom_widget",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "setup",
+                    "direction": "in",
+                    "type": "Gtk.PageSetup"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "settings",
+                    "direction": "in",
+                    "type": "Gtk.PrintSettings"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

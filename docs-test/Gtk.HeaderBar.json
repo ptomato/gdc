@@ -1,0 +1,260 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.HeaderBar\"/> widget.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>GtkHeaderBar is similar to a horizontal <span data-xref=\"Gtk.Box\"/>. It allows children to\nbe placed at the start or the end. In addition, it allows a title and\nsubtitle to be displayed. The title will be centered with respect to\nthe width of the box, even if the children at either side take up\ndifferent amounts of space. The height of the titlebar will be\nset to provide sufficient space for the subtitle, even if none is\ncurrently set. If a subtitle is not needed, the space reservation\ncan be turned off with <span data-xref=\"Gtk.HeaderBar.set_has_subtitle\"/>.</p><p>GtkHeaderBar can add typical window frame controls, such as minimize,\nmaximize and close buttons, or the window icon.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "container"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Retrieves the custom title widget of the header. See\n<span data-xref=\"Gtk.HeaderBar.set_custom_title\"/>.</p>",
+            "kind": "method",
+            "name": "get_custom_title",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets the decoration layout set with\n<span data-xref=\"Gtk.HeaderBar.set_decoration_layout\"/>.</p>",
+            "kind": "method",
+            "name": "get_decoration_layout",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Retrieves whether the header bar reserves space for\na subtitle, regardless if one is currently set or not.</p>",
+            "kind": "method",
+            "name": "get_has_subtitle",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether this header bar shows the standard window\ndecorations.</p>",
+            "kind": "method",
+            "name": "get_show_close_button",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the subtitle of the header. See <span data-xref=\"Gtk.HeaderBar.set_subtitle\"/>.</p>",
+            "kind": "method",
+            "name": "get_subtitle",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the title of the header. See <span data-xref=\"Gtk.HeaderBar.set_title\"/>.</p>",
+            "kind": "method",
+            "name": "get_title",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>child</code> to <code>bar</code>, packed with reference to the\nend of the <code>bar</code>.</p>",
+            "kind": "method",
+            "name": "pack_end",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>child</code> to <code>bar</code>, packed with reference to the\nstart of the <code>bar</code>.</p>",
+            "kind": "method",
+            "name": "pack_start",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a custom title for the <span data-xref=\"Gtk.HeaderBar\"/>.</p><p>The title should help a user identify the current view. This\nsupersedes any title set by <span data-xref=\"Gtk.HeaderBar.set_title\"/> or\n<span data-xref=\"Gtk.HeaderBar.set_subtitle\"/>. To achieve the same style as\nthe builtin title and subtitle, use the \u201ctitle\u201d and \u201csubtitle\u201d\nstyle classes.</p><p>You should set the custom title to <code>null</code>, for the header title\nlabel to be visible again.</p>",
+            "kind": "method",
+            "name": "set_custom_title",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "title_widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the decoration layout for this header bar, overriding\nthe <span data-xref=\"Gtk.Settings-gtk-decoration-layout\"/> setting.</p><p>There can be valid reasons for overriding the setting, such\nas a header bar design that does not allow for buttons to take\nroom on the right, or only offers room for a single close button.\nSplit header bars are another example for overriding the\nsetting.</p><p>The format of the string is button names, separated by commas.\nA colon separates the buttons that should appear on the left\nfrom those on the right. Recognized button names are minimize,\nmaximize, close, icon (the window icon) and menu (a menu button\nfor the fallback app menu).</p><p>For example, \u201cmenu:minimize,maximize,close\u201d specifies a menu\non the left, and minimize, maximize and close buttons on the right.</p>",
+            "kind": "method",
+            "name": "set_decoration_layout",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "layout",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the header bar should reserve space\nfor a subtitle, even if none is currently set.</p>",
+            "kind": "method",
+            "name": "set_has_subtitle",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether this header bar shows the standard window decorations,\nincluding close, maximize, and minimize.</p>",
+            "kind": "method",
+            "name": "set_show_close_button",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the subtitle of the <span data-xref=\"Gtk.HeaderBar\"/>. The title should give a user\nan additional detail to help him identify the current view.</p><p>Note that GtkHeaderBar by default reserves room for the subtitle,\neven if none is currently set. If this is not desired, set the\n<span data-xref=\"Gtk.HeaderBar-has-subtitle\"/> property to <code>false</code>.</p>",
+            "kind": "method",
+            "name": "set_subtitle",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "subtitle",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the title of the <span data-xref=\"Gtk.HeaderBar\"/>. The title should help a user\nidentify the current view. A good title should not include the\napplication name.</p>",
+            "kind": "method",
+            "name": "set_title",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "title",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "HeaderBar",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "custom-title",
+            "type": "Gtk.Widget"
+        },
+        {
+            "doc": "<p>The decoration layout for buttons. If this property is\nnot set, the <span data-xref=\"Gtk.Settings-gtk-decoration-layout\"/> setting\nis used.</p><p>See <span data-xref=\"Gtk.HeaderBar.set_decoration_layout\"/> for information\nabout the format of this string.</p>",
+            "kind": "property",
+            "name": "decoration-layout",
+            "type": "String"
+        },
+        {
+            "doc": "<p>Set to <code>true</code> if <span data-xref=\"Gtk.HeaderBar-decoration-layout\"/> is set.</p>",
+            "kind": "property",
+            "name": "decoration-layout-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>If <code>true</code>, reserve space for a subtitle, even if none\nis currently set.</p>",
+            "kind": "property",
+            "name": "has-subtitle",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Whether to show window decorations.</p><p>Which buttons are actually shown and where is determined\nby the <span data-xref=\"Gtk.HeaderBar-decoration-layout\"/> property, and by\nthe state of the window (e.g. a close button will not be\nshown if the window can't be closed).</p>",
+            "kind": "property",
+            "name": "show-close-button",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "spacing",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "subtitle",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "title",
+            "type": "String"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

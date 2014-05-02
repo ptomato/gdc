@@ -1,0 +1,629 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ListBox\"/> container.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A GtkListBox is a vertical container that contains GtkListBoxRow\nchildren. These rows can by dynamically sorted and filtered, and\nheaders can be added dynamically depending on the row content.\nIt also allows keyboard and mouse navigation and selection like\na typical list.</p><p>Using GtkListBox is often an alternative to <span data-xref=\"Gtk.TreeView\"/>, especially\nwhen the list contents has a more complicated layout than what is allowed\nby a <span data-xref=\"Gtk.CellRenderer\"/>, or when the contents is interactive (i.e. has a\nbutton in it).</p><p>Although a <span data-xref=\"Gtk.ListBox\"/> must have only <span data-xref=\"Gtk.ListBoxRow\"/> children you can\nadd any kind of widget to it via <span data-xref=\"Gtk.Container.add\"/>, and a <span data-xref=\"Gtk.ListBoxRow\"/>\nwidget will automatically be inserted between the list and the widget.</p><p>The GtkListBox widget was added in GTK+ 3.10.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>This is a helper function for implementing DnD onto a <span data-xref=\"Gtk.ListBox\"/>.\nThe passed in <code>row</code> will be highlighted via <span data-xref=\"Gtk.Widget.drag_highlight\"/>,\nand any previously highlighted row will be unhighlighted.</p><p>The row will also be unhighlighted when the widget gets\na drag leave event.</p>",
+            "kind": "method",
+            "name": "drag_highlight_row",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "row",
+                    "direction": "in",
+                    "type": "Gtk.ListBoxRow"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If a row has previously been highlighted via <span data-xref=\"Gtk.ListBox.drag_highlight_row\"/>\nit will have the highlight removed.</p>",
+            "kind": "method",
+            "name": "drag_unhighlight_row",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns whether rows activate on single clicks.</p>",
+            "kind": "method",
+            "name": "get_activate_on_single_click",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the adjustment (if any) that the widget uses to\nfor vertical scrolling.</p>",
+            "kind": "method",
+            "name": "get_adjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Gets the n-th child in the list (not counting headers).</p>",
+            "kind": "method",
+            "name": "get_row_at_index",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "index_",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.ListBoxRow"
+            }
+        },
+        {
+            "doc": "<p>Gets the row at the <code>y</code> position.</p>",
+            "kind": "method",
+            "name": "get_row_at_y",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.ListBoxRow"
+            }
+        },
+        {
+            "doc": "<p>Gets the selected row.</p><p>Note that the box may allow multiple selection, in which\ncase you should use <span data-xref=\"Gtk.ListBox.selected_foreach\"/> to\nfind all selected rows.</p>",
+            "kind": "method",
+            "name": "get_selected_row",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.ListBoxRow"
+            }
+        },
+        {
+            "doc": "<p>Creates a list of all selected children.</p>",
+            "kind": "method",
+            "name": "get_selected_rows",
+            "parameters": [],
+            "retval": {
+                "type": "Array(Gtk.ListBoxRow)"
+            }
+        },
+        {
+            "doc": "<p>Gets the selection mode of the listbox.</p>",
+            "kind": "method",
+            "name": "get_selection_mode",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.SelectionMode"
+            }
+        },
+        {
+            "doc": "<p>Insert the <code>child</code> into the <code>box</code> at <code>position</code>. If a sort function is\nset, the widget will actually be inserted at the calculated position and\nthis function has the same effect of <span data-xref=\"Gtk.Container.add\"/>.</p><p>If <code>position</code> is -1, or larger than the total number of items in the\n<code>box</code>, then the <code>child</code> will be appended to the end.</p>",
+            "kind": "method",
+            "name": "insert",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Update the filtering for all rows. Call this when result\nof the filter function on the <code>box</code> is changed due\nto an external factor. For instance, this would be used\nif the filter function just looked for a specific search\nstring and the entry with the search string has changed.</p>",
+            "kind": "method",
+            "name": "invalidate_filter",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Update the separators for all rows. Call this when result\nof the header function on the <code>box</code> is changed due\nto an external factor.</p>",
+            "kind": "method",
+            "name": "invalidate_headers",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Update the sorting for all rows. Call this when result\nof the sort function on the <code>box</code> is changed due\nto an external factor.</p>",
+            "kind": "method",
+            "name": "invalidate_sort",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Prepend a widget to the list. If a sort function is set, the widget will\nactually be inserted at the calculated position and this function has the\nsame effect of <span data-xref=\"Gtk.Container.add\"/>.</p>",
+            "kind": "method",
+            "name": "prepend",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Select all children of <code>box</code>, if the selection mode allows it.</p>",
+            "kind": "method",
+            "name": "select_all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Make <code>row</code> the currently selected row.</p>",
+            "kind": "method",
+            "name": "select_row",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "row",
+                    "direction": "in",
+                    "type": "Gtk.ListBoxRow"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Calls a function for each selected child.</p><p>Note that the selection cannot be modified from within this function.</p>",
+            "kind": "method",
+            "name": "selected_foreach",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "func",
+                    "direction": "in",
+                    "type": "Gtk.ListBoxForeachFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>single</code> is <code>true</code>, rows will be activated when you click on them,\notherwise you need to double-click.</p>",
+            "kind": "method",
+            "name": "set_activate_on_single_click",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "single",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the adjustment (if any) that the widget uses to\nfor vertical scrolling. For instance, this is used\nto get the page size for PageUp/Down key handling.</p><p>In the normal case when the <code>box</code> is packed inside\na <span data-xref=\"Gtk.ScrolledWindow\"/> the adjustment from that will\nbe picked up automatically, so there is no need\nto manually do that.</p>",
+            "kind": "method",
+            "name": "set_adjustment",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>By setting a filter function on the <code>box</code> one can decide dynamically which\nof the rows to show. For instance, to implement a search function on a list that\nfilters the original list to only show the matching rows.</p><p>The <code>filter_func</code> will be called for each row after the call, and it will\ncontinue to be called each time a row changes (via <span data-xref=\"Gtk.ListBoxRow.changed\"/>) or\nwhen <span data-xref=\"Gtk.ListBox.invalidate_filter\"/> is called.</p>",
+            "kind": "method",
+            "name": "set_filter_func",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "filter_func",
+                    "direction": "in",
+                    "type": "Gtk.ListBoxFilterFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "destroy",
+                    "direction": "in",
+                    "type": "GLib.DestroyNotify"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>By setting a header function on the <code>box</code> one can dynamically add headers\nin front of rows, depending on the contents of the row and its position in the list.\nFor instance, one could use it to add headers in front of the first item of a\nnew kind, in a list sorted by the kind.</p><p>The <code>update_header</code> can look at the current header widget using <span data-xref=\"Gtk.ListBoxRow.get_header\"/>\nand either update the state of the widget as needed, or set a new one using\n<span data-xref=\"Gtk.ListBoxRow.set_header\"/>. If no header is needed, set the header to <code>null</code>.</p><p>Note that you may get many calls <code>update_header</code> to this for a particular row when e.g.\nchanging things that don\u2019t affect the header. In this case it is important for performance\nto not blindly replace an exisiting header widh an identical one.</p><p>The <code>update_header</code> function will be called for each row after the call, and it will\ncontinue to be called each time a row changes (via <span data-xref=\"Gtk.ListBoxRow.changed\"/>) and when\nthe row before changes (either by <span data-xref=\"Gtk.ListBoxRow.changed\"/> on the previous row, or when\nthe previous row becomes a different row). It is also called for all rows when\n<span data-xref=\"Gtk.ListBox.invalidate_headers\"/> is called.</p>",
+            "kind": "method",
+            "name": "set_header_func",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "update_header",
+                    "direction": "in",
+                    "type": "Gtk.ListBoxUpdateHeaderFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "destroy",
+                    "direction": "in",
+                    "type": "GLib.DestroyNotify"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the placeholder widget that is shown in the list when\nit doesn't display any visible children.</p>",
+            "kind": "method",
+            "name": "set_placeholder",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "placeholder",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets how selection works in the listbox.\nSee <span data-xref=\"Gtk.SelectionMode\"/> for details.</p><p>Note: <span data-xref=\"Gtk.ListBox\"/> does not support @GTK_SELECTION_MULTIPLE.</p>",
+            "kind": "method",
+            "name": "set_selection_mode",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "mode",
+                    "direction": "in",
+                    "type": "Gtk.SelectionMode"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>By setting a sort function on the <code>box</code> one can dynamically reorder the rows\nof the list, based on the contents of the rows.</p><p>The <code>sort_func</code> will be called for each row after the call, and will continue to\nbe called each time a row changes (via <span data-xref=\"Gtk.ListBoxRow.changed\"/>) and when\n<span data-xref=\"Gtk.ListBox.invalidate_sort\"/> is called.</p>",
+            "kind": "method",
+            "name": "set_sort_func",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "sort_func",
+                    "direction": "in",
+                    "type": "Gtk.ListBoxSortFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "destroy",
+                    "direction": "in",
+                    "type": "GLib.DestroyNotify"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unselect all children of <code>box</code>, if the selection mode allows it.</p>",
+            "kind": "method",
+            "name": "unselect_all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unselects a single row of <code>box</code>, if the selection mode allows it.</p>",
+            "kind": "method",
+            "name": "unselect_row",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "row",
+                    "direction": "in",
+                    "type": "Gtk.ListBoxRow"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "ListBox",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "activate-on-single-click",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "selection-mode",
+            "type": "Gtk.SelectionMode"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "activate-cursor-row",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "move-cursor",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Gtk.MovementStep"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "p0",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::row-activated signal is emitted when a row has been activated by the user.</p>",
+            "kind": "signal",
+            "name": "row-activated",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "row",
+                    "direction": "in",
+                    "type": "Gtk.ListBoxRow"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::row-selected signal is emitted when a new row is selected, or\n(with a <code>null</code> <code>row</code>) when the selection is cleared.</p><p>Also see <span data-xref=\"Gtk.ListBox-selected-rows-changed\"/>.</p>",
+            "kind": "signal",
+            "name": "row-selected",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "row",
+                    "direction": "in",
+                    "type": "Gtk.ListBoxRow"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::select-all signal is a [keybinding signal][GtkBindingSignal]\nwhich gets emitted to select all children of the box, if the selection\nmode permits it.</p><p>The default bindings for this signal is Ctrl-a.</p>",
+            "kind": "signal",
+            "name": "select-all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::selected-rows-changed signal is emitted when the\nset of selected rows changes.</p>",
+            "kind": "signal",
+            "name": "selected-rows-changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "toggle-cursor-row",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::unselect-all signal is a [keybinding signal][GtkBindingSignal]\nwhich gets emitted to unselect all children of the box, if the selection\nmode permits it.</p><p>The default bindings for this signal is Ctrl-Shift-a.</p>",
+            "kind": "signal",
+            "name": "unselect-all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "activate_cursor_row",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "move_cursor",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "step",
+                    "direction": "in",
+                    "type": "Gtk.MovementStep"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "row_activated",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "row",
+                    "direction": "in",
+                    "type": "Gtk.ListBoxRow"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "row_selected",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "row",
+                    "direction": "in",
+                    "type": "Gtk.ListBoxRow"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Select all children of <code>box</code>, if the selection mode allows it.</p>",
+            "kind": "vfunc",
+            "name": "select_all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "selected_rows_changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "toggle_cursor_row",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unselect all children of <code>box</code>, if the selection mode allows it.</p>",
+            "kind": "vfunc",
+            "name": "unselect_all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

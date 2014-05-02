@@ -1,0 +1,146 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.LinkButton\"/> with the URI as its text.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "uri",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.LinkButton\"/> containing a label.</p>",
+            "kind": "constructor",
+            "name": "new_with_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "uri",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A GtkLinkButton is a <span data-xref=\"Gtk.Button\"/> with a hyperlink, similar to the one\nused by web browsers, which triggers an action when clicked. It is useful\nto show quick links to resources.</p><p>A link button is created by calling either <span data-xref=\"Gtk.LinkButton.new\"/> or\n<span data-xref=\"Gtk.LinkButton.new_with_label\"/>. If using the former, the URI you pass\nto the constructor is used as a label for the widget.</p><p>The URI bound to a GtkLinkButton can be set specifically using\n<span data-xref=\"Gtk.LinkButton.set_uri\"/>, and retrieved using <span data-xref=\"Gtk.LinkButton.get_uri\"/>.</p><p>By default, GtkLinkButton calls <span data-xref=\"Gtk.show_uri\"/> when the button is\nclicked. This behaviour can be overridden by connecting to the\n<span data-xref=\"Gtk.LinkButton-activate-link\"/> signal and returning <code>true</code> from the\nsignal handler.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Retrieves the URI set using <span data-xref=\"Gtk.LinkButton.set_uri\"/>.</p>",
+            "kind": "method",
+            "name": "get_uri",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the \u201cvisited\u201d state of the URI where the <span data-xref=\"Gtk.LinkButton\"/>\npoints. The button becomes visited when it is clicked. If the URI\nis changed on the button, the \u201cvisited\u201d state is unset again.</p><p>The state may also be changed using <span data-xref=\"Gtk.LinkButton.set_visited\"/>.</p>",
+            "kind": "method",
+            "name": "get_visited",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets <code>uri</code> as the URI where the <span data-xref=\"Gtk.LinkButton\"/> points. As a side-effect\nthis unsets the \u201cvisited\u201d state of the button.</p>",
+            "kind": "method",
+            "name": "set_uri",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "uri",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the \u201cvisited\u201d state of the URI where the <span data-xref=\"Gtk.LinkButton\"/>\npoints.  See <span data-xref=\"Gtk.LinkButton.get_visited\"/> for more details.</p>",
+            "kind": "method",
+            "name": "set_visited",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "visited",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "LinkButton",
+    "properties": [
+        {
+            "doc": "<p>The URI bound to this button.</p>",
+            "kind": "property",
+            "name": "uri",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The 'visited' state of this button. A visited link is drawn in a\ndifferent color.</p>",
+            "kind": "property",
+            "name": "visited",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::activate-link signal is emitted each time the <span data-xref=\"Gtk.LinkButton\"/>\nhas been clicked.</p><p>The default handler will call <span data-xref=\"Gtk.show_uri\"/> with the URI stored inside\nthe <span data-xref=\"Gtk.LinkButton-uri\"/> property.</p><p>To override the default behavior, you can connect to the ::activate-link\nsignal and stop the propagation of the signal by returning <code>true</code> from\nyour handler.</p>",
+            "kind": "signal",
+            "name": "activate-link",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "activate_link",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ]
+}

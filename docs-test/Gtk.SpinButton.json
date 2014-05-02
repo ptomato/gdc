@@ -1,0 +1,581 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.SpinButton\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "climb_rate",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "digits",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>This is a convenience constructor that allows creation of a numeric\n<span data-xref=\"Gtk.SpinButton\"/> without manually creating an adjustment. The value is\ninitially set to the minimum value and a page increment of 10 * <code>step</code>\nis the default. The precision of the spin button is equivalent to the\nprecision of <code>step</code>.</p><p>Note that the way in which the precision is derived works best if <code>step</code>\nis a power of ten. If the resulting precision is not suitable for your\nneeds, use <span data-xref=\"Gtk.SpinButton.set_digits\"/> to correct it.</p>",
+            "kind": "constructor",
+            "name": "new_with_range",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "min",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "max",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "step",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.SpinButton\"/> is an ideal way to allow the user to set the value of\nsome attribute. Rather than having to directly type a number into a\n<span data-xref=\"Gtk.Entry\"/>, GtkSpinButton allows the user to click on one of two arrows\nto increment or decrement the displayed value. A value can still be\ntyped in, with the bonus that it can be checked to ensure it is in a\ngiven range.</p><p>The main properties of a GtkSpinButton are through an adjustment.\nSee the <span data-xref=\"Gtk.Adjustment\"/> section for more details about an adjustment's\nproperties.</p><h2>Using a GtkSpinButton to get an integer</h2><p>|[&lt;!-- language=\"C\" --&gt;\n// Provides a function to retrieve an integer value from a GtkSpinButton\n// and creates a spin button to model percentage values.</p><p>gint\ngrab_int_value (GtkSpinButton *button,\n                gpointer       user_data)\n{\n  return gtk_spin_button_get_value_as_int (button);\n}</p><p>void\ncreate_integer_spin_button (void)\n{</p><p>GtkWidget <em>window, </em>button;\n  GtkAdjustment *adjustment;</p><p>adjustment = gtk_adjustment_new (50.0, 0.0, 100.0, 1.0, 5.0, 0.0);</p><p>window = gtk_window_new (GTK_WINDOW_TOPLEVEL);\n  gtk_container_set_border_width (GTK_CONTAINER (window), 5);</p><p>// creates the spinbutton, with no decimal places\n  button = gtk_spin_button_new (adjustment, 1.0, 0);\n  gtk_container_add (GTK_CONTAINER (window), button);</p><p>gtk_widget_show_all (window);\n}\n]|</p><h2>Using a GtkSpinButton to get a floating point value</h2><p>|[&lt;!-- language=\"C\" --&gt;\n// Provides a function to retrieve a floating point value from a\n// GtkSpinButton, and creates a high precision spin button.</p><p>gfloat\ngrab_float_value (GtkSpinButton *button,\n                  gpointer       user_data)\n{\n  return gtk_spin_button_get_value (button);\n}</p><p>void\ncreate_floating_spin_button (void)\n{\n  GtkWidget <em>window, </em>button;\n  GtkAdjustment *adjustment;</p><p>adjustment = gtk_adjustment_new (2.500, 0.0, 5.0, 0.001, 0.1, 0.0);</p><p>window = gtk_window_new (GTK_WINDOW_TOPLEVEL);\n  gtk_container_set_border_width (GTK_CONTAINER (window), 5);</p><p>// creates the spinbutton, with three decimal places\n  button = gtk_spin_button_new (adjustment, 0.001, 3);\n  gtk_container_add (GTK_CONTAINER (window), button);</p><p>gtk_widget_show_all (window);\n}\n]|</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "entry"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Changes the properties of an existing spin button. The adjustment,\nclimb rate, and number of decimal places are all changed accordingly,\nafter this function call.</p>",
+            "kind": "method",
+            "name": "configure",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "climb_rate",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "digits",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Get the adjustment associated with a <span data-xref=\"Gtk.SpinButton\"/></p>",
+            "kind": "method",
+            "name": "get_adjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Fetches the precision of <code>spin_button</code>. See <span data-xref=\"Gtk.SpinButton.set_digits\"/>.</p>",
+            "kind": "method",
+            "name": "get_digits",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the current step and page the increments used by <code>spin_button</code>. See\n<span data-xref=\"Gtk.SpinButton.set_increments\"/>.</p>",
+            "kind": "method",
+            "name": "get_increments",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "step",
+                    "direction": "out",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "page",
+                    "direction": "out",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns whether non-numeric text can be typed into the spin button.\nSee <span data-xref=\"Gtk.SpinButton.set_numeric\"/>.</p>",
+            "kind": "method",
+            "name": "get_numeric",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the range allowed for <code>spin_button</code>.\nSee <span data-xref=\"Gtk.SpinButton.set_range\"/>.</p>",
+            "kind": "method",
+            "name": "get_range",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "min",
+                    "direction": "out",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "max",
+                    "direction": "out",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the values are corrected to the nearest step.\nSee <span data-xref=\"Gtk.SpinButton.set_snap_to_ticks\"/>.</p>",
+            "kind": "method",
+            "name": "get_snap_to_ticks",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the update behavior of a spin button.\nSee <span data-xref=\"Gtk.SpinButton.set_update_policy\"/>.</p>",
+            "kind": "method",
+            "name": "get_update_policy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.SpinButtonUpdatePolicy"
+            }
+        },
+        {
+            "doc": "<p>Get the value in the <code>spin_button</code>.</p>",
+            "kind": "method",
+            "name": "get_value",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Get the value <code>spin_button</code> represented as an integer.</p>",
+            "kind": "method",
+            "name": "get_value_as_int",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the spin button\u2019s value wraps around to the\nopposite limit when the upper or lower limit of the range is\nexceeded. See <span data-xref=\"Gtk.SpinButton.set_wrap\"/>.</p>",
+            "kind": "method",
+            "name": "get_wrap",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Replaces the <span data-xref=\"Gtk.Adjustment\"/> associated with <code>spin_button</code>.</p>",
+            "kind": "method",
+            "name": "set_adjustment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Set the precision to be displayed by <code>spin_button</code>. Up to 20 digit precision\nis allowed.</p>",
+            "kind": "method",
+            "name": "set_digits",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "digits",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the step and page increments for spin_button.  This affects how\nquickly the value changes when the spin button\u2019s arrows are activated.</p>",
+            "kind": "method",
+            "name": "set_increments",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "step",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the flag that determines if non-numeric text can be typed\ninto the spin button.</p>",
+            "kind": "method",
+            "name": "set_numeric",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "numeric",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the minimum and maximum allowable values for <code>spin_button</code>.</p><p>If the current value is outside this range, it will be adjusted\nto fit within the range, otherwise it will remain unchanged.</p>",
+            "kind": "method",
+            "name": "set_range",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "min",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "max",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the policy as to whether values are corrected to the\nnearest step increment when a spin button is activated after\nproviding an invalid value.</p>",
+            "kind": "method",
+            "name": "set_snap_to_ticks",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "snap_to_ticks",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the update behavior of a spin button.\nThis determines whether the spin button is always updated\nor only when a valid value is set.</p>",
+            "kind": "method",
+            "name": "set_update_policy",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "policy",
+                    "direction": "in",
+                    "type": "Gtk.SpinButtonUpdatePolicy"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of <code>spin_button</code>.</p>",
+            "kind": "method",
+            "name": "set_value",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the flag that determines if a spin button value wraps\naround to the opposite limit when the upper or lower limit\nof the range is exceeded.</p>",
+            "kind": "method",
+            "name": "set_wrap",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "wrap",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Increment or decrement a spin button\u2019s value in a specified\ndirection by a specified amount.</p>",
+            "kind": "method",
+            "name": "spin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "direction",
+                    "direction": "in",
+                    "type": "Gtk.SpinType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "increment",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Manually force an update of the spin button.</p>",
+            "kind": "method",
+            "name": "update",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "SpinButton",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "adjustment",
+            "type": "Gtk.Adjustment"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "climb-rate",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "digits",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "numeric",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "snap-to-ticks",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "update-policy",
+            "type": "Gtk.SpinButtonUpdatePolicy"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "value",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "wrap",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "change-value",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Gtk.ScrollType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::input signal can be used to influence the conversion of\nthe users input into a double value. The signal handler is\nexpected to use <span data-xref=\"Gtk.Entry.get_text\"/> to retrieve the text of\nthe entry and set <code>new_value</code> to the new value.</p><p>The default conversion uses <span data-xref=\"GLib.strtod\">GLib.strtod</span>.</p>",
+            "kind": "signal",
+            "name": "input",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "new_value",
+                    "direction": "out",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>The ::output signal can be used to change to formatting\nof the value that is displayed in the spin buttons entry.\n|[&lt;!-- language=\"C\" --&gt;\n// show leading zeros\nstatic gboolean\non_output (GtkSpinButton <em>spin,\n           gpointer       data)\n{\n   GtkAdjustment </em>adjustment;\n   gchar *text;\n   int value;</p><p>adjustment = gtk_spin_button_get_adjustment (spin);\n   value = (int)gtk_adjustment_get_value (adjustment);\n   text = g_strdup_printf (\"%02d\", value);\n   gtk_entry_set_text (GTK_ENTRY (spin), text);\n   g_free (text);</p><p>return TRUE;\n}\n]|</p>",
+            "kind": "signal",
+            "name": "output",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "value-changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The wrapped signal is emitted right after the spinbutton wraps\nfrom its maximum to minimum value or vice-versa.</p>",
+            "kind": "signal",
+            "name": "wrapped",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "change_value",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "scroll",
+                    "direction": "in",
+                    "type": "Gtk.ScrollType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "input",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "new_value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "output",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "value_changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "wrapped",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.FlowBoxChild\"/>, to be used as a child\nof a <span data-xref=\"Gtk.FlowBox\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Marks <code>child</code> as changed, causing any state that depends on this\nto be updated. This affects sorting and filtering.</p><p>Note that calls to this method must be in sync with the data\nused for the sorting and filtering functions. For instance, if\nthe list is mirroring some external data set, and <em>two</em> children\nchanged in the external data set when you call\n<span data-xref=\"Gtk.FlowBoxChild.changed\"/> on the first child, the sort function\nmust only read the new data for the first of the two changed\nchildren, otherwise the resorting of the children will be wrong.</p><p>This generally means that if you don\u2019t fully control the data\nmodel, you have to duplicate the data that affects the sorting\nand filtering functions into the widgets themselves. Another\nalternative is to call <span data-xref=\"Gtk.FlowBox.invalidate_sort\"/> on any\nmodel change, but that is more expensive.</p>",
+            "kind": "method",
+            "name": "changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the current index of the <code>child</code> in its <span data-xref=\"Gtk.FlowBox\"/> container.</p>",
+            "kind": "method",
+            "name": "get_index",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the <code>child</code> is currently selected in its\n<span data-xref=\"Gtk.FlowBox\"/> container.</p>",
+            "kind": "method",
+            "name": "is_selected",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        []
+    ],
+    "name": "FlowBoxChild",
+    "properties": [],
+    "signals": [
+        {
+            "doc": "<p>The ::activate signal is emitted when the user activates\na child widget in a <span data-xref=\"Gtk.FlowBox\"/>, either by clicking or\ndouble-clicking, or by using the Space or Enter key.</p><p>While this signal is used as a\n[keybinding signal][GtkBindingSignal],\nit can be used by applications for their own purposes.</p>",
+            "kind": "signal",
+            "name": "activate",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "activate",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

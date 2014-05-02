@@ -1,0 +1,449 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new calendar, with the current date being selected.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.Calendar\"/> is a widget that displays a Gregorian calendar, one month\nat a time. It can be created with <span data-xref=\"Gtk.Calendar.new\"/>.</p><p>The month and year currently displayed can be altered with\n<span data-xref=\"Gtk.Calendar.select_month\"/>. The exact day can be selected from the\ndisplayed month using <span data-xref=\"Gtk.Calendar.select_day\"/>.</p><p>To place a visual marker on a particular day, use <span data-xref=\"Gtk.Calendar.mark_day\"/>\nand to remove the marker, <span data-xref=\"Gtk.Calendar.unmark_day\"/>. Alternative, all\nmarks can be cleared with <span data-xref=\"Gtk.Calendar.clear_marks\"/>.</p><p>The way in which the calendar itself is displayed can be altered using\n<span data-xref=\"Gtk.Calendar.set_display_options\"/>.</p><p>The selected date can be retrieved from a <span data-xref=\"Gtk.Calendar\"/> using\n<span data-xref=\"Gtk.Calendar.get_date\"/>.</p><p>Users should be aware that, although the Gregorian calendar is the\nlegal calendar in most countries, it was adopted progressively\nbetween 1582 and 1929. Display before these dates is likely to be\nhistorically incorrect.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "widget"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Remove all visual markers.</p>",
+            "kind": "method",
+            "name": "clear_marks",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Obtains the selected date from a <span data-xref=\"Gtk.Calendar\"/>.</p>",
+            "kind": "method",
+            "name": "get_date",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "year",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "month",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "day",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns if the <code>day</code> of the <code>calendar</code> is already marked.</p>",
+            "kind": "method",
+            "name": "get_day_is_marked",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "day",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Queries the height of detail cells, in rows.\nSee <span data-xref=\"Gtk.Calendar-detail-width-chars\"/>.</p>",
+            "kind": "method",
+            "name": "get_detail_height_rows",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Queries the width of detail cells, in characters.\nSee <span data-xref=\"Gtk.Calendar-detail-width-chars\"/>.</p>",
+            "kind": "method",
+            "name": "get_detail_width_chars",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the current display options of <code>calendar</code>.</p>",
+            "kind": "method",
+            "name": "get_display_options",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CalendarDisplayOptions"
+            }
+        },
+        {
+            "doc": "<p>Places a visual marker on a particular day.</p>",
+            "kind": "method",
+            "name": "mark_day",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "day",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Selects a day from the current month.</p>",
+            "kind": "method",
+            "name": "select_day",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "day",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Shifts the calendar to a different month.</p>",
+            "kind": "method",
+            "name": "select_month",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "month",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "year",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Installs a function which provides Pango markup with detail information\nfor each day. Examples for such details are holidays or appointments. That\ninformation is shown below each day when <span data-xref=\"Gtk.Calendar-show-details\"/> is set.\nA tooltip containing with full detail information is provided, if the entire\ntext should not fit into the details area, or if <span data-xref=\"Gtk.Calendar-show-details\"/>\nis not set.</p><p>The size of the details area can be restricted by setting the\n<span data-xref=\"Gtk.Calendar-detail-width-chars\"/> and <span data-xref=\"Gtk.Calendar-detail-height-rows\"/>\nproperties.</p>",
+            "kind": "method",
+            "name": "set_detail_func",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "func",
+                    "direction": "in",
+                    "type": "Gtk.CalendarDetailFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "destroy",
+                    "direction": "in",
+                    "type": "GLib.DestroyNotify"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Updates the height of detail cells.\nSee <span data-xref=\"Gtk.Calendar-detail-height-rows\"/>.</p>",
+            "kind": "method",
+            "name": "set_detail_height_rows",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rows",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Updates the width of detail cells.\nSee <span data-xref=\"Gtk.Calendar-detail-width-chars\"/>.</p>",
+            "kind": "method",
+            "name": "set_detail_width_chars",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "chars",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets display options (whether to display the heading and the month\nheadings).</p>",
+            "kind": "method",
+            "name": "set_display_options",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CalendarDisplayOptions"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes the visual marker from a particular day.</p>",
+            "kind": "method",
+            "name": "unmark_day",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "day",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Calendar",
+    "properties": [
+        {
+            "doc": "<p>The selected day (as a number between 1 and 31, or 0\nto unselect the currently selected day).\nThis property gets initially set to the current day.</p>",
+            "kind": "property",
+            "name": "day",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>Height of a detail cell, in rows.\nA value of 0 allows any width. See <span data-xref=\"Gtk.Calendar.set_detail_func\"/>.</p>",
+            "kind": "property",
+            "name": "detail-height-rows",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>Width of a detail cell, in characters.\nA value of 0 allows any width. See <span data-xref=\"Gtk.Calendar.set_detail_func\"/>.</p>",
+            "kind": "property",
+            "name": "detail-width-chars",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>The selected month (as a number between 0 and 11).\nThis property gets initially set to the current month.</p>",
+            "kind": "property",
+            "name": "month",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>Determines whether the selected month can be changed.</p>",
+            "kind": "property",
+            "name": "no-month-change",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Determines whether day names are displayed.</p>",
+            "kind": "property",
+            "name": "show-day-names",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Determines whether details are shown directly in the widget, or if they are\navailable only as tooltip. When this property is set days with details are\nmarked.</p>",
+            "kind": "property",
+            "name": "show-details",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Determines whether a heading is displayed.</p>",
+            "kind": "property",
+            "name": "show-heading",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Determines whether week numbers are displayed.</p>",
+            "kind": "property",
+            "name": "show-week-numbers",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The selected year.\nThis property gets initially set to the current year.</p>",
+            "kind": "property",
+            "name": "year",
+            "type": "Number(gint)"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Emitted when the user selects a day.</p>",
+            "kind": "signal",
+            "name": "day-selected",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the user double-clicks a day.</p>",
+            "kind": "signal",
+            "name": "day-selected-double-click",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the user clicks a button to change the selected month on a\ncalendar.</p>",
+            "kind": "signal",
+            "name": "month-changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the user switched to the next month.</p>",
+            "kind": "signal",
+            "name": "next-month",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when user switched to the next year.</p>",
+            "kind": "signal",
+            "name": "next-year",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the user switched to the previous month.</p>",
+            "kind": "signal",
+            "name": "prev-month",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when user switched to the previous year.</p>",
+            "kind": "signal",
+            "name": "prev-year",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "day_selected",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "day_selected_double_click",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "month_changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "next_month",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "next_year",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "prev_month",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "prev_year",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

@@ -1,0 +1,385 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CellRendererText\"/>. Adjust how text is drawn using\nobject properties. Object properties can be\nset globally (with <span data-xref=\"GObject.Object.set\">GObject.Object.set</span>). Also, with <span data-xref=\"Gtk.TreeViewColumn\"/>,\nyou can bind a property to a value in a <span data-xref=\"Gtk.TreeModel\"/>. For example,\nyou can bind the \u201ctext\u201d property on the cell renderer to a string\nvalue in the model, thus rendering a different string in each row\nof the <span data-xref=\"Gtk.TreeView\"/></p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CellRenderer"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.CellRendererText\"/> renders a given text in its cell, using the font, color and\nstyle information provided by its properties. The text will be ellipsized if it is\ntoo long and the <span data-xref=\"Gtk.CellRendererText-ellipsize\"/> property allows it.</p><p>If the <span data-xref=\"Gtk.CellRenderer-mode\"/> is <span data-xref=\"Gtk.CellRendererMode\"/>.editable,\nthe <span data-xref=\"Gtk.CellRendererText\"/> allows to edit its text using an entry.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Sets the height of a renderer to explicitly be determined by the \u201cfont\u201d and\n\u201cy_pad\u201d property set on it.  Further changes in these properties do not\naffect the height, so they must be accompanied by a subsequent call to this\nfunction.  Using this function is unflexible, and should really only be used\nif calculating the size of a cell is too slow (ie, a massive number of cells\ndisplayed).  If <code>number_of_rows</code> is -1, then the fixed height is unset, and\nthe height is determined by the properties again.</p>",
+            "kind": "method",
+            "name": "set_fixed_height_from_font",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "number_of_rows",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "CellRendererText",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "align-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Specifies how to align the lines of text with respect to each other.</p><p>Note that this property describes how to align the lines of text in\ncase there are several of them. The \"xalign\" property of <span data-xref=\"Gtk.CellRenderer\"/>,\non the other hand, sets the horizontal alignment of the whole text.</p>",
+            "kind": "property",
+            "name": "alignment",
+            "type": "Pango.Alignment"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "attributes",
+            "type": "Pango.AttrList"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "background",
+            "type": "String"
+        },
+        {
+            "doc": "<p>Background color as a <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
+            "kind": "property",
+            "name": "background-gdk",
+            "type": "Gdk.Color"
+        },
+        {
+            "doc": "<p>Background color as a <span data-xref=\"Gdk.RGBA\">Gdk.RGBA</span></p>",
+            "kind": "property",
+            "name": "background-rgba",
+            "type": "Gdk.RGBA"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "background-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "editable",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "editable-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Specifies the preferred place to ellipsize the string, if the cell renderer\ndoes not have enough room to display the entire string. Setting it to\n<span data-xref=\"Pango.EllipsizeMode\">Pango.EllipsizeMode</span>.none turns off ellipsizing. See the wrap-width property\nfor another way of making the text fit into a given width.</p>",
+            "kind": "property",
+            "name": "ellipsize",
+            "type": "Pango.EllipsizeMode"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "ellipsize-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "family",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "family-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "font",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "font-desc",
+            "type": "Pango.FontDescription"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "foreground",
+            "type": "String"
+        },
+        {
+            "doc": "<p>Foreground color as a <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
+            "kind": "property",
+            "name": "foreground-gdk",
+            "type": "Gdk.Color"
+        },
+        {
+            "doc": "<p>Foreground color as a <span data-xref=\"Gdk.RGBA\">Gdk.RGBA</span></p>",
+            "kind": "property",
+            "name": "foreground-rgba",
+            "type": "Gdk.RGBA"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "foreground-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "language",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "language-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "markup",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The desired maximum width of the cell, in characters. If this property\nis set to -1, the width will be calculated automatically.</p><p>For cell renderers that ellipsize or wrap text; this property\ncontrols the maximum reported width of the cell. The\ncell should not receive any greater allocation unless it is\nset to expand in its <span data-xref=\"Gtk.CellLayout\"/> and all of the cell's siblings\nhave received their natural width.</p>",
+            "kind": "property",
+            "name": "max-width-chars",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>The text that will be displayed in the <span data-xref=\"Gtk.CellRenderer\"/> if\n<span data-xref=\"Gtk.CellRendererText-editable\"/> is <code>true</code> and the cell is empty.</p><p>Since 3.6</p>",
+            "kind": "property",
+            "name": "placeholder-text",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "rise",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "rise-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "scale",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "scale-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "single-paragraph-mode",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "size",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "size-points",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "size-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "stretch",
+            "type": "Pango.Stretch"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "stretch-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "strikethrough",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "strikethrough-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "style",
+            "type": "Pango.Style"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "style-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "text",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "underline",
+            "type": "Pango.Underline"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "underline-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "variant",
+            "type": "Pango.Variant"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "variant-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "weight",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "weight-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The desired width of the cell, in characters. If this property is set to\n-1, the width will be calculated automatically, otherwise the cell will\nrequest either 3 characters or the property value, whichever is greater.</p>",
+            "kind": "property",
+            "name": "width-chars",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>Specifies how to break the string into multiple lines, if the cell\nrenderer does not have enough room to display the entire string.\nThis property has no effect unless the wrap-width property is set.</p>",
+            "kind": "property",
+            "name": "wrap-mode",
+            "type": "Pango.WrapMode"
+        },
+        {
+            "doc": "<p>Specifies the minimum width at which the text is wrapped. The wrap-mode property can\nbe used to influence at what character positions the line breaks can be placed.\nSetting wrap-width to -1 turns wrapping off.</p>",
+            "kind": "property",
+            "name": "wrap-width",
+            "type": "Number(gint)"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>This signal is emitted after @renderer has been edited.</p><p>It is the responsibility of the application to update the model\nand store <code>new_text</code> at the position indicated by <code>path</code>.</p>",
+            "kind": "signal",
+            "name": "edited",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "new_text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "edited",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "new_text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

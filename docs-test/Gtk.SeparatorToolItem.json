@@ -1,0 +1,66 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Create a new <span data-xref=\"Gtk.SeparatorToolItem\"/></p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.ToolItem"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.SeparatorToolItem\"/> is a <span data-xref=\"Gtk.ToolItem\"/> that separates groups of other</p>\n<h1>GtkToolItems. Depending on the theme, a <span data-xref=\"Gtk.SeparatorToolItem\"/> will</h1>\n<p>often look like a vertical line on horizontally docked toolbars.</p><p>If the <span data-xref=\"Gtk.Toolbar\"/> child property \u201cexpand\u201d is <code>true</code> and the property\n<span data-xref=\"Gtk.SeparatorToolItem-draw\"/> is <code>false</code>, a <span data-xref=\"Gtk.SeparatorToolItem\"/> will act as\na \u201cspring\u201d that forces other items to the ends of the toolbar.</p><p>Use <span data-xref=\"Gtk.SeparatorToolItem.new\"/> to create a new <span data-xref=\"Gtk.SeparatorToolItem\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns whether <code>item</code> is drawn as a line, or just blank.\nSee <span data-xref=\"Gtk.SeparatorToolItem.set_draw\"/>.</p>",
+            "kind": "method",
+            "name": "get_draw",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Whether <code>item</code> is drawn as a vertical line, or just blank.\nSetting this to <code>false</code> along with <span data-xref=\"Gtk.ToolItem.set_expand\"/> is useful\nto create an item that forces following items to the end of the toolbar.</p>",
+            "kind": "method",
+            "name": "set_draw",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "draw",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "SeparatorToolItem",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "draw",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

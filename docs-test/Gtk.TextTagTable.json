@@ -1,0 +1,223 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.TextTagTable\"/>. The table contains no tags by\ndefault.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TextTagTable"
+            }
+        }
+    ],
+    "doc": "<p>You may wish to begin by reading the\n[text widget conceptual overview][TextWidget]\nwhich gives an overview of all the objects and\ndata types related to the text widget and how they work together.</p><h1>GtkTextTagTables as GtkBuildable</h1><p>The GtkTextTagTable implementation of the GtkBuildable interface\nsupports adding tags by specifying \u201ctag\u201d as the \u201ctype\u201d attribute\nof a &lt;child&gt; element.</p><p>An example of a UI definition fragment specifying tags:\n|[\n&lt;object class=\"GtkTextTagTable\"&gt;\n &lt;child type=\"tag\"&gt;\n   &lt;object class=\"GtkTextTag\"/&gt;\n &lt;/child&gt;\n&lt;/object&gt;\n]|</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Add a tag to the table. The tag is assigned the highest priority\nin the table.</p><p><code>tag</code> must not be in a tag table already, and may not have\nthe same name as an already-added tag.</p>",
+            "kind": "method",
+            "name": "add",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Calls <code>func</code> on each tag in <code>table</code>, with user data <code>data</code>.\nNote that the table may not be modified while iterating\nover it (you can\u2019t add/remove tags).</p>",
+            "kind": "method",
+            "name": "foreach",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "func",
+                    "direction": "in",
+                    "type": "Gtk.TextTagTableForeach"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the size of the table (number of tags)</p>",
+            "kind": "method",
+            "name": "get_size",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Look up a named tag.</p>",
+            "kind": "method",
+            "name": "lookup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.TextTag"
+            }
+        },
+        {
+            "doc": "<p>Remove a tag from the table. If a <span data-xref=\"Gtk.TextBuffer\"/> has <code>table</code> as its tag table,\nthe tag is removed from the buffer. The table\u2019s reference to the tag is\nremoved, so the tag will end up destroyed if you don\u2019t have a reference to\nit.</p>",
+            "kind": "method",
+            "name": "remove",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "TextTagTable",
+    "properties": [],
+    "signals": [
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "tag-added",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "tag-changed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size_changed",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "tag-removed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "tag_added",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "tag_changed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size_changed",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "tag_removed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "tag",
+                    "direction": "in",
+                    "type": "Gtk.TextTag"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

@@ -1,0 +1,358 @@
+{
+    "constructors": [],
+    "doc": "<p>The <span data-xref=\"Gtk.TreeSelection\"/> object is a helper object to manage the selection\nfor a <span data-xref=\"Gtk.TreeView\"/> widget.  The <span data-xref=\"Gtk.TreeSelection\"/> object is\nautomatically created when a new <span data-xref=\"Gtk.TreeView\"/> widget is created, and\ncannot exist independently of this widget.  The primary reason the\n<span data-xref=\"Gtk.TreeSelection\"/> objects exists is for cleanliness of code and API.\nThat is, there is no conceptual reason all these functions could not be\nmethods on the <span data-xref=\"Gtk.TreeView\"/> widget instead of a separate function.</p><p>The <span data-xref=\"Gtk.TreeSelection\"/> object is gotten from a <span data-xref=\"Gtk.TreeView\"/> by calling\n<span data-xref=\"Gtk.TreeView.get_selection\"/>.  It can be manipulated to check the\nselection status of the tree, as well as select and deselect individual\nrows.  Selection is done completely view side.  As a result, multiple\nviews of the same model can have completely different selections.\nAdditionally, you cannot change the selection of a row on the model that\nis not currently displayed by the view without expanding its parents\nfirst.</p><p>One of the important things to remember when monitoring the selection of\na view is that the <span data-xref=\"Gtk.TreeSelection-changed\"/> signal is mostly a hint.\nThat is, it may only emit one signal when a range of rows is selected.\nAdditionally, it may on occasion emit a <span data-xref=\"Gtk.TreeSelection-changed\"/> signal\nwhen nothing has happened (mostly as a result of programmers calling\nselect_row on an already selected row).</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the number of rows that have been selected in @tree.</p>",
+            "kind": "method",
+            "name": "count_selected_rows",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the selection mode for <code>selection</code>. See\n<span data-xref=\"Gtk.TreeSelection.set_mode\"/>.</p>",
+            "kind": "method",
+            "name": "get_mode",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.SelectionMode"
+            }
+        },
+        {
+            "doc": "<p>Returns the current selection function.</p>",
+            "kind": "method",
+            "name": "get_select_function",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TreeSelectionFunc"
+            }
+        },
+        {
+            "doc": "<p>Sets <code>iter</code> to the currently selected node if <code>selection</code> is set to</p>\n<h1>GTK_SELECTION_SINGLE or #GTK_SELECTION_BROWSE.  <code>iter</code> may be NULL if you</h1>\n<p>just want to test if <code>selection</code> has any selected nodes.  <code>model</code> is filled\nwith the current model as a convenience.  This function will not work if you\nuse <code>selection</code> is #GTK_SELECTION_MULTIPLE.</p>",
+            "kind": "method",
+            "name": "get_selected",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "model",
+                    "direction": "out",
+                    "type": "Gtk.TreeModel"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "iter",
+                    "direction": "out",
+                    "type": "Gtk.TreeIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Creates a list of path of all selected rows. Additionally, if you are\nplanning on modifying the model after calling this function, you may\nwant to convert the returned list into a list of #GtkTreeRowReferences.\nTo do this, you can use <span data-xref=\"Gtk.TreeRowReference.new\"/>.</p><p>To free the return value, use:\n|[&lt;!-- language=\"C\" --&gt;\ng_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);\n]|</p>",
+            "kind": "method",
+            "name": "get_selected_rows",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "model",
+                    "direction": "out",
+                    "type": "Gtk.TreeModel"
+                }
+            ],
+            "retval": {
+                "type": "Array(Gtk.TreePath)"
+            }
+        },
+        {
+            "doc": "<p>Returns the tree view associated with <code>selection</code>.</p>",
+            "kind": "method",
+            "name": "get_tree_view",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TreeView"
+            }
+        },
+        {
+            "doc": "<p>Returns the user data for the selection function.</p>",
+            "kind": "method",
+            "name": "get_user_data",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns <code>true</code> if the row at <code>iter</code> is currently selected.</p>",
+            "kind": "method",
+            "name": "iter_is_selected",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TreeIter"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <code>true</code> if the row pointed to by <code>path</code> is currently selected.  If <code>path</code>\ndoes not point to a valid location, <code>false</code> is returned</p>",
+            "kind": "method",
+            "name": "path_is_selected",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Selects all the nodes. <code>selection</code> must be set to #GTK_SELECTION_MULTIPLE\nmode.</p>",
+            "kind": "method",
+            "name": "select_all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Selects the specified iterator.</p>",
+            "kind": "method",
+            "name": "select_iter",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TreeIter"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Select the row at <code>path</code>.</p>",
+            "kind": "method",
+            "name": "select_path",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Selects a range of nodes, determined by <code>start_path</code> and <code>end_path</code> inclusive.\n<code>selection</code> must be set to #GTK_SELECTION_MULTIPLE mode.</p>",
+            "kind": "method",
+            "name": "select_range",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "start_path",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "end_path",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Calls a function for each selected node. Note that you cannot modify\nthe tree or selection from within this function. As a result,\n<span data-xref=\"Gtk.TreeSelection.get_selected_rows\"/> might be more useful.</p>",
+            "kind": "method",
+            "name": "selected_foreach",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "func",
+                    "direction": "in",
+                    "type": "Gtk.TreeSelectionForeachFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the selection mode of the <code>selection</code>.  If the previous type was</p>\n<h1>GTK_SELECTION_MULTIPLE, then the anchor is kept selected, if it was</h1>\n<p>previously selected.</p>",
+            "kind": "method",
+            "name": "set_mode",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.SelectionMode"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the selection function.</p><p>If set, this function is called before any node is selected or unselected,\ngiving some control over which nodes are selected. The select function\nshould return <code>true</code> if the state of the node may be toggled, and <code>false</code>\nif the state of the node should be left unchanged.</p>",
+            "kind": "method",
+            "name": "set_select_function",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "func",
+                    "direction": "in",
+                    "type": "Gtk.TreeSelectionFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "destroy",
+                    "direction": "in",
+                    "type": "GLib.DestroyNotify"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unselects all the nodes.</p>",
+            "kind": "method",
+            "name": "unselect_all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unselects the specified iterator.</p>",
+            "kind": "method",
+            "name": "unselect_iter",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TreeIter"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unselects the row at <code>path</code>.</p>",
+            "kind": "method",
+            "name": "unselect_path",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unselects a range of nodes, determined by <code>start_path</code> and <code>end_path</code>\ninclusive.</p>",
+            "kind": "method",
+            "name": "unselect_range",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "start_path",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "end_path",
+                    "direction": "in",
+                    "type": "Gtk.TreePath"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "TreeSelection",
+    "properties": [
+        {
+            "doc": "<p>Selection mode.\nSee <span data-xref=\"Gtk.TreeSelection.set_mode\"/> for more information on this property.</p>",
+            "kind": "property",
+            "name": "mode",
+            "type": "Gtk.SelectionMode"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Emitted whenever the selection has (possibly) changed. Please note that\nthis signal is mostly a hint.  It may only be emitted once when a range\nof rows are selected, and it may occasionally be emitted when nothing\nhas happened.</p>",
+            "kind": "signal",
+            "name": "changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

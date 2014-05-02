@@ -1,0 +1,556 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.AboutDialog\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The GtkAboutDialog offers a simple way to display information about\na program like its logo, name, copyright, website and license. It is\nalso possible to give credits to the authors, documenters, translators\nand artists who have worked on the program. An about dialog is typicallyx\nopened when the user selects the <code>About</code> option from\nthe <code>Help</code> menu. All parts of the dialog are optional.</p><p>About dialogs often contain links and email addresses. GtkAboutDialog\ndisplays these as clickable links. By default, it calls <span data-xref=\"Gtk.show_uri\"/>\nwhen a user clicks one. The behaviour can be overridden with the\n<span data-xref=\"Gtk.AboutDialog-activate-link\"/> signal.</p><p>To make constructing a GtkAboutDialog as convenient as possible, you can\nuse the function <span data-xref=\"Gtk.show_about_dialog\"/> which constructs and shows a dialog\nand keeps it around so that it can be shown again.</p><p>Note that GTK+ sets a default title of <code>_(\"About %s\")</code> on the dialog\nwindow (where \\%s is replaced by the name of the application, but in\norder to ensure proper translation of the title, applications should\nset the title property explicitly when constructing a GtkAboutDialog,\nas shown in the following example:\n|[&lt;!-- language=\"C\" --&gt;\ngtk_show_about_dialog (NULL,\n                       \"program-name\", \"ExampleCode\",\n                       \"logo\", example_logo,\n                       \"title\" _(\"About ExampleCode\"),\n                       NULL);\n]|</p><p>It is also possible to show a <span data-xref=\"Gtk.AboutDialog\"/> like any other <span data-xref=\"Gtk.Dialog\"/>,\ne.g. using <span data-xref=\"Gtk.Dialog.run\"/>. In this case, you might need to know that\nthe \u201cClose\u201d button returns the #GTK_RESPONSE_CANCEL response id.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Creates a new section in the Credits page.</p>",
+            "kind": "method",
+            "name": "add_credit_section",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "section_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "people",
+                    "direction": "in",
+                    "type": "Array(String)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the string which are displayed in the artists tab\nof the secondary credits dialog.</p>",
+            "kind": "method",
+            "name": "get_artists",
+            "parameters": [],
+            "retval": {
+                "type": "Array(String)"
+            }
+        },
+        {
+            "doc": "<p>Returns the string which are displayed in the authors tab\nof the secondary credits dialog.</p>",
+            "kind": "method",
+            "name": "get_authors",
+            "parameters": [],
+            "retval": {
+                "type": "Array(String)"
+            }
+        },
+        {
+            "doc": "<p>Returns the comments string.</p>",
+            "kind": "method",
+            "name": "get_comments",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the copyright string.</p>",
+            "kind": "method",
+            "name": "get_copyright",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the string which are displayed in the documenters\ntab of the secondary credits dialog.</p>",
+            "kind": "method",
+            "name": "get_documenters",
+            "parameters": [],
+            "retval": {
+                "type": "Array(String)"
+            }
+        },
+        {
+            "doc": "<p>Returns the license information.</p>",
+            "kind": "method",
+            "name": "get_license",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the license set using <span data-xref=\"Gtk.AboutDialog.set_license_type\"/></p>",
+            "kind": "method",
+            "name": "get_license_type",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.License"
+            }
+        },
+        {
+            "doc": "<p>Returns the pixbuf displayed as logo in the about dialog.</p>",
+            "kind": "method",
+            "name": "get_logo",
+            "parameters": [],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Returns the icon name displayed as logo in the about dialog.</p>",
+            "kind": "method",
+            "name": "get_logo_icon_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the program name displayed in the about dialog.</p>",
+            "kind": "method",
+            "name": "get_program_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the translator credits string which is displayed\nin the translators tab of the secondary credits dialog.</p>",
+            "kind": "method",
+            "name": "get_translator_credits",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the version string.</p>",
+            "kind": "method",
+            "name": "get_version",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the website URL.</p>",
+            "kind": "method",
+            "name": "get_website",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the label used for the website link.</p>",
+            "kind": "method",
+            "name": "get_website_label",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the license text in <code>about</code> is\nautomatically wrapped.</p>",
+            "kind": "method",
+            "name": "get_wrap_license",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the strings which are displayed in the artists tab\nof the secondary credits dialog.</p>",
+            "kind": "method",
+            "name": "set_artists",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "artists",
+                    "direction": "in",
+                    "type": "Array(String)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the strings which are displayed in the authors tab\nof the secondary credits dialog.</p>",
+            "kind": "method",
+            "name": "set_authors",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "authors",
+                    "direction": "in",
+                    "type": "Array(String)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the comments string to display in the about dialog.\nThis should be a short string of one or two lines.</p>",
+            "kind": "method",
+            "name": "set_comments",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "comments",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the copyright string to display in the about dialog.\nThis should be a short string of one or two lines.</p>",
+            "kind": "method",
+            "name": "set_copyright",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "copyright",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the strings which are displayed in the documenters tab\nof the secondary credits dialog.</p>",
+            "kind": "method",
+            "name": "set_documenters",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "documenters",
+                    "direction": "in",
+                    "type": "Array(String)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the license information to be displayed in the secondary\nlicense dialog. If <code>license</code> is <code>null</code>, the license button is\nhidden.</p>",
+            "kind": "method",
+            "name": "set_license",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "license",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the license of the application showing the <code>about</code> dialog from a\nlist of known licenses.</p><p>This function overrides the license set using\n<span data-xref=\"Gtk.AboutDialog.set_license\"/>.</p>",
+            "kind": "method",
+            "name": "set_license_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "license_type",
+                    "direction": "in",
+                    "type": "Gtk.License"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the pixbuf to be displayed as logo in the about dialog.\nIf it is <code>null</code>, the default window icon set with\n<span data-xref=\"Gtk.Window.set_default_icon\"/> will be used.</p>",
+            "kind": "method",
+            "name": "set_logo",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "logo",
+                    "direction": "in",
+                    "type": "GdkPixbuf.Pixbuf"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the pixbuf to be displayed as logo in the about dialog.\nIf it is <code>null</code>, the default window icon set with\n<span data-xref=\"Gtk.Window.set_default_icon\"/> will be used.</p>",
+            "kind": "method",
+            "name": "set_logo_icon_name",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "icon_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the name to display in the about dialog.\nIf this is not set, it defaults to <span data-xref=\"GLib.get_application_name\">GLib.get_application_name</span>.</p>",
+            "kind": "method",
+            "name": "set_program_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the translator credits string which is displayed in\nthe translators tab of the secondary credits dialog.</p><p>The intended use for this string is to display the translator\nof the language which is currently used in the user interface.\nUsing gettext(), a simple way to achieve that is to mark the\nstring for translation:\n|[&lt;!-- language=\"C\" --&gt;\n gtk_about_dialog_set_translator_credits (about,\n                                          _(\"translator-credits\"));\n]|\nIt is a good idea to use the customary msgid \u201ctranslator-credits\u201d for this\npurpose, since translators will already know the purpose of that msgid, and\nsince <span data-xref=\"Gtk.AboutDialog\"/> will detect if \u201ctranslator-credits\u201d is untranslated\nand hide the tab.</p>",
+            "kind": "method",
+            "name": "set_translator_credits",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "translator_credits",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the version string to display in the about dialog.</p>",
+            "kind": "method",
+            "name": "set_version",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "version",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the URL to use for the website link.</p>",
+            "kind": "method",
+            "name": "set_website",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "website",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the label to be used for the website link.</p>",
+            "kind": "method",
+            "name": "set_website_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "website_label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the license text in <code>about</code> is\nautomatically wrapped.</p>",
+            "kind": "method",
+            "name": "set_wrap_license",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "wrap_license",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "AboutDialog",
+    "properties": [
+        {
+            "doc": "<p>The people who contributed artwork to the program, as a <code>null</code>-terminated\narray of strings. Each string may contain email addresses and URLs, which\nwill be displayed as links, see the introduction for more details.</p>",
+            "kind": "property",
+            "name": "artists",
+            "type": "Array(String)"
+        },
+        {
+            "doc": "<p>The authors of the program, as a <code>null</code>-terminated array of strings.\nEach string may contain email addresses and URLs, which will be displayed\nas links, see the introduction for more details.</p>",
+            "kind": "property",
+            "name": "authors",
+            "type": "Array(String)"
+        },
+        {
+            "doc": "<p>Comments about the program. This string is displayed in a label\nin the main dialog, thus it should be a short explanation of\nthe main purpose of the program, not a detailed list of features.</p>",
+            "kind": "property",
+            "name": "comments",
+            "type": "String"
+        },
+        {
+            "doc": "<p>Copyright information for the program.</p>",
+            "kind": "property",
+            "name": "copyright",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The people documenting the program, as a <code>null</code>-terminated array of strings.\nEach string may contain email addresses and URLs, which will be displayed\nas links, see the introduction for more details.</p>",
+            "kind": "property",
+            "name": "documenters",
+            "type": "Array(String)"
+        },
+        {
+            "doc": "<p>The license of the program. This string is displayed in a\ntext view in a secondary dialog, therefore it is fine to use\na long multi-paragraph text. Note that the text is only wrapped\nin the text view if the \"wrap-license\" property is set to <code>true</code>;\notherwise the text itself must contain the intended linebreaks.\nWhen setting this property to a non-<code>null</code> value, the\n<span data-xref=\"Gtk.AboutDialog-license-type\"/> property is set to <span data-xref=\"Gtk.License\"/>.custom\nas a side effect.</p>",
+            "kind": "property",
+            "name": "license",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The license of the program, as a value of the %GtkLicense enumeration.</p><p>The <span data-xref=\"Gtk.AboutDialog\"/> will automatically fill out a standard disclaimer\nand link the user to the appropriate online resource for the license\ntext.</p><p>If <span data-xref=\"Gtk.License\"/>.unknown is used, the link used will be the same\nspecified in the <span data-xref=\"Gtk.AboutDialog-website\"/> property.</p><p>If <span data-xref=\"Gtk.License\"/>.custom is used, the current contents of the\n<span data-xref=\"Gtk.AboutDialog-license\"/> property are used.</p><p>For any other <span data-xref=\"Gtk.License\"/> value, the contents of the\n<span data-xref=\"Gtk.AboutDialog-license\"/> property are also set by this property as\na side effect.</p>",
+            "kind": "property",
+            "name": "license-type",
+            "type": "Gtk.License"
+        },
+        {
+            "doc": "<p>A logo for the about box. If it is <code>null</code>, the default window icon\nset with <span data-xref=\"Gtk.Window.set_default_icon\"/> will be used.</p>",
+            "kind": "property",
+            "name": "logo",
+            "type": "GdkPixbuf.Pixbuf"
+        },
+        {
+            "doc": "<p>A named icon to use as the logo for the about box. This property\noverrides the <span data-xref=\"Gtk.AboutDialog-logo\"/> property.</p>",
+            "kind": "property",
+            "name": "logo-icon-name",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The name of the program.\nIf this is not set, it defaults to <span data-xref=\"GLib.get_application_name\">GLib.get_application_name</span>.</p>",
+            "kind": "property",
+            "name": "program-name",
+            "type": "String"
+        },
+        {
+            "doc": "<p>Credits to the translators. This string should be marked as translatable.\nThe string may contain email addresses and URLs, which will be displayed\nas links, see the introduction for more details.</p>",
+            "kind": "property",
+            "name": "translator-credits",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The version of the program.</p>",
+            "kind": "property",
+            "name": "version",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The URL for the link to the website of the program.\nThis should be a string starting with \"http://.</p>",
+            "kind": "property",
+            "name": "website",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The label for the link to the website of the program.</p>",
+            "kind": "property",
+            "name": "website-label",
+            "type": "String"
+        },
+        {
+            "doc": "<p>Whether to wrap the text in the license dialog.</p>",
+            "kind": "property",
+            "name": "wrap-license",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The signal which gets emitted to activate a URI.\nApplications may connect to it to override the default behaviour,\nwhich is to call <span data-xref=\"Gtk.show_uri\"/>.</p>",
+            "kind": "signal",
+            "name": "activate-link",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "uri",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "activate_link",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "uri",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ]
+}

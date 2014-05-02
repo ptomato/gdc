@@ -1,0 +1,50 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RecentChooserWidget\"/> object.  This is an embeddable widget\nused to access the recently used resources list.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RecentChooserWidget\"/> with a specified recent manager.</p><p>This is useful if you have implemented your own recent manager, or if you\nhave a customized instance of a <span data-xref=\"Gtk.RecentManager\"/> object.</p>",
+            "kind": "constructor",
+            "name": "new_for_manager",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "manager",
+                    "direction": "in",
+                    "type": "Gtk.RecentManager"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.RecentChooserWidget\"/> is a widget suitable for selecting recently used\nfiles.  It is the main building block of a <span data-xref=\"Gtk.RecentChooserDialog\"/>.  Most\napplications will only need to use the latter; you can use\n<span data-xref=\"Gtk.RecentChooserWidget\"/> as part of a larger window if you have special needs.</p><p>Note that <span data-xref=\"Gtk.RecentChooserWidget\"/> does not have any methods of its own.\nInstead, you should use the functions that work on a <span data-xref=\"Gtk.RecentChooser\"/>.</p><p>Recently used files are supported since GTK+ 2.10.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        []
+    ],
+    "name": "RecentChooserWidget",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

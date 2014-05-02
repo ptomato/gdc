@@ -1,0 +1,54 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ColorChooserDialog\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "title",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "parent",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.ColorChooserDialog\"/> widget is a dialog for choosing\na color. It implements the <span data-xref=\"Gtk.ColorChooser\"/> interface.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        []
+    ],
+    "name": "ColorChooserDialog",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "show-editor",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

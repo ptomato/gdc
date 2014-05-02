@@ -1,0 +1,82 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Arrow\"/> widget.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "arrow_type",
+                    "direction": "in",
+                    "type": "Gtk.ArrowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>GtkArrow should be used to draw simple arrows that need to point in\none of the four cardinal directions (up, down, left, or right).  The\nstyle of the arrow can be one of shadow in, shadow out, etched in, or\netched out.  Note that these directions and style types may be\namended in versions of GTK+ to come.</p><p>GtkArrow will fill any space alloted to it, but since it is inherited\nfrom <span data-xref=\"Gtk.Misc\"/>, it can be padded and/or aligned, to fill exactly the\nspace the programmer desires.</p><p>Arrows are created with a call to <span data-xref=\"Gtk.Arrow.new\"/>.  The direction or\nstyle of an arrow can be changed after creation by using <span data-xref=\"Gtk.Arrow.set\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "misc"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Sets the direction and style of the <span data-xref=\"Gtk.Arrow\"/>, <code>arrow</code>.</p>",
+            "kind": "method",
+            "name": "set",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "arrow_type",
+                    "direction": "in",
+                    "type": "Gtk.ArrowType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shadow_type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Arrow",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "arrow-type",
+            "type": "Gtk.ArrowType"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "shadow-type",
+            "type": "Gtk.ShadowType"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

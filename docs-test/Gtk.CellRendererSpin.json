@@ -1,0 +1,53 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CellRendererSpin\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CellRenderer"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.CellRendererSpin\"/> renders text in a cell like <span data-xref=\"Gtk.CellRendererText\"/> from\nwhich it is derived. But while <span data-xref=\"Gtk.CellRendererText\"/> offers a simple entry to\nedit the text, <span data-xref=\"Gtk.CellRendererSpin\"/> offers a <span data-xref=\"Gtk.SpinButton\"/> widget. Of course,\nthat means that the text has to be parseable as a floating point number.</p><p>The range of the spinbutton is taken from the adjustment property of the\ncell renderer, which can be set explicitly or mapped to a column in the\ntree model, like all properties of cell renders. <span data-xref=\"Gtk.CellRendererSpin\"/>\nalso has properties for the <span data-xref=\"Gtk.CellRendererSpin-climb-rate\"/> and the number\nof <span data-xref=\"Gtk.CellRendererSpin-digits\"/> to display. Other <span data-xref=\"Gtk.SpinButton\"/> properties\ncan be set in a handler for the <span data-xref=\"Gtk.CellRenderer-editing-started\"/> signal.</p><p>The <span data-xref=\"Gtk.CellRendererSpin\"/> cell renderer was added in GTK+ 2.10.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        []
+    ],
+    "name": "CellRendererSpin",
+    "properties": [
+        {
+            "doc": "<p>The adjustment that holds the value of the spinbutton.\nThis must be non-<code>null</code> for the cell renderer to be editable.</p>",
+            "kind": "property",
+            "name": "adjustment",
+            "type": "Gtk.Adjustment"
+        },
+        {
+            "doc": "<p>The acceleration rate when you hold down a button.</p>",
+            "kind": "property",
+            "name": "climb-rate",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "<p>The number of decimal places to display.</p>",
+            "kind": "property",
+            "name": "digits",
+            "type": "Number(guint)"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

@@ -1,0 +1,219 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Layout\"/>. Unless you have a specific adjustment\nyou\u2019d like the layout to use for scrolling, pass <code>null</code> for\n<code>hadjustment</code> and <code>vadjustment</code>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "hadjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "vadjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.Layout\"/> is similar to <span data-xref=\"Gtk.DrawingArea\"/> in that it\u2019s a \u201cblank slate\u201d\nand doesn\u2019t do anything but paint a blank background by default. It's\ndifferent in that it supports scrolling natively (you can add it to a\n<span data-xref=\"Gtk.ScrolledWindow\"/>), and it can contain child widgets, since it\u2019s a\n<span data-xref=\"Gtk.Container\"/>. However if you\u2019re just going to draw, a <span data-xref=\"Gtk.DrawingArea\"/>\nis a better choice since it has lower overhead.</p><p>When handling expose events on a <span data-xref=\"Gtk.Layout\"/>, you must draw to\nGTK_LAYOUT (layout)-&gt;bin_window, rather than to\nGTK_WIDGET (layout)-&gt;window, as you would for a drawing\narea.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "container"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Retrieve the bin window of the layout used for drawing operations.</p>",
+            "kind": "method",
+            "name": "get_bin_window",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Window"
+            }
+        },
+        {
+            "doc": "<p>This function should only be called after the layout has been\nplaced in a <span data-xref=\"Gtk.ScrolledWindow\"/> or otherwise configured for\nscrolling. It returns the <span data-xref=\"Gtk.Adjustment\"/> used for communication\nbetween the horizontal scrollbar and <code>layout</code>.</p><p>See <span data-xref=\"Gtk.ScrolledWindow\"/>, <span data-xref=\"Gtk.Scrollbar\"/>, <span data-xref=\"Gtk.Adjustment\"/> for details.</p>",
+            "kind": "method",
+            "name": "get_hadjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Gets the size that has been set on the layout, and that determines\nthe total extents of the layout\u2019s scrollbar area. See\ngtk_layout_set_size ().</p>",
+            "kind": "method",
+            "name": "get_size",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "width",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "height",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This function should only be called after the layout has been\nplaced in a <span data-xref=\"Gtk.ScrolledWindow\"/> or otherwise configured for\nscrolling. It returns the <span data-xref=\"Gtk.Adjustment\"/> used for communication\nbetween the vertical scrollbar and <code>layout</code>.</p><p>See <span data-xref=\"Gtk.ScrolledWindow\"/>, <span data-xref=\"Gtk.Scrollbar\"/>, <span data-xref=\"Gtk.Adjustment\"/> for details.</p>",
+            "kind": "method",
+            "name": "get_vadjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Moves a current child of <code>layout</code> to a new position.</p>",
+            "kind": "method",
+            "name": "move",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child_widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>child_widget</code> to <code>layout</code>, at position (<code>x</code>,<code>y</code>).\n<code>layout</code> becomes the new parent container of <code>child_widget</code>.</p>",
+            "kind": "method",
+            "name": "put",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child_widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the horizontal scroll adjustment for the layout.</p><p>See <span data-xref=\"Gtk.ScrolledWindow\"/>, <span data-xref=\"Gtk.Scrollbar\"/>, <span data-xref=\"Gtk.Adjustment\"/> for details.</p>",
+            "kind": "method",
+            "name": "set_hadjustment",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the size of the scrollable area of the layout.</p>",
+            "kind": "method",
+            "name": "set_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the vertical scroll adjustment for the layout.</p><p>See <span data-xref=\"Gtk.ScrolledWindow\"/>, <span data-xref=\"Gtk.Scrollbar\"/>, <span data-xref=\"Gtk.Adjustment\"/> for details.</p>",
+            "kind": "method",
+            "name": "set_vadjustment",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Layout",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "height",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "width",
+            "type": "Number(guint)"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

@@ -1,0 +1,183 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new file-selecting button widget.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "title",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "action",
+                    "direction": "in",
+                    "type": "Gtk.FileChooserAction"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a <span data-xref=\"Gtk.FileChooserButton\"/> widget which uses <code>dialog</code> as its\nfile-picking window.</p><p>Note that <code>dialog</code> must be a <span data-xref=\"Gtk.Dialog\"/> (or subclass) which\nimplements the <span data-xref=\"Gtk.FileChooser\"/> interface and must not have\n<span data-xref=\"Gtk.DialogFlags\"/>.destroy_with_parent set.</p><p>Also note that the dialog needs to have its confirmative button\nadded with response <span data-xref=\"Gtk.ResponseType\"/>.accept or <span data-xref=\"Gtk.ResponseType\"/>.ok in\norder for the button to take over the file selected in the dialog.</p>",
+            "kind": "constructor",
+            "name": "new_with_dialog",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "dialog",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.FileChooserButton\"/> is a widget that lets the user select a\nfile.  It implements the <span data-xref=\"Gtk.FileChooser\"/> interface.  Visually, it is a\nfile name with a button to bring up a <span data-xref=\"Gtk.FileChooserDialog\"/>.\nThe user can then use that dialog to change the file associated with\nthat button.  This widget does not support setting the\n<span data-xref=\"Gtk.FileChooser-select-multiple\"/> property to <code>true</code>.</p><h2>Create a button to let the user select a file in /etc</h2><p>|[&lt;!-- language=\"C\" --&gt;\n{\n  GtkWidget *button;</p><p>button = gtk_file_chooser_button_new (_(\"Select a file\"),\n                                        GTK_FILE_CHOOSER_ACTION_OPEN);\n  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (button),\n                                       \"/etc\");\n}\n]|</p><p>The <span data-xref=\"Gtk.FileChooserButton\"/> supports the #GtkFileChooserActions\n<span data-xref=\"Gtk.FileChooserAction\"/>.open and <span data-xref=\"Gtk.FileChooserAction\"/>.select_folder.</p><p>&gt; The <span data-xref=\"Gtk.FileChooserButton\"/> will ellipsize the label, and will thus\n&gt; request little horizontal space.  To give the button more space,\n&gt; you should call <span data-xref=\"Gtk.Widget.get_preferred_size\"/>,\n&gt; <span data-xref=\"Gtk.FileChooserButton.set_width_chars\"/>, or pack the button in\n&gt; such a way that other interface elements give space to the\n&gt; widget.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns whether the button grabs focus when it is clicked with the mouse.\nSee <span data-xref=\"Gtk.FileChooserButton.set_focus_on_click\"/>.</p>",
+            "kind": "method",
+            "name": "get_focus_on_click",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the title of the browse dialog used by <code>button</code>. The returned value\nshould not be modified or freed.</p>",
+            "kind": "method",
+            "name": "get_title",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the width in characters of the <code>button</code> widget\u2019s entry and/or label.</p>",
+            "kind": "method",
+            "name": "get_width_chars",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the button will grab focus when it is clicked with the mouse.\nMaking mouse clicks not grab focus is useful in places like toolbars where\nyou don\u2019t want the keyboard focus removed from the main area of the\napplication.</p>",
+            "kind": "method",
+            "name": "set_focus_on_click",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "focus_on_click",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Modifies the <code>title</code> of the browse dialog used by <code>button</code>.</p>",
+            "kind": "method",
+            "name": "set_title",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "title",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the width (in characters) that <code>button</code> will use to <code>n_chars</code>.</p>",
+            "kind": "method",
+            "name": "set_width_chars",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "n_chars",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "FileChooserButton",
+    "properties": [
+        {
+            "doc": "<p>Instance of the <span data-xref=\"Gtk.FileChooserDialog\"/> associated with the button.</p>",
+            "kind": "property",
+            "name": "dialog",
+            "type": "Gtk.FileChooser"
+        },
+        {
+            "doc": "<p>Whether the <span data-xref=\"Gtk.FileChooserButton\"/> button grabs focus when it is clicked\nwith the mouse.</p>",
+            "kind": "property",
+            "name": "focus-on-click",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Title to put on the <span data-xref=\"Gtk.FileChooserDialog\"/> associated with the button.</p>",
+            "kind": "property",
+            "name": "title",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The width of the entry and label inside the button, in characters.</p>",
+            "kind": "property",
+            "name": "width-chars",
+            "type": "Number(gint)"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::file-set signal is emitted when the user selects a file.</p><p>Note that this signal is only emitted when the user\nchanges the file.</p>",
+            "kind": "signal",
+            "name": "file-set",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "file_set",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

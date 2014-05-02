@@ -1,0 +1,204 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ImageMenuItem\"/> with an empty label.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ImageMenuItem\"/> containing the image and text from a\nstock item. Some stock ids have preprocessor macros like #GTK_STOCK_OK\nand #GTK_STOCK_APPLY.</p><p>If you want this menu item to have changeable accelerators, then pass in\n<code>null</code> for accel_group. Next call <span data-xref=\"Gtk.MenuItem.set_accel_path\"/> with an\nappropriate path for the menu item, use <span data-xref=\"Gtk.stock_lookup\"/> to look up the\nstandard accelerator for the stock item, and if one is found, call\n<span data-xref=\"Gtk.AccelMap.add_entry\"/> to register it.</p>",
+            "kind": "constructor",
+            "name": "new_from_stock",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "stock_id",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "accel_group",
+                    "direction": "in",
+                    "type": "Gtk.AccelGroup"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ImageMenuItem\"/> containing a label.</p>",
+            "kind": "constructor",
+            "name": "new_with_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ImageMenuItem\"/> containing a label. The label\nwill be created using <span data-xref=\"Gtk.Label.new_with_mnemonic\"/>, so underscores\nin <code>label</code> indicate the mnemonic for the menu item.</p>",
+            "kind": "constructor",
+            "name": "new_with_mnemonic",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A GtkImageMenuItem is a menu item which has an icon next to the text label.</p><p>Note that the user can disable display of menu icons, so make sure to still\nfill in the text label.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "menu_item"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns whether the menu item will ignore the <span data-xref=\"Gtk.Settings-gtk-menu-images\"/>\nsetting and always show the image, if available.</p>",
+            "kind": "method",
+            "name": "get_always_show_image",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the widget that is currently set as the image of <code>image_menu_item</code>.\nSee <span data-xref=\"Gtk.ImageMenuItem.set_image\"/>.</p>",
+            "kind": "method",
+            "name": "get_image",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Checks whether the label set in the menuitem is used as a\nstock id to select the stock item for the item.</p>",
+            "kind": "method",
+            "name": "get_use_stock",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Specifies an <code>accel_group</code> to add the menu items accelerator to\n(this only applies to stock items so a stock item must already\nbe set, make sure to call <span data-xref=\"Gtk.ImageMenuItem.set_use_stock\"/>\nand <span data-xref=\"Gtk.MenuItem.set_label\"/> with a valid stock item first).</p><p>If you want this menu item to have changeable accelerators then\nyou shouldnt need this (see <span data-xref=\"Gtk.ImageMenuItem.new_from_stock\"/>).</p>",
+            "kind": "method",
+            "name": "set_accel_group",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_group",
+                    "direction": "in",
+                    "type": "Gtk.AccelGroup"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>true</code>, the menu item will ignore the <span data-xref=\"Gtk.Settings-gtk-menu-images\"/>\nsetting and always show the image, if available.</p><p>Use this property if the menuitem would be useless or hard to use\nwithout the image.</p>",
+            "kind": "method",
+            "name": "set_always_show_image",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "always_show",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the image of <code>image_menu_item</code> to the given widget.\nNote that it depends on the show-menu-images setting whether\nthe image will be displayed or not.</p>",
+            "kind": "method",
+            "name": "set_image",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "image",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>true</code>, the label set in the menuitem is used as a\nstock id to select the stock item for the item.</p>",
+            "kind": "method",
+            "name": "set_use_stock",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "use_stock",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "ImageMenuItem",
+    "properties": [
+        {
+            "doc": "<p>The Accel Group to use for stock accelerator keys</p>",
+            "kind": "property",
+            "name": "accel-group",
+            "type": "Gtk.AccelGroup"
+        },
+        {
+            "doc": "<p>If <code>true</code>, the menu item will always show the image, if available.</p><p>Use this property only if the menuitem would be useless or hard to use\nwithout the image.</p>",
+            "kind": "property",
+            "name": "always-show-image",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Child widget to appear next to the menu text.</p>",
+            "kind": "property",
+            "name": "image",
+            "type": "Gtk.Widget"
+        },
+        {
+            "doc": "<p>If <code>true</code>, the label set in the menuitem is used as a\nstock id to select the stock item for the item.</p>",
+            "kind": "property",
+            "name": "use-stock",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

@@ -1,0 +1,147 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuToolButton\"/> using <code>icon_widget</code> as icon and\n<code>label</code> as label.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "icon_widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.ToolItem"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuToolButton\"/>.\nThe new <span data-xref=\"Gtk.MenuToolButton\"/> will contain an icon and label from\nthe stock item indicated by <code>stock_id</code>.</p>",
+            "kind": "constructor",
+            "name": "new_from_stock",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "stock_id",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.ToolItem"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.MenuToolButton\"/> is a <span data-xref=\"Gtk.ToolItem\"/> that contains a button and\na small additional button with an arrow. When clicked, the arrow\nbutton pops up a dropdown menu.</p><p>Use <span data-xref=\"Gtk.MenuToolButton.new\"/> to create a new\n<span data-xref=\"Gtk.MenuToolButton\"/>.</p><h1>GtkMenuToolButton as GtkBuildable</h1><p>The GtkMenuToolButton implementation of the GtkBuildable interface\nsupports adding a menu by specifying \u201cmenu\u201d as the \u201ctype\u201d attribute\nof a &lt;child&gt; element.</p><p>An example for a UI definition fragment with menus:\n|[\n&lt;object class=\"GtkMenuToolButton\"&gt;\n  &lt;child type=\"menu\"&gt;\n    &lt;object class=\"GtkMenu\"/&gt;\n  &lt;/child&gt;\n&lt;/object&gt;\n]|</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Gets the <span data-xref=\"Gtk.Menu\"/> associated with <span data-xref=\"Gtk.MenuToolButton\"/>.</p>",
+            "kind": "method",
+            "name": "get_menu",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Sets the tooltip markup text to be used as tooltip for the arrow button\nwhich pops up the menu.  See <span data-xref=\"Gtk.ToolItem.set_tooltip_text\"/> for setting\na tooltip on the whole <span data-xref=\"Gtk.MenuToolButton\"/>.</p>",
+            "kind": "method",
+            "name": "set_arrow_tooltip_markup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "markup",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the tooltip text to be used as tooltip for the arrow button which\npops up the menu.  See <span data-xref=\"Gtk.ToolItem.set_tooltip_text\"/> for setting a tooltip\non the whole <span data-xref=\"Gtk.MenuToolButton\"/>.</p>",
+            "kind": "method",
+            "name": "set_arrow_tooltip_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Menu\"/> that is popped up when the user clicks on the arrow.\nIf <code>menu</code> is NULL, the arrow button becomes insensitive.</p>",
+            "kind": "method",
+            "name": "set_menu",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "menu",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "MenuToolButton",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "menu",
+            "type": "Gtk.Menu"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::show-menu signal is emitted before the menu is shown.</p><p>It can be used to populate the menu on demand, using\n<span data-xref=\"Gtk.MenuToolButton.set_menu\"/>.</p><p>Note that even if you populate the menu dynamically in this way,\nyou must set an empty menu on the <span data-xref=\"Gtk.MenuToolButton\"/> beforehand,\nsince the arrow is made insensitive if the menu is not set.</p>",
+            "kind": "signal",
+            "name": "show-menu",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "show_menu",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

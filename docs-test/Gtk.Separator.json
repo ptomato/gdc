@@ -1,0 +1,41 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Separator\"/> with the given orientation.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>GtkSeparator is a horizontal or vertical separator widget, depending on the\nvalue of the <span data-xref=\"Gtk.Orientable-orientation\"/> property, used to group the widgets within a\nwindow. It displays a line with a shadow to make it appear sunken into the\ninterface.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "widget"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        []
+    ],
+    "name": "Separator",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

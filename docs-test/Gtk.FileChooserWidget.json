@@ -1,0 +1,155 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.FileChooserWidget\"/>.  This is a file chooser widget that can\nbe embedded in custom windows, and it is the same widget that is used by\n<span data-xref=\"Gtk.FileChooserDialog\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "action",
+                    "direction": "in",
+                    "type": "Gtk.FileChooserAction"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>Short_description: A file chooser widget\n<span data-xref=\"Gtk.FileChooserWidget\"/> is a widget for choosing files.\nIt exposes the <span data-xref=\"Gtk.FileChooser\"/> interface, and you should\nuse the methods of this interface to interact with the\nwidget.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        []
+    ],
+    "name": "FileChooserWidget",
+    "properties": [],
+    "signals": [
+        {
+            "doc": "<p>The ::desktop-folder signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser show the user's Desktop\nfolder in the file list.</p><p>The default binding for this signal is <code>Alt + D</code>.</p>",
+            "kind": "signal",
+            "name": "desktop-folder",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::down-folder signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser go to a child of the\ncurrent folder in the file hierarchy.  The subfolder that\nwill be used is displayed in the path bar widget of the file\nchooser.  For example, if the path bar is showing\n\"/foo/bar/baz\", with bar currently displayed, then this will cause\nthe file chooser to switch to the \"baz\" subfolder.</p><p>The default binding for this signal is <code>Alt + Down</code>.</p>",
+            "kind": "signal",
+            "name": "down-folder",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::home-folder signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser show the user's home\nfolder in the file list.</p><p>The default binding for this signal is <code>Alt + Home</code>.</p>",
+            "kind": "signal",
+            "name": "home-folder",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::location-popup signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser show a \"Location\"\nprompt which the user can use to manually type the name of\nthe file he wishes to select.</p><p>The default bindings for this signal are\n<code>Control + L</code>\nwith a <code>path</code> string of \"\" (the empty\nstring).  It is also bound to <code>/</code> with a\n<code>path</code> string of \"<code>/</code>\"\n(a slash):  this lets you type <code>/</code> and\nimmediately type a path name.  On Unix systems, this is bound to\n<code>~</code> (tilde) with a <code>path</code> string\nof \"~\" itself for access to home directories.</p>",
+            "kind": "signal",
+            "name": "location-popup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::location-popup-on-paste signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser show a \"Location\"\nprompt when the user pastes <span data-xref=\"Gtk.FileChooserWidget\"/>.</p><p>The default binding for this signal is <code>Control + V</code>.</p>",
+            "kind": "signal",
+            "name": "location-popup-on-paste",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::location-toggle-popup signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to toggle the visibility of a \"Location\"\nprompt which the user can use to manually type the name of\nthe file he wishes to select.</p><p>The default binding for this signal is <code>Control + L</code>.</p>",
+            "kind": "signal",
+            "name": "location-toggle-popup",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::quick-bookmark signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser switch to the bookmark\nspecified in the <code>bookmark_index</code> parameter.\nFor example, if you have three bookmarks, you can pass 0, 1, 2 to\nthis signal to switch to each of them, respectively.</p><p>The default binding for this signal is <code>Alt + 1</code>, <code>Alt + 2</code>,\netc. until <code>Alt + 0</code>.  Note that in the default binding, that\n<code>Alt + 1</code> is actually defined to switch to the bookmark at index\n0, and so on successively; <code>Alt + 0</code> is defined to switch to the\nbookmark at index 10.</p>",
+            "kind": "signal",
+            "name": "quick-bookmark",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "bookmark_index",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::recent-shortcut signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser show the Recent location.</p><p>The default binding for this signal is <code>Alt + R</code>.</p>",
+            "kind": "signal",
+            "name": "recent-shortcut",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::search-shortcut signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser show the search entry.</p><p>The default binding for this signal is <code>Alt + S</code>.</p>",
+            "kind": "signal",
+            "name": "search-shortcut",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::show-hidden signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser display hidden files.</p><p>The default binding for this signal is <code>Control + H</code>.</p>",
+            "kind": "signal",
+            "name": "show-hidden",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::up-folder signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user asks for it.</p><p>This is used to make the file chooser go to the parent of\nthe current folder in the file hierarchy.</p><p>The default binding for this signal is <code>Alt + Up</code>.</p>",
+            "kind": "signal",
+            "name": "up-folder",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": []
+}

@@ -1,0 +1,151 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ToggleAction\"/> object. To add the action to\na <span data-xref=\"Gtk.ActionGroup\"/> and set the accelerator for the action,\ncall <span data-xref=\"Gtk.ActionGroup.add_action_with_accel\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "tooltip",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "stock_id",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.ToggleAction"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.ToggleAction\"/> corresponds roughly to a <span data-xref=\"Gtk.CheckMenuItem\"/>. It has an\n\u201cactive\u201d state specifying whether the action has been checked or not.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "private_data"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the checked state of the toggle action.</p>",
+            "kind": "method",
+            "name": "get_active",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the action should have proxies like a radio action.</p>",
+            "kind": "method",
+            "name": "get_draw_as_radio",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the checked state on the toggle action.</p>",
+            "kind": "method",
+            "name": "set_active",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "is_active",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the action should have proxies like a radio action.</p>",
+            "kind": "method",
+            "name": "set_draw_as_radio",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "draw_as_radio",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits the \u201ctoggled\u201d signal on the toggle action.</p>",
+            "kind": "method",
+            "name": "toggled",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "ToggleAction",
+    "properties": [
+        {
+            "doc": "<p>Whether the toggle action should be active.</p>",
+            "kind": "property",
+            "name": "active",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Whether the proxies for this action look like radio action proxies.</p><p>This is an appearance property and thus only applies if\n<span data-xref=\"Gtk.Activatable-use-action-appearance\"/> is <code>true</code>.</p>",
+            "kind": "property",
+            "name": "draw-as-radio",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Should be connected if you wish to perform an action\nwhenever the <span data-xref=\"Gtk.ToggleAction\"/> state is changed.</p>",
+            "kind": "signal",
+            "name": "toggled",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "<p>Emits the \u201ctoggled\u201d signal on the toggle action.</p>",
+            "kind": "vfunc",
+            "name": "toggled",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

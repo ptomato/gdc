@@ -1,0 +1,1152 @@
+{
+    "constructors": [],
+    "doc": "<p><span data-xref=\"Gtk.ThemingEngine\"/> is the object used for rendering themed content\nin GTK+ widgets. Even though GTK+ has a default implementation,\nit can be overridden in CSS files by enforcing a <span data-xref=\"Gtk.ThemingEngine\"/>\nobject to be loaded as a module.</p><p>In order to implement a theming engine, a <span data-xref=\"Gtk.ThemingEngine\"/> subclass\nmust be created, alongside the CSS file that will reference it, the\ntheming engine would be created as an .so library, and installed in\n$(gtk-modules-dir)/theming-engines/.</p><h1>GtkThemingEngines have limited access to the object they are</h1>\n<p>rendering, the <span data-xref=\"Gtk.ThemingEngine\"/> API has read-only accessors to the\nstyle information contained in the rendered object\u2019s <span data-xref=\"Gtk.StyleContext\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_object"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Retrieves several style property values that apply to the currently\nrendered element.</p>",
+            "kind": "method",
+            "name": "get",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the background color for a given state.</p>",
+            "kind": "method",
+            "name": "get_background_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "out",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the border for a given state as a <span data-xref=\"Gtk.Border\"/>.</p>",
+            "kind": "method",
+            "name": "get_border",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "border",
+                    "direction": "out",
+                    "type": "Gtk.Border"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the border color for a given state.</p>",
+            "kind": "method",
+            "name": "get_border_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "out",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the foreground color for a given state.</p>",
+            "kind": "method",
+            "name": "get_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "out",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the widget direction used for rendering.</p>",
+            "kind": "method",
+            "name": "get_direction",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.TextDirection"
+            }
+        },
+        {
+            "doc": "<p>Returns the font description for a given state.</p>",
+            "kind": "method",
+            "name": "get_font",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateFlags"
+                }
+            ],
+            "retval": {
+                "type": "Pango.FontDescription"
+            }
+        },
+        {
+            "doc": "<p>Returns the widget direction used for rendering.</p>",
+            "kind": "method",
+            "name": "get_junction_sides",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.JunctionSides"
+            }
+        },
+        {
+            "doc": "<p>Gets the margin for a given state as a <span data-xref=\"Gtk.Border\"/>.</p>",
+            "kind": "method",
+            "name": "get_margin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "margin",
+                    "direction": "out",
+                    "type": "Gtk.Border"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the padding for a given state as a <span data-xref=\"Gtk.Border\"/>.</p>",
+            "kind": "method",
+            "name": "get_padding",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "padding",
+                    "direction": "out",
+                    "type": "Gtk.Border"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the widget path used for style matching.</p>",
+            "kind": "method",
+            "name": "get_path",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.WidgetPath"
+            }
+        },
+        {
+            "doc": "<p>Gets a property value as retrieved from the style settings that apply\nto the currently rendered element.</p>",
+            "kind": "method",
+            "name": "get_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "property",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "out",
+                    "type": "Any"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> to which <code>engine</code> currently rendering to.</p>",
+            "kind": "method",
+            "name": "get_screen",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Screen"
+            }
+        },
+        {
+            "doc": "<p>returns the state used when rendering.</p>",
+            "kind": "method",
+            "name": "get_state",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.StateFlags"
+            }
+        },
+        {
+            "doc": "<p>Retrieves several widget style properties from <code>engine</code> according\nto the currently rendered content\u2019s style.</p>",
+            "kind": "method",
+            "name": "get_style",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the value for a widget style property.</p>",
+            "kind": "method",
+            "name": "get_style_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Any"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves several widget style properties from <code>engine</code> according to the\ncurrently rendered content\u2019s style.</p>",
+            "kind": "method",
+            "name": "get_style_valist",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "args",
+                    "direction": "in",
+                    "type": "va_list"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves several style property values that apply to the currently\nrendered element.</p>",
+            "kind": "method",
+            "name": "get_valist",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "args",
+                    "direction": "in",
+                    "type": "va_list"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns <code>true</code> if the currently rendered contents have\ndefined the given class name.</p>",
+            "kind": "method",
+            "name": "has_class",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "style_class",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <code>true</code> if the currently rendered contents have the\nregion defined. If @flags_return is not <code>null</code>, it is set\nto the flags affecting the region.</p>",
+            "kind": "method",
+            "name": "has_region",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "style_region",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "flags",
+                    "direction": "out",
+                    "type": "Gtk.RegionFlags"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Looks up and resolves a color name in the current style\u2019s color map.</p>",
+            "kind": "method",
+            "name": "lookup_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "out",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <code>true</code> if there is a transition animation running for the\ncurrent region (see <span data-xref=\"Gtk.StyleContext.push_animatable_region\"/>).</p><p>If <code>progress</code> is not <code>null</code>, the animation progress will be returned\nthere, 0.0 means the state is closest to being <code>false</code>, while 1.0 means\nit\u2019s closest to being <code>true</code>. This means transition animations will\nrun from 0 to 1 when <code>state</code> is being set to <code>true</code> and from 1 to 0 when\nit\u2019s being set to <code>false</code>.</p>",
+            "kind": "method",
+            "name": "state_is_running",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "progress",
+                    "direction": "out",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        [
+            {
+                "doc": "<p>Loads and initializes a theming engine module from the\nstandard directories.</p>",
+                "kind": "function",
+                "name": "load",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "name",
+                        "direction": "in",
+                        "type": "String"
+                    }
+                ],
+                "retval": {
+                    "type": "Gtk.ThemingEngine"
+                }
+            },
+            {
+                "doc": "<p>Registers a property so it can be used in the CSS file format,\non the CSS file the property will look like\n\"-${<code>name_space</code>}-${property_name}\". being\n${property_name} the given to <code>pspec</code>. <code>name_space</code> will usually\nbe the theme engine name.</p><p>For any type a <code>parse_func</code> may be provided, being this function\nused for turning any property value (between \u201c:\u201d and \u201c;\u201d) in\nCSS to the <span data-xref=\"GObject.Value\">GObject.Value</span> needed. For basic types there is already\nbuiltin parsing support, so <code>null</code> may be provided for these\ncases.</p><p>Engines must ensure property registration happens exactly once,\nusually GTK+ deals with theming engines as singletons, so this\nshould be guaranteed to happen once, but bear this in mind\nwhen creating #GtkThemeEngines yourself.</p><p>In order to make use of the custom registered properties in\nthe CSS file, make sure the engine is loaded first by specifying\nthe engine property, either in a previous rule or within the same\none.\n|[\n* {\n    engine: someengine;\n    -SomeEngine-custom-property: 2;\n}\n]|</p>",
+                "kind": "function",
+                "name": "register_property",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "name_space",
+                        "direction": "in",
+                        "type": "String"
+                    },
+                    {
+                        "allow_none": false,
+                        "argname": "parse_func",
+                        "direction": "in",
+                        "type": "Gtk.StylePropertyParser"
+                    },
+                    {
+                        "allow_none": false,
+                        "argname": "pspec",
+                        "direction": "in",
+                        "type": "GObject.ParamSpec"
+                    }
+                ],
+                "retval": {
+                    "type": "void"
+                }
+            }
+        ]
+    ],
+    "name": "ThemingEngine",
+    "properties": [
+        {
+            "doc": "<p>The theming engine name, this name will be used when registering\ncustom properties, for a theming engine named \"Clearlooks\" registering\na \"glossy\" custom property, it could be referenced in the CSS file as</p><p>|[\n-Clearlooks-glossy: true;\n]|</p>",
+            "kind": "property",
+            "name": "name",
+            "type": "String"
+        }
+    ],
+    "signals": [],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_activity",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_arrow",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "angle",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_background",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_check",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_expander",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_extension",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gap_side",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_focus",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_frame",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_frame_gap",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "gap_side",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "xy0_gap",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "xy1_gap",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_handle",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_icon",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pixbuf",
+                    "direction": "in",
+                    "type": "GdkPixbuf.Pixbuf"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_icon_pixbuf",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "source",
+                    "direction": "in",
+                    "type": "Gtk.IconSource"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Gtk.IconSize"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_icon_surface",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "surface",
+                    "direction": "in",
+                    "type": "cairo.Surface"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_layout",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "layout",
+                    "direction": "in",
+                    "type": "Pango.Layout"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_line",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x0",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y0",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x1",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y1",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_option",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "render_slider",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

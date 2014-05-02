@@ -1,0 +1,161 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CellRendererAccel\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CellRenderer"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.CellRendererAccel\"/> displays a keyboard accelerator (i.e. a\nkey combination like <code>Control + a</code>.\nIf the cell renderer is editable, the accelerator can be changed by\nsimply typing the new combination.</p><p>The <span data-xref=\"Gtk.CellRendererAccel\"/> cell renderer was added in GTK+ 2.10.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        []
+    ],
+    "name": "CellRendererAccel",
+    "properties": [
+        {
+            "doc": "<p>The keyval of the accelerator.</p>",
+            "kind": "property",
+            "name": "accel-key",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "<p>Determines if the edited accelerators are GTK+ accelerators. If\nthey are, consumed modifiers are suppressed, only accelerators\naccepted by GTK+ are allowed, and the accelerators are rendered\nin the same way as they are in menus.</p>",
+            "kind": "property",
+            "name": "accel-mode",
+            "type": "Gtk.CellRendererAccelMode"
+        },
+        {
+            "doc": "<p>The modifier mask of the accelerator.</p>",
+            "kind": "property",
+            "name": "accel-mods",
+            "type": "Gdk.ModifierType"
+        },
+        {
+            "doc": "<p>The hardware keycode of the accelerator. Note that the hardware keycode is\nonly relevant if the key does not have a keyval. Normally, the keyboard\nconfiguration should assign keyvals to all keys.</p>",
+            "kind": "property",
+            "name": "keycode",
+            "type": "Number(guint)"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Gets emitted when the user has removed the accelerator.</p>",
+            "kind": "signal",
+            "name": "accel-cleared",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path_string",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets emitted when the user has selected a new accelerator.</p>",
+            "kind": "signal",
+            "name": "accel-edited",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path_string",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_key",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_mods",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "hardware_keycode",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "accel_cleared",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path_string",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "accel_edited",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path_string",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_key",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_mods",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "hardware_keycode",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

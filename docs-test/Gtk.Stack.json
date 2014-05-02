@@ -1,0 +1,288 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Stack\"/> container.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The GtkStack widget is a container which only shows\none of its children at a time. In contrast to GtkNotebook,\nGtkStack does not provide a means for users to change the\nvisible child. Instead, the <span data-xref=\"Gtk.StackSwitcher\"/> widget can be\nused with GtkStack to provide this functionality.</p><p>Transitions between pages can be animated as slides or\nfades. This can be controlled with <span data-xref=\"Gtk.Stack.set_transition_type\"/>.\nThese animations respect the <span data-xref=\"Gtk.Settings-gtk-enable-animations\"/>\nsetting.</p><p>The GtkStack widget was added in GTK+ 3.10.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds a child to <code>stack</code>.\nThe child is identified by the <code>name</code>.</p>",
+            "kind": "method",
+            "name": "add_named",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a child to <code>stack</code>.\nThe child is identified by the <code>name</code>. The <code>title</code>\nwill be used by <span data-xref=\"Gtk.StackSwitcher\"/> to represent\n<code>child</code> in a tab bar, so it should be short.</p>",
+            "kind": "method",
+            "name": "add_titled",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "title",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Finds the child of the <span data-xref=\"Gtk.Stack\"/> with the name given as\nthe argument. Returns <code>null</code> if there is no child with this\nname.</p>",
+            "kind": "method",
+            "name": "get_child_by_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets whether <code>stack</code> is homogeneous.\nSee <span data-xref=\"Gtk.Stack.set_homogeneous\"/>.</p>",
+            "kind": "method",
+            "name": "get_homogeneous",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the amount of time (in milliseconds) that\ntransitions between pages in <code>stack</code> will take.</p>",
+            "kind": "method",
+            "name": "get_transition_duration",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the <code>stack</code> is currently in a transition from one page to\nanother.</p>",
+            "kind": "method",
+            "name": "get_transition_running",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the type of animation that will be used\nfor transitions between pages in <code>stack</code>.</p>",
+            "kind": "method",
+            "name": "get_transition_type",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.StackTransitionType"
+            }
+        },
+        {
+            "doc": "<p>Gets the currently visible child of <code>stack</code>, or <code>null</code> if\nthere are no visible children.</p>",
+            "kind": "method",
+            "name": "get_visible_child",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns the name of the currently visible child of <code>stack</code>, or\n<code>null</code> if there is no visible child.</p>",
+            "kind": "method",
+            "name": "get_visible_child_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Stack\"/> to be homogeneous or not. If it\nis homogeneous, the <span data-xref=\"Gtk.Stack\"/> will request the same\nsize for all its children. If it isn't, the stack\nmay change size when a different child becomes visible.</p>",
+            "kind": "method",
+            "name": "set_homogeneous",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "homogeneous",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the duration that transitions between pages in <code>stack</code>\nwill take.</p>",
+            "kind": "method",
+            "name": "set_transition_duration",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "duration",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the type of animation that will be used for\ntransitions between pages in <code>stack</code>. Available\ntypes include various kinds of fades and slides.</p><p>The transition type can be changed without problems\nat runtime, so it is possible to change the animation\nbased on the page that is about to become current.</p>",
+            "kind": "method",
+            "name": "set_transition_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "transition",
+                    "direction": "in",
+                    "type": "Gtk.StackTransitionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Makes <code>child</code> the visible child of <code>stack</code>.</p><p>If <code>child</code> is different from the currently\nvisible child, the transition between the\ntwo will be animated with the current\ntransition type of <code>stack</code>.</p><p>Note that the <code>child</code> widget has to be visible itself\n(see <span data-xref=\"Gtk.Widget.show\"/>) in order to become the visible\nchild of <code>stack</code>.</p>",
+            "kind": "method",
+            "name": "set_visible_child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Makes the child with the given name visible.</p><p>Note that the child widget has to be visible itself\n(see <span data-xref=\"Gtk.Widget.show\"/>) in order to become the visible\nchild of <code>stack</code>.</p>",
+            "kind": "method",
+            "name": "set_visible_child_full",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "transition",
+                    "direction": "in",
+                    "type": "Gtk.StackTransitionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Makes the child with the given name visible.</p><p>If @child is different from the currently\nvisible child, the transition between the\ntwo will be animated with the current\ntransition type of <code>stack</code>.</p><p>Note that the child widget has to be visible itself\n(see <span data-xref=\"Gtk.Widget.show\"/>) in order to become the visible\nchild of <code>stack</code>.</p>",
+            "kind": "method",
+            "name": "set_visible_child_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Stack",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "homogeneous",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "transition-duration",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "transition-running",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "transition-type",
+            "type": "Gtk.StackTransitionType"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "visible-child",
+            "type": "Gtk.Widget"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "visible-child-name",
+            "type": "String"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

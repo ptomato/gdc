@@ -1,0 +1,416 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new grid widget.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>GtkGrid is a container which arranges its child widgets in\nrows and columns. It is a very similar to <span data-xref=\"Gtk.Table\"/> and <span data-xref=\"Gtk.Box\"/>,\nbut it consistently uses <span data-xref=\"Gtk.Widget\"/>\u2019s <span data-xref=\"Gtk.Widget-margin\"/> and <span data-xref=\"Gtk.Widget-expand\"/>\nproperties instead of custom child properties, and it fully supports\n[height-for-width geometry management][geometry-management].</p><p>Children are added using <span data-xref=\"Gtk.Grid.attach\"/>. They can span multiple\nrows or columns. It is also possible to add a child next to an\nexisting child, using <span data-xref=\"Gtk.Grid.attach_next_to\"/>. The behaviour of\nGtkGrid when several children occupy the same grid cell is undefined.</p><p>GtkGrid can be used like a <span data-xref=\"Gtk.Box\"/> by just using <span data-xref=\"Gtk.Container.add\"/>,\nwhich will place children next to each other in the direction determined\nby the <span data-xref=\"Gtk.Orientable-orientation\"/> property.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "container"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds a widget to the grid.</p><p>The position of <code>child</code> is determined by <code>left</code> and <code>top</code>. The\nnumber of \u201ccells\u201d that <code>child</code> will occupy is determined by\n<code>width</code> and <code>height</code>.</p>",
+            "kind": "method",
+            "name": "attach",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "left",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "top",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a widget to the grid.</p><p>The widget is placed next to <code>sibling</code>, on the side determined by\n<code>side</code>. When <code>sibling</code> is <code>null</code>, the widget is placed in row (for\nleft or right placement) or column 0 (for top or bottom placement),\nat the end indicated by <code>side</code>.</p><p>Attaching widgets labeled [1], [2], [3] with <code>sibling</code> == <code>null</code> and\n<code>side</code> == <span data-xref=\"Gtk.PositionType\"/>.left yields a layout of [3][2][1].</p>",
+            "kind": "method",
+            "name": "attach_next_to",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "sibling",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "side",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns which row defines the global baseline of <code>grid</code>.</p>",
+            "kind": "method",
+            "name": "get_baseline_row",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the child of <code>grid</code> whose area covers the grid\ncell whose upper left corner is at <code>left</code>, <code>top</code>.</p>",
+            "kind": "method",
+            "name": "get_child_at",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "left",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "top",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns whether all columns of <code>grid</code> have the same width.</p>",
+            "kind": "method",
+            "name": "get_column_homogeneous",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the amount of space between the columns of <code>grid</code>.</p>",
+            "kind": "method",
+            "name": "get_column_spacing",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the baseline position of <code>row</code> as set\nby <span data-xref=\"Gtk.Grid.set_row_baseline_position\"/> or the default value\n<span data-xref=\"Gtk.BaselinePosition\"/>.center.</p>",
+            "kind": "method",
+            "name": "get_row_baseline_position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "row",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.BaselinePosition"
+            }
+        },
+        {
+            "doc": "<p>Returns whether all rows of <code>grid</code> have the same height.</p>",
+            "kind": "method",
+            "name": "get_row_homogeneous",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the amount of space between the rows of <code>grid</code>.</p>",
+            "kind": "method",
+            "name": "get_row_spacing",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Inserts a column at the specified position.</p><p>Children which are attached at or to the right of this position\nare moved one column to the right. Children which span across this\nposition are grown to span the new column.</p>",
+            "kind": "method",
+            "name": "insert_column",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Inserts a row or column at the specified position.</p><p>The new row or column is placed next to <code>sibling</code>, on the side\ndetermined by <code>side</code>. If <code>side</code> is <span data-xref=\"Gtk.PositionType\"/>.top or <span data-xref=\"Gtk.PositionType\"/>.bottom,\na row is inserted. If <code>side</code> is <span data-xref=\"Gtk.PositionType\"/>.left of <span data-xref=\"Gtk.PositionType\"/>.right,\na column is inserted.</p>",
+            "kind": "method",
+            "name": "insert_next_to",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "sibling",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "side",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Inserts a row at the specified position.</p><p>Children which are attached at or below this position\nare moved one row down. Children which span across this\nposition are grown to span the new row.</p>",
+            "kind": "method",
+            "name": "insert_row",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes a column from the grid.</p><p>Children that are placed in this column are removed,\nspanning children that overlap this column have their\nwidth reduced by one, and children after the column\nare moved to the left.</p>",
+            "kind": "method",
+            "name": "remove_column",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes a row from the grid.</p><p>Children that are placed in this row are removed,\nspanning children that overlap this row have their\nheight reduced by one, and children below the row\nare moved up.</p>",
+            "kind": "method",
+            "name": "remove_row",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets which row defines the global baseline for the entire grid.\nEach row in the grid can have its own local baseline, but only\none of those is global, meaning it will be the baseline in the\nparent of the <code>grid</code>.</p>",
+            "kind": "method",
+            "name": "set_baseline_row",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "row",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether all columns of <code>grid</code> will have the same width.</p>",
+            "kind": "method",
+            "name": "set_column_homogeneous",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "homogeneous",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the amount of space between columns of <code>grid</code>.</p>",
+            "kind": "method",
+            "name": "set_column_spacing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "spacing",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets how the baseline should be positioned on <code>row</code> of the\ngrid, in case that row is assigned more space than is requested.</p>",
+            "kind": "method",
+            "name": "set_row_baseline_position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "row",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Gtk.BaselinePosition"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether all rows of <code>grid</code> will have the same height.</p>",
+            "kind": "method",
+            "name": "set_row_homogeneous",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "homogeneous",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the amount of space between rows of <code>grid</code>.</p>",
+            "kind": "method",
+            "name": "set_row_spacing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "spacing",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Grid",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "baseline-row",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "column-homogeneous",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "column-spacing",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "row-homogeneous",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "row-spacing",
+            "type": "Number(gint)"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

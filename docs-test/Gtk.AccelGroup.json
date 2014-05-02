@@ -1,0 +1,364 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.AccelGroup\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.AccelGroup"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.AccelGroup\"/> represents a group of keyboard accelerators,\ntypically attached to a toplevel <span data-xref=\"Gtk.Window\"/> (with\n<span data-xref=\"Gtk.Window.add_accel_group\"/>). Usually you won\u2019t need to create a\n<span data-xref=\"Gtk.AccelGroup\"/> directly; instead, when using <span data-xref=\"Gtk.UIManager\"/>, GTK+\nautomatically sets up the accelerators for your menus in the ui\nmanager\u2019s <span data-xref=\"Gtk.AccelGroup\"/>.</p><p>Note that \u201caccelerators\u201d are different from\n\u201cmnemonics\u201d. Accelerators are shortcuts for\nactivating a menu item; they appear alongside the menu item they\u2019re a\nshortcut for. For example \u201cCtrl+Q\u201d might appear alongside the \u201cQuit\u201d\nmenu item. Mnemonics are shortcuts for GUI elements such as text\nentries or buttons; they appear as underlined characters. See\n<span data-xref=\"Gtk.Label.new_with_mnemonic\"/>. Menu items can have both accelerators\nand mnemonics, of course.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Finds the first accelerator in <code>accel_group</code> that matches\n<code>accel_key</code> and <code>accel_mods</code>, and activates it.</p>",
+            "kind": "method",
+            "name": "activate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_quark",
+                    "direction": "in",
+                    "type": "GLib.Quark"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "acceleratable",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_key",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_mods",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Installs an accelerator in this group. When <code>accel_group</code> is being\nactivated in response to a call to <span data-xref=\"Gtk.accel_groups_activate\"/>,\n<code>closure</code> will be invoked if the <code>accel_key</code> and <code>accel_mods</code> from\n<span data-xref=\"Gtk.accel_groups_activate\"/> match those of this connection.</p><p>The signature used for the <code>closure</code> is that of <span data-xref=\"Gtk.AccelGroupActivate\"/>.</p><p>Note that, due to implementation details, a single closure can\nonly be connected to one accelerator group.</p>",
+            "kind": "method",
+            "name": "connect",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_key",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_mods",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_flags",
+                    "direction": "in",
+                    "type": "Gtk.AccelFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "closure",
+                    "direction": "in",
+                    "type": "Function"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Installs an accelerator in this group, using an accelerator path\nto look up the appropriate key and modifiers (see\n<span data-xref=\"Gtk.AccelMap.add_entry\"/>). When <code>accel_group</code> is being activated\nin response to a call to <span data-xref=\"Gtk.accel_groups_activate\"/>, <code>closure</code> will\nbe invoked if the @accel_key and @accel_mods from\n<span data-xref=\"Gtk.accel_groups_activate\"/> match the key and modifiers for the path.</p><p>The signature used for the <code>closure</code> is that of <span data-xref=\"Gtk.AccelGroupActivate\"/>.</p><p>Note that <code>accel_path</code> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>. Therefore,\nif you pass a static string, you can save some memory by interning it\nfirst with <span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
+            "kind": "method",
+            "name": "connect_by_path",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_path",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "closure",
+                    "direction": "in",
+                    "type": "Function"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes an accelerator previously installed through\n<span data-xref=\"Gtk.AccelGroup.connect\"/>.</p><p>Since 2.20 <code>closure</code> can be <code>null</code>.</p>",
+            "kind": "method",
+            "name": "disconnect",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "closure",
+                    "direction": "in",
+                    "type": "Function"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Removes an accelerator previously installed through\n<span data-xref=\"Gtk.AccelGroup.connect\"/>.</p>",
+            "kind": "method",
+            "name": "disconnect_key",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_key",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_mods",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Finds the first entry in an accelerator group for which\n<code>find_func</code> returns <code>true</code> and returns its <span data-xref=\"Gtk.AccelKey\"/>.</p>",
+            "kind": "method",
+            "name": "find",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "find_func",
+                    "direction": "in",
+                    "type": "Gtk.AccelGroupFindFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.AccelKey"
+            }
+        },
+        {
+            "doc": "<p>Locks are added and removed using <span data-xref=\"Gtk.AccelGroup.lock\"/> and\n<span data-xref=\"Gtk.AccelGroup.unlock\"/>.</p>",
+            "kind": "method",
+            "name": "get_is_locked",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets a <span data-xref=\"Gdk.ModifierType\">Gdk.ModifierType</span> representing the mask for this\n<code>accel_group</code>. For example, #GDK_CONTROL_MASK, #GDK_SHIFT_MASK, etc.</p>",
+            "kind": "method",
+            "name": "get_modifier_mask",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.ModifierType"
+            }
+        },
+        {
+            "doc": "<p>Locks the given accelerator group.</p><p>Locking an acelerator group prevents the accelerators contained\nwithin it to be changed during runtime. Refer to\n<span data-xref=\"Gtk.AccelMap.change_entry\"/> about runtime accelerator changes.</p><p>If called more than once, <code>accel_group</code> remains locked until\n<span data-xref=\"Gtk.AccelGroup.unlock\"/> has been called an equivalent number\nof times.</p>",
+            "kind": "method",
+            "name": "lock",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Queries an accelerator group for all entries matching <code>accel_key</code>\nand <code>accel_mods</code>.</p>",
+            "kind": "method",
+            "name": "query",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "accel_key",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_mods",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "n_entries",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Array(Gtk.AccelGroupEntry)"
+            }
+        },
+        {
+            "doc": "<p>Undoes the last call to <span data-xref=\"Gtk.AccelGroup.lock\"/> on this <code>accel_group</code>.</p>",
+            "kind": "method",
+            "name": "unlock",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        [
+            {
+                "doc": "<p>Finds the <span data-xref=\"Gtk.AccelGroup\"/> to which <code>closure</code> is connected;\nsee <span data-xref=\"Gtk.AccelGroup.connect\"/>.</p>",
+                "kind": "function",
+                "name": "from_accel_closure",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "closure",
+                        "direction": "in",
+                        "type": "Function"
+                    }
+                ],
+                "retval": {
+                    "type": "Gtk.AccelGroup"
+                }
+            }
+        ]
+    ],
+    "name": "AccelGroup",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "is-locked",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "modifier-mask",
+            "type": "Gdk.ModifierType"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The accel-activate signal is an implementation detail of\n<span data-xref=\"Gtk.AccelGroup\"/> and not meant to be used by applications.</p>",
+            "kind": "signal",
+            "name": "accel-activate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "acceleratable",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "keyval",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "modifier",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>The accel-changed signal is emitted when an entry\nis added to or removed from the accel group.</p><p>Widgets like <span data-xref=\"Gtk.AccelLabel\"/> which display an associated\naccelerator should connect to this signal, and rebuild\ntheir visual representation if the <code>accel_closure</code> is theirs.</p>",
+            "kind": "signal",
+            "name": "accel-changed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "keyval",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "modifier",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_closure",
+                    "direction": "in",
+                    "type": "Function"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "accel_changed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "keyval",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "modifier",
+                    "direction": "in",
+                    "type": "Gdk.ModifierType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "accel_closure",
+                    "direction": "in",
+                    "type": "Function"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

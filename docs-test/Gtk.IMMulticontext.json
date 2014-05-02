@@ -1,0 +1,75 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.IMMulticontext\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.IMContext"
+            }
+        }
+    ],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "object"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Add menuitems for various available input methods to a menu;\nthe menuitems, when selected, will switch the input method\nfor the context and the global default input method.</p>",
+            "kind": "method",
+            "name": "append_menuitems",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "menushell",
+                    "direction": "in",
+                    "type": "Gtk.MenuShell"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the id of the currently active slave of the <code>context</code>.</p>",
+            "kind": "method",
+            "name": "get_context_id",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Sets the context id for <code>context</code>.</p><p>This causes the currently active slave of <code>context</code> to be\nreplaced by the slave corresponding to the new context id.</p>",
+            "kind": "method",
+            "name": "set_context_id",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context_id",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "IMMulticontext",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

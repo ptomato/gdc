@@ -1,0 +1,338 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.AppChooserWidget\"/> for applications\nthat can handle content of the given type.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "content_type",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.AppChooserWidget\"/> is a widget for selecting applications.\nIt is the main building block for <span data-xref=\"Gtk.AppChooserDialog\"/>. Most\napplications only need to use the latter; but you can use\nthis widget as part of a larger widget if you have special needs.</p><p><span data-xref=\"Gtk.AppChooserWidget\"/> offers detailed control over what applications\nare shown, using the\n<span data-xref=\"Gtk.AppChooserWidget-show-default\"/>,\n<span data-xref=\"Gtk.AppChooserWidget-show-recommended\"/>,\n<span data-xref=\"Gtk.AppChooserWidget-show-fallback\"/>,\n<span data-xref=\"Gtk.AppChooserWidget-show-other\"/> and\n<span data-xref=\"Gtk.AppChooserWidget-show-all\"/>\nproperties. See the <span data-xref=\"Gtk.AppChooser\"/> documentation for more information\nabout these groups of applications.</p><p>To keep track of the selected application, use the\n<span data-xref=\"Gtk.AppChooserWidget-application-selected\"/> and <span data-xref=\"Gtk.AppChooserWidget-application-activated\"/> signals.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the text that is shown if there are not applications\nthat can handle the content type.</p>",
+            "kind": "method",
+            "name": "get_default_text",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the current value of the <span data-xref=\"Gtk.AppChooserWidget-show-all\"/>\nproperty.</p>",
+            "kind": "method",
+            "name": "get_show_all",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the current value of the <span data-xref=\"Gtk.AppChooserWidget-show-default\"/>\nproperty.</p>",
+            "kind": "method",
+            "name": "get_show_default",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the current value of the <span data-xref=\"Gtk.AppChooserWidget-show-fallback\"/>\nproperty.</p>",
+            "kind": "method",
+            "name": "get_show_fallback",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the current value of the <span data-xref=\"Gtk.AppChooserWidget-show-other\"/>\nproperty.</p>",
+            "kind": "method",
+            "name": "get_show_other",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the current value of the <span data-xref=\"Gtk.AppChooserWidget-show-recommended\"/>\nproperty.</p>",
+            "kind": "method",
+            "name": "get_show_recommended",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the text that is shown if there are not applications\nthat can handle the content type.</p>",
+            "kind": "method",
+            "name": "set_default_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the app chooser should show all applications\nin a flat list.</p>",
+            "kind": "method",
+            "name": "set_show_all",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the app chooser should show the default handler\nfor the content type in a separate section.</p>",
+            "kind": "method",
+            "name": "set_show_default",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the app chooser should show related applications\nfor the content type in a separate section.</p>",
+            "kind": "method",
+            "name": "set_show_fallback",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the app chooser should show applications\nwhich are unrelated to the content type.</p>",
+            "kind": "method",
+            "name": "set_show_other",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the app chooser should show recommended applications\nfor the content type in a separate section.</p>",
+            "kind": "method",
+            "name": "set_show_recommended",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "AppChooserWidget",
+    "properties": [
+        {
+            "doc": "<p>The <span data-xref=\"Gtk.AppChooserWidget-default-text\"/> property determines the text\nthat appears in the widget when there are no applications for the\ngiven content type.\nSee also <span data-xref=\"Gtk.AppChooserWidget.set_default_text\"/>.</p>",
+            "kind": "property",
+            "name": "default-text",
+            "type": "String"
+        },
+        {
+            "doc": "<p>If the <span data-xref=\"Gtk.AppChooserWidget-show-all\"/> property is <code>true</code>, the app\nchooser presents all applications in a single list, without\nsubsections for default, recommended or related applications.</p>",
+            "kind": "property",
+            "name": "show-all",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The ::show-default property determines whether the app chooser\nshould show the default handler for the content type in a\nseparate section. If <code>false</code>, the default handler is listed\namong the recommended applications.</p>",
+            "kind": "property",
+            "name": "show-default",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The <span data-xref=\"Gtk.AppChooserWidget-show-fallback\"/> property determines whether\nthe app chooser should show a section for fallback applications.\nIf <code>false</code>, the fallback applications are listed among the other\napplications.</p>",
+            "kind": "property",
+            "name": "show-fallback",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The <span data-xref=\"Gtk.AppChooserWidget-show-other\"/> property determines whether\nthe app chooser should show a section for other applications.</p>",
+            "kind": "property",
+            "name": "show-other",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The <span data-xref=\"Gtk.AppChooserWidget-show-recommended\"/> property determines\nwhether the app chooser should show a section for recommended\napplications. If <code>false</code>, the recommended applications are listed\namong the other applications.</p>",
+            "kind": "property",
+            "name": "show-recommended",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Emitted when an application item is activated from the widget's list.</p><p>This usually happens when the user double clicks an item, or an item\nis selected and the user presses one of the keys Space, Shift+Space,\nReturn or Enter.</p>",
+            "kind": "signal",
+            "name": "application-activated",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "application",
+                    "direction": "in",
+                    "type": "Gio.AppInfo"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when an application item is selected from the widget's list.</p>",
+            "kind": "signal",
+            "name": "application-selected",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "application",
+                    "direction": "in",
+                    "type": "Gio.AppInfo"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when a context menu is about to popup over an application item.\nClients can insert menu items into the provided <span data-xref=\"Gtk.Menu\"/> object in the\ncallback of this signal; the context menu will be shown over the item\nif at least one item has been added to the menu.</p>",
+            "kind": "signal",
+            "name": "populate-popup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "menu",
+                    "direction": "in",
+                    "type": "Gtk.Menu"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "application",
+                    "direction": "in",
+                    "type": "Gio.AppInfo"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "application_activated",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "app_info",
+                    "direction": "in",
+                    "type": "Gio.AppInfo"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "application_selected",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "app_info",
+                    "direction": "in",
+                    "type": "Gio.AppInfo"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "populate_popup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "menu",
+                    "direction": "in",
+                    "type": "Gtk.Menu"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "app_info",
+                    "direction": "in",
+                    "type": "Gio.AppInfo"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

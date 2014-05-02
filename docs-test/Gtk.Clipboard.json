@@ -1,0 +1,541 @@
+{
+    "constructors": [],
+    "doc": "<p>The <span data-xref=\"Gtk.Clipboard\"/> object represents a clipboard of data shared\nbetween different processes or between different widgets in\nthe same process. Each clipboard is identified by a name encoded as a\n<span data-xref=\"Gdk.Atom\">Gdk.Atom</span>. (Conversion to and from strings can be done with\n<span data-xref=\"Gdk.atom_intern\">Gdk.atom_intern</span> and <span data-xref=\"Gdk.Atom.name\">Gdk.Atom.prototype.name</span>.) The default clipboard\ncorresponds to the \u201cCLIPBOARD\u201d atom; another commonly used clipboard\nis the \u201cPRIMARY\u201d clipboard, which, in X, traditionally contains\nthe currently selected text.</p><p>To support having a number of different formats on the clipboard\nat the same time, the clipboard mechanism allows providing\ncallbacks instead of the actual data.  When you set the contents\nof the clipboard, you can either supply the data directly (via\nfunctions like <span data-xref=\"Gtk.Clipboard.set_text\"/>), or you can supply a\ncallback to be called at a later time when the data is needed (via\n<span data-xref=\"Gtk.Clipboard.set_with_data\"/> or <span data-xref=\"Gtk.Clipboard.set_with_owner\"/>.)\nProviding a callback also avoids having to make copies of the data\nwhen it is not needed.</p><p><span data-xref=\"Gtk.Clipboard.set_with_data\"/> and <span data-xref=\"Gtk.Clipboard.set_with_owner\"/>\nare quite similar; the choice between the two depends mostly on\nwhich is more convenient in a particular situation.\nThe former is most useful when you want to have a blob of data\nwith callbacks to convert it into the various data types that you\nadvertise. When the @clear_func you provided is called, you\nsimply free the data blob. The latter is more useful when the\ncontents of clipboard reflect the internal state of a <span data-xref=\"GObject.Object\">GObject.Object</span>\n(As an example, for the PRIMARY clipboard, when an entry widget\nprovides the clipboard\u2019s contents the contents are simply the\ntext within the selected region.) If the contents change, the\nentry widget can call <span data-xref=\"Gtk.Clipboard.set_with_owner\"/> to update\nthe timestamp for clipboard ownership, without having to worry\nabout @clear_func being called.</p><p>Requesting the data from the clipboard is essentially\nasynchronous. If the contents of the clipboard are provided within\nthe same process, then a direct function call will be made to\nretrieve the data, but if they are provided by another process,\nthen the data needs to be retrieved from the other process, which\nmay take some time. To avoid blocking the user interface, the call\nto request the selection, <span data-xref=\"Gtk.Clipboard.request_contents\"/> takes a\ncallback that will be called when the contents are received (or\nwhen the request fails.) If you don\u2019t want to deal with providing\na separate callback, you can also use <span data-xref=\"Gtk.Clipboard.wait_for_contents\"/>.\nWhat this does is run the GLib main loop recursively waiting for\nthe contents. This can simplify the code flow, but you still have\nto be aware that other callbacks in your program can be called\nwhile this recursive mainloop is running.</p><p>Along with the functions to get the clipboard contents as an\narbitrary data chunk, there are also functions to retrieve\nit as text, <span data-xref=\"Gtk.Clipboard.request_text\"/> and\n<span data-xref=\"Gtk.Clipboard.wait_for_text\"/>. These functions take care of\ndetermining which formats are advertised by the clipboard\nprovider, asking for the clipboard in the best available format\nand converting the results into the UTF-8 encoding. (The standard\nform for representing strings in GTK+.)</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Clears the contents of the clipboard. Generally this should only\nbe called between the time you call <span data-xref=\"Gtk.Clipboard.set_with_owner\"/>\nor <span data-xref=\"Gtk.Clipboard.set_with_data\"/>,\nand when the @clear_func you supplied is called. Otherwise, the\nclipboard may be owned by someone else.</p>",
+            "kind": "method",
+            "name": "clear",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the <span data-xref=\"Gdk.Display\">Gdk.Display</span> associated with <code>clipboard</code></p>",
+            "kind": "method",
+            "name": "get_display",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Display"
+            }
+        },
+        {
+            "doc": "<p>If the clipboard contents callbacks were set with\n<span data-xref=\"Gtk.Clipboard.set_with_owner\"/>, and the <span data-xref=\"Gtk.Clipboard.set_with_data\"/> or\n<span data-xref=\"Gtk.Clipboard.clear\"/> has not subsequently called, returns the owner set\nby <span data-xref=\"Gtk.Clipboard.set_with_owner\"/>.</p>",
+            "kind": "method",
+            "name": "get_owner",
+            "parameters": [],
+            "retval": {
+                "type": "GObject.Object"
+            }
+        },
+        {
+            "doc": "<p>Requests the contents of clipboard as the given target.\nWhen the results of the result are later received the supplied callback\nwill be called.</p>",
+            "kind": "method",
+            "name": "request_contents",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "target",
+                    "direction": "in",
+                    "type": "Gdk.Atom"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.ClipboardReceivedFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Requests the contents of the clipboard as image. When the image is\nlater received, it will be converted to a <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>, and\n<code>callback</code> will be called.</p><p>The @pixbuf parameter to <code>callback</code> will contain the resulting\n<span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span> if the request succeeded, or <code>null</code> if it failed. This\ncould happen for various reasons, in particular if the clipboard\nwas empty or if the contents of the clipboard could not be\nconverted into an image.</p>",
+            "kind": "method",
+            "name": "request_image",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.ClipboardImageReceivedFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Requests the contents of the clipboard as rich text. When the rich\ntext is later received, <code>callback</code> will be called.</p><p>The @text parameter to <code>callback</code> will contain the resulting rich\ntext if the request succeeded, or <code>null</code> if it failed. The @length\nparameter will contain @text\u2019s length. This function can fail for\nvarious reasons, in particular if the clipboard was empty or if the\ncontents of the clipboard could not be converted into rich text form.</p>",
+            "kind": "method",
+            "name": "request_rich_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "buffer",
+                    "direction": "in",
+                    "type": "Gtk.TextBuffer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.ClipboardRichTextReceivedFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Requests the contents of the clipboard as list of supported targets.\nWhen the list is later received, <code>callback</code> will be called.</p><p>The @targets parameter to <code>callback</code> will contain the resulting targets if\nthe request succeeded, or <code>null</code> if it failed.</p>",
+            "kind": "method",
+            "name": "request_targets",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.ClipboardTargetsReceivedFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Requests the contents of the clipboard as text. When the text is\nlater received, it will be converted to UTF-8 if necessary, and\n<code>callback</code> will be called.</p><p>The @text parameter to <code>callback</code> will contain the resulting text if\nthe request succeeded, or <code>null</code> if it failed. This could happen for\nvarious reasons, in particular if the clipboard was empty or if the\ncontents of the clipboard could not be converted into text form.</p>",
+            "kind": "method",
+            "name": "request_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.ClipboardTextReceivedFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Requests the contents of the clipboard as URIs. When the URIs are\nlater received <code>callback</code> will be called.</p><p>The @uris parameter to <code>callback</code> will contain the resulting array of\nURIs if the request succeeded, or <code>null</code> if it failed. This could happen\nfor various reasons, in particular if the clipboard was empty or if the\ncontents of the clipboard could not be converted into URI form.</p>",
+            "kind": "method",
+            "name": "request_uris",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.ClipboardURIReceivedFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Hints that the clipboard data should be stored somewhere when the\napplication exits or when gtk_clipboard_store () is called.</p><p>This value is reset when the clipboard owner changes.\nWhere the clipboard data is stored is platform dependent,\nsee gdk_display_store_clipboard () for more information.</p>",
+            "kind": "method",
+            "name": "set_can_store",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "targets",
+                    "direction": "in",
+                    "type": "Array(Gtk.TargetEntry)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_targets",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the contents of the clipboard to the given <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>.\nGTK+ will take responsibility for responding for requests\nfor the image, and for converting the image into the\nrequested format.</p>",
+            "kind": "method",
+            "name": "set_image",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pixbuf",
+                    "direction": "in",
+                    "type": "GdkPixbuf.Pixbuf"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the contents of the clipboard to the given UTF-8 string. GTK+ will\nmake a copy of the text and take responsibility for responding\nfor requests for the text, and for converting the text into\nthe requested format.</p>",
+            "kind": "method",
+            "name": "set_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "text",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "len",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Virtually sets the contents of the specified clipboard by providing\na list of supported formats for the clipboard data and a function\nto call to get the actual data when it is requested.</p>",
+            "kind": "method",
+            "name": "set_with_data",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "targets",
+                    "direction": "in",
+                    "type": "Array(Gtk.TargetEntry)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_targets",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "get_func",
+                    "direction": "in",
+                    "type": "Gtk.ClipboardGetFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "clear_func",
+                    "direction": "in",
+                    "type": "Gtk.ClipboardClearFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Virtually sets the contents of the specified clipboard by providing\na list of supported formats for the clipboard data and a function\nto call to get the actual data when it is requested.</p><p>The difference between this function and <span data-xref=\"Gtk.Clipboard.set_with_data\"/>\nis that instead of an generic @user_data pointer, a <span data-xref=\"GObject.Object\">GObject.Object</span> is passed\nin.</p>",
+            "kind": "method",
+            "name": "set_with_owner",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "targets",
+                    "direction": "in",
+                    "type": "Array(Gtk.TargetEntry)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_targets",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "get_func",
+                    "direction": "in",
+                    "type": "Gtk.ClipboardGetFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "clear_func",
+                    "direction": "in",
+                    "type": "Gtk.ClipboardClearFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "owner",
+                    "direction": "in",
+                    "type": "GObject.Object"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Stores the current clipboard data somewhere so that it will stay\naround after the application has quit.</p>",
+            "kind": "method",
+            "name": "store",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Requests the contents of the clipboard using the given target.\nThis function waits for the data to be received using the main\nloop, so events, timeouts, etc, may be dispatched during the wait.</p>",
+            "kind": "method",
+            "name": "wait_for_contents",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "target",
+                    "direction": "in",
+                    "type": "Gdk.Atom"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.SelectionData"
+            }
+        },
+        {
+            "doc": "<p>Requests the contents of the clipboard as image and converts\nthe result to a <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>. This function waits for\nthe data to be received using the main loop, so events,\ntimeouts, etc, may be dispatched during the wait.</p>",
+            "kind": "method",
+            "name": "wait_for_image",
+            "parameters": [],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Requests the contents of the clipboard as rich text.  This function\nwaits for the data to be received using the main loop, so events,\ntimeouts, etc, may be dispatched during the wait.</p>",
+            "kind": "method",
+            "name": "wait_for_rich_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "buffer",
+                    "direction": "in",
+                    "type": "Gtk.TextBuffer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "format",
+                    "direction": "out",
+                    "type": "Gdk.Atom"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "length",
+                    "direction": "out",
+                    "type": "Number(gsize)"
+                }
+            ],
+            "retval": {
+                "type": "ByteArray"
+            }
+        },
+        {
+            "doc": "<p>Returns a list of targets that are present on the clipboard, or <code>null</code>\nif there aren\u2019t any targets available. The returned list must be\nfreed with <span data-xref=\"GLib.free\">GLib.free</span>.\nThis function waits for the data to be received using the main\nloop, so events, timeouts, etc, may be dispatched during the wait.</p>",
+            "kind": "method",
+            "name": "wait_for_targets",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "targets",
+                    "direction": "out",
+                    "type": "Array(Gdk.Atom)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_targets",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Requests the contents of the clipboard as text and converts\nthe result to UTF-8 if necessary. This function waits for\nthe data to be received using the main loop, so events,\ntimeouts, etc, may be dispatched during the wait.</p>",
+            "kind": "method",
+            "name": "wait_for_text",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Requests the contents of the clipboard as URIs. This function waits\nfor the data to be received using the main loop, so events,\ntimeouts, etc, may be dispatched during the wait.</p>",
+            "kind": "method",
+            "name": "wait_for_uris",
+            "parameters": [],
+            "retval": {
+                "type": "Array(String)"
+            }
+        },
+        {
+            "doc": "<p>Test to see if there is an image available to be pasted\nThis is done by requesting the TARGETS atom and checking\nif it contains any of the supported image targets. This function\nwaits for the data to be received using the main loop, so events,\ntimeouts, etc, may be dispatched during the wait.</p><p>This function is a little faster than calling\n<span data-xref=\"Gtk.Clipboard.wait_for_image\"/> since it doesn\u2019t need to retrieve\nthe actual image data.</p>",
+            "kind": "method",
+            "name": "wait_is_image_available",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Test to see if there is rich text available to be pasted\nThis is done by requesting the TARGETS atom and checking\nif it contains any of the supported rich text targets. This function\nwaits for the data to be received using the main loop, so events,\ntimeouts, etc, may be dispatched during the wait.</p><p>This function is a little faster than calling\n<span data-xref=\"Gtk.Clipboard.wait_for_rich_text\"/> since it doesn\u2019t need to retrieve\nthe actual text.</p>",
+            "kind": "method",
+            "name": "wait_is_rich_text_available",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "buffer",
+                    "direction": "in",
+                    "type": "Gtk.TextBuffer"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Checks if a clipboard supports pasting data of a given type. This\nfunction can be used to determine if a \u201cPaste\u201d menu item should be\ninsensitive or not.</p><p>If you want to see if there\u2019s text available on the clipboard, use\ngtk_clipboard_wait_is_text_available () instead.</p>",
+            "kind": "method",
+            "name": "wait_is_target_available",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "target",
+                    "direction": "in",
+                    "type": "Gdk.Atom"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Test to see if there is text available to be pasted\nThis is done by requesting the TARGETS atom and checking\nif it contains any of the supported text targets. This function\nwaits for the data to be received using the main loop, so events,\ntimeouts, etc, may be dispatched during the wait.</p><p>This function is a little faster than calling\n<span data-xref=\"Gtk.Clipboard.wait_for_text\"/> since it doesn\u2019t need to retrieve\nthe actual text.</p>",
+            "kind": "method",
+            "name": "wait_is_text_available",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Test to see if there is a list of URIs available to be pasted\nThis is done by requesting the TARGETS atom and checking\nif it contains the URI targets. This function\nwaits for the data to be received using the main loop, so events,\ntimeouts, etc, may be dispatched during the wait.</p><p>This function is a little faster than calling\n<span data-xref=\"Gtk.Clipboard.wait_for_uris\"/> since it doesn\u2019t need to retrieve\nthe actual URI data.</p>",
+            "kind": "method",
+            "name": "wait_is_uris_available",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        [
+            {
+                "doc": "<p>Returns the clipboard object for the given selection.\nSee <span data-xref=\"Gtk.Clipboard.get_for_display\"/> for complete details.</p>",
+                "kind": "function",
+                "name": "get",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "selection",
+                        "direction": "in",
+                        "type": "Gdk.Atom"
+                    }
+                ],
+                "retval": {
+                    "type": "Gtk.Clipboard"
+                }
+            },
+            {
+                "doc": "<p>Returns the clipboard object for the given selection.\nCut/copy/paste menu items and keyboard shortcuts should use\nthe default clipboard, returned by passing %GDK_SELECTION_CLIPBOARD for <code>selection</code>.\n(%GDK_NONE is supported as a synonym for GDK_SELECTION_CLIPBOARD\nfor backwards compatibility reasons.)\nThe currently-selected object or text should be provided on the clipboard\nidentified by #GDK_SELECTION_PRIMARY. Cut/copy/paste menu items\nconceptually copy the contents of the #GDK_SELECTION_PRIMARY clipboard\nto the default clipboard, i.e. they copy the selection to what the\nuser sees as the clipboard.</p><p>(Passing #GDK_NONE is the same as using <code>gdk_atom_intern\n(\"CLIPBOARD\", FALSE)</code>.</p><p>See the\n<a href=\"http://www.freedesktop.org/Standards/clipboards-spec\">FreeDesktop Clipboard Specification</a>\nfor a detailed discussion of the \u201cCLIPBOARD\u201d vs. \u201cPRIMARY\u201d\nselections under the X window system. On Win32 the</p>\n<h1>GDK_SELECTION_PRIMARY clipboard is essentially ignored.)</h1><p>It\u2019s possible to have arbitrary named clipboards; if you do invent\nnew clipboards, you should prefix the selection name with an\nunderscore (because the ICCCM requires that nonstandard atoms are\nunderscore-prefixed), and namespace it as well. For example,\nif your application called \u201cFoo\u201d has a special-purpose\nclipboard, you might call it \u201c_FOO_SPECIAL_CLIPBOARD\u201d.</p>",
+                "kind": "function",
+                "name": "get_for_display",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "display",
+                        "direction": "in",
+                        "type": "Gdk.Display"
+                    },
+                    {
+                        "allow_none": false,
+                        "argname": "selection",
+                        "direction": "in",
+                        "type": "Gdk.Atom"
+                    }
+                ],
+                "retval": {
+                    "type": "Gtk.Clipboard"
+                }
+            }
+        ]
+    ],
+    "name": "Clipboard",
+    "properties": [],
+    "signals": [
+        {
+            "doc": "<p>The ::owner-change signal is emitted when GTK+ receives an\nevent that indicates that the ownership of the selection\nassociated with @clipboard has changed.</p>",
+            "kind": "signal",
+            "name": "owner-change",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.EventOwnerChange"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": []
+}

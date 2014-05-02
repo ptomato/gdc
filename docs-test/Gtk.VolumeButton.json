@@ -1,0 +1,36 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a <span data-xref=\"Gtk.VolumeButton\"/>, with a range between 0.0 and 1.0, with\na stepping of 0.02. Volume values can be obtained and modified using\nthe functions from <span data-xref=\"Gtk.ScaleButton\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.VolumeButton\"/> is a subclass of <span data-xref=\"Gtk.ScaleButton\"/> that has\nbeen tailored for use as a volume control widget with suitable\nicons, tooltips and accessible labels.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        []
+    ],
+    "name": "VolumeButton",
+    "properties": [
+        {
+            "doc": "<p>Whether to use symbolic icons as the icons. Note that\nif the symbolic icons are not available in your installed\ntheme, then the normal (potentially colorful) icons will\nbe used.</p>",
+            "kind": "property",
+            "name": "use-symbolic",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

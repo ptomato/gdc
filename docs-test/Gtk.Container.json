@@ -1,0 +1,846 @@
+{
+    "constructors": [],
+    "doc": "<p>A GTK+ user interface is constructed by nesting widgets inside widgets.\nContainer widgets are the inner nodes in the resulting tree of widgets:\nthey contain other widgets. So, for example, you might have a <span data-xref=\"Gtk.Window\"/>\ncontaining a <span data-xref=\"Gtk.Frame\"/> containing a <span data-xref=\"Gtk.Label\"/>. If you wanted an image instead\nof a textual label inside the frame, you might replace the <span data-xref=\"Gtk.Label\"/> widget\nwith a <span data-xref=\"Gtk.Image\"/> widget.</p><p>There are two major kinds of container widgets in GTK+. Both are subclasses\nof the abstract GtkContainer base class.</p><p>The first type of container widget has a single child widget and derives\nfrom <span data-xref=\"Gtk.Bin\"/>. These containers are decorators, which\nadd some kind of functionality to the child. For example, a <span data-xref=\"Gtk.Button\"/> makes\nits child into a clickable button; a <span data-xref=\"Gtk.Frame\"/> draws a frame around its child\nand a <span data-xref=\"Gtk.Window\"/> places its child widget inside a top-level window.</p><p>The second type of container can have more than one child; its purpose is to\nmanage layout. This means that these containers assign\nsizes and positions to their children. For example, a <span data-xref=\"Gtk.HBox\"/> arranges its\nchildren in a horizontal row, and a <span data-xref=\"Gtk.Grid\"/> arranges the widgets it contains\nin a two-dimensional grid.</p><h1>Height for width geometry management</h1><p>GTK+ uses a height-for-width (and width-for-height) geometry management system.\nHeight-for-width means that a widget can change how much vertical space it needs,\ndepending on the amount of horizontal space that it is given (and similar for\nwidth-for-height).</p><p>There are some things to keep in mind when implementing container widgets\nthat make use of GTK+\u2019s height for width geometry management system. First,\nit\u2019s important to note that a container must prioritize one of its\ndimensions, that is to say that a widget or container can only have a\n<span data-xref=\"Gtk.SizeRequestMode\"/> that is <span data-xref=\"Gtk.SizeRequestMode\"/>.height_for_width or\n<span data-xref=\"Gtk.SizeRequestMode\"/>.width_for_height. However, every widget and container\nmust be able to respond to the APIs for both dimensions, i.e. even if a\nwidget has a request mode that is height-for-width, it is possible that\nits parent will request its sizes using the width-for-height APIs.</p><p>To ensure that everything works properly, here are some guidelines to follow\nwhen implementing height-for-width (or width-for-height) containers.</p><p>Each request mode involves 2 virtual methods. Height-for-width apis run\nthrough <span data-xref=\"Gtk.Widget.get_preferred_width\"/> and then through <span data-xref=\"Gtk.Widget.get_preferred_height_for_width\"/>.\nWhen handling requests in the opposite <span data-xref=\"Gtk.SizeRequestMode\"/> it is important that\nevery widget request at least enough space to display all of its content at all times.</p><p>When <span data-xref=\"Gtk.Widget.get_preferred_height\"/> is called on a container that is height-for-width,\nthe container must return the height for its minimum width. This is easily achieved by\nsimply calling the reverse apis implemented for itself as follows:</p><p>|[&lt;!-- language=\"C\" --&gt;\nstatic void\nfoo_container_get_preferred_height (GtkWidget <em>widget,\n                                    gint </em>min_height,\n                                    gint *nat_height)\n{\n   if (i_am_in_height_for_width_mode)\n     {\n       gint min_width;</p><pre><code>   GTK_WIDGET_GET_CLASS (widget)-&amp;gt;get_preferred_width (widget,\n                                                       &amp;amp;min_width,\n                                                       NULL);\n   GTK_WIDGET_GET_CLASS (widget)-&amp;gt;get_preferred_height_for_width\n                                                      (widget,\n                                                       min_width,\n                                                       min_height,\n                                                       nat_height);\n }\n</code></pre>\n<p>else\n     {\n       ... many containers support both request modes, execute the\n       real width-for-height request here by returning the\n       collective heights of all widgets that are stacked\n       vertically (or whatever is appropriate for this container)\n       ...\n     }\n}\n]|</p><p>Similarly, when <span data-xref=\"Gtk.Widget.get_preferred_width_for_height\"/> is called for a container or widget\nthat is height-for-width, it then only needs to return the base minimum width like so:</p><p>|[&lt;!-- language=\"C\" --&gt;\nstatic void\nfoo_container_get_preferred_width_for_height (GtkWidget <em>widget,\n                                              gint for_height,\n                                              gint </em>min_width,\n                                              gint *nat_width)\n{\n   if (i_am_in_height_for_width_mode)\n     {\n       GTK_WIDGET_GET_CLASS (widget)-&gt;get_preferred_width (widget,\n                                                           min_width,\n                                                           nat_width);\n     }\n   else\n     {\n       ... execute the real width-for-height request here based on\n       the required width of the children collectively if the\n       container were to be allocated the said height ...\n     }\n}\n]|</p><p>Height for width requests are generally implemented in terms of a virtual allocation\nof widgets in the input orientation. Assuming an height-for-width request mode, a container\nwould implement the get_preferred_height_for_width() virtual function by first calling\n<span data-xref=\"Gtk.Widget.get_preferred_width\"/> for each of its children.</p><p>For each potential group of children that are lined up horizontally, the values returned by\n<span data-xref=\"Gtk.Widget.get_preferred_width\"/> should be collected in an array of <span data-xref=\"Gtk.RequestedSize\"/> structures.\nAny child spacing should be removed from the input @for_width and then the collective size should be\nallocated using the <span data-xref=\"Gtk.distribute_natural_allocation\"/> convenience function.</p><p>The container will then move on to request the preferred height for each child by using\n<span data-xref=\"Gtk.Widget.get_preferred_height_for_width\"/> and using the sizes stored in the <span data-xref=\"Gtk.RequestedSize\"/> array.</p><p>To allocate a height-for-width container, it\u2019s again important\nto consider that a container must prioritize one dimension over the other. So if\na container is a height-for-width container it must first allocate all widgets horizontally\nusing a <span data-xref=\"Gtk.RequestedSize\"/> array and <span data-xref=\"Gtk.distribute_natural_allocation\"/> and then add any\nextra space (if and where appropriate) for the widget to expand.</p><p>After adding all the expand space, the container assumes it was allocated sufficient\nheight to fit all of its content. At this time, the container must use the total horizontal sizes\nof each widget to request the height-for-width of each of its children and store the requests in a\n<span data-xref=\"Gtk.RequestedSize\"/> array for any widgets that stack vertically (for tabular containers this can\nbe generalized into the heights and widths of rows and columns).\nThe vertical space must then again be distributed using <span data-xref=\"Gtk.distribute_natural_allocation\"/>\nwhile this time considering the allocated height of the widget minus any vertical spacing\nthat the container adds. Then vertical expand space should be added where appropriate and available\nand the container should go on to actually allocating the child widgets.</p><p>See [GtkWidget\u2019s geometry management section][geometry-management]\nto learn more about implementing height-for-width geometry management for widgets.</p><h1>Child properties</h1><p>GtkContainer introduces child properties.\nThese are object properties that are not specific\nto either the container or the contained widget, but rather to their relation.\nTypical examples of child properties are the position or pack-type of a widget\nwhich is contained in a <span data-xref=\"Gtk.Box\"/>.</p><p>Use <span data-xref=\"Gtk.ContainerClass.install_child_property\"/> to install child properties\nfor a container class and <span data-xref=\"Gtk.ContainerClass.find_child_property\"/> or\n<span data-xref=\"Gtk.ContainerClass.list_child_properties\"/> to get information about existing\nchild properties.</p><p>To set the value of a child property, use <span data-xref=\"Gtk.Container.child_set_property\"/>,\n<span data-xref=\"Gtk.Container.child_set\"/> or <span data-xref=\"Gtk.Container.child_set_valist\"/>.\nTo obtain the value of a child property, use\n<span data-xref=\"Gtk.Container.child_get_property\"/>, <span data-xref=\"Gtk.Container.child_get\"/> or\n<span data-xref=\"Gtk.Container.child_get_valist\"/>. To emit notification about child property\nchanges, use <span data-xref=\"Gtk.Widget.child_notify\"/>.</p><h1>GtkContainer as GtkBuildable</h1><p>The GtkContainer implementation of the GtkBuildable interface supports\na &lt;packing&gt; element for children, which can contain multiple &lt;property&gt;\nelements that specify child properties for the child.</p><p>An example of child properties in UI definitions:\n|[\n&lt;object class=\"GtkVBox\"&gt;\n  &lt;child&gt;\n    &lt;object class=\"GtkLabel\"/&gt;\n    &lt;packing&gt;\n      &lt;property name=\"pack-type\"&gt;start&lt;/property&gt;\n    &lt;/packing&gt;\n  &lt;/child&gt;\n&lt;/object&gt;\n]|</p><p>Since 2.16, child properties can also be marked as translatable using\nthe same \u201ctranslatable\u201d, \u201ccomments\u201d and \u201ccontext\u201d attributes that are used\nfor regular properties.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "widget"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds <code>widget</code> to <code>container</code>. Typically used for simple containers\nsuch as <span data-xref=\"Gtk.Window\"/>, <span data-xref=\"Gtk.Frame\"/>, or <span data-xref=\"Gtk.Button\"/>; for more complicated\nlayout containers such as <span data-xref=\"Gtk.Box\"/> or <span data-xref=\"Gtk.Grid\"/>, this function will\npick default packing parameters that may not be correct.  So\nconsider functions such as <span data-xref=\"Gtk.Box.pack_start\"/> and\n<span data-xref=\"Gtk.Grid.attach\"/> as an alternative to <span data-xref=\"Gtk.Container.add\"/> in\nthose cases. A widget may be added to only one container at a time;\nyou can\u2019t place the same widget inside two different containers.</p><p>Note that some containers, such as <span data-xref=\"Gtk.ScrolledWindow\"/> or <span data-xref=\"Gtk.ListBox\"/>,\nmay add intermediate children between the added widget and the\ncontainer.</p>",
+            "kind": "method",
+            "name": "add",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>widget</code> to <code>container</code>, setting child properties at the same time.\nSee <span data-xref=\"Gtk.Container.add\"/> and <span data-xref=\"Gtk.Container.child_set\"/> for more details.</p>",
+            "kind": "method",
+            "name": "add_with_properties",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "first_prop_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "method",
+            "name": "check_resize",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the values of one or more child properties for <code>child</code> and <code>container</code>.</p>",
+            "kind": "method",
+            "name": "child_get",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "first_prop_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of a child property for <code>child</code> and <code>container</code>.</p>",
+            "kind": "method",
+            "name": "child_get_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Any"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the values of one or more child properties for <code>child</code> and <code>container</code>.</p>",
+            "kind": "method",
+            "name": "child_get_valist",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "first_property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "var_args",
+                    "direction": "in",
+                    "type": "va_list"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Widget-child-notify\"/> signal for the\n[child property][child-properties]\n<code>child_property</code> on widget.</p><p>This is an analogue of <span data-xref=\"GObject.Object.notify\">GObject.Object.prototype.notify</span> for child properties.</p><p>Also see <span data-xref=\"Gtk.Widget.child_notify\"/>.</p>",
+            "kind": "method",
+            "name": "child_notify",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "child_property",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets one or more child properties for <code>child</code> and <code>container</code>.</p>",
+            "kind": "method",
+            "name": "child_set",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "first_prop_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a child property for <code>child</code> and <code>container</code>.</p>",
+            "kind": "method",
+            "name": "child_set_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Any"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets one or more child properties for <code>child</code> and <code>container</code>.</p>",
+            "kind": "method",
+            "name": "child_set_valist",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "first_property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "var_args",
+                    "direction": "in",
+                    "type": "va_list"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the type of the children supported by the container.</p><p>Note that this may return %G_TYPE_NONE to indicate that no more\nchildren can be added, e.g. for a <span data-xref=\"Gtk.Paned\"/> which already has two\nchildren.</p>",
+            "kind": "method",
+            "name": "child_type",
+            "parameters": [],
+            "retval": {
+                "type": "GObject.Type"
+            }
+        },
+        {
+            "doc": "<p>Invokes <code>callback</code> on each child of <code>container</code>, including children\nthat are considered \u201cinternal\u201d (implementation details of the\ncontainer). \u201cInternal\u201d children generally weren\u2019t added by the user\nof the container, but were added by the container implementation\nitself.  Most applications should use <span data-xref=\"Gtk.Container.foreach\"/>,\nrather than <span data-xref=\"Gtk.Container.forall\"/>.</p>",
+            "kind": "method",
+            "name": "forall",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.Callback"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Invokes <code>callback</code> on each non-internal child of <code>container</code>. See\n<span data-xref=\"Gtk.Container.forall\"/> for details on what constitutes an\n\u201cinternal\u201d child.  Most applications should use\n<span data-xref=\"Gtk.Container.foreach\"/>, rather than <span data-xref=\"Gtk.Container.forall\"/>.</p>",
+            "kind": "method",
+            "name": "foreach",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.Callback"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the border width of the container. See\n<span data-xref=\"Gtk.Container.set_border_width\"/>.</p>",
+            "kind": "method",
+            "name": "get_border_width",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the container\u2019s non-internal children. See\n<span data-xref=\"Gtk.Container.forall\"/> for details on what constitutes an \"internal\" child.</p>",
+            "kind": "method",
+            "name": "get_children",
+            "parameters": [],
+            "retval": {
+                "type": "Array(Gtk.Widget)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the focus chain of the container, if one has been\nset explicitly. If no focus chain has been explicitly\nset, GTK+ computes the focus chain based on the positions\nof the children. In that case, GTK+ stores <code>null</code> in\n<code>focusable_widgets</code> and returns <code>false</code>.</p>",
+            "kind": "method",
+            "name": "get_focus_chain",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "focusable_widgets",
+                    "direction": "out",
+                    "type": "Array(Gtk.Widget)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the current focus child widget inside <code>container</code>. This is not the\ncurrently focused widget. That can be obtained by calling\n<span data-xref=\"Gtk.Window.get_focus\"/>.</p>",
+            "kind": "method",
+            "name": "get_focus_child",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the horizontal focus adjustment for the container. See\ngtk_container_set_focus_hadjustment ().</p>",
+            "kind": "method",
+            "name": "get_focus_hadjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the vertical focus adjustment for the container. See\n<span data-xref=\"Gtk.Container.set_focus_vadjustment\"/>.</p>",
+            "kind": "method",
+            "name": "get_focus_vadjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Returns a newly created widget path representing all the widget hierarchy\nfrom the toplevel down to and including <code>child</code>.</p>",
+            "kind": "method",
+            "name": "get_path_for_child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.WidgetPath"
+            }
+        },
+        {
+            "doc": "<p>Returns the resize mode for the container. See\ngtk_container_set_resize_mode ().</p>",
+            "kind": "method",
+            "name": "get_resize_mode",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.ResizeMode"
+            }
+        },
+        {
+            "doc": "<p>When a container receives a call to the draw function, it must send\nsynthetic <span data-xref=\"Gtk.Widget-draw\"/> calls to all children that don\u2019t have their\nown #GdkWindows. This function provides a convenient way of doing this.\nA container, when it receives a call to its <span data-xref=\"Gtk.Widget-draw\"/> function,\ncalls <span data-xref=\"Gtk.Container.propagate_draw\"/> once for each child, passing in\nthe <code>cr</code> the container received.</p><p><span data-xref=\"Gtk.Container.propagate_draw\"/> takes care of translating the origin of <code>cr</code>,\nand deciding whether the draw needs to be sent to the child. It is a\nconvenient and optimized way of getting the same effect as calling\n<span data-xref=\"Gtk.Widget.draw\"/> on the child directly.</p><p>In most cases, a container can simply either inherit the\n<span data-xref=\"Gtk.Widget-draw\"/> implementation from <span data-xref=\"Gtk.Container\"/>, or do some drawing\nand then chain to the ::draw implementation from <span data-xref=\"Gtk.Container\"/>.</p>",
+            "kind": "method",
+            "name": "propagate_draw",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes <code>widget</code> from <code>container</code>. <code>widget</code> must be inside <code>container</code>.\nNote that <code>container</code> will own a reference to <code>widget</code>, and that this\nmay be the last reference held; so removing a widget from its\ncontainer can destroy that widget. If you want to use <code>widget</code>\nagain, you need to add a reference to it while it\u2019s not inside\na container, using <span data-xref=\"GObject.Object.ref\">GObject.Object.prototype.ref</span>. If you don\u2019t want to use <code>widget</code>\nagain it\u2019s usually more efficient to simply destroy it directly\nusing <span data-xref=\"Gtk.Widget.destroy\"/> since this will remove it from the\ncontainer and help break any circular reference count cycles.</p>",
+            "kind": "method",
+            "name": "remove",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "method",
+            "name": "resize_children",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the border width of the container.</p><p>The border width of a container is the amount of space to leave\naround the outside of the container. The only exception to this is\n<span data-xref=\"Gtk.Window\"/>; because toplevel windows can\u2019t leave space outside,\nthey leave the space inside. The border is added on all sides of\nthe container. To add space to only one side, one approach is to\ncreate a <span data-xref=\"Gtk.Alignment\"/> widget, call <span data-xref=\"Gtk.Widget.set_size_request\"/>\nto give it a size, and place it on the side of the container as\na spacer.</p>",
+            "kind": "method",
+            "name": "set_border_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "border_width",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a focus chain, overriding the one computed automatically by GTK+.</p><p>In principle each widget in the chain should be a descendant of the\ncontainer, but this is not enforced by this method, since it\u2019s allowed\nto set the focus chain before you pack the widgets, or have a widget\nin the chain that isn\u2019t always packed. The necessary checks are done\nwhen the focus chain is actually traversed.</p>",
+            "kind": "method",
+            "name": "set_focus_chain",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "focusable_widgets",
+                    "direction": "in",
+                    "type": "Array(Gtk.Widget)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets, or unsets if <code>child</code> is <code>null</code>, the focused child of <code>container</code>.</p><p>This function emits the GtkContainer::set_focus_child signal of\n<code>container</code>. Implementations of <span data-xref=\"Gtk.Container\"/> can override the\ndefault behaviour by overriding the class closure of this signal.</p><p>This is function is mostly meant to be used by widgets. Applications can use\n<span data-xref=\"Gtk.Widget.grab_focus\"/> to manualy set the focus to a specific widget.</p>",
+            "kind": "method",
+            "name": "set_focus_child",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Hooks up an adjustment to focus handling in a container, so when a child\nof the container is focused, the adjustment is scrolled to show that\nwidget. This function sets the horizontal alignment.\nSee <span data-xref=\"Gtk.ScrolledWindow.get_hadjustment\"/> for a typical way of obtaining\nthe adjustment and <span data-xref=\"Gtk.Container.set_focus_vadjustment\"/> for setting\nthe vertical adjustment.</p><p>The adjustments have to be in pixel units and in the same coordinate\nsystem as the allocation for immediate children of the container.</p>",
+            "kind": "method",
+            "name": "set_focus_hadjustment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Hooks up an adjustment to focus handling in a container, so when a\nchild of the container is focused, the adjustment is scrolled to\nshow that widget. This function sets the vertical alignment. See\n<span data-xref=\"Gtk.ScrolledWindow.get_vadjustment\"/> for a typical way of obtaining\nthe adjustment and <span data-xref=\"Gtk.Container.set_focus_hadjustment\"/> for setting\nthe horizontal adjustment.</p><p>The adjustments have to be in pixel units and in the same coordinate\nsystem as the allocation for immediate children of the container.</p>",
+            "kind": "method",
+            "name": "set_focus_vadjustment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the @reallocate_redraws flag of the container to the given value.</p><p>Containers requesting reallocation redraws get automatically\nredrawn if any of their children changed allocation.</p>",
+            "kind": "method",
+            "name": "set_reallocate_redraws",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "needs_redraws",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the resize mode for the container.</p><p>The resize mode of a container determines whether a resize request\nwill be passed to the container\u2019s parent, queued for later execution\nor executed immediately.</p>",
+            "kind": "method",
+            "name": "set_resize_mode",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "resize_mode",
+                    "direction": "in",
+                    "type": "Gtk.ResizeMode"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes a focus chain explicitly set with <span data-xref=\"Gtk.Container.set_focus_chain\"/>.</p>",
+            "kind": "method",
+            "name": "unset_focus_chain",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Container",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "border-width",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "child",
+            "type": "Gtk.Widget"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "resize-mode",
+            "type": "Gtk.ResizeMode"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "add",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "check-resize",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "remove",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "set-focus-child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "<p>Adds <code>widget</code> to <code>container</code>. Typically used for simple containers\nsuch as <span data-xref=\"Gtk.Window\"/>, <span data-xref=\"Gtk.Frame\"/>, or <span data-xref=\"Gtk.Button\"/>; for more complicated\nlayout containers such as <span data-xref=\"Gtk.Box\"/> or <span data-xref=\"Gtk.Grid\"/>, this function will\npick default packing parameters that may not be correct.  So\nconsider functions such as <span data-xref=\"Gtk.Box.pack_start\"/> and\n<span data-xref=\"Gtk.Grid.attach\"/> as an alternative to <span data-xref=\"Gtk.Container.add\"/> in\nthose cases. A widget may be added to only one container at a time;\nyou can\u2019t place the same widget inside two different containers.</p><p>Note that some containers, such as <span data-xref=\"Gtk.ScrolledWindow\"/> or <span data-xref=\"Gtk.ListBox\"/>,\nmay add intermediate children between the added widget and the\ncontainer.</p>",
+            "kind": "vfunc",
+            "name": "add",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "check_resize",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the type of the children supported by the container.</p><p>Note that this may return %G_TYPE_NONE to indicate that no more\nchildren can be added, e.g. for a <span data-xref=\"Gtk.Paned\"/> which already has two\nchildren.</p>",
+            "kind": "vfunc",
+            "name": "child_type",
+            "parameters": [],
+            "retval": {
+                "type": "GObject.Type"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "composite_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Invokes <code>callback</code> on each child of <code>container</code>, including children\nthat are considered \u201cinternal\u201d (implementation details of the\ncontainer). \u201cInternal\u201d children generally weren\u2019t added by the user\nof the container, but were added by the container implementation\nitself.  Most applications should use <span data-xref=\"Gtk.Container.foreach\"/>,\nrather than <span data-xref=\"Gtk.Container.forall\"/>.</p>",
+            "kind": "vfunc",
+            "name": "forall",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "include_internals",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.Callback"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "get_child_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_id",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Any"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns a newly created widget path representing all the widget hierarchy\nfrom the toplevel down to and including <code>child</code>.</p>",
+            "kind": "vfunc",
+            "name": "get_path_for_child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.WidgetPath"
+            }
+        },
+        {
+            "doc": "<p>Removes <code>widget</code> from <code>container</code>. <code>widget</code> must be inside <code>container</code>.\nNote that <code>container</code> will own a reference to <code>widget</code>, and that this\nmay be the last reference held; so removing a widget from its\ncontainer can destroy that widget. If you want to use <code>widget</code>\nagain, you need to add a reference to it while it\u2019s not inside\na container, using <span data-xref=\"GObject.Object.ref\">GObject.Object.prototype.ref</span>. If you don\u2019t want to use <code>widget</code>\nagain it\u2019s usually more efficient to simply destroy it directly\nusing <span data-xref=\"Gtk.Widget.destroy\"/> since this will remove it from the\ncontainer and help break any circular reference count cycles.</p>",
+            "kind": "vfunc",
+            "name": "remove",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "set_child_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_id",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Any"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets, or unsets if <code>child</code> is <code>null</code>, the focused child of <code>container</code>.</p><p>This function emits the GtkContainer::set_focus_child signal of\n<code>container</code>. Implementations of <span data-xref=\"Gtk.Container\"/> can override the\ndefault behaviour by overriding the class closure of this signal.</p><p>This is function is mostly meant to be used by widgets. Applications can use\n<span data-xref=\"Gtk.Widget.grab_focus\"/> to manualy set the focus to a specific widget.</p>",
+            "kind": "vfunc",
+            "name": "set_focus_child",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

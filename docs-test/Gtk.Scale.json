@@ -1,0 +1,339 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Scale\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new scale widget with the given orientation that lets the\nuser input a number between <code>min</code> and <code>max</code> (including <code>min</code> and <code>max</code>)\nwith the increment <code>step</code>.  <code>step</code> must be nonzero; it\u2019s the distance\nthe slider moves when using the arrow keys to adjust the scale\nvalue.</p><p>Note that the way in which the precision is derived works best if <code>step</code>\nis a power of ten. If the resulting precision is not suitable for your\nneeds, use <span data-xref=\"Gtk.Scale.set_digits\"/> to correct it.</p>",
+            "kind": "constructor",
+            "name": "new_with_range",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "min",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "max",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "step",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A GtkScale is a slider control used to select a numeric value.\nTo use it, you\u2019ll probably want to investigate the methods on\nits base class, <span data-xref=\"Gtk.Range\"/>, in addition to the methods for GtkScale itself.\nTo set the value of a scale, you would normally use <span data-xref=\"Gtk.Range.set_value\"/>.\nTo detect changes to the value, you would normally use the\n<span data-xref=\"Gtk.Range-value-changed\"/> signal.</p><p>Note that using the same upper and lower bounds for the <span data-xref=\"Gtk.Scale\"/> (through\nthe <span data-xref=\"Gtk.Range\"/> methods) will hide the slider itself. This is useful for\napplications that want to show an undeterminate value on the scale, without\nchanging the layout of the application (such as movie or music players).</p><h1>GtkScale as GtkBuildable</h1><p>GtkScale supports a custom &lt;marks&gt; element, which can contain multiple\n&lt;mark&gt; elements. The \u201cvalue\u201d and \u201cposition\u201d attributes have the same\nmeaning as <span data-xref=\"Gtk.Scale.add_mark\"/> parameters of the same name. If the\nelement is not empty, its content is taken as the markup to show at\nthe mark. It can be translated with the usual \u201dtranslatable\u201d and\n\u201ccontext\u201d attributes.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "range"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds a mark at <code>value</code>.</p><p>A mark is indicated visually by drawing a tick mark next to the scale,\nand GTK+ makes it easy for the user to position the scale exactly at the\nmarks value.</p><p>If <code>markup</code> is not <code>null</code>, text is shown next to the tick mark.</p><p>To remove marks from a scale, use <span data-xref=\"Gtk.Scale.clear_marks\"/>.</p>",
+            "kind": "method",
+            "name": "add_mark",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "markup",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes any marks that have been added with <span data-xref=\"Gtk.Scale.add_mark\"/>.</p>",
+            "kind": "method",
+            "name": "clear_marks",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the number of decimal places that are displayed in the value.</p>",
+            "kind": "method",
+            "name": "get_digits",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the current value is displayed as a string\nnext to the slider.</p>",
+            "kind": "method",
+            "name": "get_draw_value",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the scale has an origin.</p>",
+            "kind": "method",
+            "name": "get_has_origin",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the <span data-xref=\"Pango.Layout\">Pango.Layout</span> used to display the scale. The returned\nobject is owned by the scale so does not need to be freed by\nthe caller.</p>",
+            "kind": "method",
+            "name": "get_layout",
+            "parameters": [],
+            "retval": {
+                "type": "Pango.Layout"
+            }
+        },
+        {
+            "doc": "<p>Obtains the coordinates where the scale will draw the\n<span data-xref=\"Pango.Layout\">Pango.Layout</span> representing the text in the scale. Remember\nwhen using the <span data-xref=\"Pango.Layout\">Pango.Layout</span> function you need to convert to\nand from pixels using PANGO_PIXELS() or #PANGO_SCALE.</p><p>If the <span data-xref=\"Gtk.Scale-draw-value\"/> property is <code>false</code>, the return\nvalues are undefined.</p>",
+            "kind": "method",
+            "name": "get_layout_offsets",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "x",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "y",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the position in which the current value is displayed.</p>",
+            "kind": "method",
+            "name": "get_value_pos",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PositionType"
+            }
+        },
+        {
+            "doc": "<p>Sets the number of decimal places that are displayed in the value.\nAlso causes the value of the adjustment to be rounded off to this\nnumber of digits, so the retrieved value matches the value the user saw.</p>",
+            "kind": "method",
+            "name": "set_digits",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "digits",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Specifies whether the current value is displayed as a string next\nto the slider.</p>",
+            "kind": "method",
+            "name": "set_draw_value",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "draw_value",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>has_origin</code> is set to <code>true</code> (the default),\nthe scale will highlight the part of the scale\nbetween the origin (bottom or left side) of the scale\nand the current value.</p>",
+            "kind": "method",
+            "name": "set_has_origin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "has_origin",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the position in which the current value is displayed.</p>",
+            "kind": "method",
+            "name": "set_value_pos",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Scale",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "digits",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "draw-value",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "has-origin",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "value-pos",
+            "type": "Gtk.PositionType"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Signal which allows you to change how the scale value is displayed.\nConnect a signal handler which returns an allocated string representing\n<code>value</code>. That string will then be used to display the scale's value.</p><p>Here's an example signal handler which displays a value 1.0 as\nwith \"--&gt;1.0&lt;--\".\n|[&lt;!-- language=\"C\" --&gt;\nstatic gchar<em>\nformat_value_callback (GtkScale </em>scale,\n                       gdouble   value)\n{\n  return g_strdup_printf (\"--&gt;\\%0.*g&lt;--\",\n                          gtk_scale_get_digits (scale), value);\n }\n]|</p>",
+            "kind": "signal",
+            "name": "format-value",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "draw_value",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "format_value",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Obtains the coordinates where the scale will draw the\n<span data-xref=\"Pango.Layout\">Pango.Layout</span> representing the text in the scale. Remember\nwhen using the <span data-xref=\"Pango.Layout\">Pango.Layout</span> function you need to convert to\nand from pixels using PANGO_PIXELS() or #PANGO_SCALE.</p><p>If the <span data-xref=\"Gtk.Scale-draw-value\"/> property is <code>false</code>, the return\nvalues are undefined.</p>",
+            "kind": "vfunc",
+            "name": "get_layout_offsets",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "x",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "y",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.EventBox\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.EventBox\"/> widget is a subclass of <span data-xref=\"Gtk.Bin\"/> which also has its\nown window. It is useful since it allows you to catch events for widgets\nwhich do not have their own window.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "bin"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns whether the event box window is above or below the\nwindows of its child. See <span data-xref=\"Gtk.EventBox.set_above_child\"/>\nfor details.</p>",
+            "kind": "method",
+            "name": "get_above_child",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the event box has a visible window.\nSee <span data-xref=\"Gtk.EventBox.set_visible_window\"/> for details.</p>",
+            "kind": "method",
+            "name": "get_visible_window",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Set whether the event box window is positioned above the windows\nof its child, as opposed to below it. If the window is above, all\nevents inside the event box will go to the event box. If the window\nis below, events in windows of child widgets will first got to that\nwidget, and then to its parents.</p><p>The default is to keep the window below the child.</p>",
+            "kind": "method",
+            "name": "set_above_child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "above_child",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Set whether the event box uses a visible or invisible child\nwindow. The default is to use visible windows.</p><p>In an invisible window event box, the window that the\nevent box creates is a <span data-xref=\"Gdk.WindowWindowClass\">Gdk.WindowWindowClass</span>.input_only window, which\nmeans that it is invisible and only serves to receive\nevents.</p><p>A visible window event box creates a visible (<span data-xref=\"Gdk.WindowWindowClass\">Gdk.WindowWindowClass</span>.input_output)\nwindow that acts as the parent window for all the widgets\ncontained in the event box.</p><p>You should generally make your event box invisible if\nyou just want to trap events. Creating a visible window\nmay cause artifacts that are visible to the user, especially\nif the user is using a theme with gradients or pixmaps.</p><p>The main reason to create a non input-only event box is if\nyou want to set the background to a different color or\ndraw on it.</p><p>There is one unexpected issue for an invisible event box that has its\nwindow below the child. (See <span data-xref=\"Gtk.EventBox.set_above_child\"/>.)\nSince the input-only window is not an ancestor window of any windows\nthat descendent widgets of the event box create, events on these\nwindows aren\u2019t propagated up by the windowing system, but only by GTK+.\nThe practical effect of this is if an event isn\u2019t in the event\nmask for the descendant window (see <span data-xref=\"Gtk.Widget.add_events\"/>),\nit won\u2019t be received by the event box.</p><p>This problem doesn\u2019t occur for visible event boxes, because in\nthat case, the event box window is actually the ancestor of the\ndescendant windows, not just at the same place on the screen.</p>",
+            "kind": "method",
+            "name": "set_visible_window",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "visible_window",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "EventBox",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "above-child",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "visible-window",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

@@ -1,0 +1,469 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuItem\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuItem\"/> whose child is a <span data-xref=\"Gtk.Label\"/>.</p>",
+            "kind": "constructor",
+            "name": "new_with_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.MenuItem\"/> containing a label.</p><p>The label will be created using <span data-xref=\"Gtk.Label.new_with_mnemonic\"/>,\nso underscores in <code>label</code> indicate the mnemonic for the menu item.</p>",
+            "kind": "constructor",
+            "name": "new_with_mnemonic",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.MenuItem\"/> widget and the derived widgets are the only valid\nchildren for menus. Their function is to correctly handle highlighting,\nalignment, events and submenus.</p><p>As a GtkMenuItem derives from <span data-xref=\"Gtk.Bin\"/> it can hold any valid child widget,\nalthough only a few are really useful.</p><p>By default, a GtkMenuItem sets a <span data-xref=\"Gtk.AccelLabel\"/> as its child.\nGtkMenuItem has direct functions to set the label and its mnemonic.\nFor more advanced label settings, you can fetch the child widget from the GtkBin.</p><p>An example for setting markup and accelerator on a MenuItem:\n|[&lt;!-- language=\"C\" --&gt;\nGtkWidget *child = gtk_bin_get_child (GTK_BIN (menu_item));\ngtk_label_set_markup (GTK_LABEL (child), \"&lt;i&gt;new label&lt;/i&gt; with &lt;b&gt;markup&lt;/b&gt;\");\ngtk_accel_label_set_accel (GTK_ACCEL_LABEL (child), GDK_KEY_1, 0);\n]|</p><h1>GtkMenuItem as GtkBuildable</h1><p>The GtkMenuItem implementation of the <span data-xref=\"Gtk.Buildable\"/> interface supports\nadding a submenu by specifying \u201csubmenu\u201d as the \u201ctype\u201d attribute of\na &lt;child&gt; element.</p><p>An example of UI definition fragment with submenus:\n|[\n&lt;object class=\"GtkMenuItem\"&gt;\n  &lt;child type=\"submenu\"&gt;\n    &lt;object class=\"GtkMenu\"/&gt;\n  &lt;/child&gt;\n&lt;/object&gt;\n]|</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "bin"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Emits the <span data-xref=\"Gtk.MenuItem-activate\"/> signal on the given item</p>",
+            "kind": "method",
+            "name": "activate",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits the <span data-xref=\"Gtk.MenuItem-deselect\"/> signal on the given item.</p>",
+            "kind": "method",
+            "name": "deselect",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieve the accelerator path that was previously set on <code>menu_item</code>.</p><p>See <span data-xref=\"Gtk.MenuItem.set_accel_path\"/> for details.</p>",
+            "kind": "method",
+            "name": "get_accel_path",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Sets @text on the <code>menu_item</code> label</p>",
+            "kind": "method",
+            "name": "get_label",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the <code>menu_item</code> reserves space for\nthe submenu indicator, regardless if it has a submenu\nor not.</p>",
+            "kind": "method",
+            "name": "get_reserve_indicator",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets whether the menu item appears justified at the right\nside of the menu bar.</p>",
+            "kind": "method",
+            "name": "get_right_justified",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the submenu underneath this menu item, if any.\nSee <span data-xref=\"Gtk.MenuItem.set_submenu\"/>.</p>",
+            "kind": "method",
+            "name": "get_submenu",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Checks if an underline in the text indicates the next character\nshould be used for the mnemonic accelerator key.</p>",
+            "kind": "method",
+            "name": "get_use_underline",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Emits the <span data-xref=\"Gtk.MenuItem-select\"/> signal on the given item.</p>",
+            "kind": "method",
+            "name": "select",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Set the accelerator path on <code>menu_item</code>, through which runtime\nchanges of the menu item\u2019s accelerator caused by the user can be\nidentified and saved to persistent storage (see <span data-xref=\"Gtk.AccelMap.save\"/>\non this). To set up a default accelerator for this menu item, call\n<span data-xref=\"Gtk.AccelMap.add_entry\"/> with the same <code>accel_path</code>. See also\n<span data-xref=\"Gtk.AccelMap.add_entry\"/> on the specifics of accelerator paths,\nand <span data-xref=\"Gtk.Menu.set_accel_path\"/> for a more convenient variant of\nthis function.</p><p>This function is basically a convenience wrapper that handles\ncalling <span data-xref=\"Gtk.Widget.set_accel_path\"/> with the appropriate accelerator\ngroup for the menu item.</p><p>Note that you do need to set an accelerator on the parent menu with\n<span data-xref=\"Gtk.Menu.set_accel_group\"/> for this to work.</p><p>Note that <code>accel_path</code> string will be stored in a <span data-xref=\"GLib.Quark\">GLib.Quark</span>.\nTherefore, if you pass a static string, you can save some memory\nby interning it first with <span data-xref=\"GLib.intern_static_string\">GLib.intern_static_string</span>.</p>",
+            "kind": "method",
+            "name": "set_accel_path",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "accel_path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets @text on the <code>menu_item</code> label</p>",
+            "kind": "method",
+            "name": "set_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the <code>menu_item</code> should reserve space for\nthe submenu indicator, regardless if it actually has\na submenu or not.</p><p>There should be little need for applications to call\nthis functions.</p>",
+            "kind": "method",
+            "name": "set_reserve_indicator",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "reserve",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the menu item appears justified at the right\nside of a menu bar. This was traditionally done for \u201cHelp\u201d\nmenu items, but is now considered a bad idea. (If the widget\nlayout is reversed for a right-to-left language like Hebrew\nor Arabic, right-justified-menu-items appear at the left.)</p>",
+            "kind": "method",
+            "name": "set_right_justified",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "right_justified",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets or replaces the menu item\u2019s submenu, or removes it when a <code>null</code>\nsubmenu is passed.</p>",
+            "kind": "method",
+            "name": "set_submenu",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "submenu",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If true, an underline in the text indicates the next character\nshould be used for the mnemonic accelerator key.</p>",
+            "kind": "method",
+            "name": "set_use_underline",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits the <span data-xref=\"Gtk.MenuItem-toggle-size-allocate\"/> signal on the given item.</p>",
+            "kind": "method",
+            "name": "toggle_size_allocate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "allocation",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits the <span data-xref=\"Gtk.MenuItem-toggle-size-request\"/> signal on the given item.</p>",
+            "kind": "method",
+            "name": "toggle_size_request",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "requisition",
+                    "direction": "inout",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "MenuItem",
+    "properties": [
+        {
+            "doc": "<p>Sets the accelerator path of the menu item, through which runtime\nchanges of the menu item's accelerator caused by the user can be\nidentified and saved to persistant storage.</p>",
+            "kind": "property",
+            "name": "accel-path",
+            "type": "String"
+        },
+        {
+            "doc": "<p>The text for the child label.</p>",
+            "kind": "property",
+            "name": "label",
+            "type": "String"
+        },
+        {
+            "doc": "<p>Sets whether the menu item appears justified\nat the right side of a menu bar.</p>",
+            "kind": "property",
+            "name": "right-justified",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The submenu attached to the menu item, or <code>null</code> if it has none.</p>",
+            "kind": "property",
+            "name": "submenu",
+            "type": "Gtk.Menu"
+        },
+        {
+            "doc": "<p><code>true</code> if underlines in the text indicate mnemonics.</p>",
+            "kind": "property",
+            "name": "use-underline",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Emitted when the item is activated.</p>",
+            "kind": "signal",
+            "name": "activate",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the item is activated, but also if the menu item has a\nsubmenu. For normal applications, the relevant signal is\n<span data-xref=\"Gtk.MenuItem-activate\"/>.</p>",
+            "kind": "signal",
+            "name": "activate-item",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "deselect",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "select",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "toggle-size-allocate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "toggle-size-request",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "<p>Emits the <span data-xref=\"Gtk.MenuItem-activate\"/> signal on the given item</p>",
+            "kind": "vfunc",
+            "name": "activate",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "activate_item",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits the <span data-xref=\"Gtk.MenuItem-deselect\"/> signal on the given item.</p>",
+            "kind": "vfunc",
+            "name": "deselect",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets @text on the <code>menu_item</code> label</p>",
+            "kind": "vfunc",
+            "name": "get_label",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Emits the <span data-xref=\"Gtk.MenuItem-select\"/> signal on the given item.</p>",
+            "kind": "vfunc",
+            "name": "select",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets @text on the <code>menu_item</code> label</p>",
+            "kind": "vfunc",
+            "name": "set_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits the <span data-xref=\"Gtk.MenuItem-toggle-size-allocate\"/> signal on the given item.</p>",
+            "kind": "vfunc",
+            "name": "toggle_size_allocate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "allocation",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits the <span data-xref=\"Gtk.MenuItem-toggle-size-request\"/> signal on the given item.</p>",
+            "kind": "vfunc",
+            "name": "toggle_size_request",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "requisition",
+                    "direction": "inout",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

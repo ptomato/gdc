@@ -1,0 +1,389 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new GtkColorSelection.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "private_data"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the current alpha value.</p>",
+            "kind": "method",
+            "name": "get_current_alpha",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint16)"
+            }
+        },
+        {
+            "doc": "<p>Sets <code>color</code> to be the current color in the GtkColorSelection widget.</p>",
+            "kind": "method",
+            "name": "get_current_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "out",
+                    "type": "Gdk.Color"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets <code>rgba</code> to be the current color in the GtkColorSelection widget.</p>",
+            "kind": "method",
+            "name": "get_current_rgba",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rgba",
+                    "direction": "out",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Determines whether the colorsel has an opacity control.</p>",
+            "kind": "method",
+            "name": "get_has_opacity_control",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Determines whether the color selector has a color palette.</p>",
+            "kind": "method",
+            "name": "get_has_palette",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the previous alpha value.</p>",
+            "kind": "method",
+            "name": "get_previous_alpha",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint16)"
+            }
+        },
+        {
+            "doc": "<p>Fills <code>color</code> in with the original color value.</p>",
+            "kind": "method",
+            "name": "get_previous_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "out",
+                    "type": "Gdk.Color"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Fills <code>rgba</code> in with the original color value.</p>",
+            "kind": "method",
+            "name": "get_previous_rgba",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rgba",
+                    "direction": "out",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the current state of the <code>colorsel</code>.</p>",
+            "kind": "method",
+            "name": "is_adjusting",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the current opacity to be <code>alpha</code>.</p><p>The first time this is called, it will also set\nthe original opacity to be <code>alpha</code> too.</p>",
+            "kind": "method",
+            "name": "set_current_alpha",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "alpha",
+                    "direction": "in",
+                    "type": "Number(guint16)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the current color to be <code>color</code>.</p><p>The first time this is called, it will also set\nthe original color to be <code>color</code> too.</p>",
+            "kind": "method",
+            "name": "set_current_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "in",
+                    "type": "Gdk.Color"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the current color to be <code>rgba</code>.</p><p>The first time this is called, it will also set\nthe original color to be <code>rgba</code> too.</p>",
+            "kind": "method",
+            "name": "set_current_rgba",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rgba",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <code>colorsel</code> to use or not use opacity.</p>",
+            "kind": "method",
+            "name": "set_has_opacity_control",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "has_opacity",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Shows and hides the palette based upon the value of <code>has_palette</code>.</p>",
+            "kind": "method",
+            "name": "set_has_palette",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "has_palette",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the \u201cprevious\u201d alpha to be <code>alpha</code>.</p><p>This function should be called with some hesitations,\nas it might seem confusing to have that alpha change.</p>",
+            "kind": "method",
+            "name": "set_previous_alpha",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "alpha",
+                    "direction": "in",
+                    "type": "Number(guint16)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the \u201cprevious\u201d color to be <code>color</code>.</p><p>This function should be called with some hesitations,\nas it might seem confusing to have that color change.\nCalling <span data-xref=\"Gtk.ColorSelection.set_current_color\"/> will also\nset this color the first time it is called.</p>",
+            "kind": "method",
+            "name": "set_previous_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "color",
+                    "direction": "in",
+                    "type": "Gdk.Color"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the \u201cprevious\u201d color to be <code>rgba</code>.</p><p>This function should be called with some hesitations,\nas it might seem confusing to have that color change.\nCalling <span data-xref=\"Gtk.ColorSelection.set_current_rgba\"/> will also\nset this color the first time it is called.</p>",
+            "kind": "method",
+            "name": "set_previous_rgba",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rgba",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        [
+            {
+                "doc": "<p>Parses a color palette string; the string is a colon-separated\nlist of color names readable by <span data-xref=\"Gdk.color_parse\">Gdk.color_parse</span>.</p>",
+                "kind": "function",
+                "name": "palette_from_string",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "str",
+                        "direction": "in",
+                        "type": "String"
+                    },
+                    {
+                        "allow_none": false,
+                        "argname": "colors",
+                        "direction": "out",
+                        "type": "Array(Gdk.Color)"
+                    },
+                    {
+                        "allow_none": false,
+                        "argname": "n_colors",
+                        "direction": "out",
+                        "type": "Number(gint)"
+                    }
+                ],
+                "retval": {
+                    "type": "Boolean"
+                }
+            },
+            {
+                "doc": "<p>Encodes a palette as a string, useful for persistent storage.</p>",
+                "kind": "function",
+                "name": "palette_to_string",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "colors",
+                        "direction": "in",
+                        "type": "Array(Gdk.Color)"
+                    },
+                    {
+                        "allow_none": false,
+                        "argname": "n_colors",
+                        "direction": "in",
+                        "type": "Number(gint)"
+                    }
+                ],
+                "retval": {
+                    "type": "String"
+                }
+            },
+            {
+                "doc": "<p>Installs a global function to be called whenever the user\ntries to modify the palette in a color selection.</p><p>This function should save the new palette contents, and update\nthe <span data-xref=\"Gtk.Settings-gtk-color-palette\"/> GtkSettings property so all\nGtkColorSelection widgets will be modified.</p>",
+                "kind": "function",
+                "name": "set_change_palette_with_screen_hook",
+                "parameters": [
+                    {
+                        "allow_none": false,
+                        "argname": "func",
+                        "direction": "in",
+                        "type": "Gtk.ColorSelectionChangePaletteWithScreenFunc"
+                    }
+                ],
+                "retval": {
+                    "type": "Gtk.ColorSelectionChangePaletteWithScreenFunc"
+                }
+            }
+        ]
+    ],
+    "name": "ColorSelection",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "current-alpha",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "<p>The current GdkColor color.</p>",
+            "kind": "property",
+            "name": "current-color",
+            "type": "Gdk.Color"
+        },
+        {
+            "doc": "<p>The current RGBA color.</p>",
+            "kind": "property",
+            "name": "current-rgba",
+            "type": "Gdk.RGBA"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "has-opacity-control",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "has-palette",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>This signal is emitted when the color changes in the <span data-xref=\"Gtk.ColorSelection\"/>\naccording to its update policy.</p>",
+            "kind": "signal",
+            "name": "color-changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "color_changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

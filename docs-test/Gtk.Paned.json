@@ -1,0 +1,358 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Paned\"/> widget.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.Paned\"/> has two panes, arranged either\nhorizontally or vertically. The division between\nthe two panes is adjustable by the user by dragging\na handle.</p><p>Child widgets are\nadded to the panes of the widget with <span data-xref=\"Gtk.Paned.pack1\"/> and\n<span data-xref=\"Gtk.Paned.pack2\"/>. The division between the two children is set by default\nfrom the size requests of the children, but it can be adjusted by the\nuser.</p><p>A paned widget draws a separator between the two child widgets and a\nsmall handle that the user can drag to adjust the division. It does not\ndraw any relief around the children or around the separator. (The space\nin which the separator is called the gutter.) Often, it is useful to put\neach child inside a <span data-xref=\"Gtk.Frame\"/> with the shadow type set to <span data-xref=\"Gtk.ShadowType\"/>.in\nso that the gutter appears as a ridge. No separator is drawn if one of\nthe children is missing.</p><p>Each child has two options that can be set, @resize and @shrink. If\n@resize is true, then when the <span data-xref=\"Gtk.Paned\"/> is resized, that child will\nexpand or shrink along with the paned widget. If @shrink is true, then\nthat child can be made smaller than its requisition by the user.\nSetting @shrink to <code>false</code> allows the application to set a minimum size.\nIf @resize is false for both children, then this is treated as if\n@resize is true for both children.</p><p>The application can set the position of the slider as if it were set\nby the user, by calling <span data-xref=\"Gtk.Paned.set_position\"/>.</p><h2>Creating a paned widget with minimum sizes.</h2><p>|[&lt;!-- language=\"C\" --&gt;\nGtkWidget <em>hpaned = gtk_paned_new (GTK_ORIENTATION_HORIZONTAL);\nGtkWidget </em>frame1 = gtk_frame_new (NULL);\nGtkWidget *frame2 = gtk_frame_new (NULL);\ngtk_frame_set_shadow_type (GTK_FRAME (frame1), GTK_SHADOW_IN);\ngtk_frame_set_shadow_type (GTK_FRAME (frame2), GTK_SHADOW_IN);</p><p>gtk_widget_set_size_request (hpaned, 200, -1);</p><p>gtk_paned_pack1 (GTK_PANED (hpaned), frame1, TRUE, FALSE);\ngtk_widget_set_size_request (frame1, 50, -1);</p><p>gtk_paned_pack2 (GTK_PANED (hpaned), frame2, FALSE, FALSE);\ngtk_widget_set_size_request (frame2, 50, -1);\n]|</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "container"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds a child to the top or left pane with default parameters. This is\nequivalent to\n<code>gtk_paned_pack1 (paned, child, FALSE, TRUE)</code>.</p>",
+            "kind": "method",
+            "name": "add1",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a child to the bottom or right pane with default parameters. This\nis equivalent to\n<code>gtk_paned_pack2 (paned, child, TRUE, TRUE)</code>.</p>",
+            "kind": "method",
+            "name": "add2",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Obtains the first child of the paned widget.</p>",
+            "kind": "method",
+            "name": "get_child1",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Obtains the second child of the paned widget.</p>",
+            "kind": "method",
+            "name": "get_child2",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns the <span data-xref=\"Gdk.Window\">Gdk.Window</span> of the handle. This function is\nuseful when handling button or motion events because it\nenables the callback to distinguish between the window\nof the paned, a child and the handle.</p>",
+            "kind": "method",
+            "name": "get_handle_window",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Window"
+            }
+        },
+        {
+            "doc": "<p>Obtains the position of the divider between the two panes.</p>",
+            "kind": "method",
+            "name": "get_position",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Adds a child to the top or left pane.</p>",
+            "kind": "method",
+            "name": "pack1",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "resize",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shrink",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a child to the bottom or right pane.</p>",
+            "kind": "method",
+            "name": "pack2",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "resize",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "shrink",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the position of the divider between the two panes.</p>",
+            "kind": "method",
+            "name": "set_position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Paned",
+    "properties": [
+        {
+            "doc": "<p>The largest possible value for the position property. This property is derived from the\nsize and shrinkability of the widget's children.</p>",
+            "kind": "property",
+            "name": "max-position",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>The smallest possible value for the position property. This property is derived from the\nsize and shrinkability of the widget's children.</p>",
+            "kind": "property",
+            "name": "min-position",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "position",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "position-set",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::accept-position signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to accept the current position of the handle when\nmoving it using key bindings.</p><p>The default binding for this signal is Return or Space.</p>",
+            "kind": "signal",
+            "name": "accept-position",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>The ::cancel-position signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to cancel moving the position of the handle using key\nbindings. The position of the handle will be reset to the value prior to\nmoving it.</p><p>The default binding for this signal is Escape.</p>",
+            "kind": "signal",
+            "name": "cancel-position",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>The ::cycle-child-focus signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to cycle the focus between the children of the paned.</p><p>The default binding is f6.</p>",
+            "kind": "signal",
+            "name": "cycle-child-focus",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "reversed",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>The ::cycle-handle-focus signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to cycle whether the paned should grab focus to allow\nthe user to change position of the handle by using key bindings.</p><p>The default binding for this signal is f8.</p>",
+            "kind": "signal",
+            "name": "cycle-handle-focus",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "reversed",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>The ::move-handle signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to move the handle when the user is using key bindings\nto move it.</p>",
+            "kind": "signal",
+            "name": "move-handle",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "scroll_type",
+                    "direction": "in",
+                    "type": "Gtk.ScrollType"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>The ::toggle-handle-focus is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to accept the current position of the handle and then\nmove focus to the next widget in the focus chain.</p><p>The default binding is Tab.</p>",
+            "kind": "signal",
+            "name": "toggle-handle-focus",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "accept_position",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "cancel_position",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "cycle_child_focus",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "reverse",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "cycle_handle_focus",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "reverse",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "move_handle",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "scroll",
+                    "direction": "in",
+                    "type": "Gtk.ScrollType"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "toggle_handle_focus",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Create a new <span data-xref=\"Gtk.StackSwitcher\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The GtkStackSwitcher widget acts as a controller for a\n<span data-xref=\"Gtk.Stack\"/>; it shows a row of buttons to switch between\nthe various pages of the associated stack widget.</p><p>All the content for the buttons comes from the child properties\nof the <span data-xref=\"Gtk.Stack\"/>.</p><p>It is possible to associate multiple <span data-xref=\"Gtk.StackSwitcher\"/> widgets\nwith the same stack widget.</p><p>The GtkStackSwitcher widget was added in 3.10.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "widget"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Retrieves the stack.\nSee <span data-xref=\"Gtk.StackSwitcher.set_stack\"/>.</p>",
+            "kind": "method",
+            "name": "get_stack",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Stack"
+            }
+        },
+        {
+            "doc": "<p>Sets the stack to control.</p>",
+            "kind": "method",
+            "name": "set_stack",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "stack",
+                    "direction": "in",
+                    "type": "Gtk.Stack"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "StackSwitcher",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "stack",
+            "type": "Gtk.Stack"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

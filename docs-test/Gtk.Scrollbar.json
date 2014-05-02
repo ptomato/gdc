@@ -1,0 +1,42 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new scrollbar with the given orientation.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.Scrollbar\"/> widget is a horizontal or vertical scrollbar,\ndepending on the value of the <span data-xref=\"Gtk.Orientable-orientation\"/> property.</p><p>The position of the thumb in a scrollbar is controlled by the scroll\nadjustments. See <span data-xref=\"Gtk.Adjustment\"/> for the fields in an adjustment - for\n<span data-xref=\"Gtk.Scrollbar\"/>, the <span data-xref=\"Gtk.Adjustment-value\"/> field represents the position\nof the scrollbar, which must be between the <span data-xref=\"Gtk.Adjustment-lower\"/> field\nand <span data-xref=\"Gtk.Adjustment-upper\"/> - <span data-xref=\"Gtk.Adjustment-page-size\"/>. The\n<span data-xref=\"Gtk.Adjustment-page-size\"/> field represents the size of the visible\nscrollable area. The <span data-xref=\"Gtk.Adjustment-step-increment\"/> and\n<span data-xref=\"Gtk.Adjustment-page-increment\"/> fields are properties when the user asks to\nstep down (using the small stepper arrows) or page down (using for\nexample the <code>Page Down</code> key).</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "range"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        []
+    ],
+    "name": "Scrollbar",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

@@ -1,0 +1,82 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ApplicationWindow\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "application",
+                    "direction": "in",
+                    "type": "Gtk.Application"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>GtkApplicationWindow is a <span data-xref=\"Gtk.Window\"/> subclass that offers some\nextra functionality for better integration with <span data-xref=\"Gtk.Application\"/>\nfeatures.  Notably, it can handle both the application menu as well\nas the menubar. See <span data-xref=\"Gtk.Application.set_app_menu\"/> and\n<span data-xref=\"Gtk.Application.set_menubar\"/>.</p><p>This class implements the <span data-xref=\"Gio.ActionGroup\">Gio.ActionGroup</span> and <span data-xref=\"Gio.ActionMap\">Gio.ActionMap</span> interfaces,\nto let you add window-specific actions that will be exported by the\nassociated <span data-xref=\"Gtk.Application\"/>, together with its application-wide\nactions.  Window-specific actions are prefixed with the \u201cwin.\u201d\nprefix and application-wide actions are prefixed with the \u201capp.\u201d\nprefix.  Actions must be addressed with the prefixed name when\nreferring to them from a <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span>.</p><p>Note that widgets that are placed inside a GtkApplicationWindow\ncan also activate these actions, if they implement the\nGtkActionable interface.</p><p>As with <span data-xref=\"Gtk.Application\"/>, the GDK lock will be acquired when\nprocessing actions arriving from other processes and should therefore\nbe held when activating actions locally (if GDK threads are enabled).</p><p>The settings <span data-xref=\"Gtk.Settings-gtk-shell-shows-app-menu\"/> and\n<span data-xref=\"Gtk.Settings-gtk-shell-shows-menubar\"/> tell GTK+ whether the\ndesktop environment is showing the application menu and menubar\nmodels outside the application as part of the desktop shell.\nFor instance, on OS X, both menus will be displayed remotely;\non Windows neither will be. gnome-shell (starting with version 3.4)\nwill display the application menu, but not the menubar.</p><p>If the desktop environment does not display the menubar, then\n<span data-xref=\"Gtk.ApplicationWindow\"/> will automatically show a <span data-xref=\"Gtk.MenuBar\"/> for it.\n(see the <span data-xref=\"Gtk.Application\"/> docs for some screenshots of how this\nlooks on different platforms).\nThis behaviour can be overridden with the <span data-xref=\"Gtk.ApplicationWindow-show-menubar\"/>\nproperty. If the desktop environment does not display the application\nmenu, then it will automatically be included in the menubar. It can\nalso be shown as part of client-side window decorations, e.g. by\nusing <span data-xref=\"Gtk.HeaderBar.set_show_close_button\"/>.</p><h2>A GtkApplicationWindow with a menubar</h2><p>|[&lt;!-- language=\"C\" --&gt;\napp = gtk_application_new ();</p><p>builder = gtk_builder_new ();\ngtk_builder_add_from_string (builder,\n    \"&lt;interface&gt;\"\n    \"  &lt;menu id='menubar'&gt;\"\n    \"    &lt;submenu label='_Edit'&gt;\"\n    \"      &lt;item label='_Copy' action='win.copy'/&gt;\"\n    \"      &lt;item label='_Paste' action='win.paste'/&gt;\"\n    \"    &lt;/submenu&gt;\"\n    \"  &lt;/menu&gt;\"\n    \"&lt;/interface&gt;\");</p><p>menubar = G_MENU_MODEL (gtk_builder_get_object (builder,\n                                                \"menubar\"));\ngtk_application_set_menubar (G_APPLICATION (app),\n                             menubar);\ng_object_unref (builder);</p><p>...</p><p>window = gtk_application_window_new (app);\n]|</p><h2>Handling fallback yourself</h2><p><a href=\"https://git.gnome.org/browse/gtk+/tree/examples/sunny.c\">A simple example</a></p><p>The XML format understood by <span data-xref=\"Gtk.Builder\"/> for <span data-xref=\"Gio.MenuModel\">Gio.MenuModel</span> consists\nof a toplevel <code>&amp;lt;menu&amp;gt;</code> element, which contains one or more <code>&amp;lt;item&amp;gt;</code>\nelements. Each <code>&amp;lt;item&amp;gt;</code> element contains <code>&amp;lt;attribute&amp;gt;</code> and <code>&amp;lt;link&amp;gt;</code>\nelements with a mandatory name attribute. <code>&amp;lt;link&amp;gt;</code> elements have the\nsame content model as <code>&amp;lt;menu&amp;gt;</code>.</p><p>Attribute values can be translated using gettext, like other <span data-xref=\"Gtk.Builder\"/>\ncontent. <code>&amp;lt;attribute&amp;gt;</code> elements can be marked for translation with a\n<code>translatable=\"yes\"</code> attribute. It is also possible to specify message\ncontext and translator comments,using the context and comments attributes.\nTo make use of this, the <span data-xref=\"Gtk.Builder\"/> must have been given the gettext\ndomain to use.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the unique ID of the window. If the window has not yet been added to\na <span data-xref=\"Gtk.Application\"/>, returns <code>0</code>.</p>",
+            "kind": "method",
+            "name": "get_id",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the window will display a menubar for the app menu\nand menubar as needed.</p>",
+            "kind": "method",
+            "name": "get_show_menubar",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the window will display a menubar for the app menu\nand menubar as needed.</p>",
+            "kind": "method",
+            "name": "set_show_menubar",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "show_menubar",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "ApplicationWindow",
+    "properties": [
+        {
+            "doc": "<p>If this property is <code>true</code>, the window will display a menubar\nthat includes the app menu and menubar, unless these are\nshown by the desktop shell. See <span data-xref=\"Gtk.Application.set_app_menu\"/>\nand <span data-xref=\"Gtk.Application.set_menubar\"/>.</p><p>If <code>false</code>, the window will not display a menubar, regardless\nof whether the desktop shell is showing the menus or not.</p>",
+            "kind": "property",
+            "name": "show-menubar",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

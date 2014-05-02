@@ -1,0 +1,75 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ColorSelectionDialog\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "title",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Retrieves the <span data-xref=\"Gtk.ColorSelection\"/> widget embedded in the dialog.</p>",
+            "kind": "method",
+            "name": "get_color_selection",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        []
+    ],
+    "name": "ColorSelectionDialog",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "cancel-button",
+            "type": "Gtk.Widget"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "color-selection",
+            "type": "Gtk.Widget"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "help-button",
+            "type": "Gtk.Widget"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "ok-button",
+            "type": "Gtk.Widget"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

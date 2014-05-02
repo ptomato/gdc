@@ -1,0 +1,131 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RecentAction\"/> object. To add the action to\na <span data-xref=\"Gtk.ActionGroup\"/> and set the accelerator for the action,\ncall <span data-xref=\"Gtk.ActionGroup.add_action_with_accel\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "tooltip",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "stock_id",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Action"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RecentAction\"/> object. To add the action to\na <span data-xref=\"Gtk.ActionGroup\"/> and set the accelerator for the action,\ncall <span data-xref=\"Gtk.ActionGroup.add_action_with_accel\"/>.</p>",
+            "kind": "constructor",
+            "name": "new_for_manager",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "tooltip",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "stock_id",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "manager",
+                    "direction": "in",
+                    "type": "Gtk.RecentManager"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Action"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.RecentAction\"/> represents a list of recently used files, which\ncan be shown by widgets such as <span data-xref=\"Gtk.RecentChooserDialog\"/> or\n<span data-xref=\"Gtk.RecentChooserMenu\"/>.</p><p>To construct a submenu showing recently used files, use a <span data-xref=\"Gtk.RecentAction\"/>\nas the action for a &lt;menuitem&gt;. To construct a menu toolbutton showing\nthe recently used files in the popup menu, use a <span data-xref=\"Gtk.RecentAction\"/> as the\naction for a &lt;toolitem&gt; element.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the value set by <span data-xref=\"Gtk.RecentChooserMenu.set_show_numbers\"/>.</p>",
+            "kind": "method",
+            "name": "get_show_numbers",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets whether a number should be added to the items shown by the\nwidgets representing <code>action</code>. The numbers are shown to provide\na unique character for a mnemonic to be used inside the menu item's\nlabel. Only the first ten items get a number to avoid clashes.</p>",
+            "kind": "method",
+            "name": "set_show_numbers",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "show_numbers",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "RecentAction",
+    "properties": [
+        {
+            "doc": "<p>Whether the items should be displayed with a number.</p>",
+            "kind": "property",
+            "name": "show-numbers",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

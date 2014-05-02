@@ -1,0 +1,169 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.FontSelection\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Gets the <span data-xref=\"Pango.FontFace\">Pango.FontFace</span> representing the selected font group\ndetails (i.e. family, slant, weight, width, etc).</p>",
+            "kind": "method",
+            "name": "get_face",
+            "parameters": [],
+            "retval": {
+                "type": "Pango.FontFace"
+            }
+        },
+        {
+            "doc": "<p>This returns the <span data-xref=\"Gtk.TreeView\"/> which lists all styles available for\nthe selected font. For example, \u201cRegular\u201d, \u201cBold\u201d, etc.</p>",
+            "kind": "method",
+            "name": "get_face_list",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets the <span data-xref=\"Pango.FontFamily\">Pango.FontFamily</span> representing the selected font family.</p>",
+            "kind": "method",
+            "name": "get_family",
+            "parameters": [],
+            "retval": {
+                "type": "Pango.FontFamily"
+            }
+        },
+        {
+            "doc": "<p>This returns the <span data-xref=\"Gtk.TreeView\"/> that lists font families, for\nexample, \u201cSans\u201d, \u201cSerif\u201d, etc.</p>",
+            "kind": "method",
+            "name": "get_family_list",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets the currently-selected font name.</p><p>Note that this can be a different string than what you set with\n<span data-xref=\"Gtk.FontSelection.set_font_name\"/>, as the font selection widget may\nnormalize font names and thus return a string with a different structure.\nFor example, \u201cHelvetica Italic Bold 12\u201d could be normalized to\n\u201cHelvetica Bold Italic 12\u201d. Use <span data-xref=\"Pango.FontDescription.equal\">Pango.FontDescription.prototype.equal</span>\nif you want to compare two font descriptions.</p>",
+            "kind": "method",
+            "name": "get_font_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>This returns the <span data-xref=\"Gtk.Entry\"/> used to display the font as a preview.</p>",
+            "kind": "method",
+            "name": "get_preview_entry",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets the text displayed in the preview area.</p>",
+            "kind": "method",
+            "name": "get_preview_text",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>The selected font size.</p>",
+            "kind": "method",
+            "name": "get_size",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>This returns the <span data-xref=\"Gtk.Entry\"/> used to allow the user to edit the font\nnumber manually instead of selecting it from the list of font sizes.</p>",
+            "kind": "method",
+            "name": "get_size_entry",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>This returns the <span data-xref=\"Gtk.TreeView\"/> used to list font sizes.</p>",
+            "kind": "method",
+            "name": "get_size_list",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Sets the currently-selected font.</p><p>Note that the <code>fontsel</code> needs to know the screen in which it will appear\nfor this to work; this can be guaranteed by simply making sure that the\n<code>fontsel</code> is inserted in a toplevel window before you call this function.</p>",
+            "kind": "method",
+            "name": "set_font_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "fontname",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Sets the text displayed in the preview area.\nThe <code>text</code> is used to show how the selected font looks.</p>",
+            "kind": "method",
+            "name": "set_preview_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "FontSelection",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "font-name",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "preview-text",
+            "type": "String"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

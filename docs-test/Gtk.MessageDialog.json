@@ -1,0 +1,260 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new message dialog, which is a simple dialog with an icon\nindicating the dialog type (error, warning, etc.) and some text the\nuser may want to see. When the user clicks a button a \u201cresponse\u201d\nsignal is emitted with response IDs from <span data-xref=\"Gtk.ResponseType\"/>. See\n<span data-xref=\"Gtk.Dialog\"/> for more details.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "parent",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.DialogFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.MessageType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "buttons",
+                    "direction": "in",
+                    "type": "Gtk.ButtonsType"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "message_format",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new message dialog, which is a simple dialog with an icon\nindicating the dialog type (error, warning, etc.) and some text which\nis marked up with the [Pango text markup language][PangoMarkupFormat].\nWhen the user clicks a button a \u201cresponse\u201d signal is emitted with\nresponse IDs from <span data-xref=\"Gtk.ResponseType\"/>. See <span data-xref=\"Gtk.Dialog\"/> for more details.</p><p>Special XML characters in the printf() arguments passed to this\nfunction will automatically be escaped as necessary.\n(See <span data-xref=\"GLib.markup_printf_escaped\">GLib.markup_printf_escaped</span> for how this is implemented.)\nUsually this is what you want, but if you have an existing\nPango markup string that you want to use literally as the\nlabel, then you need to use <span data-xref=\"Gtk.MessageDialog.set_markup\"/>\ninstead, since you can\u2019t pass the markup string either\nas the format (it might contain \u201c%\u201d characters) or as a string\nargument.\n|[&lt;!-- language=\"C\" --&gt;\n GtkWidget *dialog;\n GtkDialogFlags flags = GTK_DIALOG_DESTROY_WITH_PARENT;\n dialog = gtk_message_dialog_new (parent_window,\n                                  flags,\n                                  GTK_MESSAGE_ERROR,\n                                  GTK_BUTTONS_CLOSE,\n                                  NULL);\n gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (dialog),\n                                markup);\n]|</p>",
+            "kind": "constructor",
+            "name": "new_with_markup",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "parent",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.DialogFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.MessageType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "buttons",
+                    "direction": "in",
+                    "type": "Gtk.ButtonsType"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "message_format",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.MessageDialog\"/> presents a dialog with some message text. It\u2019s simply a\nconvenience widget; you could construct the equivalent of <span data-xref=\"Gtk.MessageDialog\"/>\nfrom <span data-xref=\"Gtk.Dialog\"/> without too much effort, but <span data-xref=\"Gtk.MessageDialog\"/> saves typing.</p><p>One difference from <span data-xref=\"Gtk.Dialog\"/> is that <span data-xref=\"Gtk.MessageDialog\"/> sets the\n<span data-xref=\"Gtk.Window-skip-taskbar-hint\"/> property to <code>true</code>, so that the dialog is hidden\nfrom the taskbar by default.</p><p>The easiest way to do a modal message dialog is to use <span data-xref=\"Gtk.Dialog.run\"/>, though\nyou can also pass in the <span data-xref=\"Gtk.DialogFlags\"/>.modal flag, <span data-xref=\"Gtk.Dialog.run\"/> automatically\nmakes the dialog modal and waits for the user to respond to it. <span data-xref=\"Gtk.Dialog.run\"/>\nreturns when any dialog button is clicked.</p><p>An example for using a modal dialog:\n|[&lt;!-- language=\"C\" --&gt;\n GtkDialogFlags flags = GTK_DIALOG_DESTROY_WITH_PARENT;\n dialog = gtk_message_dialog_new (parent_window,\n                                  flags,\n                                  GTK_MESSAGE_ERROR,\n                                  GTK_BUTTONS_CLOSE,\n                                  \"Error reading \u201c%s\u201d: %s\",\n                                  filename,\n                                  g_strerror (errno));\n gtk_dialog_run (GTK_DIALOG (dialog));\n gtk_widget_destroy (dialog);\n]|</p><p>You might do a non-modal <span data-xref=\"Gtk.MessageDialog\"/> as follows:</p><p>An example for a non-modal dialog:\n|[&lt;!-- language=\"C\" --&gt;\n GtkDialogFlags flags = GTK_DIALOG_DESTROY_WITH_PARENT;\n dialog = gtk_message_dialog_new (parent_window,\n                                  flags,\n                                  GTK_MESSAGE_ERROR,\n                                  GTK_BUTTONS_CLOSE,\n                                  \"Error reading \u201c%s\u201d: %s\",\n                                  filename,\n                                  g_strerror (errno));</p><p>// Destroy the dialog when the user responds to it\n // (e.g. clicks a button)</p><p>g_signal_connect_swapped (dialog, \"response\",\n                           G_CALLBACK (gtk_widget_destroy),\n                           dialog);\n]|</p><h1>GtkMessageDialog as GtkBuildable</h1><p>The GtkMessageDialog implementation of the GtkBuildable interface exposes\nthe message area as an internal child with the name \u201cmessage_area\u201d.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Sets the secondary text of the message dialog to be <code>message_format</code> (with\nprintf()-style), which is marked up with the\n[Pango text markup language][PangoMarkupFormat].</p><p>Due to an oversight, this function does not escape special XML characters\nlike <span data-xref=\"Gtk.MessageDialog.new_with_markup\"/> does. Thus, if the arguments\nmay contain special XML characters, you should use <span data-xref=\"GLib.markup_printf_escaped\">GLib.markup_printf_escaped</span>\nto escape it.</p><p>|[&lt;!-- language=\"C\" --&gt;\ngchar *msg;</p><p>msg = g_markup_printf_escaped (message_format, ...);\ngtk_message_dialog_format_secondary_markup (message_dialog,\n                                            \"%s\", msg);\ng_free (msg);\n]|</p>",
+            "kind": "method",
+            "name": "format_secondary_markup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "message_format",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the secondary text of the message dialog to be <code>message_format</code>\n(with printf()-style).</p>",
+            "kind": "method",
+            "name": "format_secondary_text",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "message_format",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the dialog\u2019s image.</p>",
+            "kind": "method",
+            "name": "get_image",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns the message area of the dialog. This is the box where the\ndialog\u2019s primary and secondary labels are packed. You can add your\nown extra content to that box and it will appear below those labels.\nSee <span data-xref=\"Gtk.Dialog.get_content_area\"/> for the corresponding\nfunction in the parent <span data-xref=\"Gtk.Dialog\"/>.</p>",
+            "kind": "method",
+            "name": "get_message_area",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Sets the dialog\u2019s image to <code>image</code>.</p>",
+            "kind": "method",
+            "name": "set_image",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "image",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the text of the message dialog to be <code>str</code>, which is marked\nup with the [Pango text markup language][PangoMarkupFormat].</p>",
+            "kind": "method",
+            "name": "set_markup",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "str",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "MessageDialog",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "buttons",
+            "type": "Gtk.ButtonsType"
+        },
+        {
+            "doc": "<p>The image for this dialog.</p>",
+            "kind": "property",
+            "name": "image",
+            "type": "Gtk.Widget"
+        },
+        {
+            "doc": "<p>The <span data-xref=\"Gtk.VBox\"/> that corresponds to the message area of this dialog.  See\n<span data-xref=\"Gtk.MessageDialog.get_message_area\"/> for a detailed description of this\narea.</p>",
+            "kind": "property",
+            "name": "message-area",
+            "type": "Gtk.Widget"
+        },
+        {
+            "doc": "<p>The type of the message.</p>",
+            "kind": "property",
+            "name": "message-type",
+            "type": "Gtk.MessageType"
+        },
+        {
+            "doc": "<p>The secondary text of the message dialog.</p>",
+            "kind": "property",
+            "name": "secondary-text",
+            "type": "String"
+        },
+        {
+            "doc": "<p><code>true</code> if the secondary text of the dialog includes Pango markup.\nSee <span data-xref=\"Pango.parse_markup\">Pango.parse_markup</span>.</p>",
+            "kind": "property",
+            "name": "secondary-use-markup",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The primary text of the message dialog. If the dialog has\na secondary text, this will appear as the title.</p>",
+            "kind": "property",
+            "name": "text",
+            "type": "String"
+        },
+        {
+            "doc": "<p><code>true</code> if the primary text of the dialog includes Pango markup.\nSee <span data-xref=\"Pango.parse_markup\">Pango.parse_markup</span>.</p>",
+            "kind": "property",
+            "name": "use-markup",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

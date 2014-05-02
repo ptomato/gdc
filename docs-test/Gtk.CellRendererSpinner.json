@@ -1,0 +1,53 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Returns a new cell renderer which will show a spinner to indicate\nactivity.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CellRenderer"
+            }
+        }
+    ],
+    "doc": "<p>GtkCellRendererSpinner renders a spinning animation in a cell, very\nsimilar to <span data-xref=\"Gtk.Spinner\"/>. It can often be used as an alternative\nto a <span data-xref=\"Gtk.CellRendererProgress\"/> for displaying indefinite activity,\ninstead of actual progress.</p><p>To start the animation in a cell, set the <span data-xref=\"Gtk.CellRendererSpinner-active\"/>\nproperty to <code>true</code> and increment the <span data-xref=\"Gtk.CellRendererSpinner-pulse\"/> property\nat regular intervals. The usual way to set the cell renderer properties\nfor each cell is to bind them to columns in your tree model using e.g.\n<span data-xref=\"Gtk.TreeViewColumn.add_attribute\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        []
+    ],
+    "name": "CellRendererSpinner",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "active",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Pulse of the spinner. Increment this value to draw the next frame of the\nspinner animation. Usually, you would update this value in a timeout.</p><p>By default, the <span data-xref=\"Gtk.Spinner\"/> widget draws one full cycle of the animation,\nconsisting of 12 frames, in 750 milliseconds.</p>",
+            "kind": "property",
+            "name": "pulse",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "<p>The <span data-xref=\"Gtk.IconSize\"/> value that specifies the size of the rendered spinner.</p>",
+            "kind": "property",
+            "name": "size",
+            "type": "Gtk.IconSize"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

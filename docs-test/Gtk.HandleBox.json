@@ -1,0 +1,215 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Create a new handle box.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.HandleBox\"/> widget allows a portion of a window to be \"torn\noff\". It is a bin widget which displays its child and a handle that\nthe user can drag to tear off a separate window (the \u201cfloat\nwindow\u201d) containing the child widget. A thin\n\u201cghost\u201d is drawn in the original location of the\nhandlebox. By dragging the separate window back to its original\nlocation, it can be reattached.</p><p>When reattaching, the ghost and float window, must be aligned\nalong one of the edges, the \u201csnap edge\u201d.\nThis either can be specified by the application programmer\nexplicitly, or GTK+ will pick a reasonable default based\non the handle position.</p><p>To make detaching and reattaching the handlebox as minimally confusing\nas possible to the user, it is important to set the snap edge so that\nthe snap edge does not move when the handlebox is deattached. For\ninstance, if the handlebox is packed at the bottom of a VBox, then\nwhen the handlebox is detached, the bottom edge of the handlebox's\nallocation will remain fixed as the height of the handlebox shrinks,\nso the snap edge should be set to <span data-xref=\"Gtk.PositionType\"/>.bottom.</p><p>&gt; <span data-xref=\"Gtk.HandleBox\"/> has been deprecated. It is very specialized, lacks features\n&gt; to make it useful and most importantly does not fit well into modern\n&gt; application design. Do not use it. There is no replacement.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "bin"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Whether the handlebox\u2019s child is currently detached.</p>",
+            "kind": "method",
+            "name": "get_child_detached",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the handle position of the handle box. See\n<span data-xref=\"Gtk.HandleBox.set_handle_position\"/>.</p>",
+            "kind": "method",
+            "name": "get_handle_position",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PositionType"
+            }
+        },
+        {
+            "doc": "<p>Gets the type of shadow drawn around the handle box. See\n<span data-xref=\"Gtk.HandleBox.set_shadow_type\"/>.</p>",
+            "kind": "method",
+            "name": "get_shadow_type",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.ShadowType"
+            }
+        },
+        {
+            "doc": "<p>Gets the edge used for determining reattachment of the handle box.\nSee <span data-xref=\"Gtk.HandleBox.set_snap_edge\"/>.</p>",
+            "kind": "method",
+            "name": "get_snap_edge",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PositionType"
+            }
+        },
+        {
+            "doc": "<p>Sets the side of the handlebox where the handle is drawn.</p>",
+            "kind": "method",
+            "name": "set_handle_position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the type of shadow to be drawn around the border\nof the handle box.</p>",
+            "kind": "method",
+            "name": "set_shadow_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the snap edge of a handlebox. The snap edge is\nthe edge of the detached child that must be aligned\nwith the corresponding edge of the \u201cghost\u201d left\nbehind when the child was detached to reattach\nthe torn-off window. Usually, the snap edge should\nbe chosen so that it stays in the same place on\nthe screen when the handlebox is torn off.</p><p>If the snap edge is not set, then an appropriate value\nwill be guessed from the handle position. If the\nhandle position is <span data-xref=\"Gtk.PositionType\"/>.right or <span data-xref=\"Gtk.PositionType\"/>.left,\nthen the snap edge will be <span data-xref=\"Gtk.PositionType\"/>.top, otherwise\nit will be <span data-xref=\"Gtk.PositionType\"/>.left.</p>",
+            "kind": "method",
+            "name": "set_snap_edge",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "edge",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "HandleBox",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "child-detached",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "handle-position",
+            "type": "Gtk.PositionType"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "shadow-type",
+            "type": "Gtk.ShadowType"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "snap-edge",
+            "type": "Gtk.PositionType"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "snap-edge-set",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>This signal is emitted when the contents of the\nhandlebox are reattached to the main window.</p>",
+            "kind": "signal",
+            "name": "child-attached",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This signal is emitted when the contents of the\nhandlebox are detached from the main window.</p>",
+            "kind": "signal",
+            "name": "child-detached",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "child_attached",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "child_detached",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

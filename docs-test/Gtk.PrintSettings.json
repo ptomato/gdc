@@ -1,0 +1,1125 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.PrintSettings\"/> object.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PrintSettings"
+            }
+        },
+        {
+            "doc": "<p>Reads the print settings from <code>file_name</code>. Returns a new <span data-xref=\"Gtk.PrintSettings\"/>\nobject with the restored settings, or <code>null</code> if an error occurred. If the\nfile could not be loaded then error is set to either a <span data-xref=\"GLib.FileError\">GLib.FileError</span> or\n<span data-xref=\"GLib.KeyFileError\">GLib.KeyFileError</span>.  See <span data-xref=\"Gtk.PrintSettings.to_file\"/>.</p>",
+            "kind": "constructor",
+            "name": "new_from_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "file_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.PrintSettings"
+            }
+        },
+        {
+            "doc": "<p>Reads the print settings from the group <code>group_name</code> in <code>key_file</code>.  Returns a\nnew <span data-xref=\"Gtk.PrintSettings\"/> object with the restored settings, or <code>null</code> if an\nerror occurred. If the file could not be loaded then error is set to either\na <span data-xref=\"GLib.FileError\">GLib.FileError</span> or <span data-xref=\"GLib.KeyFileError\">GLib.KeyFileError</span>.</p>",
+            "kind": "constructor",
+            "name": "new_from_key_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key_file",
+                    "direction": "in",
+                    "type": "GLib.KeyFile"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "group_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.PrintSettings"
+            }
+        }
+    ],
+    "doc": "<p>A GtkPrintSettings object represents the settings of a print dialog in\na system-independent way. The main use for this object is that once\nyou\u2019ve printed you can get a settings object that represents the settings\nthe user chose, and the next time you print you can pass that object in so\nthat the user doesn\u2019t have to re-set all his settings.</p><p>Its also possible to enumerate the settings so that you can easily save\nthe settings for the next time your app runs, or even store them in a\ndocument. The predefined keys try to use shared values as much as possible\nso that moving such a document between systems still works.</p><p>Printing support was added in GTK+ 2.10.</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Copies a <span data-xref=\"Gtk.PrintSettings\"/> object.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PrintSettings"
+            }
+        },
+        {
+            "doc": "<p>Calls <code>func</code> for each key-value pair of <code>settings</code>.</p>",
+            "kind": "method",
+            "name": "foreach",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "func",
+                    "direction": "in",
+                    "type": "Gtk.PrintSettingsFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Looks up the string value associated with <code>key</code>.</p>",
+            "kind": "method",
+            "name": "get",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the boolean represented by the value\nthat is associated with <code>key</code>.</p><p>The string \u201ctrue\u201d represents <code>true</code>, any other\nstring <code>false</code>.</p>",
+            "kind": "method",
+            "name": "get_bool",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_COLLATE.</p>",
+            "kind": "method",
+            "name": "get_collate",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_DEFAULT_SOURCE.</p>",
+            "kind": "method",
+            "name": "get_default_source",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_DITHER.</p>",
+            "kind": "method",
+            "name": "get_dither",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the double value associated with <code>key</code>, or 0.</p>",
+            "kind": "method",
+            "name": "get_double",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Returns the floating point number represented by\nthe value that is associated with <code>key</code>, or @default_val\nif the value does not represent a floating point number.</p><p>Floating point numbers are parsed with <span data-xref=\"GLib.ascii_strtod\">GLib.ascii_strtod</span>.</p>",
+            "kind": "method",
+            "name": "get_double_with_default",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "def",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_DUPLEX.</p>",
+            "kind": "method",
+            "name": "get_duplex",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PrintDuplex"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_FINISHINGS.</p>",
+            "kind": "method",
+            "name": "get_finishings",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the integer value of <code>key</code>, or 0.</p>",
+            "kind": "method",
+            "name": "get_int",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the value of <code>key</code>, interpreted as\nan integer, or the default value.</p>",
+            "kind": "method",
+            "name": "get_int_with_default",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "def",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the value associated with <code>key</code>, interpreted\nas a length. The returned value is converted to @units.</p>",
+            "kind": "method",
+            "name": "get_length",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_MEDIA_TYPE.</p><p>The set of media types is defined in PWG 5101.1-2002 PWG.</p>",
+            "kind": "method",
+            "name": "get_media_type",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_N_COPIES.</p>",
+            "kind": "method",
+            "name": "get_n_copies",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_NUMBER_UP.</p>",
+            "kind": "method",
+            "name": "get_number_up",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT.</p>",
+            "kind": "method",
+            "name": "get_number_up_layout",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.NumberUpLayout"
+            }
+        },
+        {
+            "doc": "<p>Get the value of %GTK_PRINT_SETTINGS_ORIENTATION,\nconverted to a <span data-xref=\"Gtk.PageOrientation\"/>.</p>",
+            "kind": "method",
+            "name": "get_orientation",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PageOrientation"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_OUTPUT_BIN.</p>",
+            "kind": "method",
+            "name": "get_output_bin",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_PAGE_RANGES.</p>",
+            "kind": "method",
+            "name": "get_page_ranges",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "num_ranges",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Array(Gtk.PageRange)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_PAGE_SET.</p>",
+            "kind": "method",
+            "name": "get_page_set",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PageSet"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_PAPER_HEIGHT,\nconverted to <code>unit</code>.</p>",
+            "kind": "method",
+            "name": "get_paper_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_PAPER_FORMAT,\nconverted to a <span data-xref=\"Gtk.PaperSize\"/>.</p>",
+            "kind": "method",
+            "name": "get_paper_size",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PaperSize"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_PAPER_WIDTH,\nconverted to <code>unit</code>.</p>",
+            "kind": "method",
+            "name": "get_paper_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_PRINT_PAGES.</p>",
+            "kind": "method",
+            "name": "get_print_pages",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PrintPages"
+            }
+        },
+        {
+            "doc": "<p>Convenience function to obtain the value of\n%GTK_PRINT_SETTINGS_PRINTER.</p>",
+            "kind": "method",
+            "name": "get_printer",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_PRINTER_LPI.</p>",
+            "kind": "method",
+            "name": "get_printer_lpi",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_QUALITY.</p>",
+            "kind": "method",
+            "name": "get_quality",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PrintQuality"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_RESOLUTION.</p>",
+            "kind": "method",
+            "name": "get_resolution",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_RESOLUTION_X.</p>",
+            "kind": "method",
+            "name": "get_resolution_x",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_RESOLUTION_Y.</p>",
+            "kind": "method",
+            "name": "get_resolution_y",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_REVERSE.</p>",
+            "kind": "method",
+            "name": "get_reverse",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_SCALE.</p>",
+            "kind": "method",
+            "name": "get_scale",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of %GTK_PRINT_SETTINGS_USE_COLOR.</p>",
+            "kind": "method",
+            "name": "get_use_color",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns <code>true</code>, if a value is associated with <code>key</code>.</p>",
+            "kind": "method",
+            "name": "has_key",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Reads the print settings from <code>file_name</code>. If the file could not be loaded\nthen error is set to either a <span data-xref=\"GLib.FileError\">GLib.FileError</span> or <span data-xref=\"GLib.KeyFileError\">GLib.KeyFileError</span>.\nSee <span data-xref=\"Gtk.PrintSettings.to_file\"/>.</p>",
+            "kind": "method",
+            "name": "load_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "file_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Reads the print settings from the group <code>group_name</code> in <code>key_file</code>. If the\nfile could not be loaded then error is set to either a <span data-xref=\"GLib.FileError\">GLib.FileError</span> or\n<span data-xref=\"GLib.KeyFileError\">GLib.KeyFileError</span>.</p>",
+            "kind": "method",
+            "name": "load_key_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key_file",
+                    "direction": "in",
+                    "type": "GLib.KeyFile"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "group_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Associates <code>value</code> with <code>key</code>.</p>",
+            "kind": "method",
+            "name": "set",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets <code>key</code> to a boolean value.</p>",
+            "kind": "method",
+            "name": "set_bool",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_COLLATE.</p>",
+            "kind": "method",
+            "name": "set_collate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "collate",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_DEFAULT_SOURCE.</p>",
+            "kind": "method",
+            "name": "set_default_source",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "default_source",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_DITHER.</p>",
+            "kind": "method",
+            "name": "set_dither",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "dither",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets <code>key</code> to a double value.</p>",
+            "kind": "method",
+            "name": "set_double",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_DUPLEX.</p>",
+            "kind": "method",
+            "name": "set_duplex",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "duplex",
+                    "direction": "in",
+                    "type": "Gtk.PrintDuplex"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_FINISHINGS.</p>",
+            "kind": "method",
+            "name": "set_finishings",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "finishings",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets <code>key</code> to an integer value.</p>",
+            "kind": "method",
+            "name": "set_int",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Associates a length in units of <code>unit</code> with <code>key</code>.</p>",
+            "kind": "method",
+            "name": "set_length",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_MEDIA_TYPE.</p><p>The set of media types is defined in PWG 5101.1-2002 PWG.</p>",
+            "kind": "method",
+            "name": "set_media_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "media_type",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_N_COPIES.</p>",
+            "kind": "method",
+            "name": "set_n_copies",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "num_copies",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_NUMBER_UP.</p>",
+            "kind": "method",
+            "name": "set_number_up",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "number_up",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT.</p>",
+            "kind": "method",
+            "name": "set_number_up_layout",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "number_up_layout",
+                    "direction": "in",
+                    "type": "Gtk.NumberUpLayout"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_ORIENTATION.</p>",
+            "kind": "method",
+            "name": "set_orientation",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.PageOrientation"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_OUTPUT_BIN.</p>",
+            "kind": "method",
+            "name": "set_output_bin",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "output_bin",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_PAGE_RANGES.</p>",
+            "kind": "method",
+            "name": "set_page_ranges",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page_ranges",
+                    "direction": "in",
+                    "type": "Array(Gtk.PageRange)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "num_ranges",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_PAGE_SET.</p>",
+            "kind": "method",
+            "name": "set_page_set",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page_set",
+                    "direction": "in",
+                    "type": "Gtk.PageSet"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_PAPER_HEIGHT.</p>",
+            "kind": "method",
+            "name": "set_paper_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_PAPER_FORMAT,\n%GTK_PRINT_SETTINGS_PAPER_WIDTH and\n%GTK_PRINT_SETTINGS_PAPER_HEIGHT.</p>",
+            "kind": "method",
+            "name": "set_paper_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "paper_size",
+                    "direction": "in",
+                    "type": "Gtk.PaperSize"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_PAPER_WIDTH.</p>",
+            "kind": "method",
+            "name": "set_paper_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "unit",
+                    "direction": "in",
+                    "type": "Gtk.Unit"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_PRINT_PAGES.</p>",
+            "kind": "method",
+            "name": "set_print_pages",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pages",
+                    "direction": "in",
+                    "type": "Gtk.PrintPages"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Convenience function to set %GTK_PRINT_SETTINGS_PRINTER\nto <code>printer</code>.</p>",
+            "kind": "method",
+            "name": "set_printer",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "printer",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_PRINTER_LPI.</p>",
+            "kind": "method",
+            "name": "set_printer_lpi",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "lpi",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_QUALITY.</p>",
+            "kind": "method",
+            "name": "set_quality",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "quality",
+                    "direction": "in",
+                    "type": "Gtk.PrintQuality"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the values of %GTK_PRINT_SETTINGS_RESOLUTION,\n%GTK_PRINT_SETTINGS_RESOLUTION_X and\n%GTK_PRINT_SETTINGS_RESOLUTION_Y.</p>",
+            "kind": "method",
+            "name": "set_resolution",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "resolution",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the values of %GTK_PRINT_SETTINGS_RESOLUTION,\n%GTK_PRINT_SETTINGS_RESOLUTION_X and\n%GTK_PRINT_SETTINGS_RESOLUTION_Y.</p>",
+            "kind": "method",
+            "name": "set_resolution_xy",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "resolution_x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "resolution_y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_REVERSE.</p>",
+            "kind": "method",
+            "name": "set_reverse",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "reverse",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_SCALE.</p>",
+            "kind": "method",
+            "name": "set_scale",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "scale",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the value of %GTK_PRINT_SETTINGS_USE_COLOR.</p>",
+            "kind": "method",
+            "name": "set_use_color",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "use_color",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This function saves the print settings from <code>settings</code> to <code>file_name</code>. If the\nfile could not be loaded then error is set to either a <span data-xref=\"GLib.FileError\">GLib.FileError</span> or\n<span data-xref=\"GLib.KeyFileError\">GLib.KeyFileError</span>.</p>",
+            "kind": "method",
+            "name": "to_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "file_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>This function adds the print settings from <code>settings</code> to <code>key_file</code>.</p>",
+            "kind": "method",
+            "name": "to_key_file",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key_file",
+                    "direction": "in",
+                    "type": "GLib.KeyFile"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "group_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes any value associated with <code>key</code>.\nThis has the same effect as setting the value to <code>null</code>.</p>",
+            "kind": "method",
+            "name": "unset",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "key",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "PrintSettings",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

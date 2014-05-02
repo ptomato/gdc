@@ -1,0 +1,1228 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Notebook\"/> widget with no pages.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.Notebook\"/> widget is a <span data-xref=\"Gtk.Container\"/> whose children are pages that\ncan be switched between using tab labels along one edge.</p><p>There are many configuration options for GtkNotebook. Among other\nthings, you can choose on which edge the tabs appear\n(see <span data-xref=\"Gtk.Notebook.set_tab_pos\"/>), whether, if there are too many\ntabs to fit the notebook should be made bigger or scrolling\narrows added (see <span data-xref=\"Gtk.Notebook.set_scrollable\"/>), and whether there\nwill be a popup menu allowing the users to switch pages.\n(see <span data-xref=\"Gtk.Notebook.popup_enable\"/>, <span data-xref=\"Gtk.Notebook.popup_disable\"/>)</p><h1>GtkNotebook as GtkBuildable</h1><p>The GtkNotebook implementation of the <span data-xref=\"Gtk.Buildable\"/> interface\nsupports placing children into tabs by specifying \u201ctab\u201d as the\n\u201ctype\u201d attribute of a &lt;child&gt; element. Note that the content\nof the tab must be created before the tab can be filled.\nA tab child can be specified without specifying a &lt;child&gt;\ntype attribute.</p><p>To add a child widget in the notebooks action area, specify\n\"action-start\" or \u201caction-end\u201d as the \u201ctype\u201d attribute of the\n&lt;child&gt; element.</p><p>An example of a UI definition fragment with GtkNotebook:\n|[\n&lt;object class=\"GtkNotebook\"&gt;\n  &lt;child&gt;\n    &lt;object class=\"GtkLabel\" id=\"notebook-content\"&gt;\n      &lt;property name=\"label\"&gt;Content&lt;/property&gt;\n    &lt;/object&gt;\n  &lt;/child&gt;\n  &lt;child type=\"tab\"&gt;\n    &lt;object class=\"GtkLabel\" id=\"notebook-tab\"&gt;\n      &lt;property name=\"label\"&gt;Tab&lt;/property&gt;\n    &lt;/object&gt;\n  &lt;/child&gt;\n&lt;/object&gt;\n]|</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "container"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Appends a page to <code>notebook</code>.</p>",
+            "kind": "method",
+            "name": "append_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "tab_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Appends a page to <code>notebook</code>, specifying the widget to use as the\nlabel in the popup menu.</p>",
+            "kind": "method",
+            "name": "append_page_menu",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "tab_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "menu_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets one of the action widgets. See <span data-xref=\"Gtk.Notebook.set_action_widget\"/>.</p>",
+            "kind": "method",
+            "name": "get_action_widget",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pack_type",
+                    "direction": "in",
+                    "type": "Gtk.PackType"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns the page number of the current page.</p>",
+            "kind": "method",
+            "name": "get_current_page",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the current group name for <code>notebook</code>.</p>",
+            "kind": "method",
+            "name": "get_group_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the menu label widget of the page containing <code>child</code>.</p>",
+            "kind": "method",
+            "name": "get_menu_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the text of the menu label for the page containing\n<code>child</code>.</p>",
+            "kind": "method",
+            "name": "get_menu_label_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the number of pages in a notebook.</p>",
+            "kind": "method",
+            "name": "get_n_pages",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Returns the child widget contained in page number <code>page_num</code>.</p>",
+            "kind": "method",
+            "name": "get_nth_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the tab label area has arrows for scrolling.\nSee <span data-xref=\"Gtk.Notebook.set_scrollable\"/>.</p>",
+            "kind": "method",
+            "name": "get_scrollable",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether a bevel will be drawn around the notebook pages.\nSee <span data-xref=\"Gtk.Notebook.set_show_border\"/>.</p>",
+            "kind": "method",
+            "name": "get_show_border",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the tabs of the notebook are shown.\nSee <span data-xref=\"Gtk.Notebook.set_show_tabs\"/>.</p>",
+            "kind": "method",
+            "name": "get_show_tabs",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the tab contents can be detached from <code>notebook</code>.</p>",
+            "kind": "method",
+            "name": "get_tab_detachable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the horizontal width of a tab border.</p>",
+            "kind": "method",
+            "name": "get_tab_hborder",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint16)"
+            }
+        },
+        {
+            "doc": "<p>Returns the tab label widget for the page <code>child</code>.\n<code>null</code> is returned if <code>child</code> is not in <code>notebook</code> or\nif no tab label has specifically been set for <code>child</code>.</p>",
+            "kind": "method",
+            "name": "get_tab_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the text of the tab label for the page containing\n<code>child</code>.</p>",
+            "kind": "method",
+            "name": "get_tab_label_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the edge at which the tabs for switching pages in the\nnotebook are drawn.</p>",
+            "kind": "method",
+            "name": "get_tab_pos",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PositionType"
+            }
+        },
+        {
+            "doc": "<p>Gets whether the tab can be reordered via drag and drop or not.</p>",
+            "kind": "method",
+            "name": "get_tab_reorderable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the vertical width of a tab border.</p>",
+            "kind": "method",
+            "name": "get_tab_vborder",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint16)"
+            }
+        },
+        {
+            "doc": "<p>Insert a page into <code>notebook</code> at the given position.</p>",
+            "kind": "method",
+            "name": "insert_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "tab_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Insert a page into <code>notebook</code> at the given position, specifying\nthe widget to use as the label in the popup menu.</p>",
+            "kind": "method",
+            "name": "insert_page_menu",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "tab_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "menu_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Switches to the next page. Nothing happens if the current page is\nthe last page.</p>",
+            "kind": "method",
+            "name": "next_page",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Finds the index of the page which contains the given child\nwidget.</p>",
+            "kind": "method",
+            "name": "page_num",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Disables the popup menu.</p>",
+            "kind": "method",
+            "name": "popup_disable",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Enables the popup menu: if the user clicks with the right\nmouse button on the tab labels, a menu with all the pages\nwill be popped up.</p>",
+            "kind": "method",
+            "name": "popup_enable",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Prepends a page to <code>notebook</code>.</p>",
+            "kind": "method",
+            "name": "prepend_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "tab_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Prepends a page to <code>notebook</code>, specifying the widget to use as the\nlabel in the popup menu.</p>",
+            "kind": "method",
+            "name": "prepend_page_menu",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "tab_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "menu_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Switches to the previous page. Nothing happens if the current page\nis the first page.</p>",
+            "kind": "method",
+            "name": "prev_page",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes a page from the notebook given its index\nin the notebook.</p>",
+            "kind": "method",
+            "name": "remove_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Reorders the page containing <code>child</code>, so that it appears in position\n<code>position</code>. If <code>position</code> is greater than or equal to the number of\nchildren in the list or negative, <code>child</code> will be moved to the end\nof the list.</p>",
+            "kind": "method",
+            "name": "reorder_child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets <code>widget</code> as one of the action widgets. Depending on the pack type\nthe widget will be placed before or after the tabs. You can use\na <span data-xref=\"Gtk.Box\"/> if you need to pack more than one widget on the same side.</p><p>Note that action widgets are \u201cinternal\u201d children of the notebook and thus\nnot included in the list returned from <span data-xref=\"Gtk.Container.foreach\"/>.</p>",
+            "kind": "method",
+            "name": "set_action_widget",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pack_type",
+                    "direction": "in",
+                    "type": "Gtk.PackType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Switches to the page number <code>page_num</code>.</p><p>Note that due to historical reasons, GtkNotebook refuses\nto switch to a page unless the child widget is visible.\nTherefore, it is recommended to show child widgets before\nadding them to a notebook.</p>",
+            "kind": "method",
+            "name": "set_current_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a group name for <code>notebook</code>.</p><p>Notebooks with the same name will be able to exchange tabs\nvia drag and drop. A notebook with a <code>null</code> group name will\nnot be able to exchange tabs with any other notebook.</p>",
+            "kind": "method",
+            "name": "set_group_name",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "group_name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Changes the menu label for the page containing <code>child</code>.</p>",
+            "kind": "method",
+            "name": "set_menu_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "menu_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Creates a new label and sets it as the menu label of <code>child</code>.</p>",
+            "kind": "method",
+            "name": "set_menu_label_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "menu_text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the tab label area will have arrows for\nscrolling if there are too many tabs to fit in the area.</p>",
+            "kind": "method",
+            "name": "set_scrollable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "scrollable",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether a bevel will be drawn around the notebook pages.\nThis only has a visual effect when the tabs are not shown.\nSee <span data-xref=\"Gtk.Notebook.set_show_tabs\"/>.</p>",
+            "kind": "method",
+            "name": "set_show_border",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "show_border",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether to show the tabs for the notebook or not.</p>",
+            "kind": "method",
+            "name": "set_show_tabs",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "show_tabs",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the tab can be detached from <code>notebook</code> to another\nnotebook or widget.</p><p>Note that 2 notebooks must share a common group identificator\n(see <span data-xref=\"Gtk.Notebook.set_group_name\"/>) to allow automatic tabs\ninterchange between them.</p><p>If you want a widget to interact with a notebook through DnD\n(i.e.: accept dragged tabs from it) it must be set as a drop\ndestination and accept the target \u201cGTK_NOTEBOOK_TAB\u201d. The notebook\nwill fill the selection with a GtkWidget<strong> pointing to the child\nwidget that corresponds to the dropped tab.\n|[&lt;!-- language=\"C\" --&gt;\n static void\n on_drag_data_received (GtkWidget        <em>widget,\n                        GdkDragContext   </em>context,\n                        gint              x,\n                        gint              y,\n                        GtkSelectionData <em>data,\n                        guint             info,\n                        guint             time,\n                        gpointer          user_data)\n {\n   GtkWidget </em>notebook;\n   GtkWidget </strong>child;\n   GtkContainer *container;</p><p>notebook = gtk_drag_get_source_widget (context);\n   child = (void*) gtk_selection_data_get_data (data);</p><p>process_widget (<em>child);\n   container = GTK_CONTAINER (notebook);\n   gtk_container_remove (container, </em>child);\n }\n]|</p><p>If you want a notebook to accept drags from other widgets,\nyou will have to set your own DnD code to do it.</p>",
+            "kind": "method",
+            "name": "set_tab_detachable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "detachable",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Changes the tab label for <code>child</code>.\nIf <code>null</code> is specified for <code>tab_label</code>, then the page will\nhave the label \u201cpage N\u201d.</p>",
+            "kind": "method",
+            "name": "set_tab_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "tab_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Creates a new label and sets it as the tab label for the page\ncontaining <code>child</code>.</p>",
+            "kind": "method",
+            "name": "set_tab_label_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "tab_text",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the edge at which the tabs for switching pages in the\nnotebook are drawn.</p>",
+            "kind": "method",
+            "name": "set_tab_pos",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pos",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the notebook tab can be reordered\nvia drag and drop or not.</p>",
+            "kind": "method",
+            "name": "set_tab_reorderable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "reorderable",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Notebook",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "enable-popup",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>Group name for tab drag and drop.</p>",
+            "kind": "property",
+            "name": "group-name",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "page",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "scrollable",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "show-border",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "show-tabs",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "tab-pos",
+            "type": "Gtk.PositionType"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "change-current-page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>The ::create-window signal is emitted when a detachable\ntab is dropped on the root window.</p><p>A handler for this signal can create a window containing\na notebook where the tab will be attached. It is also\nresponsible for moving/resizing the window and adding the\nnecessary properties to the notebook (e.g. the\n<span data-xref=\"Gtk.Notebook-group-name\"/> ).</p>",
+            "kind": "signal",
+            "name": "create-window",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Notebook"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "focus-tab",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Gtk.NotebookTab"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "move-focus-out",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Gtk.DirectionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>the ::page-added signal is emitted in the notebook\nright after a page is added to the notebook.</p>",
+            "kind": "signal",
+            "name": "page-added",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>the ::page-removed signal is emitted in the notebook\nright after a page is removed from the notebook.</p>",
+            "kind": "signal",
+            "name": "page-removed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>the ::page-reordered signal is emitted in the notebook\nright after a page has been reordered.</p>",
+            "kind": "signal",
+            "name": "page-reordered",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "reorder-tab",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Gtk.DirectionType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "p0",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "signal",
+            "name": "select-page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "object",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the user or a function changes the current page.</p>",
+            "kind": "signal",
+            "name": "switch-page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "change_current_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "offset",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "create_window",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Notebook"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "focus_tab",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.NotebookTab"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "insert_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "tab_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "menu_label",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "move_focus_out",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "direction",
+                    "direction": "in",
+                    "type": "Gtk.DirectionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "page_added",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "page_removed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "page_reordered",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "reorder_tab",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "direction",
+                    "direction": "in",
+                    "type": "Gtk.DirectionType"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "move_to_last",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "select_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "move_focus",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "switch_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_num",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

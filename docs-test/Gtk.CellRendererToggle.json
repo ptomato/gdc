@@ -1,0 +1,174 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.CellRendererToggle\"/>. Adjust rendering\nparameters using object properties. Object properties can be set\nglobally (with <span data-xref=\"GObject.Object.set\">GObject.Object.set</span>). Also, with <span data-xref=\"Gtk.TreeViewColumn\"/>, you\ncan bind a property to a value in a <span data-xref=\"Gtk.TreeModel\"/>. For example, you\ncan bind the \u201cactive\u201d property on the cell renderer to a boolean value\nin the model, thus causing the check button to reflect the state of\nthe model.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CellRenderer"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.CellRendererToggle\"/> renders a toggle button in a cell. The\nbutton is drawn as a radio or a checkbutton, depending on the\n<span data-xref=\"Gtk.CellRendererToggle-radio\"/> property.\nWhen activated, it emits the <span data-xref=\"Gtk.CellRendererToggle-toggled\"/> signal.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns whether the cell renderer is activatable. See\n<span data-xref=\"Gtk.CellRendererToggle.set_activatable\"/>.</p>",
+            "kind": "method",
+            "name": "get_activatable",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the cell renderer is active. See\n<span data-xref=\"Gtk.CellRendererToggle.set_active\"/>.</p>",
+            "kind": "method",
+            "name": "get_active",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether we\u2019re rendering radio toggles rather than checkboxes.</p>",
+            "kind": "method",
+            "name": "get_radio",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Makes the cell renderer activatable.</p>",
+            "kind": "method",
+            "name": "set_activatable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Activates or deactivates a cell renderer.</p>",
+            "kind": "method",
+            "name": "set_active",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "setting",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>radio</code> is <code>true</code>, the cell renderer renders a radio toggle\n(i.e. a toggle in a group of mutually-exclusive toggles).\nIf <code>false</code>, it renders a check toggle (a standalone boolean option).\nThis can be set globally for the cell renderer, or changed just\nbefore rendering each cell in the model (for <span data-xref=\"Gtk.TreeView\"/>, you set\nup a per-row setting using <span data-xref=\"Gtk.TreeViewColumn\"/> to associate model\ncolumns with cell renderer properties).</p>",
+            "kind": "method",
+            "name": "set_radio",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "radio",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "CellRendererToggle",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "activatable",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "active",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "inconsistent",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "indicator-size",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "radio",
+            "type": "Boolean"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::toggled signal is emitted when the cell is toggled.</p><p>It is the responsibility of the application to update the model\nwith the correct value to store at <code>path</code>.  Often this is simply the\nopposite of the value currently stored at <code>path</code>.</p>",
+            "kind": "signal",
+            "name": "toggled",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "toggled",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

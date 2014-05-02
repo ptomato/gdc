@@ -1,0 +1,417 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Create a new GtkEntryBuffer object.</p><p>Optionally, specify initial text to set in the buffer.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "initial_chars",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_initial_chars",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.EntryBuffer"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.EntryBuffer\"/> class contains the actual text displayed in a\n<span data-xref=\"Gtk.Entry\"/> widget.</p><p>A single <span data-xref=\"Gtk.EntryBuffer\"/> object can be shared by multiple <span data-xref=\"Gtk.Entry\"/>\nwidgets which will then share the same text content, but not the cursor\nposition, visibility attributes, icon etc.</p><p><span data-xref=\"Gtk.EntryBuffer\"/> may be derived from. Such a derived class might allow\ntext to be stored in an alternate location, such as non-pageable memory,\nuseful in the case of important passwords. Or a derived class could\nintegrate with an application\u2019s concept of undo/redo.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Deletes a sequence of characters from the buffer. <code>n_chars</code> characters are\ndeleted starting at <code>position</code>. If <code>n_chars</code> is negative, then all characters\nuntil the end of the text are deleted.</p><p>If <code>position</code> or <code>n_chars</code> are out of bounds, then they are coerced to sane\nvalues.</p><p>Note that the positions are specified in characters, not bytes.</p>",
+            "kind": "method",
+            "name": "delete_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_chars",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Used when subclassing <span data-xref=\"Gtk.EntryBuffer\"/></p>",
+            "kind": "method",
+            "name": "emit_deleted_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_chars",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Used when subclassing <span data-xref=\"Gtk.EntryBuffer\"/></p>",
+            "kind": "method",
+            "name": "emit_inserted_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "chars",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_chars",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the length in bytes of the buffer.\nSee <span data-xref=\"Gtk.EntryBuffer.get_length\"/>.</p>",
+            "kind": "method",
+            "name": "get_bytes",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gsize)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the length in characters of the buffer.</p>",
+            "kind": "method",
+            "name": "get_length",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the maximum allowed length of the text in\n<code>buffer</code>. See <span data-xref=\"Gtk.EntryBuffer.set_max_length\"/>.</p>",
+            "kind": "method",
+            "name": "get_max_length",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the contents of the buffer.</p><p>The memory pointer returned by this call will not change\nunless this object emits a signal, or is finalized.</p>",
+            "kind": "method",
+            "name": "get_text",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Inserts <code>n_chars</code> characters of <code>chars</code> into the contents of the\nbuffer, at position <code>position</code>.</p><p>If <code>n_chars</code> is negative, then characters from chars will be inserted\nuntil a null-terminator is found. If <code>position</code> or <code>n_chars</code> are out of\nbounds, or the maximum buffer text length is exceeded, then they are\ncoerced to sane values.</p><p>Note that the position and length are in characters, not in bytes.</p>",
+            "kind": "method",
+            "name": "insert_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "chars",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_chars",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Sets the maximum allowed length of the contents of the buffer. If\nthe current contents are longer than the given length, then they\nwill be truncated to fit.</p>",
+            "kind": "method",
+            "name": "set_max_length",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "max_length",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the text in the buffer.</p><p>This is roughly equivalent to calling <span data-xref=\"Gtk.EntryBuffer.delete_text\"/>\nand <span data-xref=\"Gtk.EntryBuffer.insert_text\"/>.</p><p>Note that <code>n_chars</code> is in characters, not in bytes.</p>",
+            "kind": "method",
+            "name": "set_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "chars",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_chars",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "EntryBuffer",
+    "properties": [
+        {
+            "doc": "<p>The length (in characters) of the text in buffer.</p>",
+            "kind": "property",
+            "name": "length",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "<p>The maximum length (in characters) of the text in the buffer.</p>",
+            "kind": "property",
+            "name": "max-length",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "<p>The contents of the buffer.</p>",
+            "kind": "property",
+            "name": "text",
+            "type": "String"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>This signal is emitted after text is deleted from the buffer.</p>",
+            "kind": "signal",
+            "name": "deleted-text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_chars",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This signal is emitted after text is inserted into the buffer.</p>",
+            "kind": "signal",
+            "name": "inserted-text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "chars",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_chars",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "<p>Deletes a sequence of characters from the buffer. <code>n_chars</code> characters are\ndeleted starting at <code>position</code>. If <code>n_chars</code> is negative, then all characters\nuntil the end of the text are deleted.</p><p>If <code>position</code> or <code>n_chars</code> are out of bounds, then they are coerced to sane\nvalues.</p><p>Note that the positions are specified in characters, not bytes.</p>",
+            "kind": "vfunc",
+            "name": "delete_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_chars",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "deleted_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_chars",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the length in characters of the buffer.</p>",
+            "kind": "vfunc",
+            "name": "get_length",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "get_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "n_bytes",
+                    "direction": "in",
+                    "type": "Number(gsize)"
+                }
+            ],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Inserts <code>n_chars</code> characters of <code>chars</code> into the contents of the\nbuffer, at position <code>position</code>.</p><p>If <code>n_chars</code> is negative, then characters from chars will be inserted\nuntil a null-terminator is found. If <code>position</code> or <code>n_chars</code> are out of\nbounds, or the maximum buffer text length is exceeded, then they are\ncoerced to sane values.</p><p>Note that the position and length are in characters, not in bytes.</p>",
+            "kind": "vfunc",
+            "name": "insert_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "chars",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_chars",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "inserted_text",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "chars",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_chars",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

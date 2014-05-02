@@ -1,0 +1,1799 @@
+{
+    "constructors": [],
+    "doc": "<p>The <span data-xref=\"Gtk.CellArea\"/> is an abstract class for <span data-xref=\"Gtk.CellLayout\"/> widgets\n(also referred to as \"layouting widgets\") to interface with an\narbitrary number of #GtkCellRenderers and interact with the user\nfor a given <span data-xref=\"Gtk.TreeModel\"/> row.</p><p>The cell area handles events, focus navigation, drawing and\nsize requests and allocations for a given row of data.</p><p>Usually users dont have to interact with the <span data-xref=\"Gtk.CellArea\"/> directly\nunless they are implementing a cell-layouting widget themselves.</p><h1>Requesting area sizes</h1><p>As outlined in\n[GtkWidget\u2019s geometry management section][geometry-management],\nGTK+ uses a height-for-width\ngeometry management system to compute the sizes of widgets and user\ninterfaces. <span data-xref=\"Gtk.CellArea\"/> uses the same semantics to calculate the\nsize of an area for an arbitrary number of <span data-xref=\"Gtk.TreeModel\"/> rows.</p><p>When requesting the size of a cell area one needs to calculate\nthe size for a handful of rows, and this will be done differently by\ndifferent layouting widgets. For instance a <span data-xref=\"Gtk.TreeViewColumn\"/>\nalways lines up the areas from top to bottom while a <span data-xref=\"Gtk.IconView\"/>\non the other hand might enforce that all areas received the same\nwidth and wrap the areas around, requesting height for more cell\nareas when allocated less width.</p><p>It\u2019s also important for areas to maintain some cell\nalignments with areas rendered for adjacent rows (cells can\nappear \u201ccolumnized\u201d inside an area even when the size of\ncells are different in each row). For this reason the <span data-xref=\"Gtk.CellArea\"/>\nuses a <span data-xref=\"Gtk.CellAreaContext\"/> object to store the alignments\nand sizes along the way (as well as the overall largest minimum\nand natural size for all the rows which have been calculated\nwith the said context).</p><p>The <span data-xref=\"Gtk.CellAreaContext\"/> is an opaque object specific to the\n<span data-xref=\"Gtk.CellArea\"/> which created it (see <span data-xref=\"Gtk.CellArea.create_context\"/>).\nThe owning cell-layouting widget can create as many contexts as\nit wishes to calculate sizes of rows which should receive the\nsame size in at least one orientation (horizontally or vertically),\nHowever, it\u2019s important that the same <span data-xref=\"Gtk.CellAreaContext\"/> which\nwas used to request the sizes for a given <span data-xref=\"Gtk.TreeModel\"/> row be\nused when rendering or processing events for that row.</p><p>In order to request the width of all the rows at the root level\nof a <span data-xref=\"Gtk.TreeModel\"/> one would do the following:</p><p>|[&lt;!-- language=\"C\" --&gt;\nGtkTreeIter iter;\ngint        minimum_width;\ngint        natural_width;</p><p>valid = gtk_tree_model_get_iter_first (model, &amp;iter);\nwhile (valid)\n  {\n    gtk_cell_area_apply_attributes (area, model, &amp;iter, FALSE, FALSE);\n    gtk_cell_area_get_preferred_width (area, context, widget, NULL, NULL);</p><pre><code>valid = gtk_tree_model_iter_next (model, &amp;amp;iter);\n</code></pre>\n<p>}\ngtk_cell_area_context_get_preferred_width (context, &amp;minimum_width, &amp;natural_width);\n]|</p><p>Note that in this example it\u2019s not important to observe the\nreturned minimum and natural width of the area for each row\nunless the cell-layouting object is actually interested in the\nwidths of individual rows. The overall width is however stored\nin the accompanying <span data-xref=\"Gtk.CellAreaContext\"/> object and can be consulted\nat any time.</p><p>This can be useful since <span data-xref=\"Gtk.CellLayout\"/> widgets usually have to\nsupport requesting and rendering rows in treemodels with an\nexceedingly large amount of rows. The <span data-xref=\"Gtk.CellLayout\"/> widget in\nthat case would calculate the required width of the rows in an\nidle or timeout source (see <span data-xref=\"GLib.timeout_add\">GLib.timeout_add</span>) and when the widget\nis requested its actual width in <span data-xref=\"Gtk.WidgetClass\"/>.get_preferred_width()\nit can simply consult the width accumulated so far in the\n<span data-xref=\"Gtk.CellAreaContext\"/> object.</p><p>A simple example where rows are rendered from top to bottom and\ntake up the full width of the layouting widget would look like:</p><p>|[&lt;!-- language=\"C\" --&gt;\nstatic void\nfoo_get_preferred_width (GtkWidget       <em>widget,\n                         gint            </em>minimum_size,\n                         gint            <em>natural_size)\n{\n  Foo        </em>foo  = FOO (widget);\n  FooPrivate *priv = foo-&gt;priv;</p><p>foo_ensure_at_least_one_handfull_of_rows_have_been_requested (foo);</p><p>gtk_cell_area_context_get_preferred_width (priv-&gt;context, minimum_size, natural_size);\n}\n]|</p><p>In the above example the Foo widget has to make sure that some\nrow sizes have been calculated (the amount of rows that Foo judged\nwas appropriate to request space for in a single timeout iteration)\nbefore simply returning the amount of space required by the area via\nthe <span data-xref=\"Gtk.CellAreaContext\"/>.</p><p>Requesting the height for width (or width for height) of an area is\na similar task except in this case the <span data-xref=\"Gtk.CellAreaContext\"/> does not\nstore the data (actually, it does not know how much space the layouting\nwidget plans to allocate it for every row. It\u2019s up to the layouting\nwidget to render each row of data with the appropriate height and\nwidth which was requested by the <span data-xref=\"Gtk.CellArea\"/>).</p><p>In order to request the height for width of all the rows at the\nroot level of a <span data-xref=\"Gtk.TreeModel\"/> one would do the following:</p><p>|[&lt;!-- language=\"C\" --&gt;\nGtkTreeIter iter;\ngint        minimum_height;\ngint        natural_height;\ngint        full_minimum_height = 0;\ngint        full_natural_height = 0;</p><p>valid = gtk_tree_model_get_iter_first (model, &amp;iter);\nwhile (valid)\n  {\n    gtk_cell_area_apply_attributes (area, model, &amp;iter, FALSE, FALSE);\n    gtk_cell_area_get_preferred_height_for_width (area, context, widget,\n                                                  width, &amp;minimum_height, &amp;natural_height);</p><pre><code>if (width_is_for_allocation)\n   cache_row_height (&amp;amp;iter, minimum_height, natural_height);\n</code></pre><pre><code>full_minimum_height += minimum_height;\nfull_natural_height += natural_height;\n</code></pre><pre><code>valid = gtk_tree_model_iter_next (model, &amp;amp;iter);\n</code></pre>\n<p>}\n]|</p><p>Note that in the above example we would need to cache the heights\nreturned for each row so that we would know what sizes to render the\nareas for each row. However we would only want to really cache the\nheights if the request is intended for the layouting widgets real\nallocation.</p><p>In some cases the layouting widget is requested the height for an\narbitrary for_width, this is a special case for layouting widgets\nwho need to request size for tens of thousands  of rows. For this\ncase it\u2019s only important that the layouting widget calculate\none reasonably sized chunk of rows and return that height\nsynchronously. The reasoning here is that any layouting widget is\nat least capable of synchronously calculating enough height to fill\nthe screen height (or scrolled window height) in response to a single\ncall to <span data-xref=\"Gtk.WidgetClass\"/>.get_preferred_height_for_width(). Returning\na perfect height for width that is larger than the screen area is\ninconsequential since after the layouting receives an allocation\nfrom a scrolled window it simply continues to drive the scrollbar\nvalues while more and more height is required for the row heights\nthat are calculated in the background.</p><h1>Rendering Areas</h1><p>Once area sizes have been aquired at least for the rows in the\nvisible area of the layouting widget they can be rendered at\n<span data-xref=\"Gtk.WidgetClass\"/>.draw() time.</p><p>A crude example of how to render all the rows at the root level\nruns as follows:</p><p>|[&lt;!-- language=\"C\" --&gt;\nGtkAllocation allocation;\nGdkRectangle  cell_area = { 0, };\nGtkTreeIter   iter;\ngint          minimum_width;\ngint          natural_width;</p><p>gtk_widget_get_allocation (widget, &amp;allocation);\ncell_area.width = allocation.width;</p><p>valid = gtk_tree_model_get_iter_first (model, &amp;iter);\nwhile (valid)\n  {\n    cell_area.height = get_cached_height_for_row (&amp;iter);</p><pre><code>gtk_cell_area_apply_attributes (area, model, &amp;amp;iter, FALSE, FALSE);\ngtk_cell_area_render (area, context, widget, cr,\n                      &amp;amp;cell_area, &amp;amp;cell_area, state_flags, FALSE);\n</code></pre><pre><code>cell_area.y += cell_area.height;\n</code></pre><pre><code>valid = gtk_tree_model_iter_next (model, &amp;amp;iter);\n</code></pre>\n<p>}\n]|</p><p>Note that the cached height in this example really depends on how\nthe layouting widget works. The layouting widget might decide to\ngive every row its minimum or natural height or, if the model content\nis expected to fit inside the layouting widget without scrolling, it\nwould make sense to calculate the allocation for each row at\n<span data-xref=\"Gtk.Widget-size-allocate\"/> time using <span data-xref=\"Gtk.distribute_natural_allocation\"/>.</p><h1>Handling Events and Driving Keyboard Focus</h1><p>Passing events to the area is as simple as handling events on any\nnormal widget and then passing them to the <span data-xref=\"Gtk.CellArea.event\"/>\nAPI as they come in. Usually <span data-xref=\"Gtk.CellArea\"/> is only interested in\nbutton events, however some customized derived areas can be implemented\nwho are interested in handling other events. Handling an event can\ntrigger the <span data-xref=\"Gtk.CellArea-focus-changed\"/> signal to fire; as well as\n<span data-xref=\"Gtk.CellArea-add-editable\"/> in the case that an editable cell was\nclicked and needs to start editing. You can call\n<span data-xref=\"Gtk.CellArea.stop_editing\"/> at any time to cancel any cell editing\nthat is currently in progress.</p><p>The <span data-xref=\"Gtk.CellArea\"/> drives keyboard focus from cell to cell in a way\nsimilar to <span data-xref=\"Gtk.Widget\"/>. For layouting widgets that support giving\nfocus to cells it\u2019s important to remember to pass <span data-xref=\"Gtk.CellRendererState\"/>.focused\nto the area functions for the row that has focus and to tell the\narea to paint the focus at render time.</p><p>Layouting widgets that accept focus on cells should implement the\n<span data-xref=\"Gtk.WidgetClass\"/>.focus() virtual method. The layouting widget is always\nresponsible for knowing where <span data-xref=\"Gtk.TreeModel\"/> rows are rendered inside\nthe widget, so at <span data-xref=\"Gtk.WidgetClass\"/>.focus() time the layouting widget\nshould use the <span data-xref=\"Gtk.CellArea\"/> methods to navigate focus inside the area\nand then observe the GtkDirectionType to pass the focus to adjacent\nrows and areas.</p><p>A basic example of how the <span data-xref=\"Gtk.WidgetClass\"/>.focus() virtual method\nshould be implemented:</p><p>|[&lt;!-- language=\"C\" --&gt;\nstatic gboolean\nfoo_focus (GtkWidget       <em>widget,\n           GtkDirectionType direction)\n{\n  Foo        </em>foo  = FOO (widget);\n  FooPrivate *priv = foo-&gt;priv;\n  gint        focus_row;\n  gboolean    have_focus = FALSE;</p><p>focus_row = priv-&gt;focus_row;</p><p>if (!gtk_widget_has_focus (widget))\n    gtk_widget_grab_focus (widget);</p><p>valid = gtk_tree_model_iter_nth_child (priv-&gt;model, &amp;iter, NULL, priv-&gt;focus_row);\n  while (valid)\n    {\n      gtk_cell_area_apply_attributes (priv-&gt;area, priv-&gt;model, &amp;iter, FALSE, FALSE);</p><pre><code>  if (gtk_cell_area_focus (priv-&amp;gt;area, direction))\n    {\n       priv-&amp;gt;focus_row = focus_row;\n       have_focus = TRUE;\n       break;\n    }\n  else\n    {\n      if (direction == GTK_DIR_RIGHT ||\n          direction == GTK_DIR_LEFT)\n        break;\n      else if (direction == GTK_DIR_UP ||\n               direction == GTK_DIR_TAB_BACKWARD)\n       {\n          if (focus_row == 0)\n            break;\n          else\n           {\n              focus_row--;\n              valid = gtk_tree_model_iter_nth_child (priv-&amp;gt;model, &amp;amp;iter, NULL, focus_row);\n           }\n        }\n      else\n        {\n          if (focus_row == last_row)\n            break;\n          else\n            {\n              focus_row++;\n              valid = gtk_tree_model_iter_next (priv-&amp;gt;model, &amp;amp;iter);\n            }\n        }\n    }\n}\nreturn have_focus;\n</code></pre>\n<p>}\n]|</p><p>Note that the layouting widget is responsible for matching the\nGtkDirectionType values to the way it lays out its cells.</p><h1>Cell Properties</h1><p>The <span data-xref=\"Gtk.CellArea\"/> introduces cell properties for #GtkCellRenderers\nin very much the same way that <span data-xref=\"Gtk.Container\"/> introduces\n[child properties][child-properties]\nfor #GtkWidgets. This provides some general interfaces for defining\nthe relationship cell areas have with their cells. For instance in a\n<span data-xref=\"Gtk.CellAreaBox\"/> a cell might \u201cexpand\u201d and receive extra space when\nthe area is allocated more than its full natural request, or a cell\nmight be configured to \u201calign\u201d with adjacent rows which were requested\nand rendered with the same <span data-xref=\"Gtk.CellAreaContext\"/>.</p><p>Use <span data-xref=\"Gtk.CellAreaClass.install_cell_property\"/> to install cell\nproperties for a cell area class and <span data-xref=\"Gtk.CellAreaClass.find_cell_property\"/>\nor <span data-xref=\"Gtk.CellAreaClass.list_cell_properties\"/> to get information about\nexisting cell properties.</p><p>To set the value of a cell property, use <span data-xref=\"Gtk.CellArea.cell_set_property\"/>,\n<span data-xref=\"Gtk.CellArea.cell_set\"/> or <span data-xref=\"Gtk.CellArea.cell_set_valist\"/>. To obtain\nthe value of a cell property, use <span data-xref=\"Gtk.CellArea.cell_get_property\"/>,\n<span data-xref=\"Gtk.CellArea.cell_get\"/> or <span data-xref=\"Gtk.CellArea.cell_get_valist\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Activates <code>area</code>, usually by activating the currently focused\ncell, however some subclasses which embed widgets in the area\ncan also activate a widget if it currently has the focus.</p>",
+            "kind": "method",
+            "name": "activate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "edit_only",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>This is used by <span data-xref=\"Gtk.CellArea\"/> subclasses when handling events\nto activate cells, the base <span data-xref=\"Gtk.CellArea\"/> class activates cells\nfor keyboard events for free in its own GtkCellArea-&gt;activate()\nimplementation.</p>",
+            "kind": "method",
+            "name": "activate_cell",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.Event"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>renderer</code> to <code>area</code> with the default child cell properties.</p>",
+            "kind": "method",
+            "name": "add",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>sibling</code> to <code>renderer</code>\u2019s focusable area, focus will be drawn\naround <code>renderer</code> and all of its siblings if <code>renderer</code> can\nfocus for a given row.</p><p>Events handled by focus siblings can also activate the given\nfocusable <code>renderer</code>.</p>",
+            "kind": "method",
+            "name": "add_focus_sibling",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "sibling",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>renderer</code> to <code>area</code>, setting cell properties at the same time.\nSee <span data-xref=\"Gtk.CellArea.add\"/> and <span data-xref=\"Gtk.CellArea.cell_set\"/> for more details.</p>",
+            "kind": "method",
+            "name": "add_with_properties",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "first_prop_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Applies any connected attributes to the renderers in\n<code>area</code> by pulling the values from <code>tree_model</code>.</p>",
+            "kind": "method",
+            "name": "apply_attributes",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "tree_model",
+                    "direction": "in",
+                    "type": "Gtk.TreeModel"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TreeIter"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "is_expander",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "is_expanded",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Connects an <code>attribute</code> to apply values from <code>column</code> for the\n<span data-xref=\"Gtk.TreeModel\"/> in use.</p>",
+            "kind": "method",
+            "name": "attribute_connect",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "attribute",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "column",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Disconnects <code>attribute</code> for the <code>renderer</code> in <code>area</code> so that\nattribute will no longer be updated with values from the\nmodel.</p>",
+            "kind": "method",
+            "name": "attribute_disconnect",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "attribute",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the values of one or more cell properties for <code>renderer</code> in <code>area</code>.</p>",
+            "kind": "method",
+            "name": "cell_get",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "first_prop_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the value of a cell property for <code>renderer</code> in <code>area</code>.</p>",
+            "kind": "method",
+            "name": "cell_get_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Any"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the values of one or more cell properties for <code>renderer</code> in <code>area</code>.</p>",
+            "kind": "method",
+            "name": "cell_get_valist",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "first_property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "var_args",
+                    "direction": "in",
+                    "type": "va_list"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets one or more cell properties for @cell in <code>area</code>.</p>",
+            "kind": "method",
+            "name": "cell_set",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "first_prop_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "...",
+                    "direction": "in",
+                    "type": "<varargs>"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a cell property for <code>renderer</code> in <code>area</code>.</p>",
+            "kind": "method",
+            "name": "cell_set_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Any"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets one or more cell properties for <code>renderer</code> in <code>area</code>.</p>",
+            "kind": "method",
+            "name": "cell_set_valist",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "first_property_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "var_args",
+                    "direction": "in",
+                    "type": "va_list"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This is sometimes needed for cases where rows need to share\nalignments in one orientation but may be separately grouped\nin the opposing orientation.</p><p>For instance, <span data-xref=\"Gtk.IconView\"/> creates all icons (rows) to have\nthe same width and the cells theirin to have the same\nhorizontal alignments. However each row of icons may have\na separate collective height. <span data-xref=\"Gtk.IconView\"/> uses this to\nrequest the heights of each row based on a context which\nwas already used to request all the row widths that are\nto be displayed.</p>",
+            "kind": "method",
+            "name": "copy_context",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.CellAreaContext"
+            }
+        },
+        {
+            "doc": "<p>Creates a <span data-xref=\"Gtk.CellAreaContext\"/> to be used with <code>area</code> for\nall purposes. <span data-xref=\"Gtk.CellAreaContext\"/> stores geometry information\nfor rows for which it was operated on, it is important to use\nthe same context for the same row of data at all times (i.e.\none should render and handle events with the same <span data-xref=\"Gtk.CellAreaContext\"/>\nwhich was used to request the size of those rows of data).</p>",
+            "kind": "method",
+            "name": "create_context",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CellAreaContext"
+            }
+        },
+        {
+            "doc": "<p>Delegates event handling to a <span data-xref=\"Gtk.CellArea\"/>.</p>",
+            "kind": "method",
+            "name": "event",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.Event"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>This should be called by the <code>area</code>\u2019s owning layout widget\nwhen focus is to be passed to <code>area</code>, or moved within <code>area</code>\nfor a given <code>direction</code> and row data.</p><p>Implementing <span data-xref=\"Gtk.CellArea\"/> classes should implement this\nmethod to receive and navigate focus in its own way particular\nto how it lays out cells.</p>",
+            "kind": "method",
+            "name": "focus",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "direction",
+                    "direction": "in",
+                    "type": "Gtk.DirectionType"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Calls <code>callback</code> for every <span data-xref=\"Gtk.CellRenderer\"/> in <code>area</code>.</p>",
+            "kind": "method",
+            "name": "foreach",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.CellCallback"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Calls <code>callback</code> for every <span data-xref=\"Gtk.CellRenderer\"/> in <code>area</code> with the\nallocated rectangle inside <code>cell_area</code>.</p>",
+            "kind": "method",
+            "name": "foreach_alloc",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "background_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.CellAllocCallback"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Derives the allocation of <code>renderer</code> inside <code>area</code> if <code>area</code>\nwere to be renderered in <code>cell_area</code>.</p>",
+            "kind": "method",
+            "name": "get_cell_allocation",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "allocation",
+                    "direction": "out",
+                    "type": "Gdk.Rectangle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the <span data-xref=\"Gtk.CellRenderer\"/> at <code>x</code> and <code>y</code> coordinates inside <code>area</code> and optionally\nreturns the full cell allocation for it inside <code>cell_area</code>.</p>",
+            "kind": "method",
+            "name": "get_cell_at_position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "x",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "y",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "alloc_area",
+                    "direction": "out",
+                    "type": "Gdk.Rectangle"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.CellRenderer"
+            }
+        },
+        {
+            "doc": "<p>Gets the current <span data-xref=\"Gtk.TreePath\"/> string for the currently\napplied <span data-xref=\"Gtk.TreeIter\"/>, this is implicitly updated when\n<span data-xref=\"Gtk.CellArea.apply_attributes\"/> is called and can be\nused to interact with renderers from <span data-xref=\"Gtk.CellArea\"/>\nsubclasses.</p>",
+            "kind": "method",
+            "name": "get_current_path_string",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the <span data-xref=\"Gtk.CellEditable\"/> widget currently used\nto edit the currently edited cell.</p>",
+            "kind": "method",
+            "name": "get_edit_widget",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CellEditable"
+            }
+        },
+        {
+            "doc": "<p>Gets the <span data-xref=\"Gtk.CellRenderer\"/> in <code>area</code> that is currently\nbeing edited.</p>",
+            "kind": "method",
+            "name": "get_edited_cell",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CellRenderer"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the currently focused cell for <code>area</code></p>",
+            "kind": "method",
+            "name": "get_focus_cell",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CellRenderer"
+            }
+        },
+        {
+            "doc": "<p>Gets the <span data-xref=\"Gtk.CellRenderer\"/> which is expected to be focusable\nfor which <code>renderer</code> is, or may be a sibling.</p><p>This is handy for <span data-xref=\"Gtk.CellArea\"/> subclasses when handling events,\nafter determining the renderer at the event location it can\nthen chose to activate the focus cell for which the event\ncell may have been a sibling.</p>",
+            "kind": "method",
+            "name": "get_focus_from_sibling",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.CellRenderer"
+            }
+        },
+        {
+            "doc": "<p>Gets the focus sibling cell renderers for <code>renderer</code>.</p>",
+            "kind": "method",
+            "name": "get_focus_siblings",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                }
+            ],
+            "retval": {
+                "type": "Array(Gtk.CellRenderer)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves a cell area\u2019s initial minimum and natural height.</p><p><code>area</code> will store some geometrical information in <code>context</code> along the way;\nwhen requesting sizes over an arbitrary number of rows, it\u2019s not important\nto check the <code>minimum_height</code> and <code>natural_height</code> of this call but rather to\nconsult <span data-xref=\"Gtk.CellAreaContext.get_preferred_height\"/> after a series of\nrequests.</p>",
+            "kind": "method",
+            "name": "get_preferred_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves a cell area\u2019s minimum and natural height if it would be given\nthe specified <code>width</code>.</p><p><code>area</code> stores some geometrical information in <code>context</code> along the way\nwhile calling <span data-xref=\"Gtk.CellArea.get_preferred_width\"/>. It\u2019s important to\nperform a series of <span data-xref=\"Gtk.CellArea.get_preferred_width\"/> requests with\n<code>context</code> first and then call <span data-xref=\"Gtk.CellArea.get_preferred_height_for_width\"/>\non each cell area individually to get the height for width of each\nfully requested row.</p><p>If at some point, the width of a single row changes, it should be\nrequested with <span data-xref=\"Gtk.CellArea.get_preferred_width\"/> again and then\nthe full width of the requested rows checked again with\n<span data-xref=\"Gtk.CellAreaContext.get_preferred_width\"/>.</p>",
+            "kind": "method",
+            "name": "get_preferred_height_for_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves a cell area\u2019s initial minimum and natural width.</p><p><code>area</code> will store some geometrical information in <code>context</code> along the way;\nwhen requesting sizes over an arbitrary number of rows, it\u2019s not important\nto check the <code>minimum_width</code> and <code>natural_width</code> of this call but rather to\nconsult <span data-xref=\"Gtk.CellAreaContext.get_preferred_width\"/> after a series of\nrequests.</p>",
+            "kind": "method",
+            "name": "get_preferred_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves a cell area\u2019s minimum and natural width if it would be given\nthe specified <code>height</code>.</p><p><code>area</code> stores some geometrical information in <code>context</code> along the way\nwhile calling <span data-xref=\"Gtk.CellArea.get_preferred_height\"/>. It\u2019s important to\nperform a series of <span data-xref=\"Gtk.CellArea.get_preferred_height\"/> requests with\n<code>context</code> first and then call <span data-xref=\"Gtk.CellArea.get_preferred_width_for_height\"/>\non each cell area individually to get the height for width of each\nfully requested row.</p><p>If at some point, the height of a single row changes, it should be\nrequested with <span data-xref=\"Gtk.CellArea.get_preferred_height\"/> again and then\nthe full height of the requested rows checked again with\n<span data-xref=\"Gtk.CellAreaContext.get_preferred_height\"/>.</p>",
+            "kind": "method",
+            "name": "get_preferred_width_for_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets whether the area prefers a height-for-width layout\nor a width-for-height layout.</p>",
+            "kind": "method",
+            "name": "get_request_mode",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.SizeRequestMode"
+            }
+        },
+        {
+            "doc": "<p>Checks if <code>area</code> contains <code>renderer</code>.</p>",
+            "kind": "method",
+            "name": "has_renderer",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>This is a convenience function for <span data-xref=\"Gtk.CellArea\"/> implementations\nto get the inner area where a given <span data-xref=\"Gtk.CellRenderer\"/> will be\nrendered. It removes any padding previously added by <span data-xref=\"Gtk.CellArea.request_renderer\"/>.</p>",
+            "kind": "method",
+            "name": "inner_cell_area",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "inner_area",
+                    "direction": "out",
+                    "type": "Gdk.Rectangle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the area can do anything when activated,\nafter applying new attributes to <code>area</code>.</p>",
+            "kind": "method",
+            "name": "is_activatable",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether <code>sibling</code> is one of <code>renderer</code>\u2019s focus siblings\n(see <span data-xref=\"Gtk.CellArea.add_focus_sibling\"/>).</p>",
+            "kind": "method",
+            "name": "is_focus_sibling",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "sibling",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Removes <code>renderer</code> from <code>area</code>.</p>",
+            "kind": "method",
+            "name": "remove",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Removes <code>sibling</code> from <code>renderer</code>\u2019s focus sibling list\n(see <span data-xref=\"Gtk.CellArea.add_focus_sibling\"/>).</p>",
+            "kind": "method",
+            "name": "remove_focus_sibling",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "sibling",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Renders <code>area</code>\u2019s cells according to <code>area</code>\u2019s layout onto <code>widget</code> at\nthe given coordinates.</p>",
+            "kind": "method",
+            "name": "render",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "background_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "paint_focus",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This is a convenience function for <span data-xref=\"Gtk.CellArea\"/> implementations\nto request size for cell renderers. It\u2019s important to use this\nfunction to request size and then use <span data-xref=\"Gtk.CellArea.inner_cell_area\"/>\nat render and event time since this function will add padding\naround the cell for focus painting.</p>",
+            "kind": "method",
+            "name": "request_renderer",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "for_size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_size",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_size",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Explicitly sets the currently focused cell to <code>renderer</code>.</p><p>This is generally called by implementations of\n<span data-xref=\"Gtk.CellAreaClass\"/>.focus() or <span data-xref=\"Gtk.CellAreaClass\"/>.event(),\nhowever it can also be used to implement functions such\nas <span data-xref=\"Gtk.TreeView.set_cursor_on_cell\"/>.</p>",
+            "kind": "method",
+            "name": "set_focus_cell",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Explicitly stops the editing of the currently edited cell.</p><p>If <code>canceled</code> is <code>true</code>, the currently edited cell renderer\nwill emit the ::editing-canceled signal, otherwise the\nthe ::editing-done signal will be emitted on the current\nedit widget.</p><p>See <span data-xref=\"Gtk.CellArea.get_edited_cell\"/> and <span data-xref=\"Gtk.CellArea.get_edit_widget\"/>.</p>",
+            "kind": "method",
+            "name": "stop_editing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "canceled",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "CellArea",
+    "properties": [
+        {
+            "doc": "<p>The widget currently editing the edited cell</p><p>This property is read-only and only changes as\na result of a call <span data-xref=\"Gtk.CellArea.activate_cell\"/>.</p>",
+            "kind": "property",
+            "name": "edit-widget",
+            "type": "Gtk.CellEditable"
+        },
+        {
+            "doc": "<p>The cell in the area that is currently edited</p><p>This property is read-only and only changes as\na result of a call <span data-xref=\"Gtk.CellArea.activate_cell\"/>.</p>",
+            "kind": "property",
+            "name": "edited-cell",
+            "type": "Gtk.CellRenderer"
+        },
+        {
+            "doc": "<p>The cell in the area that currently has focus</p>",
+            "kind": "property",
+            "name": "focus-cell",
+            "type": "Gtk.CellRenderer"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Indicates that editing has started on <code>renderer</code> and that <code>editable</code>\nshould be added to the owning cell-layouting widget at <code>cell_area</code>.</p>",
+            "kind": "signal",
+            "name": "add-editable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "editable",
+                    "direction": "in",
+                    "type": "Gtk.CellEditable"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "cairo.RectangleInt"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This signal is emitted whenever applying attributes to @area from <code>model</code></p>",
+            "kind": "signal",
+            "name": "apply-attributes",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "model",
+                    "direction": "in",
+                    "type": "Gtk.TreeModel"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TreeIter"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "is_expander",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "is_expanded",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Indicates that focus changed on this @area. This signal\nis emitted either as a result of focus handling or event\nhandling.</p><p>It's possible that the signal is emitted even if the\ncurrently focused renderer did not change, this is\nbecause focus may change to the same renderer in the\nsame cell area for a different row of data.</p>",
+            "kind": "signal",
+            "name": "focus-changed",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Indicates that editing finished on <code>renderer</code> and that <code>editable</code>\nshould be removed from the owning cell-layouting widget.</p>",
+            "kind": "signal",
+            "name": "remove-editable",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "editable",
+                    "direction": "in",
+                    "type": "Gtk.CellEditable"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "<p>Activates <code>area</code>, usually by activating the currently focused\ncell, however some subclasses which embed widgets in the area\ncan also activate a widget if it currently has the focus.</p>",
+            "kind": "vfunc",
+            "name": "activate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "edit_only",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>renderer</code> to <code>area</code> with the default child cell properties.</p>",
+            "kind": "vfunc",
+            "name": "add",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Applies any connected attributes to the renderers in\n<code>area</code> by pulling the values from <code>tree_model</code>.</p>",
+            "kind": "vfunc",
+            "name": "apply_attributes",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "tree_model",
+                    "direction": "in",
+                    "type": "Gtk.TreeModel"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "iter",
+                    "direction": "in",
+                    "type": "Gtk.TreeIter"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "is_expander",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "is_expanded",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This is sometimes needed for cases where rows need to share\nalignments in one orientation but may be separately grouped\nin the opposing orientation.</p><p>For instance, <span data-xref=\"Gtk.IconView\"/> creates all icons (rows) to have\nthe same width and the cells theirin to have the same\nhorizontal alignments. However each row of icons may have\na separate collective height. <span data-xref=\"Gtk.IconView\"/> uses this to\nrequest the heights of each row based on a context which\nwas already used to request all the row widths that are\nto be displayed.</p>",
+            "kind": "vfunc",
+            "name": "copy_context",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.CellAreaContext"
+            }
+        },
+        {
+            "doc": "<p>Creates a <span data-xref=\"Gtk.CellAreaContext\"/> to be used with <code>area</code> for\nall purposes. <span data-xref=\"Gtk.CellAreaContext\"/> stores geometry information\nfor rows for which it was operated on, it is important to use\nthe same context for the same row of data at all times (i.e.\none should render and handle events with the same <span data-xref=\"Gtk.CellAreaContext\"/>\nwhich was used to request the size of those rows of data).</p>",
+            "kind": "vfunc",
+            "name": "create_context",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.CellAreaContext"
+            }
+        },
+        {
+            "doc": "<p>Delegates event handling to a <span data-xref=\"Gtk.CellArea\"/>.</p>",
+            "kind": "vfunc",
+            "name": "event",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.Event"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                }
+            ],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>This should be called by the <code>area</code>\u2019s owning layout widget\nwhen focus is to be passed to <code>area</code>, or moved within <code>area</code>\nfor a given <code>direction</code> and row data.</p><p>Implementing <span data-xref=\"Gtk.CellArea\"/> classes should implement this\nmethod to receive and navigate focus in its own way particular\nto how it lays out cells.</p>",
+            "kind": "vfunc",
+            "name": "focus",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "direction",
+                    "direction": "in",
+                    "type": "Gtk.DirectionType"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Calls <code>callback</code> for every <span data-xref=\"Gtk.CellRenderer\"/> in <code>area</code>.</p>",
+            "kind": "vfunc",
+            "name": "foreach",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.CellCallback"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Calls <code>callback</code> for every <span data-xref=\"Gtk.CellRenderer\"/> in <code>area</code> with the\nallocated rectangle inside <code>cell_area</code>.</p>",
+            "kind": "vfunc",
+            "name": "foreach_alloc",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "background_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gtk.CellAllocCallback"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "callback_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "get_cell_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_id",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Any"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves a cell area\u2019s initial minimum and natural height.</p><p><code>area</code> will store some geometrical information in <code>context</code> along the way;\nwhen requesting sizes over an arbitrary number of rows, it\u2019s not important\nto check the <code>minimum_height</code> and <code>natural_height</code> of this call but rather to\nconsult <span data-xref=\"Gtk.CellAreaContext.get_preferred_height\"/> after a series of\nrequests.</p>",
+            "kind": "vfunc",
+            "name": "get_preferred_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves a cell area\u2019s minimum and natural height if it would be given\nthe specified <code>width</code>.</p><p><code>area</code> stores some geometrical information in <code>context</code> along the way\nwhile calling <span data-xref=\"Gtk.CellArea.get_preferred_width\"/>. It\u2019s important to\nperform a series of <span data-xref=\"Gtk.CellArea.get_preferred_width\"/> requests with\n<code>context</code> first and then call <span data-xref=\"Gtk.CellArea.get_preferred_height_for_width\"/>\non each cell area individually to get the height for width of each\nfully requested row.</p><p>If at some point, the width of a single row changes, it should be\nrequested with <span data-xref=\"Gtk.CellArea.get_preferred_width\"/> again and then\nthe full width of the requested rows checked again with\n<span data-xref=\"Gtk.CellAreaContext.get_preferred_width\"/>.</p>",
+            "kind": "vfunc",
+            "name": "get_preferred_height_for_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves a cell area\u2019s initial minimum and natural width.</p><p><code>area</code> will store some geometrical information in <code>context</code> along the way;\nwhen requesting sizes over an arbitrary number of rows, it\u2019s not important\nto check the <code>minimum_width</code> and <code>natural_width</code> of this call but rather to\nconsult <span data-xref=\"Gtk.CellAreaContext.get_preferred_width\"/> after a series of\nrequests.</p>",
+            "kind": "vfunc",
+            "name": "get_preferred_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves a cell area\u2019s minimum and natural width if it would be given\nthe specified <code>height</code>.</p><p><code>area</code> stores some geometrical information in <code>context</code> along the way\nwhile calling <span data-xref=\"Gtk.CellArea.get_preferred_height\"/>. It\u2019s important to\nperform a series of <span data-xref=\"Gtk.CellArea.get_preferred_height\"/> requests with\n<code>context</code> first and then call <span data-xref=\"Gtk.CellArea.get_preferred_width_for_height\"/>\non each cell area individually to get the height for width of each\nfully requested row.</p><p>If at some point, the height of a single row changes, it should be\nrequested with <span data-xref=\"Gtk.CellArea.get_preferred_height\"/> again and then\nthe full height of the requested rows checked again with\n<span data-xref=\"Gtk.CellAreaContext.get_preferred_height\"/>.</p>",
+            "kind": "vfunc",
+            "name": "get_preferred_width_for_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets whether the area prefers a height-for-width layout\nor a width-for-height layout.</p>",
+            "kind": "vfunc",
+            "name": "get_request_mode",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.SizeRequestMode"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the area can do anything when activated,\nafter applying new attributes to <code>area</code>.</p>",
+            "kind": "vfunc",
+            "name": "is_activatable",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Removes <code>renderer</code> from <code>area</code>.</p>",
+            "kind": "vfunc",
+            "name": "remove",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Renders <code>area</code>\u2019s cells according to <code>area</code>\u2019s layout onto <code>widget</code> at\nthe given coordinates.</p>",
+            "kind": "vfunc",
+            "name": "render",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.CellAreaContext"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "background_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "paint_focus",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "set_cell_property",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "renderer",
+                    "direction": "in",
+                    "type": "Gtk.CellRenderer"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "property_id",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Any"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pspec",
+                    "direction": "in",
+                    "type": "GObject.ParamSpec"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

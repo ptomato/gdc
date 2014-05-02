@@ -1,0 +1,336 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Box\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "orientation",
+                    "direction": "in",
+                    "type": "Gtk.Orientation"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "spacing",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The GtkBox widget organizes child widgets into a rectangular area.</p><p>The rectangular area of a GtkBox is organized into either a single row\nor a single column of child widgets depending upon the orientation.\nThus, all children of a GtkBox are allocated one dimension in common,\nwhich is the height of a row, or the width of a column.</p><p>GtkBox uses a notion of packing. Packing refers\nto adding widgets with reference to a particular position in a\n<span data-xref=\"Gtk.Container\"/>. For a GtkBox, there are two reference positions: the\nstart and the end of the box.\nFor a vertical <span data-xref=\"Gtk.Box\"/>, the start is defined as the top of the box and\nthe end is defined as the bottom. For a horizontal <span data-xref=\"Gtk.Box\"/> the start\nis defined as the left side and the end is defined as the right side.</p><p>Use repeated calls to <span data-xref=\"Gtk.Box.pack_start\"/> to pack widgets into a\nGtkBox from start to end. Use <span data-xref=\"Gtk.Box.pack_end\"/> to add widgets from\nend to start. You may intersperse these calls and add widgets from\nboth ends of the same GtkBox.</p><p>Because GtkBox is a <span data-xref=\"Gtk.Container\"/>, you may also use <span data-xref=\"Gtk.Container.add\"/>\nto insert widgets into the box, and they will be packed with the default\nvalues for expand and fill child properties. Use <span data-xref=\"Gtk.Container.remove\"/>\nto remove widgets from the GtkBox.</p><p>Use <span data-xref=\"Gtk.Box.set_homogeneous\"/> to specify whether or not all children\nof the GtkBox are forced to get the same amount of space.</p><p>Use <span data-xref=\"Gtk.Box.set_spacing\"/> to determine how much space will be\nminimally placed between all children in the GtkBox. Note that\nspacing is added between the children, while\npadding added by <span data-xref=\"Gtk.Box.pack_start\"/> or <span data-xref=\"Gtk.Box.pack_end\"/> is added\non either side of the widget it belongs to.</p><p>Use <span data-xref=\"Gtk.Box.reorder_child\"/> to move a GtkBox child to a different\nplace in the box.</p><p>Use <span data-xref=\"Gtk.Box.set_child_packing\"/> to reset the expand,\nfill and padding child properties.\nUse <span data-xref=\"Gtk.Box.query_child_packing\"/> to query these fields.</p><p>Note that a single-row or single-column <span data-xref=\"Gtk.Grid\"/> provides exactly\nthe same functionality as <span data-xref=\"Gtk.Box\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "container"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Box.set_baseline_position\"/>.</p>",
+            "kind": "method",
+            "name": "get_baseline_position",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.BaselinePosition"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the center widget of the box.</p>",
+            "kind": "method",
+            "name": "get_center_widget",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the box is homogeneous (all children are the\nsame size). See <span data-xref=\"Gtk.Box.set_homogeneous\"/>.</p>",
+            "kind": "method",
+            "name": "get_homogeneous",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the value set by <span data-xref=\"Gtk.Box.set_spacing\"/>.</p>",
+            "kind": "method",
+            "name": "get_spacing",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>child</code> to <code>box</code>, packed with reference to the end of <code>box</code>.\nThe <code>child</code> is packed after (away from end of) any other child\npacked with reference to the end of <code>box</code>.</p>",
+            "kind": "method",
+            "name": "pack_end",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "expand",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "fill",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "padding",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>child</code> to <code>box</code>, packed with reference to the start of <code>box</code>.\nThe <code>child</code> is packed after any other child packed with reference\nto the start of <code>box</code>.</p>",
+            "kind": "method",
+            "name": "pack_start",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "expand",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "fill",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "padding",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Obtains information about how <code>child</code> is packed into <code>box</code>.</p>",
+            "kind": "method",
+            "name": "query_child_packing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "expand",
+                    "direction": "out",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "fill",
+                    "direction": "out",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "padding",
+                    "direction": "out",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pack_type",
+                    "direction": "out",
+                    "type": "Gtk.PackType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Moves <code>child</code> to a new <code>position</code> in the list of <code>box</code> children.\nThe list contains widgets packed #GTK_PACK_START\nas well as widgets packed #GTK_PACK_END, in the order that these\nwidgets were added to <code>box</code>.</p><p>A widget\u2019s position in the <code>box</code> children list determines where\nthe widget is packed into <code>box</code>.  A child widget at some position\nin the list will be packed just after all other widgets of the\nsame packing type that appear earlier in the list.</p>",
+            "kind": "method",
+            "name": "reorder_child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the baseline position of a box. This affects\nonly horizontal boxes with at least one baseline aligned\nchild. If there is more vertical space available than requested,\nand the baseline is not allocated by the parent then\n<code>position</code> is used to allocate the baseline wrt the\nextra space available.</p>",
+            "kind": "method",
+            "name": "set_baseline_position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Gtk.BaselinePosition"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a center widget; that is a child widget that will be\ncentered with respect to the full width of the box, even\nif the children at either side take up different amounts\nof space.</p>",
+            "kind": "method",
+            "name": "set_center_widget",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the way <code>child</code> is packed into <code>box</code>.</p>",
+            "kind": "method",
+            "name": "set_child_packing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "expand",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "fill",
+                    "direction": "in",
+                    "type": "Boolean"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "padding",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pack_type",
+                    "direction": "in",
+                    "type": "Gtk.PackType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Box-homogeneous\"/> property of <code>box</code>, controlling\nwhether or not all children of <code>box</code> are given equal space\nin the box.</p>",
+            "kind": "method",
+            "name": "set_homogeneous",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "homogeneous",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Box-spacing\"/> property of <code>box</code>, which is the\nnumber of pixels to place between children of <code>box</code>.</p>",
+            "kind": "method",
+            "name": "set_spacing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "spacing",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Box",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "baseline-position",
+            "type": "Gtk.BaselinePosition"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "homogeneous",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "spacing",
+            "type": "Number(gint)"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

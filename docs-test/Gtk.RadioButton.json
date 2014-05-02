@@ -1,0 +1,213 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioButton\"/>. To be of any practical value, a widget should\nthen be packed into the radio button.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "group",
+                    "direction": "in",
+                    "type": "Array(Gtk.RadioButton)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioButton\"/>, adding it to the same group as\n<code>radio_group_member</code>. As with <span data-xref=\"Gtk.RadioButton.new\"/>, a widget\nshould be packed into the radio button.</p>",
+            "kind": "constructor",
+            "name": "new_from_widget",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "radio_group_member",
+                    "direction": "in",
+                    "type": "Gtk.RadioButton"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioButton\"/> with a text label.</p>",
+            "kind": "constructor",
+            "name": "new_with_label",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "group",
+                    "direction": "in",
+                    "type": "Array(Gtk.RadioButton)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioButton\"/> with a text label, adding it to\nthe same group as <code>radio_group_member</code>.</p>",
+            "kind": "constructor",
+            "name": "new_with_label_from_widget",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "radio_group_member",
+                    "direction": "in",
+                    "type": "Gtk.RadioButton"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioButton\"/> containing a label, adding it to the same\ngroup as <code>group</code>. The label will be created using\n<span data-xref=\"Gtk.Label.new_with_mnemonic\"/>, so underscores in <code>label</code> indicate the\nmnemonic for the button.</p>",
+            "kind": "constructor",
+            "name": "new_with_mnemonic",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "group",
+                    "direction": "in",
+                    "type": "Array(Gtk.RadioButton)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RadioButton\"/> containing a label. The label\nwill be created using <span data-xref=\"Gtk.Label.new_with_mnemonic\"/>, so underscores\nin <code>label</code> indicate the mnemonic for the button.</p>",
+            "kind": "constructor",
+            "name": "new_with_mnemonic_from_widget",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "radio_group_member",
+                    "direction": "in",
+                    "type": "Gtk.RadioButton"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A single radio button performs the same basic function as a <span data-xref=\"Gtk.CheckButton\"/>,\nas its position in the object hierarchy reflects. It is only when multiple\nradio buttons are grouped together that they become a different user\ninterface component in their own right.</p><p>Every radio button is a member of some group of radio buttons. When one is\nselected, all other radio buttons in the same group are deselected. A\n<span data-xref=\"Gtk.RadioButton\"/> is one way of giving the user a choice from many options.</p><p>Radio button widgets are created with <span data-xref=\"Gtk.RadioButton.new\"/>, passing <code>null</code>\nas the argument if this is the first radio button in a group. In subsequent\ncalls, the group you wish to add this button to should be passed as an\nargument. Optionally, <span data-xref=\"Gtk.RadioButton.new_with_label\"/> can be used if you\nwant a text label on the radio button.</p><p>Alternatively, when adding widgets to an existing group of radio buttons,\nuse <span data-xref=\"Gtk.RadioButton.new_from_widget\"/> with a <span data-xref=\"Gtk.RadioButton\"/> that already\nhas a group assigned to it. The convenience function\n<span data-xref=\"Gtk.RadioButton.new_with_label_from_widget\"/> is also provided.</p><p>To retrieve the group a <span data-xref=\"Gtk.RadioButton\"/> is assigned to, use\n<span data-xref=\"Gtk.RadioButton.get_group\"/>.</p><p>To remove a <span data-xref=\"Gtk.RadioButton\"/> from one group and make it part of a new one,\nuse <span data-xref=\"Gtk.RadioButton.set_group\"/>.</p><p>The group list does not need to be freed, as each <span data-xref=\"Gtk.RadioButton\"/> will remove\nitself and its list item when it is destroyed.</p><h2>How to create a group of two radio buttons.</h2><p>|[&lt;!-- language=\"C\" --&gt;\nvoid create_radio_buttons (void) {</p><p>GtkWidget <em>window, </em>radio1, <em>radio2, </em>box, *entry;\n   window = gtk_window_new (GTK_WINDOW_TOPLEVEL);\n   box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);\n   gtk_box_set_homogeneous (GTK_BOX (box), TRUE);</p><p>// Create a radio button with a GtkEntry widget\n   radio1 = gtk_radio_button_new (NULL);\n   entry = gtk_entry_new ();\n   gtk_container_add (GTK_CONTAINER (radio1), entry);</p><p>// Create a radio button with a label\n   radio2 = gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio1),\n                                                         \"I\u2019m the second radio button.\");</p><p>// Pack them into a box, then show all the widgets\n   gtk_box_pack_start (GTK_BOX (box), radio1, TRUE, TRUE, 2);\n   gtk_box_pack_start (GTK_BOX (box), radio2, TRUE, TRUE, 2);\n   gtk_container_add (GTK_CONTAINER (window), box);\n   gtk_widget_show_all (window);\n   return;\n}\n]|</p><p>When an unselected button in the group is clicked the clicked button\nreceives the <span data-xref=\"Gtk.ToggleButton-toggled\"/> signal, as does the previously\nselected button.\nInside the <span data-xref=\"Gtk.ToggleButton-toggled\"/> handler, <span data-xref=\"Gtk.ToggleButton.get_active\"/>\ncan be used to determine if the button has been selected or deselected.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "check_button"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Retrieves the group assigned to a radio button.</p>",
+            "kind": "method",
+            "name": "get_group",
+            "parameters": [],
+            "retval": {
+                "type": "Array(Gtk.RadioButton)"
+            }
+        },
+        {
+            "doc": "<p>Joins a <span data-xref=\"Gtk.RadioButton\"/> object to the group of another <span data-xref=\"Gtk.RadioButton\"/> object</p><p>Use this in language bindings instead of the <span data-xref=\"Gtk.RadioButton.get_group\"/>\nand <span data-xref=\"Gtk.RadioButton.set_group\"/> methods</p><p>A common way to set up a group of radio buttons is the following:\n|[&lt;!-- language=\"C\" --&gt;\n  GtkRadioButton <em>radio_button;\n  GtkRadioButton </em>last_button;</p><p>while ( ...more buttons to add... )\n    {\n       radio_button = gtk_radio_button_new (...);</p><pre><code>   gtk_radio_button_join_group (radio_button, last_button);\n   last_button = radio_button;\n}\n</code></pre>\n<p>]|</p>",
+            "kind": "method",
+            "name": "join_group",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "group_source",
+                    "direction": "in",
+                    "type": "Gtk.RadioButton"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets a <span data-xref=\"Gtk.RadioButton\"/>\u2019s group. It should be noted that this does not change\nthe layout of your interface in any way, so if you are changing the group,\nit is likely you will need to re-arrange the user interface to reflect these\nchanges.</p>",
+            "kind": "method",
+            "name": "set_group",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "group",
+                    "direction": "in",
+                    "type": "Array(Gtk.RadioButton)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "RadioButton",
+    "properties": [
+        {
+            "doc": "<p>Sets a new group for a radio button.</p>",
+            "kind": "property",
+            "name": "group",
+            "type": "Gtk.RadioButton"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Emitted when the group of radio buttons that a radio button belongs\nto changes. This is emitted when a radio button switches from\nbeing alone to being part of a group of 2 or more buttons, or\nvice-versa, and when a button is moved from one group of 2 or\nmore buttons to a different one, but not when the composition\nof the group that a button belongs to changes.</p>",
+            "kind": "signal",
+            "name": "group-changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "group_changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

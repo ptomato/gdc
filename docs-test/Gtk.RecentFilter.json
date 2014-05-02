@@ -1,0 +1,196 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RecentFilter\"/> with no rules added to it.\nSuch filter does not accept any recently used resources, so is not\nparticularly useful until you add rules with\n<span data-xref=\"Gtk.RecentFilter.add_pattern\"/>, <span data-xref=\"Gtk.RecentFilter.add_mime_type\"/>,\n<span data-xref=\"Gtk.RecentFilter.add_application\"/>, <span data-xref=\"Gtk.RecentFilter.add_age\"/>.\nTo create a filter that accepts any recently used resource, use:\n|[&lt;!-- language=\"C\" --&gt;\nGtkRecentFilter <em>filter = gtk_recent_filter_new ();\ngtk_recent_filter_add_pattern (filter, \"</em>\");\n]|</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.RecentFilter"
+            }
+        }
+    ],
+    "doc": "<p>A <span data-xref=\"Gtk.RecentFilter\"/> can be used to restrict the files being shown\nin a <span data-xref=\"Gtk.RecentChooser\"/>.  Files can be filtered based on their name\n(with <span data-xref=\"Gtk.RecentFilter.add_pattern\"/>), on their mime type (with\n<span data-xref=\"Gtk.FileFilter.add_mime_type\"/>), on the application that has\nregistered them (with <span data-xref=\"Gtk.RecentFilter.add_application\"/>), or by\na custom filter function (with <span data-xref=\"Gtk.RecentFilter.add_custom\"/>).</p><p>Filtering by mime type handles aliasing and subclassing of mime\ntypes; e.g. a filter for text/plain also matches a file with mime\ntype application/rtf, since application/rtf is a subclass of text/plain.\nNote that <span data-xref=\"Gtk.RecentFilter\"/> allows wildcards for the subtype of a\nmime type, so you can e.g. filter for image/*.</p><p>Normally, filters are used by adding them to a <span data-xref=\"Gtk.RecentChooser\"/>,\nsee <span data-xref=\"Gtk.RecentChooser.add_filter\"/>, but it is also possible to\nmanually use a filter on a file with <span data-xref=\"Gtk.RecentFilter.filter\"/>.</p><p>Recently used files are supported since GTK+ 2.10.</p><h2>GtkRecentFilter as GtkBuildable</h2><p>The GtkRecentFilter implementation of the GtkBuildable interface\nsupports adding rules using the &lt;mime-types&gt;, &lt;patterns&gt; and\n&lt;applications&gt; elements and listing the rules within. Specifying\na &lt;mime-type&gt;, &lt;pattern&gt; or &lt;application&gt; has the same effect as\ncalling <span data-xref=\"Gtk.RecentFilter.add_mime_type\"/>,\n<span data-xref=\"Gtk.RecentFilter.add_pattern\"/> or <span data-xref=\"Gtk.RecentFilter.add_application\"/>.</p><p>An example of a UI definition fragment specifying GtkRecentFilter rules:\n|[\n&lt;object class=\"GtkRecentFilter\"&gt;\n  &lt;mime-types&gt;\n    &lt;mime-type&gt;text/plain&lt;/mime-type&gt;\n    &lt;mime-type&gt;image/png&lt;/mime-type&gt;\n  &lt;/mime-types&gt;\n  &lt;patterns&gt;\n    &lt;pattern&gt;<em>.txt&lt;/pattern&gt;\n    &lt;pattern&gt;</em>.png&lt;/pattern&gt;\n  &lt;/patterns&gt;\n  &lt;applications&gt;\n    &lt;application&gt;gimp&lt;/application&gt;\n    &lt;application&gt;gedit&lt;/application&gt;\n    &lt;application&gt;glade&lt;/application&gt;\n  &lt;/applications&gt;\n&lt;/object&gt;\n]|</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds a rule that allows resources based on their age - that is, the number\nof days elapsed since they were last modified.</p>",
+            "kind": "method",
+            "name": "add_age",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "days",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a rule that allows resources based on the name of the application\nthat has registered them.</p>",
+            "kind": "method",
+            "name": "add_application",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "application",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a rule to a filter that allows resources based on a custom callback\nfunction. The bitfield <code>needed</code> which is passed in provides information\nabout what sorts of information that the filter function needs;\nthis allows GTK+ to avoid retrieving expensive information when\nit isn\u2019t needed by the filter.</p>",
+            "kind": "method",
+            "name": "add_custom",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "needed",
+                    "direction": "in",
+                    "type": "Gtk.RecentFilterFlags"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "func",
+                    "direction": "in",
+                    "type": "Gtk.RecentFilterFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "data_destroy",
+                    "direction": "in",
+                    "type": "GLib.DestroyNotify"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a rule that allows resources based on the name of the group\nto which they belong</p>",
+            "kind": "method",
+            "name": "add_group",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "group",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a rule that allows resources based on their registered MIME type.</p>",
+            "kind": "method",
+            "name": "add_mime_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "mime_type",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a rule that allows resources based on a pattern matching their\ndisplay name.</p>",
+            "kind": "method",
+            "name": "add_pattern",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "pattern",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds a rule allowing image files in the formats supported\nby GdkPixbuf.</p>",
+            "kind": "method",
+            "name": "add_pixbuf_formats",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Tests whether a file should be displayed according to <code>filter</code>.\nThe <span data-xref=\"Gtk.RecentFilterInfo\"/> <code>filter_info</code> should include\nthe fields returned from <span data-xref=\"Gtk.RecentFilter.get_needed\"/>, and\nmust set the <span data-xref=\"Gtk.RecentFilterInfo\"/>.contains field of <code>filter_info</code>\nto indicate which fields have been set.</p><p>This function will not typically be used by applications; it\nis intended principally for use in the implementation of\n<span data-xref=\"Gtk.RecentChooser\"/>.</p>",
+            "kind": "method",
+            "name": "filter",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "filter_info",
+                    "direction": "in",
+                    "type": "Gtk.RecentFilterInfo"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the human-readable name for the filter.\nSee <span data-xref=\"Gtk.RecentFilter.set_name\"/>.</p>",
+            "kind": "method",
+            "name": "get_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the fields that need to be filled in for the <span data-xref=\"Gtk.RecentFilterInfo\"/>\npassed to <span data-xref=\"Gtk.RecentFilter.filter\"/></p><p>This function will not typically be used by applications; it\nis intended principally for use in the implementation of\n<span data-xref=\"Gtk.RecentChooser\"/>.</p>",
+            "kind": "method",
+            "name": "get_needed",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.RecentFilterFlags"
+            }
+        },
+        {
+            "doc": "<p>Sets the human-readable name of the filter; this is the string\nthat will be displayed in the recently used resources selector\nuser interface if there is a selectable list of filters.</p>",
+            "kind": "method",
+            "name": "set_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "name",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "RecentFilter",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

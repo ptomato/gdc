@@ -1,0 +1,100 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.WindowGroup\"/> object. Grabs added with\n<span data-xref=\"Gtk.Widget.grab_add\"/> only affect windows within the same <span data-xref=\"Gtk.WindowGroup\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.WindowGroup"
+            }
+        }
+    ],
+    "doc": "<p><span data-xref=\"Gtk.WindowGroup\"/> objects are referenced by each window in the group,\nso once you have added all windows to a <span data-xref=\"Gtk.WindowGroup\"/>, you can drop\nthe initial reference to the window group with <span data-xref=\"GObject.Object.unref\">GObject.Object.prototype.unref</span>. If the\nwindows in the window group are subsequently destroyed, then they will\nbe removed from the window group and drop their references on the window\ngroup; when all window have been removed, the window group will be\nfreed.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds a window to a <span data-xref=\"Gtk.WindowGroup\"/>.</p>",
+            "kind": "method",
+            "name": "add_window",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "window",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns the current grab widget for <code>device</code>, or <code>null</code> if none.</p>",
+            "kind": "method",
+            "name": "get_current_device_grab",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "device",
+                    "direction": "in",
+                    "type": "Gdk.Device"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets the current grab widget of the given group,\nsee <span data-xref=\"Gtk.Widget.grab_add\"/>.</p>",
+            "kind": "method",
+            "name": "get_current_grab",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Returns a list of the #GtkWindows that belong to <code>window_group</code>.</p>",
+            "kind": "method",
+            "name": "list_windows",
+            "parameters": [],
+            "retval": {
+                "type": "Array(Gtk.Window)"
+            }
+        },
+        {
+            "doc": "<p>Removes a window from a <span data-xref=\"Gtk.WindowGroup\"/>.</p>",
+            "kind": "method",
+            "name": "remove_window",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "window",
+                    "direction": "in",
+                    "type": "Gtk.Window"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "WindowGroup",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

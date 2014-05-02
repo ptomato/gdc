@@ -1,0 +1,391 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Adjustment\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "lower",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "upper",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "step_increment",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_increment",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_size",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.Adjustment\"/> object represents a value which has an associated lower\nand upper bound, together with step and page increments, and a page size.\nIt is used within several GTK+ widgets, including\n<span data-xref=\"Gtk.SpinButton\"/>, <span data-xref=\"Gtk.Viewport\"/>, and <span data-xref=\"Gtk.Range\"/> (which is a base class for\n<span data-xref=\"Gtk.HScrollbar\"/>, <span data-xref=\"Gtk.VScrollbar\"/>, <span data-xref=\"Gtk.HScale\"/>, and <span data-xref=\"Gtk.VScale\"/>).</p><p>The <span data-xref=\"Gtk.Adjustment\"/> object does not update the value itself. Instead\nit is left up to the owner of the <span data-xref=\"Gtk.Adjustment\"/> to control the value.</p><p>The owner of the <span data-xref=\"Gtk.Adjustment\"/> typically calls the\n<span data-xref=\"Gtk.Adjustment.value_changed\"/> and <span data-xref=\"Gtk.Adjustment.changed\"/> functions\nafter changing the value and its bounds. This results in the emission of the</p>\n<h1>GtkAdjustment::value_changed or <span data-xref=\"Gtk.Adjustment-changed\"/> signal respectively.</h1>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Adjustment-changed\"/> signal from the <span data-xref=\"Gtk.Adjustment\"/>.\nThis is typically called by the owner of the <span data-xref=\"Gtk.Adjustment\"/> after it has\nchanged any of the <span data-xref=\"Gtk.Adjustment\"/> properties other than the value.</p>",
+            "kind": "method",
+            "name": "changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Updates the <span data-xref=\"Gtk.Adjustment-value\"/> property to ensure that the range\nbetween <code>lower</code> and <code>upper</code> is in the current page (i.e. between\n<span data-xref=\"Gtk.Adjustment-value\"/> and <span data-xref=\"Gtk.Adjustment-value\"/> + #GtkAdjustment:page_size).\nIf the range is larger than the page size, then only the start of it will\nbe in the current page.\nA <span data-xref=\"Gtk.Adjustment-changed\"/> signal will be emitted if the value is changed.</p>",
+            "kind": "method",
+            "name": "clamp_page",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "lower",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "upper",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets all properties of the adjustment at once.</p><p>Use this function to avoid multiple emissions of the <span data-xref=\"Gtk.Adjustment-changed\"/>\nsignal. See <span data-xref=\"Gtk.Adjustment.set_lower\"/> for an alternative way\nof compressing multiple emissions of <span data-xref=\"Gtk.Adjustment-changed\"/> into one.</p>",
+            "kind": "method",
+            "name": "configure",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "lower",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "upper",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "step_increment",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_increment",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "page_size",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the minimum value of the adjustment.</p>",
+            "kind": "method",
+            "name": "get_lower",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the smaller of step increment and page increment.</p>",
+            "kind": "method",
+            "name": "get_minimum_increment",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the page increment of the adjustment.</p>",
+            "kind": "method",
+            "name": "get_page_increment",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the page size of the adjustment.</p>",
+            "kind": "method",
+            "name": "get_page_size",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the step increment of the adjustment.</p>",
+            "kind": "method",
+            "name": "get_step_increment",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the maximum value of the adjustment.</p>",
+            "kind": "method",
+            "name": "get_upper",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Gets the current value of the adjustment. See\ngtk_adjustment_set_value ().</p>",
+            "kind": "method",
+            "name": "get_value",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gdouble)"
+            }
+        },
+        {
+            "doc": "<p>Sets the minimum value of the adjustment.</p><p>When setting multiple adjustment properties via their individual\nsetters, multiple <span data-xref=\"Gtk.Adjustment-changed\"/> signals will be emitted. However, since\nthe emission of the <span data-xref=\"Gtk.Adjustment-changed\"/> signal is tied to the emission of the\n<span data-xref=\"GObject.Object-notify\">GObject.Object::notify</span> signals of the changed properties, it\u2019s possible\nto compress the <span data-xref=\"Gtk.Adjustment-changed\"/> signals into one by calling\n<span data-xref=\"GObject.Object.freeze_notify\">GObject.Object.prototype.freeze_notify</span> and <span data-xref=\"GObject.Object.thaw_notify\">GObject.Object.prototype.thaw_notify</span> around the\ncalls to the individual setters.</p><p>Alternatively, using a single <span data-xref=\"GObject.Object.set\">GObject.Object.set</span> for all the properties\nto change, or using <span data-xref=\"Gtk.Adjustment.configure\"/> has the same effect\nof compressing <span data-xref=\"Gtk.Adjustment-changed\"/> emissions.</p>",
+            "kind": "method",
+            "name": "set_lower",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "lower",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the page increment of the adjustment.</p><p>See <span data-xref=\"Gtk.Adjustment.set_lower\"/> about how to compress multiple\nemissions of the <span data-xref=\"Gtk.Adjustment-changed\"/> signal when setting multiple adjustment\nproperties.</p>",
+            "kind": "method",
+            "name": "set_page_increment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page_increment",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the page size of the adjustment.</p><p>See <span data-xref=\"Gtk.Adjustment.set_lower\"/> about how to compress multiple\nemissions of the GtkAdjustment::changed signal when setting multiple adjustment\nproperties.</p>",
+            "kind": "method",
+            "name": "set_page_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "page_size",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the step increment of the adjustment.</p><p>See <span data-xref=\"Gtk.Adjustment.set_lower\"/> about how to compress multiple\nemissions of the <span data-xref=\"Gtk.Adjustment-changed\"/> signal when setting multiple adjustment\nproperties.</p>",
+            "kind": "method",
+            "name": "set_step_increment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "step_increment",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the maximum value of the adjustment.</p><p>Note that values will be restricted by\n<code>upper - page-size</code> if the page-size\nproperty is nonzero.</p><p>See <span data-xref=\"Gtk.Adjustment.set_lower\"/> about how to compress multiple\nemissions of the <span data-xref=\"Gtk.Adjustment-changed\"/> signal when setting multiple adjustment\nproperties.</p>",
+            "kind": "method",
+            "name": "set_upper",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "upper",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.Adjustment\"/> value. The value is clamped to lie between\n<span data-xref=\"Gtk.Adjustment-lower\"/> and <span data-xref=\"Gtk.Adjustment-upper\"/>.</p><p>Note that for adjustments which are used in a <span data-xref=\"Gtk.Scrollbar\"/>, the effective\nrange of allowed values goes from <span data-xref=\"Gtk.Adjustment-lower\"/> to\n<span data-xref=\"Gtk.Adjustment-upper\"/> - #GtkAdjustment:page_size.</p>",
+            "kind": "method",
+            "name": "set_value",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "value",
+                    "direction": "in",
+                    "type": "Number(gdouble)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits a #GtkAdjustment::value_changed signal from the <span data-xref=\"Gtk.Adjustment\"/>.\nThis is typically called by the owner of the <span data-xref=\"Gtk.Adjustment\"/> after it has\nchanged the <span data-xref=\"Gtk.Adjustment-value\"/> property.</p>",
+            "kind": "method",
+            "name": "value_changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Adjustment",
+    "properties": [
+        {
+            "doc": "<p>The minimum value of the adjustment.</p>",
+            "kind": "property",
+            "name": "lower",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "<p>The page increment of the adjustment.</p>",
+            "kind": "property",
+            "name": "page-increment",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "<p>The page size of the adjustment.\nNote that the page-size is irrelevant and should be set to zero\nif the adjustment is used for a simple scalar value, e.g. in a\n<span data-xref=\"Gtk.SpinButton\"/>.</p>",
+            "kind": "property",
+            "name": "page-size",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "<p>The step increment of the adjustment.</p>",
+            "kind": "property",
+            "name": "step-increment",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "<p>The maximum value of the adjustment.\nNote that values will be restricted by\n<code>upper - page-size</code> if the page-size\nproperty is nonzero.</p>",
+            "kind": "property",
+            "name": "upper",
+            "type": "Number(gdouble)"
+        },
+        {
+            "doc": "<p>The value of the adjustment.</p>",
+            "kind": "property",
+            "name": "value",
+            "type": "Number(gdouble)"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>Emitted when one or more of the <span data-xref=\"Gtk.Adjustment\"/> properties have been\nchanged, other than the <span data-xref=\"Gtk.Adjustment-value\"/> property.</p>",
+            "kind": "signal",
+            "name": "changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the <span data-xref=\"Gtk.Adjustment-value\"/> property has been changed.</p>",
+            "kind": "signal",
+            "name": "value-changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Adjustment-changed\"/> signal from the <span data-xref=\"Gtk.Adjustment\"/>.\nThis is typically called by the owner of the <span data-xref=\"Gtk.Adjustment\"/> after it has\nchanged any of the <span data-xref=\"Gtk.Adjustment\"/> properties other than the value.</p>",
+            "kind": "vfunc",
+            "name": "changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits a #GtkAdjustment::value_changed signal from the <span data-xref=\"Gtk.Adjustment\"/>.\nThis is typically called by the owner of the <span data-xref=\"Gtk.Adjustment\"/> after it has\nchanged the <span data-xref=\"Gtk.Adjustment-value\"/> property.</p>",
+            "kind": "vfunc",
+            "name": "value_changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

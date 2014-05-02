@@ -1,0 +1,1132 @@
+{
+    "constructors": [],
+    "doc": "<p>The <span data-xref=\"Gtk.CellRenderer\"/> is a base class of a set of objects used for\nrendering a cell to a #cairo_t.  These objects are used primarily by\nthe <span data-xref=\"Gtk.TreeView\"/> widget, though they aren\u2019t tied to them in any\nspecific way.  It is worth noting that <span data-xref=\"Gtk.CellRenderer\"/> is not a\n<span data-xref=\"Gtk.Widget\"/> and cannot be treated as such.</p><p>The primary use of a <span data-xref=\"Gtk.CellRenderer\"/> is for drawing a certain graphical\nelements on a #cairo_t. Typically, one cell renderer is used to\ndraw many cells on the screen.  To this extent, it isn\u2019t expected that a\nCellRenderer keep any permanent state around.  Instead, any state is set\njust prior to use using #GObjects property system.  Then, the\ncell is measured using <span data-xref=\"Gtk.CellRenderer.get_size\"/>. Finally, the cell\nis rendered in the correct location using <span data-xref=\"Gtk.CellRenderer.render\"/>.</p><p>There are a number of rules that must be followed when writing a new\n<span data-xref=\"Gtk.CellRenderer\"/>.  First and foremost, it\u2019s important that a certain set\nof properties will always yield a cell renderer of the same size,\nbarring a <span data-xref=\"Gtk.Style\"/> change.  The <span data-xref=\"Gtk.CellRenderer\"/> also has a number of\ngeneric properties that are expected to be honored by all children.</p><p>Beyond merely rendering a cell, cell renderers can optionally\nprovide active user interface elements. A cell renderer can be\n\u201cactivatable\u201d like <span data-xref=\"Gtk.CellRendererToggle\"/>,\nwhich toggles when it gets activated by a mouse click, or it can be\n\u201ceditable\u201d like <span data-xref=\"Gtk.CellRendererText\"/>, which\nallows the user to edit the text using a <span data-xref=\"Gtk.Entry\"/>.\nTo make a cell renderer activatable or editable, you have to\nimplement the <span data-xref=\"Gtk.CellRendererClass\"/>.activate or\n<span data-xref=\"Gtk.CellRendererClass\"/>.start_editing virtual functions, respectively.</p><p>Many properties of <span data-xref=\"Gtk.CellRenderer\"/> and its subclasses have a\ncorresponding \u201cset\u201d property, e.g. \u201ccell-background-set\u201d corresponds\nto \u201ccell-background\u201d. These \u201cset\u201d properties reflect whether a property\nhas been set or not. You should not set them independently.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Passes an activate event to the cell renderer for possible processing.\nSome cell renderers may use events; for example, <span data-xref=\"Gtk.CellRendererToggle\"/>\ntoggles when it gets a mouse click.</p>",
+            "kind": "method",
+            "name": "activate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.Event"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "background_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the aligned area used by <code>cell</code> inside <code>cell_area</code>. Used for finding\nthe appropriate edit and focus rectangle.</p>",
+            "kind": "method",
+            "name": "get_aligned_area",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "aligned_area",
+                    "direction": "out",
+                    "type": "Gdk.Rectangle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Fills in <code>xalign</code> and <code>yalign</code> with the appropriate values of <code>cell</code>.</p>",
+            "kind": "method",
+            "name": "get_alignment",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "xalign",
+                    "direction": "out",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "yalign",
+                    "direction": "out",
+                    "type": "Number(gfloat)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Fills in <code>width</code> and <code>height</code> with the appropriate size of <code>cell</code>.</p>",
+            "kind": "method",
+            "name": "get_fixed_size",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Fills in <code>xpad</code> and <code>ypad</code> with the appropriate values of <code>cell</code>.</p>",
+            "kind": "method",
+            "name": "get_padding",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "xpad",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "ypad",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retreives a renderer\u2019s natural size when rendered to <code>widget</code>.</p>",
+            "kind": "method",
+            "name": "get_preferred_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_size",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_size",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retreives a cell renderers\u2019s minimum and natural height if it were rendered to\n<code>widget</code> with the specified <code>width</code>.</p>",
+            "kind": "method",
+            "name": "get_preferred_height_for_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retrieves the minimum and natural size of a cell taking\ninto account the widget\u2019s preference for height-for-width management.</p>",
+            "kind": "method",
+            "name": "get_preferred_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_size",
+                    "direction": "out",
+                    "type": "Gtk.Requisition"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_size",
+                    "direction": "out",
+                    "type": "Gtk.Requisition"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retreives a renderer\u2019s natural size when rendered to <code>widget</code>.</p>",
+            "kind": "method",
+            "name": "get_preferred_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_size",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_size",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retreives a cell renderers\u2019s minimum and natural width if it were rendered to\n<code>widget</code> with the specified <code>height</code>.</p>",
+            "kind": "method",
+            "name": "get_preferred_width_for_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets whether the cell renderer prefers a height-for-width layout\nor a width-for-height layout.</p>",
+            "kind": "method",
+            "name": "get_request_mode",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.SizeRequestMode"
+            }
+        },
+        {
+            "doc": "<p>Returns the cell renderer\u2019s sensitivity.</p>",
+            "kind": "method",
+            "name": "get_sensitive",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Obtains the width and height needed to render the cell. Used by view\nwidgets to determine the appropriate size for the cell_area passed to\n<span data-xref=\"Gtk.CellRenderer.render\"/>.  If <code>cell_area</code> is not <code>null</code>, fills in the\nx and y offsets (if set) of the cell relative to this location.</p><p>Please note that the values set in <code>width</code> and <code>height</code>, as well as those\nin <code>x_offset</code> and <code>y_offset</code> are inclusive of the xpad and ypad properties.</p>",
+            "kind": "method",
+            "name": "get_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "x_offset",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "y_offset",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Translates the cell renderer state to <span data-xref=\"Gtk.StateFlags\"/>,\nbased on the cell renderer and widget sensitivity, and\nthe given <span data-xref=\"Gtk.CellRendererState\"/>.</p>",
+            "kind": "method",
+            "name": "get_state",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_state",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.StateFlags"
+            }
+        },
+        {
+            "doc": "<p>Returns the cell renderer\u2019s visibility.</p>",
+            "kind": "method",
+            "name": "get_visible",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Checks whether the cell renderer can do something when activated.</p>",
+            "kind": "method",
+            "name": "is_activatable",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Invokes the virtual render function of the <span data-xref=\"Gtk.CellRenderer\"/>. The three\npassed-in rectangles are areas in <code>cr</code>. Most renderers will draw within\n<code>cell_area</code>; the xalign, yalign, xpad, and ypad fields of the <span data-xref=\"Gtk.CellRenderer\"/>\nshould be honored with respect to <code>cell_area</code>. <code>background_area</code> includes the\nblank space around the cell, and also the area containing the tree expander;\nso the <code>background_area</code> rectangles for all cells tile to cover the entire\n@window.</p>",
+            "kind": "method",
+            "name": "render",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "background_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the renderer\u2019s alignment within its available space.</p>",
+            "kind": "method",
+            "name": "set_alignment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "xalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the renderer size to be explicit, independent of the properties set.</p>",
+            "kind": "method",
+            "name": "set_fixed_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the renderer\u2019s padding.</p>",
+            "kind": "method",
+            "name": "set_padding",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "xpad",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "ypad",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the cell renderer\u2019s sensitivity.</p>",
+            "kind": "method",
+            "name": "set_sensitive",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "sensitive",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the cell renderer\u2019s visibility.</p>",
+            "kind": "method",
+            "name": "set_visible",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "visible",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Passes an activate event to the cell renderer for possible processing.</p>",
+            "kind": "method",
+            "name": "start_editing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.Event"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "background_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.CellEditable"
+            }
+        },
+        {
+            "doc": "<p>Informs the cell renderer that the editing is stopped.\nIf <code>canceled</code> is <code>true</code>, the cell renderer will emit the\n<span data-xref=\"Gtk.CellRenderer-editing-canceled\"/> signal.</p><p>This function should be called by cell renderer implementations\nin response to the <span data-xref=\"Gtk.CellEditable-editing-done\"/> signal of\n<span data-xref=\"Gtk.CellEditable\"/>.</p>",
+            "kind": "method",
+            "name": "stop_editing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "canceled",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "CellRenderer",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "cell-background",
+            "type": "String"
+        },
+        {
+            "doc": "<p>Cell background as a <span data-xref=\"Gdk.Color\">Gdk.Color</span></p>",
+            "kind": "property",
+            "name": "cell-background-gdk",
+            "type": "Gdk.Color"
+        },
+        {
+            "doc": "<p>Cell background as a <span data-xref=\"Gdk.RGBA\">Gdk.RGBA</span></p>",
+            "kind": "property",
+            "name": "cell-background-rgba",
+            "type": "Gdk.RGBA"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "cell-background-set",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "editing",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "height",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "is-expanded",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "is-expander",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "mode",
+            "type": "Gtk.CellRendererMode"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "sensitive",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "visible",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "width",
+            "type": "Number(gint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "xalign",
+            "type": "Number(gfloat)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "xpad",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "yalign",
+            "type": "Number(gfloat)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "ypad",
+            "type": "Number(guint)"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>This signal gets emitted when the user cancels the process of editing a\ncell.  For example, an editable cell renderer could be written to cancel\nediting when the user presses Escape.</p><p>See also: <span data-xref=\"Gtk.CellRenderer.stop_editing\"/>.</p>",
+            "kind": "signal",
+            "name": "editing-canceled",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>This signal gets emitted when a cell starts to be edited.\nThe intended use of this signal is to do special setup\non <code>editable</code>, e.g. adding a <span data-xref=\"Gtk.EntryCompletion\"/> or setting\nup additional columns in a <span data-xref=\"Gtk.ComboBox\"/>.</p><p>Note that GTK+ doesn't guarantee that cell renderers will\ncontinue to use the same kind of widget for editing in future\nreleases, therefore you should check the type of <code>editable</code>\nbefore doing any specific setup, as in the following example:\n|[&lt;!-- language=\"C\" --&gt;\nstatic void\ntext_editing_started (GtkCellRenderer <em>cell,\n                      GtkCellEditable </em>editable,\n                      const gchar     <em>path,\n                      gpointer         data)\n{\n  if (GTK_IS_ENTRY (editable))\n    {\n      GtkEntry </em>entry = GTK_ENTRY (editable);</p>\n<pre><code>  // ... create a GtkEntryCompletion\n\n  gtk_entry_set_completion (entry, completion);\n}\n</code></pre>\n<p>}\n]|</p>",
+            "kind": "signal",
+            "name": "editing-started",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "editable",
+                    "direction": "in",
+                    "type": "Gtk.CellEditable"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "<p>Passes an activate event to the cell renderer for possible processing.\nSome cell renderers may use events; for example, <span data-xref=\"Gtk.CellRendererToggle\"/>\ntoggles when it gets a mouse click.</p>",
+            "kind": "vfunc",
+            "name": "activate",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.Event"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "background_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "editing_canceled",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "editing_started",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "editable",
+                    "direction": "in",
+                    "type": "Gtk.CellEditable"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the aligned area used by <code>cell</code> inside <code>cell_area</code>. Used for finding\nthe appropriate edit and focus rectangle.</p>",
+            "kind": "vfunc",
+            "name": "get_aligned_area",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "aligned_area",
+                    "direction": "out",
+                    "type": "Gdk.Rectangle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retreives a renderer\u2019s natural size when rendered to <code>widget</code>.</p>",
+            "kind": "vfunc",
+            "name": "get_preferred_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_size",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_size",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retreives a cell renderers\u2019s minimum and natural height if it were rendered to\n<code>widget</code> with the specified <code>width</code>.</p>",
+            "kind": "vfunc",
+            "name": "get_preferred_height_for_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "width",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retreives a renderer\u2019s natural size when rendered to <code>widget</code>.</p>",
+            "kind": "vfunc",
+            "name": "get_preferred_width",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_size",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_size",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Retreives a cell renderers\u2019s minimum and natural width if it were rendered to\n<code>widget</code> with the specified <code>height</code>.</p>",
+            "kind": "vfunc",
+            "name": "get_preferred_width_for_height",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "height",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "minimum_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "natural_width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets whether the cell renderer prefers a height-for-width layout\nor a width-for-height layout.</p>",
+            "kind": "vfunc",
+            "name": "get_request_mode",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.SizeRequestMode"
+            }
+        },
+        {
+            "doc": "<p>Obtains the width and height needed to render the cell. Used by view\nwidgets to determine the appropriate size for the cell_area passed to\n<span data-xref=\"Gtk.CellRenderer.render\"/>.  If <code>cell_area</code> is not <code>null</code>, fills in the\nx and y offsets (if set) of the cell relative to this location.</p><p>Please note that the values set in <code>width</code> and <code>height</code>, as well as those\nin <code>x_offset</code> and <code>y_offset</code> are inclusive of the xpad and ypad properties.</p>",
+            "kind": "vfunc",
+            "name": "get_size",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "x_offset",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "y_offset",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "width",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "height",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Invokes the virtual render function of the <span data-xref=\"Gtk.CellRenderer\"/>. The three\npassed-in rectangles are areas in <code>cr</code>. Most renderers will draw within\n<code>cell_area</code>; the xalign, yalign, xpad, and ypad fields of the <span data-xref=\"Gtk.CellRenderer\"/>\nshould be honored with respect to <code>cell_area</code>. <code>background_area</code> includes the\nblank space around the cell, and also the area containing the tree expander;\nso the <code>background_area</code> rectangles for all cells tile to cover the entire\n@window.</p>",
+            "kind": "vfunc",
+            "name": "render",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "cr",
+                    "direction": "in",
+                    "type": "cairo.Context"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "background_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Passes an activate event to the cell renderer for possible processing.</p>",
+            "kind": "vfunc",
+            "name": "start_editing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "event",
+                    "direction": "in",
+                    "type": "Gdk.Event"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "path",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "background_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "cell_area",
+                    "direction": "in",
+                    "type": "Gdk.Rectangle"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "flags",
+                    "direction": "in",
+                    "type": "Gtk.CellRendererState"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.CellEditable"
+            }
+        }
+    ]
+}

@@ -1,0 +1,573 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Button\"/> widget. To add a child widget to the button,\nuse <span data-xref=\"Gtk.Container.add\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new button containing an icon from the current icon theme.</p><p>If the icon name isn\u2019t known, a \u201cbroken image\u201d icon will be\ndisplayed instead. If the current icon theme is changed, the icon\nwill be updated appropriately.</p><p>This function is a convenience wrapper around <span data-xref=\"Gtk.Button.new\"/> and\n<span data-xref=\"Gtk.Button.set_image\"/>.</p>",
+            "kind": "constructor",
+            "name": "new_from_icon_name",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_name",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "size",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Button\"/> containing the image and text from a stock item.\nSome stock ids have preprocessor macros like #GTK_STOCK_OK and</p>\n<h1>GTK_STOCK_APPLY.</h1><p>If <code>stock_id</code> is unknown, then it will be treated as a mnemonic\nlabel (as for <span data-xref=\"Gtk.Button.new_with_mnemonic\"/>).</p>",
+            "kind": "constructor",
+            "name": "new_from_stock",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "stock_id",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a <span data-xref=\"Gtk.Button\"/> widget with a <span data-xref=\"Gtk.Label\"/> child containing the given\ntext.</p>",
+            "kind": "constructor",
+            "name": "new_with_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Button\"/> containing a label.\nIf characters in <code>label</code> are preceded by an underscore, they are underlined.\nIf you need a literal underscore character in a label, use \u201c__\u201d (two\nunderscores). The first underlined character represents a keyboard\naccelerator called a mnemonic.\nPressing Alt and that key activates the button.</p>",
+            "kind": "constructor",
+            "name": "new_with_mnemonic",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.Button\"/> widget is generally used to trigger a callback function that is\ncalled when the button is pressed.  The various signals and how to use them\nare outlined below.</p><p>The <span data-xref=\"Gtk.Button\"/> widget can hold any valid child widget.  That is, it can hold\nalmost any other standard <span data-xref=\"Gtk.Widget\"/>.  The most commonly used child is the\n<span data-xref=\"Gtk.Label\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "bin"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Button-clicked\"/> signal to the given <span data-xref=\"Gtk.Button\"/>.</p>",
+            "kind": "method",
+            "name": "clicked",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Button-enter\"/> signal to the given <span data-xref=\"Gtk.Button\"/>.</p>",
+            "kind": "method",
+            "name": "enter",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Gets the alignment of the child in the button.</p>",
+            "kind": "method",
+            "name": "get_alignment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "xalign",
+                    "direction": "out",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yalign",
+                    "direction": "out",
+                    "type": "Number(gfloat)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the button will ignore the <span data-xref=\"Gtk.Settings-gtk-button-images\"/>\nsetting and always show the image, if available.</p>",
+            "kind": "method",
+            "name": "get_always_show_image",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the button\u2019s event window if it is realized, <code>null</code> otherwise.\nThis function should be rarely needed.</p>",
+            "kind": "method",
+            "name": "get_event_window",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Window"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the button grabs focus when it is clicked with the mouse.\nSee <span data-xref=\"Gtk.Button.set_focus_on_click\"/>.</p>",
+            "kind": "method",
+            "name": "get_focus_on_click",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the widget that is currenty set as the image of <code>button</code>.\nThis may have been explicitly set by <span data-xref=\"Gtk.Button.set_image\"/>\nor constructed by <span data-xref=\"Gtk.Button.new_from_stock\"/>.</p>",
+            "kind": "method",
+            "name": "get_image",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Gets the position of the image relative to the text\ninside the button.</p>",
+            "kind": "method",
+            "name": "get_image_position",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.PositionType"
+            }
+        },
+        {
+            "doc": "<p>Fetches the text from the label of the button, as set by\n<span data-xref=\"Gtk.Button.set_label\"/>. If the label text has not\nbeen set the return value will be <code>null</code>. This will be the\ncase if you create an empty button with <span data-xref=\"Gtk.Button.new\"/> to\nuse as a container.</p>",
+            "kind": "method",
+            "name": "get_label",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Returns the current relief style of the given <span data-xref=\"Gtk.Button\"/>.</p>",
+            "kind": "method",
+            "name": "get_relief",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.ReliefStyle"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the button label is a stock item.</p>",
+            "kind": "method",
+            "name": "get_use_stock",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether an embedded underline in the button label indicates a\nmnemonic. See gtk_button_set_use_underline ().</p>",
+            "kind": "method",
+            "name": "get_use_underline",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Button-leave\"/> signal to the given <span data-xref=\"Gtk.Button\"/>.</p>",
+            "kind": "method",
+            "name": "leave",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Button-pressed\"/> signal to the given <span data-xref=\"Gtk.Button\"/>.</p>",
+            "kind": "method",
+            "name": "pressed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Button-released\"/> signal to the given <span data-xref=\"Gtk.Button\"/>.</p>",
+            "kind": "method",
+            "name": "released",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the alignment of the child. This property has no effect unless\nthe child is a <span data-xref=\"Gtk.Misc\"/> or a <span data-xref=\"Gtk.Alignment\"/>.</p>",
+            "kind": "method",
+            "name": "set_alignment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "xalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>true</code>, the button will ignore the <span data-xref=\"Gtk.Settings-gtk-button-images\"/>\nsetting and always show the image, if available.</p><p>Use this property if the button  would be useless or hard to use\nwithout the image.</p>",
+            "kind": "method",
+            "name": "set_always_show_image",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "always_show",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the button will grab focus when it is clicked with the mouse.\nMaking mouse clicks not grab focus is useful in places like toolbars where\nyou don\u2019t want the keyboard focus removed from the main area of the\napplication.</p>",
+            "kind": "method",
+            "name": "set_focus_on_click",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "focus_on_click",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Set the image of <code>button</code> to the given widget. The image will be\ndisplayed if the label text is <code>null</code> or if\n<span data-xref=\"Gtk.Button-always-show-image\"/> is <code>true</code>. You don\u2019t have to call\n<span data-xref=\"Gtk.Widget.show\"/> on <code>image</code> yourself.</p>",
+            "kind": "method",
+            "name": "set_image",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "image",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the position of the image relative to the text\ninside the button.</p>",
+            "kind": "method",
+            "name": "set_image_position",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Gtk.PositionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the text of the label of the button to @str. This text is\nalso used to select the stock item if <span data-xref=\"Gtk.Button.set_use_stock\"/>\nis used.</p><p>This will also clear any previously set labels.</p>",
+            "kind": "method",
+            "name": "set_label",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the relief style of the edges of the given <span data-xref=\"Gtk.Button\"/> widget.\nThree styles exist, GTK_RELIEF_NORMAL, GTK_RELIEF_HALF, GTK_RELIEF_NONE.\nThe default style is, as one can guess, GTK_RELIEF_NORMAL.</p>",
+            "kind": "method",
+            "name": "set_relief",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "newstyle",
+                    "direction": "in",
+                    "type": "Gtk.ReliefStyle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>true</code>, the label set on the button is used as a\nstock id to select the stock item for the button.</p>",
+            "kind": "method",
+            "name": "set_use_stock",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "use_stock",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If true, an underline in the text of the button label indicates\nthe next character should be used for the mnemonic accelerator key.</p>",
+            "kind": "method",
+            "name": "set_use_underline",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "use_underline",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Button",
+    "properties": [
+        {
+            "doc": "<p>If <code>true</code>, the button will ignore the <span data-xref=\"Gtk.Settings-gtk-button-images\"/>\nsetting and always show the image, if available.</p><p>Use this property if the button would be useless or hard to use\nwithout the image.</p>",
+            "kind": "property",
+            "name": "always-show-image",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "focus-on-click",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The child widget to appear next to the button text.</p>",
+            "kind": "property",
+            "name": "image",
+            "type": "Gtk.Widget"
+        },
+        {
+            "doc": "<p>The position of the image relative to the text inside the button.</p>",
+            "kind": "property",
+            "name": "image-position",
+            "type": "Gtk.PositionType"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "label",
+            "type": "String"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "relief",
+            "type": "Gtk.ReliefStyle"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "use-stock",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "use-underline",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>If the child of the button is a <span data-xref=\"Gtk.Misc\"/> or <span data-xref=\"Gtk.Alignment\"/>, this property\ncan be used to control its horizontal alignment. 0.0 is left aligned,\n1.0 is right aligned.</p>",
+            "kind": "property",
+            "name": "xalign",
+            "type": "Number(gfloat)"
+        },
+        {
+            "doc": "<p>If the child of the button is a <span data-xref=\"Gtk.Misc\"/> or <span data-xref=\"Gtk.Alignment\"/>, this property\ncan be used to control its vertical alignment. 0.0 is top aligned,\n1.0 is bottom aligned.</p>",
+            "kind": "property",
+            "name": "yalign",
+            "type": "Number(gfloat)"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::activate signal on GtkButton is an action signal and\nemitting it causes the button to animate press then release.\nApplications should never connect to this signal, but use the\n<span data-xref=\"Gtk.Button-clicked\"/> signal.</p>",
+            "kind": "signal",
+            "name": "activate",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the button has been activated (pressed and released).</p>",
+            "kind": "signal",
+            "name": "clicked",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the pointer enters the button.</p>",
+            "kind": "signal",
+            "name": "enter",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the pointer leaves the button.</p>",
+            "kind": "signal",
+            "name": "leave",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the button is pressed.</p>",
+            "kind": "signal",
+            "name": "pressed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emitted when the button is released.</p>",
+            "kind": "signal",
+            "name": "released",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "activate",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Button-clicked\"/> signal to the given <span data-xref=\"Gtk.Button\"/>.</p>",
+            "kind": "vfunc",
+            "name": "clicked",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Button-enter\"/> signal to the given <span data-xref=\"Gtk.Button\"/>.</p>",
+            "kind": "vfunc",
+            "name": "enter",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Button-leave\"/> signal to the given <span data-xref=\"Gtk.Button\"/>.</p>",
+            "kind": "vfunc",
+            "name": "leave",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Button-pressed\"/> signal to the given <span data-xref=\"Gtk.Button\"/>.</p>",
+            "kind": "vfunc",
+            "name": "pressed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Emits a <span data-xref=\"Gtk.Button-released\"/> signal to the given <span data-xref=\"Gtk.Button\"/>.</p>",
+            "kind": "vfunc",
+            "name": "released",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

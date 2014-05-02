@@ -1,0 +1,86 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.ActionBar\"/> widget.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>GtkActionBar is designed to present contextual actions. It is\nexpected to be displayed below the content and expand horizontally\nto fill the area.</p><p>It allows placing children at the start or the end. In addition, it\ncontains an internal centered box which is centered with respect to\nthe full width of the box, even if the children at either side take\nup different amounts of space.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "bin"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Retrieves the center bar widget of the bar.</p>",
+            "kind": "method",
+            "name": "get_center_widget",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>child</code> to <code>action_bar</code>, packed with reference to the\nend of the <code>action_bar</code>.</p>",
+            "kind": "method",
+            "name": "pack_end",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Adds <code>child</code> to <code>action_bar</code>, packed with reference to the\nstart of the <code>action_bar</code>.</p>",
+            "kind": "method",
+            "name": "pack_start",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the center widget for the <span data-xref=\"Gtk.ActionBar\"/>.</p>",
+            "kind": "method",
+            "name": "set_center_widget",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "center_widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "ActionBar",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

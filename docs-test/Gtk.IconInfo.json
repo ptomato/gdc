@@ -1,0 +1,451 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a <span data-xref=\"Gtk.IconInfo\"/> for a <span data-xref=\"GdkPixbuf.Pixbuf\">GdkPixbuf.Pixbuf</span>.</p>",
+            "kind": "constructor",
+            "name": "new_for_pixbuf",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "icon_theme",
+                    "direction": "in",
+                    "type": "Gtk.IconTheme"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "pixbuf",
+                    "direction": "in",
+                    "type": "GdkPixbuf.Pixbuf"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.IconInfo"
+            }
+        }
+    ],
+    "doc": "<p>Contains information found when looking up an icon in\nan icon theme.</p>",
+    "fields": [],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Make a copy of a <span data-xref=\"Gtk.IconInfo\"/>.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.IconInfo"
+            }
+        },
+        {
+            "doc": "<p>Free a <span data-xref=\"Gtk.IconInfo\"/> and associated information</p>",
+            "kind": "method",
+            "name": "free",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Fetches the set of attach points for an icon. An attach point\nis a location in the icon that can be used as anchor points for attaching\nemblems or overlays to the icon.</p>",
+            "kind": "method",
+            "name": "get_attach_points",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "points",
+                    "direction": "out",
+                    "type": "Array(Gdk.Point)"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "n_points",
+                    "direction": "out",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the base scale for the icon. The base scale is a scale for the\nicon that was specified by the icon theme creator. For instance an\nicon drawn for a high-dpi screen with window-scale 2 for a base\nsize of 32 will be 64 pixels tall and have a base_scale of 2.</p>",
+            "kind": "method",
+            "name": "get_base_scale",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the base size for the icon. The base size\nis a size for the icon that was specified by\nthe icon theme creator. This may be different\nthan the actual size of image; an example of\nthis is small emblem icons that can be attached\nto a larger icon. These icons will be given\nthe same base size as the larger icons to which\nthey are attached.</p><p>Note that for scaled icons the base size does\nnot include the base scale.</p>",
+            "kind": "method",
+            "name": "get_base_size",
+            "parameters": [],
+            "retval": {
+                "type": "Number(gint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the built-in image for this icon, if any. To allow\nGTK+ to use built in icon images, you must pass the\n<span data-xref=\"Gtk.IconLookupFlags\"/>.use_builtin to\n<span data-xref=\"Gtk.IconTheme.lookup_icon\"/>.</p>",
+            "kind": "method",
+            "name": "get_builtin_pixbuf",
+            "parameters": [],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Gets the display name for an icon. A display name is a\nstring to be used in place of the icon name in a user\nvisible context like a list of icons.</p>",
+            "kind": "method",
+            "name": "get_display_name",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Gets the coordinates of a rectangle within the icon\nthat can be used for display of information such\nas a preview of the contents of a text file.\nSee <span data-xref=\"Gtk.IconInfo.set_raw_coordinates\"/> for further\ninformation about the coordinate system.</p>",
+            "kind": "method",
+            "name": "get_embedded_rect",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "rectangle",
+                    "direction": "out",
+                    "type": "Gdk.Rectangle"
+                }
+            ],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the filename for the icon. If the\n<span data-xref=\"Gtk.IconLookupFlags\"/>.use_builtin flag was passed\nto <span data-xref=\"Gtk.IconTheme.lookup_icon\"/>, there may be\nno filename if a builtin icon is returned; in this\ncase, you should use <span data-xref=\"Gtk.IconInfo.get_builtin_pixbuf\"/>.</p>",
+            "kind": "method",
+            "name": "get_filename",
+            "parameters": [],
+            "retval": {
+                "type": "String"
+            }
+        },
+        {
+            "doc": "<p>Checks if the icon is symbolic or not. This currently uses only\nthe file name and not the file contents for determining this.\nThis behaviour may change in the future.</p>",
+            "kind": "method",
+            "name": "is_symbolic",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Renders an icon previously looked up in an icon theme using\n<span data-xref=\"Gtk.IconTheme.lookup_icon\"/>; the size will be based on the size\npassed to <span data-xref=\"Gtk.IconTheme.lookup_icon\"/>. Note that the resulting\npixbuf may not be exactly this size; an icon theme may have icons\nthat differ slightly from their nominal sizes, and in addition GTK+\nwill avoid scaling icons that it considers sufficiently close to the\nrequested size or for which the source image would have to be scaled\nup too far. (This maintains sharpness.). This behaviour can be changed\nby passing the <span data-xref=\"Gtk.IconLookupFlags\"/>.force_size flag when obtaining\nthe <span data-xref=\"Gtk.IconInfo\"/>. If this flag has been specified, the pixbuf\nreturned by this function will be scaled to the exact size.</p>",
+            "kind": "method",
+            "name": "load_icon",
+            "parameters": [],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Asynchronously load, render and scale an icon previously looked up\nfrom the icon theme using <span data-xref=\"Gtk.IconTheme.lookup_icon\"/>.</p><p>For more details, see <span data-xref=\"Gtk.IconInfo.load_icon\"/> which is the synchronous\nversion of this call.</p>",
+            "kind": "method",
+            "name": "load_icon_async",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "cancellable",
+                    "direction": "in",
+                    "type": "Gio.Cancellable"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gio.AsyncReadyCallback"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Finishes an async icon load, see <span data-xref=\"Gtk.IconInfo.load_icon_async\"/>.</p>",
+            "kind": "method",
+            "name": "load_icon_finish",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "res",
+                    "direction": "in",
+                    "type": "Gio.AsyncResult"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Renders an icon previously looked up in an icon theme using\n<span data-xref=\"Gtk.IconTheme.lookup_icon\"/>; the size will be based on the size\npassed to <span data-xref=\"Gtk.IconTheme.lookup_icon\"/>. Note that the resulting\nsurface may not be exactly this size; an icon theme may have icons\nthat differ slightly from their nominal sizes, and in addition GTK+\nwill avoid scaling icons that it considers sufficiently close to the\nrequested size or for which the source image would have to be scaled\nup too far. (This maintains sharpness.). This behaviour can be changed\nby passing the <span data-xref=\"Gtk.IconLookupFlags\"/>.force_size flag when obtaining\nthe <span data-xref=\"Gtk.IconInfo\"/>. If this flag has been specified, the pixbuf\nreturned by this function will be scaled to the exact size.</p>",
+            "kind": "method",
+            "name": "load_surface",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "for_window",
+                    "direction": "in",
+                    "type": "Gdk.Window"
+                }
+            ],
+            "retval": {
+                "type": "cairo.Surface"
+            }
+        },
+        {
+            "doc": "<p>Loads an icon, modifying it to match the system colours for the foreground,\nsuccess, warning and error colors provided. If the icon is not a symbolic\none, the function will return the result from <span data-xref=\"Gtk.IconInfo.load_icon\"/>.</p><p>This allows loading symbolic icons that will match the system theme.</p><p>Unless you are implementing a widget, you will want to use\n<span data-xref=\"Gio.ThemedIcon.new_with_default_fallbacks\">Gio.ThemedIcon.new_with_default_fallbacks</span> to load the icon.</p><p>As implementation details, the icon loaded needs to be of SVG type,\ncontain the \u201csymbolic\u201d term as the last component of the icon name,\nand use the \u201cfg\u201d, \u201csuccess\u201d, \u201cwarning\u201d and \u201cerror\u201d CSS styles in the\nSVG file itself.</p><p>See the <a href=\"http://www.freedesktop.org/wiki/SymbolicIcons\">Symbolic Icons Specification</a>\nfor more information about symbolic icons.</p>",
+            "kind": "method",
+            "name": "load_symbolic",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "fg",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "success_color",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "warning_color",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "error_color",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "was_symbolic",
+                    "direction": "out",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Asynchronously load, render and scale a symbolic icon previously looked up\nfrom the icon theme using <span data-xref=\"Gtk.IconTheme.lookup_icon\"/>.</p><p>For more details, see <span data-xref=\"Gtk.IconInfo.load_symbolic\"/> which is the synchronous\nversion of this call.</p>",
+            "kind": "method",
+            "name": "load_symbolic_async",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "fg",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "success_color",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "warning_color",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "error_color",
+                    "direction": "in",
+                    "type": "Gdk.RGBA"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "cancellable",
+                    "direction": "in",
+                    "type": "Gio.Cancellable"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gio.AsyncReadyCallback"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Finishes an async icon load, see <span data-xref=\"Gtk.IconInfo.load_symbolic_async\"/>.</p>",
+            "kind": "method",
+            "name": "load_symbolic_finish",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "res",
+                    "direction": "in",
+                    "type": "Gio.AsyncResult"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "was_symbolic",
+                    "direction": "out",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Loads an icon, modifying it to match the system colors for the foreground,\nsuccess, warning and error colors provided. If the icon is not a symbolic\none, the function will return the result from <span data-xref=\"Gtk.IconInfo.load_icon\"/>.\nThis function uses the regular foreground color and the symbolic colors\nwith the names \u201csuccess_color\u201d, \u201cwarning_color\u201d and \u201cerror_color\u201d from\nthe context.</p><p>This allows loading symbolic icons that will match the system theme.</p><p>See <span data-xref=\"Gtk.IconInfo.load_symbolic\"/> for more details.</p>",
+            "kind": "method",
+            "name": "load_symbolic_for_context",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.StyleContext"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "was_symbolic",
+                    "direction": "out",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Asynchronously load, render and scale a symbolic icon previously looked up\nfrom the icon theme using <span data-xref=\"Gtk.IconTheme.lookup_icon\"/>.</p><p>For more details, see <span data-xref=\"Gtk.IconInfo.load_symbolic_for_context\"/> which is the synchronous\nversion of this call.</p>",
+            "kind": "method",
+            "name": "load_symbolic_for_context_async",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "context",
+                    "direction": "in",
+                    "type": "Gtk.StyleContext"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "cancellable",
+                    "direction": "in",
+                    "type": "Gio.Cancellable"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "callback",
+                    "direction": "in",
+                    "type": "Gio.AsyncReadyCallback"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Finishes an async icon load, see <span data-xref=\"Gtk.IconInfo.load_symbolic_for_context_async\"/>.</p>",
+            "kind": "method",
+            "name": "load_symbolic_for_context_finish",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "res",
+                    "direction": "in",
+                    "type": "Gio.AsyncResult"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "was_symbolic",
+                    "direction": "out",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Loads an icon, modifying it to match the system colours for the foreground,\nsuccess, warning and error colors provided. If the icon is not a symbolic\none, the function will return the result from <span data-xref=\"Gtk.IconInfo.load_icon\"/>.</p><p>This allows loading symbolic icons that will match the system theme.</p><p>See <span data-xref=\"Gtk.IconInfo.load_symbolic\"/> for more details.</p>",
+            "kind": "method",
+            "name": "load_symbolic_for_style",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "style",
+                    "direction": "in",
+                    "type": "Gtk.Style"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "state",
+                    "direction": "in",
+                    "type": "Gtk.StateType"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "was_symbolic",
+                    "direction": "out",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "GdkPixbuf.Pixbuf"
+            }
+        },
+        {
+            "doc": "<p>Sets whether the coordinates returned by <span data-xref=\"Gtk.IconInfo.get_embedded_rect\"/>\nand <span data-xref=\"Gtk.IconInfo.get_attach_points\"/> should be returned in their\noriginal form as specified in the icon theme, instead of scaled\nappropriately for the pixbuf returned by <span data-xref=\"Gtk.IconInfo.load_icon\"/>.</p><p>Raw coordinates are somewhat strange; they are specified to be with\nrespect to the unscaled pixmap for PNG and XPM icons, but for SVG\nicons, they are in a 1000x1000 coordinate space that is scaled\nto the final size of the icon.  You can determine if the icon is an SVG\nicon by using <span data-xref=\"Gtk.IconInfo.get_filename\"/>, and seeing if it is non-<code>null</code>\nand ends in \u201c.svg\u201d.</p><p>This function is provided primarily to allow compatibility wrappers\nfor older API's, and is not expected to be useful for applications.</p>",
+            "kind": "method",
+            "name": "set_raw_coordinates",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "raw_coordinates",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "IconInfo",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

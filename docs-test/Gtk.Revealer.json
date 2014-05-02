@@ -1,0 +1,138 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Revealer\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The GtkRevealer widget is a container which animates\nthe transition of its child from invisible to visible.</p><p>The style of transition can be controlled with\n<span data-xref=\"Gtk.Revealer.set_transition_type\"/>.</p><p>These animations respect the <span data-xref=\"Gtk.Settings-gtk-enable-animations\"/>\nsetting.</p><p>The GtkRevealer widget was added in GTK+ 3.10.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns whether the child is fully revealed, ie wether\nthe transition to the revealed state is completed.</p>",
+            "kind": "method",
+            "name": "get_child_revealed",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the child is currently\nrevealed. See <span data-xref=\"Gtk.Revealer.set_reveal_child\"/>.</p><p>This function returns <code>true</code> as soon as the transition\nis to the revealed state is started. To learn whether\nthe child is fully revealed (ie the transition is completed),\nuse <span data-xref=\"Gtk.Revealer.get_child_revealed\"/>.</p>",
+            "kind": "method",
+            "name": "get_reveal_child",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Returns the amount of time (in milliseconds) that\ntransitions will take.</p>",
+            "kind": "method",
+            "name": "get_transition_duration",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the type of animation that will be used\nfor transitions in <code>revealer</code>.</p>",
+            "kind": "method",
+            "name": "get_transition_type",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.RevealerTransitionType"
+            }
+        },
+        {
+            "doc": "<p>Tells the <span data-xref=\"Gtk.Revealer\"/> to reveal or conceal its child.</p><p>The transition will be animated with the current\ntransition type of <code>revealer</code>.</p>",
+            "kind": "method",
+            "name": "set_reveal_child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "reveal_child",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the duration that transitions will take.</p>",
+            "kind": "method",
+            "name": "set_transition_duration",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "duration",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the type of animation that will be used for\ntransitions in <code>revealer</code>. Available types include\nvarious kinds of fades and slides.</p>",
+            "kind": "method",
+            "name": "set_transition_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "transition",
+                    "direction": "in",
+                    "type": "Gtk.RevealerTransitionType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Revealer",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "child-revealed",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "reveal-child",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "transition-duration",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "transition-type",
+            "type": "Gtk.RevealerTransitionType"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

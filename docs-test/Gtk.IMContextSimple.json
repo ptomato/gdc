@@ -1,0 +1,62 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.IMContextSimple\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.IMContext"
+            }
+        }
+    ],
+    "doc": "",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "object"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Adds an additional table to search to the input context.\nEach row of the table consists of <code>max_seq_len</code> key symbols\nfollowed by two #guint16 interpreted as the high and low\nwords of a #gunicode value. Tables are searched starting\nfrom the last added.</p><p>The table must be sorted in dictionary order on the\nnumeric value of the key symbol fields. (Values beyond\nthe length of the sequence should be zero.)</p>",
+            "kind": "method",
+            "name": "add_table",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "Number(guint16)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "max_seq_len",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "n_seqs",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "IMContextSimple",
+    "properties": [],
+    "signals": [],
+    "vfuncs": []
+}

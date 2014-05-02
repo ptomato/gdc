@@ -1,0 +1,82 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Invisible\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        },
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Invisible\"/> object for a specified screen</p>",
+            "kind": "constructor",
+            "name": "new_for_screen",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "screen",
+                    "direction": "in",
+                    "type": "Gdk.Screen"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.Invisible\"/> widget is used internally in GTK+, and is probably not\nvery useful for application developers.</p><p>It is used for reliable pointer grabs and selection handling in the code\nfor drag-and-drop.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "widget"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> object associated with <code>invisible</code></p>",
+            "kind": "method",
+            "name": "get_screen",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Screen"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gdk.Screen\">Gdk.Screen</span> where the <span data-xref=\"Gtk.Invisible\"/> object will be displayed.</p>",
+            "kind": "method",
+            "name": "set_screen",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "screen",
+                    "direction": "in",
+                    "type": "Gdk.Screen"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Invisible",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "screen",
+            "type": "Gdk.Screen"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

@@ -1,0 +1,640 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a GtkFlowBox.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>A GtkFlowBox positions child widgets in sequence according to its\norientation.</p><p>For instance, with the horizontal orientation, the widgets will be\narranged from left to right, starting a new row under the previous\nrow when necessary. Reducing the width in this case will require more\nrows, so a larger height will be requested.</p><p>Likewise, with the vertical orientation, the widgets will be arranged\nfrom top to bottom, starting a new column to the right when necessary.\nReducing the height will require more columns, so a larger width will\nbe requested.</p><p>The children of a GtkFlowBox can be dynamically sorted and filtered.</p><p>Although a GtkFlowBox must have only <span data-xref=\"Gtk.FlowBoxChild\"/> children,\nyou can add any kind of widget to it via <span data-xref=\"Gtk.Container.add\"/>, and\na GtkFlowBoxChild widget will automatically be inserted between\nthe box and the widget.</p><p>Also see <span data-xref=\"Gtk.ListBox\"/>.</p><p>GtkFlowBox was added in GTK+ 3.12.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "container"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Returns whether children activate on single clicks.</p>",
+            "kind": "method",
+            "name": "get_activate_on_single_click",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the nth child in the <code>box</code>.</p>",
+            "kind": "method",
+            "name": "get_child_at_index",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "idx",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.FlowBoxChild"
+            }
+        },
+        {
+            "doc": "<p>Gets the horizontal spacing.</p>",
+            "kind": "method",
+            "name": "get_column_spacing",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Returns whether the box is homogeneous (all children are the\nsame size). See <span data-xref=\"Gtk.Box.set_homogeneous\"/>.</p>",
+            "kind": "method",
+            "name": "get_homogeneous",
+            "parameters": [],
+            "retval": {
+                "type": "Boolean"
+            }
+        },
+        {
+            "doc": "<p>Gets the maximum number of children per line.</p>",
+            "kind": "method",
+            "name": "get_max_children_per_line",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the minimum number of children per line.</p>",
+            "kind": "method",
+            "name": "get_min_children_per_line",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Gets the vertical spacing.</p>",
+            "kind": "method",
+            "name": "get_row_spacing",
+            "parameters": [],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        },
+        {
+            "doc": "<p>Creates a list of all selected children.</p>",
+            "kind": "method",
+            "name": "get_selected_children",
+            "parameters": [],
+            "retval": {
+                "type": "Array(Gtk.FlowBoxChild)"
+            }
+        },
+        {
+            "doc": "<p>Gets the selection mode of <code>box</code>.</p>",
+            "kind": "method",
+            "name": "get_selection_mode",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.SelectionMode"
+            }
+        },
+        {
+            "doc": "<p>Inserts the <code>widget</code> into <code>box</code> at <code>position</code>.</p><p>If a sort function is set, the widget will actually be inserted\nat the calculated position and this function has the same effect\nas <span data-xref=\"Gtk.Container.add\"/>.</p><p>If <code>position</code> is -1, or larger than the total number of children\nin the <code>box</code>, then the <code>widget</code> will be appended to the end.</p>",
+            "kind": "method",
+            "name": "insert",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "widget",
+                    "direction": "in",
+                    "type": "Gtk.Widget"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "position",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Updates the filtering for all children.</p><p>Call this function when the result of the filter\nfunction on the <code>box</code> is changed due ot an external\nfactor. For instance, this would be used if the\nfilter function just looked for a specific search\nterm, and the entry with the string has changed.</p>",
+            "kind": "method",
+            "name": "invalidate_filter",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Updates the sorting for all children.</p><p>Call this when the result of the sort function on\n<code>box</code> is changed due to an external factor.</p>",
+            "kind": "method",
+            "name": "invalidate_sort",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Select all children of <code>box</code>, if the selection\nmode allows it.</p>",
+            "kind": "method",
+            "name": "select_all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Selects a single child of <code>box</code>, if the selection\nmode allows it.</p>",
+            "kind": "method",
+            "name": "select_child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.FlowBoxChild"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Calls a function for each selected child.</p><p>Note that the selection cannot be modified from within\nthis function.</p>",
+            "kind": "method",
+            "name": "selected_foreach",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "func",
+                    "direction": "in",
+                    "type": "Gtk.FlowBoxForeachFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "data",
+                    "direction": "in",
+                    "type": "void"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>If <code>single</code> is <code>true</code>, children will be activated when you click\non them, otherwise you need to double-click.</p>",
+            "kind": "method",
+            "name": "set_activate_on_single_click",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "single",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the horizontal space to add between children.\nSee the <span data-xref=\"Gtk.FlowBox-column-spacing\"/> property.</p>",
+            "kind": "method",
+            "name": "set_column_spacing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "spacing",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>By setting a filter function on the <code>box</code> one can decide dynamically\nwhich of the children to show. For instance, to implement a search\nfunction that only shows the children matching the search terms.</p><p>The <code>filter_func</code> will be called for each child after the call, and\nit will continue to be called each time a child changes (via\n<span data-xref=\"Gtk.FlowBoxChild.changed\"/>) or when <span data-xref=\"Gtk.FlowBox.invalidate_filter\"/>\nis called.</p>",
+            "kind": "method",
+            "name": "set_filter_func",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "filter_func",
+                    "direction": "in",
+                    "type": "Gtk.FlowBoxFilterFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "destroy",
+                    "direction": "in",
+                    "type": "GLib.DestroyNotify"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Hooks up an adjustment to focus handling in <code>box</code>.\nThe adjustment is also used for autoscrolling during\nrubberband selection. See <span data-xref=\"Gtk.ScrolledWindow.get_hadjustment\"/>\nfor a typical way of obtaining the adjustment, and\n<span data-xref=\"Gtk.FlowBox.set_vadjustment\"/>for setting the vertical\nadjustment.</p><p>The adjustments have to be in pixel units and in the same\ncoordinate system as the allocation for immediate children\nof the box.</p>",
+            "kind": "method",
+            "name": "set_hadjustment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the <span data-xref=\"Gtk.FlowBox-homogeneous\"/> property of <code>box</code>, controlling\nwhether or not all children of <code>box</code> are given equal space\nin the box.</p>",
+            "kind": "method",
+            "name": "set_homogeneous",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "homogeneous",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the maximum number of children to request and\nallocate space for in <code>box</code>\u2019s orientation.</p><p>Setting the maximum number of children per line\nlimits the overall natural size request to be no more\nthan <code>n_children</code> children long in the given orientation.</p>",
+            "kind": "method",
+            "name": "set_max_children_per_line",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "n_children",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the minimum number of children to line up\nin <code>box</code>\u2019s orientation before flowing.</p>",
+            "kind": "method",
+            "name": "set_min_children_per_line",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "n_children",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the vertical space to add between children.\nSee the <span data-xref=\"Gtk.FlowBox-row-spacing\"/> property.</p>",
+            "kind": "method",
+            "name": "set_row_spacing",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "spacing",
+                    "direction": "in",
+                    "type": "Number(guint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets how selection works in <code>box</code>.\nSee <span data-xref=\"Gtk.SelectionMode\"/> for details.</p>",
+            "kind": "method",
+            "name": "set_selection_mode",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "mode",
+                    "direction": "in",
+                    "type": "Gtk.SelectionMode"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>By setting a sort function on the <code>box</code>, one can dynamically\nreorder the children of the box, based on the contents of\nthe children.</p><p>The <code>sort_func</code> will be called for each child after the call,\nand will continue to be called each time a child changes (via\n<span data-xref=\"Gtk.FlowBoxChild.changed\"/>) and when <span data-xref=\"Gtk.FlowBox.invalidate_sort\"/>\nis called.</p>",
+            "kind": "method",
+            "name": "set_sort_func",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "sort_func",
+                    "direction": "in",
+                    "type": "Gtk.FlowBoxSortFunc"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "user_data",
+                    "direction": "in",
+                    "type": "void"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "destroy",
+                    "direction": "in",
+                    "type": "GLib.DestroyNotify"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Hooks up an adjustment to focus handling in <code>box</code>.\nThe adjustment is also used for autoscrolling during\nrubberband selection. See <span data-xref=\"Gtk.ScrolledWindow.get_vadjustment\"/>\nfor a typical way of obtaining the adjustment, and\n<span data-xref=\"Gtk.FlowBox.set_hadjustment\"/>for setting the horizontal\nadjustment.</p><p>The adjustments have to be in pixel units and in the same\ncoordinate system as the allocation for immediate children\nof the box.</p>",
+            "kind": "method",
+            "name": "set_vadjustment",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unselect all children of <code>box</code>, if the selection\nmode allows it.</p>",
+            "kind": "method",
+            "name": "unselect_all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unselects a single child of <code>box</code>, if the selection\nmode allows it.</p>",
+            "kind": "method",
+            "name": "unselect_child",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.FlowBoxChild"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "FlowBox",
+    "properties": [
+        {
+            "doc": "<p>Determines whether children can be activated with a single\nclick, or require a double-click.</p>",
+            "kind": "property",
+            "name": "activate-on-single-click",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The amount of horizontal space between two children.</p>",
+            "kind": "property",
+            "name": "column-spacing",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "<p>Determines whether all children should be allocated the\nsame size.</p>",
+            "kind": "property",
+            "name": "homogeneous",
+            "type": "Boolean"
+        },
+        {
+            "doc": "<p>The maximum amount of children to request space for consecutively\nin the given orientation.</p>",
+            "kind": "property",
+            "name": "max-children-per-line",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "<p>The minimum number of children to allocate consecutively\nin the given orientation.</p><p>Setting the minimum children per line ensures\nthat a reasonably small height will be requested\nfor the overall minimum width of the box.</p>",
+            "kind": "property",
+            "name": "min-children-per-line",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "<p>The amount of vertical space between two children.</p>",
+            "kind": "property",
+            "name": "row-spacing",
+            "type": "Number(guint)"
+        },
+        {
+            "doc": "<p>The selection mode used by the flow  box.</p>",
+            "kind": "property",
+            "name": "selection-mode",
+            "type": "Gtk.SelectionMode"
+        }
+    ],
+    "signals": [
+        {
+            "doc": "<p>The ::activate-cursor-child signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user activates the @box.</p>",
+            "kind": "signal",
+            "name": "activate-cursor-child",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::child-activated signal is emitted when a child has been\nactivated by the user.</p>",
+            "kind": "signal",
+            "name": "child-activated",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.FlowBoxChild"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::move-cursor signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted when the user initiates a cursor movement.\nIf the cursor is not visible in @text_view, this signal causes\nthe viewport to be moved instead.</p><p>Applications should not connect to it, but may emit it with\n<span data-xref=\"GObject.signal_emit_by_name\">GObject.signal_emit_by_name</span> if they need to control the cursor\nprogrammatically.</p><p>The default bindings for this signal come in two variants,\nthe variant with the Shift modifier extends the selection,\nthe variant without the Shift modifer does not.\nThere are too many key combinations to list them all here.\n- Arrow keys move by individual children\n- Home/End keys move to the ends of the box\n- PageUp/PageDown keys move vertically by pages</p>",
+            "kind": "signal",
+            "name": "move-cursor",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "step",
+                    "direction": "in",
+                    "type": "Gtk.MovementStep"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::select-all signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to select all children of the box, if\nthe selection mode permits it.</p><p>The default bindings for this signal is Ctrl-a.</p>",
+            "kind": "signal",
+            "name": "select-all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::selected-children-changed signal is emitted when the\nset of selected children changes.</p><p>Use <span data-xref=\"Gtk.FlowBox.selected_foreach\"/> or\n<span data-xref=\"Gtk.FlowBox.get_selected_children\"/> to obtain the\nselected children.</p>",
+            "kind": "signal",
+            "name": "selected-children-changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::toggle-cursor-child signal is a\n[keybinding signal][GtkBindingSignal]\nwhich toggles the selection of the child that has the focus.</p><p>The default binding for this signal is Ctrl-Space.</p>",
+            "kind": "signal",
+            "name": "toggle-cursor-child",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>The ::unselect-all signal is a\n[keybinding signal][GtkBindingSignal]\nwhich gets emitted to unselect all children of the box, if\nthe selection mode permits it.</p><p>The default bindings for this signal is Ctrl-Shift-a.</p>",
+            "kind": "signal",
+            "name": "unselect-all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "activate_cursor_child",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "child_activated",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "child",
+                    "direction": "in",
+                    "type": "Gtk.FlowBoxChild"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "move_cursor",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "step",
+                    "direction": "in",
+                    "type": "Gtk.MovementStep"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "count",
+                    "direction": "in",
+                    "type": "Number(gint)"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Select all children of <code>box</code>, if the selection\nmode allows it.</p>",
+            "kind": "vfunc",
+            "name": "select_all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "selected_children_changed",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "toggle_cursor_child",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Unselect all children of <code>box</code>, if the selection\nmode allows it.</p>",
+            "kind": "vfunc",
+            "name": "unselect_all",
+            "parameters": [],
+            "retval": {
+                "type": "void"
+            }
+        }
+    ]
+}

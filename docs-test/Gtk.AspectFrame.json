@@ -1,0 +1,124 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Create a new <span data-xref=\"Gtk.AspectFrame\"/>.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "label",
+                    "direction": "in",
+                    "type": "String"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "xalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "ratio",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "obey_child",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.AspectFrame\"/> is useful when you want\npack a widget so that it can resize but always retains\nthe same aspect ratio. For instance, one might be\ndrawing a small preview of a larger image. <span data-xref=\"Gtk.AspectFrame\"/>\nderives from <span data-xref=\"Gtk.Frame\"/>, so it can draw a label and\na frame around the child. The frame will be\n\u201cshrink-wrapped\u201d to the size of the child.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "frame"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Set parameters for an existing <span data-xref=\"Gtk.AspectFrame\"/>.</p>",
+            "kind": "method",
+            "name": "set",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "xalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "yalign",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "ratio",
+                    "direction": "in",
+                    "type": "Number(gfloat)"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "obey_child",
+                    "direction": "in",
+                    "type": "Boolean"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "AspectFrame",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "obey-child",
+            "type": "Boolean"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "ratio",
+            "type": "Number(gfloat)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "xalign",
+            "type": "Number(gfloat)"
+        },
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "yalign",
+            "type": "Number(gfloat)"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

@@ -1,0 +1,147 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.Viewport\"/> with the given adjustments, or with default\nadjustments if none are given.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "hadjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                },
+                {
+                    "allow_none": true,
+                    "argname": "vadjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "Gtk.Widget"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.Viewport\"/> widget acts as an adaptor class, implementing\nscrollability for child widgets that lack their own scrolling\ncapabilities. Use <span data-xref=\"Gtk.Viewport\"/> to scroll child widgets such as\n<span data-xref=\"Gtk.Grid\"/>, <span data-xref=\"Gtk.Box\"/>, and so on.</p><p>If a widget has native scrolling abilities, such as <span data-xref=\"Gtk.TextView\"/>,\n<span data-xref=\"Gtk.TreeView\"/> or <span data-xref=\"Gtk.IconView\"/>, it can be added to a <span data-xref=\"Gtk.ScrolledWindow\"/>\nwith <span data-xref=\"Gtk.Container.add\"/>. If a widget does not, you must first add the\nwidget to a <span data-xref=\"Gtk.Viewport\"/>, then add the viewport to the scrolled window.\n<span data-xref=\"Gtk.Container.add\"/> does this automatically if a child that does not\nimplement <span data-xref=\"Gtk.Scrollable\"/> is added to a <span data-xref=\"Gtk.ScrolledWindow\"/>, so you can\nignore the presence of the viewport.</p><p>The <span data-xref=\"Gtk.Viewport\"/> will start scrolling content only if allocated less\nthan the child widget\u2019s minimum size in a given orientation.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "bin"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "priv"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Gets the bin window of the <span data-xref=\"Gtk.Viewport\"/>.</p>",
+            "kind": "method",
+            "name": "get_bin_window",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Window"
+            }
+        },
+        {
+            "doc": "<p>Returns the horizontal adjustment of the viewport.</p>",
+            "kind": "method",
+            "name": "get_hadjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Gets the shadow type of the <span data-xref=\"Gtk.Viewport\"/>. See\n<span data-xref=\"Gtk.Viewport.set_shadow_type\"/>.</p>",
+            "kind": "method",
+            "name": "get_shadow_type",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.ShadowType"
+            }
+        },
+        {
+            "doc": "<p>Returns the vertical adjustment of the viewport.</p>",
+            "kind": "method",
+            "name": "get_vadjustment",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Adjustment"
+            }
+        },
+        {
+            "doc": "<p>Gets the view window of the <span data-xref=\"Gtk.Viewport\"/>.</p>",
+            "kind": "method",
+            "name": "get_view_window",
+            "parameters": [],
+            "retval": {
+                "type": "Gdk.Window"
+            }
+        },
+        {
+            "doc": "<p>Sets the horizontal adjustment of the viewport.</p>",
+            "kind": "method",
+            "name": "set_hadjustment",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the shadow type of the viewport.</p>",
+            "kind": "method",
+            "name": "set_shadow_type",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "type",
+                    "direction": "in",
+                    "type": "Gtk.ShadowType"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "<p>Sets the vertical adjustment of the viewport.</p>",
+            "kind": "method",
+            "name": "set_vadjustment",
+            "parameters": [
+                {
+                    "allow_none": true,
+                    "argname": "adjustment",
+                    "direction": "in",
+                    "type": "Gtk.Adjustment"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        []
+    ],
+    "name": "Viewport",
+    "properties": [
+        {
+            "doc": "",
+            "kind": "property",
+            "name": "shadow-type",
+            "type": "Gtk.ShadowType"
+        }
+    ],
+    "signals": [],
+    "vfuncs": []
+}

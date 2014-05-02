@@ -1,0 +1,165 @@
+{
+    "constructors": [
+        {
+            "doc": "<p>Creates a new <span data-xref=\"Gtk.RcStyle\"/> with no fields set and\na reference count of 1.</p>",
+            "kind": "constructor",
+            "name": "new",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.RcStyle"
+            }
+        }
+    ],
+    "doc": "<p>The <span data-xref=\"Gtk.RcStyle\"/>-struct is used to represent a set\nof information about the appearance of a widget.\nThis can later be composited together with other\n<span data-xref=\"Gtk.RcStyle\"/>-struct&lt;!-- --&gt;s to form a <span data-xref=\"Gtk.Style\"/>.</p>",
+    "fields": [
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "parent_instance"
+        },
+        {
+            "doc": "<p>Name</p>",
+            "kind": "field",
+            "name": "name"
+        },
+        {
+            "doc": "<p>Pixmap name</p>",
+            "kind": "field",
+            "name": "bg_pixmap_name"
+        },
+        {
+            "doc": "<p>A <span data-xref=\"Pango.FontDescription\">Pango.FontDescription</span></p>",
+            "kind": "field",
+            "name": "font_desc"
+        },
+        {
+            "doc": "<p><span data-xref=\"Gtk.RcFlags\"/></p>",
+            "kind": "field",
+            "name": "color_flags"
+        },
+        {
+            "doc": "<p>Foreground colors</p>",
+            "kind": "field",
+            "name": "fg"
+        },
+        {
+            "doc": "<p>Background colors</p>",
+            "kind": "field",
+            "name": "bg"
+        },
+        {
+            "doc": "<p>Text colors</p>",
+            "kind": "field",
+            "name": "text"
+        },
+        {
+            "doc": "<p>Base colors</p>",
+            "kind": "field",
+            "name": "base"
+        },
+        {
+            "doc": "<p>X thickness</p>",
+            "kind": "field",
+            "name": "xthickness"
+        },
+        {
+            "doc": "<p>Y thickness</p>",
+            "kind": "field",
+            "name": "ythickness"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "rc_properties"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "rc_style_lists"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "icon_factories"
+        },
+        {
+            "doc": "",
+            "kind": "field",
+            "name": "engine_specified"
+        }
+    ],
+    "kind": "class",
+    "methods": [
+        {
+            "doc": "<p>Makes a copy of the specified <span data-xref=\"Gtk.RcStyle\"/>. This function\nwill correctly copy an RC style that is a member of a class\nderived from <span data-xref=\"Gtk.RcStyle\"/>.</p>",
+            "kind": "method",
+            "name": "copy",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.RcStyle"
+            }
+        },
+        []
+    ],
+    "name": "RcStyle",
+    "properties": [],
+    "signals": [],
+    "vfuncs": [
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "create_rc_style",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.RcStyle"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "create_style",
+            "parameters": [],
+            "retval": {
+                "type": "Gtk.Style"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "merge",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "src",
+                    "direction": "in",
+                    "type": "Gtk.RcStyle"
+                }
+            ],
+            "retval": {
+                "type": "void"
+            }
+        },
+        {
+            "doc": "",
+            "kind": "vfunc",
+            "name": "parse",
+            "parameters": [
+                {
+                    "allow_none": false,
+                    "argname": "settings",
+                    "direction": "in",
+                    "type": "Gtk.Settings"
+                },
+                {
+                    "allow_none": false,
+                    "argname": "scanner",
+                    "direction": "in",
+                    "type": "GLib.Scanner"
+                }
+            ],
+            "retval": {
+                "type": "Number(guint)"
+            }
+        }
+    ]
+}
