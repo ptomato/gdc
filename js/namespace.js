@@ -1,12 +1,15 @@
 var ns = "";
-var klass = "";
 
 function createLink (url, content) {
   return "<a href=\"" +url+ "\">" +content+ "</a>";
 }
 
+function createListItem (item) {
+  return "<li>" + item + "</li>";
+}
+
 function createClassItem (name) {
-  return "<li>" + createLink ("#class-" + name, name) + "</li>"
+  return createListItem(createLink ("#class-" + name, name));
 }
 
 function hideEverything () {
@@ -30,7 +33,7 @@ function clearItems (lists)
 }
 
 function goToClass (className) {
-  $.getJSON ("docs-test/" + ns + "." + className + ".json", function (data) {
+  $.getJSON ("docs-test/" + ns + "." + className + ".json", function (data) {   
     clearItems (["#class-properties-list",
                  "#class-methods-list",
                  "#class-signals-list",
@@ -47,27 +50,27 @@ function goToClass (className) {
 
     var tmpString = "";
     $.each (data.constructors, function (index, item) {
-      tmpString = tmpString + "<li>" + method_prefix + item.name + "()</li>";
+      tmpString = tmpString + createListItem(method_prefix + item.name + "()");
     });
     $("#class-constructors-list").html(tmpString);
 
     tmpString = "";
     $.each (data.methods, function (index, item) {
-      tmpString = tmpString + "<li>" + method_prefix + item.name + "()</li>";
+      tmpString = tmpString + createListItem(method_prefix + item.name + "()");
     });
-    $("#class-methods-list").html(tmpString);
+    $("#class-summary-methods-list").html(tmpString);
 
     tmpString = "";
     $.each (data.properties, function (index, item) {
-      tmpString = tmpString + "<li>" + item.name + "</li>";
+      tmpString = tmpString + createListItem(item.name);
     });
-    $("#class-properties-list").html(tmpString);
+    $("#class-summary-properties-list").html(tmpString);
 
     tmpString = "";
     $.each (data.signals, function (index, item) {
-      tmpString = tmpString + "<li>" + item.name + "()</li>";
+      tmpString = tmpString + createListItem (item.name);
     });
-    $("#class-signals-list").html(tmpString);
+    $("#class-summary-signals-list").html(tmpString);
   });
 }
 
