@@ -43,38 +43,41 @@ function initClassItems (ns, className) {
     showArea ("#class-area");
 }
 
+function initClassSummary (ns, className, properties, signals, constructors, methods) {
+  method_prefix = ns + "." + className + ".prototype.";
+
+  var tmpString = "";
+  $.each (constructors, function (index, item) {
+    tmpString = tmpString + createListItem(method_prefix + item.name + "()");
+  });
+  $("#class-constructors-list").html(tmpString);
+
+  tmpString = "";
+  $.each (methods, function (index, item) {
+    tmpString = tmpString + createListItem(method_prefix + item.name + "()");
+  });
+  $("#class-summary-methods-list").html(tmpString);
+
+  tmpString = "";
+  $.each (properties, function (index, item) {
+    tmpString = tmpString + createListItem(item.name);
+  });
+  $("#class-summary-properties-list").html(tmpString);
+
+  tmpString = "";
+  $.each (signals, function (index, item) {
+    tmpString = tmpString + createListItem (item.name);
+  });
+  $("#class-summary-signals-list").html(tmpString);
+}
+
 function goToClass (className) {
   $.getJSON ("docs-test/" + ns + "." + className + ".json", function (data) {
     $("#class-doc").html(data.doc);
 
     initClassItems (ns, data.name);
+    initClassSummary (ns, data.name, data.properties, data.signals, data.constructors, data.methods);
     //$.each ($("span[data-xref]")
-
-    method_prefix = ns + "." + data.name + ".prototype.";
-
-    var tmpString = "";
-    $.each (data.constructors, function (index, item) {
-      tmpString = tmpString + createListItem(method_prefix + item.name + "()");
-    });
-    $("#class-constructors-list").html(tmpString);
-
-    tmpString = "";
-    $.each (data.methods, function (index, item) {
-      tmpString = tmpString + createListItem(method_prefix + item.name + "()");
-    });
-    $("#class-summary-methods-list").html(tmpString);
-
-    tmpString = "";
-    $.each (data.properties, function (index, item) {
-      tmpString = tmpString + createListItem(item.name);
-    });
-    $("#class-summary-properties-list").html(tmpString);
-
-    tmpString = "";
-    $.each (data.signals, function (index, item) {
-      tmpString = tmpString + createListItem (item.name);
-    });
-    $("#class-summary-signals-list").html(tmpString);
   });
 }
 
