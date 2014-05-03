@@ -32,19 +32,23 @@ function clearItems (lists)
   });
 }
 
-function goToClass (className) {
-  $.getJSON ("docs-test/" + ns + "." + className + ".json", function (data) {   
+function initClassItems (ns, className) {
     clearItems (["#class-properties-list",
                  "#class-methods-list",
                  "#class-signals-list",
                  "#class-constructors-list"]);
     hideEverything ();
-    $("#class-area ul #namespace").html(ns);
-    $("#class-area ul #class-name").html(data.name);
+    $("#class-area ul #namespace").html(createLink(location.pathname, ns));
+    $("#class-area ul #class-name").html(className);
+    showArea ("#class-area");
+}
+
+function goToClass (className) {
+  $.getJSON ("docs-test/" + ns + "." + className + ".json", function (data) {
     $("#class-doc").html(data.doc);
 
+    initClassItems (ns, data.name);
     //$.each ($("span[data-xref]")
-    showArea ("#class-area");
 
     method_prefix = ns + "." + data.name + ".prototype.";
 
