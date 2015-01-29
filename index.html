@@ -1,64 +1,87 @@
+<!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.8.0/semantic.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.8.0/semantic.min.js"></script>
   <script src="js/jquery-2.0.3.min.js"></script>
   <script src="js/namespace.js"></script>
 </head>
-<body>
-<div id="namespace-area">
-  <h1 data-header="namespace"></h1>
-  <div id="class-list-container">
-    <ul id="class-list"/>
-  </div>
-  <div id="record-list-container">
-    <ul id="record-list"/>
-  </div>
-  <div id="function-list-container">
-    <ul id="function-list"/>
-  </div>
-  <div id="enum-list-container">
-    <ul id="enum-list"/>
-  </div>
-</div>
-<div id="class-area">
-  <div class="crumbs">
-    <ul>
-      <li id="namespace"/>
-      <li id="class-name"/>
-    </ul>
-  </div>
-  <div id="class-summary">
-    <div id="class-summary-properties">
-      <ul id="class-summary-property-list"></ul>
-    </div>
-    <div id="class-summary-signals">
-      <ul id="class-summary-signal-list"></ul>
-    </div>
-    <div id="class-summary-constructors">
-      <ul id="class-summary-constructor-list"></ul>
-    </div>
-    <div id="class-summary-methods">
-      <ul id="class-summary-method-list"></ul>
+<body class="ui padded grid">
+  <div class="ui inverted top menu">
+    <div class="ui large breadcrumb item" id="breadcrumb">
     </div>
   </div>
-  <div id="class-doc"></div>
-  <div id="class-constructors-container">
-    <h2>Constructors</h2>
-    <ul id="class-constructors-list"/>
+  <div class="five wide column">
+    <div class="ui left sticky rail">
+      <div class="ui fluid action input">
+        <input type="text" placeholder="Search..."/>
+        <div class="ui icon button"><i class="search icon"></i></div>
+      </div>
+      <div id="namespace-index">
+        <ul></ul>
+      </div>
+    </div>
   </div>
-  <div id="class-methods-container">
-    <h2>Methods</h2>
-    <ul id="class-methods-list"/>
+  <div class="eleven wide column">
+    <div id="main-area">
+    </div>
+
+    <div id="namespace-area">
+      <h1 class="ui header" id="namespace-header">
+        <i class="circular book icon"></i>
+        <div class="content"></div>
+      </h1>
+      <div id="namespace-class-list-container">
+        <h2>Classes</h2>
+        <ul id="namespace-class-list"></ul>
+      </div>
+      <div id="namespace-function-list-container">
+        <h2>Functions</h2>
+        <ul id="namespace-function-list"></ul>
+      </div>
+      <div id="namespace-enum-list-container">
+        <h2>Enumerations</h2>
+        <ul id="namespace-enum-list"></ul>
+      </div>
+      <div id="namespace-struct-list-container">
+        <h2>Structures</h2>
+        <ul id="namespace-struct-list"></ul>
+      </div>
+    </div>
+
+    <div id="class-area">
+      <h1 class="ui header" id="class-header">
+        <i class="circular cube icon"></i>
+        <div class="content"></div>
+      </h1>
+      <div id="class-doc"></div>
+      <div id="class-constructor-list-container">
+        <h2>Constructors</h2>
+        <ul id="class-constructor-list"></ul>
+      </div>
+      <div id="class-method-list-container">
+        <h2>Methods</h2>
+        <ul id="class-method-list"></ul>
+      </div>
+      <div id="class-property-list-container">
+        <h2>Properties</h2>
+        <ul id="class-property-list"></ul>
+      </div>
+      <div id="class-field-list-container">
+        <h2>Fields</h2>
+        <ul id="class-field-list"></ul>
+      </div>
+      <div id="class-signal-list-container">
+        <h2>Signals</h2>
+        <ul id="class-signal-list"></ul>
+      </div>
+      <table class="ui collapsing table" id="enum-member-list-container">
+        <thead>
+          <tr><th colspan="2">Members</th></tr>
+        </thead>
+        <tbody id="enum-member-table"></tbody>
+      </div>
+    </div>
   </div>
-  <div id="class-properties-container">
-    <h2>Properties</h2>
-    <ul id="class-properties-list"/>
-  </div>
-  <div id="class-signals-container">
-    <h2>Signals</h2>
-    <ul id="class-signals-list"/>
-  </div>
-</div>
-<div id="functions-area">
-</div>
 </body>
 </html>
